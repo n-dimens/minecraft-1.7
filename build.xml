@@ -1,6 +1,7 @@
 <project name="minecraft" default="compile">
     <property file="project.properties"/>
-    <property name="src" location="src/main/java"/>
+    <property name="src" location="src/main"/>
+    <property name="src.java" location="${src}/java"/>
     <property name="lib" location="lib"/>
     <property name="target" location="target"/>
     <property name="classes" location="${target}/classes"/>
@@ -28,16 +29,16 @@
     </target>
 
     <target name="compile" description="compile the source" depends="init">
-        <javac destdir="${classes}" srcdir="${src}" includeantruntime="true" encoding="utf-8">
+        <javac destdir="${classes}" srcdir="${src.java}" includeantruntime="true" encoding="utf-8">
             <!--            <classpath refid="dev.class.path" />-->
             <classpath refid="project.class.path"/>
         </javac>
     </target>
 
-    <target name="run">
-        <java classname="net.minecraft.client.main.Main">
-            <classpath refid="project.class.path"/>
-            <sysproperty key="java.library.path" value="C:/Users/svgor/AppData/Roaming/.minecraft/natives" />
-        </java>
+    <target name="client" depends="compile">
+        <jar destfile="${target}/1.7.10.jar">
+            <fileset dir="${classes}" />
+            <fileset dir="${src}/resources"/>
+        </jar>
     </target>
 </project>

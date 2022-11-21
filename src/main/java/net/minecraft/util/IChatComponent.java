@@ -113,7 +113,7 @@ public interface IChatComponent extends Iterable
 
                                     if (chatcomponenttext.func_150256_b().func_150229_g() && chatcomponenttext.func_150253_a().isEmpty())
                                     {
-                                        aobject[i] = chatcomponenttext.func_150265_g();
+                                        aobject[i] = chatcomponenttext.getMessage();
                                     }
                                 }
                             }
@@ -167,7 +167,7 @@ public interface IChatComponent extends Iterable
             {
                 if (p_serialize_1_ instanceof ChatComponentText && p_serialize_1_.func_150256_b().func_150229_g() && p_serialize_1_.func_150253_a().isEmpty())
                 {
-                    return new JsonPrimitive(((ChatComponentText)p_serialize_1_).func_150265_g());
+                    return new JsonPrimitive(((ChatComponentText)p_serialize_1_).getMessage());
                 }
                 else
                 {
@@ -194,7 +194,7 @@ public interface IChatComponent extends Iterable
 
                     if (p_serialize_1_ instanceof ChatComponentText)
                     {
-                        jsonobject.addProperty("text", ((ChatComponentText)p_serialize_1_).func_150265_g());
+                        jsonobject.addProperty("text", ((ChatComponentText)p_serialize_1_).getMessage());
                     }
                     else
                     {

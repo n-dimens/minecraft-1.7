@@ -11,7 +11,7 @@ import java.util.List;
 public abstract class ChatComponentStyle implements IChatComponent
 {
     protected List field_150264_a = Lists.newArrayList();
-    private ChatStyle field_150263_b;
+    private ChatStyle style;
     private static final String __OBFID = "CL_00001257";
 
     public IChatComponent func_150257_a(IChatComponent p_150257_1_)
@@ -31,9 +31,9 @@ public abstract class ChatComponentStyle implements IChatComponent
         return this.func_150257_a(new ChatComponentText(p_150258_1_));
     }
 
-    public IChatComponent func_150255_a(ChatStyle p_150255_1_)
+    public IChatComponent func_150255_a(ChatStyle style)
     {
-        this.field_150263_b = p_150255_1_;
+        this.style = style;
         Iterator iterator = this.field_150264_a.iterator();
 
         while (iterator.hasNext())
@@ -47,19 +47,19 @@ public abstract class ChatComponentStyle implements IChatComponent
 
     public ChatStyle func_150256_b()
     {
-        if (this.field_150263_b == null)
+        if (this.style == null)
         {
-            this.field_150263_b = new ChatStyle();
+            this.style = new ChatStyle();
             Iterator iterator = this.field_150264_a.iterator();
 
             while (iterator.hasNext())
             {
                 IChatComponent ichatcomponent = (IChatComponent)iterator.next();
-                ichatcomponent.func_150256_b().func_150221_a(this.field_150263_b);
+                ichatcomponent.func_150256_b().func_150221_a(this.style);
             }
         }
 
-        return this.field_150263_b;
+        return this.style;
     }
 
     public Iterator iterator()
@@ -129,30 +129,30 @@ public abstract class ChatComponentStyle implements IChatComponent
         return iterator;
     }
 
-    public boolean equals(Object p_equals_1_)
+    public boolean equals(Object chatStyle)
     {
-        if (this == p_equals_1_)
+        if (this == chatStyle)
         {
             return true;
         }
-        else if (!(p_equals_1_ instanceof ChatComponentStyle))
+        else if (!(chatStyle instanceof ChatComponentStyle))
         {
             return false;
         }
         else
         {
-            ChatComponentStyle chatcomponentstyle = (ChatComponentStyle)p_equals_1_;
+            ChatComponentStyle chatcomponentstyle = (ChatComponentStyle)chatStyle;
             return this.field_150264_a.equals(chatcomponentstyle.field_150264_a) && this.func_150256_b().equals(chatcomponentstyle.func_150256_b());
         }
     }
 
     public int hashCode()
     {
-        return 31 * this.field_150263_b.hashCode() + this.field_150264_a.hashCode();
+        return 31 * this.style.hashCode() + this.field_150264_a.hashCode();
     }
 
     public String toString()
     {
-        return "BaseComponent{style=" + this.field_150263_b + ", siblings=" + this.field_150264_a + '}';
+        return "BaseComponent{style=" + this.style + ", siblings=" + this.field_150264_a + '}';
     }
 }

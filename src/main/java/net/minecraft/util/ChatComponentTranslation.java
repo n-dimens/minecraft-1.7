@@ -156,9 +156,9 @@ public class ChatComponentTranslation extends ChatComponentStyle
         }
     }
 
-    public IChatComponent func_150255_a(ChatStyle p_150255_1_)
+    public IChatComponent func_150255_a(ChatStyle style)
     {
-        super.func_150255_a(p_150255_1_);
+        super.func_150255_a(style);
         Object[] aobject = this.field_150277_e;
         int i = aobject.length;
 
@@ -179,7 +179,7 @@ public class ChatComponentTranslation extends ChatComponentStyle
             while (iterator.hasNext())
             {
                 IChatComponent ichatcomponent = (IChatComponent)iterator.next();
-                ichatcomponent.func_150256_b().func_150221_a(p_150255_1_);
+                ichatcomponent.func_150256_b().func_150221_a(style);
             }
         }
 
@@ -236,20 +236,20 @@ public class ChatComponentTranslation extends ChatComponentStyle
         return chatcomponenttranslation;
     }
 
-    public boolean equals(Object p_equals_1_)
+    public boolean equals(Object chatStyle)
     {
-        if (this == p_equals_1_)
+        if (this == chatStyle)
         {
             return true;
         }
-        else if (!(p_equals_1_ instanceof ChatComponentTranslation))
+        else if (!(chatStyle instanceof ChatComponentTranslation))
         {
             return false;
         }
         else
         {
-            ChatComponentTranslation chatcomponenttranslation = (ChatComponentTranslation)p_equals_1_;
-            return Arrays.equals(this.field_150277_e, chatcomponenttranslation.field_150277_e) && this.field_150276_d.equals(chatcomponenttranslation.field_150276_d) && super.equals(p_equals_1_);
+            ChatComponentTranslation chatcomponenttranslation = (ChatComponentTranslation) chatStyle;
+            return Arrays.equals(this.field_150277_e, chatcomponenttranslation.field_150277_e) && this.field_150276_d.equals(chatcomponenttranslation.field_150276_d) && super.equals(chatStyle);
         }
     }
 

@@ -4,27 +4,27 @@ import java.util.Iterator;
 
 public class ChatComponentText extends ChatComponentStyle
 {
-    private final String field_150267_b;
+    private final String message;
     private static final String __OBFID = "CL_00001269";
 
-    public ChatComponentText(String p_i45159_1_)
+    public ChatComponentText(String message)
     {
-        this.field_150267_b = p_i45159_1_;
+        this.message = message;
     }
 
-    public String func_150265_g()
+    public String getMessage()
     {
-        return this.field_150267_b;
+        return this.message;
     }
 
     public String func_150261_e()
     {
-        return this.field_150267_b;
+        return this.message;
     }
 
     public ChatComponentText func_150259_f()
     {
-        ChatComponentText chatcomponenttext = new ChatComponentText(this.field_150267_b);
+        ChatComponentText chatcomponenttext = new ChatComponentText(this.message);
         chatcomponenttext.func_150255_a(this.func_150256_b().func_150232_l());
         Iterator iterator = this.func_150253_a().iterator();
 
@@ -37,25 +37,25 @@ public class ChatComponentText extends ChatComponentStyle
         return chatcomponenttext;
     }
 
-    public boolean equals(Object p_equals_1_)
+    public boolean equals(Object chatComponent)
     {
-        if (this == p_equals_1_)
+        if (this == chatComponent)
         {
             return true;
         }
-        else if (!(p_equals_1_ instanceof ChatComponentText))
+        else if (!(chatComponent instanceof ChatComponentText))
         {
             return false;
         }
         else
         {
-            ChatComponentText chatcomponenttext = (ChatComponentText)p_equals_1_;
-            return this.field_150267_b.equals(chatcomponenttext.func_150265_g()) && super.equals(p_equals_1_);
+            ChatComponentText chatcomponenttext = (ChatComponentText)chatComponent;
+            return this.message.equals(chatcomponenttext.getMessage()) && super.equals(chatComponent);
         }
     }
 
     public String toString()
     {
-        return "TextComponent{text=\'" + this.field_150267_b + '\'' + ", siblings=" + this.field_150264_a + ", style=" + this.func_150256_b() + '}';
+        return "TextComponent{text=\'" + this.message + '\'' + ", siblings=" + this.field_150264_a + ", style=" + this.func_150256_b() + '}';
     }
 }

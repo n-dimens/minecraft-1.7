@@ -19,7 +19,7 @@ import org.lwjgl.opengl.GL11;
 @SideOnly(Side.CLIENT)
 public class GuiNewChat extends Gui
 {
-    private static final Logger field_146249_a = LogManager.getLogger();
+    private static final Logger LOG = LogManager.getLogger();
     private final Minecraft field_146247_f;
     private final List field_146248_g = new ArrayList();
     private final List field_146252_h = new ArrayList();
@@ -142,10 +142,10 @@ public class GuiNewChat extends Gui
         this.func_146234_a(p_146227_1_, 0);
     }
 
-    public void func_146234_a(IChatComponent p_146234_1_, int p_146234_2_)
+    public void func_146234_a(IChatComponent chat, int p_146234_2_)
     {
-        this.func_146237_a(p_146234_1_, p_146234_2_, this.field_146247_f.field_71456_v.func_73834_c(), false);
-        field_146249_a.info("[CHAT] " + p_146234_1_.func_150260_c());
+        this.func_146237_a(chat, p_146234_2_, this.field_146247_f.field_71456_v.func_73834_c(), false);
+        LOG.info("[CHAT] " + chat.func_150260_c());
     }
 
     private String func_146235_b(String p_146235_1_)
@@ -334,7 +334,7 @@ public class GuiNewChat extends Gui
 
                             if (ichatcomponent instanceof ChatComponentText)
                             {
-                                l1 += this.field_146247_f.field_71466_p.func_78256_a(this.func_146235_b(((ChatComponentText)ichatcomponent).func_150265_g()));
+                                l1 += this.field_146247_f.field_71466_p.func_78256_a(this.func_146235_b(((ChatComponentText)ichatcomponent).getMessage()));
 
                                 if (l1 > l)
                                 {
