@@ -172,20 +172,20 @@ public final class StatList
 
     private static void func_75924_a(StatBase[] p_75924_0_)
     {
-        func_151180_a(p_75924_0_, Blocks.field_150355_j, Blocks.field_150358_i);
-        func_151180_a(p_75924_0_, Blocks.field_150353_l, Blocks.field_150356_k);
-        func_151180_a(p_75924_0_, Blocks.field_150428_aP, Blocks.field_150423_aK);
-        func_151180_a(p_75924_0_, Blocks.field_150470_am, Blocks.field_150460_al);
-        func_151180_a(p_75924_0_, Blocks.field_150439_ay, Blocks.field_150450_ax);
-        func_151180_a(p_75924_0_, Blocks.field_150416_aS, Blocks.field_150413_aR);
-        func_151180_a(p_75924_0_, Blocks.field_150455_bV, Blocks.field_150441_bU);
-        func_151180_a(p_75924_0_, Blocks.field_150429_aA, Blocks.field_150437_az);
-        func_151180_a(p_75924_0_, Blocks.field_150374_bv, Blocks.field_150379_bu);
-        func_151180_a(p_75924_0_, Blocks.field_150337_Q, Blocks.field_150338_P);
-        func_151180_a(p_75924_0_, Blocks.field_150334_T, Blocks.field_150333_U);
-        func_151180_a(p_75924_0_, Blocks.field_150373_bw, Blocks.field_150376_bx);
-        func_151180_a(p_75924_0_, Blocks.field_150349_c, Blocks.field_150346_d);
-        func_151180_a(p_75924_0_, Blocks.field_150458_ak, Blocks.field_150346_d);
+        func_151180_a(p_75924_0_, Blocks.WATER, Blocks.FLOWING_WATER);
+        func_151180_a(p_75924_0_, Blocks.LAVA, Blocks.FLOWING_LAVA);
+        func_151180_a(p_75924_0_, Blocks.LIT_PUMPKIN, Blocks.PUMPKIN);
+        func_151180_a(p_75924_0_, Blocks.LIT_FURNACE, Blocks.FURNACE);
+        func_151180_a(p_75924_0_, Blocks.LIT_REDSTONE_ORE, Blocks.REDSTONE_ORE);
+        func_151180_a(p_75924_0_, Blocks.POWERED_REPEATER, Blocks.UNPOWERED_REPEATER);
+        func_151180_a(p_75924_0_, Blocks.POWERED_COMPARATOR, Blocks.UNPOWERED_COMPARATOR);
+        func_151180_a(p_75924_0_, Blocks.REDSTONE_TORCH, Blocks.UNLIT_REDSTONE_TORCH);
+        func_151180_a(p_75924_0_, Blocks.LIT_REDSTONE_LAMP, Blocks.REDSTONE_LAMP);
+        func_151180_a(p_75924_0_, Blocks.RED_MUSHROOM, Blocks.BROWN_MUSHROOM);
+        func_151180_a(p_75924_0_, Blocks.DOUBLE_STONE_SLAB, Blocks.STONE_SLAB);
+        func_151180_a(p_75924_0_, Blocks.DOUBLE_WOODEN_SLAB, Blocks.WOODEN_SLAB);
+        func_151180_a(p_75924_0_, Blocks.GRASS, Blocks.DIRT);
+        func_151180_a(p_75924_0_, Blocks.FARMLAND, Blocks.DIRT);
     }
 
     private static void func_151180_a(StatBase[] p_151180_0_, Block p_151180_1_, Block p_151180_2_)

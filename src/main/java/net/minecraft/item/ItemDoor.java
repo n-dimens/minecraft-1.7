@@ -33,11 +33,11 @@ public class ItemDoor extends Item
 
             if (this.field_77870_a == Material.field_151575_d)
             {
-                block = Blocks.field_150466_ao;
+                block = Blocks.WOODEN_DOOR;
             }
             else
             {
-                block = Blocks.field_150454_av;
+                block = Blocks.IRON_DOOR;
             }
 
             if (p_77648_2_.func_82247_a(p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_1_) && p_77648_2_.func_82247_a(p_77648_4_, p_77648_5_ + 1, p_77648_6_, p_77648_7_, p_77648_1_))

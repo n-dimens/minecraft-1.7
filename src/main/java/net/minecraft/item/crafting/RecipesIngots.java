@@ -12,7 +12,7 @@ public class RecipesIngots
 
     public RecipesIngots()
     {
-        this.field_77591_a = new Object[][] {{Blocks.field_150340_R, new ItemStack(Items.GOLD_INGOT, 9)}, {Blocks.field_150339_S, new ItemStack(Items.IRON_INGOT, 9)}, {Blocks.field_150484_ah, new ItemStack(Items.DIAMOND, 9)}, {Blocks.field_150475_bE, new ItemStack(Items.EMERALD, 9)}, {Blocks.field_150368_y, new ItemStack(Items.DYE, 9, 4)}, {Blocks.field_150451_bX, new ItemStack(Items.REDSTONE, 9)}, {Blocks.field_150402_ci, new ItemStack(Items.COAL, 9, 0)}, {Blocks.field_150407_cf, new ItemStack(Items.WHEAT, 9)}};
+        this.field_77591_a = new Object[][] {{Blocks.GOLD_BLOCK, new ItemStack(Items.GOLD_INGOT, 9)}, {Blocks.IRON_BLOCK, new ItemStack(Items.IRON_INGOT, 9)}, {Blocks.DIAMOND_BLOCK, new ItemStack(Items.DIAMOND, 9)}, {Blocks.EMERALD_BLOCK, new ItemStack(Items.EMERALD, 9)}, {Blocks.LAPIS_BLOCK, new ItemStack(Items.DYE, 9, 4)}, {Blocks.REDSTONE_BLOCK, new ItemStack(Items.REDSTONE, 9)}, {Blocks.COAL_BLOCK, new ItemStack(Items.COAL, 9, 0)}, {Blocks.HAY_BLOCK, new ItemStack(Items.WHEAT, 9)}};
     }
 
     public void func_77590_a(CraftingManager p_77590_1_)

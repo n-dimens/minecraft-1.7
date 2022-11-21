@@ -76,7 +76,7 @@ public class BlockFlower extends BlockBush
 
             if (s1.equals(p_149857_0_))
             {
-                return Blocks.field_150327_N;
+                return Blocks.YELLOW_FLOWER;
             }
         }
 
@@ -89,7 +89,7 @@ public class BlockFlower extends BlockBush
 
             if (s1.equals(p_149857_0_))
             {
-                return Blocks.field_150328_O;
+                return Blocks.RED_FLOWER;
             }
         }
 

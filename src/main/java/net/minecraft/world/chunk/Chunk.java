@@ -128,7 +128,7 @@ public class Chunk
                     int k1 = l * k * 16 | i1 * k | j1;
                     Block block = p_i45447_2_[k1];
 
-                    if (block != null && block != Blocks.field_150350_a)
+                    if (block != null && block != Blocks.AIR)
                     {
                         int l1 = j1 >> 4;
 
@@ -498,7 +498,7 @@ public class Chunk
 
     public Block func_150810_a(final int p_150810_1_, final int p_150810_2_, final int p_150810_3_)
     {
-        Block block = Blocks.field_150350_a;
+        Block block = Blocks.AIR;
 
         if (p_150810_2_ >> 4 < this.field_76652_q.length)
         {
@@ -567,7 +567,7 @@ public class Chunk
 
             if (extendedblockstorage == null)
             {
-                if (p_150807_4_ == Blocks.field_150350_a)
+                if (p_150807_4_ == Blocks.AIR)
                 {
                     return false;
                 }

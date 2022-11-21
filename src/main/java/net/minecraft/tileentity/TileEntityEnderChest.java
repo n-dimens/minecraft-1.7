@@ -17,7 +17,7 @@ public class TileEntityEnderChest extends TileEntity
 
         if (++this.field_145974_k % 20 * 4 == 0)
         {
-            this.field_145850_b.func_147452_c(this.field_145851_c, this.field_145848_d, this.field_145849_e, Blocks.field_150477_bB, 1, this.field_145973_j);
+            this.field_145850_b.func_147452_c(this.field_145851_c, this.field_145848_d, this.field_145849_e, Blocks.ENDER_CHEST, 1, this.field_145973_j);
         }
 
         this.field_145975_i = this.field_145972_a;
@@ -87,13 +87,13 @@ public class TileEntityEnderChest extends TileEntity
     public void func_145969_a()
     {
         ++this.field_145973_j;
-        this.field_145850_b.func_147452_c(this.field_145851_c, this.field_145848_d, this.field_145849_e, Blocks.field_150477_bB, 1, this.field_145973_j);
+        this.field_145850_b.func_147452_c(this.field_145851_c, this.field_145848_d, this.field_145849_e, Blocks.ENDER_CHEST, 1, this.field_145973_j);
     }
 
     public void func_145970_b()
     {
         --this.field_145973_j;
-        this.field_145850_b.func_147452_c(this.field_145851_c, this.field_145848_d, this.field_145849_e, Blocks.field_150477_bB, 1, this.field_145973_j);
+        this.field_145850_b.func_147452_c(this.field_145851_c, this.field_145848_d, this.field_145849_e, Blocks.ENDER_CHEST, 1, this.field_145973_j);
     }
 
     public boolean func_145971_a(EntityPlayer p_145971_1_)

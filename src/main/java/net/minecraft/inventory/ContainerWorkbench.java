@@ -76,7 +76,7 @@ public class ContainerWorkbench extends Container
 
     public boolean func_75145_c(EntityPlayer p_75145_1_)
     {
-        return this.field_75161_g.func_147439_a(this.field_75164_h, this.field_75165_i, this.field_75163_j) != Blocks.field_150462_ai ? false : p_75145_1_.func_70092_e((double)this.field_75164_h + 0.5D, (double)this.field_75165_i + 0.5D, (double)this.field_75163_j + 0.5D) <= 64.0D;
+        return this.field_75161_g.func_147439_a(this.field_75164_h, this.field_75165_i, this.field_75163_j) != Blocks.CRAFTING_TABLE ? false : p_75145_1_.func_70092_e((double)this.field_75164_h + 0.5D, (double)this.field_75165_i + 0.5D, (double)this.field_75163_j + 0.5D) <= 64.0D;
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)

@@ -259,6 +259,6 @@ public class BlockTrapDoor extends Block
 
     private static boolean func_150119_a(Block p_150119_0_)
     {
-        return p_150119_0_.field_149764_J.func_76218_k() && p_150119_0_.func_149686_d() || p_150119_0_ == Blocks.field_150426_aN || p_150119_0_ instanceof BlockSlab || p_150119_0_ instanceof BlockStairs;
+        return p_150119_0_.field_149764_J.func_76218_k() && p_150119_0_.func_149686_d() || p_150119_0_ == Blocks.GLOWSTONE || p_150119_0_ instanceof BlockSlab || p_150119_0_ instanceof BlockStairs;
     }
 }

@@ -245,7 +245,7 @@ public class PathNavigate
 
             do
             {
-                if (block != Blocks.field_150358_i && block != Blocks.field_150355_j)
+                if (block != Blocks.FLOWING_WATER && block != Blocks.WATER)
                 {
                     return i;
                 }

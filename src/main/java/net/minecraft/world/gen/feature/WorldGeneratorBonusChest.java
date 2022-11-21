@@ -45,7 +45,7 @@ public class WorldGeneratorBonusChest extends WorldGenerator
 
                 if (p_76484_1_.func_147437_c(i1, j1, k1) && World.func_147466_a(p_76484_1_, i1, j1 - 1, k1))
                 {
-                    p_76484_1_.func_147465_d(i1, j1, k1, Blocks.field_150486_ae, 0, 2);
+                    p_76484_1_.func_147465_d(i1, j1, k1, Blocks.CHEST, 0, 2);
                     TileEntityChest tileentitychest = (TileEntityChest)p_76484_1_.func_147438_o(i1, j1, k1);
 
                     if (tileentitychest != null && tileentitychest != null)
@@ -55,22 +55,22 @@ public class WorldGeneratorBonusChest extends WorldGenerator
 
                     if (p_76484_1_.func_147437_c(i1 - 1, j1, k1) && World.func_147466_a(p_76484_1_, i1 - 1, j1 - 1, k1))
                     {
-                        p_76484_1_.func_147465_d(i1 - 1, j1, k1, Blocks.field_150478_aa, 0, 2);
+                        p_76484_1_.func_147465_d(i1 - 1, j1, k1, Blocks.TORCH, 0, 2);
                     }
 
                     if (p_76484_1_.func_147437_c(i1 + 1, j1, k1) && World.func_147466_a(p_76484_1_, i1 - 1, j1 - 1, k1))
                     {
-                        p_76484_1_.func_147465_d(i1 + 1, j1, k1, Blocks.field_150478_aa, 0, 2);
+                        p_76484_1_.func_147465_d(i1 + 1, j1, k1, Blocks.TORCH, 0, 2);
                     }
 
                     if (p_76484_1_.func_147437_c(i1, j1, k1 - 1) && World.func_147466_a(p_76484_1_, i1 - 1, j1 - 1, k1))
                     {
-                        p_76484_1_.func_147465_d(i1, j1, k1 - 1, Blocks.field_150478_aa, 0, 2);
+                        p_76484_1_.func_147465_d(i1, j1, k1 - 1, Blocks.TORCH, 0, 2);
                     }
 
                     if (p_76484_1_.func_147437_c(i1, j1, k1 + 1) && World.func_147466_a(p_76484_1_, i1 - 1, j1 - 1, k1))
                     {
-                        p_76484_1_.func_147465_d(i1, j1, k1 + 1, Blocks.field_150478_aa, 0, 2);
+                        p_76484_1_.func_147465_d(i1, j1, k1 + 1, Blocks.TORCH, 0, 2);
                     }
 
                     return true;

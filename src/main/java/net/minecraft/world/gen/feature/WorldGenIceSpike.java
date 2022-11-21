@@ -18,7 +18,7 @@ public class WorldGenIceSpike extends WorldGenerator
             --p_76484_4_;
         }
 
-        if (p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_, p_76484_5_) != Blocks.field_150433_aE)
+        if (p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_, p_76484_5_) != Blocks.SNOW)
         {
             return false;
         }
@@ -54,18 +54,18 @@ public class WorldGenIceSpike extends WorldGenerator
                         {
                             Block block = p_76484_1_.func_147439_a(p_76484_3_ + l1, p_76484_4_ + j1, p_76484_5_ + i2);
 
-                            if (block.func_149688_o() == Material.field_151579_a || block == Blocks.field_150346_d || block == Blocks.field_150433_aE || block == Blocks.field_150432_aD)
+                            if (block.func_149688_o() == Material.field_151579_a || block == Blocks.DIRT || block == Blocks.SNOW || block == Blocks.ICE)
                             {
-                                this.func_150515_a(p_76484_1_, p_76484_3_ + l1, p_76484_4_ + j1, p_76484_5_ + i2, Blocks.field_150403_cj);
+                                this.func_150515_a(p_76484_1_, p_76484_3_ + l1, p_76484_4_ + j1, p_76484_5_ + i2, Blocks.PACKED_ICE);
                             }
 
                             if (j1 != 0 && k1 > 1)
                             {
                                 block = p_76484_1_.func_147439_a(p_76484_3_ + l1, p_76484_4_ - j1, p_76484_5_ + i2);
 
-                                if (block.func_149688_o() == Material.field_151579_a || block == Blocks.field_150346_d || block == Blocks.field_150433_aE || block == Blocks.field_150432_aD)
+                                if (block.func_149688_o() == Material.field_151579_a || block == Blocks.DIRT || block == Blocks.SNOW || block == Blocks.ICE)
                                 {
-                                    this.func_150515_a(p_76484_1_, p_76484_3_ + l1, p_76484_4_ - j1, p_76484_5_ + i2, Blocks.field_150403_cj);
+                                    this.func_150515_a(p_76484_1_, p_76484_3_ + l1, p_76484_4_ - j1, p_76484_5_ + i2, Blocks.PACKED_ICE);
                                 }
                             }
                         }
@@ -104,9 +104,9 @@ public class WorldGenIceSpike extends WorldGenerator
                         {
                             Block block1 = p_76484_1_.func_147439_a(p_76484_3_ + j2, l1, p_76484_5_ + k1);
 
-                            if (block1.func_149688_o() == Material.field_151579_a || block1 == Blocks.field_150346_d || block1 == Blocks.field_150433_aE || block1 == Blocks.field_150432_aD || block1 == Blocks.field_150403_cj)
+                            if (block1.func_149688_o() == Material.field_151579_a || block1 == Blocks.DIRT || block1 == Blocks.SNOW || block1 == Blocks.ICE || block1 == Blocks.PACKED_ICE)
                             {
-                                this.func_150515_a(p_76484_1_, p_76484_3_ + j2, l1, p_76484_5_ + k1, Blocks.field_150403_cj);
+                                this.func_150515_a(p_76484_1_, p_76484_3_ + j2, l1, p_76484_5_ + k1, Blocks.PACKED_ICE);
                                 --l1;
                                 --k2;
 

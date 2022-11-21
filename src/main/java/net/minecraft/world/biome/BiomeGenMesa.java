@@ -30,9 +30,9 @@ public class BiomeGenMesa extends BiomeGenBase
         this.func_76745_m();
         this.func_76732_a(2.0F, 0.0F);
         this.field_76762_K.clear();
-        this.field_76752_A = Blocks.field_150354_m;
+        this.field_76752_A = Blocks.SAND;
         this.field_150604_aj = 1;
-        this.field_76753_B = Blocks.field_150406_ce;
+        this.field_76753_B = Blocks.STAINED_HARDENED_CLAY;
         this.field_76760_I.field_76832_z = -999;
         this.field_76760_I.field_76804_C = 20;
         this.field_76760_I.field_76799_E = 3;
@@ -100,7 +100,7 @@ public class BiomeGenMesa extends BiomeGenBase
         k = p_150573_5_ & 15;
         l = p_150573_6_ & 15;
         boolean flag = true;
-        Block block = Blocks.field_150406_ce;
+        Block block = Blocks.STAINED_HARDENED_CLAY;
         Block block2 = this.field_76753_B;
         int i1 = (int)(p_150573_7_ / 3.0D + 3.0D + p_150573_2_.nextDouble() * 0.25D);
         boolean flag1 = Math.cos(p_150573_7_ / 3.0D * Math.PI) > 0.0D;
@@ -114,12 +114,12 @@ public class BiomeGenMesa extends BiomeGenBase
 
             if ((p_150573_3_[i2] == null || p_150573_3_[i2].func_149688_o() == Material.field_151579_a) && l1 < (int)d5)
             {
-                p_150573_3_[i2] = Blocks.field_150348_b;
+                p_150573_3_[i2] = Blocks.STONE;
             }
 
             if (l1 <= 0 + p_150573_2_.nextInt(5))
             {
-                p_150573_3_[i2] = Blocks.field_150357_h;
+                p_150573_3_[i2] = Blocks.BEDROCK;
             }
             else
             {
@@ -127,7 +127,7 @@ public class BiomeGenMesa extends BiomeGenBase
 
                 if (block1 != null && block1.func_149688_o() != Material.field_151579_a)
                 {
-                    if (block1 == Blocks.field_150348_b)
+                    if (block1 == Blocks.STONE)
                     {
                         byte b0;
 
@@ -138,17 +138,17 @@ public class BiomeGenMesa extends BiomeGenBase
                             if (i1 <= 0)
                             {
                                 block = null;
-                                block2 = Blocks.field_150348_b;
+                                block2 = Blocks.STONE;
                             }
                             else if (l1 >= 59 && l1 <= 64)
                             {
-                                block = Blocks.field_150406_ce;
+                                block = Blocks.STAINED_HARDENED_CLAY;
                                 block2 = this.field_76753_B;
                             }
 
                             if (l1 < 63 && (block == null || block.func_149688_o() == Material.field_151579_a))
                             {
-                                block = Blocks.field_150355_j;
+                                block = Blocks.WATER;
                             }
 
                             j1 = i1 + Math.max(0, l1 - 63);
@@ -159,12 +159,12 @@ public class BiomeGenMesa extends BiomeGenBase
                                 {
                                     if (flag1)
                                     {
-                                        p_150573_3_[i2] = Blocks.field_150346_d;
+                                        p_150573_3_[i2] = Blocks.DIRT;
                                         p_150573_4_[i2] = 1;
                                     }
                                     else
                                     {
-                                        p_150573_3_[i2] = Blocks.field_150349_c;
+                                        p_150573_3_[i2] = Blocks.GRASS;
                                     }
                                 }
                                 else if (l1 > 66 + i1)
@@ -185,12 +185,12 @@ public class BiomeGenMesa extends BiomeGenBase
 
                                     if (b0 < 16)
                                     {
-                                        p_150573_3_[i2] = Blocks.field_150406_ce;
+                                        p_150573_3_[i2] = Blocks.STAINED_HARDENED_CLAY;
                                         p_150573_4_[i2] = (byte)b0;
                                     }
                                     else
                                     {
-                                        p_150573_3_[i2] = Blocks.field_150405_ch;
+                                        p_150573_3_[i2] = Blocks.HARDENED_CLAY;
                                     }
                                 }
                                 else
@@ -204,7 +204,7 @@ public class BiomeGenMesa extends BiomeGenBase
                             {
                                 p_150573_3_[i2] = block2;
 
-                                if (block2 == Blocks.field_150406_ce)
+                                if (block2 == Blocks.STAINED_HARDENED_CLAY)
                                 {
                                     p_150573_4_[i2] = 1;
                                 }
@@ -216,7 +216,7 @@ public class BiomeGenMesa extends BiomeGenBase
 
                             if (flag2)
                             {
-                                p_150573_3_[i2] = Blocks.field_150406_ce;
+                                p_150573_3_[i2] = Blocks.STAINED_HARDENED_CLAY;
                                 p_150573_4_[i2] = 1;
                             }
                             else
@@ -225,12 +225,12 @@ public class BiomeGenMesa extends BiomeGenBase
 
                                 if (b0 < 16)
                                 {
-                                    p_150573_3_[i2] = Blocks.field_150406_ce;
+                                    p_150573_3_[i2] = Blocks.STAINED_HARDENED_CLAY;
                                     p_150573_4_[i2] = b0;
                                 }
                                 else
                                 {
-                                    p_150573_3_[i2] = Blocks.field_150405_ch;
+                                    p_150573_3_[i2] = Blocks.HARDENED_CLAY;
                                 }
                             }
                         }

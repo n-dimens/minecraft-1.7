@@ -33,7 +33,7 @@ public class BlockStem extends BlockBush implements IGrowable
 
     protected boolean func_149854_a(Block p_149854_1_)
     {
-        return p_149854_1_ == Blocks.field_150458_ak;
+        return p_149854_1_ == Blocks.FARMLAND;
     }
 
     public void func_149674_a(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_)
@@ -101,7 +101,7 @@ public class BlockStem extends BlockBush implements IGrowable
 
                     Block block = p_149674_1_.func_147439_a(j1, p_149674_3_ - 1, k1);
 
-                    if (p_149674_1_.func_147439_a(j1, p_149674_3_, k1).field_149764_J == Material.field_151579_a && (block == Blocks.field_150458_ak || block == Blocks.field_150346_d || block == Blocks.field_150349_c))
+                    if (p_149674_1_.func_147439_a(j1, p_149674_3_, k1).field_149764_J == Material.field_151579_a && (block == Blocks.FARMLAND || block == Blocks.DIRT || block == Blocks.GRASS))
                     {
                         p_149674_1_.func_147449_b(j1, p_149674_3_, k1, this.field_149877_a);
                     }
@@ -144,7 +144,7 @@ public class BlockStem extends BlockBush implements IGrowable
                 Block block8 = p_149875_1_.func_147439_a(l, p_149875_3_ - 1, i1);
                 float f1 = 0.0F;
 
-                if (block8 == Blocks.field_150458_ak)
+                if (block8 == Blocks.FARMLAND)
                 {
                     f1 = 1.0F;
 
@@ -219,12 +219,12 @@ public class BlockStem extends BlockBush implements IGrowable
         {
             Item item = null;
 
-            if (this.field_149877_a == Blocks.field_150423_aK)
+            if (this.field_149877_a == Blocks.PUMPKIN)
             {
                 item = Items.PUMPKIN_SEEDS;
             }
 
-            if (this.field_149877_a == Blocks.field_150440_ba)
+            if (this.field_149877_a == Blocks.MELON_BLOCK)
             {
                 item = Items.MELON_SEEDS;
             }
@@ -262,7 +262,7 @@ public class BlockStem extends BlockBush implements IGrowable
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return this.field_149877_a == Blocks.field_150423_aK ? Items.PUMPKIN_SEEDS : (this.field_149877_a == Blocks.field_150440_ba ? Items.MELON_SEEDS : Item.func_150899_d(0));
+        return this.field_149877_a == Blocks.PUMPKIN ? Items.PUMPKIN_SEEDS : (this.field_149877_a == Blocks.MELON_BLOCK ? Items.MELON_SEEDS : Item.func_150899_d(0));
     }
 
     @SideOnly(Side.CLIENT)

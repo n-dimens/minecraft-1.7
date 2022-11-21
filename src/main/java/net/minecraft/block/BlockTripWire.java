@@ -141,16 +141,16 @@ public class BlockTripWire extends Block
                     int l1 = p_150138_4_ + Direction.field_71581_b[i1] * j1;
                     Block block = p_150138_1_.func_147439_a(k1, p_150138_3_, l1);
 
-                    if (block == Blocks.field_150479_bC)
+                    if (block == Blocks.TRIPWIRE_HOOK)
                     {
                         int i2 = p_150138_1_.func_72805_g(k1, p_150138_3_, l1) & 3;
 
                         if (i2 == Direction.field_71580_e[i1])
                         {
-                            Blocks.field_150479_bC.func_150136_a(p_150138_1_, k1, p_150138_3_, l1, false, p_150138_1_.func_72805_g(k1, p_150138_3_, l1), true, j1, p_150138_5_);
+                            Blocks.TRIPWIRE_HOOK.func_150136_a(p_150138_1_, k1, p_150138_3_, l1, false, p_150138_1_.func_72805_g(k1, p_150138_3_, l1), true, j1, p_150138_5_);
                         }
                     }
-                    else if (block == Blocks.field_150473_bD)
+                    else if (block == Blocks.TRIPWIRE)
                     {
                         ++j1;
                         continue;
@@ -239,13 +239,13 @@ public class BlockTripWire extends Block
         boolean flag = (p_150139_4_ & 2) == 2;
         int l1;
 
-        if (block == Blocks.field_150479_bC)
+        if (block == Blocks.TRIPWIRE_HOOK)
         {
             l1 = p_150139_0_.func_72805_g(j1, p_150139_2_, k1);
             int i2 = l1 & 3;
             return i2 == Direction.field_71580_e[p_150139_5_];
         }
-        else if (block == Blocks.field_150473_bD)
+        else if (block == Blocks.TRIPWIRE)
         {
             l1 = p_150139_0_.func_72805_g(j1, p_150139_2_, k1);
             boolean flag1 = (l1 & 2) == 2;

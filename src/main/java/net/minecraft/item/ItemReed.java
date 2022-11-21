@@ -20,11 +20,11 @@ public class ItemReed extends Item
     {
         Block block = p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_);
 
-        if (block == Blocks.field_150431_aC && (p_77648_3_.func_72805_g(p_77648_4_, p_77648_5_, p_77648_6_) & 7) < 1)
+        if (block == Blocks.SNOW_LAYER && (p_77648_3_.func_72805_g(p_77648_4_, p_77648_5_, p_77648_6_) & 7) < 1)
         {
             p_77648_7_ = 1;
         }
-        else if (block != Blocks.field_150395_bd && block != Blocks.field_150329_H && block != Blocks.field_150330_I)
+        else if (block != Blocks.VINE && block != Blocks.TALLGRASS && block != Blocks.DEADBUSH)
         {
             if (p_77648_7_ == 0)
             {

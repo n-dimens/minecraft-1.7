@@ -31,7 +31,7 @@ public class BlockWall extends Block
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return p_149691_2_ == 1 ? Blocks.field_150341_Y.func_149733_h(p_149691_1_) : Blocks.field_150347_e.func_149733_h(p_149691_1_);
+        return p_149691_2_ == 1 ? Blocks.MOSSY_COBBLESTONE.func_149733_h(p_149691_1_) : Blocks.COBBLESTONE.func_149733_h(p_149691_1_);
     }
 
     public int func_149645_b()
@@ -112,7 +112,7 @@ public class BlockWall extends Block
     public boolean func_150091_e(IBlockAccess p_150091_1_, int p_150091_2_, int p_150091_3_, int p_150091_4_)
     {
         Block block = p_150091_1_.func_147439_a(p_150091_2_, p_150091_3_, p_150091_4_);
-        return block != this && block != Blocks.field_150396_be ? (block.field_149764_J.func_76218_k() && block.func_149686_d() ? block.field_149764_J != Material.field_151572_C : false) : true;
+        return block != this && block != Blocks.FENCE_GATE ? (block.field_149764_J.func_76218_k() && block.func_149686_d() ? block.field_149764_J != Material.field_151572_C : false) : true;
     }
 
     @SideOnly(Side.CLIENT)

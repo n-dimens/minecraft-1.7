@@ -25,7 +25,7 @@ public class ItemEnderEye extends Item
         Block block = p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_);
         int i1 = p_77648_3_.func_72805_g(p_77648_4_, p_77648_5_, p_77648_6_);
 
-        if (p_77648_2_.func_82247_a(p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_1_) && block == Blocks.field_150378_br && !BlockEndPortalFrame.func_150020_b(i1))
+        if (p_77648_2_.func_82247_a(p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_1_) && block == Blocks.END_PORTAL_FRAME && !BlockEndPortalFrame.func_150020_b(i1))
         {
             if (p_77648_3_.field_72995_K)
             {
@@ -34,7 +34,7 @@ public class ItemEnderEye extends Item
             else
             {
                 p_77648_3_.func_72921_c(p_77648_4_, p_77648_5_, p_77648_6_, i1 + 4, 2);
-                p_77648_3_.func_147453_f(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.field_150378_br);
+                p_77648_3_.func_147453_f(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.END_PORTAL_FRAME);
                 --p_77648_1_.field_77994_a;
                 int j1;
 
@@ -64,7 +64,7 @@ public class ItemEnderEye extends Item
                     l2 = p_77648_4_ + Direction.field_71583_a[k2] * l1;
                     i2 = p_77648_6_ + Direction.field_71581_b[k2] * l1;
 
-                    if (p_77648_3_.func_147439_a(l2, p_77648_5_, i2) == Blocks.field_150378_br)
+                    if (p_77648_3_.func_147439_a(l2, p_77648_5_, i2) == Blocks.END_PORTAL_FRAME)
                     {
                         if (!BlockEndPortalFrame.func_150020_b(p_77648_3_.func_72805_g(l2, p_77648_5_, i2)))
                         {
@@ -91,7 +91,7 @@ public class ItemEnderEye extends Item
                         l2 += Direction.field_71583_a[j1] * 4;
                         i2 += Direction.field_71581_b[j1] * 4;
 
-                        if (p_77648_3_.func_147439_a(l2, p_77648_5_, i2) != Blocks.field_150378_br || !BlockEndPortalFrame.func_150020_b(p_77648_3_.func_72805_g(l2, p_77648_5_, i2)))
+                        if (p_77648_3_.func_147439_a(l2, p_77648_5_, i2) != Blocks.END_PORTAL_FRAME || !BlockEndPortalFrame.func_150020_b(p_77648_3_.func_72805_g(l2, p_77648_5_, i2)))
                         {
                             flag = false;
                             break;
@@ -109,7 +109,7 @@ public class ItemEnderEye extends Item
                             i2 += Direction.field_71583_a[j1] * l2;
                             i3 += Direction.field_71581_b[j1] * l2;
 
-                            if (p_77648_3_.func_147439_a(i2, p_77648_5_, i3) != Blocks.field_150378_br || !BlockEndPortalFrame.func_150020_b(p_77648_3_.func_72805_g(i2, p_77648_5_, i3)))
+                            if (p_77648_3_.func_147439_a(i2, p_77648_5_, i3) != Blocks.END_PORTAL_FRAME || !BlockEndPortalFrame.func_150020_b(p_77648_3_.func_72805_g(i2, p_77648_5_, i3)))
                             {
                                 flag = false;
                                 break;
@@ -127,7 +127,7 @@ public class ItemEnderEye extends Item
                                 i3 = p_77648_6_ + Direction.field_71581_b[k2] * l1;
                                 i2 += Direction.field_71583_a[j1] * l2;
                                 i3 += Direction.field_71581_b[j1] * l2;
-                                p_77648_3_.func_147465_d(i2, p_77648_5_, i3, Blocks.field_150384_bq, 0, 2);
+                                p_77648_3_.func_147465_d(i2, p_77648_5_, i3, Blocks.END_PORTAL, 0, 2);
                             }
                         }
                     }
@@ -146,7 +146,7 @@ public class ItemEnderEye extends Item
     {
         MovingObjectPosition movingobjectposition = this.func_77621_a(p_77659_2_, p_77659_3_, false);
 
-        if (movingobjectposition != null && movingobjectposition.field_72313_a == MovingObjectPosition.MovingObjectType.BLOCK && p_77659_2_.func_147439_a(movingobjectposition.field_72311_b, movingobjectposition.field_72312_c, movingobjectposition.field_72309_d) == Blocks.field_150378_br)
+        if (movingobjectposition != null && movingobjectposition.field_72313_a == MovingObjectPosition.MovingObjectType.BLOCK && p_77659_2_.func_147439_a(movingobjectposition.field_72311_b, movingobjectposition.field_72312_c, movingobjectposition.field_72309_d) == Blocks.END_PORTAL_FRAME)
         {
             return p_77659_1_;
         }

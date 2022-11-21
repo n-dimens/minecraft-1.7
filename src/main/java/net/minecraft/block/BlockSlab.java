@@ -123,7 +123,7 @@ public abstract class BlockSlab extends Block
     @SideOnly(Side.CLIENT)
     private static boolean func_150003_a(Block p_150003_0_)
     {
-        return p_150003_0_ == Blocks.field_150333_U || p_150003_0_ == Blocks.field_150376_bx;
+        return p_150003_0_ == Blocks.STONE_SLAB || p_150003_0_ == Blocks.WOODEN_SLAB;
     }
 
     public abstract String func_150002_b(int p_150002_1_);
@@ -136,6 +136,6 @@ public abstract class BlockSlab extends Block
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return func_150003_a(this) ? Item.func_150898_a(this) : (this == Blocks.field_150334_T ? Item.func_150898_a(Blocks.field_150333_U) : (this == Blocks.field_150373_bw ? Item.func_150898_a(Blocks.field_150376_bx) : Item.func_150898_a(Blocks.field_150333_U)));
+        return func_150003_a(this) ? Item.func_150898_a(this) : (this == Blocks.DOUBLE_STONE_SLAB ? Item.func_150898_a(Blocks.STONE_SLAB) : (this == Blocks.DOUBLE_WOODEN_SLAB ? Item.func_150898_a(Blocks.WOODEN_SLAB) : Item.func_150898_a(Blocks.STONE_SLAB)));
     }
 }

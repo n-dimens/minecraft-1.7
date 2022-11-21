@@ -31,7 +31,7 @@ public class BlockBreakable extends Block
     {
         Block block = p_149646_1_.func_147439_a(p_149646_2_, p_149646_3_, p_149646_4_);
 
-        if (this == Blocks.field_150359_w || this == Blocks.field_150399_cn)
+        if (this == Blocks.GLASS || this == Blocks.STAINED_GLASS)
         {
             if (p_149646_1_.func_72805_g(p_149646_2_, p_149646_3_, p_149646_4_) != p_149646_1_.func_72805_g(p_149646_2_ - Facing.field_71586_b[p_149646_5_], p_149646_3_ - Facing.field_71587_c[p_149646_5_], p_149646_4_ - Facing.field_71585_d[p_149646_5_]))
             {

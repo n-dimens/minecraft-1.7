@@ -32,9 +32,9 @@ public class ItemHoe extends Item
         {
             Block block = p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_);
 
-            if (p_77648_7_ != 0 && p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_ + 1, p_77648_6_).func_149688_o() == Material.field_151579_a && (block == Blocks.field_150349_c || block == Blocks.field_150346_d))
+            if (p_77648_7_ != 0 && p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_ + 1, p_77648_6_).func_149688_o() == Material.field_151579_a && (block == Blocks.GRASS || block == Blocks.DIRT))
             {
-                Block block1 = Blocks.field_150458_ak;
+                Block block1 = Blocks.FARMLAND;
                 p_77648_3_.func_72908_a((double)((float)p_77648_4_ + 0.5F), (double)((float)p_77648_5_ + 0.5F), (double)((float)p_77648_6_ + 0.5F), block1.field_149762_H.func_150498_e(), (block1.field_149762_H.func_150497_c() + 1.0F) / 2.0F, block1.field_149762_H.func_150494_d() * 0.8F);
 
                 if (p_77648_3_.field_72995_K)

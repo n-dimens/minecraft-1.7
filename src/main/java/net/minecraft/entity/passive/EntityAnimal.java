@@ -206,7 +206,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
     public float func_70783_a(int p_70783_1_, int p_70783_2_, int p_70783_3_)
     {
-        return this.field_70170_p.func_147439_a(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == Blocks.field_150349_c ? 10.0F : this.field_70170_p.func_72801_o(p_70783_1_, p_70783_2_, p_70783_3_) - 0.5F;
+        return this.field_70170_p.func_147439_a(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == Blocks.GRASS ? 10.0F : this.field_70170_p.func_72801_o(p_70783_1_, p_70783_2_, p_70783_3_) - 0.5F;
     }
 
     public void func_70014_b(NBTTagCompound p_70014_1_)
@@ -286,7 +286,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
         int i = MathHelper.func_76128_c(this.field_70165_t);
         int j = MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
         int k = MathHelper.func_76128_c(this.field_70161_v);
-        return this.field_70170_p.func_147439_a(i, j - 1, k) == Blocks.field_150349_c && this.field_70170_p.func_72883_k(i, j, k) > 8 && super.func_70601_bi();
+        return this.field_70170_p.func_147439_a(i, j - 1, k) == Blocks.GRASS && this.field_70170_p.func_72883_k(i, j, k) > 8 && super.func_70601_bi();
     }
 
     public int func_70627_aG()

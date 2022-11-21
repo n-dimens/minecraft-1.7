@@ -23,7 +23,7 @@ public class BlockBookshelf extends Block
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return p_149691_1_ != 1 && p_149691_1_ != 0 ? super.func_149691_a(p_149691_1_, p_149691_2_) : Blocks.field_150344_f.func_149733_h(p_149691_1_);
+        return p_149691_1_ != 1 && p_149691_1_ != 0 ? super.func_149691_a(p_149691_1_, p_149691_2_) : Blocks.PLANKS.func_149733_h(p_149691_1_);
     }
 
     public int func_149745_a(Random p_149745_1_)

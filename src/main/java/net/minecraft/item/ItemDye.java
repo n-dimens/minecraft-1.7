@@ -72,7 +72,7 @@ public class ItemDye extends Item
                 Block block = p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_);
                 int i1 = p_77648_3_.func_72805_g(p_77648_4_, p_77648_5_, p_77648_6_);
 
-                if (block == Blocks.field_150364_r && BlockLog.func_150165_c(i1) == 3)
+                if (block == Blocks.LOG && BlockLog.func_150165_c(i1) == 3)
                 {
                     if (p_77648_7_ == 0)
                     {
@@ -106,8 +106,8 @@ public class ItemDye extends Item
 
                     if (p_77648_3_.func_147437_c(p_77648_4_, p_77648_5_, p_77648_6_))
                     {
-                        int j1 = Blocks.field_150375_by.func_149660_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_8_, p_77648_9_, p_77648_10_, 0);
-                        p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.field_150375_by, j1, 2);
+                        int j1 = Blocks.COCOA.func_149660_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_8_, p_77648_9_, p_77648_10_, 0);
+                        p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.COCOA, j1, 2);
 
                         if (!p_77648_2_.field_71075_bZ.field_75098_d)
                         {

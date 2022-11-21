@@ -30,10 +30,10 @@ public class WorldGenShrub extends WorldGenTrees
 
         Block block1 = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_, p_76484_5_);
 
-        if (block1 == Blocks.field_150346_d || block1 == Blocks.field_150349_c)
+        if (block1 == Blocks.DIRT || block1 == Blocks.GRASS)
         {
             ++p_76484_4_;
-            this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_, p_76484_5_, Blocks.field_150364_r, this.field_150527_b);
+            this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_, p_76484_5_, Blocks.LOG, this.field_150527_b);
 
             for (int l = p_76484_4_; l <= p_76484_4_ + 2; ++l)
             {
@@ -50,7 +50,7 @@ public class WorldGenShrub extends WorldGenTrees
 
                         if ((Math.abs(l1) != j1 || Math.abs(j2) != j1 || p_76484_2_.nextInt(2) != 0) && !p_76484_1_.func_147439_a(k1, l, i2).func_149730_j())
                         {
-                            this.func_150516_a(p_76484_1_, k1, l, i2, Blocks.field_150362_t, this.field_150528_a);
+                            this.func_150516_a(p_76484_1_, k1, l, i2, Blocks.LEAVES, this.field_150528_a);
                         }
                     }
                 }

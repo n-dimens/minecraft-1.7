@@ -22,7 +22,7 @@ public class EntityBreakingFX extends EntityFX
         super(p_i1196_1_, p_i1196_2_, p_i1196_4_, p_i1196_6_, 0.0D, 0.0D, 0.0D);
         this.func_110125_a(p_i1196_8_.func_77617_a(p_i1196_9_));
         this.field_70552_h = this.field_70553_i = this.field_70551_j = 1.0F;
-        this.field_70545_g = Blocks.field_150433_aE.field_149763_I;
+        this.field_70545_g = Blocks.SNOW.field_149763_I;
         this.field_70544_f /= 2.0F;
     }
 

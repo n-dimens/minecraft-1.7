@@ -78,7 +78,7 @@ public class RenderItemFrame extends Render
         GL11.glPushMatrix();
         GL11.glRotatef(p_147915_1_.field_70177_z, 0.0F, 1.0F, 0.0F);
         this.field_76990_c.field_78724_e.func_110577_a(TextureMap.field_110575_b);
-        Block block = Blocks.field_150344_f;
+        Block block = Blocks.PLANKS;
         float f = 0.0625F;
         float f1 = 1.0F;
         float f2 = f1 / 2.0F;
@@ -89,7 +89,7 @@ public class RenderItemFrame extends Render
         this.field_147916_f.func_147771_a();
         this.field_147916_f.func_147762_c();
         GL11.glPopMatrix();
-        this.field_147916_f.func_147757_a(Blocks.field_150344_f.func_149691_a(1, 2));
+        this.field_147916_f.func_147757_a(Blocks.PLANKS.func_149691_a(1, 2));
         GL11.glPushMatrix();
         this.field_147916_f.func_147770_b(0.0D, (double)(0.5F - f2), (double)(0.5F - f2), (double)(f + 1.0E-4F), (double)(f + 0.5F - f2), (double)(0.5F + f2));
         this.field_147916_f.func_147800_a(block, 0, 1.0F);
@@ -116,7 +116,7 @@ public class RenderItemFrame extends Render
         GL11.glPushMatrix();
         GL11.glRotatef(p_82403_1_.field_70177_z, 0.0F, 1.0F, 0.0F);
         this.field_76990_c.field_78724_e.func_110577_a(TextureMap.field_110575_b);
-        Block block = Blocks.field_150344_f;
+        Block block = Blocks.PLANKS;
         float f = 0.0625F;
         float f1 = 0.75F;
         float f2 = f1 / 2.0F;
@@ -127,7 +127,7 @@ public class RenderItemFrame extends Render
         this.field_147916_f.func_147771_a();
         this.field_147916_f.func_147762_c();
         GL11.glPopMatrix();
-        this.field_147916_f.func_147757_a(Blocks.field_150344_f.func_149691_a(1, 2));
+        this.field_147916_f.func_147757_a(Blocks.PLANKS.func_149691_a(1, 2));
         GL11.glPushMatrix();
         this.field_147916_f.func_147770_b(0.0D, (double)(0.5F - f2), (double)(0.5F - f2), (double)(f + 1.0E-4F), (double)(f + 0.5F - f2), (double)(0.5F + f2));
         this.field_147916_f.func_147800_a(block, 0, 1.0F);

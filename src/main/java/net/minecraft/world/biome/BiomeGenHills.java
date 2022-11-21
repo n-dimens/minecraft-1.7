@@ -22,7 +22,7 @@ public class BiomeGenHills extends BiomeGenBase
     public BiomeGenHills(int p_i45373_1_, boolean p_i45373_2_)
     {
         super(p_i45373_1_);
-        this.field_82915_S = new WorldGenMinable(Blocks.field_150418_aU, 8);
+        this.field_82915_S = new WorldGenMinable(Blocks.MONSTER_EGG, 8);
         this.field_150634_aD = new WorldGenTaiga2(false);
         this.field_150635_aE = 0;
         this.field_150636_aF = 1;
@@ -55,9 +55,9 @@ public class BiomeGenHills extends BiomeGenBase
             j1 = p_76728_2_.nextInt(28) + 4;
             int k1 = p_76728_4_ + p_76728_2_.nextInt(16);
 
-            if (p_76728_1_.func_147439_a(i1, j1, k1) == Blocks.field_150348_b)
+            if (p_76728_1_.func_147439_a(i1, j1, k1) == Blocks.STONE)
             {
-                p_76728_1_.func_147465_d(i1, j1, k1, Blocks.field_150412_bA, 0, 2);
+                p_76728_1_.func_147465_d(i1, j1, k1, Blocks.EMERALD_ORE, 0, 2);
             }
         }
 
@@ -72,19 +72,19 @@ public class BiomeGenHills extends BiomeGenBase
 
     public void func_150573_a(World p_150573_1_, Random p_150573_2_, Block[] p_150573_3_, byte[] p_150573_4_, int p_150573_5_, int p_150573_6_, double p_150573_7_)
     {
-        this.field_76752_A = Blocks.field_150349_c;
+        this.field_76752_A = Blocks.GRASS;
         this.field_150604_aj = 0;
-        this.field_76753_B = Blocks.field_150346_d;
+        this.field_76753_B = Blocks.DIRT;
 
         if ((p_150573_7_ < -1.0D || p_150573_7_ > 2.0D) && this.field_150638_aH == this.field_150637_aG)
         {
-            this.field_76752_A = Blocks.field_150351_n;
-            this.field_76753_B = Blocks.field_150351_n;
+            this.field_76752_A = Blocks.GRAVEL;
+            this.field_76753_B = Blocks.GRAVEL;
         }
         else if (p_150573_7_ > 1.0D && this.field_150638_aH != this.field_150636_aF)
         {
-            this.field_76752_A = Blocks.field_150348_b;
-            this.field_76753_B = Blocks.field_150348_b;
+            this.field_76752_A = Blocks.STONE;
+            this.field_76753_B = Blocks.STONE;
         }
 
         this.func_150560_b(p_150573_1_, p_150573_2_, p_150573_3_, p_150573_4_, p_150573_5_, p_150573_6_, p_150573_7_);

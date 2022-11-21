@@ -84,7 +84,7 @@ public class BlockTallGrass extends BlockBush implements IGrowable
         if (!p_149636_1_.field_72995_K && p_149636_2_.func_71045_bC() != null && p_149636_2_.func_71045_bC().func_77973_b() == Items.SHEARS)
         {
             p_149636_2_.func_71064_a(StatList.field_75934_C[Block.func_149682_b(this)], 1);
-            this.func_149642_a(p_149636_1_, p_149636_3_, p_149636_4_, p_149636_5_, new ItemStack(Blocks.field_150329_H, 1, p_149636_6_));
+            this.func_149642_a(p_149636_1_, p_149636_3_, p_149636_4_, p_149636_5_, new ItemStack(Blocks.TALLGRASS, 1, p_149636_6_));
         }
         else
         {
@@ -138,9 +138,9 @@ public class BlockTallGrass extends BlockBush implements IGrowable
             b0 = 3;
         }
 
-        if (Blocks.field_150398_cm.func_149742_c(p_149853_1_, p_149853_3_, p_149853_4_, p_149853_5_))
+        if (Blocks.DOUBLE_PLANT.func_149742_c(p_149853_1_, p_149853_3_, p_149853_4_, p_149853_5_))
         {
-            Blocks.field_150398_cm.func_149889_c(p_149853_1_, p_149853_3_, p_149853_4_, p_149853_5_, b0, 2);
+            Blocks.DOUBLE_PLANT.func_149889_c(p_149853_1_, p_149853_3_, p_149853_4_, p_149853_5_, b0, 2);
         }
     }
 }

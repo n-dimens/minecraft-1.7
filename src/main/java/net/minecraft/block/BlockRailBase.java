@@ -25,7 +25,7 @@ public abstract class BlockRailBase extends Block
 
     public static final boolean func_150051_a(Block p_150051_0_)
     {
-        return p_150051_0_ == Blocks.field_150448_aq || p_150051_0_ == Blocks.field_150318_D || p_150051_0_ == Blocks.field_150319_E || p_150051_0_ == Blocks.field_150408_cc;
+        return p_150051_0_ == Blocks.RAIL || p_150051_0_ == Blocks.GOLDEN_RAIL || p_150051_0_ == Blocks.DETECTOR_RAIL || p_150051_0_ == Blocks.ACTIVATOR_RAIL;
     }
 
     protected BlockRailBase(boolean p_i45389_1_)

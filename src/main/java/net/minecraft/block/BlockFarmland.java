@@ -47,7 +47,7 @@ public class BlockFarmland extends Block
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return p_149691_1_ == 1 ? (p_149691_2_ > 0 ? this.field_149824_a : this.field_149823_b) : Blocks.field_150346_d.func_149733_h(p_149691_1_);
+        return p_149691_1_ == 1 ? (p_149691_2_ > 0 ? this.field_149824_a : this.field_149823_b) : Blocks.DIRT.func_149733_h(p_149691_1_);
     }
 
     public void func_149674_a(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_)
@@ -62,7 +62,7 @@ public class BlockFarmland extends Block
             }
             else if (!this.func_149822_e(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_))
             {
-                p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.field_150346_d);
+                p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.DIRT);
             }
         }
         else
@@ -80,7 +80,7 @@ public class BlockFarmland extends Block
                 return;
             }
 
-            p_149746_1_.func_147449_b(p_149746_2_, p_149746_3_, p_149746_4_, Blocks.field_150346_d);
+            p_149746_1_.func_147449_b(p_149746_2_, p_149746_3_, p_149746_4_, Blocks.DIRT);
         }
     }
 
@@ -94,7 +94,7 @@ public class BlockFarmland extends Block
             {
                 Block block = p_149822_1_.func_147439_a(l, p_149822_3_ + 1, i1);
 
-                if (block == Blocks.field_150464_aj || block == Blocks.field_150394_bc || block == Blocks.field_150393_bb || block == Blocks.field_150469_bN || block == Blocks.field_150459_bM)
+                if (block == Blocks.WHEAT || block == Blocks.MELON_STEM || block == Blocks.PUMPKIN_STEM || block == Blocks.POTATOES || block == Blocks.CARROTS)
                 {
                     return true;
                 }
@@ -130,19 +130,19 @@ public class BlockFarmland extends Block
 
         if (material.func_76220_a())
         {
-            p_149695_1_.func_147449_b(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.field_150346_d);
+            p_149695_1_.func_147449_b(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.DIRT);
         }
     }
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Blocks.field_150346_d.func_149650_a(0, p_149650_2_, p_149650_3_);
+        return Blocks.DIRT.func_149650_a(0, p_149650_2_, p_149650_3_);
     }
 
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Item.func_150898_a(Blocks.field_150346_d);
+        return Item.func_150898_a(Blocks.DIRT);
     }
 
     @SideOnly(Side.CLIENT)

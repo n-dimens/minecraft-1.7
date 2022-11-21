@@ -22,9 +22,9 @@ public class WorldGenCactus extends WorldGenerator
 
                 for (int i2 = 0; i2 < l1; ++i2)
                 {
-                    if (Blocks.field_150434_aF.func_149718_j(p_76484_1_, i1, j1 + i2, k1))
+                    if (Blocks.CACTUS.func_149718_j(p_76484_1_, i1, j1 + i2, k1))
                     {
-                        p_76484_1_.func_147465_d(i1, j1 + i2, k1, Blocks.field_150434_aF, 0, 2);
+                        p_76484_1_.func_147465_d(i1, j1 + i2, k1, Blocks.CACTUS, 0, 2);
                     }
                 }
             }

@@ -22,7 +22,7 @@ public class BiomeGenSnow extends BiomeGenBase
 
         if (p_i45378_2_)
         {
-            this.field_76752_A = Blocks.field_150433_aE;
+            this.field_76752_A = Blocks.SNOW;
         }
 
         this.field_76762_K.clear();

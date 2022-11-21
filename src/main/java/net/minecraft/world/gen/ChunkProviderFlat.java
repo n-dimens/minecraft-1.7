@@ -79,12 +79,12 @@ public class ChunkProviderFlat implements IChunkProvider
 
         if (this.field_82699_e.func_82644_b().containsKey("lake"))
         {
-            this.field_82703_i = new WorldGenLakes(Blocks.field_150355_j);
+            this.field_82703_i = new WorldGenLakes(Blocks.WATER);
         }
 
         if (this.field_82699_e.func_82644_b().containsKey("lava_lake"))
         {
-            this.field_82701_j = new WorldGenLakes(Blocks.field_150353_l);
+            this.field_82701_j = new WorldGenLakes(Blocks.LAVA);
         }
 
         this.field_82702_h = this.field_82699_e.func_82644_b().containsKey("dungeon");

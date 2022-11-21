@@ -88,7 +88,7 @@ public class BlockFalling extends Block
         {
             return true;
         }
-        else if (block == Blocks.field_150480_ab)
+        else if (block == Blocks.FIRE)
         {
             return true;
         }

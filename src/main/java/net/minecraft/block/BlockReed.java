@@ -25,7 +25,7 @@ public class BlockReed extends Block
 
     public void func_149674_a(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_)
     {
-        if (p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == Blocks.field_150436_aH || this.func_150170_e(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_))
+        if (p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == Blocks.REEDS || this.func_150170_e(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_))
         {
             if (p_149674_1_.func_147437_c(p_149674_2_, p_149674_3_ + 1, p_149674_4_))
             {
@@ -57,7 +57,7 @@ public class BlockReed extends Block
     public boolean func_149742_c(World p_149742_1_, int p_149742_2_, int p_149742_3_, int p_149742_4_)
     {
         Block block = p_149742_1_.func_147439_a(p_149742_2_, p_149742_3_ - 1, p_149742_4_);
-        return block == this ? true : (block != Blocks.field_150349_c && block != Blocks.field_150346_d && block != Blocks.field_150354_m ? false : (p_149742_1_.func_147439_a(p_149742_2_ - 1, p_149742_3_ - 1, p_149742_4_).func_149688_o() == Material.field_151586_h ? true : (p_149742_1_.func_147439_a(p_149742_2_ + 1, p_149742_3_ - 1, p_149742_4_).func_149688_o() == Material.field_151586_h ? true : (p_149742_1_.func_147439_a(p_149742_2_, p_149742_3_ - 1, p_149742_4_ - 1).func_149688_o() == Material.field_151586_h ? true : p_149742_1_.func_147439_a(p_149742_2_, p_149742_3_ - 1, p_149742_4_ + 1).func_149688_o() == Material.field_151586_h))));
+        return block == this ? true : (block != Blocks.GRASS && block != Blocks.DIRT && block != Blocks.SAND ? false : (p_149742_1_.func_147439_a(p_149742_2_ - 1, p_149742_3_ - 1, p_149742_4_).func_149688_o() == Material.field_151586_h ? true : (p_149742_1_.func_147439_a(p_149742_2_ + 1, p_149742_3_ - 1, p_149742_4_).func_149688_o() == Material.field_151586_h ? true : (p_149742_1_.func_147439_a(p_149742_2_, p_149742_3_ - 1, p_149742_4_ - 1).func_149688_o() == Material.field_151586_h ? true : p_149742_1_.func_147439_a(p_149742_2_, p_149742_3_ - 1, p_149742_4_ + 1).func_149688_o() == Material.field_151586_h))));
     }
 
     public void func_149695_a(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_)

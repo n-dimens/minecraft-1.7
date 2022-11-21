@@ -568,7 +568,7 @@ public class RenderBlocks
         this.func_147798_e(p_147752_1_, (double)((float)p_147752_2_ + 0.5F - f3), (double)p_147752_3_, (double)p_147752_4_, iicon);
         this.func_147734_d(p_147752_1_, (double)p_147752_2_, (double)p_147752_3_, (double)((float)p_147752_4_ - 0.5F + f3), iicon);
         this.func_147761_c(p_147752_1_, (double)p_147752_2_, (double)p_147752_3_, (double)((float)p_147752_4_ + 0.5F - f3), iicon);
-        this.func_147806_b(p_147752_1_, (double)p_147752_2_, (double)((float)p_147752_3_ - 0.5F + f3 + 0.1875F), (double)p_147752_4_, this.func_147745_b(Blocks.field_150346_d));
+        this.func_147806_b(p_147752_1_, (double)p_147752_2_, (double)((float)p_147752_3_ - 0.5F + f3 + 0.1875F), (double)p_147752_4_, this.func_147745_b(Blocks.DIRT));
         TileEntity tileentity = this.field_147845_a.func_147438_o(p_147752_2_, p_147752_3_, p_147752_4_);
 
         if (tileentity != null && tileentity instanceof TileEntityFlowerPot)
@@ -818,7 +818,7 @@ public class RenderBlocks
         }
         else
         {
-            IIcon iicon = this.func_147745_b(Blocks.field_150357_h);
+            IIcon iicon = this.func_147745_b(Blocks.BEDROCK);
             this.func_147757_a(iicon);
             float f = 2.0F;
             float f1 = 14.0F;
@@ -874,12 +874,12 @@ public class RenderBlocks
 
         if (p_147781_1_.func_149969_d(l))
         {
-            iicon = Blocks.field_150429_aA.func_149733_h(0);
+            iicon = Blocks.REDSTONE_TORCH.func_149733_h(0);
         }
         else
         {
             d1 -= 0.1875D;
-            iicon = Blocks.field_150437_az.func_149733_h(0);
+            iicon = Blocks.UNLIT_REDSTONE_TORCH.func_149733_h(0);
         }
 
         switch (i1)
@@ -1250,7 +1250,7 @@ public class RenderBlocks
 
         if (!flag1)
         {
-            this.func_147757_a(this.func_147745_b(Blocks.field_150347_e));
+            this.func_147757_a(this.func_147745_b(Blocks.COBBLESTONE));
         }
 
         float f = 0.25F;
@@ -1475,7 +1475,7 @@ public class RenderBlocks
 
         if (!flag3)
         {
-            this.func_147757_a(this.func_147745_b(Blocks.field_150344_f));
+            this.func_147757_a(this.func_147745_b(Blocks.PLANKS));
         }
 
         float f = 0.25F;
@@ -1993,7 +1993,7 @@ public class RenderBlocks
         double d10;
         double d11;
 
-        if (!World.func_147466_a(this.field_147845_a, p_147801_2_, p_147801_3_ - 1, p_147801_4_) && !Blocks.field_150480_ab.func_149844_e(this.field_147845_a, p_147801_2_, p_147801_3_ - 1, p_147801_4_))
+        if (!World.func_147466_a(this.field_147845_a, p_147801_2_, p_147801_3_ - 1, p_147801_4_) && !Blocks.FIRE.func_149844_e(this.field_147845_a, p_147801_2_, p_147801_3_ - 1, p_147801_4_))
         {
             float f2 = 0.2F;
             float f1 = 0.0625F;
@@ -2013,7 +2013,7 @@ public class RenderBlocks
                 d0 = d5;
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(this.field_147845_a, p_147801_2_ - 1, p_147801_3_, p_147801_4_))
+            if (Blocks.FIRE.func_149844_e(this.field_147845_a, p_147801_2_ - 1, p_147801_3_, p_147801_4_))
             {
                 tessellator.func_78374_a((double)((float)p_147801_2_ + f2), (double)((float)p_147801_3_ + f + f1), (double)(p_147801_4_ + 1), d2, d1);
                 tessellator.func_78374_a((double)(p_147801_2_ + 0), (double)((float)(p_147801_3_ + 0) + f1), (double)(p_147801_4_ + 1), d2, d3);
@@ -2025,7 +2025,7 @@ public class RenderBlocks
                 tessellator.func_78374_a((double)((float)p_147801_2_ + f2), (double)((float)p_147801_3_ + f + f1), (double)(p_147801_4_ + 1), d2, d1);
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(this.field_147845_a, p_147801_2_ + 1, p_147801_3_, p_147801_4_))
+            if (Blocks.FIRE.func_149844_e(this.field_147845_a, p_147801_2_ + 1, p_147801_3_, p_147801_4_))
             {
                 tessellator.func_78374_a((double)((float)(p_147801_2_ + 1) - f2), (double)((float)p_147801_3_ + f + f1), (double)(p_147801_4_ + 0), d0, d1);
                 tessellator.func_78374_a((double)(p_147801_2_ + 1 - 0), (double)((float)(p_147801_3_ + 0) + f1), (double)(p_147801_4_ + 0), d0, d3);
@@ -2037,7 +2037,7 @@ public class RenderBlocks
                 tessellator.func_78374_a((double)((float)(p_147801_2_ + 1) - f2), (double)((float)p_147801_3_ + f + f1), (double)(p_147801_4_ + 0), d0, d1);
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(this.field_147845_a, p_147801_2_, p_147801_3_, p_147801_4_ - 1))
+            if (Blocks.FIRE.func_149844_e(this.field_147845_a, p_147801_2_, p_147801_3_, p_147801_4_ - 1))
             {
                 tessellator.func_78374_a((double)(p_147801_2_ + 0), (double)((float)p_147801_3_ + f + f1), (double)((float)p_147801_4_ + f2), d2, d1);
                 tessellator.func_78374_a((double)(p_147801_2_ + 0), (double)((float)(p_147801_3_ + 0) + f1), (double)(p_147801_4_ + 0), d2, d3);
@@ -2049,7 +2049,7 @@ public class RenderBlocks
                 tessellator.func_78374_a((double)(p_147801_2_ + 0), (double)((float)p_147801_3_ + f + f1), (double)((float)p_147801_4_ + f2), d2, d1);
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(this.field_147845_a, p_147801_2_, p_147801_3_, p_147801_4_ + 1))
+            if (Blocks.FIRE.func_149844_e(this.field_147845_a, p_147801_2_, p_147801_3_, p_147801_4_ + 1))
             {
                 tessellator.func_78374_a((double)(p_147801_2_ + 1), (double)((float)p_147801_3_ + f + f1), (double)((float)(p_147801_4_ + 1) - f2), d0, d1);
                 tessellator.func_78374_a((double)(p_147801_2_ + 1), (double)((float)(p_147801_3_ + 0) + f1), (double)(p_147801_4_ + 1 - 0), d0, d3);
@@ -2061,7 +2061,7 @@ public class RenderBlocks
                 tessellator.func_78374_a((double)(p_147801_2_ + 1), (double)((float)p_147801_3_ + f + f1), (double)((float)(p_147801_4_ + 1) - f2), d0, d1);
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(this.field_147845_a, p_147801_2_, p_147801_3_ + 1, p_147801_4_))
+            if (Blocks.FIRE.func_149844_e(this.field_147845_a, p_147801_2_, p_147801_3_ + 1, p_147801_4_))
             {
                 d5 = (double)p_147801_2_ + 0.5D + 0.5D;
                 d6 = (double)p_147801_2_ + 0.5D - 0.5D;
@@ -2337,7 +2337,7 @@ public class RenderBlocks
         {
             float f8 = 0.021875F;
 
-            if (this.field_147845_a.func_147439_a(p_147788_2_ - 1, p_147788_3_, p_147788_4_).func_149637_q() && this.field_147845_a.func_147439_a(p_147788_2_ - 1, p_147788_3_ + 1, p_147788_4_) == Blocks.field_150488_af)
+            if (this.field_147845_a.func_147439_a(p_147788_2_ - 1, p_147788_3_, p_147788_4_).func_149637_q() && this.field_147845_a.func_147439_a(p_147788_2_ - 1, p_147788_3_ + 1, p_147788_4_) == Blocks.REDSTONE_WIRE)
             {
                 tessellator.func_78386_a(f1, f2, f3);
                 tessellator.func_78374_a((double)p_147788_2_ + 0.015625D, (double)((float)(p_147788_3_ + 1) + 0.021875F), (double)(p_147788_4_ + 1), (double)iicon1.func_94212_f(), (double)iicon1.func_94206_g());
@@ -2351,7 +2351,7 @@ public class RenderBlocks
                 tessellator.func_78374_a((double)p_147788_2_ + 0.015625D, (double)((float)(p_147788_3_ + 1) + 0.021875F), (double)(p_147788_4_ + 0), (double)iicon3.func_94212_f(), (double)iicon3.func_94210_h());
             }
 
-            if (this.field_147845_a.func_147439_a(p_147788_2_ + 1, p_147788_3_, p_147788_4_).func_149637_q() && this.field_147845_a.func_147439_a(p_147788_2_ + 1, p_147788_3_ + 1, p_147788_4_) == Blocks.field_150488_af)
+            if (this.field_147845_a.func_147439_a(p_147788_2_ + 1, p_147788_3_, p_147788_4_).func_149637_q() && this.field_147845_a.func_147439_a(p_147788_2_ + 1, p_147788_3_ + 1, p_147788_4_) == Blocks.REDSTONE_WIRE)
             {
                 tessellator.func_78386_a(f1, f2, f3);
                 tessellator.func_78374_a((double)(p_147788_2_ + 1) - 0.015625D, (double)(p_147788_3_ + 0), (double)(p_147788_4_ + 1), (double)iicon1.func_94209_e(), (double)iicon1.func_94210_h());
@@ -2365,7 +2365,7 @@ public class RenderBlocks
                 tessellator.func_78374_a((double)(p_147788_2_ + 1) - 0.015625D, (double)(p_147788_3_ + 0), (double)(p_147788_4_ + 0), (double)iicon3.func_94209_e(), (double)iicon3.func_94206_g());
             }
 
-            if (this.field_147845_a.func_147439_a(p_147788_2_, p_147788_3_, p_147788_4_ - 1).func_149637_q() && this.field_147845_a.func_147439_a(p_147788_2_, p_147788_3_ + 1, p_147788_4_ - 1) == Blocks.field_150488_af)
+            if (this.field_147845_a.func_147439_a(p_147788_2_, p_147788_3_, p_147788_4_ - 1).func_149637_q() && this.field_147845_a.func_147439_a(p_147788_2_, p_147788_3_ + 1, p_147788_4_ - 1) == Blocks.REDSTONE_WIRE)
             {
                 tessellator.func_78386_a(f1, f2, f3);
                 tessellator.func_78374_a((double)(p_147788_2_ + 1), (double)(p_147788_3_ + 0), (double)p_147788_4_ + 0.015625D, (double)iicon1.func_94209_e(), (double)iicon1.func_94210_h());
@@ -2379,7 +2379,7 @@ public class RenderBlocks
                 tessellator.func_78374_a((double)(p_147788_2_ + 0), (double)(p_147788_3_ + 0), (double)p_147788_4_ + 0.015625D, (double)iicon3.func_94209_e(), (double)iicon3.func_94206_g());
             }
 
-            if (this.field_147845_a.func_147439_a(p_147788_2_, p_147788_3_, p_147788_4_ + 1).func_149637_q() && this.field_147845_a.func_147439_a(p_147788_2_, p_147788_3_ + 1, p_147788_4_ + 1) == Blocks.field_150488_af)
+            if (this.field_147845_a.func_147439_a(p_147788_2_, p_147788_3_, p_147788_4_ + 1).func_149637_q() && this.field_147845_a.func_147439_a(p_147788_2_, p_147788_3_ + 1, p_147788_4_ + 1) == Blocks.REDSTONE_WIRE)
             {
                 tessellator.func_78386_a(f1, f2, f3);
                 tessellator.func_78374_a((double)(p_147788_2_ + 1), (double)((float)(p_147788_3_ + 1) + 0.021875F), (double)(p_147788_4_ + 1) - 0.015625D, (double)iicon1.func_94212_f(), (double)iicon1.func_94206_g());
@@ -3481,7 +3481,7 @@ public class RenderBlocks
         double d0 = (double)p_147746_4_;
         long i1;
 
-        if (p_147746_1_ == Blocks.field_150329_H)
+        if (p_147746_1_ == Blocks.TALLGRASS)
         {
             i1 = (long)(p_147746_2_ * 3129871) ^ (long)p_147746_4_ * 116129781L ^ (long)p_147746_3_;
             i1 = i1 * i1 * 42317861L + i1 * 11L;
@@ -3489,7 +3489,7 @@ public class RenderBlocks
             d2 += ((double)((float)(i1 >> 20 & 15L) / 15.0F) - 1.0D) * 0.2D;
             d0 += ((double)((float)(i1 >> 24 & 15L) / 15.0F) - 0.5D) * 0.5D;
         }
-        else if (p_147746_1_ == Blocks.field_150328_O || p_147746_1_ == Blocks.field_150327_N)
+        else if (p_147746_1_ == Blocks.RED_FLOWER || p_147746_1_ == Blocks.YELLOW_FLOWER)
         {
             i1 = (long)(p_147746_2_ * 3129871) ^ (long)p_147746_4_ * 116129781L ^ (long)p_147746_3_;
             i1 = i1 * i1 * 42317861L + i1 * 11L;
@@ -5920,7 +5920,7 @@ public class RenderBlocks
         float f17 = f5;
         float f18 = f6;
 
-        if (p_147736_1_ != Blocks.field_150349_c)
+        if (p_147736_1_ != Blocks.GRASS)
         {
             f10 = f3 * p_147736_5_;
             f11 = f5 * p_147736_5_;
@@ -6174,14 +6174,14 @@ public class RenderBlocks
     public boolean func_147797_a(BlockBeacon p_147797_1_, int p_147797_2_, int p_147797_3_, int p_147797_4_)
     {
         float f = 0.1875F;
-        this.func_147757_a(this.func_147745_b(Blocks.field_150359_w));
+        this.func_147757_a(this.func_147745_b(Blocks.GLASS));
         this.func_147782_a(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
         this.func_147784_q(p_147797_1_, p_147797_2_, p_147797_3_, p_147797_4_);
         this.field_147837_f = true;
-        this.func_147757_a(this.func_147745_b(Blocks.field_150343_Z));
+        this.func_147757_a(this.func_147745_b(Blocks.OBSIDIAN));
         this.func_147782_a(0.125D, 0.0062500000931322575D, 0.125D, 0.875D, (double)f, 0.875D);
         this.func_147784_q(p_147797_1_, p_147797_2_, p_147797_3_, p_147797_4_);
-        this.func_147757_a(this.func_147745_b(Blocks.field_150461_bJ));
+        this.func_147757_a(this.func_147745_b(Blocks.BEACON));
         this.func_147782_a(0.1875D, (double)f, 0.1875D, 0.8125D, 0.875D, 0.8125D);
         this.func_147784_q(p_147797_1_, p_147797_2_, p_147797_3_, p_147797_4_);
         this.field_147837_f = false;
@@ -6478,7 +6478,7 @@ public class RenderBlocks
         float f4 = 0.3125F;
         float f5 = 1.0F;
 
-        if ((i1 == 2 || i1 == 0) && this.field_147845_a.func_147439_a(p_147776_2_ - 1, p_147776_3_, p_147776_4_) == Blocks.field_150463_bK && this.field_147845_a.func_147439_a(p_147776_2_ + 1, p_147776_3_, p_147776_4_) == Blocks.field_150463_bK || (i1 == 3 || i1 == 1) && this.field_147845_a.func_147439_a(p_147776_2_, p_147776_3_, p_147776_4_ - 1) == Blocks.field_150463_bK && this.field_147845_a.func_147439_a(p_147776_2_, p_147776_3_, p_147776_4_ + 1) == Blocks.field_150463_bK)
+        if ((i1 == 2 || i1 == 0) && this.field_147845_a.func_147439_a(p_147776_2_ - 1, p_147776_3_, p_147776_4_) == Blocks.COBBLESTONE_WALL && this.field_147845_a.func_147439_a(p_147776_2_ + 1, p_147776_3_, p_147776_4_) == Blocks.COBBLESTONE_WALL || (i1 == 3 || i1 == 1) && this.field_147845_a.func_147439_a(p_147776_2_, p_147776_3_, p_147776_4_ - 1) == Blocks.COBBLESTONE_WALL && this.field_147845_a.func_147439_a(p_147776_2_, p_147776_3_, p_147776_4_ + 1) == Blocks.COBBLESTONE_WALL)
         {
             f -= 0.1875F;
             f1 -= 0.1875F;
@@ -7637,9 +7637,9 @@ public class RenderBlocks
     public void func_147800_a(Block p_147800_1_, int p_147800_2_, float p_147800_3_)
     {
         Tessellator tessellator = Tessellator.field_78398_a;
-        boolean flag = p_147800_1_ == Blocks.field_150349_c;
+        boolean flag = p_147800_1_ == Blocks.GRASS;
 
-        if (p_147800_1_ == Blocks.field_150367_z || p_147800_1_ == Blocks.field_150409_cd || p_147800_1_ == Blocks.field_150460_al)
+        if (p_147800_1_ == Blocks.DISPENSER || p_147800_1_ == Blocks.DROPPER || p_147800_1_ == Blocks.FURNACE)
         {
             p_147800_2_ = 3;
         }
@@ -8039,17 +8039,17 @@ public class RenderBlocks
                     if (k == 0)
                     {
                         this.func_147782_a(0.125D, 0.0D, 0.125D, 0.875D, 0.1875D, 0.875D);
-                        this.func_147757_a(this.func_147745_b(Blocks.field_150343_Z));
+                        this.func_147757_a(this.func_147745_b(Blocks.OBSIDIAN));
                     }
                     else if (k == 1)
                     {
                         this.func_147782_a(0.1875D, 0.1875D, 0.1875D, 0.8125D, 0.875D, 0.8125D);
-                        this.func_147757_a(this.func_147745_b(Blocks.field_150461_bJ));
+                        this.func_147757_a(this.func_147745_b(Blocks.BEACON));
                     }
                     else if (k == 2)
                     {
                         this.func_147782_a(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
-                        this.func_147757_a(this.func_147745_b(Blocks.field_150359_w));
+                        this.func_147757_a(this.func_147745_b(Blocks.GLASS));
                     }
 
                     GL11.glTranslatef(-0.5F, -0.5F, -0.5F);

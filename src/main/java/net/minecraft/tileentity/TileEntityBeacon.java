@@ -110,7 +110,7 @@ public class TileEntityBeacon extends TileEntity implements IInventory
                     {
                         Block block = this.field_145850_b.func_147439_a(l, k, i1);
 
-                        if (block != Blocks.field_150475_bE && block != Blocks.field_150340_R && block != Blocks.field_150484_ah && block != Blocks.field_150339_S)
+                        if (block != Blocks.EMERALD_BLOCK && block != Blocks.GOLD_BLOCK && block != Blocks.DIAMOND_BLOCK && block != Blocks.IRON_BLOCK)
                         {
                             flag = false;
                             break;

@@ -52,7 +52,7 @@ public class WorldGenSpikes extends WorldGenerator
 
                         if (i2 * i2 + j2 * j2 <= i1 * i1 + 1)
                         {
-                            p_76484_1_.func_147465_d(k1, j1, l1, Blocks.field_150343_Z, 0, 2);
+                            p_76484_1_.func_147465_d(k1, j1, l1, Blocks.OBSIDIAN, 0, 2);
                         }
                     }
                 }
@@ -61,7 +61,7 @@ public class WorldGenSpikes extends WorldGenerator
             EntityEnderCrystal entityendercrystal = new EntityEnderCrystal(p_76484_1_);
             entityendercrystal.func_70012_b((double)((float)p_76484_3_ + 0.5F), (double)(p_76484_4_ + l), (double)((float)p_76484_5_ + 0.5F), p_76484_2_.nextFloat() * 360.0F, 0.0F);
             p_76484_1_.func_72838_d(entityendercrystal);
-            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_ + l, p_76484_5_, Blocks.field_150357_h, 0, 2);
+            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_ + l, p_76484_5_, Blocks.BEDROCK, 0, 2);
             return true;
         }
         else

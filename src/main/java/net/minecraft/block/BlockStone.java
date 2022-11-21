@@ -18,6 +18,6 @@ public class BlockStone extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.func_150898_a(Blocks.field_150347_e);
+        return Item.func_150898_a(Blocks.COBBLESTONE);
     }
 }

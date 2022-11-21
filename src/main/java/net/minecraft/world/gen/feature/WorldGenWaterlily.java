@@ -16,9 +16,9 @@ public class WorldGenWaterlily extends WorldGenerator
             int j1 = p_76484_4_ + p_76484_2_.nextInt(4) - p_76484_2_.nextInt(4);
             int k1 = p_76484_5_ + p_76484_2_.nextInt(8) - p_76484_2_.nextInt(8);
 
-            if (p_76484_1_.func_147437_c(i1, j1, k1) && Blocks.field_150392_bi.func_149742_c(p_76484_1_, i1, j1, k1))
+            if (p_76484_1_.func_147437_c(i1, j1, k1) && Blocks.WATERLILY.func_149742_c(p_76484_1_, i1, j1, k1))
             {
-                p_76484_1_.func_147465_d(i1, j1, k1, Blocks.field_150392_bi, 0, 2);
+                p_76484_1_.func_147465_d(i1, j1, k1, Blocks.WATERLILY, 0, 2);
             }
         }
 

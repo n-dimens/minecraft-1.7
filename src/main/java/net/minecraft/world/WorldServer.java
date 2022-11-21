@@ -74,7 +74,7 @@ public class WorldServer extends World
     private final SpawnerAnimals field_135059_Q = new SpawnerAnimals();
     private WorldServer.ServerBlockEventList[] field_147490_S = new WorldServer.ServerBlockEventList[] {new WorldServer.ServerBlockEventList(null), new WorldServer.ServerBlockEventList(null)};
     private int field_147489_T;
-    public static final WeightedRandomChestContent[] field_73069_S = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.STICK, 0, 1, 3, 10), new WeightedRandomChestContent(Item.func_150898_a(Blocks.field_150344_f), 0, 1, 3, 10), new WeightedRandomChestContent(Item.func_150898_a(Blocks.field_150364_r), 0, 1, 3, 10), new WeightedRandomChestContent(Items.STONE_AXE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.WOODEN_AXE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.STONE_PICKAXE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.WOODEN_PICKAXE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.APPLE, 0, 2, 3, 5), new WeightedRandomChestContent(Items.BREAD, 0, 2, 3, 3), new WeightedRandomChestContent(Item.func_150898_a(Blocks.field_150363_s), 0, 1, 3, 10)};
+    public static final WeightedRandomChestContent[] field_73069_S = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.STICK, 0, 1, 3, 10), new WeightedRandomChestContent(Item.func_150898_a(Blocks.PLANKS), 0, 1, 3, 10), new WeightedRandomChestContent(Item.func_150898_a(Blocks.LOG), 0, 1, 3, 10), new WeightedRandomChestContent(Items.STONE_AXE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.WOODEN_AXE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.STONE_PICKAXE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.WOODEN_PICKAXE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.APPLE, 0, 2, 3, 5), new WeightedRandomChestContent(Items.BREAD, 0, 2, 3, 3), new WeightedRandomChestContent(Item.func_150898_a(Blocks.LOG_2), 0, 1, 3, 10)};
     private List field_94579_S = new ArrayList();
     private IntHashMap field_73066_T;
     private static final String __OBFID = "CL_00001437";
@@ -327,12 +327,12 @@ public class WorldServer extends World
 
                 if (this.func_72850_v(j1 + k, l1 - 1, k1 + l))
                 {
-                    this.func_147449_b(j1 + k, l1 - 1, k1 + l, Blocks.field_150432_aD);
+                    this.func_147449_b(j1 + k, l1 - 1, k1 + l, Blocks.ICE);
                 }
 
                 if (this.func_72896_J() && this.func_147478_e(j1 + k, l1, k1 + l, true))
                 {
-                    this.func_147449_b(j1 + k, l1, k1 + l, Blocks.field_150431_aC);
+                    this.func_147449_b(j1 + k, l1, k1 + l, Blocks.SNOW_LAYER);
                 }
 
                 if (this.func_72896_J())

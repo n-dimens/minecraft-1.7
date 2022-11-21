@@ -89,7 +89,7 @@ public class ContainerRepair extends Container
 
                 ContainerRepair.this.field_82854_e = 0;
 
-                if (!p_82870_1_.field_71075_bZ.field_75098_d && !p_i1800_2_.field_72995_K && p_i1800_2_.func_147439_a(p_i1800_3_, p_i1800_4_, p_i1800_5_) == Blocks.field_150467_bQ && p_82870_1_.func_70681_au().nextFloat() < 0.12F)
+                if (!p_82870_1_.field_71075_bZ.field_75098_d && !p_i1800_2_.field_72995_K && p_i1800_2_.func_147439_a(p_i1800_3_, p_i1800_4_, p_i1800_5_) == Blocks.ANVIL && p_82870_1_.func_70681_au().nextFloat() < 0.12F)
                 {
                     int i1 = p_i1800_2_.func_72805_g(p_i1800_3_, p_i1800_4_, p_i1800_5_);
                     int k = i1 & 3;
@@ -454,7 +454,7 @@ public class ContainerRepair extends Container
 
     public boolean func_75145_c(EntityPlayer p_75145_1_)
     {
-        return this.field_82860_h.func_147439_a(this.field_82861_i, this.field_82858_j, this.field_82859_k) != Blocks.field_150467_bQ ? false : p_75145_1_.func_70092_e((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
+        return this.field_82860_h.func_147439_a(this.field_82861_i, this.field_82858_j, this.field_82859_k) != Blocks.ANVIL ? false : p_75145_1_.func_70092_e((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)

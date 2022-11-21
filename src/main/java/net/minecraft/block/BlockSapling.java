@@ -158,7 +158,7 @@ public class BlockSapling extends BlockBush implements IGrowable
                 }
         }
 
-        Block block = Blocks.field_150350_a;
+        Block block = Blocks.AIR;
 
         if (flag)
         {

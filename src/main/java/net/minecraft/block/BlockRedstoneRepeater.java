@@ -37,12 +37,12 @@ public class BlockRedstoneRepeater extends BlockRedstoneDiode
 
     protected BlockRedstoneDiode func_149906_e()
     {
-        return Blocks.field_150416_aS;
+        return Blocks.POWERED_REPEATER;
     }
 
     protected BlockRedstoneDiode func_149898_i()
     {
-        return Blocks.field_150413_aR;
+        return Blocks.UNPOWERED_REPEATER;
     }
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)

@@ -971,7 +971,7 @@ public abstract class EntityLivingBase extends Entity
         int j = MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
         int k = MathHelper.func_76128_c(this.field_70161_v);
         Block block = this.field_70170_p.func_147439_a(i, j, k);
-        return block == Blocks.field_150468_ap || block == Blocks.field_150395_bd;
+        return block == Blocks.LADDER || block == Blocks.VINE;
     }
 
     public boolean func_70089_S()

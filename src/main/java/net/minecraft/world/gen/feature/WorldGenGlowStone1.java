@@ -16,13 +16,13 @@ public class WorldGenGlowStone1 extends WorldGenerator
         {
             return false;
         }
-        else if (p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ + 1, p_76484_5_) != Blocks.field_150424_aL)
+        else if (p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ + 1, p_76484_5_) != Blocks.NETHERRACK)
         {
             return false;
         }
         else
         {
-            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_, Blocks.field_150426_aN, 0, 2);
+            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_, Blocks.GLOWSTONE, 0, 2);
 
             for (int l = 0; l < 1500; ++l)
             {
@@ -68,7 +68,7 @@ public class WorldGenGlowStone1 extends WorldGenerator
                             block = p_76484_1_.func_147439_a(i1, j1, k1 + 1);
                         }
 
-                        if (block == Blocks.field_150426_aN)
+                        if (block == Blocks.GLOWSTONE)
                         {
                             ++l1;
                         }
@@ -76,7 +76,7 @@ public class WorldGenGlowStone1 extends WorldGenerator
 
                     if (l1 == 1)
                     {
-                        p_76484_1_.func_147465_d(i1, j1, k1, Blocks.field_150426_aN, 0, 2);
+                        p_76484_1_.func_147465_d(i1, j1, k1, Blocks.GLOWSTONE, 0, 2);
                     }
                 }
             }

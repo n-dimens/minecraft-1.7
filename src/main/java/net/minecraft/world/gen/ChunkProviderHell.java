@@ -105,12 +105,12 @@ public class ChunkProviderHell implements IChunkProvider
 
                                 if (k1 * 8 + l1 < b1)
                                 {
-                                    block = Blocks.field_150353_l;
+                                    block = Blocks.LAVA;
                                 }
 
                                 if (d15 > 0.0D)
                                 {
-                                    block = Blocks.field_150424_aL;
+                                    block = Blocks.NETHERRACK;
                                 }
 
                                 p_147419_3_[j2] = block;
@@ -148,8 +148,8 @@ public class ChunkProviderHell implements IChunkProvider
                 boolean flag1 = this.field_73184_r[k + l * 16] + this.field_73181_i.nextDouble() * 0.2D > 0.0D;
                 int i1 = (int)(this.field_73183_s[k + l * 16] / 3.0D + 3.0D + this.field_73181_i.nextDouble() * 0.25D);
                 int j1 = -1;
-                Block block = Blocks.field_150424_aL;
-                Block block1 = Blocks.field_150424_aL;
+                Block block = Blocks.NETHERRACK;
+                Block block1 = Blocks.NETHERRACK;
 
                 for (int k1 = 127; k1 >= 0; --k1)
                 {
@@ -161,36 +161,36 @@ public class ChunkProviderHell implements IChunkProvider
 
                         if (block2 != null && block2.func_149688_o() != Material.field_151579_a)
                         {
-                            if (block2 == Blocks.field_150424_aL)
+                            if (block2 == Blocks.NETHERRACK)
                             {
                                 if (j1 == -1)
                                 {
                                     if (i1 <= 0)
                                     {
                                         block = null;
-                                        block1 = Blocks.field_150424_aL;
+                                        block1 = Blocks.NETHERRACK;
                                     }
                                     else if (k1 >= b0 - 4 && k1 <= b0 + 1)
                                     {
-                                        block = Blocks.field_150424_aL;
-                                        block1 = Blocks.field_150424_aL;
+                                        block = Blocks.NETHERRACK;
+                                        block1 = Blocks.NETHERRACK;
 
                                         if (flag1)
                                         {
-                                            block = Blocks.field_150351_n;
-                                            block1 = Blocks.field_150424_aL;
+                                            block = Blocks.GRAVEL;
+                                            block1 = Blocks.NETHERRACK;
                                         }
 
                                         if (flag)
                                         {
-                                            block = Blocks.field_150425_aM;
-                                            block1 = Blocks.field_150425_aM;
+                                            block = Blocks.SOUL_SAND;
+                                            block1 = Blocks.SOUL_SAND;
                                         }
                                     }
 
                                     if (k1 < b0 && (block == null || block.func_149688_o() == Material.field_151579_a))
                                     {
-                                        block = Blocks.field_150353_l;
+                                        block = Blocks.LAVA;
                                     }
 
                                     j1 = i1;
@@ -218,7 +218,7 @@ public class ChunkProviderHell implements IChunkProvider
                     }
                     else
                     {
-                        p_147418_3_[l1] = Blocks.field_150357_h;
+                        p_147418_3_[l1] = Blocks.BEDROCK;
                     }
                 }
             }
@@ -412,7 +412,7 @@ public class ChunkProviderHell implements IChunkProvider
             j1 = k + this.field_73181_i.nextInt(16) + 8;
             k1 = this.field_73181_i.nextInt(120) + 4;
             l1 = l + this.field_73181_i.nextInt(16) + 8;
-            (new WorldGenHellLava(Blocks.field_150356_k, false)).func_76484_a(this.field_73175_o, this.field_73181_i, j1, k1, l1);
+            (new WorldGenHellLava(Blocks.FLOWING_LAVA, false)).func_76484_a(this.field_73175_o, this.field_73181_i, j1, k1, l1);
         }
 
         i1 = this.field_73181_i.nextInt(this.field_73181_i.nextInt(10) + 1) + 1;
@@ -449,7 +449,7 @@ public class ChunkProviderHell implements IChunkProvider
             j1 = k + this.field_73181_i.nextInt(16) + 8;
             k1 = this.field_73181_i.nextInt(128);
             l1 = l + this.field_73181_i.nextInt(16) + 8;
-            (new WorldGenFlowers(Blocks.field_150338_P)).func_76484_a(this.field_73175_o, this.field_73181_i, j1, k1, l1);
+            (new WorldGenFlowers(Blocks.BROWN_MUSHROOM)).func_76484_a(this.field_73175_o, this.field_73181_i, j1, k1, l1);
         }
 
         if (this.field_73181_i.nextInt(1) == 0)
@@ -457,10 +457,10 @@ public class ChunkProviderHell implements IChunkProvider
             j1 = k + this.field_73181_i.nextInt(16) + 8;
             k1 = this.field_73181_i.nextInt(128);
             l1 = l + this.field_73181_i.nextInt(16) + 8;
-            (new WorldGenFlowers(Blocks.field_150337_Q)).func_76484_a(this.field_73175_o, this.field_73181_i, j1, k1, l1);
+            (new WorldGenFlowers(Blocks.RED_MUSHROOM)).func_76484_a(this.field_73175_o, this.field_73181_i, j1, k1, l1);
         }
 
-        WorldGenMinable worldgenminable = new WorldGenMinable(Blocks.field_150449_bY, 13, Blocks.field_150424_aL);
+        WorldGenMinable worldgenminable = new WorldGenMinable(Blocks.QUARTZ_ORE, 13, Blocks.NETHERRACK);
         int j2;
 
         for (k1 = 0; k1 < 16; ++k1)
@@ -476,7 +476,7 @@ public class ChunkProviderHell implements IChunkProvider
             l1 = k + this.field_73181_i.nextInt(16);
             i2 = this.field_73181_i.nextInt(108) + 10;
             j2 = l + this.field_73181_i.nextInt(16);
-            (new WorldGenHellLava(Blocks.field_150356_k, true)).func_76484_a(this.field_73175_o, this.field_73181_i, l1, i2, j2);
+            (new WorldGenHellLava(Blocks.FLOWING_LAVA, true)).func_76484_a(this.field_73175_o, this.field_73181_i, l1, i2, j2);
         }
 
         BlockFalling.field_149832_M = false;
@@ -513,7 +513,7 @@ public class ChunkProviderHell implements IChunkProvider
                 return this.field_73172_c.func_75059_a();
             }
 
-            if (this.field_73172_c.func_142038_b(p_73155_2_, p_73155_3_, p_73155_4_) && this.field_73175_o.func_147439_a(p_73155_2_, p_73155_3_ - 1, p_73155_4_) == Blocks.field_150385_bj)
+            if (this.field_73172_c.func_142038_b(p_73155_2_, p_73155_3_, p_73155_4_) && this.field_73175_o.func_147439_a(p_73155_2_, p_73155_3_ - 1, p_73155_4_) == Blocks.NETHER_BRICK)
             {
                 return this.field_73172_c.func_75059_a();
             }

@@ -8,7 +8,7 @@ import net.minecraft.init.Blocks;
 
 public class ItemAxe extends ItemTool
 {
-    private static final Set field_150917_c = Sets.newHashSet(new Block[] {Blocks.field_150344_f, Blocks.field_150342_X, Blocks.field_150364_r, Blocks.field_150363_s, Blocks.field_150486_ae, Blocks.field_150423_aK, Blocks.field_150428_aP});
+    private static final Set field_150917_c = Sets.newHashSet(new Block[] {Blocks.PLANKS, Blocks.BOOKSHELF, Blocks.LOG, Blocks.LOG_2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN});
     private static final String __OBFID = "CL_00001770";
 
     protected ItemAxe(Item.ToolMaterial p_i45327_1_)

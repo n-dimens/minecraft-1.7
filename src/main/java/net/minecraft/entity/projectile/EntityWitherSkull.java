@@ -50,7 +50,7 @@ public class EntityWitherSkull extends EntityFireball
     {
         float f = super.func_145772_a(p_145772_1_, p_145772_2_, p_145772_3_, p_145772_4_, p_145772_5_, p_145772_6_);
 
-        if (this.func_82342_d() && p_145772_6_ != Blocks.field_150357_h && p_145772_6_ != Blocks.field_150384_bq && p_145772_6_ != Blocks.field_150378_br && p_145772_6_ != Blocks.field_150483_bI)
+        if (this.func_82342_d() && p_145772_6_ != Blocks.BEDROCK && p_145772_6_ != Blocks.END_PORTAL && p_145772_6_ != Blocks.END_PORTAL_FRAME && p_145772_6_ != Blocks.COMMAND_BLOCK)
         {
             f = Math.min(0.8F, f);
         }

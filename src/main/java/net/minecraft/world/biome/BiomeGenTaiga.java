@@ -19,7 +19,7 @@ public class BiomeGenTaiga extends BiomeGenBase
     private static final WorldGenTaiga2 field_150640_aD = new WorldGenTaiga2(false);
     private static final WorldGenMegaPineTree field_150641_aE = new WorldGenMegaPineTree(false, false);
     private static final WorldGenMegaPineTree field_150642_aF = new WorldGenMegaPineTree(false, true);
-    private static final WorldGenBlockBlob field_150643_aG = new WorldGenBlockBlob(Blocks.field_150341_Y, 0);
+    private static final WorldGenBlockBlob field_150643_aG = new WorldGenBlockBlob(Blocks.MOSSY_COBBLESTONE, 0);
     private int field_150644_aH;
     private static final String __OBFID = "CL_00000186";
 
@@ -50,7 +50,7 @@ public class BiomeGenTaiga extends BiomeGenBase
 
     public WorldGenerator func_76730_b(Random p_76730_1_)
     {
-        return p_76730_1_.nextInt(5) > 0 ? new WorldGenTallGrass(Blocks.field_150329_H, 2) : new WorldGenTallGrass(Blocks.field_150329_H, 1);
+        return p_76730_1_.nextInt(5) > 0 ? new WorldGenTallGrass(Blocks.TALLGRASS, 2) : new WorldGenTallGrass(Blocks.TALLGRASS, 1);
     }
 
     public void func_76728_a(World p_76728_1_, Random p_76728_2_, int p_76728_3_, int p_76728_4_)
@@ -90,18 +90,18 @@ public class BiomeGenTaiga extends BiomeGenBase
     {
         if (this.field_150644_aH == 1 || this.field_150644_aH == 2)
         {
-            this.field_76752_A = Blocks.field_150349_c;
+            this.field_76752_A = Blocks.GRASS;
             this.field_150604_aj = 0;
-            this.field_76753_B = Blocks.field_150346_d;
+            this.field_76753_B = Blocks.DIRT;
 
             if (p_150573_7_ > 1.75D)
             {
-                this.field_76752_A = Blocks.field_150346_d;
+                this.field_76752_A = Blocks.DIRT;
                 this.field_150604_aj = 1;
             }
             else if (p_150573_7_ > -0.95D)
             {
-                this.field_76752_A = Blocks.field_150346_d;
+                this.field_76752_A = Blocks.DIRT;
                 this.field_150604_aj = 2;
             }
         }

@@ -12,7 +12,7 @@ public class BiomeEndDecorator extends BiomeDecorator
 
     public BiomeEndDecorator()
     {
-        this.field_76835_L = new WorldGenSpikes(Blocks.field_150377_bs);
+        this.field_76835_L = new WorldGenSpikes(Blocks.END_STONE);
     }
 
     protected void func_150513_a(BiomeGenBase p_150513_1_)

@@ -21,12 +21,12 @@ public class BlockOre extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return this == Blocks.field_150365_q ? Items.COAL : (this == Blocks.field_150482_ag ? Items.DIAMOND : (this == Blocks.field_150369_x ? Items.DYE : (this == Blocks.field_150412_bA ? Items.EMERALD : (this == Blocks.field_150449_bY ? Items.QUARTZ : Item.func_150898_a(this)))));
+        return this == Blocks.COAL_ORE ? Items.COAL : (this == Blocks.DIAMOND_ORE ? Items.DIAMOND : (this == Blocks.LAPIS_ORE ? Items.DYE : (this == Blocks.EMERALD_ORE ? Items.EMERALD : (this == Blocks.QUARTZ_ORE ? Items.QUARTZ : Item.func_150898_a(this)))));
     }
 
     public int func_149745_a(Random p_149745_1_)
     {
-        return this == Blocks.field_150369_x ? 4 + p_149745_1_.nextInt(5) : 1;
+        return this == Blocks.LAPIS_ORE ? 4 + p_149745_1_.nextInt(5) : 1;
     }
 
     public int func_149679_a(int p_149679_1_, Random p_149679_2_)
@@ -56,23 +56,23 @@ public class BlockOre extends Block
         {
             int j1 = 0;
 
-            if (this == Blocks.field_150365_q)
+            if (this == Blocks.COAL_ORE)
             {
                 j1 = MathHelper.func_76136_a(p_149690_1_.field_73012_v, 0, 2);
             }
-            else if (this == Blocks.field_150482_ag)
+            else if (this == Blocks.DIAMOND_ORE)
             {
                 j1 = MathHelper.func_76136_a(p_149690_1_.field_73012_v, 3, 7);
             }
-            else if (this == Blocks.field_150412_bA)
+            else if (this == Blocks.EMERALD_ORE)
             {
                 j1 = MathHelper.func_76136_a(p_149690_1_.field_73012_v, 3, 7);
             }
-            else if (this == Blocks.field_150369_x)
+            else if (this == Blocks.LAPIS_ORE)
             {
                 j1 = MathHelper.func_76136_a(p_149690_1_.field_73012_v, 2, 5);
             }
-            else if (this == Blocks.field_150449_bY)
+            else if (this == Blocks.QUARTZ_ORE)
             {
                 j1 = MathHelper.func_76136_a(p_149690_1_.field_73012_v, 2, 5);
             }
@@ -83,6 +83,6 @@ public class BlockOre extends Block
 
     public int func_149692_a(int p_149692_1_)
     {
-        return this == Blocks.field_150369_x ? 4 : 0;
+        return this == Blocks.LAPIS_ORE ? 4 : 0;
     }
 }

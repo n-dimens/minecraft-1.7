@@ -23,9 +23,9 @@ public class WorldGenReed extends WorldGenerator
 
                 for (int i2 = 0; i2 < l1; ++i2)
                 {
-                    if (Blocks.field_150436_aH.func_149718_j(p_76484_1_, i1, j1 + i2, k1))
+                    if (Blocks.REEDS.func_149718_j(p_76484_1_, i1, j1 + i2, k1))
                     {
-                        p_76484_1_.func_147465_d(i1, j1 + i2, k1, Blocks.field_150436_aH, 0, 2);
+                        p_76484_1_.func_147465_d(i1, j1 + i2, k1, Blocks.REEDS, 0, 2);
                     }
                 }
             }

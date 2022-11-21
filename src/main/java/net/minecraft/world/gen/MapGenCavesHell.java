@@ -139,7 +139,7 @@ public class MapGenCavesHell extends MapGenBase
                                 {
                                     Block block = p_151543_5_[j3];
 
-                                    if (block == Blocks.field_150356_k || block == Blocks.field_150353_l)
+                                    if (block == Blocks.FLOWING_LAVA || block == Blocks.LAVA)
                                     {
                                         flag2 = true;
                                     }
@@ -172,7 +172,7 @@ public class MapGenCavesHell extends MapGenBase
                                     {
                                         Block block1 = p_151543_5_[k3];
 
-                                        if (block1 == Blocks.field_150424_aL || block1 == Blocks.field_150346_d || block1 == Blocks.field_150349_c)
+                                        if (block1 == Blocks.NETHERRACK || block1 == Blocks.DIRT || block1 == Blocks.GRASS)
                                         {
                                             p_151543_5_[k3] = null;
                                         }

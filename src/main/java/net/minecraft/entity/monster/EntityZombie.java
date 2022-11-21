@@ -489,7 +489,7 @@ public class EntityZombie extends EntityMob
 
             if (calendar.get(2) + 1 == 10 && calendar.get(5) == 31 && this.field_70146_Z.nextFloat() < 0.25F)
             {
-                this.func_70062_b(4, new ItemStack(this.field_70146_Z.nextFloat() < 0.1F ? Blocks.field_150428_aP : Blocks.field_150423_aK));
+                this.func_70062_b(4, new ItemStack(this.field_70146_Z.nextFloat() < 0.1F ? Blocks.LIT_PUMPKIN : Blocks.PUMPKIN));
                 this.field_82174_bp[4] = 0.0F;
             }
         }
@@ -607,7 +607,7 @@ public class EntityZombie extends EntityMob
                     {
                         Block block = this.field_70170_p.func_147439_a(k, l, i1);
 
-                        if (block == Blocks.field_150411_aY || block == Blocks.field_150324_C)
+                        if (block == Blocks.IRON_BARS || block == Blocks.BED)
                         {
                             if (this.field_70146_Z.nextFloat() < 0.3F)
                             {

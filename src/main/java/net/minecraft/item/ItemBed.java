@@ -29,7 +29,7 @@ public class ItemBed extends Item
         else
         {
             ++p_77648_5_;
-            BlockBed blockbed = (BlockBed)Blocks.field_150324_C;
+            BlockBed blockbed = (BlockBed)Blocks.BED;
             int i1 = MathHelper.func_76128_c((double)(p_77648_2_.field_70177_z * 4.0F / 360.0F) + 0.5D) & 3;
             byte b0 = 0;
             byte b1 = 0;

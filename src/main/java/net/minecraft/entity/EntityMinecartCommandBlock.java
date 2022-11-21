@@ -84,7 +84,7 @@ public class EntityMinecartCommandBlock extends EntityMinecart
 
     public Block func_145817_o()
     {
-        return Blocks.field_150483_bI;
+        return Blocks.COMMAND_BLOCK;
     }
 
     public CommandBlockLogic func_145822_e()

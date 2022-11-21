@@ -66,7 +66,7 @@ public class EntityMinecartFurnace extends EntityMinecart
 
         if (!p_94095_1_.func_94541_c())
         {
-            this.func_70099_a(new ItemStack(Blocks.field_150460_al, 1), 0.0F);
+            this.func_70099_a(new ItemStack(Blocks.FURNACE, 1), 0.0F);
         }
     }
 
@@ -174,7 +174,7 @@ public class EntityMinecartFurnace extends EntityMinecart
 
     public Block func_145817_o()
     {
-        return Blocks.field_150470_am;
+        return Blocks.LIT_FURNACE;
     }
 
     public int func_94097_p()

@@ -42,12 +42,12 @@ public class BlockRedstoneComparator extends BlockRedstoneDiode implements ITile
 
     protected BlockRedstoneDiode func_149906_e()
     {
-        return Blocks.field_150455_bV;
+        return Blocks.POWERED_COMPARATOR;
     }
 
     protected BlockRedstoneDiode func_149898_i()
     {
-        return Blocks.field_150441_bU;
+        return Blocks.UNPOWERED_COMPARATOR;
     }
 
     public int func_149645_b()
@@ -59,7 +59,7 @@ public class BlockRedstoneComparator extends BlockRedstoneDiode implements ITile
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
         boolean flag = this.field_149914_a || (p_149691_2_ & 8) != 0;
-        return p_149691_1_ == 0 ? (flag ? Blocks.field_150429_aA.func_149733_h(p_149691_1_) : Blocks.field_150437_az.func_149733_h(p_149691_1_)) : (p_149691_1_ == 1 ? (flag ? Blocks.field_150455_bV.field_149761_L : this.field_149761_L) : Blocks.field_150334_T.func_149733_h(1));
+        return p_149691_1_ == 0 ? (flag ? Blocks.REDSTONE_TORCH.func_149733_h(p_149691_1_) : Blocks.UNLIT_REDSTONE_TORCH.func_149733_h(p_149691_1_)) : (p_149691_1_ == 1 ? (flag ? Blocks.POWERED_COMPARATOR.field_149761_L : this.field_149761_L) : Blocks.DOUBLE_STONE_SLAB.func_149733_h(1));
     }
 
     protected boolean func_149905_c(int p_149905_1_)

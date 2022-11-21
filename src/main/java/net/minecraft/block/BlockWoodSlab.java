@@ -26,17 +26,17 @@ public class BlockWoodSlab extends BlockSlab
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return Blocks.field_150344_f.func_149691_a(p_149691_1_, p_149691_2_ & 7);
+        return Blocks.PLANKS.func_149691_a(p_149691_1_, p_149691_2_ & 7);
     }
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.func_150898_a(Blocks.field_150376_bx);
+        return Item.func_150898_a(Blocks.WOODEN_SLAB);
     }
 
     protected ItemStack func_149644_j(int p_149644_1_)
     {
-        return new ItemStack(Item.func_150898_a(Blocks.field_150376_bx), 2, p_149644_1_ & 7);
+        return new ItemStack(Item.func_150898_a(Blocks.WOODEN_SLAB), 2, p_149644_1_ & 7);
     }
 
     public String func_150002_b(int p_150002_1_)
@@ -52,7 +52,7 @@ public class BlockWoodSlab extends BlockSlab
     @SideOnly(Side.CLIENT)
     public void func_149666_a(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_)
     {
-        if (p_149666_1_ != Item.func_150898_a(Blocks.field_150373_bw))
+        if (p_149666_1_ != Item.func_150898_a(Blocks.DOUBLE_WOODEN_SLAB))
         {
             for (int i = 0; i < field_150005_b.length; ++i)
             {

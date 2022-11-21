@@ -24,9 +24,9 @@ public class WorldGenDoublePlant extends WorldGenerator
             int j1 = p_76484_4_ + p_76484_2_.nextInt(4) - p_76484_2_.nextInt(4);
             int k1 = p_76484_5_ + p_76484_2_.nextInt(8) - p_76484_2_.nextInt(8);
 
-            if (p_76484_1_.func_147437_c(i1, j1, k1) && (!p_76484_1_.field_73011_w.field_76576_e || j1 < 254) && Blocks.field_150398_cm.func_149742_c(p_76484_1_, i1, j1, k1))
+            if (p_76484_1_.func_147437_c(i1, j1, k1) && (!p_76484_1_.field_73011_w.field_76576_e || j1 < 254) && Blocks.DOUBLE_PLANT.func_149742_c(p_76484_1_, i1, j1, k1))
             {
-                Blocks.field_150398_cm.func_149889_c(p_76484_1_, i1, j1, k1, this.field_150549_a, 2);
+                Blocks.DOUBLE_PLANT.func_149889_c(p_76484_1_, i1, j1, k1, this.field_150549_a, 2);
                 flag = true;
             }
         }

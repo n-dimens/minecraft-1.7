@@ -52,7 +52,7 @@ public class EntityMooshroom extends EntityCow
 
                 for (int i = 0; i < 5; ++i)
                 {
-                    this.field_70170_p.func_72838_d(new EntityItem(this.field_70170_p, this.field_70165_t, this.field_70163_u + (double)this.field_70131_O, this.field_70161_v, new ItemStack(Blocks.field_150337_Q)));
+                    this.field_70170_p.func_72838_d(new EntityItem(this.field_70170_p, this.field_70165_t, this.field_70163_u + (double)this.field_70131_O, this.field_70161_v, new ItemStack(Blocks.RED_MUSHROOM)));
                 }
 
                 itemstack.func_77972_a(1, p_70085_1_);

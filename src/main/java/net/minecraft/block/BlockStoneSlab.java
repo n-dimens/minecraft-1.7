@@ -35,7 +35,7 @@ public class BlockStoneSlab extends BlockSlab
             p_149691_1_ = 1;
         }
 
-        return k == 0 ? (p_149691_1_ != 1 && p_149691_1_ != 0 ? this.field_150007_M : this.field_149761_L) : (k == 1 ? Blocks.field_150322_A.func_149733_h(p_149691_1_) : (k == 2 ? Blocks.field_150344_f.func_149733_h(p_149691_1_) : (k == 3 ? Blocks.field_150347_e.func_149733_h(p_149691_1_) : (k == 4 ? Blocks.field_150336_V.func_149733_h(p_149691_1_) : (k == 5 ? Blocks.field_150417_aV.func_149691_a(p_149691_1_, 0) : (k == 6 ? Blocks.field_150385_bj.func_149733_h(1) : (k == 7 ? Blocks.field_150371_ca.func_149733_h(p_149691_1_) : this.field_149761_L)))))));
+        return k == 0 ? (p_149691_1_ != 1 && p_149691_1_ != 0 ? this.field_150007_M : this.field_149761_L) : (k == 1 ? Blocks.SANDSTONE.func_149733_h(p_149691_1_) : (k == 2 ? Blocks.PLANKS.func_149733_h(p_149691_1_) : (k == 3 ? Blocks.COBBLESTONE.func_149733_h(p_149691_1_) : (k == 4 ? Blocks.BRICK_BLOCK.func_149733_h(p_149691_1_) : (k == 5 ? Blocks.STONEBRICK.func_149691_a(p_149691_1_, 0) : (k == 6 ? Blocks.NETHER_BRICK.func_149733_h(1) : (k == 7 ? Blocks.QUARTZ_BLOCK.func_149733_h(p_149691_1_) : this.field_149761_L)))))));
     }
 
     @SideOnly(Side.CLIENT)
@@ -47,12 +47,12 @@ public class BlockStoneSlab extends BlockSlab
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.func_150898_a(Blocks.field_150333_U);
+        return Item.func_150898_a(Blocks.STONE_SLAB);
     }
 
     protected ItemStack func_149644_j(int p_149644_1_)
     {
-        return new ItemStack(Item.func_150898_a(Blocks.field_150333_U), 2, p_149644_1_ & 7);
+        return new ItemStack(Item.func_150898_a(Blocks.STONE_SLAB), 2, p_149644_1_ & 7);
     }
 
     public String func_150002_b(int p_150002_1_)
@@ -68,7 +68,7 @@ public class BlockStoneSlab extends BlockSlab
     @SideOnly(Side.CLIENT)
     public void func_149666_a(Item p_149666_1_, CreativeTabs p_149666_2_, List p_149666_3_)
     {
-        if (p_149666_1_ != Item.func_150898_a(Blocks.field_150334_T))
+        if (p_149666_1_ != Item.func_150898_a(Blocks.DOUBLE_STONE_SLAB))
         {
             for (int i = 0; i <= 7; ++i)
             {

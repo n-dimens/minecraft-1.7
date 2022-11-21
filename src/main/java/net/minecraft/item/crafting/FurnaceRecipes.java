@@ -25,22 +25,22 @@ public class FurnaceRecipes
 
     private FurnaceRecipes()
     {
-        this.func_151393_a(Blocks.field_150366_p, new ItemStack(Items.IRON_INGOT), 0.7F);
-        this.func_151393_a(Blocks.field_150352_o, new ItemStack(Items.GOLD_INGOT), 1.0F);
-        this.func_151393_a(Blocks.field_150482_ag, new ItemStack(Items.DIAMOND), 1.0F);
-        this.func_151393_a(Blocks.field_150354_m, new ItemStack(Blocks.field_150359_w), 0.1F);
+        this.func_151393_a(Blocks.IRON_ORE, new ItemStack(Items.IRON_INGOT), 0.7F);
+        this.func_151393_a(Blocks.GOLD_ORE, new ItemStack(Items.GOLD_INGOT), 1.0F);
+        this.func_151393_a(Blocks.DIAMOND_ORE, new ItemStack(Items.DIAMOND), 1.0F);
+        this.func_151393_a(Blocks.SAND, new ItemStack(Blocks.GLASS), 0.1F);
         this.func_151396_a(Items.PORKCHOP, new ItemStack(Items.COOKED_PORKCHOP), 0.35F);
         this.func_151396_a(Items.BEEF, new ItemStack(Items.COOKED_BEEF), 0.35F);
         this.func_151396_a(Items.CHICKEN, new ItemStack(Items.COOKED_CHICKEN), 0.35F);
-        this.func_151393_a(Blocks.field_150347_e, new ItemStack(Blocks.field_150348_b), 0.1F);
+        this.func_151393_a(Blocks.COBBLESTONE, new ItemStack(Blocks.STONE), 0.1F);
         this.func_151396_a(Items.CLAY_BALL, new ItemStack(Items.BRICK), 0.3F);
-        this.func_151393_a(Blocks.field_150435_aG, new ItemStack(Blocks.field_150405_ch), 0.35F);
-        this.func_151393_a(Blocks.field_150434_aF, new ItemStack(Items.DYE, 1, 2), 0.2F);
-        this.func_151393_a(Blocks.field_150364_r, new ItemStack(Items.COAL, 1, 1), 0.15F);
-        this.func_151393_a(Blocks.field_150363_s, new ItemStack(Items.COAL, 1, 1), 0.15F);
-        this.func_151393_a(Blocks.field_150412_bA, new ItemStack(Items.EMERALD), 1.0F);
+        this.func_151393_a(Blocks.CLAY, new ItemStack(Blocks.HARDENED_CLAY), 0.35F);
+        this.func_151393_a(Blocks.CACTUS, new ItemStack(Items.DYE, 1, 2), 0.2F);
+        this.func_151393_a(Blocks.LOG, new ItemStack(Items.COAL, 1, 1), 0.15F);
+        this.func_151393_a(Blocks.LOG_2, new ItemStack(Items.COAL, 1, 1), 0.15F);
+        this.func_151393_a(Blocks.EMERALD_ORE, new ItemStack(Items.EMERALD), 1.0F);
         this.func_151396_a(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0.35F);
-        this.func_151393_a(Blocks.field_150424_aL, new ItemStack(Items.NETHERBRICK), 0.1F);
+        this.func_151393_a(Blocks.NETHERRACK, new ItemStack(Items.NETHERBRICK), 0.1F);
         ItemFishFood.FishType[] afishtype = ItemFishFood.FishType.values();
         int i = afishtype.length;
 
@@ -54,10 +54,10 @@ public class FurnaceRecipes
             }
         }
 
-        this.func_151393_a(Blocks.field_150365_q, new ItemStack(Items.COAL), 0.1F);
-        this.func_151393_a(Blocks.field_150450_ax, new ItemStack(Items.REDSTONE), 0.7F);
-        this.func_151393_a(Blocks.field_150369_x, new ItemStack(Items.DYE, 1, 4), 0.2F);
-        this.func_151393_a(Blocks.field_150449_bY, new ItemStack(Items.QUARTZ), 0.2F);
+        this.func_151393_a(Blocks.COAL_ORE, new ItemStack(Items.COAL), 0.1F);
+        this.func_151393_a(Blocks.REDSTONE_ORE, new ItemStack(Items.REDSTONE), 0.7F);
+        this.func_151393_a(Blocks.LAPIS_ORE, new ItemStack(Items.DYE, 1, 4), 0.2F);
+        this.func_151393_a(Blocks.QUARTZ_ORE, new ItemStack(Items.QUARTZ), 0.2F);
     }
 
     public void func_151393_a(Block p_151393_1_, ItemStack p_151393_2_, float p_151393_3_)

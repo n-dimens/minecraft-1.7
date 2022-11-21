@@ -43,7 +43,7 @@ public class BlockPistonExtension extends Block
             int i1 = func_150085_b(p_149681_5_);
             Block block = p_149681_1_.func_147439_a(p_149681_2_ - Facing.field_71586_b[i1], p_149681_3_ - Facing.field_71587_c[i1], p_149681_4_ - Facing.field_71585_d[i1]);
 
-            if (block == Blocks.field_150331_J || block == Blocks.field_150320_F)
+            if (block == Blocks.PISTON || block == Blocks.STICKY_PISTON)
             {
                 p_149681_1_.func_147468_f(p_149681_2_ - Facing.field_71586_b[i1], p_149681_3_ - Facing.field_71587_c[i1], p_149681_4_ - Facing.field_71585_d[i1]);
             }
@@ -61,7 +61,7 @@ public class BlockPistonExtension extends Block
         p_149749_4_ += Facing.field_71585_d[i1];
         Block block1 = p_149749_1_.func_147439_a(p_149749_2_, p_149749_3_, p_149749_4_);
 
-        if (block1 == Blocks.field_150331_J || block1 == Blocks.field_150320_F)
+        if (block1 == Blocks.PISTON || block1 == Blocks.STICKY_PISTON)
         {
             p_149749_6_ = p_149749_1_.func_72805_g(p_149749_2_, p_149749_3_, p_149749_4_);
 
@@ -202,7 +202,7 @@ public class BlockPistonExtension extends Block
         int l = func_150085_b(p_149695_1_.func_72805_g(p_149695_2_, p_149695_3_, p_149695_4_));
         Block block1 = p_149695_1_.func_147439_a(p_149695_2_ - Facing.field_71586_b[l], p_149695_3_ - Facing.field_71587_c[l], p_149695_4_ - Facing.field_71585_d[l]);
 
-        if (block1 != Blocks.field_150331_J && block1 != Blocks.field_150320_F)
+        if (block1 != Blocks.PISTON && block1 != Blocks.STICKY_PISTON)
         {
             p_149695_1_.func_147468_f(p_149695_2_, p_149695_3_, p_149695_4_);
         }
@@ -221,6 +221,6 @@ public class BlockPistonExtension extends Block
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
         int l = p_149694_1_.func_72805_g(p_149694_2_, p_149694_3_, p_149694_4_);
-        return (l & 8) != 0 ? Item.func_150898_a(Blocks.field_150320_F) : Item.func_150898_a(Blocks.field_150331_J);
+        return (l & 8) != 0 ? Item.func_150898_a(Blocks.STICKY_PISTON) : Item.func_150898_a(Blocks.PISTON);
     }
 }

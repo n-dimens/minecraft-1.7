@@ -18,11 +18,11 @@ public class TileEntityRendererChestHelper
 
     public void func_147715_a(Block p_147715_1_, int p_147715_2_, float p_147715_3_)
     {
-        if (p_147715_1_ == Blocks.field_150477_bB)
+        if (p_147715_1_ == Blocks.ENDER_CHEST)
         {
             TileEntityRendererDispatcher.field_147556_a.func_147549_a(this.field_147716_d, 0.0D, 0.0D, 0.0D, 0.0F);
         }
-        else if (p_147715_1_ == Blocks.field_150447_bR)
+        else if (p_147715_1_ == Blocks.TRAPPED_CHEST)
         {
             TileEntityRendererDispatcher.field_147556_a.func_147549_a(this.field_147718_c, 0.0D, 0.0D, 0.0D, 0.0F);
         }

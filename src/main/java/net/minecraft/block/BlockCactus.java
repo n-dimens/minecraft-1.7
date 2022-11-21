@@ -125,7 +125,7 @@ public class BlockCactus extends Block
         else
         {
             Block block = p_149718_1_.func_147439_a(p_149718_2_, p_149718_3_ - 1, p_149718_4_);
-            return block == Blocks.field_150434_aF || block == Blocks.field_150354_m;
+            return block == Blocks.CACTUS || block == Blocks.SAND;
         }
     }
 

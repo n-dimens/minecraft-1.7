@@ -16,7 +16,7 @@ public class ItemRedstone extends Item
 
     public boolean func_77648_a(ItemStack p_77648_1_, EntityPlayer p_77648_2_, World p_77648_3_, int p_77648_4_, int p_77648_5_, int p_77648_6_, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_)
     {
-        if (p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_) != Blocks.field_150431_aC)
+        if (p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_) != Blocks.SNOW_LAYER)
         {
             if (p_77648_7_ == 0)
             {
@@ -60,10 +60,10 @@ public class ItemRedstone extends Item
         }
         else
         {
-            if (Blocks.field_150488_af.func_149742_c(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_))
+            if (Blocks.REDSTONE_WIRE.func_149742_c(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_))
             {
                 --p_77648_1_.field_77994_a;
-                p_77648_3_.func_147449_b(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.field_150488_af);
+                p_77648_3_.func_147449_b(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.REDSTONE_WIRE);
             }
 
             return true;

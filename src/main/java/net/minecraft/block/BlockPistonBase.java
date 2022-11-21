@@ -67,7 +67,7 @@ public class BlockPistonBase extends Block
     @SideOnly(Side.CLIENT)
     public static IIcon func_150074_e(String p_150074_0_)
     {
-        return p_150074_0_ == "piston_side" ? Blocks.field_150331_J.field_149761_L : (p_150074_0_ == "piston_top_normal" ? Blocks.field_150331_J.field_150084_N : (p_150074_0_ == "piston_top_sticky" ? Blocks.field_150320_F.field_150084_N : (p_150074_0_ == "piston_inner" ? Blocks.field_150331_J.field_150081_b : null)));
+        return p_150074_0_ == "piston_side" ? Blocks.PISTON.field_149761_L : (p_150074_0_ == "piston_top_normal" ? Blocks.PISTON.field_150084_N : (p_150074_0_ == "piston_top_sticky" ? Blocks.STICKY_PISTON.field_150084_N : (p_150074_0_ == "piston_inner" ? Blocks.PISTON.field_150081_b : null)));
     }
 
     @SideOnly(Side.CLIENT)
@@ -182,7 +182,7 @@ public class BlockPistonBase extends Block
                 ((TileEntityPiston)tileentity1).func_145866_f();
             }
 
-            p_149696_1_.func_147465_d(p_149696_2_, p_149696_3_, p_149696_4_, Blocks.field_150326_M, p_149696_6_, 3);
+            p_149696_1_.func_147465_d(p_149696_2_, p_149696_3_, p_149696_4_, Blocks.PISTON_EXTENSION, p_149696_6_, 3);
             p_149696_1_.func_147455_a(p_149696_2_, p_149696_3_, p_149696_4_, BlockPistonMoving.func_149962_a(this, p_149696_6_, p_149696_6_, false, true));
 
             if (this.field_150082_a)
@@ -194,7 +194,7 @@ public class BlockPistonBase extends Block
                 int i2 = p_149696_1_.func_72805_g(j1, k1, l1);
                 boolean flag1 = false;
 
-                if (block == Blocks.field_150326_M)
+                if (block == Blocks.PISTON_EXTENSION)
                 {
                     TileEntity tileentity = p_149696_1_.func_147438_o(j1, k1, l1);
 
@@ -212,12 +212,12 @@ public class BlockPistonBase extends Block
                     }
                 }
 
-                if (!flag1 && block.func_149688_o() != Material.field_151579_a && func_150080_a(block, p_149696_1_, j1, k1, l1, false) && (block.func_149656_h() == 0 || block == Blocks.field_150331_J || block == Blocks.field_150320_F))
+                if (!flag1 && block.func_149688_o() != Material.field_151579_a && func_150080_a(block, p_149696_1_, j1, k1, l1, false) && (block.func_149656_h() == 0 || block == Blocks.PISTON || block == Blocks.STICKY_PISTON))
                 {
                     p_149696_2_ += Facing.field_71586_b[p_149696_6_];
                     p_149696_3_ += Facing.field_71587_c[p_149696_6_];
                     p_149696_4_ += Facing.field_71585_d[p_149696_6_];
-                    p_149696_1_.func_147465_d(p_149696_2_, p_149696_3_, p_149696_4_, Blocks.field_150326_M, i2, 3);
+                    p_149696_1_.func_147465_d(p_149696_2_, p_149696_3_, p_149696_4_, Blocks.PISTON_EXTENSION, i2, 3);
                     p_149696_1_.func_147455_a(p_149696_2_, p_149696_3_, p_149696_4_, BlockPistonMoving.func_149962_a(block, i2, p_149696_6_, false, false));
                     p_149696_1_.func_147468_f(j1, k1, l1);
                 }
@@ -327,13 +327,13 @@ public class BlockPistonBase extends Block
 
     private static boolean func_150080_a(Block p_150080_0_, World p_150080_1_, int p_150080_2_, int p_150080_3_, int p_150080_4_, boolean p_150080_5_)
     {
-        if (p_150080_0_ == Blocks.field_150343_Z)
+        if (p_150080_0_ == Blocks.OBSIDIAN)
         {
             return false;
         }
         else
         {
-            if (p_150080_0_ != Blocks.field_150331_J && p_150080_0_ != Blocks.field_150320_F)
+            if (p_150080_0_ != Blocks.PISTON && p_150080_0_ != Blocks.STICKY_PISTON)
             {
                 if (p_150080_0_.func_149712_f(p_150080_1_, p_150080_2_, p_150080_3_, p_150080_4_) == -1.0F)
                 {
@@ -472,12 +472,12 @@ public class BlockPistonBase extends Block
 
                 if (block1 == this && k2 == p_150079_2_ && l2 == p_150079_3_ && i3 == p_150079_4_)
                 {
-                    p_150079_1_.func_147465_d(i1, j1, k1, Blocks.field_150326_M, p_150079_5_ | (this.field_150082_a ? 8 : 0), 4);
-                    p_150079_1_.func_147455_a(i1, j1, k1, BlockPistonMoving.func_149962_a(Blocks.field_150332_K, p_150079_5_ | (this.field_150082_a ? 8 : 0), p_150079_5_, true, false));
+                    p_150079_1_.func_147465_d(i1, j1, k1, Blocks.PISTON_EXTENSION, p_150079_5_ | (this.field_150082_a ? 8 : 0), 4);
+                    p_150079_1_.func_147455_a(i1, j1, k1, BlockPistonMoving.func_149962_a(Blocks.PISTON_HEAD, p_150079_5_ | (this.field_150082_a ? 8 : 0), p_150079_5_, true, false));
                 }
                 else
                 {
-                    p_150079_1_.func_147465_d(i1, j1, k1, Blocks.field_150326_M, j3, 4);
+                    p_150079_1_.func_147465_d(i1, j1, k1, Blocks.PISTON_EXTENSION, j3, 4);
                     p_150079_1_.func_147455_a(i1, j1, k1, BlockPistonMoving.func_149962_a(block1, j3, p_150079_5_, true, false));
                 }
 

@@ -296,8 +296,8 @@ public class RenderGlobal implements IWorldAccess
     {
         if (this.field_72769_h != null)
         {
-            Blocks.field_150362_t.func_150122_b(this.field_72777_q.gameSettings.field_74347_j);
-            Blocks.field_150361_u.func_150122_b(this.field_72777_q.gameSettings.field_74347_j);
+            Blocks.LEAVES.func_150122_b(this.field_72777_q.gameSettings.field_74347_j);
+            Blocks.LEAVES_2.func_150122_b(this.field_72777_q.gameSettings.field_74347_j);
             this.field_72739_F = this.field_72777_q.gameSettings.field_151451_c;
             int i;
 

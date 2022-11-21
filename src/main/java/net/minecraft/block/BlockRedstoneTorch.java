@@ -129,7 +129,7 @@ public class BlockRedstoneTorch extends BlockTorch
         {
             if (flag)
             {
-                p_149674_1_.func_147465_d(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.field_150437_az, p_149674_1_.func_72805_g(p_149674_2_, p_149674_3_, p_149674_4_), 3);
+                p_149674_1_.func_147465_d(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.UNLIT_REDSTONE_TORCH, p_149674_1_.func_72805_g(p_149674_2_, p_149674_3_, p_149674_4_), 3);
 
                 if (this.func_150111_a(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_, true))
                 {
@@ -147,7 +147,7 @@ public class BlockRedstoneTorch extends BlockTorch
         }
         else if (!flag && !this.func_150111_a(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_, false))
         {
-            p_149674_1_.func_147465_d(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.field_150429_aA, p_149674_1_.func_72805_g(p_149674_2_, p_149674_3_, p_149674_4_), 3);
+            p_149674_1_.func_147465_d(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.REDSTONE_TORCH, p_149674_1_.func_72805_g(p_149674_2_, p_149674_3_, p_149674_4_), 3);
         }
     }
 
@@ -171,7 +171,7 @@ public class BlockRedstoneTorch extends BlockTorch
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.func_150898_a(Blocks.field_150429_aA);
+        return Item.func_150898_a(Blocks.REDSTONE_TORCH);
     }
 
     public boolean func_149744_f()
@@ -217,12 +217,12 @@ public class BlockRedstoneTorch extends BlockTorch
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Item.func_150898_a(Blocks.field_150429_aA);
+        return Item.func_150898_a(Blocks.REDSTONE_TORCH);
     }
 
     public boolean func_149667_c(Block p_149667_1_)
     {
-        return p_149667_1_ == Blocks.field_150437_az || p_149667_1_ == Blocks.field_150429_aA;
+        return p_149667_1_ == Blocks.UNLIT_REDSTONE_TORCH || p_149667_1_ == Blocks.REDSTONE_TORCH;
     }
 
     static class Toggle

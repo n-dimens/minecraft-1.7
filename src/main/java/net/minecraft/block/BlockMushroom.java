@@ -85,7 +85,7 @@ public class BlockMushroom extends BlockBush implements IGrowable
         if (p_149718_3_ >= 0 && p_149718_3_ < 256)
         {
             Block block = p_149718_1_.func_147439_a(p_149718_2_, p_149718_3_ - 1, p_149718_4_);
-            return block == Blocks.field_150391_bh || block == Blocks.field_150346_d && p_149718_1_.func_72805_g(p_149718_2_, p_149718_3_ - 1, p_149718_4_) == 2 || p_149718_1_.func_72883_k(p_149718_2_, p_149718_3_, p_149718_4_) < 13 && this.func_149854_a(block);
+            return block == Blocks.MYCELIUM || block == Blocks.DIRT && p_149718_1_.func_72805_g(p_149718_2_, p_149718_3_ - 1, p_149718_4_) == 2 || p_149718_1_.func_72883_k(p_149718_2_, p_149718_3_, p_149718_4_) < 13 && this.func_149854_a(block);
         }
         else
         {
@@ -99,11 +99,11 @@ public class BlockMushroom extends BlockBush implements IGrowable
         p_149884_1_.func_147468_f(p_149884_2_, p_149884_3_, p_149884_4_);
         WorldGenBigMushroom worldgenbigmushroom = null;
 
-        if (this == Blocks.field_150338_P)
+        if (this == Blocks.BROWN_MUSHROOM)
         {
             worldgenbigmushroom = new WorldGenBigMushroom(0);
         }
-        else if (this == Blocks.field_150337_Q)
+        else if (this == Blocks.RED_MUSHROOM)
         {
             worldgenbigmushroom = new WorldGenBigMushroom(1);
         }

@@ -129,11 +129,11 @@ public class ChunkProviderGenerate implements IChunkProvider
                             {
                                 if ((d15 += d16) > 0.0D)
                                 {
-                                    p_147424_3_[j3 += short1] = Blocks.field_150348_b;
+                                    p_147424_3_[j3 += short1] = Blocks.STONE;
                                 }
                                 else if (k2 * 8 + l2 < b0)
                                 {
-                                    p_147424_3_[j3 += short1] = Blocks.field_150355_j;
+                                    p_147424_3_[j3 += short1] = Blocks.WATER;
                                 }
                                 else
                                 {
@@ -362,7 +362,7 @@ public class ChunkProviderGenerate implements IChunkProvider
             k1 = k + this.field_73220_k.nextInt(16) + 8;
             l1 = this.field_73220_k.nextInt(256);
             i2 = l + this.field_73220_k.nextInt(16) + 8;
-            (new WorldGenLakes(Blocks.field_150355_j)).func_76484_a(this.field_73230_p, this.field_73220_k, k1, l1, i2);
+            (new WorldGenLakes(Blocks.WATER)).func_76484_a(this.field_73230_p, this.field_73220_k, k1, l1, i2);
         }
 
         if (!flag && this.field_73220_k.nextInt(8) == 0)
@@ -373,7 +373,7 @@ public class ChunkProviderGenerate implements IChunkProvider
 
             if (l1 < 63 || this.field_73220_k.nextInt(10) == 0)
             {
-                (new WorldGenLakes(Blocks.field_150353_l)).func_76484_a(this.field_73230_p, this.field_73220_k, k1, l1, i2);
+                (new WorldGenLakes(Blocks.LAVA)).func_76484_a(this.field_73230_p, this.field_73220_k, k1, l1, i2);
             }
         }
 
@@ -398,12 +398,12 @@ public class ChunkProviderGenerate implements IChunkProvider
 
                 if (this.field_73230_p.func_72884_u(k1 + k, i2 - 1, l1 + l))
                 {
-                    this.field_73230_p.func_147465_d(k1 + k, i2 - 1, l1 + l, Blocks.field_150432_aD, 0, 2);
+                    this.field_73230_p.func_147465_d(k1 + k, i2 - 1, l1 + l, Blocks.ICE, 0, 2);
                 }
 
                 if (this.field_73230_p.func_147478_e(k1 + k, i2, l1 + l, true))
                 {
-                    this.field_73230_p.func_147465_d(k1 + k, i2, l1 + l, Blocks.field_150431_aC, 0, 2);
+                    this.field_73230_p.func_147465_d(k1 + k, i2, l1 + l, Blocks.SNOW_LAYER, 0, 2);
                 }
             }
         }

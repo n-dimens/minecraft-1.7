@@ -345,12 +345,12 @@ public class EntityBoat extends Entity
                     int k = MathHelper.func_76128_c(this.field_70163_u) + j1;
                     Block block = this.field_70170_p.func_147439_a(i1, k, j);
 
-                    if (block == Blocks.field_150431_aC)
+                    if (block == Blocks.SNOW_LAYER)
                     {
                         this.field_70170_p.func_147468_f(i1, k, j);
                         this.field_70123_F = false;
                     }
-                    else if (block == Blocks.field_150392_bi)
+                    else if (block == Blocks.WATERLILY)
                     {
                         this.field_70170_p.func_147480_a(i1, k, j, true);
                         this.field_70123_F = false;
@@ -375,7 +375,7 @@ public class EntityBoat extends Entity
 
                     for (l = 0; l < 3; ++l)
                     {
-                        this.func_145778_a(Item.func_150898_a(Blocks.field_150344_f), 1, 0.0F);
+                        this.func_145778_a(Item.func_150898_a(Blocks.PLANKS), 1, 0.0F);
                     }
 
                     for (l = 0; l < 2; ++l)
@@ -497,7 +497,7 @@ public class EntityBoat extends Entity
 
                     for (l = 0; l < 3; ++l)
                     {
-                        this.func_145778_a(Item.func_150898_a(Blocks.field_150344_f), 1, 0.0F);
+                        this.func_145778_a(Item.func_150898_a(Blocks.PLANKS), 1, 0.0F);
                     }
 
                     for (l = 0; l < 2; ++l)

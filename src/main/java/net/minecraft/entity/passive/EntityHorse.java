@@ -361,7 +361,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         if (!this.field_70170_p.field_72995_K && this.func_110261_ca())
         {
-            this.func_145779_a(Item.func_150898_a(Blocks.field_150486_ae), 1);
+            this.func_145779_a(Item.func_150898_a(Blocks.CHEST), 1);
             this.func_110207_m(false);
         }
     }
@@ -561,9 +561,9 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         Block.SoundType soundtype = p_145780_4_.field_149762_H;
 
-        if (this.field_70170_p.func_147439_a(p_145780_1_, p_145780_2_ + 1, p_145780_3_) == Blocks.field_150431_aC)
+        if (this.field_70170_p.func_147439_a(p_145780_1_, p_145780_2_ + 1, p_145780_3_) == Blocks.SNOW_LAYER)
         {
-            soundtype = Blocks.field_150431_aC.field_149762_H;
+            soundtype = Blocks.SNOW_LAYER.field_149762_H;
         }
 
         if (!p_145780_4_.func_149688_o().func_76224_d())
@@ -781,7 +781,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                         short1 = 180;
                         b1 = 3;
                     }
-                    else if (Block.func_149634_a(itemstack.func_77973_b()) == Blocks.field_150407_cf)
+                    else if (Block.func_149634_a(itemstack.func_77973_b()) == Blocks.HAY_BLOCK)
                     {
                         f = 20.0F;
                         short1 = 180;
@@ -852,7 +852,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                     return true;
                 }
 
-                if (!flag && this.func_110229_cs() && !this.func_110261_ca() && itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150486_ae))
+                if (!flag && this.func_110229_cs() && !this.func_110261_ca() && itemstack.func_77973_b() == Item.func_150898_a(Blocks.CHEST))
                 {
                     this.func_110207_m(true);
                     this.func_85030_a("mob.chickenplop", 1.0F, (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F);
@@ -972,7 +972,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                 this.func_70691_i(1.0F);
             }
 
-            if (!this.func_110204_cc() && this.field_70153_n == null && this.field_70146_Z.nextInt(300) == 0 && this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) - 1, MathHelper.func_76128_c(this.field_70161_v)) == Blocks.field_150349_c)
+            if (!this.func_110204_cc() && this.field_70153_n == null && this.field_70146_Z.nextInt(300) == 0 && this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) - 1, MathHelper.func_76128_c(this.field_70161_v)) == Blocks.GRASS)
             {
                 this.func_110227_p(true);
             }

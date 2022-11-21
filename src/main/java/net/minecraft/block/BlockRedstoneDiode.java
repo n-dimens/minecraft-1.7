@@ -67,7 +67,7 @@ public abstract class BlockRedstoneDiode extends BlockDirectional
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return p_149691_1_ == 0 ? (this.field_149914_a ? Blocks.field_150429_aA.func_149733_h(p_149691_1_) : Blocks.field_150437_az.func_149733_h(p_149691_1_)) : (p_149691_1_ == 1 ? this.field_149761_L : Blocks.field_150334_T.func_149733_h(1));
+        return p_149691_1_ == 0 ? (this.field_149914_a ? Blocks.REDSTONE_TORCH.func_149733_h(p_149691_1_) : Blocks.UNLIT_REDSTONE_TORCH.func_149733_h(p_149691_1_)) : (p_149691_1_ == 1 ? this.field_149761_L : Blocks.DOUBLE_STONE_SLAB.func_149733_h(1));
     }
 
     @SideOnly(Side.CLIENT)
@@ -167,7 +167,7 @@ public abstract class BlockRedstoneDiode extends BlockDirectional
         int j1 = p_149903_2_ + Direction.field_71583_a[i1];
         int k1 = p_149903_4_ + Direction.field_71581_b[i1];
         int l1 = p_149903_1_.func_72878_l(j1, p_149903_3_, k1, Direction.field_71582_c[i1]);
-        return l1 >= 15 ? l1 : Math.max(l1, p_149903_1_.func_147439_a(j1, p_149903_3_, k1) == Blocks.field_150488_af ? p_149903_1_.func_72805_g(j1, p_149903_3_, k1) : 0);
+        return l1 >= 15 ? l1 : Math.max(l1, p_149903_1_.func_147439_a(j1, p_149903_3_, k1) == Blocks.REDSTONE_WIRE ? p_149903_1_.func_72805_g(j1, p_149903_3_, k1) : 0);
     }
 
     protected int func_149902_h(IBlockAccess p_149902_1_, int p_149902_2_, int p_149902_3_, int p_149902_4_, int p_149902_5_)
@@ -190,7 +190,7 @@ public abstract class BlockRedstoneDiode extends BlockDirectional
     protected int func_149913_i(IBlockAccess p_149913_1_, int p_149913_2_, int p_149913_3_, int p_149913_4_, int p_149913_5_)
     {
         Block block = p_149913_1_.func_147439_a(p_149913_2_, p_149913_3_, p_149913_4_);
-        return this.func_149908_a(block) ? (block == Blocks.field_150488_af ? p_149913_1_.func_72805_g(p_149913_2_, p_149913_3_, p_149913_4_) : p_149913_1_.func_72879_k(p_149913_2_, p_149913_3_, p_149913_4_, p_149913_5_)) : 0;
+        return this.func_149908_a(block) ? (block == Blocks.REDSTONE_WIRE ? p_149913_1_.func_72805_g(p_149913_2_, p_149913_3_, p_149913_4_) : p_149913_1_.func_72879_k(p_149913_2_, p_149913_3_, p_149913_4_, p_149913_5_)) : 0;
     }
 
     public boolean func_149744_f()
@@ -276,7 +276,7 @@ public abstract class BlockRedstoneDiode extends BlockDirectional
 
     public static boolean func_149909_d(Block p_149909_0_)
     {
-        return Blocks.field_150413_aR.func_149907_e(p_149909_0_) || Blocks.field_150441_bU.func_149907_e(p_149909_0_);
+        return Blocks.UNPOWERED_REPEATER.func_149907_e(p_149909_0_) || Blocks.UNPOWERED_COMPARATOR.func_149907_e(p_149909_0_);
     }
 
     public boolean func_149907_e(Block p_149907_1_)

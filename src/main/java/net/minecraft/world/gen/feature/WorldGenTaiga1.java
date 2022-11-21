@@ -71,9 +71,9 @@ public class WorldGenTaiga1 extends WorldGenAbstractTree
             {
                 Block block1 = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ - 1, p_76484_5_);
 
-                if ((block1 == Blocks.field_150349_c || block1 == Blocks.field_150346_d) && p_76484_4_ < 256 - l - 1)
+                if ((block1 == Blocks.GRASS || block1 == Blocks.DIRT) && p_76484_4_ < 256 - l - 1)
                 {
-                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, Blocks.field_150346_d);
+                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, Blocks.DIRT);
                     i3 = 0;
 
                     for (i2 = p_76484_4_ + l; i2 >= p_76484_4_ + i1; --i2)
@@ -88,7 +88,7 @@ public class WorldGenTaiga1 extends WorldGenAbstractTree
 
                                 if ((Math.abs(j3) != i3 || Math.abs(l2) != i3 || i3 <= 0) && !p_76484_1_.func_147439_a(j2, i2, k2).func_149730_j())
                                 {
-                                    this.func_150516_a(p_76484_1_, j2, i2, k2, Blocks.field_150362_t, 1);
+                                    this.func_150516_a(p_76484_1_, j2, i2, k2, Blocks.LEAVES, 1);
                                 }
                             }
                         }
@@ -109,7 +109,7 @@ public class WorldGenTaiga1 extends WorldGenAbstractTree
 
                         if (block2.func_149688_o() == Material.field_151579_a || block2.func_149688_o() == Material.field_151584_j)
                         {
-                            this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + i2, p_76484_5_, Blocks.field_150364_r, 1);
+                            this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + i2, p_76484_5_, Blocks.LOG, 1);
                         }
                     }
 

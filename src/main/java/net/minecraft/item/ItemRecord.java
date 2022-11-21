@@ -35,7 +35,7 @@ public class ItemRecord extends Item
 
     public boolean func_77648_a(ItemStack p_77648_1_, EntityPlayer p_77648_2_, World p_77648_3_, int p_77648_4_, int p_77648_5_, int p_77648_6_, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_)
     {
-        if (p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_) == Blocks.field_150421_aI && p_77648_3_.func_72805_g(p_77648_4_, p_77648_5_, p_77648_6_) == 0)
+        if (p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_) == Blocks.JUKEBOX && p_77648_3_.func_72805_g(p_77648_4_, p_77648_5_, p_77648_6_) == 0)
         {
             if (p_77648_3_.field_72995_K)
             {
@@ -43,7 +43,7 @@ public class ItemRecord extends Item
             }
             else
             {
-                ((BlockJukebox)Blocks.field_150421_aI).func_149926_b(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_1_);
+                ((BlockJukebox)Blocks.JUKEBOX).func_149926_b(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_1_);
                 p_77648_3_.func_72889_a((EntityPlayer)null, 1005, p_77648_4_, p_77648_5_, p_77648_6_, Item.func_150891_b(this));
                 --p_77648_1_.field_77994_a;
                 return true;

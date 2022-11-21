@@ -39,7 +39,7 @@ public class EmptyChunk extends Chunk
 
     public Block func_150810_a(int p_150810_1_, int p_150810_2_, int p_150810_3_)
     {
-        return Blocks.field_150350_a;
+        return Blocks.AIR;
     }
 
     public int func_150808_b(int p_150808_1_, int p_150808_2_, int p_150808_3_)

@@ -7,7 +7,7 @@ import net.minecraft.init.Blocks;
 
 public class ItemSpade extends ItemTool
 {
-    private static final Set field_150916_c = Sets.newHashSet(new Block[] {Blocks.field_150349_c, Blocks.field_150346_d, Blocks.field_150354_m, Blocks.field_150351_n, Blocks.field_150431_aC, Blocks.field_150433_aE, Blocks.field_150435_aG, Blocks.field_150458_ak, Blocks.field_150425_aM, Blocks.field_150391_bh});
+    private static final Set field_150916_c = Sets.newHashSet(new Block[] {Blocks.GRASS, Blocks.DIRT, Blocks.SAND, Blocks.GRAVEL, Blocks.SNOW_LAYER, Blocks.SNOW, Blocks.CLAY, Blocks.FARMLAND, Blocks.SOUL_SAND, Blocks.MYCELIUM});
     private static final String __OBFID = "CL_00000063";
 
     public ItemSpade(Item.ToolMaterial p_i45353_1_)
@@ -17,6 +17,6 @@ public class ItemSpade extends ItemTool
 
     public boolean func_150897_b(Block p_150897_1_)
     {
-        return p_150897_1_ == Blocks.field_150431_aC ? true : p_150897_1_ == Blocks.field_150433_aE;
+        return p_150897_1_ == Blocks.SNOW_LAYER ? true : p_150897_1_ == Blocks.SNOW;
     }
 }

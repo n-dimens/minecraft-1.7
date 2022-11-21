@@ -281,7 +281,7 @@ public class EntityOcelot extends EntityTameable
 
                 Block block = this.field_70170_p.func_147439_a(i, j - 1, k);
 
-                if (block == Blocks.field_150349_c || block.func_149688_o() == Material.field_151584_j)
+                if (block == Blocks.GRASS || block.func_149688_o() == Material.field_151584_j)
                 {
                     return true;
                 }

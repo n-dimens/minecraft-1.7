@@ -30,7 +30,7 @@ public class BlockMycelium extends Block
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return p_149691_1_ == 1 ? this.field_150200_a : (p_149691_1_ == 0 ? Blocks.field_150346_d.func_149733_h(p_149691_1_) : this.field_149761_L);
+        return p_149691_1_ == 1 ? this.field_150200_a : (p_149691_1_ == 0 ? Blocks.DIRT.func_149733_h(p_149691_1_) : this.field_149761_L);
     }
 
     public void func_149674_a(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_)
@@ -39,7 +39,7 @@ public class BlockMycelium extends Block
         {
             if (p_149674_1_.func_72957_l(p_149674_2_, p_149674_3_ + 1, p_149674_4_) < 4 && p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ + 1, p_149674_4_).func_149717_k() > 2)
             {
-                p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.field_150346_d);
+                p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.DIRT);
             }
             else if (p_149674_1_.func_72957_l(p_149674_2_, p_149674_3_ + 1, p_149674_4_) >= 9)
             {
@@ -50,7 +50,7 @@ public class BlockMycelium extends Block
                     int k1 = p_149674_4_ + p_149674_5_.nextInt(3) - 1;
                     Block block = p_149674_1_.func_147439_a(i1, j1 + 1, k1);
 
-                    if (p_149674_1_.func_147439_a(i1, j1, k1) == Blocks.field_150346_d && p_149674_1_.func_72805_g(i1, j1, k1) == 0 && p_149674_1_.func_72957_l(i1, j1 + 1, k1) >= 4 && block.func_149717_k() <= 2)
+                    if (p_149674_1_.func_147439_a(i1, j1, k1) == Blocks.DIRT && p_149674_1_.func_72805_g(i1, j1, k1) == 0 && p_149674_1_.func_72957_l(i1, j1 + 1, k1) >= 4 && block.func_149717_k() <= 2)
                     {
                         p_149674_1_.func_147449_b(i1, j1, k1, this);
                     }
@@ -61,7 +61,7 @@ public class BlockMycelium extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Blocks.field_150346_d.func_149650_a(0, p_149650_2_, p_149650_3_);
+        return Blocks.DIRT.func_149650_a(0, p_149650_2_, p_149650_3_);
     }
 
     @SideOnly(Side.CLIENT)
@@ -73,7 +73,7 @@ public class BlockMycelium extends Block
         }
         else if (p_149673_5_ == 0)
         {
-            return Blocks.field_150346_d.func_149733_h(p_149673_5_);
+            return Blocks.DIRT.func_149733_h(p_149673_5_);
         }
         else
         {

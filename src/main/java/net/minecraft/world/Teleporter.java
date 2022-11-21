@@ -54,7 +54,7 @@ public class Teleporter
                         int l1 = j + j1;
                         int i2 = k + i1 * b1 - l * b0;
                         boolean flag = j1 < 0;
-                        this.field_85192_a.func_147449_b(k1, l1, i2, flag ? Blocks.field_150343_Z : Blocks.field_150350_a);
+                        this.field_85192_a.func_147449_b(k1, l1, i2, flag ? Blocks.OBSIDIAN : Blocks.AIR);
                     }
                 }
             }
@@ -100,9 +100,9 @@ public class Teleporter
 
                     for (int i2 = this.field_85192_a.func_72940_L() - 1; i2 >= 0; --i2)
                     {
-                        if (this.field_85192_a.func_147439_a(l3, i2, l1) == Blocks.field_150427_aO)
+                        if (this.field_85192_a.func_147439_a(l3, i2, l1) == Blocks.PORTAL)
                         {
-                            while (this.field_85192_a.func_147439_a(l3, i2 - 1, l1) == Blocks.field_150427_aO)
+                            while (this.field_85192_a.func_147439_a(l3, i2 - 1, l1) == Blocks.PORTAL)
                             {
                                 --i2;
                             }
@@ -136,22 +136,22 @@ public class Teleporter
             d7 = (double)k + 0.5D;
             int i4 = -1;
 
-            if (this.field_85192_a.func_147439_a(i - 1, j, k) == Blocks.field_150427_aO)
+            if (this.field_85192_a.func_147439_a(i - 1, j, k) == Blocks.PORTAL)
             {
                 i4 = 2;
             }
 
-            if (this.field_85192_a.func_147439_a(i + 1, j, k) == Blocks.field_150427_aO)
+            if (this.field_85192_a.func_147439_a(i + 1, j, k) == Blocks.PORTAL)
             {
                 i4 = 0;
             }
 
-            if (this.field_85192_a.func_147439_a(i, j, k - 1) == Blocks.field_150427_aO)
+            if (this.field_85192_a.func_147439_a(i, j, k - 1) == Blocks.PORTAL)
             {
                 i4 = 3;
             }
 
-            if (this.field_85192_a.func_147439_a(i, j, k + 1) == Blocks.field_150427_aO)
+            if (this.field_85192_a.func_147439_a(i, j, k + 1) == Blocks.PORTAL)
             {
                 i4 = 1;
             }
@@ -436,7 +436,7 @@ public class Teleporter
                         i4 = j2 + k3;
                         j4 = k2 + (j3 - 1) * l2 - i3 * l5;
                         flag = k3 < 0;
-                        this.field_85192_a.func_147449_b(l3, i4, j4, flag ? Blocks.field_150343_Z : Blocks.field_150350_a);
+                        this.field_85192_a.func_147449_b(l3, i4, j4, flag ? Blocks.OBSIDIAN : Blocks.AIR);
                     }
                 }
             }
@@ -452,7 +452,7 @@ public class Teleporter
                     i4 = j2 + k3;
                     j4 = k2 + (j3 - 1) * l2;
                     flag = j3 == 0 || j3 == 3 || k3 == -1 || k3 == 3;
-                    this.field_85192_a.func_147465_d(l3, i4, j4, (Block)(flag ? Blocks.field_150343_Z : Blocks.field_150427_aO), 0, 2);
+                    this.field_85192_a.func_147465_d(l3, i4, j4, (Block)(flag ? Blocks.OBSIDIAN : Blocks.PORTAL), 0, 2);
                 }
             }
 

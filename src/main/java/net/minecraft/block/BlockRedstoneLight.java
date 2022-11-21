@@ -35,7 +35,7 @@ public class BlockRedstoneLight extends Block
             }
             else if (!this.field_150171_a && p_149726_1_.func_72864_z(p_149726_2_, p_149726_3_, p_149726_4_))
             {
-                p_149726_1_.func_147465_d(p_149726_2_, p_149726_3_, p_149726_4_, Blocks.field_150374_bv, 0, 2);
+                p_149726_1_.func_147465_d(p_149726_2_, p_149726_3_, p_149726_4_, Blocks.LIT_REDSTONE_LAMP, 0, 2);
             }
         }
     }
@@ -50,7 +50,7 @@ public class BlockRedstoneLight extends Block
             }
             else if (!this.field_150171_a && p_149695_1_.func_72864_z(p_149695_2_, p_149695_3_, p_149695_4_))
             {
-                p_149695_1_.func_147465_d(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.field_150374_bv, 0, 2);
+                p_149695_1_.func_147465_d(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.LIT_REDSTONE_LAMP, 0, 2);
             }
         }
     }
@@ -59,23 +59,23 @@ public class BlockRedstoneLight extends Block
     {
         if (!p_149674_1_.field_72995_K && this.field_150171_a && !p_149674_1_.func_72864_z(p_149674_2_, p_149674_3_, p_149674_4_))
         {
-            p_149674_1_.func_147465_d(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.field_150379_bu, 0, 2);
+            p_149674_1_.func_147465_d(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.REDSTONE_LAMP, 0, 2);
         }
     }
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.func_150898_a(Blocks.field_150379_bu);
+        return Item.func_150898_a(Blocks.REDSTONE_LAMP);
     }
 
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Item.func_150898_a(Blocks.field_150379_bu);
+        return Item.func_150898_a(Blocks.REDSTONE_LAMP);
     }
 
     protected ItemStack func_149644_j(int p_149644_1_)
     {
-        return new ItemStack(Blocks.field_150379_bu);
+        return new ItemStack(Blocks.REDSTONE_LAMP);
     }
 }

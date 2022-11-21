@@ -72,7 +72,7 @@ public class BlockCocoa extends BlockDirectional implements IGrowable
         p_149718_2_ += Direction.field_71583_a[l];
         p_149718_4_ += Direction.field_71581_b[l];
         Block block = p_149718_1_.func_147439_a(p_149718_2_, p_149718_3_, p_149718_4_);
-        return block == Blocks.field_150364_r && BlockLog.func_150165_c(p_149718_1_.func_72805_g(p_149718_2_, p_149718_3_, p_149718_4_)) == 3;
+        return block == Blocks.LOG && BlockLog.func_150165_c(p_149718_1_.func_72805_g(p_149718_2_, p_149718_3_, p_149718_4_)) == 3;
     }
 
     public int func_149645_b()

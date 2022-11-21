@@ -15,7 +15,7 @@ public class WorldGenDesertWells extends WorldGenerator
             --p_76484_4_;
         }
 
-        if (p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_, p_76484_5_) != Blocks.field_150354_m)
+        if (p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_, p_76484_5_) != Blocks.SAND)
         {
             return false;
         }
@@ -41,16 +41,16 @@ public class WorldGenDesertWells extends WorldGenerator
                 {
                     for (int j1 = -2; j1 <= 2; ++j1)
                     {
-                        p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + l, p_76484_5_ + j1, Blocks.field_150322_A, 0, 2);
+                        p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + l, p_76484_5_ + j1, Blocks.SANDSTONE, 0, 2);
                     }
                 }
             }
 
-            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_, Blocks.field_150358_i, 0, 2);
-            p_76484_1_.func_147465_d(p_76484_3_ - 1, p_76484_4_, p_76484_5_, Blocks.field_150358_i, 0, 2);
-            p_76484_1_.func_147465_d(p_76484_3_ + 1, p_76484_4_, p_76484_5_, Blocks.field_150358_i, 0, 2);
-            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_ - 1, Blocks.field_150358_i, 0, 2);
-            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_ + 1, Blocks.field_150358_i, 0, 2);
+            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_, Blocks.FLOWING_WATER, 0, 2);
+            p_76484_1_.func_147465_d(p_76484_3_ - 1, p_76484_4_, p_76484_5_, Blocks.FLOWING_WATER, 0, 2);
+            p_76484_1_.func_147465_d(p_76484_3_ + 1, p_76484_4_, p_76484_5_, Blocks.FLOWING_WATER, 0, 2);
+            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_ - 1, Blocks.FLOWING_WATER, 0, 2);
+            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_ + 1, Blocks.FLOWING_WATER, 0, 2);
 
             for (l = -2; l <= 2; ++l)
             {
@@ -58,15 +58,15 @@ public class WorldGenDesertWells extends WorldGenerator
                 {
                     if (l == -2 || l == 2 || i1 == -2 || i1 == 2)
                     {
-                        p_76484_1_.func_147465_d(p_76484_3_ + l, p_76484_4_ + 1, p_76484_5_ + i1, Blocks.field_150322_A, 0, 2);
+                        p_76484_1_.func_147465_d(p_76484_3_ + l, p_76484_4_ + 1, p_76484_5_ + i1, Blocks.SANDSTONE, 0, 2);
                     }
                 }
             }
 
-            p_76484_1_.func_147465_d(p_76484_3_ + 2, p_76484_4_ + 1, p_76484_5_, Blocks.field_150333_U, 1, 2);
-            p_76484_1_.func_147465_d(p_76484_3_ - 2, p_76484_4_ + 1, p_76484_5_, Blocks.field_150333_U, 1, 2);
-            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_ + 1, p_76484_5_ + 2, Blocks.field_150333_U, 1, 2);
-            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_ + 1, p_76484_5_ - 2, Blocks.field_150333_U, 1, 2);
+            p_76484_1_.func_147465_d(p_76484_3_ + 2, p_76484_4_ + 1, p_76484_5_, Blocks.STONE_SLAB, 1, 2);
+            p_76484_1_.func_147465_d(p_76484_3_ - 2, p_76484_4_ + 1, p_76484_5_, Blocks.STONE_SLAB, 1, 2);
+            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_ + 1, p_76484_5_ + 2, Blocks.STONE_SLAB, 1, 2);
+            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_ + 1, p_76484_5_ - 2, Blocks.STONE_SLAB, 1, 2);
 
             for (l = -1; l <= 1; ++l)
             {
@@ -74,21 +74,21 @@ public class WorldGenDesertWells extends WorldGenerator
                 {
                     if (l == 0 && i1 == 0)
                     {
-                        p_76484_1_.func_147465_d(p_76484_3_ + l, p_76484_4_ + 4, p_76484_5_ + i1, Blocks.field_150322_A, 0, 2);
+                        p_76484_1_.func_147465_d(p_76484_3_ + l, p_76484_4_ + 4, p_76484_5_ + i1, Blocks.SANDSTONE, 0, 2);
                     }
                     else
                     {
-                        p_76484_1_.func_147465_d(p_76484_3_ + l, p_76484_4_ + 4, p_76484_5_ + i1, Blocks.field_150333_U, 1, 2);
+                        p_76484_1_.func_147465_d(p_76484_3_ + l, p_76484_4_ + 4, p_76484_5_ + i1, Blocks.STONE_SLAB, 1, 2);
                     }
                 }
             }
 
             for (l = 1; l <= 3; ++l)
             {
-                p_76484_1_.func_147465_d(p_76484_3_ - 1, p_76484_4_ + l, p_76484_5_ - 1, Blocks.field_150322_A, 0, 2);
-                p_76484_1_.func_147465_d(p_76484_3_ - 1, p_76484_4_ + l, p_76484_5_ + 1, Blocks.field_150322_A, 0, 2);
-                p_76484_1_.func_147465_d(p_76484_3_ + 1, p_76484_4_ + l, p_76484_5_ - 1, Blocks.field_150322_A, 0, 2);
-                p_76484_1_.func_147465_d(p_76484_3_ + 1, p_76484_4_ + l, p_76484_5_ + 1, Blocks.field_150322_A, 0, 2);
+                p_76484_1_.func_147465_d(p_76484_3_ - 1, p_76484_4_ + l, p_76484_5_ - 1, Blocks.SANDSTONE, 0, 2);
+                p_76484_1_.func_147465_d(p_76484_3_ - 1, p_76484_4_ + l, p_76484_5_ + 1, Blocks.SANDSTONE, 0, 2);
+                p_76484_1_.func_147465_d(p_76484_3_ + 1, p_76484_4_ + l, p_76484_5_ - 1, Blocks.SANDSTONE, 0, 2);
+                p_76484_1_.func_147465_d(p_76484_3_ + 1, p_76484_4_ + l, p_76484_5_ + 1, Blocks.SANDSTONE, 0, 2);
             }
 
             return true;

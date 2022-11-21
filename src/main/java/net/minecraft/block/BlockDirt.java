@@ -70,12 +70,12 @@ public class BlockDirt extends Block
 
                 if (material == Material.field_151597_y || material == Material.field_151596_z)
                 {
-                    return Blocks.field_150349_c.func_149673_e(p_149673_1_, p_149673_2_, p_149673_3_, p_149673_4_, p_149673_5_);
+                    return Blocks.GRASS.func_149673_e(p_149673_1_, p_149673_2_, p_149673_3_, p_149673_4_, p_149673_5_);
                 }
 
                 Block block = p_149673_1_.func_147439_a(p_149673_2_, p_149673_3_ + 1, p_149673_4_);
 
-                if (block != Blocks.field_150346_d && block != Blocks.field_150349_c)
+                if (block != Blocks.DIRT && block != Blocks.GRASS)
                 {
                     return this.field_150010_M;
                 }

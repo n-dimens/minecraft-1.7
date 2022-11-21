@@ -302,11 +302,11 @@ public class TileEntityFurnace extends TileEntity implements ISidedInventory
         {
             Item item = p_145952_0_.func_77973_b();
 
-            if (item instanceof ItemBlock && Block.func_149634_a(item) != Blocks.field_150350_a)
+            if (item instanceof ItemBlock && Block.func_149634_a(item) != Blocks.AIR)
             {
                 Block block = Block.func_149634_a(item);
 
-                if (block == Blocks.field_150376_bx)
+                if (block == Blocks.WOODEN_SLAB)
                 {
                     return 150;
                 }
@@ -316,13 +316,13 @@ public class TileEntityFurnace extends TileEntity implements ISidedInventory
                     return 300;
                 }
 
-                if (block == Blocks.field_150402_ci)
+                if (block == Blocks.COAL_BLOCK)
                 {
                     return 16000;
                 }
             }
 
-            return item instanceof ItemTool && ((ItemTool)item).func_77861_e().equals("WOOD") ? 200 : (item instanceof ItemSword && ((ItemSword)item).func_150932_j().equals("WOOD") ? 200 : (item instanceof ItemHoe && ((ItemHoe)item).func_77842_f().equals("WOOD") ? 200 : (item == Items.STICK ? 100 : (item == Items.COAL ? 1600 : (item == Items.LAVA_BUCKET ? 20000 : (item == Item.func_150898_a(Blocks.field_150345_g) ? 100 : (item == Items.BLAZE_ROD ? 2400 : 0)))))));
+            return item instanceof ItemTool && ((ItemTool)item).func_77861_e().equals("WOOD") ? 200 : (item instanceof ItemSword && ((ItemSword)item).func_150932_j().equals("WOOD") ? 200 : (item instanceof ItemHoe && ((ItemHoe)item).func_77842_f().equals("WOOD") ? 200 : (item == Items.STICK ? 100 : (item == Items.COAL ? 1600 : (item == Items.LAVA_BUCKET ? 20000 : (item == Item.func_150898_a(Blocks.SAPLING) ? 100 : (item == Items.BLAZE_ROD ? 2400 : 0)))))));
         }
     }
 

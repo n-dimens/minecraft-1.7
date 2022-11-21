@@ -25,7 +25,7 @@ public class TileEntitySignRenderer extends TileEntitySpecialRenderer
         float f1 = 0.6666667F;
         float f3;
 
-        if (block == Blocks.field_150472_an)
+        if (block == Blocks.STANDING_SIGN)
         {
             GL11.glTranslatef((float)p_147500_2_ + 0.5F, (float)p_147500_4_ + 0.75F * f1, (float)p_147500_6_ + 0.5F);
             float f2 = (float)(p_147500_1_.func_145832_p() * 360) / 16.0F;

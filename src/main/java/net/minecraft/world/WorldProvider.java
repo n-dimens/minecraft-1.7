@@ -68,7 +68,7 @@ public abstract class WorldProvider
 
     public boolean func_76566_a(int p_76566_1_, int p_76566_2_)
     {
-        return this.field_76579_a.func_147474_b(p_76566_1_, p_76566_2_) == Blocks.field_150349_c;
+        return this.field_76579_a.func_147474_b(p_76566_1_, p_76566_2_) == Blocks.GRASS;
     }
 
     public float func_76563_a(long p_76563_1_, float p_76563_3_)

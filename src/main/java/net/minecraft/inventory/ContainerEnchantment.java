@@ -123,34 +123,34 @@ public class ContainerEnchantment extends Container
                         {
                             if ((j != 0 || k != 0) && this.field_75172_h.func_147437_c(this.field_75173_i + k, this.field_75170_j, this.field_75171_k + j) && this.field_75172_h.func_147437_c(this.field_75173_i + k, this.field_75170_j + 1, this.field_75171_k + j))
                             {
-                                if (this.field_75172_h.func_147439_a(this.field_75173_i + k * 2, this.field_75170_j, this.field_75171_k + j * 2) == Blocks.field_150342_X)
+                                if (this.field_75172_h.func_147439_a(this.field_75173_i + k * 2, this.field_75170_j, this.field_75171_k + j * 2) == Blocks.BOOKSHELF)
                                 {
                                     ++i;
                                 }
 
-                                if (this.field_75172_h.func_147439_a(this.field_75173_i + k * 2, this.field_75170_j + 1, this.field_75171_k + j * 2) == Blocks.field_150342_X)
+                                if (this.field_75172_h.func_147439_a(this.field_75173_i + k * 2, this.field_75170_j + 1, this.field_75171_k + j * 2) == Blocks.BOOKSHELF)
                                 {
                                     ++i;
                                 }
 
                                 if (k != 0 && j != 0)
                                 {
-                                    if (this.field_75172_h.func_147439_a(this.field_75173_i + k * 2, this.field_75170_j, this.field_75171_k + j) == Blocks.field_150342_X)
+                                    if (this.field_75172_h.func_147439_a(this.field_75173_i + k * 2, this.field_75170_j, this.field_75171_k + j) == Blocks.BOOKSHELF)
                                     {
                                         ++i;
                                     }
 
-                                    if (this.field_75172_h.func_147439_a(this.field_75173_i + k * 2, this.field_75170_j + 1, this.field_75171_k + j) == Blocks.field_150342_X)
+                                    if (this.field_75172_h.func_147439_a(this.field_75173_i + k * 2, this.field_75170_j + 1, this.field_75171_k + j) == Blocks.BOOKSHELF)
                                     {
                                         ++i;
                                     }
 
-                                    if (this.field_75172_h.func_147439_a(this.field_75173_i + k, this.field_75170_j, this.field_75171_k + j * 2) == Blocks.field_150342_X)
+                                    if (this.field_75172_h.func_147439_a(this.field_75173_i + k, this.field_75170_j, this.field_75171_k + j * 2) == Blocks.BOOKSHELF)
                                     {
                                         ++i;
                                     }
 
-                                    if (this.field_75172_h.func_147439_a(this.field_75173_i + k, this.field_75170_j + 1, this.field_75171_k + j * 2) == Blocks.field_150342_X)
+                                    if (this.field_75172_h.func_147439_a(this.field_75173_i + k, this.field_75170_j + 1, this.field_75171_k + j * 2) == Blocks.BOOKSHELF)
                                     {
                                         ++i;
                                     }
@@ -245,7 +245,7 @@ public class ContainerEnchantment extends Container
 
     public boolean func_75145_c(EntityPlayer p_75145_1_)
     {
-        return this.field_75172_h.func_147439_a(this.field_75173_i, this.field_75170_j, this.field_75171_k) != Blocks.field_150381_bn ? false : p_75145_1_.func_70092_e((double)this.field_75173_i + 0.5D, (double)this.field_75170_j + 0.5D, (double)this.field_75171_k + 0.5D) <= 64.0D;
+        return this.field_75172_h.func_147439_a(this.field_75173_i, this.field_75170_j, this.field_75171_k) != Blocks.ENCHANTING_TABLE ? false : p_75145_1_.func_70092_e((double)this.field_75173_i + 0.5D, (double)this.field_75170_j + 0.5D, (double)this.field_75171_k + 0.5D) <= 64.0D;
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)

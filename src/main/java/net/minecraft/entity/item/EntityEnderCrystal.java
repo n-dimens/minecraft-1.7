@@ -54,9 +54,9 @@ public class EntityEnderCrystal extends Entity
         int j = MathHelper.func_76128_c(this.field_70163_u);
         int k = MathHelper.func_76128_c(this.field_70161_v);
 
-        if (this.field_70170_p.field_73011_w instanceof WorldProviderEnd && this.field_70170_p.func_147439_a(i, j, k) != Blocks.field_150480_ab)
+        if (this.field_70170_p.field_73011_w instanceof WorldProviderEnd && this.field_70170_p.func_147439_a(i, j, k) != Blocks.FIRE)
         {
-            this.field_70170_p.func_147449_b(i, j, k, Blocks.field_150480_ab);
+            this.field_70170_p.func_147449_b(i, j, k, Blocks.FIRE);
         }
     }
 

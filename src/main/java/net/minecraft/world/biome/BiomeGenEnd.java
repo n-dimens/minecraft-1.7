@@ -17,8 +17,8 @@ public class BiomeGenEnd extends BiomeGenBase
         this.field_76755_L.clear();
         this.field_82914_M.clear();
         this.field_76761_J.add(new BiomeGenBase.SpawnListEntry(EntityEnderman.class, 10, 4, 4));
-        this.field_76752_A = Blocks.field_150346_d;
-        this.field_76753_B = Blocks.field_150346_d;
+        this.field_76752_A = Blocks.DIRT;
+        this.field_76753_B = Blocks.DIRT;
         this.field_76760_I = new BiomeEndDecorator();
     }
 

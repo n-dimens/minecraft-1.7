@@ -13,7 +13,7 @@ public class WorldGenIcePath extends WorldGenerator
 
     public WorldGenIcePath(int p_i45454_1_)
     {
-        this.field_150555_a = Blocks.field_150403_cj;
+        this.field_150555_a = Blocks.PACKED_ICE;
         this.field_150554_b = p_i45454_1_;
     }
 
@@ -24,7 +24,7 @@ public class WorldGenIcePath extends WorldGenerator
             --p_76484_4_;
         }
 
-        if (p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_, p_76484_5_) != Blocks.field_150433_aE)
+        if (p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_, p_76484_5_) != Blocks.SNOW)
         {
             return false;
         }
@@ -46,7 +46,7 @@ public class WorldGenIcePath extends WorldGenerator
                         {
                             Block block = p_76484_1_.func_147439_a(i1, i2, j1);
 
-                            if (block == Blocks.field_150346_d || block == Blocks.field_150433_aE || block == Blocks.field_150432_aD)
+                            if (block == Blocks.DIRT || block == Blocks.SNOW || block == Blocks.ICE)
                             {
                                 p_76484_1_.func_147465_d(i1, i2, j1, this.field_150555_a, 0, 2);
                             }

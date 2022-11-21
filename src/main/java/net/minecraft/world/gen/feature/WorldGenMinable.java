@@ -15,7 +15,7 @@ public class WorldGenMinable extends WorldGenerator
 
     public WorldGenMinable(Block p_i45459_1_, int p_i45459_2_)
     {
-        this(p_i45459_1_, p_i45459_2_, Blocks.field_150348_b);
+        this(p_i45459_1_, p_i45459_2_, Blocks.STONE);
     }
 
     public WorldGenMinable(Block p_i45460_1_, int p_i45460_2_, Block p_i45460_3_)

@@ -106,7 +106,7 @@ public class GuiEditSign extends GuiScreen
         GL11.glRotatef(180.0F, 0.0F, 1.0F, 0.0F);
         Block block = this.field_146848_f.func_145838_q();
 
-        if (block == Blocks.field_150472_an)
+        if (block == Blocks.STANDING_SIGN)
         {
             float f2 = (float)(this.field_146848_f.func_145832_p() * 360) / 16.0F;
             GL11.glRotatef(f2, 0.0F, 1.0F, 0.0F);

@@ -60,19 +60,19 @@ public class BiomeDecorator
 
     public BiomeDecorator()
     {
-        this.field_76810_g = new WorldGenSand(Blocks.field_150354_m, 7);
-        this.field_76822_h = new WorldGenSand(Blocks.field_150351_n, 6);
-        this.field_76823_i = new WorldGenMinable(Blocks.field_150346_d, 32);
-        this.field_76820_j = new WorldGenMinable(Blocks.field_150351_n, 32);
-        this.field_76821_k = new WorldGenMinable(Blocks.field_150365_q, 16);
-        this.field_76818_l = new WorldGenMinable(Blocks.field_150366_p, 8);
-        this.field_76819_m = new WorldGenMinable(Blocks.field_150352_o, 8);
-        this.field_76816_n = new WorldGenMinable(Blocks.field_150450_ax, 7);
-        this.field_76817_o = new WorldGenMinable(Blocks.field_150482_ag, 7);
-        this.field_76831_p = new WorldGenMinable(Blocks.field_150369_x, 6);
-        this.field_150514_p = new WorldGenFlowers(Blocks.field_150327_N);
-        this.field_76828_s = new WorldGenFlowers(Blocks.field_150338_P);
-        this.field_76827_t = new WorldGenFlowers(Blocks.field_150337_Q);
+        this.field_76810_g = new WorldGenSand(Blocks.SAND, 7);
+        this.field_76822_h = new WorldGenSand(Blocks.GRAVEL, 6);
+        this.field_76823_i = new WorldGenMinable(Blocks.DIRT, 32);
+        this.field_76820_j = new WorldGenMinable(Blocks.GRAVEL, 32);
+        this.field_76821_k = new WorldGenMinable(Blocks.COAL_ORE, 16);
+        this.field_76818_l = new WorldGenMinable(Blocks.IRON_ORE, 8);
+        this.field_76819_m = new WorldGenMinable(Blocks.GOLD_ORE, 8);
+        this.field_76816_n = new WorldGenMinable(Blocks.REDSTONE_ORE, 7);
+        this.field_76817_o = new WorldGenMinable(Blocks.DIAMOND_ORE, 7);
+        this.field_76831_p = new WorldGenMinable(Blocks.LAPIS_ORE, 6);
+        this.field_150514_p = new WorldGenFlowers(Blocks.YELLOW_FLOWER);
+        this.field_76828_s = new WorldGenFlowers(Blocks.BROWN_MUSHROOM);
+        this.field_76827_t = new WorldGenFlowers(Blocks.RED_MUSHROOM);
         this.field_76826_u = new WorldGenBigMushroom();
         this.field_76825_v = new WorldGenReed();
         this.field_76824_w = new WorldGenCactus();
@@ -191,7 +191,7 @@ public class BiomeDecorator
             k = this.field_76814_c + this.field_76813_b.nextInt(16) + 8;
             l = this.field_76811_d + this.field_76813_b.nextInt(16) + 8;
             i1 = this.field_76813_b.nextInt(this.field_76815_a.func_72976_f(k, l) * 2);
-            (new WorldGenDeadBush(Blocks.field_150330_I)).func_76484_a(this.field_76815_a, this.field_76813_b, k, i1, l);
+            (new WorldGenDeadBush(Blocks.DEADBUSH)).func_76484_a(this.field_76815_a, this.field_76813_b, k, i1, l);
         }
 
         for (j = 0; j < this.field_76833_y; ++j)
@@ -281,7 +281,7 @@ public class BiomeDecorator
                 k = this.field_76814_c + this.field_76813_b.nextInt(16) + 8;
                 l = this.field_76813_b.nextInt(this.field_76813_b.nextInt(248) + 8);
                 i1 = this.field_76811_d + this.field_76813_b.nextInt(16) + 8;
-                (new WorldGenLiquids(Blocks.field_150358_i)).func_76484_a(this.field_76815_a, this.field_76813_b, k, l, i1);
+                (new WorldGenLiquids(Blocks.FLOWING_WATER)).func_76484_a(this.field_76815_a, this.field_76813_b, k, l, i1);
             }
 
             for (j = 0; j < 20; ++j)
@@ -289,7 +289,7 @@ public class BiomeDecorator
                 k = this.field_76814_c + this.field_76813_b.nextInt(16) + 8;
                 l = this.field_76813_b.nextInt(this.field_76813_b.nextInt(this.field_76813_b.nextInt(240) + 8) + 8);
                 i1 = this.field_76811_d + this.field_76813_b.nextInt(16) + 8;
-                (new WorldGenLiquids(Blocks.field_150356_k)).func_76484_a(this.field_76815_a, this.field_76813_b, k, l, i1);
+                (new WorldGenLiquids(Blocks.FLOWING_LAVA)).func_76484_a(this.field_76815_a, this.field_76813_b, k, l, i1);
             }
         }
     }

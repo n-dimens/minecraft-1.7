@@ -127,7 +127,7 @@ public abstract class BlockLeaves extends BlockLeavesBase
                             {
                                 Block block = p_149674_1_.func_147439_a(p_149674_2_ + l1, p_149674_3_ + i2, p_149674_4_ + j2);
 
-                                if (block != Blocks.field_150364_r && block != Blocks.field_150363_s)
+                                if (block != Blocks.LOG && block != Blocks.LOG_2)
                                 {
                                     if (block.func_149688_o() == Material.field_151584_j)
                                     {
@@ -231,7 +231,7 @@ public abstract class BlockLeaves extends BlockLeavesBase
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.func_150898_a(Blocks.field_150345_g);
+        return Item.func_150898_a(Blocks.SAPLING);
     }
 
     public void func_149690_a(World p_149690_1_, int p_149690_2_, int p_149690_3_, int p_149690_4_, int p_149690_5_, float p_149690_6_, int p_149690_7_)

@@ -68,7 +68,7 @@ public class EntitySmallFireball extends EntityFireball
 
                 if (this.field_70170_p.func_147437_c(i, j, k))
                 {
-                    this.field_70170_p.func_147449_b(i, j, k, Blocks.field_150480_ab);
+                    this.field_70170_p.func_147449_b(i, j, k, Blocks.FIRE);
                 }
             }
 

@@ -290,12 +290,12 @@ public class EntityItem extends Entity
 
             if (this.field_145804_b == 0 && (this.field_145802_g == null || 6000 - this.field_70292_b <= 200 || this.field_145802_g.equals(p_70100_1_.func_70005_c_())) && p_70100_1_.field_71071_by.func_70441_a(itemstack))
             {
-                if (itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150364_r))
+                if (itemstack.func_77973_b() == Item.func_150898_a(Blocks.LOG))
                 {
                     p_70100_1_.func_71029_a(AchievementList.MINE_WOOD);
                 }
 
-                if (itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150363_s))
+                if (itemstack.func_77973_b() == Item.func_150898_a(Blocks.LOG_2))
                 {
                     p_70100_1_.func_71029_a(AchievementList.MINE_WOOD);
                 }
@@ -359,7 +359,7 @@ public class EntityItem extends Entity
     public ItemStack func_92059_d()
     {
         ItemStack itemstack = this.func_70096_w().func_82710_f(10);
-        return itemstack == null ? new ItemStack(Blocks.field_150348_b) : itemstack;
+        return itemstack == null ? new ItemStack(Blocks.STONE) : itemstack;
     }
 
     public void func_92058_a(ItemStack p_92058_1_)

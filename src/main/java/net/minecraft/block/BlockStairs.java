@@ -421,7 +421,7 @@ public class BlockStairs extends Block
 
     public void func_149726_b(World p_149726_1_, int p_149726_2_, int p_149726_3_, int p_149726_4_)
     {
-        this.func_149695_a(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_, Blocks.field_150350_a);
+        this.func_149695_a(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_, Blocks.AIR);
         this.field_150149_b.func_149726_b(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_);
     }
 

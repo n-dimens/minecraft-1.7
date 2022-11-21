@@ -740,7 +740,7 @@ public abstract class Entity
                     block = this.field_70170_p.func_147439_a(j1, k - 1, l);
                 }
 
-                if (block != Blocks.field_150468_ap)
+                if (block != Blocks.LADDER)
                 {
                     d10 = 0.0D;
                 }
@@ -857,9 +857,9 @@ public abstract class Entity
     {
         Block.SoundType soundtype = p_145780_4_.field_149762_H;
 
-        if (this.field_70170_p.func_147439_a(p_145780_1_, p_145780_2_ + 1, p_145780_3_) == Blocks.field_150431_aC)
+        if (this.field_70170_p.func_147439_a(p_145780_1_, p_145780_2_ + 1, p_145780_3_) == Blocks.SNOW_LAYER)
         {
-            soundtype = Blocks.field_150431_aC.field_149762_H;
+            soundtype = Blocks.SNOW_LAYER.field_149762_H;
             this.func_85030_a(soundtype.func_150498_e(), soundtype.func_150497_c() * 0.15F, soundtype.func_150494_d());
         }
         else if (!p_145780_4_.func_149688_o().func_76224_d())

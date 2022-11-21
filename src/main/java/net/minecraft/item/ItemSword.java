@@ -35,7 +35,7 @@ public class ItemSword extends Item
 
     public float func_150893_a(ItemStack p_150893_1_, Block p_150893_2_)
     {
-        if (p_150893_2_ == Blocks.field_150321_G)
+        if (p_150893_2_ == Blocks.WEB)
         {
             return 15.0F;
         }
@@ -86,7 +86,7 @@ public class ItemSword extends Item
 
     public boolean func_150897_b(Block p_150897_1_)
     {
-        return p_150897_1_ == Blocks.field_150321_G;
+        return p_150897_1_ == Blocks.WEB;
     }
 
     public int func_77619_b()

@@ -46,17 +46,17 @@ public class RenderMooshroom extends RenderLiving
             GL11.glScalef(1.0F, -1.0F, 1.0F);
             GL11.glTranslatef(0.2F, 0.4F, 0.5F);
             GL11.glRotatef(42.0F, 0.0F, 1.0F, 0.0F);
-            this.field_147909_c.func_147800_a(Blocks.field_150337_Q, 0, 1.0F);
+            this.field_147909_c.func_147800_a(Blocks.RED_MUSHROOM, 0, 1.0F);
             GL11.glTranslatef(0.1F, 0.0F, -0.6F);
             GL11.glRotatef(42.0F, 0.0F, 1.0F, 0.0F);
-            this.field_147909_c.func_147800_a(Blocks.field_150337_Q, 0, 1.0F);
+            this.field_147909_c.func_147800_a(Blocks.RED_MUSHROOM, 0, 1.0F);
             GL11.glPopMatrix();
             GL11.glPushMatrix();
             ((ModelQuadruped)this.field_77045_g).field_78150_a.func_78794_c(0.0625F);
             GL11.glScalef(1.0F, -1.0F, 1.0F);
             GL11.glTranslatef(0.0F, 0.75F, -0.2F);
             GL11.glRotatef(12.0F, 0.0F, 1.0F, 0.0F);
-            this.field_147909_c.func_147800_a(Blocks.field_150337_Q, 0, 1.0F);
+            this.field_147909_c.func_147800_a(Blocks.RED_MUSHROOM, 0, 1.0F);
             GL11.glPopMatrix();
             GL11.glDisable(GL11.GL_CULL_FACE);
         }

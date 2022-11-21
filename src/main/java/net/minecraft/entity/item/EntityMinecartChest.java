@@ -23,7 +23,7 @@ public class EntityMinecartChest extends EntityMinecartContainer
     public void func_94095_a(DamageSource p_94095_1_)
     {
         super.func_94095_a(p_94095_1_);
-        this.func_145778_a(Item.func_150898_a(Blocks.field_150486_ae), 1, 0.0F);
+        this.func_145778_a(Item.func_150898_a(Blocks.CHEST), 1, 0.0F);
     }
 
     public int func_70302_i_()
@@ -38,7 +38,7 @@ public class EntityMinecartChest extends EntityMinecartContainer
 
     public Block func_145817_o()
     {
-        return Blocks.field_150486_ae;
+        return Blocks.CHEST;
     }
 
     public int func_94085_r()

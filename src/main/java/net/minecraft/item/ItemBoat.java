@@ -81,7 +81,7 @@ public class ItemBoat extends Item
                     int j = movingobjectposition.field_72312_c;
                     int k = movingobjectposition.field_72309_d;
 
-                    if (p_77659_2_.func_147439_a(i, j, k) == Blocks.field_150431_aC)
+                    if (p_77659_2_.func_147439_a(i, j, k) == Blocks.SNOW_LAYER)
                     {
                         --j;
                     }

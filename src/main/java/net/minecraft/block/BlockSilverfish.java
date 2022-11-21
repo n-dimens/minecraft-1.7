@@ -33,17 +33,17 @@ public class BlockSilverfish extends Block
         switch (p_149691_2_)
         {
             case 1:
-                return Blocks.field_150347_e.func_149733_h(p_149691_1_);
+                return Blocks.COBBLESTONE.func_149733_h(p_149691_1_);
             case 2:
-                return Blocks.field_150417_aV.func_149733_h(p_149691_1_);
+                return Blocks.STONEBRICK.func_149733_h(p_149691_1_);
             case 3:
-                return Blocks.field_150417_aV.func_149691_a(p_149691_1_, 1);
+                return Blocks.STONEBRICK.func_149691_a(p_149691_1_, 1);
             case 4:
-                return Blocks.field_150417_aV.func_149691_a(p_149691_1_, 2);
+                return Blocks.STONEBRICK.func_149691_a(p_149691_1_, 2);
             case 5:
-                return Blocks.field_150417_aV.func_149691_a(p_149691_1_, 3);
+                return Blocks.STONEBRICK.func_149691_a(p_149691_1_, 3);
             default:
-                return Blocks.field_150348_b.func_149733_h(p_149691_1_);
+                return Blocks.STONE.func_149733_h(p_149691_1_);
         }
     }
 
@@ -70,24 +70,24 @@ public class BlockSilverfish extends Block
 
     public static boolean func_150196_a(Block p_150196_0_)
     {
-        return p_150196_0_ == Blocks.field_150348_b || p_150196_0_ == Blocks.field_150347_e || p_150196_0_ == Blocks.field_150417_aV;
+        return p_150196_0_ == Blocks.STONE || p_150196_0_ == Blocks.COBBLESTONE || p_150196_0_ == Blocks.STONEBRICK;
     }
 
     public static int func_150195_a(Block p_150195_0_, int p_150195_1_)
     {
         if (p_150195_1_ == 0)
         {
-            if (p_150195_0_ == Blocks.field_150347_e)
+            if (p_150195_0_ == Blocks.COBBLESTONE)
             {
                 return 1;
             }
 
-            if (p_150195_0_ == Blocks.field_150417_aV)
+            if (p_150195_0_ == Blocks.STONEBRICK)
             {
                 return 2;
             }
         }
-        else if (p_150195_0_ == Blocks.field_150417_aV)
+        else if (p_150195_0_ == Blocks.STONEBRICK)
         {
             switch (p_150195_1_)
             {
@@ -108,17 +108,17 @@ public class BlockSilverfish extends Block
         switch (p_150197_0_)
         {
             case 1:
-                return new ImmutablePair(Blocks.field_150347_e, Integer.valueOf(0));
+                return new ImmutablePair(Blocks.COBBLESTONE, Integer.valueOf(0));
             case 2:
-                return new ImmutablePair(Blocks.field_150417_aV, Integer.valueOf(0));
+                return new ImmutablePair(Blocks.STONEBRICK, Integer.valueOf(0));
             case 3:
-                return new ImmutablePair(Blocks.field_150417_aV, Integer.valueOf(1));
+                return new ImmutablePair(Blocks.STONEBRICK, Integer.valueOf(1));
             case 4:
-                return new ImmutablePair(Blocks.field_150417_aV, Integer.valueOf(2));
+                return new ImmutablePair(Blocks.STONEBRICK, Integer.valueOf(2));
             case 5:
-                return new ImmutablePair(Blocks.field_150417_aV, Integer.valueOf(3));
+                return new ImmutablePair(Blocks.STONEBRICK, Integer.valueOf(3));
             default:
-                return new ImmutablePair(Blocks.field_150348_b, Integer.valueOf(0));
+                return new ImmutablePair(Blocks.STONE, Integer.valueOf(0));
         }
     }
 
@@ -127,17 +127,17 @@ public class BlockSilverfish extends Block
         switch (p_149644_1_)
         {
             case 1:
-                return new ItemStack(Blocks.field_150347_e);
+                return new ItemStack(Blocks.COBBLESTONE);
             case 2:
-                return new ItemStack(Blocks.field_150417_aV);
+                return new ItemStack(Blocks.STONEBRICK);
             case 3:
-                return new ItemStack(Blocks.field_150417_aV, 1, 1);
+                return new ItemStack(Blocks.STONEBRICK, 1, 1);
             case 4:
-                return new ItemStack(Blocks.field_150417_aV, 1, 2);
+                return new ItemStack(Blocks.STONEBRICK, 1, 2);
             case 5:
-                return new ItemStack(Blocks.field_150417_aV, 1, 3);
+                return new ItemStack(Blocks.STONEBRICK, 1, 3);
             default:
-                return new ItemStack(Blocks.field_150348_b);
+                return new ItemStack(Blocks.STONE);
         }
     }
 

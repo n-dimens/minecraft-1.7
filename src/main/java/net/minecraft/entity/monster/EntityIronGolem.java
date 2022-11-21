@@ -227,7 +227,7 @@ public class EntityIronGolem extends EntityGolem
 
         for (k = 0; k < j; ++k)
         {
-            this.func_145778_a(Item.func_150898_a(Blocks.field_150328_O), 1, 0.0F);
+            this.func_145778_a(Item.func_150898_a(Blocks.RED_FLOWER), 1, 0.0F);
         }
 
         k = 3 + this.field_70146_Z.nextInt(3);

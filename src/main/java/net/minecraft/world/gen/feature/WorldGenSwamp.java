@@ -55,7 +55,7 @@ public class WorldGenSwamp extends WorldGenAbstractTree
 
                             if (block.func_149688_o() != Material.field_151579_a && block.func_149688_o() != Material.field_151584_j)
                             {
-                                if (block != Blocks.field_150355_j && block != Blocks.field_150358_i)
+                                if (block != Blocks.WATER && block != Blocks.FLOWING_WATER)
                                 {
                                     flag = false;
                                 }
@@ -81,9 +81,9 @@ public class WorldGenSwamp extends WorldGenAbstractTree
             {
                 Block block1 = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ - 1, p_76484_5_);
 
-                if ((block1 == Blocks.field_150349_c || block1 == Blocks.field_150346_d) && p_76484_4_ < 256 - l - 1)
+                if ((block1 == Blocks.GRASS || block1 == Blocks.DIRT) && p_76484_4_ < 256 - l - 1)
                 {
-                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, Blocks.field_150346_d);
+                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, Blocks.DIRT);
                     int l1;
                     int k2;
                     int l2;
@@ -103,7 +103,7 @@ public class WorldGenSwamp extends WorldGenAbstractTree
 
                                 if ((Math.abs(l1) != k1 || Math.abs(j2) != k1 || p_76484_2_.nextInt(2) != 0 && j1 != 0) && !p_76484_1_.func_147439_a(l2, k2, i2).func_149730_j())
                                 {
-                                    this.func_150515_a(p_76484_1_, l2, k2, i2, Blocks.field_150362_t);
+                                    this.func_150515_a(p_76484_1_, l2, k2, i2, Blocks.LEAVES);
                                 }
                             }
                         }
@@ -113,9 +113,9 @@ public class WorldGenSwamp extends WorldGenAbstractTree
                     {
                         Block block2 = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ + k2, p_76484_5_);
 
-                        if (block2.func_149688_o() == Material.field_151579_a || block2.func_149688_o() == Material.field_151584_j || block2 == Blocks.field_150358_i || block2 == Blocks.field_150355_j)
+                        if (block2.func_149688_o() == Material.field_151579_a || block2.func_149688_o() == Material.field_151584_j || block2 == Blocks.FLOWING_WATER || block2 == Blocks.WATER)
                         {
-                            this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ + k2, p_76484_5_, Blocks.field_150364_r);
+                            this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ + k2, p_76484_5_, Blocks.LOG);
                         }
                     }
 
@@ -170,7 +170,7 @@ public class WorldGenSwamp extends WorldGenAbstractTree
 
     private void func_76536_b(World p_76536_1_, int p_76536_2_, int p_76536_3_, int p_76536_4_, int p_76536_5_)
     {
-        this.func_150516_a(p_76536_1_, p_76536_2_, p_76536_3_, p_76536_4_, Blocks.field_150395_bd, p_76536_5_);
+        this.func_150516_a(p_76536_1_, p_76536_2_, p_76536_3_, p_76536_4_, Blocks.VINE, p_76536_5_);
         int i1 = 4;
 
         while (true)
@@ -182,7 +182,7 @@ public class WorldGenSwamp extends WorldGenAbstractTree
                 return;
             }
 
-            this.func_150516_a(p_76536_1_, p_76536_2_, p_76536_3_, p_76536_4_, Blocks.field_150395_bd, p_76536_5_);
+            this.func_150516_a(p_76536_1_, p_76536_2_, p_76536_3_, p_76536_4_, Blocks.VINE, p_76536_5_);
             --i1;
         }
     }

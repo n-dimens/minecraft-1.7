@@ -44,7 +44,7 @@ public class BlockLilyPad extends BlockBush
 
     protected boolean func_149854_a(Block p_149854_1_)
     {
-        return p_149854_1_ == Blocks.field_150355_j;
+        return p_149854_1_ == Blocks.WATER;
     }
 
     @SideOnly(Side.CLIENT)

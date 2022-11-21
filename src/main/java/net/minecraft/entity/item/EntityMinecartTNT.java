@@ -33,7 +33,7 @@ public class EntityMinecartTNT extends EntityMinecart
 
     public Block func_145817_o()
     {
-        return Blocks.field_150335_W;
+        return Blocks.TNT;
     }
 
     public void func_70071_h_()
@@ -68,7 +68,7 @@ public class EntityMinecartTNT extends EntityMinecart
 
         if (!p_94095_1_.func_94541_c())
         {
-            this.func_70099_a(new ItemStack(Blocks.field_150335_W, 1), 0.0F);
+            this.func_70099_a(new ItemStack(Blocks.TNT, 1), 0.0F);
         }
 
         if (p_94095_1_.func_76347_k() || p_94095_1_.func_94541_c() || d0 >= 0.009999999776482582D)

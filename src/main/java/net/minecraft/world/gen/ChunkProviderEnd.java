@@ -91,7 +91,7 @@ public class ChunkProviderEnd implements IChunkProvider
 
                                 if (d15 > 0.0D)
                                 {
-                                    block = Blocks.field_150377_bs;
+                                    block = Blocks.END_STONE;
                                 }
 
                                 p_147420_3_[j2] = block;
@@ -121,8 +121,8 @@ public class ChunkProviderEnd implements IChunkProvider
             {
                 byte b0 = 1;
                 int i1 = -1;
-                Block block = Blocks.field_150377_bs;
-                Block block1 = Blocks.field_150377_bs;
+                Block block = Blocks.END_STONE;
+                Block block1 = Blocks.END_STONE;
 
                 for (int j1 = 127; j1 >= 0; --j1)
                 {
@@ -131,14 +131,14 @@ public class ChunkProviderEnd implements IChunkProvider
 
                     if (block2 != null && block2.func_149688_o() != Material.field_151579_a)
                     {
-                        if (block2 == Blocks.field_150348_b)
+                        if (block2 == Blocks.STONE)
                         {
                             if (i1 == -1)
                             {
                                 if (b0 <= 0)
                                 {
                                     block = null;
-                                    block1 = Blocks.field_150377_bs;
+                                    block1 = Blocks.END_STONE;
                                 }
 
                                 i1 = b0;

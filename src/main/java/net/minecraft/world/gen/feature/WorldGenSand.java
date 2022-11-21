@@ -42,7 +42,7 @@ public class WorldGenSand extends WorldGenerator
                         {
                             Block block = p_76484_1_.func_147439_a(i1, i2, j1);
 
-                            if (block == Blocks.field_150346_d || block == Blocks.field_150349_c)
+                            if (block == Blocks.DIRT || block == Blocks.GRASS)
                             {
                                 p_76484_1_.func_147465_d(i1, i2, j1, this.field_150517_a, 0, 2);
                             }

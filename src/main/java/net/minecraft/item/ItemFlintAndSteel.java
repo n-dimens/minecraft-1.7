@@ -58,7 +58,7 @@ public class ItemFlintAndSteel extends Item
             if (p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_).func_149688_o() == Material.field_151579_a)
             {
                 p_77648_3_.func_72908_a((double)p_77648_4_ + 0.5D, (double)p_77648_5_ + 0.5D, (double)p_77648_6_ + 0.5D, "fire.ignite", 1.0F, field_77697_d.nextFloat() * 0.4F + 0.8F);
-                p_77648_3_.func_147449_b(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.field_150480_ab);
+                p_77648_3_.func_147449_b(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.FIRE);
             }
 
             p_77648_1_.func_77972_a(1, p_77648_2_);

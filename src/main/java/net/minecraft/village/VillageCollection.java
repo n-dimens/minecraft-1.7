@@ -240,7 +240,7 @@ public class VillageCollection extends WorldSavedData
 
     private void func_75542_c(int p_75542_1_, int p_75542_2_, int p_75542_3_)
     {
-        int l = ((BlockDoor)Blocks.field_150466_ao).func_150013_e(this.field_75556_a, p_75542_1_, p_75542_2_, p_75542_3_);
+        int l = ((BlockDoor)Blocks.WOODEN_DOOR).func_150013_e(this.field_75556_a, p_75542_1_, p_75542_2_, p_75542_3_);
         int i1;
         int j1;
 
@@ -317,7 +317,7 @@ public class VillageCollection extends WorldSavedData
 
     private boolean func_75541_e(int p_75541_1_, int p_75541_2_, int p_75541_3_)
     {
-        return this.field_75556_a.func_147439_a(p_75541_1_, p_75541_2_, p_75541_3_) == Blocks.field_150466_ao;
+        return this.field_75556_a.func_147439_a(p_75541_1_, p_75541_2_, p_75541_3_) == Blocks.WOODEN_DOOR;
     }
 
     public void func_76184_a(NBTTagCompound p_76184_1_)

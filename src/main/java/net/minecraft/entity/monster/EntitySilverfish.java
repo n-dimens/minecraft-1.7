@@ -130,7 +130,7 @@ public class EntitySilverfish extends EntityMob
                         {
                             for (int j1 = 0; !flag && j1 <= 10 && j1 >= -10; j1 = j1 <= 0 ? 1 - j1 : 0 - j1)
                             {
-                                if (this.field_70170_p.func_147439_a(i + i1, j + l, k + j1) == Blocks.field_150418_aU)
+                                if (this.field_70170_p.func_147439_a(i + i1, j + l, k + j1) == Blocks.MONSTER_EGG)
                                 {
                                     if (!this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
                                     {
@@ -143,7 +143,7 @@ public class EntitySilverfish extends EntityMob
                                         this.field_70170_p.func_147480_a(i + i1, j + l, k + j1, false);
                                     }
 
-                                    Blocks.field_150418_aU.func_149664_b(this.field_70170_p, i + i1, j + l, k + j1, 0);
+                                    Blocks.MONSTER_EGG.func_149664_b(this.field_70170_p, i + i1, j + l, k + j1, 0);
 
                                     if (this.field_70146_Z.nextBoolean())
                                     {
@@ -168,7 +168,7 @@ public class EntitySilverfish extends EntityMob
 
                 if (BlockSilverfish.func_150196_a(block))
                 {
-                    this.field_70170_p.func_147465_d(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1], Blocks.field_150418_aU, BlockSilverfish.func_150195_a(block, i1), 3);
+                    this.field_70170_p.func_147465_d(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1], Blocks.MONSTER_EGG, BlockSilverfish.func_150195_a(block, i1), 3);
                     this.func_70656_aK();
                     this.func_70106_y();
                 }
@@ -186,7 +186,7 @@ public class EntitySilverfish extends EntityMob
 
     public float func_70783_a(int p_70783_1_, int p_70783_2_, int p_70783_3_)
     {
-        return this.field_70170_p.func_147439_a(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == Blocks.field_150348_b ? 10.0F : super.func_70783_a(p_70783_1_, p_70783_2_, p_70783_3_);
+        return this.field_70170_p.func_147439_a(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == Blocks.STONE ? 10.0F : super.func_70783_a(p_70783_1_, p_70783_2_, p_70783_3_);
     }
 
     protected boolean func_70814_o()

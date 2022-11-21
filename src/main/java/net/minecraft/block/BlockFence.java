@@ -142,12 +142,12 @@ public class BlockFence extends Block
     public boolean func_149826_e(IBlockAccess p_149826_1_, int p_149826_2_, int p_149826_3_, int p_149826_4_)
     {
         Block block = p_149826_1_.func_147439_a(p_149826_2_, p_149826_3_, p_149826_4_);
-        return block != this && block != Blocks.field_150396_be ? (block.field_149764_J.func_76218_k() && block.func_149686_d() ? block.field_149764_J != Material.field_151572_C : false) : true;
+        return block != this && block != Blocks.FENCE_GATE ? (block.field_149764_J.func_76218_k() && block.func_149686_d() ? block.field_149764_J != Material.field_151572_C : false) : true;
     }
 
     public static boolean func_149825_a(Block p_149825_0_)
     {
-        return p_149825_0_ == Blocks.field_150422_aJ || p_149825_0_ == Blocks.field_150386_bk;
+        return p_149825_0_ == Blocks.FENCE || p_149825_0_ == Blocks.NETHER_BRICK_FENCE;
     }
 
     @SideOnly(Side.CLIENT)

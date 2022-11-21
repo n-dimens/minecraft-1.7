@@ -30,7 +30,7 @@ public class WorldGenBlockBlob extends WorldGenerator
                     {
                         Block block = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ - 1, p_76484_5_);
 
-                        if (block == Blocks.field_150349_c || block == Blocks.field_150346_d || block == Blocks.field_150348_b)
+                        if (block == Blocks.GRASS || block == Blocks.DIRT || block == Blocks.STONE)
                         {
                             break label63;
                         }

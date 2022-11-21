@@ -126,15 +126,15 @@ public class BlockPortal extends BlockBreakable
 
         if (l == 1 && (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g))
         {
-            p_149695_1_.func_147449_b(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.field_150350_a);
+            p_149695_1_.func_147449_b(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.AIR);
         }
         else if (l == 2 && (!size1.func_150860_b() || size1.field_150864_e < size1.field_150868_h * size1.field_150862_g))
         {
-            p_149695_1_.func_147449_b(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.field_150350_a);
+            p_149695_1_.func_147449_b(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.AIR);
         }
         else if (l == 0 && !size.func_150860_b() && !size1.func_150860_b())
         {
-            p_149695_1_.func_147449_b(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.field_150350_a);
+            p_149695_1_.func_147449_b(p_149695_2_, p_149695_3_, p_149695_4_, Blocks.AIR);
         }
     }
 
@@ -300,14 +300,14 @@ public class BlockPortal extends BlockBreakable
 
                     Block block1 = this.field_150867_a.func_147439_a(p_150853_1_ + j1 * i1, p_150853_2_ - 1, p_150853_3_ + k1 * i1);
 
-                    if (block1 != Blocks.field_150343_Z)
+                    if (block1 != Blocks.OBSIDIAN)
                     {
                         break;
                     }
                 }
 
                 block = this.field_150867_a.func_147439_a(p_150853_1_ + j1 * i1, p_150853_2_, p_150853_3_ + k1 * i1);
-                return block == Blocks.field_150343_Z ? i1 : 0;
+                return block == Blocks.OBSIDIAN ? i1 : 0;
             }
 
             protected int func_150858_a()
@@ -333,7 +333,7 @@ public class BlockPortal extends BlockBreakable
                             break label56;
                         }
 
-                        if (block == Blocks.field_150427_aO)
+                        if (block == Blocks.PORTAL)
                         {
                             ++this.field_150864_e;
                         }
@@ -342,7 +342,7 @@ public class BlockPortal extends BlockBreakable
                         {
                             block = this.field_150867_a.func_147439_a(k + Direction.field_71583_a[BlockPortal.field_150001_a[this.field_150865_b][0]], i, l + Direction.field_71581_b[BlockPortal.field_150001_a[this.field_150865_b][0]]);
 
-                            if (block != Blocks.field_150343_Z)
+                            if (block != Blocks.OBSIDIAN)
                             {
                                 break label56;
                             }
@@ -351,7 +351,7 @@ public class BlockPortal extends BlockBreakable
                         {
                             block = this.field_150867_a.func_147439_a(k + Direction.field_71583_a[BlockPortal.field_150001_a[this.field_150865_b][1]], i, l + Direction.field_71581_b[BlockPortal.field_150001_a[this.field_150865_b][1]]);
 
-                            if (block != Blocks.field_150343_Z)
+                            if (block != Blocks.OBSIDIAN)
                             {
                                 break label56;
                             }
@@ -365,7 +365,7 @@ public class BlockPortal extends BlockBreakable
                     k = this.field_150861_f.field_71572_b + this.field_150862_g;
                     l = this.field_150861_f.field_71573_c + i * Direction.field_71581_b[BlockPortal.field_150001_a[this.field_150865_b][1]];
 
-                    if (this.field_150867_a.func_147439_a(j, k, l) != Blocks.field_150343_Z)
+                    if (this.field_150867_a.func_147439_a(j, k, l) != Blocks.OBSIDIAN)
                     {
                         this.field_150862_g = 0;
                         break;
@@ -387,7 +387,7 @@ public class BlockPortal extends BlockBreakable
 
             protected boolean func_150857_a(Block p_150857_1_)
             {
-                return p_150857_1_.field_149764_J == Material.field_151579_a || p_150857_1_ == Blocks.field_150480_ab || p_150857_1_ == Blocks.field_150427_aO;
+                return p_150857_1_.field_149764_J == Material.field_151579_a || p_150857_1_ == Blocks.FIRE || p_150857_1_ == Blocks.PORTAL;
             }
 
             public boolean func_150860_b()
@@ -405,7 +405,7 @@ public class BlockPortal extends BlockBreakable
                     for (int l = 0; l < this.field_150862_g; ++l)
                     {
                         int i1 = this.field_150861_f.field_71572_b + l;
-                        this.field_150867_a.func_147465_d(j, i1, k, Blocks.field_150427_aO, this.field_150865_b, 2);
+                        this.field_150867_a.func_147465_d(j, i1, k, Blocks.PORTAL, this.field_150865_b, 2);
                     }
                 }
             }

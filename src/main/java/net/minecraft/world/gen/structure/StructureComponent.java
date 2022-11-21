@@ -198,7 +198,7 @@ public abstract class StructureComponent
 
     protected int func_151555_a(Block p_151555_1_, int p_151555_2_)
     {
-        if (p_151555_1_ == Blocks.field_150448_aq)
+        if (p_151555_1_ == Blocks.RAIL)
         {
             if (this.field_74885_f == 1 || this.field_74885_f == 3)
             {
@@ -210,11 +210,11 @@ public abstract class StructureComponent
                 return 1;
             }
         }
-        else if (p_151555_1_ != Blocks.field_150466_ao && p_151555_1_ != Blocks.field_150454_av)
+        else if (p_151555_1_ != Blocks.WOODEN_DOOR && p_151555_1_ != Blocks.IRON_DOOR)
         {
-            if (p_151555_1_ != Blocks.field_150446_ar && p_151555_1_ != Blocks.field_150476_ad && p_151555_1_ != Blocks.field_150387_bl && p_151555_1_ != Blocks.field_150390_bg && p_151555_1_ != Blocks.field_150372_bz)
+            if (p_151555_1_ != Blocks.STONE_STAIRS && p_151555_1_ != Blocks.OAK_STAIRS && p_151555_1_ != Blocks.NETHER_BRICK_STAIRS && p_151555_1_ != Blocks.STONE_BRICK_STAIRS && p_151555_1_ != Blocks.SANDSTONE_STAIRS)
             {
-                if (p_151555_1_ == Blocks.field_150468_ap)
+                if (p_151555_1_ == Blocks.LADDER)
                 {
                     if (this.field_74885_f == 0)
                     {
@@ -273,7 +273,7 @@ public abstract class StructureComponent
                         }
                     }
                 }
-                else if (p_151555_1_ == Blocks.field_150430_aB)
+                else if (p_151555_1_ == Blocks.STONE_BUTTON)
                 {
                     if (this.field_74885_f == 0)
                     {
@@ -332,9 +332,9 @@ public abstract class StructureComponent
                         }
                     }
                 }
-                else if (p_151555_1_ != Blocks.field_150479_bC && !(p_151555_1_ instanceof BlockDirectional))
+                else if (p_151555_1_ != Blocks.TRIPWIRE_HOOK && !(p_151555_1_ instanceof BlockDirectional))
                 {
-                    if (p_151555_1_ == Blocks.field_150331_J || p_151555_1_ == Blocks.field_150320_F || p_151555_1_ == Blocks.field_150442_at || p_151555_1_ == Blocks.field_150367_z)
+                    if (p_151555_1_ == Blocks.PISTON || p_151555_1_ == Blocks.STICKY_PISTON || p_151555_1_ == Blocks.LEVER || p_151555_1_ == Blocks.DISPENSER)
                     {
                         if (this.field_74885_f == 0)
                         {
@@ -543,7 +543,7 @@ public abstract class StructureComponent
         int l = this.func_74865_a(p_151548_2_, p_151548_4_);
         int i1 = this.func_74862_a(p_151548_3_);
         int j1 = this.func_74873_b(p_151548_2_, p_151548_4_);
-        return !p_151548_5_.func_78890_b(l, i1, j1) ? Blocks.field_150350_a : p_151548_1_.func_147439_a(l, i1, j1);
+        return !p_151548_5_.func_78890_b(l, i1, j1) ? Blocks.AIR : p_151548_1_.func_147439_a(l, i1, j1);
     }
 
     protected void func_74878_a(World p_74878_1_, StructureBoundingBox p_74878_2_, int p_74878_3_, int p_74878_4_, int p_74878_5_, int p_74878_6_, int p_74878_7_, int p_74878_8_)
@@ -554,7 +554,7 @@ public abstract class StructureComponent
             {
                 for (int i2 = p_74878_5_; i2 <= p_74878_8_; ++i2)
                 {
-                    this.func_151550_a(p_74878_1_, Blocks.field_150350_a, 0, l1, k1, i2, p_74878_2_);
+                    this.func_151550_a(p_74878_1_, Blocks.AIR, 0, l1, k1, i2, p_74878_2_);
                 }
             }
         }
@@ -702,7 +702,7 @@ public abstract class StructureComponent
         {
             while (!p_74871_1_.func_147437_c(l, i1, j1) && i1 < 255)
             {
-                p_74871_1_.func_147465_d(l, i1, j1, Blocks.field_150350_a, 0, 2);
+                p_74871_1_.func_147465_d(l, i1, j1, Blocks.AIR, 0, 2);
                 ++i1;
             }
         }
@@ -730,9 +730,9 @@ public abstract class StructureComponent
         int j1 = this.func_74862_a(p_74879_5_);
         int k1 = this.func_74873_b(p_74879_4_, p_74879_6_);
 
-        if (p_74879_2_.func_78890_b(i1, j1, k1) && p_74879_1_.func_147439_a(i1, j1, k1) != Blocks.field_150486_ae)
+        if (p_74879_2_.func_78890_b(i1, j1, k1) && p_74879_1_.func_147439_a(i1, j1, k1) != Blocks.CHEST)
         {
-            p_74879_1_.func_147465_d(i1, j1, k1, Blocks.field_150486_ae, 0, 2);
+            p_74879_1_.func_147465_d(i1, j1, k1, Blocks.CHEST, 0, 2);
             TileEntityChest tileentitychest = (TileEntityChest)p_74879_1_.func_147438_o(i1, j1, k1);
 
             if (tileentitychest != null)
@@ -754,9 +754,9 @@ public abstract class StructureComponent
         int k1 = this.func_74862_a(p_74869_5_);
         int l1 = this.func_74873_b(p_74869_4_, p_74869_6_);
 
-        if (p_74869_2_.func_78890_b(j1, k1, l1) && p_74869_1_.func_147439_a(j1, k1, l1) != Blocks.field_150367_z)
+        if (p_74869_2_.func_78890_b(j1, k1, l1) && p_74869_1_.func_147439_a(j1, k1, l1) != Blocks.DISPENSER)
         {
-            p_74869_1_.func_147465_d(j1, k1, l1, Blocks.field_150367_z, this.func_151555_a(Blocks.field_150367_z, p_74869_7_), 2);
+            p_74869_1_.func_147465_d(j1, k1, l1, Blocks.DISPENSER, this.func_151555_a(Blocks.DISPENSER, p_74869_7_), 2);
             TileEntityDispenser tileentitydispenser = (TileEntityDispenser)p_74869_1_.func_147438_o(j1, k1, l1);
 
             if (tileentitydispenser != null)
@@ -780,7 +780,7 @@ public abstract class StructureComponent
 
         if (p_74881_2_.func_78890_b(i1, j1, k1))
         {
-            ItemDoor.func_150924_a(p_74881_1_, i1, j1, k1, p_74881_7_, Blocks.field_150466_ao);
+            ItemDoor.func_150924_a(p_74881_1_, i1, j1, k1, p_74881_7_, Blocks.WOODEN_DOOR);
         }
     }
 
@@ -792,7 +792,7 @@ public abstract class StructureComponent
 
             protected BlockSelector()
             {
-                this.field_151562_a = Blocks.field_150350_a;
+                this.field_151562_a = Blocks.AIR;
             }
 
             public abstract void func_75062_a(Random p_75062_1_, int p_75062_2_, int p_75062_3_, int p_75062_4_, boolean p_75062_5_);

@@ -66,7 +66,7 @@ public class ChunkCache implements IBlockAccess
 
     public Block func_147439_a(int p_147439_1_, int p_147439_2_, int p_147439_3_)
     {
-        Block block = Blocks.field_150350_a;
+        Block block = Blocks.AIR;
 
         if (p_147439_2_ >= 0 && p_147439_2_ < 256)
         {

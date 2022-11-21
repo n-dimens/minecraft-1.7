@@ -130,9 +130,9 @@ public abstract class BiomeGenBase
 
     public BiomeGenBase(int p_i1971_1_)
     {
-        this.field_76752_A = Blocks.field_150349_c;
+        this.field_76752_A = Blocks.GRASS;
         this.field_150604_aj = 0;
-        this.field_76753_B = Blocks.field_150346_d;
+        this.field_76753_B = Blocks.DIRT;
         this.field_76754_C = 5169201;
         this.field_76748_D = field_150596_a.field_150777_a;
         this.field_76749_E = field_150596_a.field_150776_b;
@@ -204,7 +204,7 @@ public abstract class BiomeGenBase
 
     public WorldGenerator func_76730_b(Random p_76730_1_)
     {
-        return new WorldGenTallGrass(Blocks.field_150329_H, 1);
+        return new WorldGenTallGrass(Blocks.TALLGRASS, 1);
     }
 
     public String func_150572_a(Random p_150572_1_, int p_150572_2_, int p_150572_3_, int p_150572_4_)
@@ -374,7 +374,7 @@ public abstract class BiomeGenBase
 
             if (l1 <= 0 + p_150560_2_.nextInt(5))
             {
-                p_150560_3_[i2] = Blocks.field_150357_h;
+                p_150560_3_[i2] = Blocks.BEDROCK;
             }
             else
             {
@@ -382,7 +382,7 @@ public abstract class BiomeGenBase
 
                 if (block2 != null && block2.func_149688_o() != Material.field_151579_a)
                 {
-                    if (block2 == Blocks.field_150348_b)
+                    if (block2 == Blocks.STONE)
                     {
                         if (k == -1)
                         {
@@ -390,7 +390,7 @@ public abstract class BiomeGenBase
                             {
                                 block = null;
                                 b0 = 0;
-                                block1 = Blocks.field_150348_b;
+                                block1 = Blocks.STONE;
                             }
                             else if (l1 >= 59 && l1 <= 64)
                             {
@@ -403,12 +403,12 @@ public abstract class BiomeGenBase
                             {
                                 if (this.func_150564_a(p_150560_5_, l1, p_150560_6_) < 0.15F)
                                 {
-                                    block = Blocks.field_150432_aD;
+                                    block = Blocks.ICE;
                                     b0 = 0;
                                 }
                                 else
                                 {
-                                    block = Blocks.field_150355_j;
+                                    block = Blocks.WATER;
                                     b0 = 0;
                                 }
                             }
@@ -423,8 +423,8 @@ public abstract class BiomeGenBase
                             else if (l1 < 56 - l)
                             {
                                 block = null;
-                                block1 = Blocks.field_150348_b;
-                                p_150560_3_[i2] = Blocks.field_150351_n;
+                                block1 = Blocks.STONE;
+                                p_150560_3_[i2] = Blocks.GRAVEL;
                             }
                             else
                             {
@@ -436,10 +436,10 @@ public abstract class BiomeGenBase
                             --k;
                             p_150560_3_[i2] = block1;
 
-                            if (k == 0 && block1 == Blocks.field_150354_m)
+                            if (k == 0 && block1 == Blocks.SAND)
                             {
                                 k = p_150560_2_.nextInt(4) + Math.max(0, l1 - 63);
-                                block1 = Blocks.field_150322_A;
+                                block1 = Blocks.SANDSTONE;
                             }
                         }
                     }

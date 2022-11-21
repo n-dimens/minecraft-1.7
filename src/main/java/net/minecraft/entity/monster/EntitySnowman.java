@@ -70,9 +70,9 @@ public class EntitySnowman extends EntityGolem implements IRangedAttackMob
             j = MathHelper.func_76128_c(this.field_70163_u);
             k = MathHelper.func_76128_c(this.field_70161_v + (double)((float)(l / 2 % 2 * 2 - 1) * 0.25F));
 
-            if (this.field_70170_p.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && this.field_70170_p.func_72807_a(i, k).func_150564_a(i, j, k) < 0.8F && Blocks.field_150431_aC.func_149742_c(this.field_70170_p, i, j, k))
+            if (this.field_70170_p.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && this.field_70170_p.func_72807_a(i, k).func_150564_a(i, j, k) < 0.8F && Blocks.SNOW_LAYER.func_149742_c(this.field_70170_p, i, j, k))
             {
-                this.field_70170_p.func_147449_b(i, j, k, Blocks.field_150431_aC);
+                this.field_70170_p.func_147449_b(i, j, k, Blocks.SNOW_LAYER);
             }
         }
     }

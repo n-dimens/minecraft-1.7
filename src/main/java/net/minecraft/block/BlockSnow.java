@@ -73,7 +73,7 @@ public class BlockSnow extends Block
     public boolean func_149742_c(World p_149742_1_, int p_149742_2_, int p_149742_3_, int p_149742_4_)
     {
         Block block = p_149742_1_.func_147439_a(p_149742_2_, p_149742_3_ - 1, p_149742_4_);
-        return block != Blocks.field_150432_aD && block != Blocks.field_150403_cj ? (block.func_149688_o() == Material.field_151584_j ? true : (block == this && (p_149742_1_.func_72805_g(p_149742_2_, p_149742_3_ - 1, p_149742_4_) & 7) == 7 ? true : block.func_149662_c() && block.field_149764_J.func_76230_c())) : false;
+        return block != Blocks.ICE && block != Blocks.PACKED_ICE ? (block.func_149688_o() == Material.field_151584_j ? true : (block == this && (p_149742_1_.func_72805_g(p_149742_2_, p_149742_3_ - 1, p_149742_4_) & 7) == 7 ? true : block.func_149662_c() && block.field_149764_J.func_76230_c())) : false;
     }
 
     public void func_149695_a(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_)

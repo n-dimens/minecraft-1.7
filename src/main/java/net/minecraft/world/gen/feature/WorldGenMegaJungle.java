@@ -39,7 +39,7 @@ public class WorldGenMegaJungle extends WorldGenHugeTrees
                 {
                     j1 = p_76484_3_ + (int)(1.5F + MathHelper.func_76134_b(f) * (float)l1);
                     k1 = p_76484_5_ + (int)(1.5F + MathHelper.func_76126_a(f) * (float)l1);
-                    this.func_150516_a(p_76484_1_, j1, i1 - 3 + l1 / 2, k1, Blocks.field_150364_r, this.field_76520_b);
+                    this.func_150516_a(p_76484_1_, j1, i1 - 3 + l1 / 2, k1, Blocks.LOG, this.field_76520_b);
                 }
 
                 l1 = 1 + p_76484_2_.nextInt(2);
@@ -58,18 +58,18 @@ public class WorldGenMegaJungle extends WorldGenHugeTrees
 
                 if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                 {
-                    this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + l2, p_76484_5_, Blocks.field_150364_r, this.field_76520_b);
+                    this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + l2, p_76484_5_, Blocks.LOG, this.field_76520_b);
 
                     if (l2 > 0)
                     {
                         if (p_76484_2_.nextInt(3) > 0 && p_76484_1_.func_147437_c(p_76484_3_ - 1, p_76484_4_ + l2, p_76484_5_))
                         {
-                            this.func_150516_a(p_76484_1_, p_76484_3_ - 1, p_76484_4_ + l2, p_76484_5_, Blocks.field_150395_bd, 8);
+                            this.func_150516_a(p_76484_1_, p_76484_3_ - 1, p_76484_4_ + l2, p_76484_5_, Blocks.VINE, 8);
                         }
 
                         if (p_76484_2_.nextInt(3) > 0 && p_76484_1_.func_147437_c(p_76484_3_, p_76484_4_ + l2, p_76484_5_ - 1))
                         {
-                            this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + l2, p_76484_5_ - 1, Blocks.field_150395_bd, 1);
+                            this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + l2, p_76484_5_ - 1, Blocks.VINE, 1);
                         }
                     }
                 }
@@ -80,18 +80,18 @@ public class WorldGenMegaJungle extends WorldGenHugeTrees
 
                     if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                     {
-                        this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_, Blocks.field_150364_r, this.field_76520_b);
+                        this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_, Blocks.LOG, this.field_76520_b);
 
                         if (l2 > 0)
                         {
                             if (p_76484_2_.nextInt(3) > 0 && p_76484_1_.func_147437_c(p_76484_3_ + 2, p_76484_4_ + l2, p_76484_5_))
                             {
-                                this.func_150516_a(p_76484_1_, p_76484_3_ + 2, p_76484_4_ + l2, p_76484_5_, Blocks.field_150395_bd, 2);
+                                this.func_150516_a(p_76484_1_, p_76484_3_ + 2, p_76484_4_ + l2, p_76484_5_, Blocks.VINE, 2);
                             }
 
                             if (p_76484_2_.nextInt(3) > 0 && p_76484_1_.func_147437_c(p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_ - 1))
                             {
-                                this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_ - 1, Blocks.field_150395_bd, 1);
+                                this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_ - 1, Blocks.VINE, 1);
                             }
                         }
                     }
@@ -100,18 +100,18 @@ public class WorldGenMegaJungle extends WorldGenHugeTrees
 
                     if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                     {
-                        this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_ + 1, Blocks.field_150364_r, this.field_76520_b);
+                        this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_ + 1, Blocks.LOG, this.field_76520_b);
 
                         if (l2 > 0)
                         {
                             if (p_76484_2_.nextInt(3) > 0 && p_76484_1_.func_147437_c(p_76484_3_ + 2, p_76484_4_ + l2, p_76484_5_ + 1))
                             {
-                                this.func_150516_a(p_76484_1_, p_76484_3_ + 2, p_76484_4_ + l2, p_76484_5_ + 1, Blocks.field_150395_bd, 2);
+                                this.func_150516_a(p_76484_1_, p_76484_3_ + 2, p_76484_4_ + l2, p_76484_5_ + 1, Blocks.VINE, 2);
                             }
 
                             if (p_76484_2_.nextInt(3) > 0 && p_76484_1_.func_147437_c(p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_ + 2))
                             {
-                                this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_ + 2, Blocks.field_150395_bd, 4);
+                                this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + l2, p_76484_5_ + 2, Blocks.VINE, 4);
                             }
                         }
                     }
@@ -120,18 +120,18 @@ public class WorldGenMegaJungle extends WorldGenHugeTrees
 
                     if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                     {
-                        this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + l2, p_76484_5_ + 1, Blocks.field_150364_r, this.field_76520_b);
+                        this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + l2, p_76484_5_ + 1, Blocks.LOG, this.field_76520_b);
 
                         if (l2 > 0)
                         {
                             if (p_76484_2_.nextInt(3) > 0 && p_76484_1_.func_147437_c(p_76484_3_ - 1, p_76484_4_ + l2, p_76484_5_ + 1))
                             {
-                                this.func_150516_a(p_76484_1_, p_76484_3_ - 1, p_76484_4_ + l2, p_76484_5_ + 1, Blocks.field_150395_bd, 8);
+                                this.func_150516_a(p_76484_1_, p_76484_3_ - 1, p_76484_4_ + l2, p_76484_5_ + 1, Blocks.VINE, 8);
                             }
 
                             if (p_76484_2_.nextInt(3) > 0 && p_76484_1_.func_147437_c(p_76484_3_, p_76484_4_ + l2, p_76484_5_ + 2))
                             {
-                                this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + l2, p_76484_5_ + 2, Blocks.field_150395_bd, 4);
+                                this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + l2, p_76484_5_ + 2, Blocks.VINE, 4);
                             }
                         }
                     }

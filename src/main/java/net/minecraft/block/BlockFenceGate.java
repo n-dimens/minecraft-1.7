@@ -28,7 +28,7 @@ public class BlockFenceGate extends BlockDirectional
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return Blocks.field_150344_f.func_149733_h(p_149691_1_);
+        return Blocks.PLANKS.func_149733_h(p_149691_1_);
     }
 
     public boolean func_149742_c(World p_149742_1_, int p_149742_2_, int p_149742_3_, int p_149742_4_)

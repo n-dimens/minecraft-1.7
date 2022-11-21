@@ -28,7 +28,7 @@ public class ItemSnow extends ItemBlockWithMetadata
         {
             Block block = p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_);
 
-            if (block == Blocks.field_150431_aC)
+            if (block == Blocks.SNOW_LAYER)
             {
                 int i1 = p_77648_3_.func_72805_g(p_77648_4_, p_77648_5_, p_77648_6_);
                 int j1 = i1 & 7;

@@ -110,7 +110,7 @@ public class Item
         REGISTRY.func_148756_a(284, "golden_shovel", (new ItemSpade(Item.ToolMaterial.GOLD)).func_77655_b("shovelGold").func_111206_d("gold_shovel"));
         REGISTRY.func_148756_a(285, "golden_pickaxe", (new ItemPickaxe(Item.ToolMaterial.GOLD)).func_77655_b("pickaxeGold").func_111206_d("gold_pickaxe"));
         REGISTRY.func_148756_a(286, "golden_axe", (new ItemAxe(Item.ToolMaterial.GOLD)).func_77655_b("hatchetGold").func_111206_d("gold_axe"));
-        REGISTRY.func_148756_a(287, "string", (new ItemReed(Blocks.field_150473_bD)).func_77655_b("string").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("string"));
+        REGISTRY.func_148756_a(287, "string", (new ItemReed(Blocks.TRIPWIRE)).func_77655_b("string").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("string"));
         REGISTRY.func_148756_a(288, "feather", (new Item()).func_77655_b("feather").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("feather"));
         REGISTRY.func_148756_a(289, "gunpowder", (new Item()).func_77655_b("sulphur").func_77631_c(PotionHelper.field_77930_k).func_77637_a(CreativeTabs.field_78035_l).func_111206_d("gunpowder"));
         REGISTRY.func_148756_a(290, "wooden_hoe", (new ItemHoe(Item.ToolMaterial.WOOD)).func_77655_b("hoeWood").func_111206_d("wood_hoe"));
@@ -118,7 +118,7 @@ public class Item
         REGISTRY.func_148756_a(292, "iron_hoe", (new ItemHoe(Item.ToolMaterial.IRON)).func_77655_b("hoeIron").func_111206_d("iron_hoe"));
         REGISTRY.func_148756_a(293, "diamond_hoe", (new ItemHoe(Item.ToolMaterial.EMERALD)).func_77655_b("hoeDiamond").func_111206_d("diamond_hoe"));
         REGISTRY.func_148756_a(294, "golden_hoe", (new ItemHoe(Item.ToolMaterial.GOLD)).func_77655_b("hoeGold").func_111206_d("gold_hoe"));
-        REGISTRY.func_148756_a(295, "wheat_seeds", (new ItemSeeds(Blocks.field_150464_aj, Blocks.field_150458_ak)).func_77655_b("seeds").func_111206_d("seeds_wheat"));
+        REGISTRY.func_148756_a(295, "wheat_seeds", (new ItemSeeds(Blocks.WHEAT, Blocks.FARMLAND)).func_77655_b("seeds").func_111206_d("seeds_wheat"));
         REGISTRY.func_148756_a(296, "wheat", (new Item()).func_77655_b("wheat").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("wheat"));
         REGISTRY.func_148756_a(297, "bread", (new ItemFood(5, 0.6F, false)).func_77655_b("bread").func_111206_d("bread"));
         REGISTRY.func_148756_a(298, "leather_helmet", (new ItemArmor(ItemArmor.ArmorMaterial.CLOTH, 0, 0)).func_77655_b("helmetCloth").func_111206_d("leather_helmet"));
@@ -148,10 +148,10 @@ public class Item
         REGISTRY.func_148756_a(322, "golden_apple", (new ItemAppleGold(4, 1.2F, false)).func_77848_i().func_77844_a(Potion.field_76428_l.field_76415_H, 5, 1, 1.0F).func_77655_b("appleGold").func_111206_d("apple_golden"));
         REGISTRY.func_148756_a(323, "sign", (new ItemSign()).func_77655_b("sign").func_111206_d("sign"));
         REGISTRY.func_148756_a(324, "wooden_door", (new ItemDoor(Material.field_151575_d)).func_77655_b("doorWood").func_111206_d("door_wood"));
-        Item item = (new ItemBucket(Blocks.field_150350_a)).func_77655_b("bucket").func_77625_d(16).func_111206_d("bucket_empty");
+        Item item = (new ItemBucket(Blocks.AIR)).func_77655_b("bucket").func_77625_d(16).func_111206_d("bucket_empty");
         REGISTRY.func_148756_a(325, "bucket", item);
-        REGISTRY.func_148756_a(326, "water_bucket", (new ItemBucket(Blocks.field_150358_i)).func_77655_b("bucketWater").func_77642_a(item).func_111206_d("bucket_water"));
-        REGISTRY.func_148756_a(327, "lava_bucket", (new ItemBucket(Blocks.field_150356_k)).func_77655_b("bucketLava").func_77642_a(item).func_111206_d("bucket_lava"));
+        REGISTRY.func_148756_a(326, "water_bucket", (new ItemBucket(Blocks.FLOWING_WATER)).func_77655_b("bucketWater").func_77642_a(item).func_111206_d("bucket_water"));
+        REGISTRY.func_148756_a(327, "lava_bucket", (new ItemBucket(Blocks.FLOWING_LAVA)).func_77655_b("bucketLava").func_77642_a(item).func_111206_d("bucket_lava"));
         REGISTRY.func_148756_a(328, "minecart", (new ItemMinecart(0)).func_77655_b("minecart").func_111206_d("minecart_normal"));
         REGISTRY.func_148756_a(329, "saddle", (new ItemSaddle()).func_77655_b("saddle").func_111206_d("saddle"));
         REGISTRY.func_148756_a(330, "iron_door", (new ItemDoor(Material.field_151573_f)).func_77655_b("doorIron").func_111206_d("door_iron"));
@@ -162,7 +162,7 @@ public class Item
         REGISTRY.func_148756_a(335, "milk_bucket", (new ItemBucketMilk()).func_77655_b("milk").func_77642_a(item).func_111206_d("bucket_milk"));
         REGISTRY.func_148756_a(336, "brick", (new Item()).func_77655_b("brick").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("brick"));
         REGISTRY.func_148756_a(337, "clay_ball", (new Item()).func_77655_b("clay").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("clay_ball"));
-        REGISTRY.func_148756_a(338, "reeds", (new ItemReed(Blocks.field_150436_aH)).func_77655_b("reeds").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("reeds"));
+        REGISTRY.func_148756_a(338, "reeds", (new ItemReed(Blocks.REEDS)).func_77655_b("reeds").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("reeds"));
         REGISTRY.func_148756_a(339, "paper", (new Item()).func_77655_b("paper").func_77637_a(CreativeTabs.field_78026_f).func_111206_d("paper"));
         REGISTRY.func_148756_a(340, "book", (new ItemBook()).func_77655_b("book").func_77637_a(CreativeTabs.field_78026_f).func_111206_d("book_normal"));
         REGISTRY.func_148756_a(341, "slime_ball", (new Item()).func_77655_b("slimeball").func_77637_a(CreativeTabs.field_78026_f).func_111206_d("slimeball"));
@@ -178,15 +178,15 @@ public class Item
         REGISTRY.func_148756_a(351, "dye", (new ItemDye()).func_77655_b("dyePowder").func_111206_d("dye_powder"));
         REGISTRY.func_148756_a(352, "bone", (new Item()).func_77655_b("bone").func_77664_n().func_77637_a(CreativeTabs.field_78026_f).func_111206_d("bone"));
         REGISTRY.func_148756_a(353, "sugar", (new Item()).func_77655_b("sugar").func_77631_c(PotionHelper.field_77922_b).func_77637_a(CreativeTabs.field_78035_l).func_111206_d("sugar"));
-        REGISTRY.func_148756_a(354, "cake", (new ItemReed(Blocks.field_150414_aQ)).func_77625_d(1).func_77655_b("cake").func_77637_a(CreativeTabs.field_78039_h).func_111206_d("cake"));
+        REGISTRY.func_148756_a(354, "cake", (new ItemReed(Blocks.CAKE)).func_77625_d(1).func_77655_b("cake").func_77637_a(CreativeTabs.field_78039_h).func_111206_d("cake"));
         REGISTRY.func_148756_a(355, "bed", (new ItemBed()).func_77625_d(1).func_77655_b("bed").func_111206_d("bed"));
-        REGISTRY.func_148756_a(356, "repeater", (new ItemReed(Blocks.field_150413_aR)).func_77655_b("diode").func_77637_a(CreativeTabs.field_78028_d).func_111206_d("repeater"));
+        REGISTRY.func_148756_a(356, "repeater", (new ItemReed(Blocks.UNPOWERED_REPEATER)).func_77655_b("diode").func_77637_a(CreativeTabs.field_78028_d).func_111206_d("repeater"));
         REGISTRY.func_148756_a(357, "cookie", (new ItemFood(2, 0.1F, false)).func_77655_b("cookie").func_111206_d("cookie"));
         REGISTRY.func_148756_a(358, "filled_map", (new ItemMap()).func_77655_b("map").func_111206_d("map_filled"));
         REGISTRY.func_148756_a(359, "shears", (new ItemShears()).func_77655_b("shears").func_111206_d("shears"));
         REGISTRY.func_148756_a(360, "melon", (new ItemFood(2, 0.3F, false)).func_77655_b("melon").func_111206_d("melon"));
-        REGISTRY.func_148756_a(361, "pumpkin_seeds", (new ItemSeeds(Blocks.field_150393_bb, Blocks.field_150458_ak)).func_77655_b("seeds_pumpkin").func_111206_d("seeds_pumpkin"));
-        REGISTRY.func_148756_a(362, "melon_seeds", (new ItemSeeds(Blocks.field_150394_bc, Blocks.field_150458_ak)).func_77655_b("seeds_melon").func_111206_d("seeds_melon"));
+        REGISTRY.func_148756_a(361, "pumpkin_seeds", (new ItemSeeds(Blocks.PUMPKIN_STEM, Blocks.FARMLAND)).func_77655_b("seeds_pumpkin").func_111206_d("seeds_pumpkin"));
+        REGISTRY.func_148756_a(362, "melon_seeds", (new ItemSeeds(Blocks.MELON_STEM, Blocks.FARMLAND)).func_77655_b("seeds_melon").func_111206_d("seeds_melon"));
         REGISTRY.func_148756_a(363, "beef", (new ItemFood(3, 0.3F, true)).func_77655_b("beefRaw").func_111206_d("beef_raw"));
         REGISTRY.func_148756_a(364, "cooked_beef", (new ItemFood(8, 0.8F, true)).func_77655_b("beefCooked").func_111206_d("beef_cooked"));
         REGISTRY.func_148756_a(365, "chicken", (new ItemFood(2, 0.3F, true)).func_77844_a(Potion.field_76438_s.field_76415_H, 30, 0, 0.3F).func_77655_b("chickenRaw").func_111206_d("chicken_raw"));
@@ -196,15 +196,15 @@ public class Item
         REGISTRY.func_148756_a(369, "blaze_rod", (new Item()).func_77655_b("blazeRod").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("blaze_rod"));
         REGISTRY.func_148756_a(370, "ghast_tear", (new Item()).func_77655_b("ghastTear").func_77631_c(PotionHelper.field_77923_c).func_77637_a(CreativeTabs.field_78038_k).func_111206_d("ghast_tear"));
         REGISTRY.func_148756_a(371, "gold_nugget", (new Item()).func_77655_b("goldNugget").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("gold_nugget"));
-        REGISTRY.func_148756_a(372, "nether_wart", (new ItemSeeds(Blocks.field_150388_bm, Blocks.field_150425_aM)).func_77655_b("netherStalkSeeds").func_77631_c("+4").func_111206_d("nether_wart"));
+        REGISTRY.func_148756_a(372, "nether_wart", (new ItemSeeds(Blocks.NETHER_WART, Blocks.SOUL_SAND)).func_77655_b("netherStalkSeeds").func_77631_c("+4").func_111206_d("nether_wart"));
         REGISTRY.func_148756_a(373, "potion", (new ItemPotion()).func_77655_b("potion").func_111206_d("potion"));
         REGISTRY.func_148756_a(374, "glass_bottle", (new ItemGlassBottle()).func_77655_b("glassBottle").func_111206_d("potion_bottle_empty"));
         REGISTRY.func_148756_a(375, "spider_eye", (new ItemFood(2, 0.8F, false)).func_77844_a(Potion.field_76436_u.field_76415_H, 5, 0, 1.0F).func_77655_b("spiderEye").func_77631_c(PotionHelper.field_77920_d).func_111206_d("spider_eye"));
         REGISTRY.func_148756_a(376, "fermented_spider_eye", (new Item()).func_77655_b("fermentedSpiderEye").func_77631_c(PotionHelper.field_77921_e).func_77637_a(CreativeTabs.field_78038_k).func_111206_d("spider_eye_fermented"));
         REGISTRY.func_148756_a(377, "blaze_powder", (new Item()).func_77655_b("blazePowder").func_77631_c(PotionHelper.field_77919_g).func_77637_a(CreativeTabs.field_78038_k).func_111206_d("blaze_powder"));
         REGISTRY.func_148756_a(378, "magma_cream", (new Item()).func_77655_b("magmaCream").func_77631_c(PotionHelper.field_77931_h).func_77637_a(CreativeTabs.field_78038_k).func_111206_d("magma_cream"));
-        REGISTRY.func_148756_a(379, "brewing_stand", (new ItemReed(Blocks.field_150382_bo)).func_77655_b("brewingStand").func_77637_a(CreativeTabs.field_78038_k).func_111206_d("brewing_stand"));
-        REGISTRY.func_148756_a(380, "cauldron", (new ItemReed(Blocks.field_150383_bp)).func_77655_b("cauldron").func_77637_a(CreativeTabs.field_78038_k).func_111206_d("cauldron"));
+        REGISTRY.func_148756_a(379, "brewing_stand", (new ItemReed(Blocks.BREWING_STAND)).func_77655_b("brewingStand").func_77637_a(CreativeTabs.field_78038_k).func_111206_d("brewing_stand"));
+        REGISTRY.func_148756_a(380, "cauldron", (new ItemReed(Blocks.CAULDRON)).func_77655_b("cauldron").func_77637_a(CreativeTabs.field_78038_k).func_111206_d("cauldron"));
         REGISTRY.func_148756_a(381, "ender_eye", (new ItemEnderEye()).func_77655_b("eyeOfEnder").func_111206_d("ender_eye"));
         REGISTRY.func_148756_a(382, "speckled_melon", (new Item()).func_77655_b("speckledMelon").func_77631_c(PotionHelper.field_77918_f).func_77637_a(CreativeTabs.field_78038_k).func_111206_d("melon_speckled"));
         REGISTRY.func_148756_a(383, "spawn_egg", (new ItemMonsterPlacer()).func_77655_b("monsterPlacer").func_111206_d("spawn_egg"));
@@ -214,9 +214,9 @@ public class Item
         REGISTRY.func_148756_a(387, "written_book", (new ItemEditableBook()).func_77655_b("writtenBook").func_111206_d("book_written").func_77625_d(16));
         REGISTRY.func_148756_a(388, "emerald", (new Item()).func_77655_b("emerald").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("emerald"));
         REGISTRY.func_148756_a(389, "item_frame", (new ItemHangingEntity(EntityItemFrame.class)).func_77655_b("frame").func_111206_d("item_frame"));
-        REGISTRY.func_148756_a(390, "flower_pot", (new ItemReed(Blocks.field_150457_bL)).func_77655_b("flowerPot").func_77637_a(CreativeTabs.field_78031_c).func_111206_d("flower_pot"));
-        REGISTRY.func_148756_a(391, "carrot", (new ItemSeedFood(4, 0.6F, Blocks.field_150459_bM, Blocks.field_150458_ak)).func_77655_b("carrots").func_111206_d("carrot"));
-        REGISTRY.func_148756_a(392, "potato", (new ItemSeedFood(1, 0.3F, Blocks.field_150469_bN, Blocks.field_150458_ak)).func_77655_b("potato").func_111206_d("potato"));
+        REGISTRY.func_148756_a(390, "flower_pot", (new ItemReed(Blocks.FLOWER_POT)).func_77655_b("flowerPot").func_77637_a(CreativeTabs.field_78031_c).func_111206_d("flower_pot"));
+        REGISTRY.func_148756_a(391, "carrot", (new ItemSeedFood(4, 0.6F, Blocks.CARROTS, Blocks.FARMLAND)).func_77655_b("carrots").func_111206_d("carrot"));
+        REGISTRY.func_148756_a(392, "potato", (new ItemSeedFood(1, 0.3F, Blocks.POTATOES, Blocks.FARMLAND)).func_77655_b("potato").func_111206_d("potato"));
         REGISTRY.func_148756_a(393, "baked_potato", (new ItemFood(6, 0.6F, false)).func_77655_b("potatoBaked").func_111206_d("potato_baked"));
         REGISTRY.func_148756_a(394, "poisonous_potato", (new ItemFood(2, 0.3F, false)).func_77844_a(Potion.field_76436_u.field_76415_H, 5, 0, 0.6F).func_77655_b("potatoPoisonous").func_111206_d("potato_poisonous"));
         REGISTRY.func_148756_a(395, "map", (new ItemEmptyMap()).func_77655_b("emptyMap").func_111206_d("map_empty"));
@@ -228,7 +228,7 @@ public class Item
         REGISTRY.func_148756_a(401, "fireworks", (new ItemFirework()).func_77655_b("fireworks").func_111206_d("fireworks"));
         REGISTRY.func_148756_a(402, "firework_charge", (new ItemFireworkCharge()).func_77655_b("fireworksCharge").func_77637_a(CreativeTabs.field_78026_f).func_111206_d("fireworks_charge"));
         REGISTRY.func_148756_a(403, "enchanted_book", (new ItemEnchantedBook()).func_77625_d(1).func_77655_b("enchantedBook").func_111206_d("book_enchanted"));
-        REGISTRY.func_148756_a(404, "comparator", (new ItemReed(Blocks.field_150441_bU)).func_77655_b("comparator").func_77637_a(CreativeTabs.field_78028_d).func_111206_d("comparator"));
+        REGISTRY.func_148756_a(404, "comparator", (new ItemReed(Blocks.UNPOWERED_COMPARATOR)).func_77655_b("comparator").func_77637_a(CreativeTabs.field_78028_d).func_111206_d("comparator"));
         REGISTRY.func_148756_a(405, "netherbrick", (new Item()).func_77655_b("netherbrick").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("netherbrick"));
         REGISTRY.func_148756_a(406, "quartz", (new Item()).func_77655_b("netherquartz").func_77637_a(CreativeTabs.field_78035_l).func_111206_d("quartz"));
         REGISTRY.func_148756_a(407, "tnt_minecart", (new ItemMinecart(3)).func_77655_b("minecartTnt").func_111206_d("minecart_tnt"));
@@ -251,7 +251,7 @@ public class Item
         REGISTRY.func_148756_a(2265, "record_ward", (new ItemRecord("ward")).func_77655_b("record").func_111206_d("record_ward"));
         REGISTRY.func_148756_a(2266, "record_11", (new ItemRecord("11")).func_77655_b("record").func_111206_d("record_11"));
         REGISTRY.func_148756_a(2267, "record_wait", (new ItemRecord("wait")).func_77655_b("record").func_111206_d("record_wait"));
-        HashSet hashset = Sets.newHashSet(new Block[] {Blocks.field_150350_a, Blocks.field_150382_bo, Blocks.field_150324_C, Blocks.field_150388_bm, Blocks.field_150383_bp, Blocks.field_150457_bL, Blocks.field_150464_aj, Blocks.field_150436_aH, Blocks.field_150414_aQ, Blocks.field_150465_bP, Blocks.field_150332_K, Blocks.field_150326_M, Blocks.field_150439_ay, Blocks.field_150416_aS, Blocks.field_150393_bb, Blocks.field_150472_an, Blocks.field_150455_bV, Blocks.field_150473_bD, Blocks.field_150374_bv, Blocks.field_150394_bc, Blocks.field_150437_az, Blocks.field_150441_bU, Blocks.field_150488_af, Blocks.field_150444_as, Blocks.field_150413_aR, Blocks.field_150454_av, Blocks.field_150466_ao});
+        HashSet hashset = Sets.newHashSet(new Block[] {Blocks.AIR, Blocks.BREWING_STAND, Blocks.BED, Blocks.NETHER_WART, Blocks.CAULDRON, Blocks.FLOWER_POT, Blocks.WHEAT, Blocks.REEDS, Blocks.CAKE, Blocks.SKULL, Blocks.PISTON_HEAD, Blocks.PISTON_EXTENSION, Blocks.LIT_REDSTONE_ORE, Blocks.POWERED_REPEATER, Blocks.PUMPKIN_STEM, Blocks.STANDING_SIGN, Blocks.POWERED_COMPARATOR, Blocks.TRIPWIRE, Blocks.LIT_REDSTONE_LAMP, Blocks.MELON_STEM, Blocks.UNLIT_REDSTONE_TORCH, Blocks.UNPOWERED_COMPARATOR, Blocks.REDSTONE_WIRE, Blocks.WALL_SIGN, Blocks.UNPOWERED_REPEATER, Blocks.IRON_DOOR, Blocks.WOODEN_DOOR});
         Iterator iterator = Block.field_149771_c.func_148742_b().iterator();
 
         while (iterator.hasNext())
@@ -264,129 +264,129 @@ public class Item
             {
                 object = (new ItemCloth(Blocks.WOOL)).func_77655_b("cloth");
             }
-            else if (block == Blocks.field_150406_ce)
+            else if (block == Blocks.STAINED_HARDENED_CLAY)
             {
-                object = (new ItemCloth(Blocks.field_150406_ce)).func_77655_b("clayHardenedStained");
+                object = (new ItemCloth(Blocks.STAINED_HARDENED_CLAY)).func_77655_b("clayHardenedStained");
             }
-            else if (block == Blocks.field_150399_cn)
+            else if (block == Blocks.STAINED_GLASS)
             {
-                object = (new ItemCloth(Blocks.field_150399_cn)).func_77655_b("stainedGlass");
+                object = (new ItemCloth(Blocks.STAINED_GLASS)).func_77655_b("stainedGlass");
             }
-            else if (block == Blocks.field_150397_co)
+            else if (block == Blocks.STAINED_GLASS_PANE)
             {
-                object = (new ItemCloth(Blocks.field_150397_co)).func_77655_b("stainedGlassPane");
+                object = (new ItemCloth(Blocks.STAINED_GLASS_PANE)).func_77655_b("stainedGlassPane");
             }
-            else if (block == Blocks.field_150404_cg)
+            else if (block == Blocks.CARPET)
             {
-                object = (new ItemCloth(Blocks.field_150404_cg)).func_77655_b("woolCarpet");
+                object = (new ItemCloth(Blocks.CARPET)).func_77655_b("woolCarpet");
             }
-            else if (block == Blocks.field_150346_d)
+            else if (block == Blocks.DIRT)
             {
-                object = (new ItemMultiTexture(Blocks.field_150346_d, Blocks.field_150346_d, BlockDirt.field_150009_a)).func_77655_b("dirt");
+                object = (new ItemMultiTexture(Blocks.DIRT, Blocks.DIRT, BlockDirt.field_150009_a)).func_77655_b("dirt");
             }
-            else if (block == Blocks.field_150354_m)
+            else if (block == Blocks.SAND)
             {
-                object = (new ItemMultiTexture(Blocks.field_150354_m, Blocks.field_150354_m, BlockSand.field_149838_a)).func_77655_b("sand");
+                object = (new ItemMultiTexture(Blocks.SAND, Blocks.SAND, BlockSand.field_149838_a)).func_77655_b("sand");
             }
-            else if (block == Blocks.field_150364_r)
+            else if (block == Blocks.LOG)
             {
-                object = (new ItemMultiTexture(Blocks.field_150364_r, Blocks.field_150364_r, BlockOldLog.field_150168_M)).func_77655_b("log");
+                object = (new ItemMultiTexture(Blocks.LOG, Blocks.LOG, BlockOldLog.field_150168_M)).func_77655_b("log");
             }
-            else if (block == Blocks.field_150363_s)
+            else if (block == Blocks.LOG_2)
             {
-                object = (new ItemMultiTexture(Blocks.field_150363_s, Blocks.field_150363_s, BlockNewLog.field_150169_M)).func_77655_b("log");
+                object = (new ItemMultiTexture(Blocks.LOG_2, Blocks.LOG_2, BlockNewLog.field_150169_M)).func_77655_b("log");
             }
-            else if (block == Blocks.field_150344_f)
+            else if (block == Blocks.PLANKS)
             {
-                object = (new ItemMultiTexture(Blocks.field_150344_f, Blocks.field_150344_f, BlockWood.field_150096_a)).func_77655_b("wood");
+                object = (new ItemMultiTexture(Blocks.PLANKS, Blocks.PLANKS, BlockWood.field_150096_a)).func_77655_b("wood");
             }
-            else if (block == Blocks.field_150418_aU)
+            else if (block == Blocks.MONSTER_EGG)
             {
-                object = (new ItemMultiTexture(Blocks.field_150418_aU, Blocks.field_150418_aU, BlockSilverfish.field_150198_a)).func_77655_b("monsterStoneEgg");
+                object = (new ItemMultiTexture(Blocks.MONSTER_EGG, Blocks.MONSTER_EGG, BlockSilverfish.field_150198_a)).func_77655_b("monsterStoneEgg");
             }
-            else if (block == Blocks.field_150417_aV)
+            else if (block == Blocks.STONEBRICK)
             {
-                object = (new ItemMultiTexture(Blocks.field_150417_aV, Blocks.field_150417_aV, BlockStoneBrick.field_150142_a)).func_77655_b("stonebricksmooth");
+                object = (new ItemMultiTexture(Blocks.STONEBRICK, Blocks.STONEBRICK, BlockStoneBrick.field_150142_a)).func_77655_b("stonebricksmooth");
             }
-            else if (block == Blocks.field_150322_A)
+            else if (block == Blocks.SANDSTONE)
             {
-                object = (new ItemMultiTexture(Blocks.field_150322_A, Blocks.field_150322_A, BlockSandStone.field_150157_a)).func_77655_b("sandStone");
+                object = (new ItemMultiTexture(Blocks.SANDSTONE, Blocks.SANDSTONE, BlockSandStone.field_150157_a)).func_77655_b("sandStone");
             }
-            else if (block == Blocks.field_150371_ca)
+            else if (block == Blocks.QUARTZ_BLOCK)
             {
-                object = (new ItemMultiTexture(Blocks.field_150371_ca, Blocks.field_150371_ca, BlockQuartz.field_150191_a)).func_77655_b("quartzBlock");
+                object = (new ItemMultiTexture(Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, BlockQuartz.field_150191_a)).func_77655_b("quartzBlock");
             }
-            else if (block == Blocks.field_150333_U)
+            else if (block == Blocks.STONE_SLAB)
             {
-                object = (new ItemSlab(Blocks.field_150333_U, Blocks.field_150333_U, Blocks.field_150334_T, false)).func_77655_b("stoneSlab");
+                object = (new ItemSlab(Blocks.STONE_SLAB, Blocks.STONE_SLAB, Blocks.DOUBLE_STONE_SLAB, false)).func_77655_b("stoneSlab");
             }
-            else if (block == Blocks.field_150334_T)
+            else if (block == Blocks.DOUBLE_STONE_SLAB)
             {
-                object = (new ItemSlab(Blocks.field_150334_T, Blocks.field_150333_U, Blocks.field_150334_T, true)).func_77655_b("stoneSlab");
+                object = (new ItemSlab(Blocks.DOUBLE_STONE_SLAB, Blocks.STONE_SLAB, Blocks.DOUBLE_STONE_SLAB, true)).func_77655_b("stoneSlab");
             }
-            else if (block == Blocks.field_150376_bx)
+            else if (block == Blocks.WOODEN_SLAB)
             {
-                object = (new ItemSlab(Blocks.field_150376_bx, Blocks.field_150376_bx, Blocks.field_150373_bw, false)).func_77655_b("woodSlab");
+                object = (new ItemSlab(Blocks.WOODEN_SLAB, Blocks.WOODEN_SLAB, Blocks.DOUBLE_WOODEN_SLAB, false)).func_77655_b("woodSlab");
             }
-            else if (block == Blocks.field_150373_bw)
+            else if (block == Blocks.DOUBLE_WOODEN_SLAB)
             {
-                object = (new ItemSlab(Blocks.field_150373_bw, Blocks.field_150376_bx, Blocks.field_150373_bw, true)).func_77655_b("woodSlab");
+                object = (new ItemSlab(Blocks.DOUBLE_WOODEN_SLAB, Blocks.WOODEN_SLAB, Blocks.DOUBLE_WOODEN_SLAB, true)).func_77655_b("woodSlab");
             }
-            else if (block == Blocks.field_150345_g)
+            else if (block == Blocks.SAPLING)
             {
-                object = (new ItemMultiTexture(Blocks.field_150345_g, Blocks.field_150345_g, BlockSapling.field_149882_a)).func_77655_b("sapling");
+                object = (new ItemMultiTexture(Blocks.SAPLING, Blocks.SAPLING, BlockSapling.field_149882_a)).func_77655_b("sapling");
             }
-            else if (block == Blocks.field_150362_t)
+            else if (block == Blocks.LEAVES)
             {
-                object = (new ItemLeaves(Blocks.field_150362_t)).func_77655_b("leaves");
+                object = (new ItemLeaves(Blocks.LEAVES)).func_77655_b("leaves");
             }
-            else if (block == Blocks.field_150361_u)
+            else if (block == Blocks.LEAVES_2)
             {
-                object = (new ItemLeaves(Blocks.field_150361_u)).func_77655_b("leaves");
+                object = (new ItemLeaves(Blocks.LEAVES_2)).func_77655_b("leaves");
             }
-            else if (block == Blocks.field_150395_bd)
+            else if (block == Blocks.VINE)
             {
-                object = new ItemColored(Blocks.field_150395_bd, false);
+                object = new ItemColored(Blocks.VINE, false);
             }
-            else if (block == Blocks.field_150329_H)
+            else if (block == Blocks.TALLGRASS)
             {
-                object = (new ItemColored(Blocks.field_150329_H, true)).func_150943_a(new String[] {"shrub", "grass", "fern"});
+                object = (new ItemColored(Blocks.TALLGRASS, true)).func_150943_a(new String[] {"shrub", "grass", "fern"});
             }
-            else if (block == Blocks.field_150327_N)
+            else if (block == Blocks.YELLOW_FLOWER)
             {
-                object = (new ItemMultiTexture(Blocks.field_150327_N, Blocks.field_150327_N, BlockFlower.field_149858_b)).func_77655_b("flower");
+                object = (new ItemMultiTexture(Blocks.YELLOW_FLOWER, Blocks.YELLOW_FLOWER, BlockFlower.field_149858_b)).func_77655_b("flower");
             }
-            else if (block == Blocks.field_150328_O)
+            else if (block == Blocks.RED_FLOWER)
             {
-                object = (new ItemMultiTexture(Blocks.field_150328_O, Blocks.field_150328_O, BlockFlower.field_149859_a)).func_77655_b("rose");
+                object = (new ItemMultiTexture(Blocks.RED_FLOWER, Blocks.RED_FLOWER, BlockFlower.field_149859_a)).func_77655_b("rose");
             }
-            else if (block == Blocks.field_150431_aC)
+            else if (block == Blocks.SNOW_LAYER)
             {
-                object = new ItemSnow(Blocks.field_150431_aC, Blocks.field_150431_aC);
+                object = new ItemSnow(Blocks.SNOW_LAYER, Blocks.SNOW_LAYER);
             }
-            else if (block == Blocks.field_150392_bi)
+            else if (block == Blocks.WATERLILY)
             {
-                object = new ItemLilyPad(Blocks.field_150392_bi);
+                object = new ItemLilyPad(Blocks.WATERLILY);
             }
-            else if (block == Blocks.field_150331_J)
+            else if (block == Blocks.PISTON)
             {
-                object = new ItemPiston(Blocks.field_150331_J);
+                object = new ItemPiston(Blocks.PISTON);
             }
-            else if (block == Blocks.field_150320_F)
+            else if (block == Blocks.STICKY_PISTON)
             {
-                object = new ItemPiston(Blocks.field_150320_F);
+                object = new ItemPiston(Blocks.STICKY_PISTON);
             }
-            else if (block == Blocks.field_150463_bK)
+            else if (block == Blocks.COBBLESTONE_WALL)
             {
-                object = (new ItemMultiTexture(Blocks.field_150463_bK, Blocks.field_150463_bK, BlockWall.field_150092_a)).func_77655_b("cobbleWall");
+                object = (new ItemMultiTexture(Blocks.COBBLESTONE_WALL, Blocks.COBBLESTONE_WALL, BlockWall.field_150092_a)).func_77655_b("cobbleWall");
             }
-            else if (block == Blocks.field_150467_bQ)
+            else if (block == Blocks.ANVIL)
             {
-                object = (new ItemAnvilBlock(Blocks.field_150467_bQ)).func_77655_b("anvil");
+                object = (new ItemAnvilBlock(Blocks.ANVIL)).func_77655_b("anvil");
             }
-            else if (block == Blocks.field_150398_cm)
+            else if (block == Blocks.DOUBLE_PLANT)
             {
-                object = (new ItemDoublePlant(Blocks.field_150398_cm, Blocks.field_150398_cm, BlockDoublePlant.field_149892_a)).func_77655_b("doublePlant");
+                object = (new ItemDoublePlant(Blocks.DOUBLE_PLANT, Blocks.DOUBLE_PLANT, BlockDoublePlant.field_149892_a)).func_77655_b("doublePlant");
             }
             else
             {
@@ -775,7 +775,7 @@ public class Item
 
         public Item func_150995_f()
         {
-            return this == WOOD ? Item.func_150898_a(Blocks.field_150344_f) : (this == STONE ? Item.func_150898_a(Blocks.field_150347_e) : (this == GOLD ? Items.GOLD_INGOT : (this == IRON ? Items.IRON_INGOT : (this == EMERALD ? Items.DIAMOND : null))));
+            return this == WOOD ? Item.func_150898_a(Blocks.PLANKS) : (this == STONE ? Item.func_150898_a(Blocks.COBBLESTONE) : (this == GOLD ? Items.GOLD_INGOT : (this == IRON ? Items.IRON_INGOT : (this == EMERALD ? Items.DIAMOND : null))));
         }
     }
 }

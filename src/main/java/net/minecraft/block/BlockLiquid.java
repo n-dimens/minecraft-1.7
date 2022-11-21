@@ -452,12 +452,12 @@ public abstract class BlockLiquid extends Block
 
         if (p_149802_4_ == Material.field_151586_h)
         {
-            vec3 = Blocks.field_150358_i.func_149800_f(p_149802_0_, p_149802_1_, p_149802_2_, p_149802_3_);
+            vec3 = Blocks.FLOWING_WATER.func_149800_f(p_149802_0_, p_149802_1_, p_149802_2_, p_149802_3_);
         }
 
         if (p_149802_4_ == Material.field_151587_i)
         {
-            vec3 = Blocks.field_150356_k.func_149800_f(p_149802_0_, p_149802_1_, p_149802_2_, p_149802_3_);
+            vec3 = Blocks.FLOWING_LAVA.func_149800_f(p_149802_0_, p_149802_1_, p_149802_2_, p_149802_3_);
         }
 
         return vec3.field_72450_a == 0.0D && vec3.field_72449_c == 0.0D ? -1000.0D : Math.atan2(vec3.field_72449_c, vec3.field_72450_a) - (Math.PI / 2D);
@@ -507,11 +507,11 @@ public abstract class BlockLiquid extends Block
 
                     if (l == 0)
                     {
-                        p_149805_1_.func_147449_b(p_149805_2_, p_149805_3_, p_149805_4_, Blocks.field_150343_Z);
+                        p_149805_1_.func_147449_b(p_149805_2_, p_149805_3_, p_149805_4_, Blocks.OBSIDIAN);
                     }
                     else if (l <= 4)
                     {
-                        p_149805_1_.func_147449_b(p_149805_2_, p_149805_3_, p_149805_4_, Blocks.field_150347_e);
+                        p_149805_1_.func_147449_b(p_149805_2_, p_149805_3_, p_149805_4_, Blocks.COBBLESTONE);
                     }
 
                     this.func_149799_m(p_149805_1_, p_149805_2_, p_149805_3_, p_149805_4_);
@@ -546,6 +546,6 @@ public abstract class BlockLiquid extends Block
     @SideOnly(Side.CLIENT)
     public static IIcon func_149803_e(String p_149803_0_)
     {
-        return p_149803_0_ == "water_still" ? Blocks.field_150358_i.field_149806_a[0] : (p_149803_0_ == "water_flow" ? Blocks.field_150358_i.field_149806_a[1] : (p_149803_0_ == "lava_still" ? Blocks.field_150356_k.field_149806_a[0] : (p_149803_0_ == "lava_flow" ? Blocks.field_150356_k.field_149806_a[1] : null)));
+        return p_149803_0_ == "water_still" ? Blocks.FLOWING_WATER.field_149806_a[0] : (p_149803_0_ == "water_flow" ? Blocks.FLOWING_WATER.field_149806_a[1] : (p_149803_0_ == "lava_still" ? Blocks.FLOWING_LAVA.field_149806_a[0] : (p_149803_0_ == "lava_flow" ? Blocks.FLOWING_LAVA.field_149806_a[1] : null)));
     }
 }

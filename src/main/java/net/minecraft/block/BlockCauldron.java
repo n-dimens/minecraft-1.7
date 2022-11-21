@@ -69,7 +69,7 @@ public class BlockCauldron extends Block
     @SideOnly(Side.CLIENT)
     public static IIcon func_150026_e(String p_150026_0_)
     {
-        return p_150026_0_.equals("inner") ? Blocks.field_150383_bp.field_150029_a : (p_150026_0_.equals("bottom") ? Blocks.field_150383_bp.field_150030_M : null);
+        return p_150026_0_.equals("inner") ? Blocks.CAULDRON.field_150029_a : (p_150026_0_.equals("bottom") ? Blocks.CAULDRON.field_150030_M : null);
     }
 
     public void func_149683_g()

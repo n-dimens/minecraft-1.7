@@ -66,7 +66,7 @@ public class BlockRedstoneWire extends Block
 
     public boolean func_149742_c(World p_149742_1_, int p_149742_2_, int p_149742_3_, int p_149742_4_)
     {
-        return World.func_147466_a(p_149742_1_, p_149742_2_, p_149742_3_ - 1, p_149742_4_) || p_149742_1_.func_147439_a(p_149742_2_, p_149742_3_ - 1, p_149742_4_) == Blocks.field_150426_aN;
+        return World.func_147466_a(p_149742_1_, p_149742_2_, p_149742_3_ - 1, p_149742_4_) || p_149742_1_.func_147439_a(p_149742_2_, p_149742_3_ - 1, p_149742_4_) == Blocks.GLOWSTONE;
     }
 
     private void func_150177_e(World p_150177_1_, int p_150177_2_, int p_150177_3_, int p_150177_4_)
@@ -399,11 +399,11 @@ public class BlockRedstoneWire extends Block
     {
         Block block = p_150174_0_.func_147439_a(p_150174_1_, p_150174_2_, p_150174_3_);
 
-        if (block == Blocks.field_150488_af)
+        if (block == Blocks.REDSTONE_WIRE)
         {
             return true;
         }
-        else if (!Blocks.field_150413_aR.func_149907_e(block))
+        else if (!Blocks.UNPOWERED_REPEATER.func_149907_e(block))
         {
             return block.func_149744_f() && p_150174_4_ != -1;
         }
@@ -455,7 +455,7 @@ public class BlockRedstoneWire extends Block
         {
             return true;
         }
-        else if (p_150176_0_.func_147439_a(p_150176_1_, p_150176_2_, p_150176_3_) == Blocks.field_150416_aS)
+        else if (p_150176_0_.func_147439_a(p_150176_1_, p_150176_2_, p_150176_3_) == Blocks.POWERED_REPEATER)
         {
             int i1 = p_150176_0_.func_72805_g(p_150176_1_, p_150176_2_, p_150176_3_);
             return p_150176_4_ == (i1 & 3);
@@ -485,6 +485,6 @@ public class BlockRedstoneWire extends Block
     @SideOnly(Side.CLIENT)
     public static IIcon func_150173_e(String p_150173_0_)
     {
-        return p_150173_0_.equals("cross") ? Blocks.field_150488_af.field_150182_M : (p_150173_0_.equals("line") ? Blocks.field_150488_af.field_150183_N : (p_150173_0_.equals("cross_overlay") ? Blocks.field_150488_af.field_150184_O : (p_150173_0_.equals("line_overlay") ? Blocks.field_150488_af.field_150180_P : null)));
+        return p_150173_0_.equals("cross") ? Blocks.REDSTONE_WIRE.field_150182_M : (p_150173_0_.equals("line") ? Blocks.REDSTONE_WIRE.field_150183_N : (p_150173_0_.equals("cross_overlay") ? Blocks.REDSTONE_WIRE.field_150184_O : (p_150173_0_.equals("line_overlay") ? Blocks.REDSTONE_WIRE.field_150180_P : null)));
     }
 }

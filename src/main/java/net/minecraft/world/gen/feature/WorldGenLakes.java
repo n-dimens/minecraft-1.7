@@ -105,7 +105,7 @@ public class WorldGenLakes extends WorldGenerator
                     {
                         if (aboolean[(i1 * 16 + j2) * 8 + j1])
                         {
-                            p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + j1, p_76484_5_ + j2, j1 >= 4 ? Blocks.field_150350_a : this.field_150556_a, 0, 2);
+                            p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + j1, p_76484_5_ + j2, j1 >= 4 ? Blocks.AIR : this.field_150556_a, 0, 2);
                         }
                     }
                 }
@@ -117,17 +117,17 @@ public class WorldGenLakes extends WorldGenerator
                 {
                     for (j1 = 4; j1 < 8; ++j1)
                     {
-                        if (aboolean[(i1 * 16 + j2) * 8 + j1] && p_76484_1_.func_147439_a(p_76484_3_ + i1, p_76484_4_ + j1 - 1, p_76484_5_ + j2) == Blocks.field_150346_d && p_76484_1_.func_72972_b(EnumSkyBlock.Sky, p_76484_3_ + i1, p_76484_4_ + j1, p_76484_5_ + j2) > 0)
+                        if (aboolean[(i1 * 16 + j2) * 8 + j1] && p_76484_1_.func_147439_a(p_76484_3_ + i1, p_76484_4_ + j1 - 1, p_76484_5_ + j2) == Blocks.DIRT && p_76484_1_.func_72972_b(EnumSkyBlock.Sky, p_76484_3_ + i1, p_76484_4_ + j1, p_76484_5_ + j2) > 0)
                         {
                             BiomeGenBase biomegenbase = p_76484_1_.func_72807_a(p_76484_3_ + i1, p_76484_5_ + j2);
 
-                            if (biomegenbase.field_76752_A == Blocks.field_150391_bh)
+                            if (biomegenbase.field_76752_A == Blocks.MYCELIUM)
                             {
-                                p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + j1 - 1, p_76484_5_ + j2, Blocks.field_150391_bh, 0, 2);
+                                p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + j1 - 1, p_76484_5_ + j2, Blocks.MYCELIUM, 0, 2);
                             }
                             else
                             {
-                                p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + j1 - 1, p_76484_5_ + j2, Blocks.field_150349_c, 0, 2);
+                                p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + j1 - 1, p_76484_5_ + j2, Blocks.GRASS, 0, 2);
                             }
                         }
                     }
@@ -146,7 +146,7 @@ public class WorldGenLakes extends WorldGenerator
 
                             if (flag && (j1 < 4 || p_76484_2_.nextInt(2) != 0) && p_76484_1_.func_147439_a(p_76484_3_ + i1, p_76484_4_ + j1, p_76484_5_ + j2).func_149688_o().func_76220_a())
                             {
-                                p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + j1, p_76484_5_ + j2, Blocks.field_150348_b, 0, 2);
+                                p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + j1, p_76484_5_ + j2, Blocks.STONE, 0, 2);
                             }
                         }
                     }
@@ -163,7 +163,7 @@ public class WorldGenLakes extends WorldGenerator
 
                         if (p_76484_1_.func_72884_u(p_76484_3_ + i1, p_76484_4_ + b0, p_76484_5_ + j2))
                         {
-                            p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + b0, p_76484_5_ + j2, Blocks.field_150432_aD, 0, 2);
+                            p_76484_1_.func_147465_d(p_76484_3_ + i1, p_76484_4_ + b0, p_76484_5_ + j2, Blocks.ICE, 0, 2);
                         }
                     }
                 }

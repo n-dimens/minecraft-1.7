@@ -776,7 +776,7 @@ public abstract class EntityLiving extends EntityLivingBase
 
     public static int func_82159_b(ItemStack p_82159_0_)
     {
-        if (p_82159_0_.func_77973_b() != Item.func_150898_a(Blocks.field_150423_aK) && p_82159_0_.func_77973_b() != Items.SKULL)
+        if (p_82159_0_.func_77973_b() != Item.func_150898_a(Blocks.PUMPKIN) && p_82159_0_.func_77973_b() != Items.SKULL)
         {
             if (p_82159_0_.func_77973_b() instanceof ItemArmor)
             {

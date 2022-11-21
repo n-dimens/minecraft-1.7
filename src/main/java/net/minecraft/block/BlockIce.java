@@ -66,7 +66,7 @@ public class BlockIce extends BlockBreakable
 
             if (material.func_76230_c() || material.func_76224_d())
             {
-                p_149636_1_.func_147449_b(p_149636_3_, p_149636_4_, p_149636_5_, Blocks.field_150358_i);
+                p_149636_1_.func_147449_b(p_149636_3_, p_149636_4_, p_149636_5_, Blocks.FLOWING_WATER);
             }
         }
     }
@@ -87,7 +87,7 @@ public class BlockIce extends BlockBreakable
             }
 
             this.func_149697_b(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_, p_149674_1_.func_72805_g(p_149674_2_, p_149674_3_, p_149674_4_), 0);
-            p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.field_150355_j);
+            p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.WATER);
         }
     }
 

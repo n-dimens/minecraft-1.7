@@ -185,7 +185,7 @@ public class GuiCreateFlatWorld extends GuiScreen
         {
             FlatLayerInfo flatlayerinfo = (FlatLayerInfo)GuiCreateFlatWorld.this.field_146387_g.func_82650_c().get(GuiCreateFlatWorld.this.field_146387_g.func_82650_c().size() - p_148126_1_ - 1);
             Item item = Item.func_150898_a(flatlayerinfo.func_151536_b());
-            ItemStack itemstack = flatlayerinfo.func_151536_b() == Blocks.field_150350_a ? null : new ItemStack(item, 1, flatlayerinfo.func_82658_c());
+            ItemStack itemstack = flatlayerinfo.func_151536_b() == Blocks.AIR ? null : new ItemStack(item, 1, flatlayerinfo.func_82658_c());
             String s = itemstack != null && item != null ? item.func_77653_i(itemstack) : "Air";
             this.func_148225_a(p_148126_2_, p_148126_3_, itemstack);
             GuiCreateFlatWorld.this.field_146289_q.func_78276_b(s, p_148126_2_ + 18 + 5, p_148126_3_ + 3, 16777215);

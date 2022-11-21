@@ -289,7 +289,7 @@ public abstract class World implements IBlockAccess
         }
         else
         {
-            return Blocks.field_150350_a;
+            return Blocks.AIR;
         }
     }
 
@@ -481,7 +481,7 @@ public abstract class World implements IBlockAccess
 
     public boolean func_147468_f(int p_147468_1_, int p_147468_2_, int p_147468_3_)
     {
-        return this.func_147465_d(p_147468_1_, p_147468_2_, p_147468_3_, Blocks.field_150350_a, 0, 3);
+        return this.func_147465_d(p_147468_1_, p_147468_2_, p_147468_3_, Blocks.AIR, 0, 3);
     }
 
     public boolean func_147480_a(int p_147480_1_, int p_147480_2_, int p_147480_3_, boolean p_147480_4_)
@@ -502,7 +502,7 @@ public abstract class World implements IBlockAccess
                 block.func_149697_b(this, p_147480_1_, p_147480_2_, p_147480_3_, l, 0);
             }
 
-            return this.func_147465_d(p_147480_1_, p_147480_2_, p_147480_3_, Blocks.field_150350_a, 0, 3);
+            return this.func_147465_d(p_147480_1_, p_147480_2_, p_147480_3_, Blocks.AIR, 0, 3);
         }
     }
 
@@ -1326,7 +1326,7 @@ public abstract class World implements IBlockAccess
                         }
                         else
                         {
-                            block = Blocks.field_150348_b;
+                            block = Blocks.STONE;
                         }
 
                         block.func_149743_a(this, k1, i2, l1, p_72945_2_, this.field_72998_d, p_72945_1_);
@@ -1384,7 +1384,7 @@ public abstract class World implements IBlockAccess
                         }
                         else
                         {
-                            block = Blocks.field_150357_h;
+                            block = Blocks.BEDROCK;
                         }
 
                         block.func_149743_a(this, k1, i2, l1, p_147461_1_, this.field_72998_d, (Entity)null);
@@ -2082,7 +2082,7 @@ public abstract class World implements IBlockAccess
                     {
                         Block block = this.func_147439_a(k1, l1, i2);
 
-                        if (block == Blocks.field_150480_ab || block == Blocks.field_150356_k || block == Blocks.field_150353_l)
+                        if (block == Blocks.FIRE || block == Blocks.FLOWING_LAVA || block == Blocks.LAVA)
                         {
                             return true;
                         }
@@ -2298,7 +2298,7 @@ public abstract class World implements IBlockAccess
             ++p_72886_2_;
         }
 
-        if (this.func_147439_a(p_72886_2_, p_72886_3_, p_72886_4_) == Blocks.field_150480_ab)
+        if (this.func_147439_a(p_72886_2_, p_72886_3_, p_72886_4_) == Blocks.FIRE)
         {
             this.func_72889_a(p_72886_1_, 1004, p_72886_2_, p_72886_3_, p_72886_4_, 0);
             this.func_147468_f(p_72886_2_, p_72886_3_, p_72886_4_);
@@ -2706,7 +2706,7 @@ public abstract class World implements IBlockAccess
             {
                 Block block = this.func_147439_a(p_72834_1_, p_72834_2_, p_72834_3_);
 
-                if ((block == Blocks.field_150355_j || block == Blocks.field_150358_i) && this.func_72805_g(p_72834_1_, p_72834_2_, p_72834_3_) == 0)
+                if ((block == Blocks.WATER || block == Blocks.FLOWING_WATER) && this.func_72805_g(p_72834_1_, p_72834_2_, p_72834_3_) == 0)
                 {
                     if (!p_72834_4_)
                     {
@@ -2765,7 +2765,7 @@ public abstract class World implements IBlockAccess
             {
                 Block block = this.func_147439_a(p_147478_1_, p_147478_2_, p_147478_3_);
 
-                if (block.func_149688_o() == Material.field_151579_a && Blocks.field_150431_aC.func_149742_c(this, p_147478_1_, p_147478_2_, p_147478_3_))
+                if (block.func_149688_o() == Material.field_151579_a && Blocks.SNOW_LAYER.func_149742_c(this, p_147478_1_, p_147478_2_, p_147478_3_))
                 {
                     return true;
                 }
@@ -3121,7 +3121,7 @@ public abstract class World implements IBlockAccess
     {
         Block block1 = this.func_147439_a(p_147472_2_, p_147472_3_, p_147472_4_);
         AxisAlignedBB axisalignedbb = p_147472_5_ ? null : p_147472_1_.func_149668_a(this, p_147472_2_, p_147472_3_, p_147472_4_);
-        return axisalignedbb != null && !this.func_72917_a(axisalignedbb, p_147472_7_) ? false : (block1.func_149688_o() == Material.field_151594_q && p_147472_1_ == Blocks.field_150467_bQ ? true : block1.func_149688_o().func_76222_j() && p_147472_1_.func_149705_a(this, p_147472_2_, p_147472_3_, p_147472_4_, p_147472_6_, p_147472_8_));
+        return axisalignedbb != null && !this.func_72917_a(axisalignedbb, p_147472_7_) ? false : (block1.func_149688_o() == Material.field_151594_q && p_147472_1_ == Blocks.ANVIL ? true : block1.func_149688_o().func_76222_j() && p_147472_1_.func_149705_a(this, p_147472_2_, p_147472_3_, p_147472_4_, p_147472_6_, p_147472_8_));
     }
 
     public PathEntity func_72865_a(Entity p_72865_1_, Entity p_72865_2_, float p_72865_3_, boolean p_72865_4_, boolean p_72865_5_, boolean p_72865_6_, boolean p_72865_7_)
@@ -3669,7 +3669,7 @@ public abstract class World implements IBlockAccess
             int j1 = p_147453_3_ + Direction.field_71581_b[l];
             Block block1 = this.func_147439_a(i1, p_147453_2_, j1);
 
-            if (Blocks.field_150441_bU.func_149907_e(block1))
+            if (Blocks.UNPOWERED_COMPARATOR.func_149907_e(block1))
             {
                 block1.func_149695_a(this, i1, p_147453_2_, j1, p_147453_4_);
             }
@@ -3679,7 +3679,7 @@ public abstract class World implements IBlockAccess
                 j1 += Direction.field_71581_b[l];
                 Block block2 = this.func_147439_a(i1, p_147453_2_, j1);
 
-                if (Blocks.field_150441_bU.func_149907_e(block2))
+                if (Blocks.UNPOWERED_COMPARATOR.func_149907_e(block2))
                 {
                     block2.func_149695_a(this, i1, p_147453_2_, j1, p_147453_4_);
                 }

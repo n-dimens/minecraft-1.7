@@ -54,7 +54,7 @@ public class ExtendedBlockStorage
 
         Block block1 = Block.func_149729_e(l);
 
-        if (block1 != Blocks.field_150350_a)
+        if (block1 != Blocks.AIR)
         {
             --this.field_76682_b;
 
@@ -64,7 +64,7 @@ public class ExtendedBlockStorage
             }
         }
 
-        if (p_150818_4_ != Blocks.field_150350_a)
+        if (p_150818_4_ != Blocks.AIR)
         {
             ++this.field_76682_b;
 
@@ -150,7 +150,7 @@ public class ExtendedBlockStorage
                 {
                     Block block = this.func_150819_a(i, j, k);
 
-                    if (block != Blocks.field_150350_a)
+                    if (block != Blocks.AIR)
                     {
                         ++this.field_76682_b;
 

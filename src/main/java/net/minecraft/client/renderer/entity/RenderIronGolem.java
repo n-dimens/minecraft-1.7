@@ -69,7 +69,7 @@ public class RenderIronGolem extends RenderLiving
             OpenGlHelper.func_77475_a(OpenGlHelper.field_77476_b, (float)j / 1.0F, (float)k / 1.0F);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.func_110776_a(TextureMap.field_110575_b);
-            this.field_147909_c.func_147800_a(Blocks.field_150328_O, 0, 1.0F);
+            this.field_147909_c.func_147800_a(Blocks.RED_FLOWER, 0, 1.0F);
             GL11.glPopMatrix();
             GL11.glDisable(GL12.GL_RESCALE_NORMAL);
         }

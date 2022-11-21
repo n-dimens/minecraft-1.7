@@ -213,7 +213,7 @@ public class RenderManager
         {
             Block block = p_147938_1_.func_147439_a(MathHelper.func_76128_c(p_147938_4_.field_70165_t), MathHelper.func_76128_c(p_147938_4_.field_70163_u), MathHelper.func_76128_c(p_147938_4_.field_70161_v));
 
-            if (block == Blocks.field_150324_C)
+            if (block == Blocks.BED)
             {
                 int i = p_147938_1_.func_72805_g(MathHelper.func_76128_c(p_147938_4_.field_70165_t), MathHelper.func_76128_c(p_147938_4_.field_70163_u), MathHelper.func_76128_c(p_147938_4_.field_70161_v));
                 int j = i & 3;

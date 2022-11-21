@@ -48,13 +48,13 @@ public class BlockHugeMushroom extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.func_150899_d(Block.func_149682_b(Blocks.field_150338_P) + this.field_149792_b);
+        return Item.func_150899_d(Block.func_149682_b(Blocks.BROWN_MUSHROOM) + this.field_149792_b);
     }
 
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Item.func_150899_d(Block.func_149682_b(Blocks.field_150338_P) + this.field_149792_b);
+        return Item.func_150899_d(Block.func_149682_b(Blocks.BROWN_MUSHROOM) + this.field_149792_b);
     }
 
     @SideOnly(Side.CLIENT)

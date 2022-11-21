@@ -1317,7 +1317,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         ChunkCoordinates chunkcoordinates = this.field_71081_bT;
         ChunkCoordinates chunkcoordinates1 = this.field_71081_bT;
 
-        if (chunkcoordinates != null && this.field_70170_p.func_147439_a(chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c) == Blocks.field_150324_C)
+        if (chunkcoordinates != null && this.field_70170_p.func_147439_a(chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c) == Blocks.BED)
         {
             BlockBed.func_149979_a(this.field_70170_p, chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c, false);
             chunkcoordinates1 = BlockBed.func_149977_a(this.field_70170_p, chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c, 0);
@@ -1354,7 +1354,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     private boolean func_71065_l()
     {
-        return this.field_70170_p.func_147439_a(this.field_71081_bT.field_71574_a, this.field_71081_bT.field_71572_b, this.field_71081_bT.field_71573_c) == Blocks.field_150324_C;
+        return this.field_70170_p.func_147439_a(this.field_71081_bT.field_71574_a, this.field_71081_bT.field_71572_b, this.field_71081_bT.field_71573_c) == Blocks.BED;
     }
 
     public static ChunkCoordinates func_71056_a(World p_71056_0_, ChunkCoordinates p_71056_1_, boolean p_71056_2_)
@@ -1365,7 +1365,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         ichunkprovider.func_73158_c(p_71056_1_.field_71574_a - 3 >> 4, p_71056_1_.field_71573_c + 3 >> 4);
         ichunkprovider.func_73158_c(p_71056_1_.field_71574_a + 3 >> 4, p_71056_1_.field_71573_c + 3 >> 4);
 
-        if (p_71056_0_.func_147439_a(p_71056_1_.field_71574_a, p_71056_1_.field_71572_b, p_71056_1_.field_71573_c) == Blocks.field_150324_C)
+        if (p_71056_0_.func_147439_a(p_71056_1_.field_71574_a, p_71056_1_.field_71572_b, p_71056_1_.field_71573_c) == Blocks.BED)
         {
             ChunkCoordinates chunkcoordinates1 = BlockBed.func_149977_a(p_71056_0_, p_71056_1_.field_71574_a, p_71056_1_.field_71572_b, p_71056_1_.field_71573_c, 0);
             return chunkcoordinates1;

@@ -29,29 +29,29 @@ public class BlockFire extends Block
 
     public static void func_149843_e()
     {
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150344_f), 5, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150373_bw), 5, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150376_bx), 5, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150422_aJ), 5, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150476_ad), 5, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150487_bG), 5, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150485_bF), 5, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150481_bH), 5, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150364_r), 5, 5);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150363_s), 5, 5);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150362_t), 30, 60);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150361_u), 30, 60);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150342_X), 30, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150335_W), 15, 100);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150329_H), 60, 100);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150398_cm), 60, 100);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150327_N), 60, 100);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150328_O), 60, 100);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.WOOL), 30, 60);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150395_bd), 15, 100);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150402_ci), 5, 5);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150407_cf), 60, 20);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150404_cg), 60, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.PLANKS), 5, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.DOUBLE_WOODEN_SLAB), 5, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.WOODEN_SLAB), 5, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.FENCE), 5, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.OAK_STAIRS), 5, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.BIRCH_STAIRS), 5, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.SPRUCE_STAIRS), 5, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.JUNGLE_STAIRS), 5, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.LOG), 5, 5);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.LOG_2), 5, 5);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.LEAVES), 30, 60);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.LEAVES_2), 30, 60);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.BOOKSHELF), 30, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.TNT), 15, 100);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.TALLGRASS), 60, 100);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.DOUBLE_PLANT), 60, 100);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.YELLOW_FLOWER), 60, 100);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.RED_FLOWER), 60, 100);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.WOOL), 30, 60);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.VINE), 15, 100);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.COAL_BLOCK), 5, 5);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.HAY_BLOCK), 60, 20);
+        Blocks.FIRE.func_149842_a(func_149682_b(Blocks.CARPET), 60, 20);
     }
 
     public void func_149842_a(int p_149842_1_, int p_149842_2_, int p_149842_3_)
@@ -94,9 +94,9 @@ public class BlockFire extends Block
     {
         if (p_149674_1_.func_82736_K().getBooleanValue("doFireTick"))
         {
-            boolean flag = p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == Blocks.field_150424_aL;
+            boolean flag = p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == Blocks.NETHERRACK;
 
-            if (p_149674_1_.field_73011_w instanceof WorldProviderEnd && p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == Blocks.field_150357_h)
+            if (p_149674_1_.field_73011_w instanceof WorldProviderEnd && p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == Blocks.BEDROCK)
             {
                 flag = true;
             }
@@ -207,7 +207,7 @@ public class BlockFire extends Block
 
         if (p_149841_6_.nextInt(p_149841_5_) < j1)
         {
-            boolean flag = p_149841_1_.func_147439_a(p_149841_2_, p_149841_3_, p_149841_4_) == Blocks.field_150335_W;
+            boolean flag = p_149841_1_.func_147439_a(p_149841_2_, p_149841_3_, p_149841_4_) == Blocks.TNT;
 
             if (p_149841_6_.nextInt(p_149841_7_ + 10) < 5 && !p_149841_1_.func_72951_B(p_149841_2_, p_149841_3_, p_149841_4_))
             {
@@ -227,7 +227,7 @@ public class BlockFire extends Block
 
             if (flag)
             {
-                Blocks.field_150335_W.func_149664_b(p_149841_1_, p_149841_2_, p_149841_3_, p_149841_4_, 1);
+                Blocks.TNT.func_149664_b(p_149841_1_, p_149841_2_, p_149841_3_, p_149841_4_, 1);
             }
         }
     }
@@ -288,7 +288,7 @@ public class BlockFire extends Block
 
     public void func_149726_b(World p_149726_1_, int p_149726_2_, int p_149726_3_, int p_149726_4_)
     {
-        if (p_149726_1_.field_73011_w.field_76574_g > 0 || !Blocks.field_150427_aO.func_150000_e(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_))
+        if (p_149726_1_.field_73011_w.field_76574_g > 0 || !Blocks.PORTAL.func_150000_e(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_))
         {
             if (!World.func_147466_a(p_149726_1_, p_149726_2_, p_149726_3_ - 1, p_149726_4_) && !this.func_149847_e(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_))
             {
@@ -314,9 +314,9 @@ public class BlockFire extends Block
         float f1;
         float f2;
 
-        if (!World.func_147466_a(p_149734_1_, p_149734_2_, p_149734_3_ - 1, p_149734_4_) && !Blocks.field_150480_ab.func_149844_e(p_149734_1_, p_149734_2_, p_149734_3_ - 1, p_149734_4_))
+        if (!World.func_147466_a(p_149734_1_, p_149734_2_, p_149734_3_ - 1, p_149734_4_) && !Blocks.FIRE.func_149844_e(p_149734_1_, p_149734_2_, p_149734_3_ - 1, p_149734_4_))
         {
-            if (Blocks.field_150480_ab.func_149844_e(p_149734_1_, p_149734_2_ - 1, p_149734_3_, p_149734_4_))
+            if (Blocks.FIRE.func_149844_e(p_149734_1_, p_149734_2_ - 1, p_149734_3_, p_149734_4_))
             {
                 for (l = 0; l < 2; ++l)
                 {
@@ -327,7 +327,7 @@ public class BlockFire extends Block
                 }
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(p_149734_1_, p_149734_2_ + 1, p_149734_3_, p_149734_4_))
+            if (Blocks.FIRE.func_149844_e(p_149734_1_, p_149734_2_ + 1, p_149734_3_, p_149734_4_))
             {
                 for (l = 0; l < 2; ++l)
                 {
@@ -338,7 +338,7 @@ public class BlockFire extends Block
                 }
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(p_149734_1_, p_149734_2_, p_149734_3_, p_149734_4_ - 1))
+            if (Blocks.FIRE.func_149844_e(p_149734_1_, p_149734_2_, p_149734_3_, p_149734_4_ - 1))
             {
                 for (l = 0; l < 2; ++l)
                 {
@@ -349,7 +349,7 @@ public class BlockFire extends Block
                 }
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(p_149734_1_, p_149734_2_, p_149734_3_, p_149734_4_ + 1))
+            if (Blocks.FIRE.func_149844_e(p_149734_1_, p_149734_2_, p_149734_3_, p_149734_4_ + 1))
             {
                 for (l = 0; l < 2; ++l)
                 {
@@ -360,7 +360,7 @@ public class BlockFire extends Block
                 }
             }
 
-            if (Blocks.field_150480_ab.func_149844_e(p_149734_1_, p_149734_2_, p_149734_3_ + 1, p_149734_4_))
+            if (Blocks.FIRE.func_149844_e(p_149734_1_, p_149734_2_, p_149734_3_ + 1, p_149734_4_))
             {
                 for (l = 0; l < 2; ++l)
                 {

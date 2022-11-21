@@ -103,7 +103,7 @@ public class EntityAIOcelotSit extends EntityAIBase
         Block block = p_151486_1_.func_147439_a(p_151486_2_, p_151486_3_, p_151486_4_);
         int l = p_151486_1_.func_72805_g(p_151486_2_, p_151486_3_, p_151486_4_);
 
-        if (block == Blocks.field_150486_ae)
+        if (block == Blocks.CHEST)
         {
             TileEntityChest tileentitychest = (TileEntityChest)p_151486_1_.func_147438_o(p_151486_2_, p_151486_3_, p_151486_4_);
 
@@ -114,12 +114,12 @@ public class EntityAIOcelotSit extends EntityAIBase
         }
         else
         {
-            if (block == Blocks.field_150470_am)
+            if (block == Blocks.LIT_FURNACE)
             {
                 return true;
             }
 
-            if (block == Blocks.field_150324_C && !BlockBed.func_149975_b(l))
+            if (block == Blocks.BED && !BlockBed.func_149975_b(l))
             {
                 return true;
             }

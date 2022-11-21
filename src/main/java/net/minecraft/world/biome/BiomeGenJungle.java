@@ -51,7 +51,7 @@ public class BiomeGenJungle extends BiomeGenBase
 
     public WorldGenerator func_76730_b(Random p_76730_1_)
     {
-        return p_76730_1_.nextInt(4) == 0 ? new WorldGenTallGrass(Blocks.field_150329_H, 2) : new WorldGenTallGrass(Blocks.field_150329_H, 1);
+        return p_76730_1_.nextInt(4) == 0 ? new WorldGenTallGrass(Blocks.TALLGRASS, 2) : new WorldGenTallGrass(Blocks.TALLGRASS, 1);
     }
 
     public void func_76728_a(World p_76728_1_, Random p_76728_2_, int p_76728_3_, int p_76728_4_)

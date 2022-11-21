@@ -35,11 +35,11 @@ public class CombatTracker
         {
             Block block = this.field_94554_b.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_94554_b.field_70165_t), MathHelper.func_76128_c(this.field_94554_b.field_70121_D.field_72338_b), MathHelper.func_76128_c(this.field_94554_b.field_70161_v));
 
-            if (block == Blocks.field_150468_ap)
+            if (block == Blocks.LADDER)
             {
                 this.field_94551_f = "ladder";
             }
-            else if (block == Blocks.field_150395_bd)
+            else if (block == Blocks.VINE)
             {
                 this.field_94551_f = "vines";
             }

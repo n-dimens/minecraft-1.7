@@ -14,7 +14,7 @@ public class WorldGenClay extends WorldGenerator
 
     public WorldGenClay(int p_i2011_1_)
     {
-        this.field_150546_a = Blocks.field_150435_aG;
+        this.field_150546_a = Blocks.CLAY;
         this.field_76517_b = p_i2011_1_;
     }
 
@@ -42,7 +42,7 @@ public class WorldGenClay extends WorldGenerator
                         {
                             Block block = p_76484_1_.func_147439_a(i1, i2, j1);
 
-                            if (block == Blocks.field_150346_d || block == Blocks.field_150435_aG)
+                            if (block == Blocks.DIRT || block == Blocks.CLAY)
                             {
                                 p_76484_1_.func_147465_d(i1, i2, j1, this.field_150546_a, 0, 2);
                             }

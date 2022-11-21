@@ -115,7 +115,7 @@ public class BlockDynamicLiquid extends BlockLiquid
         {
             if (this.field_149764_J == Material.field_151587_i && p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ - 1, p_149674_4_).func_149688_o() == Material.field_151586_h)
             {
-                p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_ - 1, p_149674_4_, Blocks.field_150348_b);
+                p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_ - 1, p_149674_4_, Blocks.STONE);
                 this.func_149799_m(p_149674_1_, p_149674_2_, p_149674_3_ - 1, p_149674_4_);
                 return;
             }
@@ -304,7 +304,7 @@ public class BlockDynamicLiquid extends BlockLiquid
     private boolean func_149807_p(World p_149807_1_, int p_149807_2_, int p_149807_3_, int p_149807_4_)
     {
         Block block = p_149807_1_.func_147439_a(p_149807_2_, p_149807_3_, p_149807_4_);
-        return block != Blocks.field_150466_ao && block != Blocks.field_150454_av && block != Blocks.field_150472_an && block != Blocks.field_150468_ap && block != Blocks.field_150436_aH ? (block.field_149764_J == Material.field_151567_E ? true : block.field_149764_J.func_76230_c()) : true;
+        return block != Blocks.WOODEN_DOOR && block != Blocks.IRON_DOOR && block != Blocks.STANDING_SIGN && block != Blocks.LADDER && block != Blocks.REEDS ? (block.field_149764_J == Material.field_151567_E ? true : block.field_149764_J.func_76230_c()) : true;
     }
 
     protected int func_149810_a(World p_149810_1_, int p_149810_2_, int p_149810_3_, int p_149810_4_, int p_149810_5_)

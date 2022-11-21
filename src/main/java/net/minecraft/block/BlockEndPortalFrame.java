@@ -32,7 +32,7 @@ public class BlockEndPortalFrame extends Block
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return p_149691_1_ == 1 ? this.field_150023_a : (p_149691_1_ == 0 ? Blocks.field_150377_bs.func_149733_h(p_149691_1_) : this.field_149761_L);
+        return p_149691_1_ == 1 ? this.field_150023_a : (p_149691_1_ == 0 ? Blocks.END_STONE.func_149733_h(p_149691_1_) : this.field_149761_L);
     }
 
     @SideOnly(Side.CLIENT)

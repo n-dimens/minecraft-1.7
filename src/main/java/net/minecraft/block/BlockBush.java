@@ -32,7 +32,7 @@ public class BlockBush extends Block
 
     protected boolean func_149854_a(Block p_149854_1_)
     {
-        return p_149854_1_ == Blocks.field_150349_c || p_149854_1_ == Blocks.field_150346_d || p_149854_1_ == Blocks.field_150458_ak;
+        return p_149854_1_ == Blocks.GRASS || p_149854_1_ == Blocks.DIRT || p_149854_1_ == Blocks.FARMLAND;
     }
 
     public void func_149695_a(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_)

@@ -499,7 +499,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             {
                 Block block = this.field_78531_r.field_71441_e.func_147439_a(MathHelper.func_76128_c(entitylivingbase.field_70165_t), MathHelper.func_76128_c(entitylivingbase.field_70163_u), MathHelper.func_76128_c(entitylivingbase.field_70161_v));
 
-                if (block == Blocks.field_150324_C)
+                if (block == Blocks.BED)
                 {
                     int i = this.field_78531_r.field_71441_e.func_72805_g(MathHelper.func_76128_c(entitylivingbase.field_70165_t), MathHelper.func_76128_c(entitylivingbase.field_70163_u), MathHelper.func_76128_c(entitylivingbase.field_70161_v));
                     int j = i & 3;

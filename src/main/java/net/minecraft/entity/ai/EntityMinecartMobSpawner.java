@@ -55,7 +55,7 @@ public class EntityMinecartMobSpawner extends EntityMinecart
 
     public Block func_145817_o()
     {
-        return Blocks.field_150474_ac;
+        return Blocks.MOB_SPAWNER;
     }
 
     protected void func_70037_a(NBTTagCompound p_70037_1_)

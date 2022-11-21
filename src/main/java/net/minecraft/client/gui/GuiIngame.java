@@ -89,7 +89,7 @@ public class GuiIngame extends Gui
 
         ItemStack itemstack = this.field_73839_d.field_71439_g.field_71071_by.func_70440_f(3);
 
-        if (this.field_73839_d.gameSettings.field_74320_O == 0 && itemstack != null && itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150423_aK))
+        if (this.field_73839_d.gameSettings.field_74320_O == 0 && itemstack != null && itemstack.func_77973_b() == Item.func_150898_a(Blocks.PUMPKIN))
         {
             this.func_73836_a(k, l);
         }
@@ -910,7 +910,7 @@ public class GuiIngame extends Gui
         GL11.glDepthMask(false);
         OpenGlHelper.func_148821_a(770, 771, 1, 0);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, p_130015_1_);
-        IIcon iicon = Blocks.field_150427_aO.func_149733_h(1);
+        IIcon iicon = Blocks.PORTAL.func_149733_h(1);
         this.field_73839_d.func_110434_K().func_110577_a(TextureMap.field_110575_b);
         float f1 = iicon.func_94209_e();
         float f2 = iicon.func_94206_g();

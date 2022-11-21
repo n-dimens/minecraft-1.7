@@ -88,12 +88,12 @@ public abstract class WorldGenHugeTrees extends WorldGenAbstractTree
     {
         Block block = p_150532_1_.func_147439_a(p_150532_3_, p_150532_4_ - 1, p_150532_5_);
 
-        if ((block == Blocks.field_150349_c || block == Blocks.field_150346_d) && p_150532_4_ >= 2)
+        if ((block == Blocks.GRASS || block == Blocks.DIRT) && p_150532_4_ >= 2)
         {
-            p_150532_1_.func_147465_d(p_150532_3_, p_150532_4_ - 1, p_150532_5_, Blocks.field_150346_d, 0, 2);
-            p_150532_1_.func_147465_d(p_150532_3_ + 1, p_150532_4_ - 1, p_150532_5_, Blocks.field_150346_d, 0, 2);
-            p_150532_1_.func_147465_d(p_150532_3_, p_150532_4_ - 1, p_150532_5_ + 1, Blocks.field_150346_d, 0, 2);
-            p_150532_1_.func_147465_d(p_150532_3_ + 1, p_150532_4_ - 1, p_150532_5_ + 1, Blocks.field_150346_d, 0, 2);
+            p_150532_1_.func_147465_d(p_150532_3_, p_150532_4_ - 1, p_150532_5_, Blocks.DIRT, 0, 2);
+            p_150532_1_.func_147465_d(p_150532_3_ + 1, p_150532_4_ - 1, p_150532_5_, Blocks.DIRT, 0, 2);
+            p_150532_1_.func_147465_d(p_150532_3_, p_150532_4_ - 1, p_150532_5_ + 1, Blocks.DIRT, 0, 2);
+            p_150532_1_.func_147465_d(p_150532_3_ + 1, p_150532_4_ - 1, p_150532_5_ + 1, Blocks.DIRT, 0, 2);
             return true;
         }
         else
@@ -127,7 +127,7 @@ public abstract class WorldGenHugeTrees extends WorldGenAbstractTree
 
                     if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                     {
-                        this.func_150516_a(p_150535_1_, j1, p_150535_3_, l1, Blocks.field_150362_t, this.field_76521_c);
+                        this.func_150516_a(p_150535_1_, j1, p_150535_3_, l1, Blocks.LEAVES, this.field_76521_c);
                     }
                 }
             }
@@ -152,7 +152,7 @@ public abstract class WorldGenHugeTrees extends WorldGenAbstractTree
 
                     if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                     {
-                        this.func_150516_a(p_150534_1_, j1, p_150534_3_, l1, Blocks.field_150362_t, this.field_76521_c);
+                        this.func_150516_a(p_150534_1_, j1, p_150534_3_, l1, Blocks.LEAVES, this.field_76521_c);
                     }
                 }
             }

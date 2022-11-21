@@ -31,9 +31,9 @@ public class EntityLightningBolt extends EntityWeatherEffect
             int j = MathHelper.func_76128_c(p_i1703_4_);
             int k = MathHelper.func_76128_c(p_i1703_6_);
 
-            if (p_i1703_1_.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && Blocks.field_150480_ab.func_149742_c(p_i1703_1_, i, j, k))
+            if (p_i1703_1_.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && Blocks.FIRE.func_149742_c(p_i1703_1_, i, j, k))
             {
-                p_i1703_1_.func_147449_b(i, j, k, Blocks.field_150480_ab);
+                p_i1703_1_.func_147449_b(i, j, k, Blocks.FIRE);
             }
 
             for (i = 0; i < 4; ++i)
@@ -42,9 +42,9 @@ public class EntityLightningBolt extends EntityWeatherEffect
                 k = MathHelper.func_76128_c(p_i1703_4_) + this.field_70146_Z.nextInt(3) - 1;
                 int l = MathHelper.func_76128_c(p_i1703_6_) + this.field_70146_Z.nextInt(3) - 1;
 
-                if (p_i1703_1_.func_147439_a(j, k, l).func_149688_o() == Material.field_151579_a && Blocks.field_150480_ab.func_149742_c(p_i1703_1_, j, k, l))
+                if (p_i1703_1_.func_147439_a(j, k, l).func_149688_o() == Material.field_151579_a && Blocks.FIRE.func_149742_c(p_i1703_1_, j, k, l))
                 {
-                    p_i1703_1_.func_147449_b(j, k, l, Blocks.field_150480_ab);
+                    p_i1703_1_.func_147449_b(j, k, l, Blocks.FIRE);
                 }
             }
         }
@@ -80,9 +80,9 @@ public class EntityLightningBolt extends EntityWeatherEffect
                     int j = MathHelper.func_76128_c(this.field_70163_u);
                     int k = MathHelper.func_76128_c(this.field_70161_v);
 
-                    if (this.field_70170_p.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && Blocks.field_150480_ab.func_149742_c(this.field_70170_p, i, j, k))
+                    if (this.field_70170_p.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && Blocks.FIRE.func_149742_c(this.field_70170_p, i, j, k))
                     {
-                        this.field_70170_p.func_147449_b(i, j, k, Blocks.field_150480_ab);
+                        this.field_70170_p.func_147449_b(i, j, k, Blocks.FIRE);
                     }
                 }
             }

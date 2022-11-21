@@ -35,7 +35,7 @@ public class EntityMinecartHopper extends EntityMinecartContainer implements IHo
 
     public Block func_145817_o()
     {
-        return Blocks.field_150438_bZ;
+        return Blocks.HOPPER;
     }
 
     public int func_94085_r()
@@ -141,7 +141,7 @@ public class EntityMinecartHopper extends EntityMinecartContainer implements IHo
     public void func_94095_a(DamageSource p_94095_1_)
     {
         super.func_94095_a(p_94095_1_);
-        this.func_145778_a(Item.func_150898_a(Blocks.field_150438_bZ), 1, 0.0F);
+        this.func_145778_a(Item.func_150898_a(Blocks.HOPPER), 1, 0.0F);
     }
 
     protected void func_70014_b(NBTTagCompound p_70014_1_)

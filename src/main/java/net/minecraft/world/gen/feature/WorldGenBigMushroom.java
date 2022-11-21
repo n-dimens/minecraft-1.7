@@ -77,7 +77,7 @@ public class WorldGenBigMushroom extends WorldGenerator
             {
                 Block block1 = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ - 1, p_76484_5_);
 
-                if (block1 != Blocks.field_150346_d && block1 != Blocks.field_150349_c && block1 != Blocks.field_150391_bh)
+                if (block1 != Blocks.DIRT && block1 != Blocks.GRASS && block1 != Blocks.MYCELIUM)
                 {
                     return false;
                 }
@@ -185,7 +185,7 @@ public class WorldGenBigMushroom extends WorldGenerator
 
                                 if ((j2 != 0 || p_76484_4_ >= p_76484_4_ + i1 - 1) && !p_76484_1_.func_147439_a(l2, k1, i2).func_149730_j())
                                 {
-                                    this.func_150516_a(p_76484_1_, l2, k1, i2, Block.func_149729_e(Block.func_149682_b(Blocks.field_150420_aW) + l), j2);
+                                    this.func_150516_a(p_76484_1_, l2, k1, i2, Block.func_149729_e(Block.func_149682_b(Blocks.BROWN_MUSHROOM_BLOCK) + l), j2);
                                 }
                             }
                         }
@@ -197,7 +197,7 @@ public class WorldGenBigMushroom extends WorldGenerator
 
                         if (!block2.func_149730_j())
                         {
-                            this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + k1, p_76484_5_, Block.func_149729_e(Block.func_149682_b(Blocks.field_150420_aW) + l), 10);
+                            this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + k1, p_76484_5_, Block.func_149729_e(Block.func_149682_b(Blocks.BROWN_MUSHROOM_BLOCK) + l), 10);
                         }
                     }
 

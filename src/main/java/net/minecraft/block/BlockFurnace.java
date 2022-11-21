@@ -39,7 +39,7 @@ public class BlockFurnace extends BlockContainer
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.func_150898_a(Blocks.field_150460_al);
+        return Item.func_150898_a(Blocks.FURNACE);
     }
 
     public void func_149726_b(World p_149726_1_, int p_149726_2_, int p_149726_3_, int p_149726_4_)
@@ -123,11 +123,11 @@ public class BlockFurnace extends BlockContainer
 
         if (p_149931_0_)
         {
-            p_149931_1_.func_147449_b(p_149931_2_, p_149931_3_, p_149931_4_, Blocks.field_150470_am);
+            p_149931_1_.func_147449_b(p_149931_2_, p_149931_3_, p_149931_4_, Blocks.LIT_FURNACE);
         }
         else
         {
-            p_149931_1_.func_147449_b(p_149931_2_, p_149931_3_, p_149931_4_, Blocks.field_150460_al);
+            p_149931_1_.func_147449_b(p_149931_2_, p_149931_3_, p_149931_4_, Blocks.FURNACE);
         }
 
         field_149934_M = false;
@@ -274,6 +274,6 @@ public class BlockFurnace extends BlockContainer
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Item.func_150898_a(Blocks.field_150460_al);
+        return Item.func_150898_a(Blocks.FURNACE);
     }
 }

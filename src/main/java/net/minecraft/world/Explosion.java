@@ -211,7 +211,7 @@ public class Explosion
                         block.func_149690_a(this.field_77287_j, i, j, k, this.field_77287_j.func_72805_g(i, j, k), 1.0F / this.field_77280_f, 0);
                     }
 
-                    this.field_77287_j.func_147465_d(i, j, k, Blocks.field_150350_a, 0, 3);
+                    this.field_77287_j.func_147465_d(i, j, k, Blocks.AIR, 0, 3);
                     block.func_149723_a(this.field_77287_j, i, j, k, this);
                 }
             }
@@ -232,7 +232,7 @@ public class Explosion
 
                 if (block.func_149688_o() == Material.field_151579_a && block1.func_149730_j() && this.field_77290_i.nextInt(3) == 0)
                 {
-                    this.field_77287_j.func_147449_b(i, j, k, Blocks.field_150480_ab);
+                    this.field_77287_j.func_147449_b(i, j, k, Blocks.FIRE);
                 }
             }
         }

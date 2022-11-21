@@ -48,15 +48,15 @@ public class TileEntityRendererPiston extends TileEntitySpecialRenderer
             tessellator.func_78373_b((double)((float)p_147500_2_ - (float)p_147500_1_.field_145851_c + p_147500_1_.func_145865_b(p_147500_8_)), (double)((float)p_147500_4_ - (float)p_147500_1_.field_145848_d + p_147500_1_.func_145862_c(p_147500_8_)), (double)((float)p_147500_6_ - (float)p_147500_1_.field_145849_e + p_147500_1_.func_145859_d(p_147500_8_)));
             tessellator.func_78386_a(1.0F, 1.0F, 1.0F);
 
-            if (block == Blocks.field_150332_K && p_147500_1_.func_145860_a(p_147500_8_) < 0.5F)
+            if (block == Blocks.PISTON_HEAD && p_147500_1_.func_145860_a(p_147500_8_) < 0.5F)
             {
                 this.field_147516_b.func_147750_a(block, p_147500_1_.field_145851_c, p_147500_1_.field_145848_d, p_147500_1_.field_145849_e, false);
             }
             else if (p_147500_1_.func_145867_d() && !p_147500_1_.func_145868_b())
             {
-                Blocks.field_150332_K.func_150086_a(((BlockPistonBase)block).func_150073_e());
-                this.field_147516_b.func_147750_a(Blocks.field_150332_K, p_147500_1_.field_145851_c, p_147500_1_.field_145848_d, p_147500_1_.field_145849_e, p_147500_1_.func_145860_a(p_147500_8_) < 0.5F);
-                Blocks.field_150332_K.func_150087_e();
+                Blocks.PISTON_HEAD.func_150086_a(((BlockPistonBase)block).func_150073_e());
+                this.field_147516_b.func_147750_a(Blocks.PISTON_HEAD, p_147500_1_.field_145851_c, p_147500_1_.field_145848_d, p_147500_1_.field_145849_e, p_147500_1_.func_145860_a(p_147500_8_) < 0.5F);
+                Blocks.PISTON_HEAD.func_150087_e();
                 tessellator.func_78373_b((double)((float)p_147500_2_ - (float)p_147500_1_.field_145851_c), (double)((float)p_147500_4_ - (float)p_147500_1_.field_145848_d), (double)((float)p_147500_6_ - (float)p_147500_1_.field_145849_e));
                 this.field_147516_b.func_147804_d(block, p_147500_1_.field_145851_c, p_147500_1_.field_145848_d, p_147500_1_.field_145849_e);
             }

@@ -198,7 +198,7 @@ public class WorldGenBigTree extends WorldGenAbstractTree
         for (int i1 = p_76491_2_ + this.field_76508_n; l < i1; ++l)
         {
             float f = this.func_76495_b(l - p_76491_2_);
-            this.func_150529_a(p_76491_1_, l, p_76491_3_, f, (byte)1, Blocks.field_150362_t);
+            this.func_150529_a(p_76491_1_, l, p_76491_3_, f, (byte)1, Blocks.LEAVES);
         }
     }
 
@@ -291,19 +291,19 @@ public class WorldGenBigTree extends WorldGenAbstractTree
         int l = this.field_76503_d[2];
         int[] aint = new int[] {i, j, l};
         int[] aint1 = new int[] {i, k, l};
-        this.func_150530_a(aint, aint1, Blocks.field_150364_r);
+        this.func_150530_a(aint, aint1, Blocks.LOG);
 
         if (this.field_76510_l == 2)
         {
             ++aint[0];
             ++aint1[0];
-            this.func_150530_a(aint, aint1, Blocks.field_150364_r);
+            this.func_150530_a(aint, aint1, Blocks.LOG);
             ++aint[2];
             ++aint1[2];
-            this.func_150530_a(aint, aint1, Blocks.field_150364_r);
+            this.func_150530_a(aint, aint1, Blocks.LOG);
             aint[0] += -1;
             aint1[0] += -1;
-            this.func_150530_a(aint, aint1, Blocks.field_150364_r);
+            this.func_150530_a(aint, aint1, Blocks.LOG);
         }
     }
 
@@ -321,7 +321,7 @@ public class WorldGenBigTree extends WorldGenAbstractTree
 
             if (this.func_76493_c(k))
             {
-                this.func_150530_a(aint, aint2, Blocks.field_150364_r);
+                this.func_150530_a(aint, aint2, Blocks.LOG);
             }
         }
     }
@@ -390,7 +390,7 @@ public class WorldGenBigTree extends WorldGenAbstractTree
         int[] aint1 = new int[] {this.field_76503_d[0], this.field_76503_d[1] + this.field_76504_e - 1, this.field_76503_d[2]};
         Block block = this.field_76506_c.func_147439_a(this.field_76503_d[0], this.field_76503_d[1] - 1, this.field_76503_d[2]);
 
-        if (block != Blocks.field_150346_d && block != Blocks.field_150349_c && block != Blocks.field_150458_ak)
+        if (block != Blocks.DIRT && block != Blocks.GRASS && block != Blocks.FARMLAND)
         {
             return false;
         }

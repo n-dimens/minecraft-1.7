@@ -53,8 +53,8 @@ public abstract class Render
     private void func_76977_a(Entity p_76977_1_, double p_76977_2_, double p_76977_4_, double p_76977_6_, float p_76977_8_)
     {
         GL11.glDisable(GL11.GL_LIGHTING);
-        IIcon iicon = Blocks.field_150480_ab.func_149840_c(0);
-        IIcon iicon1 = Blocks.field_150480_ab.func_149840_c(1);
+        IIcon iicon = Blocks.FIRE.func_149840_c(0);
+        IIcon iicon1 = Blocks.FIRE.func_149840_c(1);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)p_76977_2_, (float)p_76977_4_, (float)p_76977_6_);
         float f1 = p_76977_1_.field_70130_N * 1.4F;

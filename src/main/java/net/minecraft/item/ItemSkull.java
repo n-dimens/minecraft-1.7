@@ -73,7 +73,7 @@ public class ItemSkull extends Item
 
             if (!p_77648_3_.field_72995_K)
             {
-                p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.field_150465_bP, p_77648_7_, 2);
+                p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.SKULL, p_77648_7_, 2);
                 int i1 = 0;
 
                 if (p_77648_7_ == 1)
@@ -111,7 +111,7 @@ public class ItemSkull extends Item
                     }
 
                     ((TileEntitySkull)tileentity).func_145903_a(i1);
-                    ((BlockSkull)Blocks.field_150465_bP).func_149965_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, (TileEntitySkull)tileentity);
+                    ((BlockSkull)Blocks.SKULL).func_149965_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, (TileEntitySkull)tileentity);
                 }
 
                 --p_77648_1_.field_77994_a;

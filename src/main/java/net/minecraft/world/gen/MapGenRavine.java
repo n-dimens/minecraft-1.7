@@ -131,7 +131,7 @@ public class MapGenRavine extends MapGenBase
                                 {
                                     Block block = p_151540_5_[j3];
 
-                                    if (block == Blocks.field_150358_i || block == Blocks.field_150355_j)
+                                    if (block == Blocks.FLOWING_WATER || block == Blocks.WATER)
                                     {
                                         flag2 = true;
                                     }
@@ -167,22 +167,22 @@ public class MapGenRavine extends MapGenBase
                                         {
                                             Block block1 = p_151540_5_[k3];
 
-                                            if (block1 == Blocks.field_150349_c)
+                                            if (block1 == Blocks.GRASS)
                                             {
                                                 flag = true;
                                             }
 
-                                            if (block1 == Blocks.field_150348_b || block1 == Blocks.field_150346_d || block1 == Blocks.field_150349_c)
+                                            if (block1 == Blocks.STONE || block1 == Blocks.DIRT || block1 == Blocks.GRASS)
                                             {
                                                 if (l3 < 10)
                                                 {
-                                                    p_151540_5_[k3] = Blocks.field_150356_k;
+                                                    p_151540_5_[k3] = Blocks.FLOWING_LAVA;
                                                 }
                                                 else
                                                 {
                                                     p_151540_5_[k3] = null;
 
-                                                    if (flag && p_151540_5_[k3 - 1] == Blocks.field_150346_d)
+                                                    if (flag && p_151540_5_[k3 - 1] == Blocks.DIRT)
                                                     {
                                                         p_151540_5_[k3 - 1] = this.field_75039_c.func_72807_a(k2 + p_151540_3_ * 16, j3 + p_151540_4_ * 16).field_76752_A;
                                                     }

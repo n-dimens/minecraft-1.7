@@ -49,7 +49,7 @@ public class RenderTNTPrimed extends Render
 
         f2 = (1.0F - ((float)p_76986_1_.field_70516_a - p_76986_9_ + 1.0F) / 100.0F) * 0.8F;
         this.func_110777_b(p_76986_1_);
-        this.field_76993_a.func_147800_a(Blocks.field_150335_W, 0, p_76986_1_.func_70013_c(p_76986_9_));
+        this.field_76993_a.func_147800_a(Blocks.TNT, 0, p_76986_1_.func_70013_c(p_76986_9_));
 
         if (p_76986_1_.field_70516_a / 5 % 2 == 0)
         {
@@ -58,7 +58,7 @@ public class RenderTNTPrimed extends Render
             GL11.glEnable(GL11.GL_BLEND);
             GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_DST_ALPHA);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, f2);
-            this.field_76993_a.func_147800_a(Blocks.field_150335_W, 0, 1.0F);
+            this.field_76993_a.func_147800_a(Blocks.TNT, 0, 1.0F);
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             GL11.glDisable(GL11.GL_BLEND);
             GL11.glEnable(GL11.GL_LIGHTING);

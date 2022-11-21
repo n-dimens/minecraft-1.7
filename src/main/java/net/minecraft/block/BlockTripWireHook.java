@@ -149,7 +149,7 @@ public class BlockTripWireHook extends Block
             i3 = p_150136_4_ + i2 * k2;
             Block block = p_150136_1_.func_147439_a(l2, p_150136_3_, i3);
 
-            if (block == Blocks.field_150479_bC)
+            if (block == Blocks.TRIPWIRE_HOOK)
             {
                 j3 = p_150136_1_.func_72805_g(l2, p_150136_3_, i3);
 
@@ -161,7 +161,7 @@ public class BlockTripWireHook extends Block
                 break;
             }
 
-            if (block != Blocks.field_150473_bD && k2 != p_150136_8_)
+            if (block != Blocks.TRIPWIRE && k2 != p_150136_8_)
             {
                 aint[k2] = -1;
                 flag4 = false;

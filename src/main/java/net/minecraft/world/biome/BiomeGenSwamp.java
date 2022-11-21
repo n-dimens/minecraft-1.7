@@ -58,13 +58,13 @@ public class BiomeGenSwamp extends BiomeGenBase
 
                 if (p_150573_3_[k1] == null || p_150573_3_[k1].func_149688_o() != Material.field_151579_a)
                 {
-                    if (j1 == 62 && p_150573_3_[k1] != Blocks.field_150355_j)
+                    if (j1 == 62 && p_150573_3_[k1] != Blocks.WATER)
                     {
-                        p_150573_3_[k1] = Blocks.field_150355_j;
+                        p_150573_3_[k1] = Blocks.WATER;
 
                         if (d1 < 0.12D)
                         {
-                            p_150573_3_[k1 + 1] = Blocks.field_150392_bi;
+                            p_150573_3_[k1 + 1] = Blocks.WATERLILY;
                         }
                     }
 

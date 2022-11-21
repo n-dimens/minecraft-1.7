@@ -50,7 +50,7 @@ public class PathFinder
         {
             i = (int)p_75857_1_.field_70121_D.field_72338_b;
 
-            for (Block block = this.field_75868_a.func_147439_a(MathHelper.func_76128_c(p_75857_1_.field_70165_t), i, MathHelper.func_76128_c(p_75857_1_.field_70161_v)); block == Blocks.field_150358_i || block == Blocks.field_150355_j; block = this.field_75868_a.func_147439_a(MathHelper.func_76128_c(p_75857_1_.field_70165_t), i, MathHelper.func_76128_c(p_75857_1_.field_70161_v)))
+            for (Block block = this.field_75868_a.func_147439_a(MathHelper.func_76128_c(p_75857_1_.field_70165_t), i, MathHelper.func_76128_c(p_75857_1_.field_70161_v)); block == Blocks.FLOWING_WATER || block == Blocks.WATER; block = this.field_75868_a.func_147439_a(MathHelper.func_76128_c(p_75857_1_.field_70165_t), i, MathHelper.func_76128_c(p_75857_1_.field_70161_v)))
             {
                 ++i;
             }
@@ -266,13 +266,13 @@ public class PathFinder
 
                     if (block.func_149688_o() != Material.field_151579_a)
                     {
-                        if (block == Blocks.field_150415_aT)
+                        if (block == Blocks.TRAPDOOR)
                         {
                             flag3 = true;
                         }
-                        else if (block != Blocks.field_150358_i && block != Blocks.field_150355_j)
+                        else if (block != Blocks.FLOWING_WATER && block != Blocks.WATER)
                         {
-                            if (!p_82565_7_ && block == Blocks.field_150466_ao)
+                            if (!p_82565_7_ && block == Blocks.WOODEN_DOOR)
                             {
                                 return 0;
                             }
@@ -300,14 +300,14 @@ public class PathFinder
                                 return -3;
                             }
                         }
-                        else if (!block.func_149655_b(p_82565_0_.field_70170_p, l, i1, j1) && (!p_82565_6_ || block != Blocks.field_150466_ao))
+                        else if (!block.func_149655_b(p_82565_0_.field_70170_p, l, i1, j1) && (!p_82565_6_ || block != Blocks.WOODEN_DOOR))
                         {
-                            if (k1 == 11 || block == Blocks.field_150396_be || k1 == 32)
+                            if (k1 == 11 || block == Blocks.FENCE_GATE || k1 == 32)
                             {
                                 return -3;
                             }
 
-                            if (block == Blocks.field_150415_aT)
+                            if (block == Blocks.TRAPDOOR)
                             {
                                 return -4;
                             }

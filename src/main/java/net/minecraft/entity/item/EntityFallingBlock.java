@@ -118,7 +118,7 @@ public class EntityFallingBlock extends Entity
                     this.field_70179_y *= 0.699999988079071D;
                     this.field_70181_x *= -0.5D;
 
-                    if (this.field_70170_p.func_147439_a(i, j, k) != Blocks.field_150326_M)
+                    if (this.field_70170_p.func_147439_a(i, j, k) != Blocks.PISTON_EXTENSION)
                     {
                         this.func_70106_y();
 
@@ -183,7 +183,7 @@ public class EntityFallingBlock extends Entity
             if (i > 0)
             {
                 ArrayList arraylist = new ArrayList(this.field_70170_p.func_72839_b(this, this.field_70121_D));
-                boolean flag = this.field_145811_e == Blocks.field_150467_bQ;
+                boolean flag = this.field_145811_e == Blocks.ANVIL;
                 DamageSource damagesource = flag ? DamageSource.field_82728_o : DamageSource.field_82729_p;
                 Iterator iterator = arraylist.iterator();
 
@@ -249,7 +249,7 @@ public class EntityFallingBlock extends Entity
             this.field_145816_i = p_70037_1_.func_74760_g("FallHurtAmount");
             this.field_145815_h = p_70037_1_.func_74762_e("FallHurtMax");
         }
-        else if (this.field_145811_e == Blocks.field_150467_bQ)
+        else if (this.field_145811_e == Blocks.ANVIL)
         {
             this.field_145809_g = true;
         }
@@ -266,7 +266,7 @@ public class EntityFallingBlock extends Entity
 
         if (this.field_145811_e.func_149688_o() == Material.field_151579_a)
         {
-            this.field_145811_e = Blocks.field_150354_m;
+            this.field_145811_e = Blocks.SAND;
         }
     }
 

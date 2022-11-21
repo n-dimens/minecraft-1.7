@@ -17,6 +17,6 @@ public class BlockButtonStone extends BlockButton
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return Blocks.field_150348_b.func_149733_h(1);
+        return Blocks.STONE.func_149733_h(1);
     }
 }

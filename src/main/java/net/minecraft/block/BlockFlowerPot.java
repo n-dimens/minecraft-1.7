@@ -100,7 +100,7 @@ public class BlockFlowerPot extends BlockContainer
 
     private boolean func_149928_a(Block p_149928_1_, int p_149928_2_)
     {
-        return p_149928_1_ != Blocks.field_150327_N && p_149928_1_ != Blocks.field_150328_O && p_149928_1_ != Blocks.field_150434_aF && p_149928_1_ != Blocks.field_150338_P && p_149928_1_ != Blocks.field_150337_Q && p_149928_1_ != Blocks.field_150345_g && p_149928_1_ != Blocks.field_150330_I ? p_149928_1_ == Blocks.field_150329_H && p_149928_2_ == 2 : true;
+        return p_149928_1_ != Blocks.YELLOW_FLOWER && p_149928_1_ != Blocks.RED_FLOWER && p_149928_1_ != Blocks.CACTUS && p_149928_1_ != Blocks.BROWN_MUSHROOM && p_149928_1_ != Blocks.RED_MUSHROOM && p_149928_1_ != Blocks.SAPLING && p_149928_1_ != Blocks.DEADBUSH ? p_149928_1_ == Blocks.TALLGRASS && p_149928_2_ == 2 : true;
     }
 
     @SideOnly(Side.CLIENT)
@@ -182,50 +182,50 @@ public class BlockFlowerPot extends BlockContainer
         switch (p_149915_2_)
         {
             case 1:
-                object = Blocks.field_150328_O;
+                object = Blocks.RED_FLOWER;
                 b0 = 0;
                 break;
             case 2:
-                object = Blocks.field_150327_N;
+                object = Blocks.YELLOW_FLOWER;
                 break;
             case 3:
-                object = Blocks.field_150345_g;
+                object = Blocks.SAPLING;
                 b0 = 0;
                 break;
             case 4:
-                object = Blocks.field_150345_g;
+                object = Blocks.SAPLING;
                 b0 = 1;
                 break;
             case 5:
-                object = Blocks.field_150345_g;
+                object = Blocks.SAPLING;
                 b0 = 2;
                 break;
             case 6:
-                object = Blocks.field_150345_g;
+                object = Blocks.SAPLING;
                 b0 = 3;
                 break;
             case 7:
-                object = Blocks.field_150337_Q;
+                object = Blocks.RED_MUSHROOM;
                 break;
             case 8:
-                object = Blocks.field_150338_P;
+                object = Blocks.BROWN_MUSHROOM;
                 break;
             case 9:
-                object = Blocks.field_150434_aF;
+                object = Blocks.CACTUS;
                 break;
             case 10:
-                object = Blocks.field_150330_I;
+                object = Blocks.DEADBUSH;
                 break;
             case 11:
-                object = Blocks.field_150329_H;
+                object = Blocks.TALLGRASS;
                 b0 = 2;
                 break;
             case 12:
-                object = Blocks.field_150345_g;
+                object = Blocks.SAPLING;
                 b0 = 4;
                 break;
             case 13:
-                object = Blocks.field_150345_g;
+                object = Blocks.SAPLING;
                 b0 = 5;
         }
 

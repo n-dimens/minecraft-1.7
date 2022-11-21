@@ -65,18 +65,18 @@ public class BiomeGenSavanna extends BiomeGenBase
 
             public void func_150573_a(World p_150573_1_, Random p_150573_2_, Block[] p_150573_3_, byte[] p_150573_4_, int p_150573_5_, int p_150573_6_, double p_150573_7_)
             {
-                this.field_76752_A = Blocks.field_150349_c;
+                this.field_76752_A = Blocks.GRASS;
                 this.field_150604_aj = 0;
-                this.field_76753_B = Blocks.field_150346_d;
+                this.field_76753_B = Blocks.DIRT;
 
                 if (p_150573_7_ > 1.75D)
                 {
-                    this.field_76752_A = Blocks.field_150348_b;
-                    this.field_76753_B = Blocks.field_150348_b;
+                    this.field_76752_A = Blocks.STONE;
+                    this.field_76753_B = Blocks.STONE;
                 }
                 else if (p_150573_7_ > -0.5D)
                 {
-                    this.field_76752_A = Blocks.field_150346_d;
+                    this.field_76752_A = Blocks.DIRT;
                     this.field_150604_aj = 1;
                 }
 

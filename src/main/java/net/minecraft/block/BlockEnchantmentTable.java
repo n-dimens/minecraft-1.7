@@ -54,7 +54,7 @@ public class BlockEnchantmentTable extends BlockContainer
                 {
                     for (int j1 = p_149734_3_; j1 <= p_149734_3_ + 1; ++j1)
                     {
-                        if (p_149734_1_.func_147439_a(l, j1, i1) == Blocks.field_150342_X)
+                        if (p_149734_1_.func_147439_a(l, j1, i1) == Blocks.BOOKSHELF)
                         {
                             if (!p_149734_1_.func_147437_c((l - p_149734_2_) / 2 + p_149734_2_, j1, (i1 - p_149734_4_) / 2 + p_149734_4_))
                             {

@@ -46,7 +46,7 @@ public class ItemLilyPad extends ItemColored
 
                 if (p_77659_2_.func_147439_a(i, j, k).func_149688_o() == Material.field_151586_h && p_77659_2_.func_72805_g(i, j, k) == 0 && p_77659_2_.func_147437_c(i, j + 1, k))
                 {
-                    p_77659_2_.func_147449_b(i, j + 1, k, Blocks.field_150392_bi);
+                    p_77659_2_.func_147449_b(i, j + 1, k, Blocks.WATERLILY);
 
                     if (!p_77659_3_.field_71075_bZ.field_75098_d)
                     {
@@ -62,6 +62,6 @@ public class ItemLilyPad extends ItemColored
     @SideOnly(Side.CLIENT)
     public int func_82790_a(ItemStack p_82790_1_, int p_82790_2_)
     {
-        return Blocks.field_150392_bi.func_149741_i(p_82790_1_.func_77960_j());
+        return Blocks.WATERLILY.func_149741_i(p_82790_1_.func_77960_j());
     }
 }

@@ -295,16 +295,16 @@ public class Bootstrap
 
                 if (world.func_147437_c(i, j, k))
                 {
-                    world.func_147449_b(i, j, k, Blocks.field_150480_ab);
+                    world.func_147449_b(i, j, k, Blocks.FIRE);
 
                     if (p_82487_2_.func_96631_a(1, world.field_73012_v))
                     {
                         p_82487_2_.field_77994_a = 0;
                     }
                 }
-                else if (world.func_147439_a(i, j, k) == Blocks.field_150335_W)
+                else if (world.func_147439_a(i, j, k) == Blocks.TNT)
                 {
-                    Blocks.field_150335_W.func_149664_b(world, i, j, k, 1);
+                    Blocks.TNT.func_149664_b(world, i, j, k, 1);
                     world.func_147468_f(i, j, k);
                 }
                 else
@@ -371,7 +371,7 @@ public class Bootstrap
                 }
             }
         });
-        BlockDispenser.field_149943_a.add(Item.func_150898_a(Blocks.field_150335_W), new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Item.func_150898_a(Blocks.TNT), new BehaviorDefaultDispenseItem()
         {
             private static final String __OBFID = "CL_00001403";
             protected ItemStack func_82487_b(IBlockSource p_82487_1_, ItemStack p_82487_2_)

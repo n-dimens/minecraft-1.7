@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 
 public class StructureMineshaftPieces
 {
-    public static final WeightedRandomChestContent[] field_78818_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 1, 3, 5), new WeightedRandomChestContent(Items.REDSTONE, 0, 4, 9, 5), new WeightedRandomChestContent(Items.DYE, 4, 4, 9, 5), new WeightedRandomChestContent(Items.DIAMOND, 0, 1, 2, 3), new WeightedRandomChestContent(Items.COAL, 0, 3, 8, 10), new WeightedRandomChestContent(Items.BREAD, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 1), new WeightedRandomChestContent(Item.func_150898_a(Blocks.field_150448_aq), 0, 4, 8, 1), new WeightedRandomChestContent(Items.MELON_SEEDS, 0, 2, 4, 10), new WeightedRandomChestContent(Items.PUMPKIN_SEEDS, 0, 2, 4, 10), new WeightedRandomChestContent(Items.SADDLE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.IRON_HORSE_ARMOR, 0, 1, 1, 1)};
+    public static final WeightedRandomChestContent[] field_78818_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 1, 3, 5), new WeightedRandomChestContent(Items.REDSTONE, 0, 4, 9, 5), new WeightedRandomChestContent(Items.DYE, 4, 4, 9, 5), new WeightedRandomChestContent(Items.DIAMOND, 0, 1, 2, 3), new WeightedRandomChestContent(Items.COAL, 0, 3, 8, 10), new WeightedRandomChestContent(Items.BREAD, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 1), new WeightedRandomChestContent(Item.func_150898_a(Blocks.RAIL), 0, 4, 8, 1), new WeightedRandomChestContent(Items.MELON_SEEDS, 0, 2, 4, 10), new WeightedRandomChestContent(Items.PUMPKIN_SEEDS, 0, 2, 4, 10), new WeightedRandomChestContent(Items.SADDLE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.IRON_HORSE_ARMOR, 0, 1, 1, 1)};
     private static final String __OBFID = "CL_00000444";
 
     public static void func_143048_a()
@@ -286,7 +286,7 @@ public class StructureMineshaftPieces
                 if (p_74879_2_.func_78890_b(i1, j1, k1) && p_74879_1_.func_147439_a(i1, j1, k1).func_149688_o() == Material.field_151579_a)
                 {
                     int l1 = p_74879_3_.nextBoolean() ? 1 : 0;
-                    p_74879_1_.func_147465_d(i1, j1, k1, Blocks.field_150448_aq, this.func_151555_a(Blocks.field_150448_aq, l1), 2);
+                    p_74879_1_.func_147465_d(i1, j1, k1, Blocks.RAIL, this.func_151555_a(Blocks.RAIL, l1), 2);
                     EntityMinecartChest entityminecartchest = new EntityMinecartChest(p_74879_1_, (double)((float)i1 + 0.5F), (double)((float)j1 + 0.5F), (double)((float)k1 + 0.5F));
                     WeightedRandomChestContent.func_76293_a(p_74879_3_, p_74879_7_, entityminecartchest, p_74879_8_);
                     p_74879_1_.func_72838_d(entityminecartchest);
@@ -311,12 +311,12 @@ public class StructureMineshaftPieces
                     boolean flag2 = false;
                     boolean flag3 = true;
                     int i = this.field_74955_d * 5 - 1;
-                    this.func_151549_a(p_74875_1_, p_74875_3_, 0, 0, 0, 2, 1, i, Blocks.field_150350_a, Blocks.field_150350_a, false);
-                    this.func_151551_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.8F, 0, 2, 0, 2, 2, i, Blocks.field_150350_a, Blocks.field_150350_a, false);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, 0, 0, 0, 2, 1, i, Blocks.AIR, Blocks.AIR, false);
+                    this.func_151551_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.8F, 0, 2, 0, 2, 2, i, Blocks.AIR, Blocks.AIR, false);
 
                     if (this.field_74956_b)
                     {
-                        this.func_151551_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.6F, 0, 0, 0, 2, 1, i, Blocks.field_150321_G, Blocks.field_150350_a, false);
+                        this.func_151551_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.6F, 0, 0, 0, 2, 1, i, Blocks.WEB, Blocks.AIR, false);
                     }
 
                     int j;
@@ -325,29 +325,29 @@ public class StructureMineshaftPieces
                     for (j = 0; j < this.field_74955_d; ++j)
                     {
                         k = 2 + j * 5;
-                        this.func_151549_a(p_74875_1_, p_74875_3_, 0, 0, k, 0, 1, k, Blocks.field_150422_aJ, Blocks.field_150350_a, false);
-                        this.func_151549_a(p_74875_1_, p_74875_3_, 2, 0, k, 2, 1, k, Blocks.field_150422_aJ, Blocks.field_150350_a, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, 0, 0, k, 0, 1, k, Blocks.FENCE, Blocks.AIR, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, 2, 0, k, 2, 1, k, Blocks.FENCE, Blocks.AIR, false);
 
                         if (p_74875_2_.nextInt(4) == 0)
                         {
-                            this.func_151549_a(p_74875_1_, p_74875_3_, 0, 2, k, 0, 2, k, Blocks.field_150344_f, Blocks.field_150350_a, false);
-                            this.func_151549_a(p_74875_1_, p_74875_3_, 2, 2, k, 2, 2, k, Blocks.field_150344_f, Blocks.field_150350_a, false);
+                            this.func_151549_a(p_74875_1_, p_74875_3_, 0, 2, k, 0, 2, k, Blocks.PLANKS, Blocks.AIR, false);
+                            this.func_151549_a(p_74875_1_, p_74875_3_, 2, 2, k, 2, 2, k, Blocks.PLANKS, Blocks.AIR, false);
                         }
                         else
                         {
-                            this.func_151549_a(p_74875_1_, p_74875_3_, 0, 2, k, 2, 2, k, Blocks.field_150344_f, Blocks.field_150350_a, false);
+                            this.func_151549_a(p_74875_1_, p_74875_3_, 0, 2, k, 2, 2, k, Blocks.PLANKS, Blocks.AIR, false);
                         }
 
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.1F, 0, 2, k - 1, Blocks.field_150321_G, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.1F, 2, 2, k - 1, Blocks.field_150321_G, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.1F, 0, 2, k + 1, Blocks.field_150321_G, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.1F, 2, 2, k + 1, Blocks.field_150321_G, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 0, 2, k - 2, Blocks.field_150321_G, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 2, 2, k - 2, Blocks.field_150321_G, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 0, 2, k + 2, Blocks.field_150321_G, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 2, 2, k + 2, Blocks.field_150321_G, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 1, 2, k - 1, Blocks.field_150478_aa, 0);
-                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 1, 2, k + 1, Blocks.field_150478_aa, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.1F, 0, 2, k - 1, Blocks.WEB, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.1F, 2, 2, k - 1, Blocks.WEB, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.1F, 0, 2, k + 1, Blocks.WEB, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.1F, 2, 2, k + 1, Blocks.WEB, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 0, 2, k - 2, Blocks.WEB, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 2, 2, k - 2, Blocks.WEB, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 0, 2, k + 2, Blocks.WEB, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 2, 2, k + 2, Blocks.WEB, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 1, 2, k - 1, Blocks.TORCH, 0);
+                        this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.05F, 1, 2, k + 1, Blocks.TORCH, 0);
 
                         if (p_74875_2_.nextInt(100) == 0)
                         {
@@ -369,7 +369,7 @@ public class StructureMineshaftPieces
                             if (p_74875_3_.func_78890_b(j1, l, i1))
                             {
                                 this.field_74957_c = true;
-                                p_74875_1_.func_147465_d(j1, l, i1, Blocks.field_150474_ac, 0, 2);
+                                p_74875_1_.func_147465_d(j1, l, i1, Blocks.MOB_SPAWNER, 0, 2);
                                 TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)p_74875_1_.func_147438_o(j1, l, i1);
 
                                 if (tileentitymobspawner != null)
@@ -390,7 +390,7 @@ public class StructureMineshaftPieces
                             if (block1.func_149688_o() == Material.field_151579_a)
                             {
                                 byte b1 = -1;
-                                this.func_151550_a(p_74875_1_, Blocks.field_150344_f, 0, j, b1, k, p_74875_3_);
+                                this.func_151550_a(p_74875_1_, Blocks.PLANKS, 0, j, b1, k, p_74875_3_);
                             }
                         }
                     }
@@ -403,7 +403,7 @@ public class StructureMineshaftPieces
 
                             if (block.func_149688_o() != Material.field_151579_a && block.func_149730_j())
                             {
-                                this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.7F, 1, 0, j, Blocks.field_150448_aq, this.func_151555_a(Blocks.field_150448_aq, 0));
+                                this.func_151552_a(p_74875_1_, p_74875_3_, p_74875_2_, 0.7F, 1, 0, j, Blocks.RAIL, this.func_151555_a(Blocks.RAIL, 0));
                             }
                         }
                     }
@@ -537,22 +537,22 @@ public class StructureMineshaftPieces
                 {
                     if (this.field_74952_b)
                     {
-                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78895_b + 3 - 1, this.field_74887_e.field_78892_f, Blocks.field_150350_a, Blocks.field_150350_a, false);
-                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d, this.field_74887_e.field_78895_b + 3 - 1, this.field_74887_e.field_78892_f - 1, Blocks.field_150350_a, Blocks.field_150350_a, false);
-                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78894_e - 2, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f, Blocks.field_150350_a, Blocks.field_150350_a, false);
-                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78894_e - 2, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f - 1, Blocks.field_150350_a, Blocks.field_150350_a, false);
-                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b + 3, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78895_b + 3, this.field_74887_e.field_78892_f - 1, Blocks.field_150350_a, Blocks.field_150350_a, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78895_b + 3 - 1, this.field_74887_e.field_78892_f, Blocks.AIR, Blocks.AIR, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d, this.field_74887_e.field_78895_b + 3 - 1, this.field_74887_e.field_78892_f - 1, Blocks.AIR, Blocks.AIR, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78894_e - 2, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f, Blocks.AIR, Blocks.AIR, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78894_e - 2, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f - 1, Blocks.AIR, Blocks.AIR, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b + 3, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78895_b + 3, this.field_74887_e.field_78892_f - 1, Blocks.AIR, Blocks.AIR, false);
                     }
                     else
                     {
-                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f, Blocks.field_150350_a, Blocks.field_150350_a, false);
-                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f - 1, Blocks.field_150350_a, Blocks.field_150350_a, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f, Blocks.AIR, Blocks.AIR, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f - 1, Blocks.AIR, Blocks.AIR, false);
                     }
 
-                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78896_c + 1, Blocks.field_150344_f, Blocks.field_150350_a, false);
-                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78892_f - 1, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f - 1, Blocks.field_150344_f, Blocks.field_150350_a, false);
-                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78896_c + 1, Blocks.field_150344_f, Blocks.field_150350_a, false);
-                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78892_f - 1, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f - 1, Blocks.field_150344_f, Blocks.field_150350_a, false);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78896_c + 1, Blocks.PLANKS, Blocks.AIR, false);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78892_f - 1, this.field_74887_e.field_78897_a + 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f - 1, Blocks.PLANKS, Blocks.AIR, false);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c + 1, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78896_c + 1, Blocks.PLANKS, Blocks.AIR, false);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78895_b, this.field_74887_e.field_78892_f - 1, this.field_74887_e.field_78893_d - 1, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f - 1, Blocks.PLANKS, Blocks.AIR, false);
 
                     for (int i = this.field_74887_e.field_78897_a; i <= this.field_74887_e.field_78893_d; ++i)
                     {
@@ -560,7 +560,7 @@ public class StructureMineshaftPieces
                         {
                             if (this.func_151548_a(p_74875_1_, i, this.field_74887_e.field_78895_b - 1, j, p_74875_3_).func_149688_o() == Material.field_151579_a)
                             {
-                                this.func_151550_a(p_74875_1_, Blocks.field_150344_f, 0, i, this.field_74887_e.field_78895_b - 1, j, p_74875_3_);
+                                this.func_151550_a(p_74875_1_, Blocks.PLANKS, 0, i, this.field_74887_e.field_78895_b - 1, j, p_74875_3_);
                             }
                         }
                     }
@@ -678,17 +678,17 @@ public class StructureMineshaftPieces
                 }
                 else
                 {
-                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d, this.field_74887_e.field_78895_b, this.field_74887_e.field_78892_f, Blocks.field_150346_d, Blocks.field_150350_a, true);
-                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b + 1, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d, Math.min(this.field_74887_e.field_78895_b + 3, this.field_74887_e.field_78894_e), this.field_74887_e.field_78892_f, Blocks.field_150350_a, Blocks.field_150350_a, false);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d, this.field_74887_e.field_78895_b, this.field_74887_e.field_78892_f, Blocks.DIRT, Blocks.AIR, true);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b + 1, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d, Math.min(this.field_74887_e.field_78895_b + 3, this.field_74887_e.field_78894_e), this.field_74887_e.field_78892_f, Blocks.AIR, Blocks.AIR, false);
                     Iterator iterator = this.field_74949_a.iterator();
 
                     while (iterator.hasNext())
                     {
                         StructureBoundingBox structureboundingbox1 = (StructureBoundingBox)iterator.next();
-                        this.func_151549_a(p_74875_1_, p_74875_3_, structureboundingbox1.field_78897_a, structureboundingbox1.field_78894_e - 2, structureboundingbox1.field_78896_c, structureboundingbox1.field_78893_d, structureboundingbox1.field_78894_e, structureboundingbox1.field_78892_f, Blocks.field_150350_a, Blocks.field_150350_a, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, structureboundingbox1.field_78897_a, structureboundingbox1.field_78894_e - 2, structureboundingbox1.field_78896_c, structureboundingbox1.field_78893_d, structureboundingbox1.field_78894_e, structureboundingbox1.field_78892_f, Blocks.AIR, Blocks.AIR, false);
                     }
 
-                    this.func_151547_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b + 4, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f, Blocks.field_150350_a, false);
+                    this.func_151547_a(p_74875_1_, p_74875_3_, this.field_74887_e.field_78897_a, this.field_74887_e.field_78895_b + 4, this.field_74887_e.field_78896_c, this.field_74887_e.field_78893_d, this.field_74887_e.field_78894_e, this.field_74887_e.field_78892_f, Blocks.AIR, false);
                     return true;
                 }
             }
@@ -789,12 +789,12 @@ public class StructureMineshaftPieces
                 }
                 else
                 {
-                    this.func_151549_a(p_74875_1_, p_74875_3_, 0, 5, 0, 2, 7, 1, Blocks.field_150350_a, Blocks.field_150350_a, false);
-                    this.func_151549_a(p_74875_1_, p_74875_3_, 0, 0, 7, 2, 2, 8, Blocks.field_150350_a, Blocks.field_150350_a, false);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, 0, 5, 0, 2, 7, 1, Blocks.AIR, Blocks.AIR, false);
+                    this.func_151549_a(p_74875_1_, p_74875_3_, 0, 0, 7, 2, 2, 8, Blocks.AIR, Blocks.AIR, false);
 
                     for (int i = 0; i < 5; ++i)
                     {
-                        this.func_151549_a(p_74875_1_, p_74875_3_, 0, 5 - i - (i < 4 ? 1 : 0), 2 + i, 2, 7 - i, 2 + i, Blocks.field_150350_a, Blocks.field_150350_a, false);
+                        this.func_151549_a(p_74875_1_, p_74875_3_, 0, 5 - i - (i < 4 ? 1 : 0), 2 + i, 2, 7 - i, 2 + i, Blocks.AIR, Blocks.AIR, false);
                     }
 
                     return true;

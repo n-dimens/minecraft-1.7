@@ -27,7 +27,7 @@ public class BlockWorkbench extends Block
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return p_149691_1_ == 1 ? this.field_150035_a : (p_149691_1_ == 0 ? Blocks.field_150344_f.func_149733_h(p_149691_1_) : (p_149691_1_ != 2 && p_149691_1_ != 4 ? this.field_149761_L : this.field_150034_b));
+        return p_149691_1_ == 1 ? this.field_150035_a : (p_149691_1_ == 0 ? Blocks.PLANKS.func_149733_h(p_149691_1_) : (p_149691_1_ != 2 && p_149691_1_ != 4 ? this.field_149761_L : this.field_150034_b));
     }
 
     @SideOnly(Side.CLIENT)

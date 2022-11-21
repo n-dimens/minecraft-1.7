@@ -627,7 +627,7 @@ public class ItemRenderer
         for (int i = 0; i < 2; ++i)
         {
             GL11.glPushMatrix();
-            IIcon iicon = Blocks.field_150480_ab.func_149840_c(1);
+            IIcon iicon = Blocks.FIRE.func_149840_c(1);
             this.field_78455_a.func_110434_K().func_110577_a(TextureMap.field_110575_b);
             float f2 = iicon.func_94209_e();
             float f3 = iicon.func_94212_f();

@@ -307,7 +307,7 @@ public abstract class EntityMinecart extends Entity
                 int j = this.field_70170_p.func_72805_g(l, i, i1);
                 this.func_145821_a(l, i, i1, d0, d2, block, j);
 
-                if (block == Blocks.field_150408_cc)
+                if (block == Blocks.ACTIVATOR_RAIL)
                 {
                     this.func_96095_a(l, i, i1, (j & 8) != 0);
                 }
@@ -417,7 +417,7 @@ public abstract class EntityMinecart extends Entity
         boolean flag = false;
         boolean flag1 = false;
 
-        if (p_145821_8_ == Blocks.field_150318_D)
+        if (p_145821_8_ == Blocks.GOLDEN_RAIL)
         {
             flag = (p_145821_9_ & 8) != 0;
             flag1 = !flag;
@@ -995,7 +995,7 @@ public abstract class EntityMinecart extends Entity
 
     public Block func_145817_o()
     {
-        return Blocks.field_150350_a;
+        return Blocks.AIR;
     }
 
     public int func_94098_o()

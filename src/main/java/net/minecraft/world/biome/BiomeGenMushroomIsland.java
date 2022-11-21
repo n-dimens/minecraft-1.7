@@ -15,7 +15,7 @@ public class BiomeGenMushroomIsland extends BiomeGenBase
         this.field_76760_I.field_76803_B = -100;
         this.field_76760_I.field_76798_D = 1;
         this.field_76760_I.field_76807_J = 1;
-        this.field_76752_A = Blocks.field_150391_bh;
+        this.field_76752_A = Blocks.MYCELIUM;
         this.field_76761_J.clear();
         this.field_76762_K.clear();
         this.field_76755_L.clear();

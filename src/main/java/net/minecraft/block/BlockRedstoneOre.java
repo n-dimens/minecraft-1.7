@@ -56,17 +56,17 @@ public class BlockRedstoneOre extends Block
     {
         this.func_150186_m(p_150185_1_, p_150185_2_, p_150185_3_, p_150185_4_);
 
-        if (this == Blocks.field_150450_ax)
+        if (this == Blocks.REDSTONE_ORE)
         {
-            p_150185_1_.func_147449_b(p_150185_2_, p_150185_3_, p_150185_4_, Blocks.field_150439_ay);
+            p_150185_1_.func_147449_b(p_150185_2_, p_150185_3_, p_150185_4_, Blocks.LIT_REDSTONE_ORE);
         }
     }
 
     public void func_149674_a(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_)
     {
-        if (this == Blocks.field_150439_ay)
+        if (this == Blocks.LIT_REDSTONE_ORE)
         {
-            p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.field_150450_ax);
+            p_149674_1_.func_147449_b(p_149674_2_, p_149674_3_, p_149674_4_, Blocks.REDSTONE_ORE);
         }
     }
 
@@ -155,6 +155,6 @@ public class BlockRedstoneOre extends Block
 
     protected ItemStack func_149644_j(int p_149644_1_)
     {
-        return new ItemStack(Blocks.field_150450_ax);
+        return new ItemStack(Blocks.REDSTONE_ORE);
     }
 }

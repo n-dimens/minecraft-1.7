@@ -161,7 +161,7 @@ public class BlockPane extends Block
 
     public final boolean func_150098_a(Block p_150098_1_)
     {
-        return p_150098_1_.func_149730_j() || p_150098_1_ == this || p_150098_1_ == Blocks.field_150359_w || p_150098_1_ == Blocks.field_150399_cn || p_150098_1_ == Blocks.field_150397_co || p_150098_1_ instanceof BlockPane;
+        return p_150098_1_.func_149730_j() || p_150098_1_ == this || p_150098_1_ == Blocks.GLASS || p_150098_1_ == Blocks.STAINED_GLASS || p_150098_1_ == Blocks.STAINED_GLASS_PANE || p_150098_1_ instanceof BlockPane;
     }
 
     @SideOnly(Side.CLIENT)

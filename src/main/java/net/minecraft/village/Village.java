@@ -386,7 +386,7 @@ public class Village
 
     private boolean func_75574_f(int p_75574_1_, int p_75574_2_, int p_75574_3_)
     {
-        return this.field_75586_a.func_147439_a(p_75574_1_, p_75574_2_, p_75574_3_) == Blocks.field_150466_ao;
+        return this.field_75586_a.func_147439_a(p_75574_1_, p_75574_2_, p_75574_3_) == Blocks.WOODEN_DOOR;
     }
 
     private void func_75573_l()

@@ -69,12 +69,12 @@ public class WorldGenCanopyTree extends WorldGenAbstractTree
             {
                 Block block2 = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ - 1, p_76484_5_);
 
-                if ((block2 == Blocks.field_150349_c || block2 == Blocks.field_150346_d) && p_76484_4_ < 256 - l - 1)
+                if ((block2 == Blocks.GRASS || block2 == Blocks.DIRT) && p_76484_4_ < 256 - l - 1)
                 {
-                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, Blocks.field_150346_d);
-                    this.func_150515_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ - 1, p_76484_5_, Blocks.field_150346_d);
-                    this.func_150515_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ - 1, p_76484_5_ + 1, Blocks.field_150346_d);
-                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_ + 1, Blocks.field_150346_d);
+                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, Blocks.DIRT);
+                    this.func_150515_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ - 1, p_76484_5_, Blocks.DIRT);
+                    this.func_150515_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ - 1, p_76484_5_ + 1, Blocks.DIRT);
+                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_ + 1, Blocks.DIRT);
                     int j3 = p_76484_2_.nextInt(4);
                     j1 = l - p_76484_2_.nextInt(4);
                     k1 = 2 - p_76484_2_.nextInt(3);
@@ -99,10 +99,10 @@ public class WorldGenCanopyTree extends WorldGenAbstractTree
 
                         if (block1.func_149688_o() == Material.field_151579_a || block1.func_149688_o() == Material.field_151584_j)
                         {
-                            this.func_150516_a(p_76484_1_, k3, k2, l1, Blocks.field_150363_s, 1);
-                            this.func_150516_a(p_76484_1_, k3 + 1, k2, l1, Blocks.field_150363_s, 1);
-                            this.func_150516_a(p_76484_1_, k3, k2, l1 + 1, Blocks.field_150363_s, 1);
-                            this.func_150516_a(p_76484_1_, k3 + 1, k2, l1 + 1, Blocks.field_150363_s, 1);
+                            this.func_150516_a(p_76484_1_, k3, k2, l1, Blocks.LOG_2, 1);
+                            this.func_150516_a(p_76484_1_, k3 + 1, k2, l1, Blocks.LOG_2, 1);
+                            this.func_150516_a(p_76484_1_, k3, k2, l1 + 1, Blocks.LOG_2, 1);
+                            this.func_150516_a(p_76484_1_, k3 + 1, k2, l1 + 1, Blocks.LOG_2, 1);
                             i2 = k2;
                         }
                     }
@@ -158,7 +158,7 @@ public class WorldGenCanopyTree extends WorldGenAbstractTree
 
                                 for (l2 = 0; l2 < l3; ++l2)
                                 {
-                                    this.func_150516_a(p_76484_1_, p_76484_3_ + j2, i2 - l2 - 1, p_76484_5_ + k2, Blocks.field_150363_s, 1);
+                                    this.func_150516_a(p_76484_1_, p_76484_3_ + j2, i2 - l2 - 1, p_76484_5_ + k2, Blocks.LOG_2, 1);
                                 }
 
                                 int i3;
@@ -205,7 +205,7 @@ public class WorldGenCanopyTree extends WorldGenAbstractTree
 
         if (block.func_149688_o() == Material.field_151579_a)
         {
-            this.func_150516_a(p_150526_1_, p_150526_2_, p_150526_3_, p_150526_4_, Blocks.field_150361_u, 1);
+            this.func_150516_a(p_150526_1_, p_150526_2_, p_150526_3_, p_150526_4_, Blocks.LEAVES_2, 1);
         }
     }
 }

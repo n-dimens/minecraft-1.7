@@ -69,9 +69,9 @@ public class WorldGenSavannaTree extends WorldGenAbstractTree
             {
                 Block block3 = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ - 1, p_76484_5_);
 
-                if ((block3 == Blocks.field_150349_c || block3 == Blocks.field_150346_d) && p_76484_4_ < 256 - l - 1)
+                if ((block3 == Blocks.GRASS || block3 == Blocks.DIRT) && p_76484_4_ < 256 - l - 1)
                 {
-                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, Blocks.field_150346_d);
+                    this.func_150515_a(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, Blocks.DIRT);
                     int j3 = p_76484_2_.nextInt(4);
                     j1 = l - p_76484_2_.nextInt(4) - 1;
                     k1 = 3 - p_76484_2_.nextInt(3);
@@ -96,7 +96,7 @@ public class WorldGenSavannaTree extends WorldGenAbstractTree
 
                         if (block1.func_149688_o() == Material.field_151579_a || block1.func_149688_o() == Material.field_151584_j)
                         {
-                            this.func_150516_a(p_76484_1_, k3, k2, l1, Blocks.field_150363_s, 0);
+                            this.func_150516_a(p_76484_1_, k3, k2, l1, Blocks.LOG_2, 0);
                             i2 = k2;
                         }
                     }
@@ -148,7 +148,7 @@ public class WorldGenSavannaTree extends WorldGenAbstractTree
 
                                 if (block2.func_149688_o() == Material.field_151579_a || block2.func_149688_o() == Material.field_151584_j)
                                 {
-                                    this.func_150516_a(p_76484_1_, k3, i3, l1, Blocks.field_150363_s, 0);
+                                    this.func_150516_a(p_76484_1_, k3, i3, l1, Blocks.LOG_2, 0);
                                     i2 = i3;
                                 }
                             }
@@ -199,7 +199,7 @@ public class WorldGenSavannaTree extends WorldGenAbstractTree
 
         if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
         {
-            this.func_150516_a(p_150525_1_, p_150525_2_, p_150525_3_, p_150525_4_, Blocks.field_150361_u, 0);
+            this.func_150516_a(p_150525_1_, p_150525_2_, p_150525_3_, p_150525_4_, Blocks.LEAVES_2, 0);
         }
     }
 }

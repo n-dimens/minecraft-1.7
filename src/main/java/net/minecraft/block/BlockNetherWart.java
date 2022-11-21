@@ -28,7 +28,7 @@ public class BlockNetherWart extends BlockBush
 
     protected boolean func_149854_a(Block p_149854_1_)
     {
-        return p_149854_1_ == Blocks.field_150425_aM;
+        return p_149854_1_ == Blocks.SOUL_SAND;
     }
 
     public boolean func_149718_j(World p_149718_1_, int p_149718_2_, int p_149718_3_, int p_149718_4_)

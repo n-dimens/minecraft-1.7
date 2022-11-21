@@ -31,7 +31,7 @@ public class EntityAIEatGrass extends EntityAIBase
             int i = MathHelper.func_76128_c(this.field_151500_b.field_70165_t);
             int j = MathHelper.func_76128_c(this.field_151500_b.field_70163_u);
             int k = MathHelper.func_76128_c(this.field_151500_b.field_70161_v);
-            return this.field_151501_c.func_147439_a(i, j, k) == Blocks.field_150329_H && this.field_151501_c.func_72805_g(i, j, k) == 1 ? true : this.field_151501_c.func_147439_a(i, j - 1, k) == Blocks.field_150349_c;
+            return this.field_151501_c.func_147439_a(i, j, k) == Blocks.TALLGRASS && this.field_151501_c.func_72805_g(i, j, k) == 1 ? true : this.field_151501_c.func_147439_a(i, j - 1, k) == Blocks.GRASS;
         }
     }
 
@@ -67,7 +67,7 @@ public class EntityAIEatGrass extends EntityAIBase
             int j = MathHelper.func_76128_c(this.field_151500_b.field_70163_u);
             int k = MathHelper.func_76128_c(this.field_151500_b.field_70161_v);
 
-            if (this.field_151501_c.func_147439_a(i, j, k) == Blocks.field_150329_H)
+            if (this.field_151501_c.func_147439_a(i, j, k) == Blocks.TALLGRASS)
             {
                 if (this.field_151501_c.func_82736_K().getBooleanValue("mobGriefing"))
                 {
@@ -76,12 +76,12 @@ public class EntityAIEatGrass extends EntityAIBase
 
                 this.field_151500_b.func_70615_aA();
             }
-            else if (this.field_151501_c.func_147439_a(i, j - 1, k) == Blocks.field_150349_c)
+            else if (this.field_151501_c.func_147439_a(i, j - 1, k) == Blocks.GRASS)
             {
                 if (this.field_151501_c.func_82736_K().getBooleanValue("mobGriefing"))
                 {
-                    this.field_151501_c.func_72926_e(2001, i, j - 1, k, Block.func_149682_b(Blocks.field_150349_c));
-                    this.field_151501_c.func_147465_d(i, j - 1, k, Blocks.field_150346_d, 0, 2);
+                    this.field_151501_c.func_72926_e(2001, i, j - 1, k, Block.func_149682_b(Blocks.GRASS));
+                    this.field_151501_c.func_147465_d(i, j - 1, k, Blocks.DIRT, 0, 2);
                 }
 
                 this.field_151500_b.func_70615_aA();

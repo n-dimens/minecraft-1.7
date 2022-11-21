@@ -32,7 +32,7 @@ public class BlockCrops extends BlockBush implements IGrowable
 
     protected boolean func_149854_a(Block p_149854_1_)
     {
-        return p_149854_1_ == Blocks.field_150458_ak;
+        return p_149854_1_ == Blocks.FARMLAND;
     }
 
     public void func_149674_a(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_)
@@ -89,7 +89,7 @@ public class BlockCrops extends BlockBush implements IGrowable
             {
                 float f1 = 0.0F;
 
-                if (p_149864_1_.func_147439_a(l, p_149864_3_ - 1, i1) == Blocks.field_150458_ak)
+                if (p_149864_1_.func_147439_a(l, p_149864_3_ - 1, i1) == Blocks.FARMLAND)
                 {
                     f1 = 1.0F;
 

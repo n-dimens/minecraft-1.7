@@ -70,11 +70,11 @@ public class WorldGenDungeons extends WorldGenerator
                         {
                             if (l1 == p_76484_4_ - 1 && p_76484_2_.nextInt(4) != 0)
                             {
-                                p_76484_1_.func_147465_d(k1, l1, i2, Blocks.field_150341_Y, 0, 2);
+                                p_76484_1_.func_147465_d(k1, l1, i2, Blocks.MOSSY_COBBLESTONE, 0, 2);
                             }
                             else
                             {
-                                p_76484_1_.func_147465_d(k1, l1, i2, Blocks.field_150347_e, 0, 2);
+                                p_76484_1_.func_147465_d(k1, l1, i2, Blocks.COBBLESTONE, 0, 2);
                             }
                         }
                     }
@@ -122,7 +122,7 @@ public class WorldGenDungeons extends WorldGenerator
 
                                 if (k2 == 1)
                                 {
-                                    p_76484_1_.func_147465_d(i2, p_76484_4_, j2, Blocks.field_150486_ae, 0, 2);
+                                    p_76484_1_.func_147465_d(i2, p_76484_4_, j2, Blocks.CHEST, 0, 2);
                                     WeightedRandomChestContent[] aweightedrandomchestcontent = WeightedRandomChestContent.func_92080_a(field_111189_a, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_76484_2_)});
                                     TileEntityChest tileentitychest = (TileEntityChest)p_76484_1_.func_147438_o(i2, p_76484_4_, j2);
 
@@ -145,7 +145,7 @@ public class WorldGenDungeons extends WorldGenerator
                 }
             }
 
-            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_, Blocks.field_150474_ac, 0, 2);
+            p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_, Blocks.MOB_SPAWNER, 0, 2);
             TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner)p_76484_1_.func_147438_o(p_76484_3_, p_76484_4_, p_76484_5_);
 
             if (tileentitymobspawner != null)

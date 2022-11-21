@@ -103,7 +103,7 @@ public class EntityEnderman extends EntityMob
     {
         ItemStack itemstack = p_70821_1_.field_71071_by.field_70460_b[3];
 
-        if (itemstack != null && itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150423_aK))
+        if (itemstack != null && itemstack.func_77973_b() == Item.func_150898_a(Blocks.PUMPKIN))
         {
             return false;
         }
@@ -158,7 +158,7 @@ public class EntityEnderman extends EntityMob
                     {
                         this.func_146081_a(block);
                         this.func_70817_b(this.field_70170_p.func_72805_g(k, i, j));
-                        this.field_70170_p.func_147449_b(k, i, j, Blocks.field_150350_a);
+                        this.field_70170_p.func_147449_b(k, i, j, Blocks.AIR);
                     }
                 }
             }
@@ -173,7 +173,7 @@ public class EntityEnderman extends EntityMob
                 if (block.func_149688_o() == Material.field_151579_a && block1.func_149688_o() != Material.field_151579_a && block1.func_149686_d())
                 {
                     this.field_70170_p.func_147465_d(k, i, j, this.func_146080_bZ(), this.func_70824_q(), 3);
-                    this.func_146081_a(Blocks.field_150350_a);
+                    this.func_146081_a(Blocks.AIR);
                 }
             }
         }
@@ -436,19 +436,19 @@ public class EntityEnderman extends EntityMob
 
     static
     {
-        field_70827_d[Block.func_149682_b(Blocks.field_150349_c)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150346_d)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150354_m)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150351_n)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150327_N)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150328_O)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150338_P)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150337_Q)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150335_W)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150434_aF)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150435_aG)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150423_aK)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150440_ba)] = true;
-        field_70827_d[Block.func_149682_b(Blocks.field_150391_bh)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.GRASS)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.DIRT)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.SAND)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.GRAVEL)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.YELLOW_FLOWER)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.RED_FLOWER)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.BROWN_MUSHROOM)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.RED_MUSHROOM)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.TNT)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.CACTUS)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.CLAY)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.PUMPKIN)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.MELON_BLOCK)] = true;
+        field_70827_d[Block.func_149682_b(Blocks.MYCELIUM)] = true;
     }
 }

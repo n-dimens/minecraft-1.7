@@ -141,7 +141,7 @@ public class BlockBed extends BlockDirectional
     {
         if (p_149691_1_ == 0)
         {
-            return Blocks.field_150344_f.func_149733_h(p_149691_1_);
+            return Blocks.PLANKS.func_149733_h(p_149691_1_);
         }
         else
         {

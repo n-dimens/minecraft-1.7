@@ -119,11 +119,11 @@ public class ItemMap extends ItemMapBase
 
                                     if ((j4 >> 20 & 1) == 0)
                                     {
-                                        hashmultiset.add(Blocks.field_150346_d.func_149728_f(0), 10);
+                                        hashmultiset.add(Blocks.DIRT.func_149728_f(0), 10);
                                     }
                                     else
                                     {
-                                        hashmultiset.add(Blocks.field_150348_b.func_149728_f(0), 100);
+                                        hashmultiset.add(Blocks.STONE.func_149728_f(0), 100);
                                     }
 
                                     d1 = 100.0D;
@@ -135,7 +135,7 @@ public class ItemMap extends ItemMapBase
                                         for (int k4 = 0; k4 < i; ++k4)
                                         {
                                             int l4 = chunk.func_76611_b(j4 + k3, k4 + l3) + 1;
-                                            Block block = Blocks.field_150350_a;
+                                            Block block = Blocks.AIR;
                                             int i5 = 0;
 
                                             if (l4 > 1)

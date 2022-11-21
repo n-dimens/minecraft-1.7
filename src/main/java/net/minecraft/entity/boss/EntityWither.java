@@ -347,7 +347,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
                                 int l = j1 + i2;
                                 Block block = this.field_70170_p.func_147439_a(j2, k, l);
 
-                                if (block.func_149688_o() != Material.field_151579_a && block != Blocks.field_150357_h && block != Blocks.field_150384_bq && block != Blocks.field_150378_br && block != Blocks.field_150483_bI)
+                                if (block.func_149688_o() != Material.field_151579_a && block != Blocks.BEDROCK && block != Blocks.END_PORTAL && block != Blocks.END_PORTAL_FRAME && block != Blocks.COMMAND_BLOCK)
                                 {
                                     flag = this.field_70170_p.func_147480_a(j2, k, l, true) || flag;
                                 }

@@ -82,7 +82,7 @@ public class TileEntityPiston extends TileEntity
             --p_145863_1_;
         }
 
-        AxisAlignedBB axisalignedbb = Blocks.field_150326_M.func_149964_a(this.field_145850_b, this.field_145851_c, this.field_145848_d, this.field_145849_e, this.field_145869_a, p_145863_1_, this.field_145874_j);
+        AxisAlignedBB axisalignedbb = Blocks.PISTON_EXTENSION.func_149964_a(this.field_145850_b, this.field_145851_c, this.field_145848_d, this.field_145849_e, this.field_145869_a, p_145863_1_, this.field_145874_j);
 
         if (axisalignedbb != null)
         {
@@ -130,7 +130,7 @@ public class TileEntityPiston extends TileEntity
             this.field_145850_b.func_147475_p(this.field_145851_c, this.field_145848_d, this.field_145849_e);
             this.func_145843_s();
 
-            if (this.field_145850_b.func_147439_a(this.field_145851_c, this.field_145848_d, this.field_145849_e) == Blocks.field_150326_M)
+            if (this.field_145850_b.func_147439_a(this.field_145851_c, this.field_145848_d, this.field_145849_e) == Blocks.PISTON_EXTENSION)
             {
                 this.field_145850_b.func_147465_d(this.field_145851_c, this.field_145848_d, this.field_145849_e, this.field_145869_a, this.field_145876_i, 3);
                 this.field_145850_b.func_147460_e(this.field_145851_c, this.field_145848_d, this.field_145849_e, this.field_145869_a);
@@ -148,7 +148,7 @@ public class TileEntityPiston extends TileEntity
             this.field_145850_b.func_147475_p(this.field_145851_c, this.field_145848_d, this.field_145849_e);
             this.func_145843_s();
 
-            if (this.field_145850_b.func_147439_a(this.field_145851_c, this.field_145848_d, this.field_145849_e) == Blocks.field_150326_M)
+            if (this.field_145850_b.func_147439_a(this.field_145851_c, this.field_145848_d, this.field_145849_e) == Blocks.PISTON_EXTENSION)
             {
                 this.field_145850_b.func_147465_d(this.field_145851_c, this.field_145848_d, this.field_145849_e, this.field_145869_a, this.field_145876_i, 3);
                 this.field_145850_b.func_147460_e(this.field_145851_c, this.field_145848_d, this.field_145849_e, this.field_145869_a);

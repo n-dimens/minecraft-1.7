@@ -48,7 +48,7 @@ public class ContainerPlayer extends Container
                 }
                 public boolean func_75214_a(ItemStack p_75214_1_)
                 {
-                    return p_75214_1_ == null ? false : (p_75214_1_.func_77973_b() instanceof ItemArmor ? ((ItemArmor)p_75214_1_.func_77973_b()).field_77881_a == k : (p_75214_1_.func_77973_b() != Item.func_150898_a(Blocks.field_150423_aK) && p_75214_1_.func_77973_b() != Items.SKULL ? false : k == 0));
+                    return p_75214_1_ == null ? false : (p_75214_1_.func_77973_b() instanceof ItemArmor ? ((ItemArmor)p_75214_1_.func_77973_b()).field_77881_a == k : (p_75214_1_.func_77973_b() != Item.func_150898_a(Blocks.PUMPKIN) && p_75214_1_.func_77973_b() != Items.SKULL ? false : k == 0));
                 }
                 @SideOnly(Side.CLIENT)
                 public IIcon func_75212_b()

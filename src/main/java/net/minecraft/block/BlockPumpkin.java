@@ -41,7 +41,7 @@ public class BlockPumpkin extends BlockDirectional
     {
         super.func_149726_b(p_149726_1_, p_149726_2_, p_149726_3_, p_149726_4_);
 
-        if (p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 1, p_149726_4_) == Blocks.field_150433_aE && p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 2, p_149726_4_) == Blocks.field_150433_aE)
+        if (p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 1, p_149726_4_) == Blocks.SNOW && p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 2, p_149726_4_) == Blocks.SNOW)
         {
             if (!p_149726_1_.field_72995_K)
             {
@@ -61,10 +61,10 @@ public class BlockPumpkin extends BlockDirectional
                 p_149726_1_.func_72869_a("snowshovel", (double)p_149726_2_ + p_149726_1_.field_73012_v.nextDouble(), (double)(p_149726_3_ - 2) + p_149726_1_.field_73012_v.nextDouble() * 2.5D, (double)p_149726_4_ + p_149726_1_.field_73012_v.nextDouble(), 0.0D, 0.0D, 0.0D);
             }
         }
-        else if (p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 1, p_149726_4_) == Blocks.field_150339_S && p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 2, p_149726_4_) == Blocks.field_150339_S)
+        else if (p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 1, p_149726_4_) == Blocks.IRON_BLOCK && p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 2, p_149726_4_) == Blocks.IRON_BLOCK)
         {
-            boolean flag = p_149726_1_.func_147439_a(p_149726_2_ - 1, p_149726_3_ - 1, p_149726_4_) == Blocks.field_150339_S && p_149726_1_.func_147439_a(p_149726_2_ + 1, p_149726_3_ - 1, p_149726_4_) == Blocks.field_150339_S;
-            boolean flag1 = p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 1, p_149726_4_ - 1) == Blocks.field_150339_S && p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 1, p_149726_4_ + 1) == Blocks.field_150339_S;
+            boolean flag = p_149726_1_.func_147439_a(p_149726_2_ - 1, p_149726_3_ - 1, p_149726_4_) == Blocks.IRON_BLOCK && p_149726_1_.func_147439_a(p_149726_2_ + 1, p_149726_3_ - 1, p_149726_4_) == Blocks.IRON_BLOCK;
+            boolean flag1 = p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 1, p_149726_4_ - 1) == Blocks.IRON_BLOCK && p_149726_1_.func_147439_a(p_149726_2_, p_149726_3_ - 1, p_149726_4_ + 1) == Blocks.IRON_BLOCK;
 
             if (flag || flag1)
             {

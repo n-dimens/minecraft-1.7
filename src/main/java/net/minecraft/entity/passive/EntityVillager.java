@@ -443,7 +443,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
                 if (this.field_70146_Z.nextFloat() < this.func_82188_j(0.5F))
                 {
-                    merchantrecipelist.add(new MerchantRecipe(new ItemStack(Blocks.field_150351_n, 10), new ItemStack(Items.EMERALD), new ItemStack(Items.FLINT, 4 + this.field_70146_Z.nextInt(2), 0)));
+                    merchantrecipelist.add(new MerchantRecipe(new ItemStack(Blocks.GRAVEL, 10), new ItemStack(Items.EMERALD), new ItemStack(Items.FLINT, 4 + this.field_70146_Z.nextInt(2), 0)));
                 }
 
                 break;
@@ -451,8 +451,8 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
                 func_146091_a(merchantrecipelist, Items.PAPER, this.field_70146_Z, this.func_82188_j(0.8F));
                 func_146091_a(merchantrecipelist, Items.BOOK, this.field_70146_Z, this.func_82188_j(0.8F));
                 func_146091_a(merchantrecipelist, Items.WRITTEN_BOOK, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.field_150342_X), this.field_70146_Z, this.func_82188_j(0.8F));
-                func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.field_150359_w), this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.BOOKSHELF), this.field_70146_Z, this.func_82188_j(0.8F));
+                func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.GLASS), this.field_70146_Z, this.func_82188_j(0.2F));
                 func_146089_b(merchantrecipelist, Items.COMPASS, this.field_70146_Z, this.func_82188_j(0.2F));
                 func_146089_b(merchantrecipelist, Items.CLOCK, this.field_70146_Z, this.func_82188_j(0.2F));
 
@@ -470,7 +470,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
                 func_146089_b(merchantrecipelist, Items.ENDER_EYE, this.field_70146_Z, this.func_82188_j(0.3F));
                 func_146089_b(merchantrecipelist, Items.EXPERIENCE_BOTTLE, this.field_70146_Z, this.func_82188_j(0.2F));
                 func_146089_b(merchantrecipelist, Items.REDSTONE, this.field_70146_Z, this.func_82188_j(0.4F));
-                func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.field_150426_aN), this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.GLOWSTONE), this.field_70146_Z, this.func_82188_j(0.3F));
                 Item[] aitem = new Item[] {Items.IRON_SWORD, Items.DIAMOND_SWORD, Items.IRON_CHESTPLATE, Items.DIAMOND_CHESTPLATE, Items.IRON_AXE, Items.DIAMOND_AXE, Items.IRON_PICKAXE, Items.DIAMOND_PICKAXE};
                 Item[] aitem1 = aitem;
                 int j = aitem.length;
@@ -708,8 +708,8 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         field_70960_bC.put(Items.MELON, new Tuple(Integer.valueOf(-8), Integer.valueOf(-4)));
         field_70960_bC.put(Items.APPLE, new Tuple(Integer.valueOf(-8), Integer.valueOf(-4)));
         field_70960_bC.put(Items.COOKIE, new Tuple(Integer.valueOf(-10), Integer.valueOf(-7)));
-        field_70960_bC.put(Item.func_150898_a(Blocks.field_150359_w), new Tuple(Integer.valueOf(-5), Integer.valueOf(-3)));
-        field_70960_bC.put(Item.func_150898_a(Blocks.field_150342_X), new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
+        field_70960_bC.put(Item.func_150898_a(Blocks.GLASS), new Tuple(Integer.valueOf(-5), Integer.valueOf(-3)));
+        field_70960_bC.put(Item.func_150898_a(Blocks.BOOKSHELF), new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
         field_70960_bC.put(Items.LEATHER_CHESTPLATE, new Tuple(Integer.valueOf(4), Integer.valueOf(5)));
         field_70960_bC.put(Items.LEATHER_BOOTS, new Tuple(Integer.valueOf(2), Integer.valueOf(4)));
         field_70960_bC.put(Items.LEATHER_HELMET, new Tuple(Integer.valueOf(2), Integer.valueOf(4)));
@@ -719,7 +719,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         field_70960_bC.put(Items.REDSTONE, new Tuple(Integer.valueOf(-4), Integer.valueOf(-1)));
         field_70960_bC.put(Items.COMPASS, new Tuple(Integer.valueOf(10), Integer.valueOf(12)));
         field_70960_bC.put(Items.CLOCK, new Tuple(Integer.valueOf(10), Integer.valueOf(12)));
-        field_70960_bC.put(Item.func_150898_a(Blocks.field_150426_aN), new Tuple(Integer.valueOf(-3), Integer.valueOf(-1)));
+        field_70960_bC.put(Item.func_150898_a(Blocks.GLOWSTONE), new Tuple(Integer.valueOf(-3), Integer.valueOf(-1)));
         field_70960_bC.put(Items.COOKED_PORKCHOP, new Tuple(Integer.valueOf(-7), Integer.valueOf(-5)));
         field_70960_bC.put(Items.COOKED_BEEF, new Tuple(Integer.valueOf(-7), Integer.valueOf(-5)));
         field_70960_bC.put(Items.COOKED_CHICKEN, new Tuple(Integer.valueOf(-8), Integer.valueOf(-6)));

@@ -23,7 +23,7 @@ public class ItemBucket extends Item
 
     public ItemStack func_77659_a(ItemStack p_77659_1_, World p_77659_2_, EntityPlayer p_77659_3_)
     {
-        boolean flag = this.field_77876_a == Blocks.field_150350_a;
+        boolean flag = this.field_77876_a == Blocks.AIR;
         MovingObjectPosition movingobjectposition = this.func_77621_a(p_77659_2_, p_77659_3_, flag);
 
         if (movingobjectposition == null)
@@ -67,7 +67,7 @@ public class ItemBucket extends Item
                 }
                 else
                 {
-                    if (this.field_77876_a == Blocks.field_150350_a)
+                    if (this.field_77876_a == Blocks.AIR)
                     {
                         return new ItemStack(Items.BUCKET);
                     }
@@ -141,7 +141,7 @@ public class ItemBucket extends Item
 
     public boolean func_77875_a(World p_77875_1_, int p_77875_2_, int p_77875_3_, int p_77875_4_)
     {
-        if (this.field_77876_a == Blocks.field_150350_a)
+        if (this.field_77876_a == Blocks.AIR)
         {
             return false;
         }
@@ -156,7 +156,7 @@ public class ItemBucket extends Item
             }
             else
             {
-                if (p_77875_1_.field_73011_w.field_76575_d && this.field_77876_a == Blocks.field_150358_i)
+                if (p_77875_1_.field_73011_w.field_76575_d && this.field_77876_a == Blocks.FLOWING_WATER)
                 {
                     p_77875_1_.func_72908_a((double)((float)p_77875_2_ + 0.5F), (double)((float)p_77875_3_ + 0.5F), (double)((float)p_77875_4_ + 0.5F), "random.fizz", 0.5F, 2.6F + (p_77875_1_.field_73012_v.nextFloat() - p_77875_1_.field_73012_v.nextFloat()) * 0.8F);
 

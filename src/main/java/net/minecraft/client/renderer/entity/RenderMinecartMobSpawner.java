@@ -17,7 +17,7 @@ public class RenderMinecartMobSpawner extends RenderMinecart
     {
         super.func_147910_a(p_147910_1_, p_147910_2_, p_147910_3_, p_147910_4_);
 
-        if (p_147910_3_ == Blocks.field_150474_ac)
+        if (p_147910_3_ == Blocks.MOB_SPAWNER)
         {
             TileEntityMobSpawnerRenderer.func_147517_a(p_147910_1_.func_98039_d(), p_147910_1_.field_70165_t, p_147910_1_.field_70163_u, p_147910_1_.field_70161_v, p_147910_2_);
         }

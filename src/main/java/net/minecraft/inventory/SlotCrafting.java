@@ -50,7 +50,7 @@ public class SlotCrafting extends Slot
         p_75208_1_.func_77980_a(this.field_75238_b.field_70170_p, this.field_75238_b, this.field_75237_g);
         this.field_75237_g = 0;
 
-        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.field_150462_ai))
+        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.CRAFTING_TABLE))
         {
             this.field_75238_b.func_71064_a(AchievementList.BUILD_WORK_BENCH, 1);
         }
@@ -60,7 +60,7 @@ public class SlotCrafting extends Slot
             this.field_75238_b.func_71064_a(AchievementList.BUILD_PICKAXE, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.field_150460_al))
+        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.FURNACE))
         {
             this.field_75238_b.func_71064_a(AchievementList.BUILD_FURNACE, 1);
         }
@@ -90,12 +90,12 @@ public class SlotCrafting extends Slot
             this.field_75238_b.func_71064_a(AchievementList.BUILD_SWORD, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.field_150381_bn))
+        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.ENCHANTING_TABLE))
         {
             this.field_75238_b.func_71064_a(AchievementList.ENCHANTMENTS, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.field_150342_X))
+        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.BOOKSHELF))
         {
             this.field_75238_b.func_71064_a(AchievementList.BOOKCASE, 1);
         }

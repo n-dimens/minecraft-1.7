@@ -161,7 +161,7 @@ public class FlatGeneratorInfo
                 l = Integer.parseInt(astring[1]);
             }
 
-            if (Block.func_149729_e(k) == Blocks.field_150350_a)
+            if (Block.func_149729_e(k) == Blocks.AIR)
             {
                 k = 0;
                 l = 0;
@@ -300,9 +300,9 @@ public class FlatGeneratorInfo
     {
         FlatGeneratorInfo flatgeneratorinfo = new FlatGeneratorInfo();
         flatgeneratorinfo.func_82647_a(BiomeGenBase.field_76772_c.field_76756_M);
-        flatgeneratorinfo.func_82650_c().add(new FlatLayerInfo(1, Blocks.field_150357_h));
-        flatgeneratorinfo.func_82650_c().add(new FlatLayerInfo(2, Blocks.field_150346_d));
-        flatgeneratorinfo.func_82650_c().add(new FlatLayerInfo(1, Blocks.field_150349_c));
+        flatgeneratorinfo.func_82650_c().add(new FlatLayerInfo(1, Blocks.BEDROCK));
+        flatgeneratorinfo.func_82650_c().add(new FlatLayerInfo(2, Blocks.DIRT));
+        flatgeneratorinfo.func_82650_c().add(new FlatLayerInfo(1, Blocks.GRASS));
         flatgeneratorinfo.func_82645_d();
         flatgeneratorinfo.func_82644_b().put("village", new HashMap());
         return flatgeneratorinfo;

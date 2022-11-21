@@ -239,7 +239,7 @@ public class BlockHopper extends BlockContainer
     @SideOnly(Side.CLIENT)
     public static IIcon func_149916_e(String p_149916_0_)
     {
-        return p_149916_0_.equals("hopper_outside") ? Blocks.field_150438_bZ.field_149921_b : (p_149916_0_.equals("hopper_inside") ? Blocks.field_150438_bZ.field_149924_N : null);
+        return p_149916_0_.equals("hopper_outside") ? Blocks.HOPPER.field_149921_b : (p_149916_0_.equals("hopper_inside") ? Blocks.HOPPER.field_149924_N : null);
     }
 
     public static TileEntityHopper func_149920_e(IBlockAccess p_149920_0_, int p_149920_1_, int p_149920_2_, int p_149920_3_)

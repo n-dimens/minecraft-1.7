@@ -290,7 +290,7 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
             {
                 random.setSeed((long)(this.field_146297_k.func_110432_I().func_148255_b().hashCode() + i2 + j3 + (j2 + i3) * 16));
                 k3 = random.nextInt(1 + j2 + i3) + (j2 + i3) / 2;
-                IIcon iicon = Blocks.field_150354_m.func_149691_a(0, 0);
+                IIcon iicon = Blocks.SAND.func_149691_a(0, 0);
 
                 if (k3 <= 37 && j2 + i3 != 35)
                 {
@@ -298,33 +298,33 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
                     {
                         if (random.nextInt(2) == 0)
                         {
-                            iicon = Blocks.field_150482_ag.func_149691_a(0, 0);
+                            iicon = Blocks.DIAMOND_ORE.func_149691_a(0, 0);
                         }
                         else
                         {
-                            iicon = Blocks.field_150450_ax.func_149691_a(0, 0);
+                            iicon = Blocks.REDSTONE_ORE.func_149691_a(0, 0);
                         }
                     }
                     else if (k3 == 10)
                     {
-                        iicon = Blocks.field_150366_p.func_149691_a(0, 0);
+                        iicon = Blocks.IRON_ORE.func_149691_a(0, 0);
                     }
                     else if (k3 == 8)
                     {
-                        iicon = Blocks.field_150365_q.func_149691_a(0, 0);
+                        iicon = Blocks.COAL_ORE.func_149691_a(0, 0);
                     }
                     else if (k3 > 4)
                     {
-                        iicon = Blocks.field_150348_b.func_149691_a(0, 0);
+                        iicon = Blocks.STONE.func_149691_a(0, 0);
                     }
                     else if (k3 > 0)
                     {
-                        iicon = Blocks.field_150346_d.func_149691_a(0, 0);
+                        iicon = Blocks.DIRT.func_149691_a(0, 0);
                     }
                 }
                 else
                 {
-                    iicon = Blocks.field_150357_h.func_149691_a(0, 0);
+                    iicon = Blocks.BEDROCK.func_149691_a(0, 0);
                 }
 
                 this.field_146297_k.func_110434_K().func_110577_a(TextureMap.field_110575_b);

@@ -25,7 +25,7 @@ public class EntityDiggingFX extends EntityFX
 
     public EntityDiggingFX func_70596_a(int p_70596_1_, int p_70596_2_, int p_70596_3_)
     {
-        if (this.field_145784_a == Blocks.field_150349_c)
+        if (this.field_145784_a == Blocks.GRASS)
         {
             return this;
         }
@@ -41,7 +41,7 @@ public class EntityDiggingFX extends EntityFX
 
     public EntityDiggingFX func_90019_g(int p_90019_1_)
     {
-        if (this.field_145784_a == Blocks.field_150349_c)
+        if (this.field_145784_a == Blocks.GRASS)
         {
             return this;
         }

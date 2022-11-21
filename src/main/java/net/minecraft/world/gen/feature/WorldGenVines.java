@@ -20,9 +20,9 @@ public class WorldGenVines extends WorldGenerator
             {
                 for (int j1 = 2; j1 <= 5; ++j1)
                 {
-                    if (Blocks.field_150395_bd.func_149707_d(p_76484_1_, p_76484_3_, p_76484_4_, p_76484_5_, j1))
+                    if (Blocks.VINE.func_149707_d(p_76484_1_, p_76484_3_, p_76484_4_, p_76484_5_, j1))
                     {
-                        p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_, Blocks.field_150395_bd, 1 << Direction.field_71579_d[Facing.field_71588_a[j1]], 2);
+                        p_76484_1_.func_147465_d(p_76484_3_, p_76484_4_, p_76484_5_, Blocks.VINE, 1 << Direction.field_71579_d[Facing.field_71588_a[j1]], 2);
                         break;
                     }
                 }

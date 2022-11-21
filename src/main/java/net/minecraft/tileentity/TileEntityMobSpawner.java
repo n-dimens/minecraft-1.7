@@ -13,7 +13,7 @@ public class TileEntityMobSpawner extends TileEntity
         private static final String __OBFID = "CL_00000361";
         public void func_98267_a(int p_98267_1_)
         {
-            TileEntityMobSpawner.this.field_145850_b.func_147452_c(TileEntityMobSpawner.this.field_145851_c, TileEntityMobSpawner.this.field_145848_d, TileEntityMobSpawner.this.field_145849_e, Blocks.field_150474_ac, p_98267_1_, 0);
+            TileEntityMobSpawner.this.field_145850_b.func_147452_c(TileEntityMobSpawner.this.field_145851_c, TileEntityMobSpawner.this.field_145848_d, TileEntityMobSpawner.this.field_145849_e, Blocks.MOB_SPAWNER, p_98267_1_, 0);
         }
         public World func_98271_a()
         {

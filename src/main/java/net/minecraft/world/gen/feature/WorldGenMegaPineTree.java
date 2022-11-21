@@ -36,7 +36,7 @@ public class WorldGenMegaPineTree extends WorldGenHugeTrees
 
                 if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                 {
-                    this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + i1, p_76484_5_, Blocks.field_150364_r, this.field_76520_b);
+                    this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + i1, p_76484_5_, Blocks.LOG, this.field_76520_b);
                 }
 
                 if (i1 < l - 1)
@@ -45,21 +45,21 @@ public class WorldGenMegaPineTree extends WorldGenHugeTrees
 
                     if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                     {
-                        this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_, Blocks.field_150364_r, this.field_76520_b);
+                        this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_, Blocks.LOG, this.field_76520_b);
                     }
 
                     block = p_76484_1_.func_147439_a(p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_ + 1);
 
                     if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                     {
-                        this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_ + 1, Blocks.field_150364_r, this.field_76520_b);
+                        this.func_150516_a(p_76484_1_, p_76484_3_ + 1, p_76484_4_ + i1, p_76484_5_ + 1, Blocks.LOG, this.field_76520_b);
                     }
 
                     block = p_76484_1_.func_147439_a(p_76484_3_, p_76484_4_ + i1, p_76484_5_ + 1);
 
                     if (block.func_149688_o() == Material.field_151579_a || block.func_149688_o() == Material.field_151584_j)
                     {
-                        this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + i1, p_76484_5_ + 1, Blocks.field_150364_r, this.field_76520_b);
+                        this.func_150516_a(p_76484_1_, p_76484_3_, p_76484_4_ + i1, p_76484_5_ + 1, Blocks.LOG, this.field_76520_b);
                     }
                 }
             }
@@ -132,9 +132,9 @@ public class WorldGenMegaPineTree extends WorldGenHugeTrees
         {
             Block block = p_150540_1_.func_147439_a(p_150540_2_, l, p_150540_4_);
 
-            if (block == Blocks.field_150349_c || block == Blocks.field_150346_d)
+            if (block == Blocks.GRASS || block == Blocks.DIRT)
             {
-                this.func_150516_a(p_150540_1_, p_150540_2_, l, p_150540_4_, Blocks.field_150346_d, 2);
+                this.func_150516_a(p_150540_1_, p_150540_2_, l, p_150540_4_, Blocks.DIRT, 2);
                 break;
             }
 

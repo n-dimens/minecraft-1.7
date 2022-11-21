@@ -21,7 +21,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Item.func_150898_a(Blocks.field_150336_V);
+            return Item.func_150898_a(Blocks.BRICK_BLOCK);
         }
     };
     public static final CreativeTabs field_78031_c = new CreativeTabs(1, "decorations")
@@ -30,7 +30,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Item.func_150898_a(Blocks.field_150398_cm);
+            return Item.func_150898_a(Blocks.DOUBLE_PLANT);
         }
         @SideOnly(Side.CLIENT)
         public int func_151243_f()
@@ -53,7 +53,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Item.func_150898_a(Blocks.field_150318_D);
+            return Item.func_150898_a(Blocks.GOLDEN_RAIL);
         }
     };
     public static final CreativeTabs field_78026_f = (new CreativeTabs(4, "misc")
@@ -125,7 +125,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Item.func_150898_a(Blocks.field_150486_ae);
+            return Item.func_150898_a(Blocks.CHEST);
         }
     }).func_78025_a("inventory.png").func_78022_j().func_78014_h();
     private final int field_78033_n;

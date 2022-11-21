@@ -51,7 +51,7 @@ public class BlockTorch extends Block
         else
         {
             Block block = p_150107_1_.func_147439_a(p_150107_2_, p_150107_3_, p_150107_4_);
-            return block == Blocks.field_150422_aJ || block == Blocks.field_150386_bk || block == Blocks.field_150359_w || block == Blocks.field_150463_bK;
+            return block == Blocks.FENCE || block == Blocks.NETHER_BRICK_FENCE || block == Blocks.GLASS || block == Blocks.COBBLESTONE_WALL;
         }
     }
 

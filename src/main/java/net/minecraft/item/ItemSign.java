@@ -58,7 +58,7 @@ public class ItemSign extends Item
             {
                 return false;
             }
-            else if (!Blocks.field_150472_an.func_149742_c(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_))
+            else if (!Blocks.STANDING_SIGN.func_149742_c(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_))
             {
                 return false;
             }
@@ -71,11 +71,11 @@ public class ItemSign extends Item
                 if (p_77648_7_ == 1)
                 {
                     int i1 = MathHelper.func_76128_c((double)((p_77648_2_.field_70177_z + 180.0F) * 16.0F / 360.0F) + 0.5D) & 15;
-                    p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.field_150472_an, i1, 3);
+                    p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.STANDING_SIGN, i1, 3);
                 }
                 else
                 {
-                    p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.field_150444_as, p_77648_7_, 3);
+                    p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.WALL_SIGN, p_77648_7_, 3);
                 }
 
                 --p_77648_1_.field_77994_a;

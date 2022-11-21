@@ -31,7 +31,7 @@ public class RenderSnowMan extends RenderLiving
     protected void func_77029_c(EntitySnowman p_77029_1_, float p_77029_2_)
     {
         super.func_77029_c(p_77029_1_, p_77029_2_);
-        ItemStack itemstack = new ItemStack(Blocks.field_150423_aK, 1);
+        ItemStack itemstack = new ItemStack(Blocks.PUMPKIN, 1);
 
         if (itemstack.func_77973_b() instanceof ItemBlock)
         {

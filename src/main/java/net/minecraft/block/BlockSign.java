@@ -33,7 +33,7 @@ public class BlockSign extends BlockContainer
     @SideOnly(Side.CLIENT)
     public IIcon func_149691_a(int p_149691_1_, int p_149691_2_)
     {
-        return Blocks.field_150344_f.func_149733_h(p_149691_1_);
+        return Blocks.PLANKS.func_149733_h(p_149691_1_);
     }
 
     public AxisAlignedBB func_149668_a(World p_149668_1_, int p_149668_2_, int p_149668_3_, int p_149668_4_)

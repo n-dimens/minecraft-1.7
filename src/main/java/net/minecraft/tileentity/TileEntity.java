@@ -130,7 +130,7 @@ public class TileEntity
             this.field_145847_g = this.field_145850_b.func_72805_g(this.field_145851_c, this.field_145848_d, this.field_145849_e);
             this.field_145850_b.func_147476_b(this.field_145851_c, this.field_145848_d, this.field_145849_e, this);
 
-            if (this.func_145838_q() != Blocks.field_150350_a)
+            if (this.func_145838_q() != Blocks.AIR)
             {
                 this.field_145850_b.func_147453_f(this.field_145851_c, this.field_145848_d, this.field_145849_e, this.func_145838_q());
             }
