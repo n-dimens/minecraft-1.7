@@ -14,8 +14,8 @@ public class AchievementList
     public static int field_76009_c;
     public static int field_76006_d;
     public static List field_76007_e = new ArrayList();
-    public static Achievement field_76004_f = (new Achievement("achievement.openInventory", "openInventory", 0, 0, Items.field_151122_aG, (Achievement)null)).func_75966_h().func_75971_g();
-    public static Achievement field_76005_g = (new Achievement("achievement.mineWood", "mineWood", 2, 1, Blocks.field_150364_r, field_76004_f)).func_75971_g();
+    public static Achievement OpenInventory = (new Achievement("achievement.openInventory", "openInventory", 0, 0, Items.field_151122_aG, (Achievement)null)).func_75966_h().func_75971_g();
+    public static Achievement field_76005_g = (new Achievement("achievement.mineWood", "mineWood", 2, 1, Blocks.field_150364_r, OpenInventory)).func_75971_g();
     public static Achievement field_76017_h = (new Achievement("achievement.buildWorkBench", "buildWorkBench", 4, -1, Blocks.field_150462_ai, field_76005_g)).func_75971_g();
     public static Achievement field_76018_i = (new Achievement("achievement.buildPickaxe", "buildPickaxe", 4, 2, Items.field_151039_o, field_76017_h)).func_75971_g();
     public static Achievement field_76015_j = (new Achievement("achievement.buildFurnace", "buildFurnace", 3, 4, Blocks.field_150460_al, field_76018_i)).func_75971_g();

@@ -235,9 +235,9 @@ public class EntityRenderer implements IResourceManagerReloadListener
         float f;
         float f1;
 
-        if (this.field_78531_r.field_71474_y.field_74326_T)
+        if (this.field_78531_r.gameSettings.field_74326_T)
         {
-            f = this.field_78531_r.field_71474_y.field_74341_c * 0.6F + 0.2F;
+            f = this.field_78531_r.gameSettings.field_74341_c * 0.6F + 0.2F;
             f1 = f * f * f * 8.0F;
             this.field_78498_J = this.field_78527_v.func_76333_a(this.field_78496_H, 0.05F * f1);
             this.field_78499_K = this.field_78526_w.func_76333_a(this.field_78497_I, 0.05F * f1);
@@ -252,7 +252,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
         }
 
         f = this.field_78531_r.field_71441_e.func_72801_o(MathHelper.func_76128_c(this.field_78531_r.field_71451_h.field_70165_t), MathHelper.func_76128_c(this.field_78531_r.field_71451_h.field_70163_u), MathHelper.func_76128_c(this.field_78531_r.field_71451_h.field_70161_v));
-        f1 = (float)this.field_78531_r.field_71474_y.field_151451_c / 16.0F;
+        f1 = (float)this.field_78531_r.gameSettings.field_151451_c / 16.0F;
         float f2 = f * (1.0F - f1) + f1;
         this.field_78539_ae += (f2 - this.field_78539_ae) * 0.1F;
         ++this.field_78529_t;
@@ -421,7 +421,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
             if (p_78481_2_)
             {
-                f1 = this.field_78531_r.field_71474_y.field_74334_X;
+                f1 = this.field_78531_r.gameSettings.field_74334_X;
                 f1 *= this.field_78506_S + (this.field_78507_R - this.field_78506_S) * p_78481_1_;
             }
 
@@ -495,7 +495,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             f1 = (float)((double)f1 + 1.0D);
             GL11.glTranslatef(0.0F, 0.3F, 0.0F);
 
-            if (!this.field_78531_r.field_71474_y.field_74325_U)
+            if (!this.field_78531_r.gameSettings.field_74325_U)
             {
                 Block block = this.field_78531_r.field_71441_e.func_147439_a(MathHelper.func_76128_c(entitylivingbase.field_70165_t), MathHelper.func_76128_c(entitylivingbase.field_70163_u), MathHelper.func_76128_c(entitylivingbase.field_70161_v));
 
@@ -510,13 +510,13 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 GL11.glRotatef(entitylivingbase.field_70127_C + (entitylivingbase.field_70125_A - entitylivingbase.field_70127_C) * p_78467_1_, -1.0F, 0.0F, 0.0F);
             }
         }
-        else if (this.field_78531_r.field_71474_y.field_74320_O > 0)
+        else if (this.field_78531_r.gameSettings.field_74320_O > 0)
         {
             double d7 = (double)(this.field_78491_C + (this.field_78490_B - this.field_78491_C) * p_78467_1_);
             float f2;
             float f6;
 
-            if (this.field_78531_r.field_71474_y.field_74325_U)
+            if (this.field_78531_r.gameSettings.field_74325_U)
             {
                 f6 = this.field_78486_E + (this.field_78485_D - this.field_78486_E) * p_78467_1_;
                 f2 = this.field_78488_G + (this.field_78487_F - this.field_78488_G) * p_78467_1_;
@@ -529,7 +529,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 f6 = entitylivingbase.field_70177_z;
                 f2 = entitylivingbase.field_70125_A;
 
-                if (this.field_78531_r.field_71474_y.field_74320_O == 2)
+                if (this.field_78531_r.gameSettings.field_74320_O == 2)
                 {
                     f2 += 180.0F;
                 }
@@ -559,7 +559,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                     }
                 }
 
-                if (this.field_78531_r.field_71474_y.field_74320_O == 2)
+                if (this.field_78531_r.gameSettings.field_74320_O == 2)
                 {
                     GL11.glRotatef(180.0F, 0.0F, 1.0F, 0.0F);
                 }
@@ -576,7 +576,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             GL11.glTranslatef(0.0F, 0.0F, -0.1F);
         }
 
-        if (!this.field_78531_r.field_71474_y.field_74325_U)
+        if (!this.field_78531_r.gameSettings.field_74325_U)
         {
             GL11.glRotatef(entitylivingbase.field_70127_C + (entitylivingbase.field_70125_A - entitylivingbase.field_70127_C) * p_78467_1_, 1.0F, 0.0F, 0.0F);
             GL11.glRotatef(entitylivingbase.field_70126_B + (entitylivingbase.field_70177_z - entitylivingbase.field_70126_B) * p_78467_1_ + 180.0F, 0.0F, 1.0F, 0.0F);
@@ -591,12 +591,12 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
     private void func_78479_a(float p_78479_1_, int p_78479_2_)
     {
-        this.field_78530_s = (float)(this.field_78531_r.field_71474_y.field_151451_c * 16);
+        this.field_78530_s = (float)(this.field_78531_r.gameSettings.field_151451_c * 16);
         GL11.glMatrixMode(GL11.GL_PROJECTION);
         GL11.glLoadIdentity();
         float f1 = 0.07F;
 
-        if (this.field_78531_r.field_71474_y.field_74337_g)
+        if (this.field_78531_r.gameSettings.field_74337_g)
         {
             GL11.glTranslatef((float)(-(p_78479_2_ * 2 - 1)) * f1, 0.0F, 0.0F);
         }
@@ -619,14 +619,14 @@ public class EntityRenderer implements IResourceManagerReloadListener
         GL11.glMatrixMode(GL11.GL_MODELVIEW);
         GL11.glLoadIdentity();
 
-        if (this.field_78531_r.field_71474_y.field_74337_g)
+        if (this.field_78531_r.gameSettings.field_74337_g)
         {
             GL11.glTranslatef((float)(p_78479_2_ * 2 - 1) * 0.1F, 0.0F, 0.0F);
         }
 
         this.func_78482_e(p_78479_1_);
 
-        if (this.field_78531_r.field_71474_y.field_74336_f)
+        if (this.field_78531_r.gameSettings.field_74336_f)
         {
             this.func_78475_f(p_78479_1_);
         }
@@ -690,7 +690,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             GL11.glLoadIdentity();
             float f1 = 0.07F;
 
-            if (this.field_78531_r.field_71474_y.field_74337_g)
+            if (this.field_78531_r.gameSettings.field_74337_g)
             {
                 GL11.glTranslatef((float)(-(p_78476_2_ * 2 - 1)) * f1, 0.0F, 0.0F);
             }
@@ -712,7 +712,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             GL11.glMatrixMode(GL11.GL_MODELVIEW);
             GL11.glLoadIdentity();
 
-            if (this.field_78531_r.field_71474_y.field_74337_g)
+            if (this.field_78531_r.gameSettings.field_74337_g)
             {
                 GL11.glTranslatef((float)(p_78476_2_ * 2 - 1) * 0.1F, 0.0F, 0.0F);
             }
@@ -720,12 +720,12 @@ public class EntityRenderer implements IResourceManagerReloadListener
             GL11.glPushMatrix();
             this.func_78482_e(p_78476_1_);
 
-            if (this.field_78531_r.field_71474_y.field_74336_f)
+            if (this.field_78531_r.gameSettings.field_74336_f)
             {
                 this.func_78475_f(p_78476_1_);
             }
 
-            if (this.field_78531_r.field_71474_y.field_74320_O == 0 && !this.field_78531_r.field_71451_h.func_70608_bn() && !this.field_78531_r.field_71474_y.field_74319_N && !this.field_78531_r.field_71442_b.func_78747_a())
+            if (this.field_78531_r.gameSettings.field_74320_O == 0 && !this.field_78531_r.field_71451_h.func_70608_bn() && !this.field_78531_r.gameSettings.field_74319_N && !this.field_78531_r.field_71442_b.func_78747_a())
             {
                 this.func_78463_b((double)p_78476_1_);
                 this.field_78516_c.func_78440_a(p_78476_1_);
@@ -734,13 +734,13 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
             GL11.glPopMatrix();
 
-            if (this.field_78531_r.field_71474_y.field_74320_O == 0 && !this.field_78531_r.field_71451_h.func_70608_bn())
+            if (this.field_78531_r.gameSettings.field_74320_O == 0 && !this.field_78531_r.field_71451_h.func_70608_bn())
             {
                 this.field_78516_c.func_78447_b(p_78476_1_);
                 this.func_78482_e(p_78476_1_);
             }
 
-            if (this.field_78531_r.field_71474_y.field_74336_f)
+            if (this.field_78531_r.gameSettings.field_74336_f)
             {
                 this.func_78475_f(p_78476_1_);
             }
@@ -867,7 +867,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                     f10 = 1.0F;
                 }
 
-                f11 = this.field_78531_r.field_71474_y.field_74333_Y;
+                f11 = this.field_78531_r.gameSettings.field_74333_Y;
                 f12 = 1.0F - f8;
                 float f13 = 1.0F - f9;
                 float f14 = 1.0F - f10;
@@ -941,7 +941,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
         this.field_78531_r.field_71424_I.func_76319_b();
         boolean flag = Display.isActive();
 
-        if (!flag && this.field_78531_r.field_71474_y.field_82881_y && (!this.field_78531_r.field_71474_y.field_85185_A || !Mouse.isButtonDown(1)))
+        if (!flag && this.field_78531_r.gameSettings.field_82881_y && (!this.field_78531_r.gameSettings.field_85185_A || !Mouse.isButtonDown(1)))
         {
             if (Minecraft.func_71386_F() - this.field_78508_Y > 500L)
             {
@@ -958,18 +958,18 @@ public class EntityRenderer implements IResourceManagerReloadListener
         if (this.field_78531_r.field_71415_G && flag)
         {
             this.field_78531_r.field_71417_B.func_74374_c();
-            float f1 = this.field_78531_r.field_71474_y.field_74341_c * 0.6F + 0.2F;
+            float f1 = this.field_78531_r.gameSettings.field_74341_c * 0.6F + 0.2F;
             float f2 = f1 * f1 * f1 * 8.0F;
             float f3 = (float)this.field_78531_r.field_71417_B.field_74377_a * f2;
             float f4 = (float)this.field_78531_r.field_71417_B.field_74375_b * f2;
             byte b0 = 1;
 
-            if (this.field_78531_r.field_71474_y.field_74338_d)
+            if (this.field_78531_r.gameSettings.field_74338_d)
             {
                 b0 = -1;
             }
 
-            if (this.field_78531_r.field_71474_y.field_74326_T)
+            if (this.field_78531_r.gameSettings.field_74326_T)
             {
                 this.field_78496_H += f3;
                 this.field_78497_I += f4;
@@ -989,13 +989,13 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
         if (!this.field_78531_r.field_71454_w)
         {
-            field_78517_a = this.field_78531_r.field_71474_y.field_74337_g;
+            field_78517_a = this.field_78531_r.gameSettings.field_74337_g;
             final ScaledResolution scaledresolution = new ScaledResolution(this.field_78531_r, this.field_78531_r.field_71443_c, this.field_78531_r.field_71440_d);
             int i = scaledresolution.func_78326_a();
             int j = scaledresolution.func_78328_b();
             final int k = Mouse.getX() * i / this.field_78531_r.field_71443_c;
             final int l = j - Mouse.getY() * j / this.field_78531_r.field_71440_d - 1;
-            int i1 = this.field_78531_r.field_71474_y.field_74350_i;
+            int i1 = this.field_78531_r.gameSettings.field_74350_i;
 
             if (this.field_78531_r.field_71441_e != null)
             {
@@ -1027,7 +1027,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 this.field_78510_Z = System.nanoTime();
                 this.field_78531_r.field_71424_I.func_76318_c("gui");
 
-                if (!this.field_78531_r.field_71474_y.field_74319_N || this.field_78531_r.field_71462_r != null)
+                if (!this.field_78531_r.gameSettings.field_74319_N || this.field_78531_r.field_71462_r != null)
                 {
                     GL11.glAlphaFunc(GL11.GL_GREATER, 0.1F);
                     this.field_78531_r.field_71456_v.func_73830_a(p_78480_1_, this.field_78531_r.field_71462_r != null, k, l);
@@ -1128,7 +1128,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
         for (int j = 0; j < 2; ++j)
         {
-            if (this.field_78531_r.field_71474_y.field_74337_g)
+            if (this.field_78531_r.gameSettings.field_74337_g)
             {
                 field_78515_b = j;
 
@@ -1149,11 +1149,11 @@ public class EntityRenderer implements IResourceManagerReloadListener
             GL11.glEnable(GL11.GL_CULL_FACE);
             this.field_78531_r.field_71424_I.func_76318_c("camera");
             this.func_78479_a(p_78471_1_, j);
-            ActiveRenderInfo.func_74583_a(this.field_78531_r.field_71439_g, this.field_78531_r.field_71474_y.field_74320_O == 2);
+            ActiveRenderInfo.func_74583_a(this.field_78531_r.field_71439_g, this.field_78531_r.gameSettings.field_74320_O == 2);
             this.field_78531_r.field_71424_I.func_76318_c("frustrum");
             ClippingHelperImpl.func_78558_a();
 
-            if (this.field_78531_r.field_71474_y.field_151451_c >= 4)
+            if (this.field_78531_r.gameSettings.field_151451_c >= 4)
             {
                 this.func_78468_a(-1, p_78471_1_);
                 this.field_78531_r.field_71424_I.func_76318_c("sky");
@@ -1163,7 +1163,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             GL11.glEnable(GL11.GL_FOG);
             this.func_78468_a(1, p_78471_1_);
 
-            if (this.field_78531_r.field_71474_y.field_74348_k != 0)
+            if (this.field_78531_r.gameSettings.field_74348_k != 0)
             {
                 GL11.glShadeModel(GL11.GL_SMOOTH);
             }
@@ -1220,7 +1220,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 GL11.glPopMatrix();
                 GL11.glPushMatrix();
 
-                if (this.field_78531_r.field_71476_x != null && entitylivingbase.func_70055_a(Material.field_151586_h) && entitylivingbase instanceof EntityPlayer && !this.field_78531_r.field_71474_y.field_74319_N)
+                if (this.field_78531_r.field_71476_x != null && entitylivingbase.func_70055_a(Material.field_151586_h) && entitylivingbase instanceof EntityPlayer && !this.field_78531_r.gameSettings.field_74319_N)
                 {
                     entityplayer = (EntityPlayer)entitylivingbase;
                     GL11.glDisable(GL11.GL_ALPHA_TEST);
@@ -1233,7 +1233,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             GL11.glMatrixMode(GL11.GL_MODELVIEW);
             GL11.glPopMatrix();
 
-            if (this.field_78503_V == 1.0D && entitylivingbase instanceof EntityPlayer && !this.field_78531_r.field_71474_y.field_74319_N && this.field_78531_r.field_71476_x != null && !entitylivingbase.func_70055_a(Material.field_151586_h))
+            if (this.field_78503_V == 1.0D && entitylivingbase instanceof EntityPlayer && !this.field_78531_r.gameSettings.field_74319_N && this.field_78531_r.field_71476_x != null && !entitylivingbase.func_70055_a(Material.field_151586_h))
             {
                 entityplayer = (EntityPlayer)entitylivingbase;
                 GL11.glDisable(GL11.GL_ALPHA_TEST);
@@ -1274,11 +1274,11 @@ public class EntityRenderer implements IResourceManagerReloadListener
             GL11.glDepthMask(false);
             this.field_78531_r.func_110434_K().func_110577_a(TextureMap.field_110575_b);
 
-            if (this.field_78531_r.field_71474_y.field_74347_j)
+            if (this.field_78531_r.gameSettings.field_74347_j)
             {
                 this.field_78531_r.field_71424_I.func_76318_c("water");
 
-                if (this.field_78531_r.field_71474_y.field_74348_k != 0)
+                if (this.field_78531_r.gameSettings.field_74348_k != 0)
                 {
                     GL11.glShadeModel(GL11.GL_SMOOTH);
                 }
@@ -1286,7 +1286,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 GL11.glEnable(GL11.GL_BLEND);
                 OpenGlHelper.func_148821_a(770, 771, 1, 0);
 
-                if (this.field_78531_r.field_71474_y.field_74337_g)
+                if (this.field_78531_r.gameSettings.field_74337_g)
                 {
                     if (field_78515_b == 0)
                     {
@@ -1332,7 +1332,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 this.func_78476_b(p_78471_1_, j);
             }
 
-            if (!this.field_78531_r.field_71474_y.field_74337_g)
+            if (!this.field_78531_r.gameSettings.field_74337_g)
             {
                 this.field_78531_r.field_71424_I.func_76319_b();
                 return;
@@ -1345,7 +1345,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
     private void func_82829_a(RenderGlobal p_82829_1_, float p_82829_2_)
     {
-        if (this.field_78531_r.field_71474_y.func_74309_c())
+        if (this.field_78531_r.gameSettings.func_74309_c())
         {
             this.field_78531_r.field_71424_I.func_76318_c("clouds");
             GL11.glPushMatrix();
@@ -1362,7 +1362,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
     {
         float f = this.field_78531_r.field_71441_e.func_72867_j(1.0F);
 
-        if (!this.field_78531_r.field_71474_y.field_74347_j)
+        if (!this.field_78531_r.gameSettings.field_74347_j)
         {
             f /= 2.0F;
         }
@@ -1382,11 +1382,11 @@ public class EntityRenderer implements IResourceManagerReloadListener
             int l = 0;
             int i1 = (int)(100.0F * f * f);
 
-            if (this.field_78531_r.field_71474_y.field_74362_aa == 1)
+            if (this.field_78531_r.gameSettings.field_74362_aa == 1)
             {
                 i1 >>= 1;
             }
-            else if (this.field_78531_r.field_71474_y.field_74362_aa == 2)
+            else if (this.field_78531_r.gameSettings.field_74362_aa == 2)
             {
                 i1 = 0;
             }
@@ -1483,7 +1483,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             int k = MathHelper.func_76128_c(d1);
             byte b0 = 5;
 
-            if (this.field_78531_r.field_71474_y.field_74347_j)
+            if (this.field_78531_r.gameSettings.field_74347_j)
             {
                 b0 = 10;
             }
@@ -1492,7 +1492,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             byte b1 = -1;
             float f5 = (float)this.field_78529_t + p_78474_1_;
 
-            if (this.field_78531_r.field_71474_y.field_74347_j)
+            if (this.field_78531_r.gameSettings.field_74347_j)
             {
                 b0 = 10;
             }
@@ -1631,7 +1631,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
     {
         WorldClient worldclient = this.field_78531_r.field_71441_e;
         EntityLivingBase entitylivingbase = this.field_78531_r.field_71451_h;
-        float f1 = 0.25F + 0.75F * (float)this.field_78531_r.field_71474_y.field_151451_c / 16.0F;
+        float f1 = 0.25F + 0.75F * (float)this.field_78531_r.gameSettings.field_151451_c / 16.0F;
         f1 = 1.0F - (float)Math.pow((double)f1, 0.25D);
         Vec3 vec3 = worldclient.func_72833_a(this.field_78531_r.field_71451_h, p_78466_1_);
         float f2 = (float)vec3.field_72450_a;
@@ -1643,7 +1643,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
         this.field_78533_p = (float)vec31.field_72449_c;
         float f5;
 
-        if (this.field_78531_r.field_71474_y.field_151451_c >= 4)
+        if (this.field_78531_r.gameSettings.field_151451_c >= 4)
         {
             Vec3 vec32 = MathHelper.func_76126_a(worldclient.func_72929_e(p_78466_1_)) > 0.0F ? Vec3.func_72443_a(-1.0D, 0.0D, 0.0D) : Vec3.func_72443_a(1.0D, 0.0D, 0.0D);
             f5 = (float)entitylivingbase.func_70676_i(p_78466_1_).func_72430_b(vec32);
@@ -1781,7 +1781,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             this.field_78533_p = this.field_78533_p * (1.0F - f11) + this.field_78533_p * f6 * f11;
         }
 
-        if (this.field_78531_r.field_71474_y.field_74337_g)
+        if (this.field_78531_r.gameSettings.field_74337_g)
         {
             f11 = (this.field_78518_n * 30.0F + this.field_78519_o * 59.0F + this.field_78533_p * 11.0F) / 100.0F;
             f6 = (this.field_78518_n * 30.0F + this.field_78519_o * 70.0F) / 100.0F;

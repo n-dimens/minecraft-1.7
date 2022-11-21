@@ -29,8 +29,8 @@ public class GuiOptionSlider extends GuiButton
         this.field_146132_r = p_i45017_5_;
         this.field_146131_s = p_i45017_6_;
         Minecraft minecraft = Minecraft.func_71410_x();
-        this.field_146134_p = p_i45017_4_.func_148266_c(minecraft.field_71474_y.func_74296_a(p_i45017_4_));
-        this.field_146126_j = minecraft.field_71474_y.func_74297_c(p_i45017_4_);
+        this.field_146134_p = p_i45017_4_.func_148266_c(minecraft.gameSettings.func_74296_a(p_i45017_4_));
+        this.field_146126_j = minecraft.gameSettings.func_74297_c(p_i45017_4_);
     }
 
     public int func_146114_a(boolean p_146114_1_)
@@ -57,9 +57,9 @@ public class GuiOptionSlider extends GuiButton
                 }
 
                 float f = this.field_146133_q.func_148262_d(this.field_146134_p);
-                p_146119_1_.field_71474_y.func_74304_a(this.field_146133_q, f);
+                p_146119_1_.gameSettings.func_74304_a(this.field_146133_q, f);
                 this.field_146134_p = this.field_146133_q.func_148266_c(f);
-                this.field_146126_j = p_146119_1_.field_71474_y.func_74297_c(this.field_146133_q);
+                this.field_146126_j = p_146119_1_.gameSettings.func_74297_c(this.field_146133_q);
             }
 
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -84,8 +84,8 @@ public class GuiOptionSlider extends GuiButton
                 this.field_146134_p = 1.0F;
             }
 
-            p_146116_1_.field_71474_y.func_74304_a(this.field_146133_q, this.field_146133_q.func_148262_d(this.field_146134_p));
-            this.field_146126_j = p_146116_1_.field_71474_y.func_74297_c(this.field_146133_q);
+            p_146116_1_.gameSettings.func_74304_a(this.field_146133_q, this.field_146133_q.func_148262_d(this.field_146134_p));
+            this.field_146126_j = p_146116_1_.gameSettings.func_74297_c(this.field_146133_q);
             this.field_146135_o = true;
             return true;
         }

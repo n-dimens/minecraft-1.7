@@ -193,7 +193,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
             if (this.field_70122_E && !flag1 && this.field_71158_b.field_78900_b >= f && !this.func_70051_ag() && flag2 && !this.func_71039_bw() && !this.func_70644_a(Potion.field_76440_q))
             {
-                if (this.field_71156_d <= 0 && !this.field_71159_c.field_71474_y.field_151444_V.func_151470_d())
+                if (this.field_71156_d <= 0 && !this.field_71159_c.gameSettings.field_151444_V.func_151470_d())
                 {
                     this.field_71156_d = 7;
                 }
@@ -203,7 +203,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
                 }
             }
 
-            if (!this.func_70051_ag() && this.field_71158_b.field_78900_b >= f && flag2 && !this.func_71039_bw() && !this.func_70644_a(Potion.field_76440_q) && this.field_71159_c.field_71474_y.field_151444_V.func_151470_d())
+            if (!this.func_70051_ag() && this.field_71158_b.field_78900_b >= f && flag2 && !this.func_71039_bw() && !this.func_70644_a(Potion.field_76440_q) && this.field_71159_c.gameSettings.field_151444_V.func_151470_d())
             {
                 this.func_70031_b(true);
             }

@@ -267,7 +267,7 @@ public abstract class GuiSlot
             }
             else
             {
-                for (; !this.field_148161_k.field_71474_y.field_85185_A && Mouse.next(); this.field_148161_k.field_71462_r.func_146274_d())
+                for (; !this.field_148161_k.gameSettings.field_85185_A && Mouse.next(); this.field_148161_k.field_71462_r.func_146274_d())
                 {
                     int j1 = Mouse.getEventDWheel();
 

@@ -269,7 +269,7 @@ public class WorldClient extends World
 
     protected int func_152379_p()
     {
-        return this.field_73037_M.field_71474_y.field_151451_c;
+        return this.field_73037_M.gameSettings.field_151451_c;
     }
 
     public void func_73029_E(int p_73029_1_, int p_73029_2_, int p_73029_3_)

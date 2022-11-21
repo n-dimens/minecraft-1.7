@@ -89,7 +89,7 @@ public class GuiIngame extends Gui
 
         ItemStack itemstack = this.field_73839_d.field_71439_g.field_71071_by.func_70440_f(3);
 
-        if (this.field_73839_d.field_71474_y.field_74320_O == 0 && itemstack != null && itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150423_aK))
+        if (this.field_73839_d.gameSettings.field_74320_O == 0 && itemstack != null && itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150423_aK))
         {
             this.func_73836_a(k, l);
         }
@@ -237,7 +237,7 @@ public class GuiIngame extends Gui
 
         String s2;
 
-        if (this.field_73839_d.field_71474_y.field_92117_D)
+        if (this.field_73839_d.gameSettings.field_92117_D)
         {
             this.field_73839_d.field_71424_I.func_76320_a("toolHighlight");
 
@@ -296,7 +296,7 @@ public class GuiIngame extends Gui
         int j3;
         int k3;
 
-        if (this.field_73839_d.field_71474_y.field_74330_P)
+        if (this.field_73839_d.gameSettings.field_74330_P)
         {
             this.field_73839_d.field_71424_I.func_76320_a("debug");
             GL11.glPushMatrix();
@@ -390,7 +390,7 @@ public class GuiIngame extends Gui
         GL11.glPopMatrix();
         scoreobjective = this.field_73839_d.field_71441_e.func_96441_U().func_96539_a(0);
 
-        if (this.field_73839_d.field_71474_y.field_74321_H.func_151470_d() && (!this.field_73839_d.func_71387_A() || this.field_73839_d.field_71439_g.field_71174_a.field_147303_b.size() > 1 || scoreobjective != null))
+        if (this.field_73839_d.gameSettings.field_74321_H.func_151470_d() && (!this.field_73839_d.func_71387_A() || this.field_73839_d.field_71439_g.field_71174_a.field_147303_b.size() > 1 || scoreobjective != null))
         {
             this.field_73839_d.field_71424_I.func_76320_a("playerList");
             NetHandlerPlayClient nethandlerplayclient = this.field_73839_d.field_71439_g.field_71174_a;

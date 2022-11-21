@@ -126,10 +126,10 @@ public class IntegratedServer extends MinecraftServer
         {
             super.func_71217_p();
 
-            if (this.field_71349_l.field_71474_y.field_151451_c != this.func_71203_ab().func_72395_o())
+            if (this.field_71349_l.gameSettings.field_151451_c != this.func_71203_ab().func_72395_o())
             {
-                field_147148_h.info("Changing view distance to {}, from {}", new Object[] {Integer.valueOf(this.field_71349_l.field_71474_y.field_151451_c), Integer.valueOf(this.func_71203_ab().func_72395_o())});
-                this.func_71203_ab().func_152611_a(this.field_71349_l.field_71474_y.field_151451_c);
+                field_147148_h.info("Changing view distance to {}, from {}", new Object[] {Integer.valueOf(this.field_71349_l.gameSettings.field_151451_c), Integer.valueOf(this.func_71203_ab().func_72395_o())});
+                this.func_71203_ab().func_152611_a(this.field_71349_l.gameSettings.field_151451_c);
             }
         }
     }
@@ -146,7 +146,7 @@ public class IntegratedServer extends MinecraftServer
 
     public EnumDifficulty func_147135_j()
     {
-        return this.field_71349_l.field_71474_y.field_74318_M;
+        return this.field_71349_l.gameSettings.field_74318_M;
     }
 
     public boolean func_71199_h()

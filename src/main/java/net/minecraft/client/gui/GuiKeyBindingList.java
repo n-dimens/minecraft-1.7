@@ -25,7 +25,7 @@ public class GuiKeyBindingList extends GuiListExtended
         super(p_i45031_2_, p_i45031_1_.field_146294_l, p_i45031_1_.field_146295_m, 63, p_i45031_1_.field_146295_m - 32, 20);
         this.field_148191_k = p_i45031_1_;
         this.field_148189_l = p_i45031_2_;
-        KeyBinding[] akeybinding = (KeyBinding[])ArrayUtils.clone(p_i45031_2_.field_71474_y.field_74324_K);
+        KeyBinding[] akeybinding = (KeyBinding[])ArrayUtils.clone(p_i45031_2_.gameSettings.field_74324_K);
         this.field_148190_m = new GuiListExtended.IGuiListEntry[akeybinding.length + KeyBinding.func_151467_c().size()];
         Arrays.sort(akeybinding);
         int i = 0;
@@ -36,15 +36,15 @@ public class GuiKeyBindingList extends GuiListExtended
         for (int k = 0; k < j; ++k)
         {
             KeyBinding keybinding = akeybinding1[k];
-            String s1 = keybinding.func_151466_e();
+            String category = keybinding.getCategory();
 
-            if (!s1.equals(s))
+            if (!category.equals(s))
             {
-                s = s1;
-                this.field_148190_m[i++] = new GuiKeyBindingList.CategoryEntry(s1);
+                s = category;
+                this.field_148190_m[i++] = new GuiKeyBindingList.CategoryEntry(category);
             }
 
-            int l = p_i45031_2_.field_71466_p.func_78256_a(I18n.func_135052_a(keybinding.func_151464_g(), new Object[0]));
+            int l = p_i45031_2_.field_71466_p.func_78256_a(I18n.func_135052_a(keybinding.getId(), new Object[0]));
 
             if (l > this.field_148188_n)
             {
@@ -113,8 +113,8 @@ public class GuiKeyBindingList extends GuiListExtended
         private KeyEntry(KeyBinding p_i45029_2_)
         {
             this.field_148282_b = p_i45029_2_;
-            this.field_148283_c = I18n.func_135052_a(p_i45029_2_.func_151464_g(), new Object[0]);
-            this.field_148280_d = new GuiButton(0, 0, 0, 75, 18, I18n.func_135052_a(p_i45029_2_.func_151464_g(), new Object[0]));
+            this.field_148283_c = I18n.func_135052_a(p_i45029_2_.getId(), new Object[0]);
+            this.field_148280_d = new GuiButton(0, 0, 0, 75, 18, I18n.func_135052_a(p_i45029_2_.getId(), new Object[0]));
             this.field_148281_e = new GuiButton(0, 0, 0, 50, 18, I18n.func_135052_a("controls.reset", new Object[0]));
         }
 
@@ -124,23 +124,23 @@ public class GuiKeyBindingList extends GuiListExtended
             GuiKeyBindingList.this.field_148189_l.field_71466_p.func_78276_b(this.field_148283_c, p_148279_2_ + 90 - GuiKeyBindingList.this.field_148188_n, p_148279_3_ + p_148279_5_ / 2 - GuiKeyBindingList.this.field_148189_l.field_71466_p.field_78288_b / 2, 16777215);
             this.field_148281_e.field_146128_h = p_148279_2_ + 190;
             this.field_148281_e.field_146129_i = p_148279_3_;
-            this.field_148281_e.field_146124_l = this.field_148282_b.func_151463_i() != this.field_148282_b.func_151469_h();
+            this.field_148281_e.field_146124_l = this.field_148282_b.getEventKey() != this.field_148282_b.getDefaultEventKey();
             this.field_148281_e.func_146112_a(GuiKeyBindingList.this.field_148189_l, p_148279_7_, p_148279_8_);
             this.field_148280_d.field_146128_h = p_148279_2_ + 105;
             this.field_148280_d.field_146129_i = p_148279_3_;
-            this.field_148280_d.field_146126_j = GameSettings.func_74298_c(this.field_148282_b.func_151463_i());
+            this.field_148280_d.field_146126_j = GameSettings.func_74298_c(this.field_148282_b.getEventKey());
             boolean flag2 = false;
 
-            if (this.field_148282_b.func_151463_i() != 0)
+            if (this.field_148282_b.getEventKey() != 0)
             {
-                KeyBinding[] akeybinding = GuiKeyBindingList.this.field_148189_l.field_71474_y.field_74324_K;
+                KeyBinding[] akeybinding = GuiKeyBindingList.this.field_148189_l.gameSettings.field_74324_K;
                 int l1 = akeybinding.length;
 
                 for (int i2 = 0; i2 < l1; ++i2)
                 {
                     KeyBinding keybinding = akeybinding[i2];
 
-                    if (keybinding != this.field_148282_b && keybinding.func_151463_i() == this.field_148282_b.func_151463_i())
+                    if (keybinding != this.field_148282_b && keybinding.getEventKey() == this.field_148282_b.getEventKey())
                     {
                         flag2 = true;
                         break;
@@ -169,7 +169,7 @@ public class GuiKeyBindingList extends GuiListExtended
             }
             else if (this.field_148281_e.func_146116_c(GuiKeyBindingList.this.field_148189_l, p_148278_2_, p_148278_3_))
             {
-                GuiKeyBindingList.this.field_148189_l.field_71474_y.func_151440_a(this.field_148282_b, this.field_148282_b.func_151469_h());
+                GuiKeyBindingList.this.field_148189_l.gameSettings.func_151440_a(this.field_148282_b, this.field_148282_b.getDefaultEventKey());
                 KeyBinding.func_74508_b();
                 return true;
             }

@@ -314,7 +314,7 @@ public abstract class GuiContainer extends GuiScreen
     protected void func_73864_a(int p_73864_1_, int p_73864_2_, int p_73864_3_)
     {
         super.func_73864_a(p_73864_1_, p_73864_2_, p_73864_3_);
-        boolean flag = p_73864_3_ == this.field_146297_k.field_71474_y.field_74322_I.func_151463_i() + 100;
+        boolean flag = p_73864_3_ == this.field_146297_k.gameSettings.field_74322_I.getEventKey() + 100;
         Slot slot = this.func_146975_c(p_73864_1_, p_73864_2_);
         long l = Minecraft.func_71386_F();
         this.field_146993_M = this.field_146998_K == slot && l - this.field_146997_J < 250L && this.field_146992_L == p_73864_3_;
@@ -337,7 +337,7 @@ public abstract class GuiContainer extends GuiScreen
                 k1 = -999;
             }
 
-            if (this.field_146297_k.field_71474_y.field_85185_A && flag1 && this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() == null)
+            if (this.field_146297_k.gameSettings.field_85185_A && flag1 && this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() == null)
             {
                 this.field_146297_k.func_147108_a((GuiScreen)null);
                 return;
@@ -345,7 +345,7 @@ public abstract class GuiContainer extends GuiScreen
 
             if (k1 != -1)
             {
-                if (this.field_146297_k.field_71474_y.field_85185_A)
+                if (this.field_146297_k.gameSettings.field_85185_A)
                 {
                     if (slot != null && slot.func_75216_d())
                     {
@@ -362,7 +362,7 @@ public abstract class GuiContainer extends GuiScreen
                 {
                     if (this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() == null)
                     {
-                        if (p_73864_3_ == this.field_146297_k.field_71474_y.field_74322_I.func_151463_i() + 100)
+                        if (p_73864_3_ == this.field_146297_k.gameSettings.field_74322_I.getEventKey() + 100)
                         {
                             this.func_146984_a(slot, k1, p_73864_3_, 3);
                         }
@@ -415,7 +415,7 @@ public abstract class GuiContainer extends GuiScreen
         Slot slot = this.func_146975_c(p_146273_1_, p_146273_2_);
         ItemStack itemstack = this.field_146297_k.field_71439_g.field_71071_by.func_70445_o();
 
-        if (this.field_147005_v != null && this.field_146297_k.field_71474_y.field_85185_A)
+        if (this.field_147005_v != null && this.field_146297_k.gameSettings.field_85185_A)
         {
             if (p_146273_3_ == 0 || p_146273_3_ == 1)
             {
@@ -522,7 +522,7 @@ public abstract class GuiContainer extends GuiScreen
 
             boolean flag1;
 
-            if (this.field_147005_v != null && this.field_146297_k.field_71474_y.field_85185_A)
+            if (this.field_147005_v != null && this.field_146297_k.gameSettings.field_85185_A)
             {
                 if (p_146286_3_ == 0 || p_146286_3_ == 1)
                 {
@@ -580,7 +580,7 @@ public abstract class GuiContainer extends GuiScreen
             }
             else if (this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() != null)
             {
-                if (p_146286_3_ == this.field_146297_k.field_71474_y.field_74322_I.func_151463_i() + 100)
+                if (p_146286_3_ == this.field_146297_k.gameSettings.field_74322_I.getEventKey() + 100)
                 {
                     this.func_146984_a(slot, j1, p_146286_3_, 3);
                 }
@@ -632,7 +632,7 @@ public abstract class GuiContainer extends GuiScreen
 
     protected void func_73869_a(char p_73869_1_, int p_73869_2_)
     {
-        if (p_73869_2_ == 1 || p_73869_2_ == this.field_146297_k.field_71474_y.field_151445_Q.func_151463_i())
+        if (p_73869_2_ == 1 || p_73869_2_ == this.field_146297_k.gameSettings.field_151445_Q.getEventKey())
         {
             this.field_146297_k.field_71439_g.func_71053_j();
         }
@@ -641,11 +641,11 @@ public abstract class GuiContainer extends GuiScreen
 
         if (this.field_147006_u != null && this.field_147006_u.func_75216_d())
         {
-            if (p_73869_2_ == this.field_146297_k.field_71474_y.field_74322_I.func_151463_i())
+            if (p_73869_2_ == this.field_146297_k.gameSettings.field_74322_I.getEventKey())
             {
                 this.func_146984_a(this.field_147006_u, this.field_147006_u.field_75222_d, 0, 3);
             }
-            else if (p_73869_2_ == this.field_146297_k.field_71474_y.field_74316_C.func_151463_i())
+            else if (p_73869_2_ == this.field_146297_k.gameSettings.field_74316_C.getEventKey())
             {
                 this.func_146984_a(this.field_147006_u, this.field_147006_u.field_75222_d, func_146271_m() ? 1 : 0, 4);
             }
@@ -658,7 +658,7 @@ public abstract class GuiContainer extends GuiScreen
         {
             for (int j = 0; j < 9; ++j)
             {
-                if (p_146983_1_ == this.field_146297_k.field_71474_y.field_151456_ac[j].func_151463_i())
+                if (p_146983_1_ == this.field_146297_k.gameSettings.field_151456_ac[j].getEventKey())
                 {
                     this.func_146984_a(this.field_147006_u, this.field_147006_u.field_75222_d, j, 2);
                     return true;

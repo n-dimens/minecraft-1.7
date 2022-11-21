@@ -41,7 +41,7 @@ public class GuiIngameMenu extends GuiScreen
         switch (p_146284_1_.field_146127_k)
         {
             case 0:
-                this.field_146297_k.func_147108_a(new GuiOptions(this, this.field_146297_k.field_71474_y));
+                this.field_146297_k.func_147108_a(new GuiOptions(this, this.field_146297_k.gameSettings));
                 break;
             case 1:
                 p_146284_1_.field_146124_l = false;

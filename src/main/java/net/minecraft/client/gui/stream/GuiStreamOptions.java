@@ -120,12 +120,12 @@ public class GuiStreamOptions extends GuiScreen
 
             if (p_146284_1_.field_146127_k == 200)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(this.field_152317_g);
             }
             else if (p_146284_1_.field_146127_k == 201)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(new GuiIngestServers(this));
             }
         }

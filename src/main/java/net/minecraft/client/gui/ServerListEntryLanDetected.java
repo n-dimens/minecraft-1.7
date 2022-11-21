@@ -28,7 +28,7 @@ public class ServerListEntryLanDetected implements GuiListExtended.IGuiListEntry
         this.field_148293_a.field_71466_p.func_78276_b(I18n.func_135052_a("lanServer.title", new Object[0]), p_148279_2_ + 32 + 3, p_148279_3_ + 1, 16777215);
         this.field_148293_a.field_71466_p.func_78276_b(this.field_148291_b.func_77487_a(), p_148279_2_ + 32 + 3, p_148279_3_ + 12, 8421504);
 
-        if (this.field_148293_a.field_71474_y.field_80005_w)
+        if (this.field_148293_a.gameSettings.field_80005_w)
         {
             this.field_148293_a.field_71466_p.func_78276_b(I18n.func_135052_a("selectServer.hiddenAddress", new Object[0]), p_148279_2_ + 32 + 3, p_148279_3_ + 12 + 11, 3158064);
         }

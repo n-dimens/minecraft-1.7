@@ -324,7 +324,7 @@ public class TextureUtil
     {
         int[] aint1 = p_110994_0_;
 
-        if (Minecraft.func_71410_x().field_71474_y.field_74337_g)
+        if (Minecraft.func_71410_x().gameSettings.field_74337_g)
         {
             aint1 = func_110985_a(p_110994_0_);
         }

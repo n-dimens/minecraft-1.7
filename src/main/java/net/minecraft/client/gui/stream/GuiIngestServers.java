@@ -56,8 +56,8 @@ public class GuiIngestServers extends GuiScreen
             }
             else
             {
-                this.field_146297_k.field_71474_y.field_152407_Q = "";
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.field_152407_Q = "";
+                this.field_146297_k.gameSettings.func_74303_b();
             }
         }
     }
@@ -88,13 +88,13 @@ public class GuiIngestServers extends GuiScreen
 
         protected void func_148144_a(int p_148144_1_, boolean p_148144_2_, int p_148144_3_, int p_148144_4_)
         {
-            GuiIngestServers.this.field_146297_k.field_71474_y.field_152407_Q = GuiIngestServers.this.field_146297_k.func_152346_Z().func_152925_v()[p_148144_1_].serverUrl;
-            GuiIngestServers.this.field_146297_k.field_71474_y.func_74303_b();
+            GuiIngestServers.this.field_146297_k.gameSettings.field_152407_Q = GuiIngestServers.this.field_146297_k.func_152346_Z().func_152925_v()[p_148144_1_].serverUrl;
+            GuiIngestServers.this.field_146297_k.gameSettings.func_74303_b();
         }
 
         protected boolean func_148131_a(int p_148131_1_)
         {
-            return GuiIngestServers.this.field_146297_k.func_152346_Z().func_152925_v()[p_148131_1_].serverUrl.equals(GuiIngestServers.this.field_146297_k.field_71474_y.field_152407_Q);
+            return GuiIngestServers.this.field_146297_k.func_152346_Z().func_152925_v()[p_148131_1_].serverUrl.equals(GuiIngestServers.this.field_146297_k.gameSettings.field_152407_Q);
         }
 
         protected void func_148123_a() {}

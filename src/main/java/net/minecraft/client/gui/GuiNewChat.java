@@ -35,13 +35,13 @@ public class GuiNewChat extends Gui
 
     public void func_146230_a(int p_146230_1_)
     {
-        if (this.field_146247_f.field_71474_y.field_74343_n != EntityPlayer.EnumChatVisibility.HIDDEN)
+        if (this.field_146247_f.gameSettings.field_74343_n != EntityPlayer.EnumChatVisibility.HIDDEN)
         {
             int j = this.func_146232_i();
             boolean flag = false;
             int k = 0;
             int l = this.field_146253_i.size();
-            float f = this.field_146247_f.field_71474_y.field_74357_r * 0.9F + 0.1F;
+            float f = this.field_146247_f.gameSettings.field_74357_r * 0.9F + 0.1F;
 
             if (l > 0)
             {
@@ -150,7 +150,7 @@ public class GuiNewChat extends Gui
 
     private String func_146235_b(String p_146235_1_)
     {
-        return Minecraft.func_71410_x().field_71474_y.field_74344_o ? p_146235_1_ : EnumChatFormatting.func_110646_a(p_146235_1_);
+        return Minecraft.func_71410_x().gameSettings.field_74344_o ? p_146235_1_ : EnumChatFormatting.func_110646_a(p_146235_1_);
     }
 
     private void func_146237_a(IChatComponent p_146237_1_, int p_146237_2_, int p_146237_3_, boolean p_146237_4_)
@@ -394,17 +394,17 @@ public class GuiNewChat extends Gui
 
     public int func_146228_f()
     {
-        return func_146233_a(this.field_146247_f.field_71474_y.field_96692_F);
+        return func_146233_a(this.field_146247_f.gameSettings.field_96692_F);
     }
 
     public int func_146246_g()
     {
-        return func_146243_b(this.func_146241_e() ? this.field_146247_f.field_71474_y.field_96694_H : this.field_146247_f.field_71474_y.field_96693_G);
+        return func_146243_b(this.func_146241_e() ? this.field_146247_f.gameSettings.field_96694_H : this.field_146247_f.gameSettings.field_96693_G);
     }
 
     public float func_146244_h()
     {
-        return this.field_146247_f.field_71474_y.field_96691_E;
+        return this.field_146247_f.gameSettings.field_96691_E;
     }
 
     public static int func_146233_a(float p_146233_0_)

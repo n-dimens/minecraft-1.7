@@ -99,55 +99,55 @@ public class GuiOptions extends GuiScreen implements GuiYesNoCallback
 
             if (p_146284_1_.field_146127_k == 101)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(new GuiVideoSettings(this, this.field_146443_h));
             }
 
             if (p_146284_1_.field_146127_k == 100)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(new GuiControls(this, this.field_146443_h));
             }
 
             if (p_146284_1_.field_146127_k == 102)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(new GuiLanguage(this, this.field_146443_h, this.field_146297_k.func_135016_M()));
             }
 
             if (p_146284_1_.field_146127_k == 103)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(new ScreenChatOptions(this, this.field_146443_h));
             }
 
             if (p_146284_1_.field_146127_k == 104)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(new GuiSnooper(this, this.field_146443_h));
             }
 
             if (p_146284_1_.field_146127_k == 200)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(this.field_146441_g);
             }
 
             if (p_146284_1_.field_146127_k == 105)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(new GuiScreenResourcePacks(this));
             }
 
             if (p_146284_1_.field_146127_k == 106)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(new GuiScreenOptionsSounds(this, this.field_146443_h));
             }
 
             if (p_146284_1_.field_146127_k == 107)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 IStream istream = this.field_146297_k.func_152346_Z();
 
                 if (istream.func_152936_l() && istream.func_152928_D())

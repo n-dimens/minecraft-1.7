@@ -210,12 +210,12 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
     {
         if (p_146284_1_.field_146127_k == 0)
         {
-            this.field_146297_k.func_147108_a(new GuiOptions(this, this.field_146297_k.field_71474_y));
+            this.field_146297_k.func_147108_a(new GuiOptions(this, this.field_146297_k.gameSettings));
         }
 
         if (p_146284_1_.field_146127_k == 5)
         {
-            this.field_146297_k.func_147108_a(new GuiLanguage(this, this.field_146297_k.field_71474_y, this.field_146297_k.func_135016_M()));
+            this.field_146297_k.func_147108_a(new GuiLanguage(this, this.field_146297_k.gameSettings, this.field_146297_k.func_135016_M()));
         }
 
         if (p_146284_1_.field_146127_k == 1)

@@ -294,12 +294,12 @@ public class GameSettings
 
     public static boolean func_100015_a(KeyBinding p_100015_0_)
     {
-        return p_100015_0_.func_151463_i() == 0 ? false : (p_100015_0_.func_151463_i() < 0 ? Mouse.isButtonDown(p_100015_0_.func_151463_i() + 100) : Keyboard.isKeyDown(p_100015_0_.func_151463_i()));
+        return p_100015_0_.getEventKey() == 0 ? false : (p_100015_0_.getEventKey() < 0 ? Mouse.isButtonDown(p_100015_0_.getEventKey() + 100) : Keyboard.isKeyDown(p_100015_0_.getEventKey()));
     }
 
     public void func_151440_a(KeyBinding p_151440_1_, int p_151440_2_)
     {
-        p_151440_1_.func_151462_b(p_151440_2_);
+        p_151440_1_.setEventKey(p_151440_2_);
         this.func_74303_b();
     }
 
@@ -1008,9 +1008,9 @@ public class GameSettings
                     {
                         KeyBinding keybinding = akeybinding[j];
 
-                        if (astring[0].equals("key_" + keybinding.func_151464_g()))
+                        if (astring[0].equals("key_" + keybinding.getId()))
                         {
-                            keybinding.func_151462_b(Integer.parseInt(astring[1]));
+                            keybinding.setEventKey(Integer.parseInt(astring[1]));
                         }
                     }
 
@@ -1114,7 +1114,7 @@ public class GameSettings
             for (j = 0; j < i; ++j)
             {
                 KeyBinding keybinding = akeybinding[j];
-                printwriter.println("key_" + keybinding.func_151464_g() + ":" + keybinding.func_151463_i());
+                printwriter.println("key_" + keybinding.getId() + ":" + keybinding.getEventKey());
             }
 
             SoundCategory[] asoundcategory = SoundCategory.values();

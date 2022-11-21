@@ -38,7 +38,7 @@ public class GuiOptionsRowList extends GuiListExtended
         else
         {
             int k = p_148182_4_.func_74381_c();
-            return (GuiButton)(p_148182_4_.func_74380_a() ? new GuiOptionSlider(k, p_148182_2_, p_148182_3_, p_148182_4_) : new GuiOptionButton(k, p_148182_2_, p_148182_3_, p_148182_4_, p_148182_1_.field_71474_y.func_74297_c(p_148182_4_)));
+            return (GuiButton)(p_148182_4_.func_74380_a() ? new GuiOptionSlider(k, p_148182_2_, p_148182_3_, p_148182_4_) : new GuiOptionButton(k, p_148182_2_, p_148182_3_, p_148182_4_, p_148182_1_.gameSettings.func_74297_c(p_148182_4_)));
         }
     }
 
@@ -97,8 +97,8 @@ public class GuiOptionsRowList extends GuiListExtended
                 {
                     if (this.field_148323_b instanceof GuiOptionButton)
                     {
-                        this.field_148325_a.field_71474_y.func_74306_a(((GuiOptionButton)this.field_148323_b).func_146136_c(), 1);
-                        this.field_148323_b.field_146126_j = this.field_148325_a.field_71474_y.func_74297_c(GameSettings.Options.func_74379_a(this.field_148323_b.field_146127_k));
+                        this.field_148325_a.gameSettings.func_74306_a(((GuiOptionButton)this.field_148323_b).func_146136_c(), 1);
+                        this.field_148323_b.field_146126_j = this.field_148325_a.gameSettings.func_74297_c(GameSettings.Options.func_74379_a(this.field_148323_b.field_146127_k));
                     }
 
                     return true;
@@ -107,8 +107,8 @@ public class GuiOptionsRowList extends GuiListExtended
                 {
                     if (this.field_148324_c instanceof GuiOptionButton)
                     {
-                        this.field_148325_a.field_71474_y.func_74306_a(((GuiOptionButton)this.field_148324_c).func_146136_c(), 1);
-                        this.field_148324_c.field_146126_j = this.field_148325_a.field_71474_y.func_74297_c(GameSettings.Options.func_74379_a(this.field_148324_c.field_146127_k));
+                        this.field_148325_a.gameSettings.func_74306_a(((GuiOptionButton)this.field_148324_c).func_146136_c(), 1);
+                        this.field_148324_c.field_146126_j = this.field_148325_a.gameSettings.func_74297_c(GameSettings.Options.func_74379_a(this.field_148324_c.field_146127_k));
                     }
 
                     return true;

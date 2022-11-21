@@ -141,7 +141,7 @@ public class TwitchStream implements BroadcastController.BroadcastListener, Chat
 
     public void func_152935_j()
     {
-        int i = this.field_152953_e.field_71474_y.field_152408_R;
+        int i = this.field_152953_e.gameSettings.field_152408_R;
         ChatController.ChatState chatstate = this.field_152952_d.func_153000_j();
 
         if (i == 2)
@@ -319,16 +319,16 @@ public class TwitchStream implements BroadcastController.BroadcastListener, Chat
     {
         if (this.func_152934_n())
         {
-            float f = this.field_152953_e.field_71474_y.field_152402_L;
+            float f = this.field_152953_e.gameSettings.field_152402_L;
             boolean flag = this.field_152962_n || f <= 0.0F;
             this.field_152951_c.func_152837_b(flag ? 0.0F : f);
-            this.field_152951_c.func_152829_a(this.func_152929_G() ? 0.0F : this.field_152953_e.field_71474_y.field_152401_K);
+            this.field_152951_c.func_152829_a(this.func_152929_G() ? 0.0F : this.field_152953_e.gameSettings.field_152401_K);
         }
     }
 
     public void func_152930_t()
     {
-        GameSettings gamesettings = this.field_152953_e.field_71474_y;
+        GameSettings gamesettings = this.field_152953_e.gameSettings;
         VideoParams videoparams = this.field_152951_c.func_152834_a(func_152946_b(gamesettings.field_152403_M), func_152948_a(gamesettings.field_152404_N), func_152947_c(gamesettings.field_152400_J), (float)this.field_152953_e.field_71443_c / (float)this.field_152953_e.field_71440_d);
 
         switch (gamesettings.field_152405_O)
@@ -531,7 +531,7 @@ public class TwitchStream implements BroadcastController.BroadcastListener, Chat
             ChatMessage chatmessage = achatmessage1[j];
             this.func_152939_a(chatmessage.userName, chatmessage);
 
-            if (this.func_152940_a(chatmessage.modes, chatmessage.subscriptions, this.field_152953_e.field_71474_y.field_152409_S))
+            if (this.func_152940_a(chatmessage.modes, chatmessage.subscriptions, this.field_152953_e.gameSettings.field_152409_S))
             {
                 ChatComponentText chatcomponenttext = new ChatComponentText(chatmessage.userName);
                 ChatComponentTranslation chatcomponenttranslation = new ChatComponentTranslation("chat.stream." + (chatmessage.action ? "emote" : "text"), new Object[] {this.field_152954_f, chatcomponenttext, EnumChatFormatting.func_110646_a(chatmessage.message)});
@@ -669,8 +669,8 @@ public class TwitchStream implements BroadcastController.BroadcastListener, Chat
 
     public boolean func_152929_G()
     {
-        boolean flag = this.field_152953_e.field_71474_y.field_152410_T == 1;
-        return this.field_152962_n || this.field_152953_e.field_71474_y.field_152401_K <= 0.0F || flag != this.field_152963_o;
+        boolean flag = this.field_152953_e.gameSettings.field_152410_T == 1;
+        return this.field_152962_n || this.field_152953_e.gameSettings.field_152401_K <= 0.0F || flag != this.field_152963_o;
     }
 
     public IStream.AuthFailureReason func_152918_H()

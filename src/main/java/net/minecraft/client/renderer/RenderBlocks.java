@@ -184,7 +184,7 @@ public class RenderBlocks
             this.field_147857_k = p_147782_9_;
             this.field_147851_l = p_147782_5_;
             this.field_147853_m = p_147782_11_;
-            this.field_147849_o = this.field_147877_p.field_71474_y.field_74348_k >= 2 && (this.field_147859_h > 0.0D || this.field_147861_i < 1.0D || this.field_147855_j > 0.0D || this.field_147857_k < 1.0D || this.field_147851_l > 0.0D || this.field_147853_m < 1.0D);
+            this.field_147849_o = this.field_147877_p.gameSettings.field_74348_k >= 2 && (this.field_147859_h > 0.0D || this.field_147861_i < 1.0D || this.field_147855_j > 0.0D || this.field_147857_k < 1.0D || this.field_147851_l > 0.0D || this.field_147853_m < 1.0D);
         }
     }
 
@@ -198,7 +198,7 @@ public class RenderBlocks
             this.field_147857_k = p_147775_1_.func_149669_A();
             this.field_147851_l = p_147775_1_.func_149706_B();
             this.field_147853_m = p_147775_1_.func_149693_C();
-            this.field_147849_o = this.field_147877_p.field_71474_y.field_74348_k >= 2 && (this.field_147859_h > 0.0D || this.field_147861_i < 1.0D || this.field_147855_j > 0.0D || this.field_147857_k < 1.0D || this.field_147851_l > 0.0D || this.field_147853_m < 1.0D);
+            this.field_147849_o = this.field_147877_p.gameSettings.field_74348_k >= 2 && (this.field_147859_h > 0.0D || this.field_147861_i < 1.0D || this.field_147855_j > 0.0D || this.field_147857_k < 1.0D || this.field_147851_l > 0.0D || this.field_147853_m < 1.0D);
         }
     }
 
@@ -211,7 +211,7 @@ public class RenderBlocks
         this.field_147851_l = p_147770_5_;
         this.field_147853_m = p_147770_11_;
         this.field_147847_n = true;
-        this.field_147849_o = this.field_147877_p.field_71474_y.field_74348_k >= 2 && (this.field_147859_h > 0.0D || this.field_147861_i < 1.0D || this.field_147855_j > 0.0D || this.field_147857_k < 1.0D || this.field_147851_l > 0.0D || this.field_147853_m < 1.0D);
+        this.field_147849_o = this.field_147877_p.gameSettings.field_74348_k >= 2 && (this.field_147859_h > 0.0D || this.field_147861_i < 1.0D || this.field_147855_j > 0.0D || this.field_147857_k < 1.0D || this.field_147851_l > 0.0D || this.field_147853_m < 1.0D);
     }
 
     public void func_147762_c()

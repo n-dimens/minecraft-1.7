@@ -61,13 +61,13 @@ public class GuiControls extends GuiScreen
         }
         else if (p_146284_1_.field_146127_k == 201)
         {
-            KeyBinding[] akeybinding = this.field_146297_k.field_71474_y.field_74324_K;
+            KeyBinding[] akeybinding = this.field_146297_k.gameSettings.field_74324_K;
             int i = akeybinding.length;
 
             for (int j = 0; j < i; ++j)
             {
                 KeyBinding keybinding = akeybinding[j];
-                keybinding.func_151462_b(keybinding.func_151469_h());
+                keybinding.setEventKey(keybinding.getDefaultEventKey());
             }
 
             KeyBinding.func_74508_b();
@@ -137,7 +137,7 @@ public class GuiControls extends GuiScreen
         {
             KeyBinding keybinding = akeybinding[l];
 
-            if (keybinding.func_151463_i() != keybinding.func_151469_h())
+            if (keybinding.getEventKey() != keybinding.getDefaultEventKey())
             {
                 flag = false;
                 break;

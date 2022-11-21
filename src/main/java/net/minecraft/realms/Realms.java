@@ -16,7 +16,7 @@ public class Realms
 
     public static boolean isTouchScreen()
     {
-        return Minecraft.func_71410_x().field_71474_y.field_85185_A;
+        return Minecraft.func_71410_x().gameSettings.field_85185_A;
     }
 
     public static Proxy getProxy()

@@ -56,7 +56,7 @@ public class GuiScreenOptionsSounds extends GuiScreen
         {
             if (p_146284_1_.field_146127_k == 200)
             {
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_147108_a(this.field_146505_f);
             }
         }
@@ -116,8 +116,8 @@ public class GuiScreenOptionsSounds extends GuiScreen
                         this.field_146156_o = 1.0F;
                     }
 
-                    p_146119_1_.field_71474_y.func_151439_a(this.field_146153_r, this.field_146156_o);
-                    p_146119_1_.field_71474_y.func_74303_b();
+                    p_146119_1_.gameSettings.func_151439_a(this.field_146153_r, this.field_146156_o);
+                    p_146119_1_.gameSettings.func_74303_b();
                     this.field_146126_j = this.field_146152_s + ": " + GuiScreenOptionsSounds.this.func_146504_a(this.field_146153_r);
                 }
 
@@ -143,8 +143,8 @@ public class GuiScreenOptionsSounds extends GuiScreen
                     this.field_146156_o = 1.0F;
                 }
 
-                p_146116_1_.field_71474_y.func_151439_a(this.field_146153_r, this.field_146156_o);
-                p_146116_1_.field_71474_y.func_74303_b();
+                p_146116_1_.gameSettings.func_151439_a(this.field_146153_r, this.field_146156_o);
+                p_146116_1_.gameSettings.func_74303_b();
                 this.field_146126_j = this.field_146152_s + ": " + GuiScreenOptionsSounds.this.func_146504_a(this.field_146153_r);
                 this.field_146155_p = true;
                 return true;

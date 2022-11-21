@@ -296,9 +296,9 @@ public class RenderGlobal implements IWorldAccess
     {
         if (this.field_72769_h != null)
         {
-            Blocks.field_150362_t.func_150122_b(this.field_72777_q.field_71474_y.field_74347_j);
-            Blocks.field_150361_u.func_150122_b(this.field_72777_q.field_71474_y.field_74347_j);
-            this.field_72739_F = this.field_72777_q.field_71474_y.field_151451_c;
+            Blocks.field_150362_t.func_150122_b(this.field_72777_q.gameSettings.field_74347_j);
+            Blocks.field_150361_u.func_150122_b(this.field_72777_q.gameSettings.field_74347_j);
+            this.field_72739_F = this.field_72777_q.gameSettings.field_151451_c;
             int i;
 
             if (this.field_72765_l != null)
@@ -387,7 +387,7 @@ public class RenderGlobal implements IWorldAccess
             double d2 = p_147589_1_.field_70166_s + (p_147589_1_.field_70161_v - p_147589_1_.field_70166_s) * (double)p_147589_3_;
             this.field_72769_h.field_72984_F.func_76320_a("prepare");
             TileEntityRendererDispatcher.field_147556_a.func_147542_a(this.field_72769_h, this.field_72777_q.func_110434_K(), this.field_72777_q.field_71466_p, this.field_72777_q.field_71451_h, p_147589_3_);
-            RenderManager.field_78727_a.func_147938_a(this.field_72769_h, this.field_72777_q.func_110434_K(), this.field_72777_q.field_71466_p, this.field_72777_q.field_71451_h, this.field_72777_q.field_147125_j, this.field_72777_q.field_71474_y, p_147589_3_);
+            RenderManager.field_78727_a.func_147938_a(this.field_72769_h, this.field_72777_q.func_110434_K(), this.field_72777_q.field_71466_p, this.field_72777_q.field_71451_h, this.field_72777_q.field_147125_j, this.field_72777_q.gameSettings, p_147589_3_);
             this.field_72748_H = 0;
             this.field_72749_I = 0;
             this.field_72750_J = 0;
@@ -452,7 +452,7 @@ public class RenderGlobal implements IWorldAccess
                     }
                 }
 
-                if (flag && (entity != this.field_72777_q.field_71451_h || this.field_72777_q.field_71474_y.field_74320_O != 0 || this.field_72777_q.field_71451_h.func_70608_bn()) && this.field_72769_h.func_72899_e(MathHelper.func_76128_c(entity.field_70165_t), 0, MathHelper.func_76128_c(entity.field_70161_v)))
+                if (flag && (entity != this.field_72777_q.field_71451_h || this.field_72777_q.gameSettings.field_74320_O != 0 || this.field_72777_q.field_71451_h.func_70608_bn()) && this.field_72769_h.func_72899_e(MathHelper.func_76128_c(entity.field_70165_t), 0, MathHelper.func_76128_c(entity.field_70161_v)))
                 {
                     ++this.field_72749_I;
                     RenderManager.field_78727_a.func_147937_a(entity, p_147589_3_);
@@ -612,7 +612,7 @@ public class RenderGlobal implements IWorldAccess
             }
         }
 
-        if (this.field_72777_q.field_71474_y.field_151451_c != this.field_72739_F)
+        if (this.field_72777_q.gameSettings.field_151451_c != this.field_72739_F)
         {
             this.func_72712_a();
         }
@@ -666,7 +666,7 @@ public class RenderGlobal implements IWorldAccess
         RenderHelper.func_74518_a();
         byte b1 = 0;
 
-        if (this.field_72774_t && this.field_72777_q.field_71474_y.field_74349_h && !this.field_72777_q.field_71474_y.field_74337_g && p_72719_2_ == 0)
+        if (this.field_72774_t && this.field_72777_q.gameSettings.field_74349_h && !this.field_72777_q.gameSettings.field_74337_g && p_72719_2_ == 0)
         {
             byte b0 = 0;
             int l = 16;
@@ -754,7 +754,7 @@ public class RenderGlobal implements IWorldAccess
 
                 GL11.glPopMatrix();
 
-                if (this.field_72777_q.field_71474_y.field_74337_g)
+                if (this.field_72777_q.gameSettings.field_74337_g)
                 {
                     if (EntityRenderer.field_78515_b == 0)
                     {
@@ -1004,7 +1004,7 @@ public class RenderGlobal implements IWorldAccess
             float f3 = (float)vec3.field_72449_c;
             float f6;
 
-            if (this.field_72777_q.field_71474_y.field_74337_g)
+            if (this.field_72777_q.gameSettings.field_74337_g)
             {
                 float f4 = (f1 * 30.0F + f2 * 59.0F + f3 * 11.0F) / 100.0F;
                 float f5 = (f1 * 30.0F + f2 * 70.0F) / 100.0F;
@@ -1044,7 +1044,7 @@ public class RenderGlobal implements IWorldAccess
                 f8 = afloat[2];
                 float f11;
 
-                if (this.field_72777_q.field_71474_y.field_74337_g)
+                if (this.field_72777_q.gameSettings.field_74337_g)
                 {
                     f9 = (f6 * 30.0F + f7 * 59.0F + f8 * 11.0F) / 100.0F;
                     f10 = (f6 * 30.0F + f7 * 70.0F) / 100.0F;
@@ -1181,7 +1181,7 @@ public class RenderGlobal implements IWorldAccess
     {
         if (this.field_72777_q.field_71441_e.field_73011_w.func_76569_d())
         {
-            if (this.field_72777_q.field_71474_y.field_74347_j)
+            if (this.field_72777_q.gameSettings.field_74347_j)
             {
                 this.func_72736_c(p_72718_1_);
             }
@@ -1201,7 +1201,7 @@ public class RenderGlobal implements IWorldAccess
                 float f4 = (float)vec3.field_72449_c;
                 float f5;
 
-                if (this.field_72777_q.field_71474_y.field_74337_g)
+                if (this.field_72777_q.gameSettings.field_74337_g)
                 {
                     f5 = (f2 * 30.0F + f3 * 59.0F + f4 * 11.0F) / 100.0F;
                     float f6 = (f2 * 30.0F + f3 * 70.0F) / 100.0F;
@@ -1275,7 +1275,7 @@ public class RenderGlobal implements IWorldAccess
         float f9;
         float f10;
 
-        if (this.field_72777_q.field_71474_y.field_74337_g)
+        if (this.field_72777_q.gameSettings.field_74337_g)
         {
             f8 = (f5 * 30.0F + f6 * 59.0F + f7 * 11.0F) / 100.0F;
             f9 = (f5 * 30.0F + f6 * 70.0F) / 100.0F;
@@ -1303,7 +1303,7 @@ public class RenderGlobal implements IWorldAccess
             {
                 GL11.glColorMask(false, false, false, false);
             }
-            else if (this.field_72777_q.field_71474_y.field_74337_g)
+            else if (this.field_72777_q.gameSettings.field_74337_g)
             {
                 if (EntityRenderer.field_78515_b == 0)
                 {
@@ -1840,7 +1840,7 @@ public class RenderGlobal implements IWorldAccess
     {
         if (this.field_72777_q != null && this.field_72777_q.field_71451_h != null && this.field_72777_q.field_71452_i != null)
         {
-            int i = this.field_72777_q.field_71474_y.field_74362_aa;
+            int i = this.field_72777_q.gameSettings.field_74362_aa;
 
             if (i == 1 && this.field_72769_h.field_73012_v.nextInt(3) == 0)
             {

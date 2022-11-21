@@ -72,11 +72,11 @@ public class GuiScreenDemo extends GuiScreen
         int l = (this.field_146295_m - 166) / 2 + 8;
         this.field_146289_q.func_78276_b(I18n.func_135052_a("demo.help.title", new Object[0]), k, l, 2039583);
         l += 12;
-        GameSettings gamesettings = this.field_146297_k.field_71474_y;
-        this.field_146289_q.func_78276_b(I18n.func_135052_a("demo.help.movementShort", new Object[] {GameSettings.func_74298_c(gamesettings.field_74351_w.func_151463_i()), GameSettings.func_74298_c(gamesettings.field_74370_x.func_151463_i()), GameSettings.func_74298_c(gamesettings.field_74368_y.func_151463_i()), GameSettings.func_74298_c(gamesettings.field_74366_z.func_151463_i())}), k, l, 5197647);
+        GameSettings gamesettings = this.field_146297_k.gameSettings;
+        this.field_146289_q.func_78276_b(I18n.func_135052_a("demo.help.movementShort", new Object[] {GameSettings.func_74298_c(gamesettings.field_74351_w.getEventKey()), GameSettings.func_74298_c(gamesettings.field_74370_x.getEventKey()), GameSettings.func_74298_c(gamesettings.field_74368_y.getEventKey()), GameSettings.func_74298_c(gamesettings.field_74366_z.getEventKey())}), k, l, 5197647);
         this.field_146289_q.func_78276_b(I18n.func_135052_a("demo.help.movementMouse", new Object[0]), k, l + 12, 5197647);
-        this.field_146289_q.func_78276_b(I18n.func_135052_a("demo.help.jump", new Object[] {GameSettings.func_74298_c(gamesettings.field_74314_A.func_151463_i())}), k, l + 24, 5197647);
-        this.field_146289_q.func_78276_b(I18n.func_135052_a("demo.help.inventory", new Object[] {GameSettings.func_74298_c(gamesettings.field_151445_Q.func_151463_i())}), k, l + 36, 5197647);
+        this.field_146289_q.func_78276_b(I18n.func_135052_a("demo.help.jump", new Object[] {GameSettings.func_74298_c(gamesettings.field_74314_A.getEventKey())}), k, l + 24, 5197647);
+        this.field_146289_q.func_78276_b(I18n.func_135052_a("demo.help.inventory", new Object[] {GameSettings.func_74298_c(gamesettings.field_151445_Q.getEventKey())}), k, l + 36, 5197647);
         this.field_146289_q.func_78279_b(I18n.func_135052_a("demo.help.fullWrapped", new Object[0]), k, l + 68, 218, 2039583);
         super.func_73863_a(p_73863_1_, p_73863_2_, p_73863_3_);
     }

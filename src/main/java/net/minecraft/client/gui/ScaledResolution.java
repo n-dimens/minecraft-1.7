@@ -21,7 +21,7 @@ public class ScaledResolution
         this.field_78331_b = p_i1094_3_;
         this.field_78330_e = 1;
         boolean flag = p_i1094_1_.func_152349_b();
-        int k = p_i1094_1_.field_71474_y.field_74335_Z;
+        int k = p_i1094_1_.gameSettings.field_74335_Z;
 
         if (k == 0)
         {

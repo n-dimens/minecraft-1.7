@@ -97,7 +97,7 @@ public class GuiScreen extends Gui
 
     protected void func_146285_a(ItemStack p_146285_1_, int p_146285_2_, int p_146285_3_)
     {
-        List list = p_146285_1_.func_82840_a(this.field_146297_k.field_71439_g, this.field_146297_k.field_71474_y.field_82882_x);
+        List list = p_146285_1_.func_82840_a(this.field_146297_k.field_71439_g, this.field_146297_k.gameSettings.field_82882_x);
 
         for (int k = 0; k < list.size(); ++k)
         {
@@ -267,7 +267,7 @@ public class GuiScreen extends Gui
 
         if (Mouse.getEventButtonState())
         {
-            if (this.field_146297_k.field_71474_y.field_85185_A && this.field_146298_h++ > 0)
+            if (this.field_146297_k.gameSettings.field_85185_A && this.field_146298_h++ > 0)
             {
                 return;
             }
@@ -278,7 +278,7 @@ public class GuiScreen extends Gui
         }
         else if (k != -1)
         {
-            if (this.field_146297_k.field_71474_y.field_85185_A && --this.field_146298_h > 0)
+            if (this.field_146297_k.gameSettings.field_85185_A && --this.field_146298_h > 0)
             {
                 return;
             }

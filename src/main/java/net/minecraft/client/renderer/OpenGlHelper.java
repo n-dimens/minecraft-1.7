@@ -711,6 +711,6 @@ public class OpenGlHelper
 
     public static boolean func_148822_b()
     {
-        return field_148823_f && Minecraft.func_71410_x().field_71474_y.field_151448_g;
+        return field_148823_f && Minecraft.func_71410_x().gameSettings.field_151448_g;
     }
 }

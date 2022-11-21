@@ -16,10 +16,10 @@ public class KeyBinding implements Comparable
     private static final List field_74516_a = new ArrayList();
     private static final IntHashMap field_74514_b = new IntHashMap();
     private static final Set field_151473_c = new HashSet();
-    private final String field_74515_c;
-    private final int field_151472_e;
-    private final String field_151471_f;
-    private int field_74512_d;
+    private final String id;
+    private final int defaultEventKey;
+    private final String category;
+    private int eventKey;
     private boolean field_74513_e;
     private int field_151474_i;
     private static final String __OBFID = "CL_00000628";
@@ -69,7 +69,7 @@ public class KeyBinding implements Comparable
         while (iterator.hasNext())
         {
             KeyBinding keybinding = (KeyBinding)iterator.next();
-            field_74514_b.func_76038_a(keybinding.field_74512_d, keybinding);
+            field_74514_b.func_76038_a(keybinding.eventKey, keybinding);
         }
     }
 
@@ -78,15 +78,15 @@ public class KeyBinding implements Comparable
         return field_151473_c;
     }
 
-    public KeyBinding(String p_i45001_1_, int p_i45001_2_, String p_i45001_3_)
+    public KeyBinding(String id, int key, String category)
     {
-        this.field_74515_c = p_i45001_1_;
-        this.field_74512_d = p_i45001_2_;
-        this.field_151472_e = p_i45001_2_;
-        this.field_151471_f = p_i45001_3_;
+        this.id = id;
+        this.eventKey = key;
+        this.defaultEventKey = key;
+        this.category = category;
         field_74516_a.add(this);
-        field_74514_b.func_76038_a(p_i45001_2_, this);
-        field_151473_c.add(p_i45001_3_);
+        field_74514_b.func_76038_a(key, this);
+        field_151473_c.add(category);
     }
 
     public boolean func_151470_d()
@@ -94,9 +94,9 @@ public class KeyBinding implements Comparable
         return this.field_74513_e;
     }
 
-    public String func_151466_e()
+    public String getCategory()
     {
-        return this.field_151471_f;
+        return this.category;
     }
 
     public boolean func_151468_f()
@@ -118,33 +118,33 @@ public class KeyBinding implements Comparable
         this.field_74513_e = false;
     }
 
-    public String func_151464_g()
+    public String getId()
     {
-        return this.field_74515_c;
+        return this.id;
     }
 
-    public int func_151469_h()
+    public int getDefaultEventKey()
     {
-        return this.field_151472_e;
+        return this.defaultEventKey;
     }
 
-    public int func_151463_i()
+    public int getEventKey()
     {
-        return this.field_74512_d;
+        return this.eventKey;
     }
 
-    public void func_151462_b(int p_151462_1_)
+    public void setEventKey(int value)
     {
-        this.field_74512_d = p_151462_1_;
+        this.eventKey = value;
     }
 
-    public int compareTo(KeyBinding p_compareTo_1_)
+    public int compareTo(KeyBinding keyBinding)
     {
-        int i = I18n.func_135052_a(this.field_151471_f, new Object[0]).compareTo(I18n.func_135052_a(p_compareTo_1_.field_151471_f, new Object[0]));
+        int i = I18n.func_135052_a(this.category, new Object[0]).compareTo(I18n.func_135052_a(keyBinding.category, new Object[0]));
 
         if (i == 0)
         {
-            i = I18n.func_135052_a(this.field_74515_c, new Object[0]).compareTo(I18n.func_135052_a(p_compareTo_1_.field_74515_c, new Object[0]));
+            i = I18n.func_135052_a(this.id, new Object[0]).compareTo(I18n.func_135052_a(keyBinding.id, new Object[0]));
         }
 
         return i;

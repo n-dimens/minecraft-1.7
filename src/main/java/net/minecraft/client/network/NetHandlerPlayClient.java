@@ -240,7 +240,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
         this.field_147299_f.field_71439_g.func_145769_d(p_147282_1_.func_149197_c());
         this.field_147304_c = p_147282_1_.func_149193_h();
         this.field_147299_f.field_71442_b.func_78746_a(p_147282_1_.func_149198_e());
-        this.field_147299_f.field_71474_y.func_82879_c();
+        this.field_147299_f.gameSettings.func_82879_c();
         this.field_147302_e.func_150725_a(new C17PacketCustomPayload("MC|Brand", ClientBrandRetriever.getClientModName().getBytes(Charsets.UTF_8)), new GenericFutureListener[0]);
     }
 
@@ -810,8 +810,8 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
 
             if (flag)
             {
-                GameSettings gamesettings = this.field_147299_f.field_71474_y;
-                this.field_147299_f.field_71456_v.func_110326_a(I18n.func_135052_a("mount.onboard", new Object[] {GameSettings.func_74298_c(gamesettings.field_74311_E.func_151463_i())}), false);
+                GameSettings gamesettings = this.field_147299_f.gameSettings;
+                this.field_147299_f.field_71456_v.func_110326_a(I18n.func_135052_a("mount.onboard", new Object[] {GameSettings.func_74298_c(gamesettings.field_74311_E.getEventKey())}), false);
             }
         }
         else if (p_147243_1_.func_149404_c() == 1 && object != null && object instanceof EntityLiving)
@@ -1216,7 +1216,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
         }
         else if (i == 5)
         {
-            GameSettings gamesettings = this.field_147299_f.field_71474_y;
+            GameSettings gamesettings = this.field_147299_f.gameSettings;
 
             if (f == 0.0F)
             {
@@ -1224,15 +1224,15 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
             }
             else if (f == 101.0F)
             {
-                this.field_147299_f.field_71456_v.func_146158_b().func_146227_a(new ChatComponentTranslation("demo.help.movement", new Object[] {GameSettings.func_74298_c(gamesettings.field_74351_w.func_151463_i()), GameSettings.func_74298_c(gamesettings.field_74370_x.func_151463_i()), GameSettings.func_74298_c(gamesettings.field_74368_y.func_151463_i()), GameSettings.func_74298_c(gamesettings.field_74366_z.func_151463_i())}));
+                this.field_147299_f.field_71456_v.func_146158_b().func_146227_a(new ChatComponentTranslation("demo.help.movement", new Object[] {GameSettings.func_74298_c(gamesettings.field_74351_w.getEventKey()), GameSettings.func_74298_c(gamesettings.field_74370_x.getEventKey()), GameSettings.func_74298_c(gamesettings.field_74368_y.getEventKey()), GameSettings.func_74298_c(gamesettings.field_74366_z.getEventKey())}));
             }
             else if (f == 102.0F)
             {
-                this.field_147299_f.field_71456_v.func_146158_b().func_146227_a(new ChatComponentTranslation("demo.help.jump", new Object[] {GameSettings.func_74298_c(gamesettings.field_74314_A.func_151463_i())}));
+                this.field_147299_f.field_71456_v.func_146158_b().func_146227_a(new ChatComponentTranslation("demo.help.jump", new Object[] {GameSettings.func_74298_c(gamesettings.field_74314_A.getEventKey())}));
             }
             else if (f == 103.0F)
             {
-                this.field_147299_f.field_71456_v.func_146158_b().func_146227_a(new ChatComponentTranslation("demo.help.inventory", new Object[] {GameSettings.func_74298_c(gamesettings.field_151445_Q.func_151463_i())}));
+                this.field_147299_f.field_71456_v.func_146158_b().func_146227_a(new ChatComponentTranslation("demo.help.inventory", new Object[] {GameSettings.func_74298_c(gamesettings.field_151445_Q.getEventKey())}));
             }
         }
         else if (i == 6)
@@ -1288,10 +1288,10 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
                     this.field_147299_f.field_71458_u.func_146256_a(achievement);
                     this.field_147299_f.func_152346_Z().func_152911_a(new MetadataAchievement(achievement), 0L);
 
-                    if (statbase == AchievementList.field_76004_f)
+                    if (statbase == AchievementList.OpenInventory)
                     {
-                        this.field_147299_f.field_71474_y.field_151441_H = false;
-                        this.field_147299_f.field_71474_y.func_74303_b();
+                        this.field_147299_f.gameSettings.field_151441_H = false;
+                        this.field_147299_f.gameSettings.func_74303_b();
                     }
                 }
 
@@ -1299,9 +1299,9 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
             }
         }
 
-        if (!this.field_147308_k && !flag && this.field_147299_f.field_71474_y.field_151441_H)
+        if (!this.field_147308_k && !flag && this.field_147299_f.gameSettings.field_151441_H)
         {
-            this.field_147299_f.field_71458_u.func_146255_b(AchievementList.field_76004_f);
+            this.field_147299_f.field_71458_u.func_146255_b(AchievementList.OpenInventory);
         }
 
         this.field_147308_k = true;

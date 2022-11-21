@@ -34,15 +34,15 @@ public class GuiScreenServerList extends GuiScreen
         this.field_146302_g = new GuiTextField(this.field_146289_q, this.field_146294_l / 2 - 100, 116, 200, 20);
         this.field_146302_g.func_146203_f(128);
         this.field_146302_g.func_146195_b(true);
-        this.field_146302_g.func_146180_a(this.field_146297_k.field_71474_y.field_74332_R);
+        this.field_146302_g.func_146180_a(this.field_146297_k.gameSettings.field_74332_R);
         ((GuiButton)this.field_146292_n.get(0)).field_146124_l = this.field_146302_g.func_146179_b().length() > 0 && this.field_146302_g.func_146179_b().split(":").length > 0;
     }
 
     public void func_146281_b()
     {
         Keyboard.enableRepeatEvents(false);
-        this.field_146297_k.field_71474_y.field_74332_R = this.field_146302_g.func_146179_b();
-        this.field_146297_k.field_71474_y.func_74303_b();
+        this.field_146297_k.gameSettings.field_74332_R = this.field_146302_g.func_146179_b();
+        this.field_146297_k.gameSettings.func_74303_b();
     }
 
     protected void func_146284_a(GuiButton p_146284_1_)

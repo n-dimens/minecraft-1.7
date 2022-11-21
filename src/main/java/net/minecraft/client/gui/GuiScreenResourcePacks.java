@@ -166,16 +166,16 @@ public class GuiScreenResourcePacks extends GuiScreen
 
                 Collections.reverse(arraylist);
                 this.field_146297_k.func_110438_M().func_148527_a(arraylist);
-                this.field_146297_k.field_71474_y.field_151453_l.clear();
+                this.field_146297_k.gameSettings.field_151453_l.clear();
                 iterator = arraylist.iterator();
 
                 while (iterator.hasNext())
                 {
                     ResourcePackRepository.Entry entry = (ResourcePackRepository.Entry)iterator.next();
-                    this.field_146297_k.field_71474_y.field_151453_l.add(entry.func_110515_d());
+                    this.field_146297_k.gameSettings.field_151453_l.add(entry.func_110515_d());
                 }
 
-                this.field_146297_k.field_71474_y.func_74303_b();
+                this.field_146297_k.gameSettings.func_74303_b();
                 this.field_146297_k.func_110436_a();
                 this.field_146297_k.func_147108_a(this.field_146965_f);
             }

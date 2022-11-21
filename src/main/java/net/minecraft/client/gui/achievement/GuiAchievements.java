@@ -56,8 +56,8 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
         this.field_146556_E = p_i45026_2_;
         short short1 = 141;
         short short2 = 141;
-        this.field_146569_s = this.field_146567_u = this.field_146565_w = (double)(AchievementList.field_76004_f.field_75993_a * 24 - short1 / 2 - 12);
-        this.field_146568_t = this.field_146566_v = this.field_146573_x = (double)(AchievementList.field_76004_f.field_75991_b * 24 - short2 / 2);
+        this.field_146569_s = this.field_146567_u = this.field_146565_w = (double)(AchievementList.OpenInventory.field_75993_a * 24 - short1 / 2 - 12);
+        this.field_146568_t = this.field_146566_v = this.field_146573_x = (double)(AchievementList.OpenInventory.field_75991_b * 24 - short2 / 2);
     }
 
     public void func_73866_w_()
@@ -80,7 +80,7 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
 
     protected void func_73869_a(char p_73869_1_, int p_73869_2_)
     {
-        if (p_73869_2_ == this.field_146297_k.field_71474_y.field_151445_Q.func_151463_i())
+        if (p_73869_2_ == this.field_146297_k.gameSettings.field_151445_Q.getEventKey())
         {
             this.field_146297_k.func_147108_a((GuiScreen)null);
             this.field_146297_k.func_71381_h();

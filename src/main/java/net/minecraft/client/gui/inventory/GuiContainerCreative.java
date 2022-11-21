@@ -283,7 +283,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
     {
         if (field_147058_w != CreativeTabs.field_78027_g.func_78021_a())
         {
-            if (GameSettings.func_100015_a(this.field_146297_k.field_71474_y.field_74310_D))
+            if (GameSettings.func_100015_a(this.field_146297_k.gameSettings.field_74310_D))
             {
                 this.func_147050_b(CreativeTabs.field_78027_g);
             }
@@ -350,7 +350,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
         {
             ItemStack itemstack = (ItemStack)iterator.next();
             boolean flag = false;
-            Iterator iterator1 = itemstack.func_82840_a(this.field_146297_k.field_71439_g, this.field_146297_k.field_71474_y.field_82882_x).iterator();
+            Iterator iterator1 = itemstack.func_82840_a(this.field_146297_k.field_71439_g, this.field_146297_k.gameSettings.field_82882_x).iterator();
 
             while (true)
             {
@@ -633,7 +633,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
     {
         if (field_147058_w == CreativeTabs.field_78027_g.func_78021_a())
         {
-            List list = p_146285_1_.func_82840_a(this.field_146297_k.field_71439_g, this.field_146297_k.field_71474_y.field_82882_x);
+            List list = p_146285_1_.func_82840_a(this.field_146297_k.field_71439_g, this.field_146297_k.gameSettings.field_82882_x);
             CreativeTabs creativetabs = p_146285_1_.func_77973_b().func_77640_w();
 
             if (creativetabs == null && p_146285_1_.func_77973_b() == Items.field_151134_bR)

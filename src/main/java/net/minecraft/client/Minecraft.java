@@ -172,7 +172,7 @@ import org.lwjgl.util.glu.GLU;
 @SideOnly(Side.CLIENT)
 public class Minecraft implements IPlayerUsage
 {
-    private static final Logger field_147123_G = LogManager.getLogger();
+    private static final Logger LOG = LogManager.getLogger();
     private static final ResourceLocation field_110444_H = new ResourceLocation("textures/gui/title/mojang.png");
     public static final boolean field_142025_a = Util.func_110647_a() == Util.EnumOS.OSX;
     public static byte[] field_71444_a = new byte[10485760];
@@ -211,7 +211,7 @@ public class Minecraft implements IPlayerUsage
     public GuiIngame field_71456_v;
     public boolean field_71454_w;
     public MovingObjectPosition field_71476_x;
-    public GameSettings field_71474_y;
+    public GameSettings gameSettings;
     public MouseHelper field_71417_B;
     public final File field_71412_D;
     private final File field_110446_Y;
@@ -270,8 +270,8 @@ public class Minecraft implements IPlayerUsage
         this.field_152355_az = (new YggdrasilAuthenticationService(p_i1103_9_, UUID.randomUUID().toString())).createMinecraftSessionService();
         this.func_71389_H();
         this.field_71449_j = p_i1103_1_;
-        field_147123_G.info("Setting user: " + p_i1103_1_.func_111285_a());
-        field_147123_G.info("(Session ID is " + p_i1103_1_.func_111286_b() + ")");
+        LOG.info("Setting user: " + p_i1103_1_.func_111285_a());
+        LOG.info("(Session ID is " + p_i1103_1_.func_111286_b() + ")");
         this.field_71459_aj = p_i1103_5_;
         this.field_71443_c = p_i1103_2_;
         this.field_71440_d = p_i1103_3_;
@@ -369,12 +369,12 @@ public class Minecraft implements IPlayerUsage
 
     private void func_71384_a() throws LWJGLException
     {
-        this.field_71474_y = new GameSettings(this, this.field_71412_D);
+        this.gameSettings = new GameSettings(this, this.field_71412_D);
 
-        if (this.field_71474_y.field_92119_C > 0 && this.field_71474_y.field_92118_B > 0)
+        if (this.gameSettings.field_92119_C > 0 && this.gameSettings.field_92118_B > 0)
         {
-            this.field_71443_c = this.field_71474_y.field_92118_B;
-            this.field_71440_d = this.field_71474_y.field_92119_C;
+            this.field_71443_c = this.gameSettings.field_92118_B;
+            this.field_71440_d = this.gameSettings.field_92119_C;
         }
 
         if (this.field_71431_Q)
@@ -400,7 +400,7 @@ public class Minecraft implements IPlayerUsage
 
         Display.setResizable(true);
         Display.setTitle("Minecraft 1.7.10");
-        field_147123_G.info("LWJGL Version: " + Sys.getVersion());
+        LOG.info("LWJGL Version: " + Sys.getVersion());
         Util.EnumOS enumos = Util.func_110647_a();
 
         if (enumos != Util.EnumOS.OSX)
@@ -417,7 +417,7 @@ public class Minecraft implements IPlayerUsage
             }
             catch (IOException ioexception)
             {
-                field_147123_G.error("Couldn\'t set icon", ioexception);
+                LOG.error("Couldn\'t set icon", ioexception);
             }
         }
 
@@ -427,7 +427,7 @@ public class Minecraft implements IPlayerUsage
         }
         catch (LWJGLException lwjglexception)
         {
-            field_147123_G.error("Couldn\'t set pixel format", lwjglexception);
+            LOG.error("Couldn\'t set pixel format", lwjglexception);
 
             try
             {
@@ -455,7 +455,7 @@ public class Minecraft implements IPlayerUsage
         catch (Throwable throwable)
         {
             this.field_152353_at = new NullStream(throwable);
-            field_147123_G.error("Couldn\'t initialize twitch stream");
+            LOG.error("Couldn\'t initialize twitch stream");
         }
 
         this.field_147124_at = new Framebuffer(this.field_71443_c, this.field_71440_d, true);
@@ -467,27 +467,27 @@ public class Minecraft implements IPlayerUsage
         this.field_110452_an.func_110504_a(new PackMetadataSectionSerializer(), PackMetadataSection.class);
         this.field_110452_an.func_110504_a(new LanguageMetadataSectionSerializer(), LanguageMetadataSection.class);
         this.field_71469_aa = new AnvilSaveConverter(new File(this.field_71412_D, "saves"));
-        this.field_110448_aq = new ResourcePackRepository(this.field_130070_K, new File(this.field_71412_D, "server-resource-packs"), this.field_110450_ap, this.field_110452_an, this.field_71474_y);
+        this.field_110448_aq = new ResourcePackRepository(this.field_130070_K, new File(this.field_71412_D, "server-resource-packs"), this.field_110450_ap, this.field_110452_an, this.gameSettings);
         this.field_110451_am = new SimpleReloadableResourceManager(this.field_110452_an);
-        this.field_135017_as = new LanguageManager(this.field_110452_an, this.field_71474_y.field_74363_ab);
+        this.field_135017_as = new LanguageManager(this.field_110452_an, this.gameSettings.field_74363_ab);
         this.field_110451_am.func_110542_a(this.field_135017_as);
         this.func_110436_a();
         this.field_71446_o = new TextureManager(this.field_110451_am);
         this.field_110451_am.func_110542_a(this.field_71446_o);
         this.field_152350_aA = new SkinManager(this.field_71446_o, new File(this.field_110446_Y, "skins"), this.field_152355_az);
         this.func_71357_I();
-        this.field_147127_av = new SoundHandler(this.field_110451_am, this.field_71474_y);
+        this.field_147127_av = new SoundHandler(this.field_110451_am, this.gameSettings);
         this.field_110451_am.func_110542_a(this.field_147127_av);
         this.field_147126_aw = new MusicTicker(this);
-        this.field_71466_p = new FontRenderer(this.field_71474_y, new ResourceLocation("textures/font/ascii.png"), this.field_71446_o, false);
+        this.field_71466_p = new FontRenderer(this.gameSettings, new ResourceLocation("textures/font/ascii.png"), this.field_71446_o, false);
 
-        if (this.field_71474_y.field_74363_ab != null)
+        if (this.gameSettings.field_74363_ab != null)
         {
             this.field_71466_p.func_78264_a(this.func_152349_b());
             this.field_71466_p.func_78275_b(this.field_135017_as.func_135044_b());
         }
 
-        this.field_71464_q = new FontRenderer(this.field_71474_y, new ResourceLocation("textures/font/ascii_sga.png"), this.field_71446_o, false);
+        this.field_71464_q = new FontRenderer(this.gameSettings, new ResourceLocation("textures/font/ascii_sga.png"), this.field_71446_o, false);
         this.field_110451_am.func_110542_a(this.field_71466_p);
         this.field_110451_am.func_110542_a(this.field_71464_q);
         this.field_110451_am.func_110542_a(new GrassColorReloadListener());
@@ -495,14 +495,14 @@ public class Minecraft implements IPlayerUsage
         RenderManager.field_78727_a.field_78721_f = new ItemRenderer(this);
         this.field_71460_t = new EntityRenderer(this, this.field_110451_am);
         this.field_110451_am.func_110542_a(this.field_71460_t);
-        AchievementList.field_76004_f.func_75988_a(new IStatStringFormat()
+        AchievementList.OpenInventory.func_75988_a(new IStatStringFormat()
         {
             private static final String __OBFID = "CL_00000639";
             public String func_74535_a(String p_74535_1_)
             {
                 try
                 {
-                    return String.format(p_74535_1_, new Object[] {GameSettings.func_74298_c(Minecraft.this.field_71474_y.field_151445_Q.func_151463_i())});
+                    return String.format(p_74535_1_, new Object[] {GameSettings.func_74298_c(Minecraft.this.gameSettings.field_151445_Q.getEventKey())});
                 }
                 catch (Exception exception)
                 {
@@ -526,8 +526,8 @@ public class Minecraft implements IPlayerUsage
         this.func_71361_d("Startup");
         this.field_71438_f = new RenderGlobal(this);
         this.field_147128_au = new TextureMap(0, "textures/blocks");
-        this.field_147128_au.func_147632_b(this.field_71474_y.field_151443_J);
-        this.field_147128_au.func_147633_a(this.field_71474_y.field_151442_I);
+        this.field_147128_au.func_147632_b(this.gameSettings.field_151443_J);
+        this.field_147128_au.func_147633_a(this.gameSettings.field_151442_I);
         this.field_71446_o.func_130088_a(TextureMap.field_110575_b, this.field_147128_au);
         this.field_71446_o.func_130088_a(TextureMap.field_110576_c, new TextureMap(1, "textures/items"));
         GL11.glViewport(0, 0, this.field_71443_c, this.field_71440_d);
@@ -548,25 +548,25 @@ public class Minecraft implements IPlayerUsage
         this.field_152354_ay = null;
         this.field_71461_s = new LoadingScreenRenderer(this);
 
-        if (this.field_71474_y.field_74353_u && !this.field_71431_Q)
+        if (this.gameSettings.field_74353_u && !this.field_71431_Q)
         {
             this.func_71352_k();
         }
 
         try
         {
-            Display.setVSyncEnabled(this.field_71474_y.field_74352_v);
+            Display.setVSyncEnabled(this.gameSettings.field_74352_v);
         }
         catch (OpenGLException openglexception)
         {
-            this.field_71474_y.field_74352_v = false;
-            this.field_71474_y.func_74303_b();
+            this.gameSettings.field_74352_v = false;
+            this.gameSettings.func_74303_b();
         }
     }
 
     public boolean func_152349_b()
     {
-        return this.field_135017_as.func_135042_a() || this.field_71474_y.field_151455_aw;
+        return this.field_135017_as.func_135042_a() || this.gameSettings.field_151455_aw;
     }
 
     public void func_110436_a()
@@ -591,13 +591,13 @@ public class Minecraft implements IPlayerUsage
         }
         catch (RuntimeException runtimeexception)
         {
-            field_147123_G.info("Caught error stitching, removing all assigned resourcepacks", runtimeexception);
+            LOG.info("Caught error stitching, removing all assigned resourcepacks", runtimeexception);
             arraylist.clear();
             arraylist.addAll(this.field_110449_ao);
             this.field_110448_aq.func_148527_a(Collections.emptyList());
             this.field_110451_am.func_110541_a(arraylist);
-            this.field_71474_y.field_151453_l.clear();
-            this.field_71474_y.func_74303_b();
+            this.gameSettings.field_151453_l.clear();
+            this.gameSettings.func_74303_b();
         }
 
         this.field_135017_as.func_135043_a(arraylist);
@@ -706,7 +706,7 @@ public class Minecraft implements IPlayerUsage
         }
         catch (IOException ioexception)
         {
-            field_147123_G.error("Unable to load logo: " + field_110444_H, ioexception);
+            LOG.error("Unable to load logo: " + field_110444_H, ioexception);
         }
 
         Tessellator tessellator = Tessellator.field_78398_a;
@@ -768,7 +768,7 @@ public class Minecraft implements IPlayerUsage
 
         if (p_147108_1_ instanceof GuiMainMenu)
         {
-            this.field_71474_y.field_74330_P = false;
+            this.gameSettings.field_74330_P = false;
             this.field_71456_v.func_146158_b().func_146231_a();
         }
 
@@ -797,9 +797,9 @@ public class Minecraft implements IPlayerUsage
         if (i != 0)
         {
             String s1 = GLU.gluErrorString(i);
-            field_147123_G.error("########## GL ERROR ##########");
-            field_147123_G.error("@ " + p_71361_1_);
-            field_147123_G.error(i + ": " + s1);
+            LOG.error("########## GL ERROR ##########");
+            LOG.error("@ " + p_71361_1_);
+            LOG.error(i + ": " + s1);
         }
     }
 
@@ -808,7 +808,7 @@ public class Minecraft implements IPlayerUsage
         try
         {
             this.field_152353_at.func_152923_i();
-            field_147123_G.info("Stopping!");
+            LOG.info("Stopping!");
 
             try
             {
@@ -894,14 +894,14 @@ public class Minecraft implements IPlayerUsage
             {
                 this.func_71396_d(reportedexception.func_71575_a());
                 this.func_71398_f();
-                field_147123_G.fatal("Reported exception thrown!", reportedexception);
+                LOG.fatal("Reported exception thrown!", reportedexception);
                 this.func_71377_b(reportedexception.func_71575_a());
             }
             catch (Throwable throwable1)
             {
                 crashreport = this.func_71396_d(new CrashReport("Unexpected error", throwable1));
                 this.func_71398_f();
-                field_147123_G.fatal("Unreported exception thrown!", throwable1);
+                LOG.fatal("Unreported exception thrown!", throwable1);
                 this.func_71377_b(crashreport);
             }
             finally
@@ -950,7 +950,7 @@ public class Minecraft implements IPlayerUsage
         this.field_71424_I.func_76318_c("preRenderErrors");
         long k = System.nanoTime() - j;
         this.func_71361_d("Pre render");
-        RenderBlocks.field_147843_b = this.field_71474_y.field_74347_j;
+        RenderBlocks.field_147843_b = this.gameSettings.field_74347_j;
         this.field_71424_I.func_76318_c("sound");
         this.field_147127_av.func_147691_a(this.field_71439_g, this.field_71428_T.field_74281_c);
         this.field_71424_I.func_76319_b();
@@ -963,7 +963,7 @@ public class Minecraft implements IPlayerUsage
 
         if (this.field_71439_g != null && this.field_71439_g.func_70094_T())
         {
-            this.field_71474_y.field_74320_O = 0;
+            this.gameSettings.field_74320_O = 0;
         }
 
         this.field_71424_I.func_76319_b();
@@ -983,7 +983,7 @@ public class Minecraft implements IPlayerUsage
             this.func_71352_k();
         }
 
-        if (this.field_71474_y.field_74330_P && this.field_71474_y.field_74329_Q)
+        if (this.gameSettings.field_74330_P && this.gameSettings.field_74329_Q)
         {
             if (!this.field_71424_I.field_76327_a)
             {
@@ -1075,7 +1075,7 @@ public class Minecraft implements IPlayerUsage
 
     public int func_90020_K()
     {
-        return this.field_71441_e == null && this.field_71462_r != null ? 30 : this.field_71474_y.field_74350_i;
+        return this.field_71441_e == null && this.field_71462_r != null ? 30 : this.gameSettings.field_74350_i;
     }
 
     public boolean func_147107_h()
@@ -1350,7 +1350,7 @@ public class Minecraft implements IPlayerUsage
 
             if (this.field_71476_x == null)
             {
-                field_147123_G.error("Null returned as \'hitResult\', this shouldn\'t happen!");
+                LOG.error("Null returned as \'hitResult\', this shouldn\'t happen!");
 
                 if (this.field_71442_b.func_78762_g())
                 {
@@ -1393,7 +1393,7 @@ public class Minecraft implements IPlayerUsage
 
         if (this.field_71476_x == null)
         {
-            field_147123_G.warn("Null returned as \'hitResult\', this shouldn\'t happen!");
+            LOG.warn("Null returned as \'hitResult\', this shouldn\'t happen!");
         }
         else
         {
@@ -1498,12 +1498,12 @@ public class Minecraft implements IPlayerUsage
             }
 
             Display.setFullscreen(this.field_71431_Q);
-            Display.setVSyncEnabled(this.field_71474_y.field_74352_v);
+            Display.setVSyncEnabled(this.gameSettings.field_74352_v);
             this.func_147120_f();
         }
         catch (Exception exception)
         {
-            field_147123_G.error("Couldn\'t toggle fullscreen", exception);
+            LOG.error("Couldn\'t toggle fullscreen", exception);
         }
     }
 
@@ -1670,7 +1670,7 @@ public class Minecraft implements IPlayerUsage
                     {
                         this.field_71439_g.field_71071_by.func_70453_c(i);
 
-                        if (this.field_71474_y.field_74331_S)
+                        if (this.gameSettings.field_74331_S)
                         {
                             if (i > 0)
                             {
@@ -1682,7 +1682,7 @@ public class Minecraft implements IPlayerUsage
                                 i = -1;
                             }
 
-                            this.field_71474_y.field_74328_V += (float)i * 0.25F;
+                            this.gameSettings.field_74328_V += (float)i * 0.25F;
                         }
                     }
 
@@ -1767,7 +1767,7 @@ public class Minecraft implements IPlayerUsage
                         if (Keyboard.getEventKey() == 33 && Keyboard.isKeyDown(61))
                         {
                             flag = Keyboard.isKeyDown(42) | Keyboard.isKeyDown(54);
-                            this.field_71474_y.func_74306_a(GameSettings.Options.RENDER_DISTANCE, flag ? -1 : 1);
+                            this.gameSettings.func_74306_a(GameSettings.Options.RENDER_DISTANCE, flag ? -1 : 1);
                         }
 
                         if (Keyboard.getEventKey() == 30 && Keyboard.isKeyDown(61))
@@ -1777,8 +1777,8 @@ public class Minecraft implements IPlayerUsage
 
                         if (Keyboard.getEventKey() == 35 && Keyboard.isKeyDown(61))
                         {
-                            this.field_71474_y.field_82882_x = !this.field_71474_y.field_82882_x;
-                            this.field_71474_y.func_74303_b();
+                            this.gameSettings.field_82882_x = !this.gameSettings.field_82882_x;
+                            this.gameSettings.func_74303_b();
                         }
 
                         if (Keyboard.getEventKey() == 48 && Keyboard.isKeyDown(61))
@@ -1788,38 +1788,38 @@ public class Minecraft implements IPlayerUsage
 
                         if (Keyboard.getEventKey() == 25 && Keyboard.isKeyDown(61))
                         {
-                            this.field_71474_y.field_82881_y = !this.field_71474_y.field_82881_y;
-                            this.field_71474_y.func_74303_b();
+                            this.gameSettings.field_82881_y = !this.gameSettings.field_82881_y;
+                            this.gameSettings.func_74303_b();
                         }
 
                         if (Keyboard.getEventKey() == 59)
                         {
-                            this.field_71474_y.field_74319_N = !this.field_71474_y.field_74319_N;
+                            this.gameSettings.field_74319_N = !this.gameSettings.field_74319_N;
                         }
 
                         if (Keyboard.getEventKey() == 61)
                         {
-                            this.field_71474_y.field_74330_P = !this.field_71474_y.field_74330_P;
-                            this.field_71474_y.field_74329_Q = GuiScreen.func_146272_n();
+                            this.gameSettings.field_74330_P = !this.gameSettings.field_74330_P;
+                            this.gameSettings.field_74329_Q = GuiScreen.func_146272_n();
                         }
 
-                        if (this.field_71474_y.field_151457_aa.func_151468_f())
+                        if (this.gameSettings.field_151457_aa.func_151468_f())
                         {
-                            ++this.field_71474_y.field_74320_O;
+                            ++this.gameSettings.field_74320_O;
 
-                            if (this.field_71474_y.field_74320_O > 2)
+                            if (this.gameSettings.field_74320_O > 2)
                             {
-                                this.field_71474_y.field_74320_O = 0;
+                                this.gameSettings.field_74320_O = 0;
                             }
                         }
 
-                        if (this.field_71474_y.field_151458_ab.func_151468_f())
+                        if (this.gameSettings.field_151458_ab.func_151468_f())
                         {
-                            this.field_71474_y.field_74326_T = !this.field_71474_y.field_74326_T;
+                            this.gameSettings.field_74326_T = !this.gameSettings.field_74326_T;
                         }
                     }
 
-                    if (this.field_71474_y.field_74330_P && this.field_71474_y.field_74329_Q)
+                    if (this.gameSettings.field_74330_P && this.gameSettings.field_74329_Q)
                     {
                         if (Keyboard.getEventKey() == 11)
                         {
@@ -1839,15 +1839,15 @@ public class Minecraft implements IPlayerUsage
 
             for (j = 0; j < 9; ++j)
             {
-                if (this.field_71474_y.field_151456_ac[j].func_151468_f())
+                if (this.gameSettings.field_151456_ac[j].func_151468_f())
                 {
                     this.field_71439_g.field_71071_by.field_70461_c = j;
                 }
             }
 
-            flag = this.field_71474_y.field_74343_n != EntityPlayer.EnumChatVisibility.HIDDEN;
+            flag = this.gameSettings.field_74343_n != EntityPlayer.EnumChatVisibility.HIDDEN;
 
-            while (this.field_71474_y.field_151445_Q.func_151468_f())
+            while (this.gameSettings.field_151445_Q.func_151468_f())
             {
                 if (this.field_71442_b.func_110738_j())
                 {
@@ -1860,24 +1860,24 @@ public class Minecraft implements IPlayerUsage
                 }
             }
 
-            while (this.field_71474_y.field_74316_C.func_151468_f())
+            while (this.gameSettings.field_74316_C.func_151468_f())
             {
                 this.field_71439_g.func_71040_bB(GuiScreen.func_146271_m());
             }
 
-            while (this.field_71474_y.field_74310_D.func_151468_f() && flag)
+            while (this.gameSettings.field_74310_D.func_151468_f() && flag)
             {
                 this.func_147108_a(new GuiChat());
             }
 
-            if (this.field_71462_r == null && this.field_71474_y.field_74323_J.func_151468_f() && flag)
+            if (this.field_71462_r == null && this.gameSettings.field_74323_J.func_151468_f() && flag)
             {
                 this.func_147108_a(new GuiChat("/"));
             }
 
             if (this.field_71439_g.func_71039_bw())
             {
-                if (!this.field_71474_y.field_74313_G.func_151470_d())
+                if (!this.gameSettings.field_74313_G.func_151470_d())
                 {
                     this.field_71442_b.func_78766_c(this.field_71439_g);
                 }
@@ -1886,16 +1886,16 @@ public class Minecraft implements IPlayerUsage
 
                 while (true)
                 {
-                    if (!this.field_71474_y.field_74312_F.func_151468_f())
+                    if (!this.gameSettings.field_74312_F.func_151468_f())
                     {
-                        while (this.field_71474_y.field_74313_G.func_151468_f())
+                        while (this.gameSettings.field_74313_G.func_151468_f())
                         {
                             ;
                         }
 
                         while (true)
                         {
-                            if (this.field_71474_y.field_74322_I.func_151468_f())
+                            if (this.gameSettings.field_74322_I.func_151468_f())
                             {
                                 continue;
                             }
@@ -1907,28 +1907,28 @@ public class Minecraft implements IPlayerUsage
             }
             else
             {
-                while (this.field_71474_y.field_74312_F.func_151468_f())
+                while (this.gameSettings.field_74312_F.func_151468_f())
                 {
                     this.func_147116_af();
                 }
 
-                while (this.field_71474_y.field_74313_G.func_151468_f())
+                while (this.gameSettings.field_74313_G.func_151468_f())
                 {
                     this.func_147121_ag();
                 }
 
-                while (this.field_71474_y.field_74322_I.func_151468_f())
+                while (this.gameSettings.field_74322_I.func_151468_f())
                 {
                     this.func_147112_ai();
                 }
             }
 
-            if (this.field_71474_y.field_74313_G.func_151470_d() && this.field_71467_ac == 0 && !this.field_71439_g.func_71039_bw())
+            if (this.gameSettings.field_74313_G.func_151470_d() && this.field_71467_ac == 0 && !this.field_71439_g.func_71039_bw())
             {
                 this.func_147121_ag();
             }
 
-            this.func_147115_a(this.field_71462_r == null && this.field_71474_y.field_74312_F.func_151470_d() && this.field_71415_G);
+            this.func_147115_a(this.field_71462_r == null && this.gameSettings.field_74312_F.func_151470_d() && this.field_71415_G);
         }
 
         if (this.field_71441_e != null)
@@ -2166,7 +2166,7 @@ public class Minecraft implements IPlayerUsage
 
             this.field_71439_g.func_70065_x();
             p_71353_1_.func_72838_d(this.field_71439_g);
-            this.field_71439_g.field_71158_b = new MovementInputFromOptions(this.field_71474_y);
+            this.field_71439_g.field_71158_b = new MovementInputFromOptions(this.gameSettings);
             this.field_71442_b.func_78748_a(this.field_71439_g);
             this.field_71451_h = this.field_71439_g;
         }
@@ -2222,7 +2222,7 @@ public class Minecraft implements IPlayerUsage
         this.field_71439_g.func_142020_c(s);
         this.field_71441_e.func_72838_d(this.field_71439_g);
         this.field_71442_b.func_78745_b(this.field_71439_g);
-        this.field_71439_g.field_71158_b = new MovementInputFromOptions(this.field_71474_y);
+        this.field_71439_g.field_71158_b = new MovementInputFromOptions(this.gameSettings);
         this.field_71439_g.func_145769_d(j);
         this.field_71442_b.func_78748_a(this.field_71439_g);
 
@@ -2244,17 +2244,17 @@ public class Minecraft implements IPlayerUsage
 
     public static boolean func_71382_s()
     {
-        return field_71432_P == null || !field_71432_P.field_71474_y.field_74319_N;
+        return field_71432_P == null || !field_71432_P.gameSettings.field_74319_N;
     }
 
     public static boolean func_71375_t()
     {
-        return field_71432_P != null && field_71432_P.field_71474_y.field_74347_j;
+        return field_71432_P != null && field_71432_P.gameSettings.field_74347_j;
     }
 
     public static boolean func_71379_u()
     {
-        return field_71432_P != null && field_71432_P.field_71474_y.field_74348_k != 0;
+        return field_71432_P != null && field_71432_P.gameSettings.field_74348_k != 0;
     }
 
     private void func_147112_ai()
@@ -2433,7 +2433,7 @@ public class Minecraft implements IPlayerUsage
             private static final String __OBFID = "CL_00000634";
             public String call()
             {
-                return Minecraft.this.field_71474_y.field_151453_l.toString();
+                return Minecraft.this.gameSettings.field_151453_l.toString();
             }
         });
         p_71396_1_.func_85056_g().func_71500_a("Current Language", new Callable()
@@ -2471,7 +2471,7 @@ public class Minecraft implements IPlayerUsage
             private static final String __OBFID = "CL_00001853";
             public String func_152388_a()
             {
-                return Minecraft.this.field_71474_y.field_151443_J == 1 ? "Off (1)" : "On (" + Minecraft.this.field_71474_y.field_151443_J + ")";
+                return Minecraft.this.gameSettings.field_151443_J == 1 ? "Off (1)" : "On (" + Minecraft.this.gameSettings.field_151443_J + ")";
             }
             public Object call()
             {
@@ -2500,7 +2500,7 @@ public class Minecraft implements IPlayerUsage
     public void func_70000_a(PlayerUsageSnooper p_70000_1_)
     {
         p_70000_1_.func_152768_a("fps", Integer.valueOf(field_71470_ab));
-        p_70000_1_.func_152768_a("vsync_enabled", Boolean.valueOf(this.field_71474_y.field_74352_v));
+        p_70000_1_.func_152768_a("vsync_enabled", Boolean.valueOf(this.gameSettings.field_74352_v));
         p_70000_1_.func_152768_a("display_frequency", Integer.valueOf(Display.getDisplayMode().getFrequency()));
         p_70000_1_.func_152768_a("display_type", this.field_71431_Q ? "fullscreen" : "windowed");
         p_70000_1_.func_152768_a("run_time", Long.valueOf((MinecraftServer.func_130071_aq() - p_70000_1_.func_130105_g()) / 60L * 1000L));
@@ -2652,7 +2652,7 @@ public class Minecraft implements IPlayerUsage
 
     public boolean func_70002_Q()
     {
-        return this.field_71474_y.field_74355_t;
+        return this.gameSettings.field_74355_t;
     }
 
     public void func_71351_a(ServerData p_71351_1_)
@@ -2783,7 +2783,7 @@ public class Minecraft implements IPlayerUsage
             {
                 if (Keyboard.getEventKeyState())
                 {
-                    if (i == this.field_71474_y.field_152396_an.func_151463_i())
+                    if (i == this.gameSettings.field_152396_an.getEventKey())
                     {
                         if (this.func_152346_Z().func_152934_n())
                         {
@@ -2817,7 +2817,7 @@ public class Minecraft implements IPlayerUsage
                             GuiStreamUnavailable.func_152321_a(this.field_71462_r);
                         }
                     }
-                    else if (i == this.field_71474_y.field_152397_ao.func_151463_i())
+                    else if (i == this.gameSettings.field_152397_ao.getEventKey())
                     {
                         if (this.func_152346_Z().func_152934_n())
                         {
@@ -2831,27 +2831,27 @@ public class Minecraft implements IPlayerUsage
                             }
                         }
                     }
-                    else if (i == this.field_71474_y.field_152398_ap.func_151463_i())
+                    else if (i == this.gameSettings.field_152398_ap.getEventKey())
                     {
                         if (this.func_152346_Z().func_152934_n())
                         {
                             this.func_152346_Z().func_152931_p();
                         }
                     }
-                    else if (i == this.field_71474_y.field_152399_aq.func_151463_i())
+                    else if (i == this.gameSettings.field_152399_aq.getEventKey())
                     {
                         this.field_152353_at.func_152910_a(true);
                     }
-                    else if (i == this.field_71474_y.field_152395_am.func_151463_i())
+                    else if (i == this.gameSettings.field_152395_am.getEventKey())
                     {
                         this.func_71352_k();
                     }
-                    else if (i == this.field_71474_y.field_151447_Z.func_151463_i())
+                    else if (i == this.gameSettings.field_151447_Z.getEventKey())
                     {
                         this.field_71456_v.func_146158_b().func_146227_a(ScreenShotHelper.func_148260_a(this.field_71412_D, this.field_71443_c, this.field_71440_d, this.field_147124_at));
                     }
                 }
-                else if (i == this.field_71474_y.field_152399_aq.func_151463_i())
+                else if (i == this.gameSettings.field_152399_aq.getEventKey())
                 {
                     this.field_152353_at.func_152910_a(false);
                 }

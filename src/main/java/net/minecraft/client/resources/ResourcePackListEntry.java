@@ -32,7 +32,7 @@ public abstract class ResourcePackListEntry implements GuiListExtended.IGuiListE
         Gui.func_146110_a(p_148279_2_, p_148279_3_, 0.0F, 0.0F, 32, 32, 32.0F, 32.0F);
         int i2;
 
-        if ((this.field_148317_a.field_71474_y.field_85185_A || p_148279_9_) && this.func_148310_d())
+        if ((this.field_148317_a.gameSettings.field_85185_A || p_148279_9_) && this.func_148310_d())
         {
             this.field_148317_a.func_110434_K().func_110577_a(field_148316_c);
             Gui.func_73734_a(p_148279_2_, p_148279_3_, p_148279_2_ + 32, p_148279_3_ + 32, -1601138544);

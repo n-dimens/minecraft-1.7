@@ -169,7 +169,7 @@ public class GuiChat extends GuiScreen implements GuiYesNoCallback
 
     protected void func_73864_a(int p_73864_1_, int p_73864_2_, int p_73864_3_)
     {
-        if (p_73864_3_ == 0 && this.field_146297_k.field_71474_y.field_74359_p)
+        if (p_73864_3_ == 0 && this.field_146297_k.gameSettings.field_74359_p)
         {
             IChatComponent ichatcomponent = this.field_146297_k.field_71456_v.func_146158_b().func_146236_a(Mouse.getX(), Mouse.getY());
 
@@ -198,7 +198,7 @@ public class GuiChat extends GuiScreen implements GuiYesNoCallback
                                     throw new URISyntaxException(clickevent.func_150668_b(), "Unsupported protocol: " + uri.getScheme().toLowerCase());
                                 }
 
-                                if (this.field_146297_k.field_71474_y.field_74358_q)
+                                if (this.field_146297_k.gameSettings.field_74358_q)
                                 {
                                     this.field_146411_u = uri;
                                     this.field_146297_k.func_147108_a(new GuiConfirmOpenLink(this, clickevent.func_150668_b(), 0, false));
