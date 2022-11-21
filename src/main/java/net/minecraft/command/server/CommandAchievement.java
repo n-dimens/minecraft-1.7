@@ -120,7 +120,7 @@ public class CommandAchievement extends CommandBase
             while (iterator.hasNext())
             {
                 StatBase statbase = (StatBase)iterator.next();
-                arraylist.add(statbase.field_75975_e);
+                arraylist.add(statbase.id);
             }
 
             return func_71531_a(p_71516_2_, arraylist);

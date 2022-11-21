@@ -16,9 +16,9 @@ public class StatBasic extends StatBase
         super(p_i45304_1_, p_i45304_2_);
     }
 
-    public StatBase func_75971_g()
+    public StatBase add()
     {
-        super.func_75971_g();
+        super.add();
         StatList.field_75941_c.add(this);
         return this;
     }

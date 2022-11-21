@@ -63,9 +63,9 @@ public class Achievement extends StatBase
         this.field_75992_c = p_i45302_6_;
     }
 
-    public Achievement func_75966_h()
+    public Achievement awardOnlyLocal()
     {
-        this.field_75972_f = true;
+        this.awardLocallyOnly = true;
         return this;
     }
 
@@ -75,9 +75,9 @@ public class Achievement extends StatBase
         return this;
     }
 
-    public Achievement func_75971_g()
+    public Achievement add()
     {
-        super.func_75971_g();
+        super.add();
         AchievementList.field_76007_e.add(this);
         return this;
     }

@@ -231,7 +231,7 @@ public class EntityClientPlayerMP extends EntityPlayerSP
     {
         if (p_71064_1_ != null)
         {
-            if (p_71064_1_.field_75972_f)
+            if (p_71064_1_.awardLocallyOnly)
             {
                 super.func_71064_a(p_71064_1_, p_71064_2_);
             }

@@ -186,11 +186,11 @@ public class StatisticsFile extends StatFileWriter
                     field_150889_b.warn("Couldn\'t save statistic " + ((StatBase)entry.getKey()).func_150951_e() + ": error serializing progress", throwable);
                 }
 
-                jsonobject.add(((StatBase)entry.getKey()).field_75975_e, jsonobject1);
+                jsonobject.add(((StatBase)entry.getKey()).id, jsonobject1);
             }
             else
             {
-                jsonobject.addProperty(((StatBase)entry.getKey()).field_75975_e, Integer.valueOf(((TupleIntJsonSerializable)entry.getValue()).func_151189_a()));
+                jsonobject.addProperty(((StatBase)entry.getKey()).id, Integer.valueOf(((TupleIntJsonSerializable)entry.getValue()).func_151189_a()));
             }
         }
 

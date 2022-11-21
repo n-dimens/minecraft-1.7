@@ -41,4 +41,10 @@
             <fileset dir="${src}/resources"/>
         </jar>
     </target>
+
+    <target name="clean">
+        <delete dir="${classes}"/>
+    </target>
+
+    <target name="rebuild" depends="clean, compile" />
 </project>

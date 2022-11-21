@@ -56,7 +56,7 @@ public class S37PacketStatistics extends Packet
         while (iterator.hasNext())
         {
             Entry entry = (Entry)iterator.next();
-            p_148840_1_.func_150785_a(((StatBase)entry.getKey()).field_75975_e);
+            p_148840_1_.func_150785_a(((StatBase)entry.getKey()).id);
             p_148840_1_.func_150787_b(((Integer)entry.getValue()).intValue());
         }
     }

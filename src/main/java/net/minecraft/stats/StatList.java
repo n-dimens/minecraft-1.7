@@ -17,36 +17,36 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ChatComponentTranslation;
 
-public class StatList
+public final class StatList
 {
-    protected static Map field_75942_a = new HashMap();
-    public static List field_75940_b = new ArrayList();
-    public static List field_75941_c = new ArrayList();
-    public static List field_75938_d = new ArrayList();
-    public static List field_75939_e = new ArrayList();
-    public static StatBase field_75947_j = (new StatBasic("stat.leaveGame", new ChatComponentTranslation("stat.leaveGame", new Object[0]))).func_75966_h().func_75971_g();
-    public static StatBase field_75948_k = (new StatBasic("stat.playOneMinute", new ChatComponentTranslation("stat.playOneMinute", new Object[0]), StatBase.field_75981_i)).func_75966_h().func_75971_g();
-    public static StatBase field_75945_l = (new StatBasic("stat.walkOneCm", new ChatComponentTranslation("stat.walkOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75946_m = (new StatBasic("stat.swimOneCm", new ChatComponentTranslation("stat.swimOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75943_n = (new StatBasic("stat.fallOneCm", new ChatComponentTranslation("stat.fallOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75944_o = (new StatBasic("stat.climbOneCm", new ChatComponentTranslation("stat.climbOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75958_p = (new StatBasic("stat.flyOneCm", new ChatComponentTranslation("stat.flyOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75957_q = (new StatBasic("stat.diveOneCm", new ChatComponentTranslation("stat.diveOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75956_r = (new StatBasic("stat.minecartOneCm", new ChatComponentTranslation("stat.minecartOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75955_s = (new StatBasic("stat.boatOneCm", new ChatComponentTranslation("stat.boatOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75954_t = (new StatBasic("stat.pigOneCm", new ChatComponentTranslation("stat.pigOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_151185_q = (new StatBasic("stat.horseOneCm", new ChatComponentTranslation("stat.horseOneCm", new Object[0]), StatBase.field_75979_j)).func_75966_h().func_75971_g();
-    public static StatBase field_75953_u = (new StatBasic("stat.jump", new ChatComponentTranslation("stat.jump", new Object[0]))).func_75966_h().func_75971_g();
-    public static StatBase field_75952_v = (new StatBasic("stat.drop", new ChatComponentTranslation("stat.drop", new Object[0]))).func_75966_h().func_75971_g();
-    public static StatBase field_75951_w = (new StatBasic("stat.damageDealt", new ChatComponentTranslation("stat.damageDealt", new Object[0]), StatBase.field_111202_k)).func_75971_g();
-    public static StatBase field_75961_x = (new StatBasic("stat.damageTaken", new ChatComponentTranslation("stat.damageTaken", new Object[0]), StatBase.field_111202_k)).func_75971_g();
-    public static StatBase field_75960_y = (new StatBasic("stat.deaths", new ChatComponentTranslation("stat.deaths", new Object[0]))).func_75971_g();
-    public static StatBase field_75959_z = (new StatBasic("stat.mobKills", new ChatComponentTranslation("stat.mobKills", new Object[0]))).func_75971_g();
-    public static StatBase field_151186_x = (new StatBasic("stat.animalsBred", new ChatComponentTranslation("stat.animalsBred", new Object[0]))).func_75971_g();
-    public static StatBase field_75932_A = (new StatBasic("stat.playerKills", new ChatComponentTranslation("stat.playerKills", new Object[0]))).func_75971_g();
-    public static StatBase field_75933_B = (new StatBasic("stat.fishCaught", new ChatComponentTranslation("stat.fishCaught", new Object[0]))).func_75971_g();
-    public static StatBase field_151183_A = (new StatBasic("stat.junkFished", new ChatComponentTranslation("stat.junkFished", new Object[0]))).func_75971_g();
-    public static StatBase field_151184_B = (new StatBasic("stat.treasureFished", new ChatComponentTranslation("stat.treasureFished", new Object[0]))).func_75971_g();
+    final static Map<String, StatBase> field_75942_a = new HashMap<>();
+    public final static List<StatBase> field_75940_b = new ArrayList<>();
+    public final static List<StatBase> field_75941_c = new ArrayList<>();
+    public final static List<StatBase> field_75938_d = new ArrayList<>();
+    public final static List<StatBase> field_75939_e = new ArrayList<>();
+    public final static StatBase field_75947_j = (new StatBasic("stat.leaveGame", new ChatComponentTranslation("stat.leaveGame", new Object[0]))).awardOnlyLocal().add();
+    public final static StatBase field_75948_k = (new StatBasic("stat.playOneMinute", new ChatComponentTranslation("stat.playOneMinute", new Object[0]), StatBase.DATETIME_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75945_l = (new StatBasic("stat.walkOneCm", new ChatComponentTranslation("stat.walkOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75946_m = (new StatBasic("stat.swimOneCm", new ChatComponentTranslation("stat.swimOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75943_n = (new StatBasic("stat.fallOneCm", new ChatComponentTranslation("stat.fallOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75944_o = (new StatBasic("stat.climbOneCm", new ChatComponentTranslation("stat.climbOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75958_p = (new StatBasic("stat.flyOneCm", new ChatComponentTranslation("stat.flyOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75957_q = (new StatBasic("stat.diveOneCm", new ChatComponentTranslation("stat.diveOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75956_r = (new StatBasic("stat.minecartOneCm", new ChatComponentTranslation("stat.minecartOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75955_s = (new StatBasic("stat.boatOneCm", new ChatComponentTranslation("stat.boatOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75954_t = (new StatBasic("stat.pigOneCm", new ChatComponentTranslation("stat.pigOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_151185_q = (new StatBasic("stat.horseOneCm", new ChatComponentTranslation("stat.horseOneCm", new Object[0]), StatBase.DISTANCE_FORMATTER)).awardOnlyLocal().add();
+    public final static StatBase field_75953_u = (new StatBasic("stat.jump", new ChatComponentTranslation("stat.jump", new Object[0]))).awardOnlyLocal().add();
+    public final static StatBase field_75952_v = (new StatBasic("stat.drop", new ChatComponentTranslation("stat.drop", new Object[0]))).awardOnlyLocal().add();
+    public final static StatBase field_75951_w = (new StatBasic("stat.damageDealt", new ChatComponentTranslation("stat.damageDealt", new Object[0]), StatBase.DAMAGE_FORMATTER)).add();
+    public final static StatBase field_75961_x = (new StatBasic("stat.damageTaken", new ChatComponentTranslation("stat.damageTaken", new Object[0]), StatBase.DAMAGE_FORMATTER)).add();
+    public final static StatBase field_75960_y = (new StatBasic("stat.deaths", new ChatComponentTranslation("stat.deaths", new Object[0]))).add();
+    public final static StatBase field_75959_z = (new StatBasic("stat.mobKills", new ChatComponentTranslation("stat.mobKills", new Object[0]))).add();
+    public final static StatBase field_151186_x = (new StatBasic("stat.animalsBred", new ChatComponentTranslation("stat.animalsBred", new Object[0]))).add();
+    public final static StatBase field_75932_A = (new StatBasic("stat.playerKills", new ChatComponentTranslation("stat.playerKills", new Object[0]))).add();
+    public final static StatBase field_75933_B = (new StatBasic("stat.fishCaught", new ChatComponentTranslation("stat.fishCaught", new Object[0]))).add();
+    public final static StatBase field_151183_A = (new StatBasic("stat.junkFished", new ChatComponentTranslation("stat.junkFished", new Object[0]))).add();
+    public final static StatBase field_151184_B = (new StatBasic("stat.treasureFished", new ChatComponentTranslation("stat.treasureFished", new Object[0]))).add();
     public static final StatBase[] field_75934_C = new StatBase[4096];
     public static final StatBase[] field_75928_D = new StatBase[32000];
     public static final StatBase[] field_75929_E = new StatBase[32000];
@@ -95,7 +95,7 @@ public class StatList
             if (item != null)
             {
                 int i = Item.func_150891_b(item);
-                field_75928_D[i] = (new StatCrafting("stat.craftItem." + i, new ChatComponentTranslation("stat.craftItem", new Object[] {(new ItemStack(item)).func_151000_E()}), item)).func_75971_g();
+                field_75928_D[i] = (new StatCrafting("stat.craftItem." + i, new ChatComponentTranslation("stat.craftItem", new Object[] {(new ItemStack(item)).func_151000_E()}), item)).add();
             }
         }
 
@@ -116,7 +116,7 @@ public class StatList
 
                 if (block.func_149652_G())
                 {
-                    field_75934_C[i] = (new StatCrafting("stat.mineBlock." + i, new ChatComponentTranslation("stat.mineBlock", new Object[] {(new ItemStack(block)).func_151000_E()}), Item.func_150898_a(block))).func_75971_g();
+                    field_75934_C[i] = (new StatCrafting("stat.mineBlock." + i, new ChatComponentTranslation("stat.mineBlock", new Object[] {(new ItemStack(block)).func_151000_E()}), Item.func_150898_a(block))).add();
                     field_75939_e.add((StatCrafting)field_75934_C[i]);
                 }
             }
@@ -136,7 +136,7 @@ public class StatList
             if (item != null)
             {
                 int i = Item.func_150891_b(item);
-                field_75929_E[i] = (new StatCrafting("stat.useItem." + i, new ChatComponentTranslation("stat.useItem", new Object[] {(new ItemStack(item)).func_151000_E()}), item)).func_75971_g();
+                field_75929_E[i] = (new StatCrafting("stat.useItem." + i, new ChatComponentTranslation("stat.useItem", new Object[] {(new ItemStack(item)).func_151000_E()}), item)).add();
 
                 if (!(item instanceof ItemBlock))
                 {
@@ -162,7 +162,7 @@ public class StatList
 
                 if (item.func_77645_m())
                 {
-                    field_75930_F[i] = (new StatCrafting("stat.breakItem." + i, new ChatComponentTranslation("stat.breakItem", new Object[] {(new ItemStack(item)).func_151000_E()}), item)).func_75971_g();
+                    field_75930_F[i] = (new StatCrafting("stat.breakItem." + i, new ChatComponentTranslation("stat.breakItem", new Object[] {(new ItemStack(item)).func_151000_E()}), item)).add();
                 }
             }
         }
@@ -209,13 +209,13 @@ public class StatList
     public static StatBase func_151182_a(EntityList.EntityEggInfo p_151182_0_)
     {
         String s = EntityList.func_75617_a(p_151182_0_.field_75613_a);
-        return s == null ? null : (new StatBase("stat.killEntity." + s, new ChatComponentTranslation("stat.entityKill", new Object[] {new ChatComponentTranslation("entity." + s + ".name", new Object[0])}))).func_75971_g();
+        return s == null ? null : (new StatBase("stat.killEntity." + s, new ChatComponentTranslation("stat.entityKill", new Object[] {new ChatComponentTranslation("entity." + s + ".name", new Object[0])}))).add();
     }
 
     public static StatBase func_151176_b(EntityList.EntityEggInfo p_151176_0_)
     {
         String s = EntityList.func_75617_a(p_151176_0_.field_75613_a);
-        return s == null ? null : (new StatBase("stat.entityKilledBy." + s, new ChatComponentTranslation("stat.entityKilledBy", new Object[] {new ChatComponentTranslation("entity." + s + ".name", new Object[0])}))).func_75971_g();
+        return s == null ? null : (new StatBase("stat.entityKilledBy." + s, new ChatComponentTranslation("stat.entityKilledBy", new Object[] {new ChatComponentTranslation("entity." + s + ".name", new Object[0])}))).add();
     }
 
     public static StatBase func_151177_a(String p_151177_0_)

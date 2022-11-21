@@ -13,89 +13,89 @@ import net.minecraft.util.IChatComponent;
 
 public class StatBase
 {
-    public final String field_75975_e;
-    private final IChatComponent field_75978_a;
-    public boolean field_75972_f;
-    private final IStatType field_75976_b;
-    private final IScoreObjectiveCriteria field_150957_c;
+    public final String id;
+    private final IChatComponent nameId;
+    public boolean awardLocallyOnly;
+    private final IStatType formatter;
+    private final IScoreObjectiveCriteria objectiveCriteria;
     private Class field_150956_d;
-    private static NumberFormat field_75977_c = NumberFormat.getIntegerInstance(Locale.US);
-    public static IStatType field_75980_h = new IStatType()
+    private static final NumberFormat INTEGER_FORMAT = NumberFormat.getIntegerInstance(Locale.US);
+    public static final IStatType integerFormatter = new IStatType()
     {
         private static final String __OBFID = "CL_00001473";
         @SideOnly(Side.CLIENT)
-        public String func_75843_a(int p_75843_1_)
+        public String format(int value)
         {
-            return StatBase.field_75977_c.format((long)p_75843_1_);
+            return StatBase.INTEGER_FORMAT.format((long) value);
         }
     };
-    private static DecimalFormat field_75974_d = new DecimalFormat("########0.00");
-    public static IStatType field_75981_i = new IStatType()
+    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("########0.00");
+    public final static IStatType DATETIME_FORMATTER = new IStatType()
     {
         private static final String __OBFID = "CL_00001474";
         @SideOnly(Side.CLIENT)
-        public String func_75843_a(int p_75843_1_)
+        public String format(int value)
         {
-            double d0 = (double)p_75843_1_ / 20.0D;
+            double d0 = (double) value / 20.0D;
             double d1 = d0 / 60.0D;
             double d2 = d1 / 60.0D;
             double d3 = d2 / 24.0D;
             double d4 = d3 / 365.0D;
-            return d4 > 0.5D ? StatBase.field_75974_d.format(d4) + " y" : (d3 > 0.5D ? StatBase.field_75974_d.format(d3) + " d" : (d2 > 0.5D ? StatBase.field_75974_d.format(d2) + " h" : (d1 > 0.5D ? StatBase.field_75974_d.format(d1) + " m" : d0 + " s")));
+            return d4 > 0.5D ? StatBase.DECIMAL_FORMAT.format(d4) + " y" : (d3 > 0.5D ? StatBase.DECIMAL_FORMAT.format(d3) + " d" : (d2 > 0.5D ? StatBase.DECIMAL_FORMAT.format(d2) + " h" : (d1 > 0.5D ? StatBase.DECIMAL_FORMAT.format(d1) + " m" : d0 + " s")));
         }
     };
-    public static IStatType field_75979_j = new IStatType()
+    public static IStatType DISTANCE_FORMATTER = new IStatType()
     {
         private static final String __OBFID = "CL_00001475";
         @SideOnly(Side.CLIENT)
-        public String func_75843_a(int p_75843_1_)
+        public String format(int value)
         {
-            double d0 = (double)p_75843_1_ / 100.0D;
+            double d0 = (double) value / 100.0D;
             double d1 = d0 / 1000.0D;
-            return d1 > 0.5D ? StatBase.field_75974_d.format(d1) + " km" : (d0 > 0.5D ? StatBase.field_75974_d.format(d0) + " m" : p_75843_1_ + " cm");
+            return d1 > 0.5D ? StatBase.DECIMAL_FORMAT.format(d1) + " km" : (d0 > 0.5D ? StatBase.DECIMAL_FORMAT.format(d0) + " m" : value + " cm");
         }
     };
-    public static IStatType field_111202_k = new IStatType()
+    public final static IStatType DAMAGE_FORMATTER = new IStatType()
     {
         private static final String __OBFID = "CL_00001476";
         @SideOnly(Side.CLIENT)
-        public String func_75843_a(int p_75843_1_)
+        public String format(int value)
         {
-            return StatBase.field_75974_d.format((double)p_75843_1_ * 0.1D);
+            return StatBase.DECIMAL_FORMAT.format((double) value * 0.1D);
         }
     };
     private static final String __OBFID = "CL_00001472";
 
-    public StatBase(String p_i45307_1_, IChatComponent p_i45307_2_, IStatType p_i45307_3_)
+    public StatBase(String id, IChatComponent nameId, IStatType formatter)
     {
-        this.field_75975_e = p_i45307_1_;
-        this.field_75978_a = p_i45307_2_;
-        this.field_75976_b = p_i45307_3_;
-        this.field_150957_c = new ObjectiveStat(this);
-        IScoreObjectiveCriteria.field_96643_a.put(this.field_150957_c.func_96636_a(), this.field_150957_c);
+        this.id = id;
+        this.nameId = nameId;
+        this.formatter = formatter;
+        this.objectiveCriteria = new ObjectiveStat(this);
+        IScoreObjectiveCriteria.field_96643_a.put(this.objectiveCriteria.func_96636_a(), this.objectiveCriteria);
     }
 
-    public StatBase(String p_i45308_1_, IChatComponent p_i45308_2_)
+    public StatBase(String id, IChatComponent nameId)
     {
-        this(p_i45308_1_, p_i45308_2_, field_75980_h);
+        this(id, nameId, integerFormatter);
     }
 
-    public StatBase func_75966_h()
+    public StatBase awardOnlyLocal()
     {
-        this.field_75972_f = true;
+        this.awardLocallyOnly = true;
         return this;
     }
 
-    public StatBase func_75971_g()
+    public StatBase add()
     {
-        if (StatList.field_75942_a.containsKey(this.field_75975_e))
+        if (StatList.field_75942_a.containsKey(this.id))
         {
-            throw new RuntimeException("Duplicate stat id: \"" + ((StatBase)StatList.field_75942_a.get(this.field_75975_e)).field_75978_a + "\" and \"" + this.field_75978_a + "\" at id " + this.field_75975_e);
+            throw new RuntimeException("Duplicate stat id: \"" + ((StatBase)StatList.field_75942_a.get(this.id)).nameId + "\" and \"" + this.nameId + "\" at id " + this.id);
         }
         else
         {
             StatList.field_75940_b.add(this);
-            StatList.field_75942_a.put(this.field_75975_e, this);
+            StatList.field_75942_a.put(this.id, this);
             return this;
         }
     }
@@ -108,14 +108,14 @@ public class StatBase
     @SideOnly(Side.CLIENT)
     public String func_75968_a(int p_75968_1_)
     {
-        return this.field_75976_b.func_75843_a(p_75968_1_);
+        return this.formatter.format(p_75968_1_);
     }
 
     public IChatComponent func_150951_e()
     {
-        IChatComponent ichatcomponent = this.field_75978_a.func_150259_f();
+        IChatComponent ichatcomponent = this.nameId.func_150259_f();
         ichatcomponent.func_150256_b().func_150238_a(EnumChatFormatting.GRAY);
-        ichatcomponent.func_150256_b().func_150209_a(new HoverEvent(HoverEvent.Action.SHOW_ACHIEVEMENT, new ChatComponentText(this.field_75975_e)));
+        ichatcomponent.func_150256_b().func_150209_a(new HoverEvent(HoverEvent.Action.SHOW_ACHIEVEMENT, new ChatComponentText(this.id)));
         return ichatcomponent;
     }
 
@@ -127,16 +127,17 @@ public class StatBase
         return ichatcomponent1;
     }
 
-    public boolean equals(Object p_equals_1_)
+    @Override
+    public boolean equals(Object stat)
     {
-        if (this == p_equals_1_)
+        if (this == stat)
         {
             return true;
         }
-        else if (p_equals_1_ != null && this.getClass() == p_equals_1_.getClass())
+        else if (stat != null && this.getClass() == stat.getClass())
         {
-            StatBase statbase = (StatBase)p_equals_1_;
-            return this.field_75975_e.equals(statbase.field_75975_e);
+            StatBase statbase = (StatBase)stat;
+            return this.id.equals(statbase.id);
         }
         else
         {
@@ -144,19 +145,21 @@ public class StatBase
         }
     }
 
+    @Override
     public int hashCode()
     {
-        return this.field_75975_e.hashCode();
+        return this.id.hashCode();
     }
 
+    @Override
     public String toString()
     {
-        return "Stat{id=" + this.field_75975_e + ", nameId=" + this.field_75978_a + ", awardLocallyOnly=" + this.field_75972_f + ", formatter=" + this.field_75976_b + ", objectiveCriteria=" + this.field_150957_c + '}';
+        return "Stat{id=" + this.id + ", nameId=" + this.nameId + ", awardLocallyOnly=" + this.awardLocallyOnly + ", formatter=" + this.formatter + ", objectiveCriteria=" + this.objectiveCriteria + '}';
     }
 
     public IScoreObjectiveCriteria func_150952_k()
     {
-        return this.field_150957_c;
+        return this.objectiveCriteria;
     }
 
     public Class func_150954_l()
