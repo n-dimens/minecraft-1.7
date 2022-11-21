@@ -434,7 +434,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
             entitylivingbase.func_70084_c(this, this.field_70744_aE);
         }
 
-        this.func_71064_a(StatList.field_75960_y, 1);
+        this.func_71064_a(StatList.DEATHS, 1);
         this.func_110142_aN().func_94549_h();
     }
 

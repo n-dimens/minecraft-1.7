@@ -102,7 +102,7 @@ public class EntityAIMate extends EntityAIBase
 
             if (entityplayer != null)
             {
-                entityplayer.func_71029_a(StatList.field_151186_x);
+                entityplayer.func_71029_a(StatList.ANIMALS_BRED);
 
                 if (this.field_75390_d instanceof EntityCow)
                 {

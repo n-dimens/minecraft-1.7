@@ -558,7 +558,7 @@ public class EntityFishHook extends Entity
 
         if (f < f1)
         {
-            this.field_146042_b.func_71064_a(StatList.field_151183_A, 1);
+            this.field_146042_b.func_71064_a(StatList.JUNK_FISHED, 1);
             return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.field_70146_Z, field_146039_d)).func_150708_a(this.field_70146_Z);
         }
         else
@@ -567,13 +567,13 @@ public class EntityFishHook extends Entity
 
             if (f < f2)
             {
-                this.field_146042_b.func_71064_a(StatList.field_151184_B, 1);
+                this.field_146042_b.func_71064_a(StatList.TREASURE_FISHED, 1);
                 return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.field_70146_Z, field_146041_e)).func_150708_a(this.field_70146_Z);
             }
             else
             {
                 float f3 = f - f2;
-                this.field_146042_b.func_71064_a(StatList.field_75933_B, 1);
+                this.field_146042_b.func_71064_a(StatList.FISH_CAUGHT, 1);
                 return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.field_70146_Z, field_146036_f)).func_150708_a(this.field_70146_Z);
             }
         }

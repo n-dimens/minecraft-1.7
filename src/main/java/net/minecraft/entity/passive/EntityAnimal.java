@@ -147,7 +147,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
             if (this.field_146084_br != null)
             {
-                this.field_146084_br.func_71029_a(StatList.field_151186_x);
+                this.field_146084_br.func_71029_a(StatList.ANIMALS_BRED);
 
                 if (this instanceof EntityCow)
                 {

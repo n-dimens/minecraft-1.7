@@ -314,7 +314,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         if (!this.field_70170_p.field_72995_K)
         {
             this.field_71100_bB.func_75118_a(this);
-            this.func_71064_a(StatList.field_75948_k, 1);
+            this.func_71064_a(StatList.PLAY_ONE_MINUTE, 1);
         }
     }
 
@@ -616,7 +616,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         }
 
         this.field_70129_M = 0.1F;
-        this.func_71064_a(StatList.field_75960_y, 1);
+        this.func_71064_a(StatList.DEATHS, 1);
     }
 
     protected String func_70621_aR()
@@ -636,12 +636,12 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
         if (p_70084_1_ instanceof EntityPlayer)
         {
-            this.func_71064_a(StatList.field_75932_A, 1);
+            this.func_71064_a(StatList.PLAYER_KILLS, 1);
             collection.addAll(this.func_96123_co().func_96520_a(IScoreObjectiveCriteria.field_96639_d));
         }
         else
         {
-            this.func_71064_a(StatList.field_75959_z, 1);
+            this.func_71064_a(StatList.MOB_KILLS, 1);
         }
 
         Iterator iterator = collection.iterator();
@@ -710,7 +710,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             }
 
             this.func_71012_a(entityitem);
-            this.func_71064_a(StatList.field_75952_v, 1);
+            this.func_71064_a(StatList.DROP, 1);
             return entityitem;
         }
     }
@@ -913,7 +913,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                         entity = ((EntityArrow)entity).field_70250_c;
                     }
 
-                    this.func_71064_a(StatList.field_75961_x, Math.round(p_70097_2_ * 10.0F));
+                    this.func_71064_a(StatList.DAMAGE_TAKEN, Math.round(p_70097_2_ * 10.0F));
                     return super.func_70097_a(p_70097_1_, p_70097_2_);
                 }
             }
@@ -1157,7 +1157,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
                         if (p_71059_1_ instanceof EntityLivingBase)
                         {
-                            this.func_71064_a(StatList.field_75951_w, Math.round(f * 10.0F));
+                            this.func_71064_a(StatList.DAMAGE_DEALT, Math.round(f * 10.0F));
 
                             if (j > 0)
                             {
@@ -1476,7 +1476,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
     public void func_70664_aZ()
     {
         super.func_70664_aZ();
-        this.func_71064_a(StatList.field_75953_u, 1);
+        this.func_71064_a(StatList.JUMP, 1);
 
         if (this.func_70051_ag())
         {
@@ -1528,7 +1528,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
                 if (i > 0)
                 {
-                    this.func_71064_a(StatList.field_75957_q, i);
+                    this.func_71064_a(StatList.DIVE_ONE_CM, i);
                     this.func_71020_j(0.015F * (float)i * 0.01F);
                 }
             }
@@ -1538,7 +1538,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
                 if (i > 0)
                 {
-                    this.func_71064_a(StatList.field_75946_m, i);
+                    this.func_71064_a(StatList.SWIM_ONE_CM, i);
                     this.func_71020_j(0.015F * (float)i * 0.01F);
                 }
             }
@@ -1546,7 +1546,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             {
                 if (p_71000_3_ > 0.0D)
                 {
-                    this.func_71064_a(StatList.field_75944_o, (int)Math.round(p_71000_3_ * 100.0D));
+                    this.func_71064_a(StatList.CLIMB_ONE_CM, (int)Math.round(p_71000_3_ * 100.0D));
                 }
             }
             else if (this.field_70122_E)
@@ -1555,7 +1555,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
                 if (i > 0)
                 {
-                    this.func_71064_a(StatList.field_75945_l, i);
+                    this.func_71064_a(StatList.WALK_ONE_CM, i);
 
                     if (this.func_70051_ag())
                     {
@@ -1573,7 +1573,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
                 if (i > 25)
                 {
-                    this.func_71064_a(StatList.field_75958_p, i);
+                    this.func_71064_a(StatList.FLY_ONE_CM, i);
                 }
             }
         }
@@ -1589,7 +1589,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             {
                 if (this.field_70154_o instanceof EntityMinecart)
                 {
-                    this.func_71064_a(StatList.field_75956_r, i);
+                    this.func_71064_a(StatList.MINECART_ONE_CM, i);
 
                     if (this.field_71073_d == null)
                     {
@@ -1602,15 +1602,15 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                 }
                 else if (this.field_70154_o instanceof EntityBoat)
                 {
-                    this.func_71064_a(StatList.field_75955_s, i);
+                    this.func_71064_a(StatList.BOAT_ONE_CM, i);
                 }
                 else if (this.field_70154_o instanceof EntityPig)
                 {
-                    this.func_71064_a(StatList.field_75954_t, i);
+                    this.func_71064_a(StatList.PIG_ONE_CM, i);
                 }
                 else if (this.field_70154_o instanceof EntityHorse)
                 {
-                    this.func_71064_a(StatList.field_151185_q, i);
+                    this.func_71064_a(StatList.HORSE_ONE_CM, i);
                 }
             }
         }
@@ -1622,7 +1622,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         {
             if (p_70069_1_ >= 2.0F)
             {
-                this.func_71064_a(StatList.field_75943_n, (int)Math.round((double)p_70069_1_ * 100.0D));
+                this.func_71064_a(StatList.FALL_ON_CM, (int)Math.round((double)p_70069_1_ * 100.0D));
             }
 
             super.func_70069_a(p_70069_1_);

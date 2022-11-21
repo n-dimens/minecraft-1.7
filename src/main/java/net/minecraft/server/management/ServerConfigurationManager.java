@@ -281,7 +281,7 @@ public abstract class ServerConfigurationManager
 
     public void func_72367_e(EntityPlayerMP p_72367_1_)
     {
-        p_72367_1_.func_71029_a(StatList.field_75947_j);
+        p_72367_1_.func_71029_a(StatList.LEAVE_GAME);
         this.func_72391_b(p_72367_1_);
         WorldServer worldserver = p_72367_1_.func_71121_q();
 
