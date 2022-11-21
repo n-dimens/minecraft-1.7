@@ -39,7 +39,7 @@ public class EntityLargeFireball extends EntityFireball
                 p_70227_1_.field_72308_g.func_70097_a(DamageSource.func_76362_a(this, this.field_70235_a), 6.0F);
             }
 
-            this.field_70170_p.func_72885_a((Entity)null, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)this.field_92057_e, true, this.field_70170_p.func_82736_K().func_82766_b("mobGriefing"));
+            this.field_70170_p.func_72885_a((Entity)null, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)this.field_92057_e, true, this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"));
             this.func_70106_y();
         }
     }

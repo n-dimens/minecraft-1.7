@@ -29,7 +29,7 @@ public class BlockPortal extends BlockBreakable
     {
         super.func_149674_a(p_149674_1_, p_149674_2_, p_149674_3_, p_149674_4_, p_149674_5_);
 
-        if (p_149674_1_.field_73011_w.func_76569_d() && p_149674_1_.func_82736_K().func_82766_b("doMobSpawning") && p_149674_5_.nextInt(2000) < p_149674_1_.field_73013_u.func_151525_a())
+        if (p_149674_1_.field_73011_w.func_76569_d() && p_149674_1_.func_82736_K().getBooleanValue("doMobSpawning") && p_149674_5_.nextInt(2000) < p_149674_1_.field_73013_u.func_151525_a())
         {
             int l;
 

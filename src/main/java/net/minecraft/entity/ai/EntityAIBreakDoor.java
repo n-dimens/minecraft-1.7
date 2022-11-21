@@ -17,7 +17,7 @@ public class EntityAIBreakDoor extends EntityAIDoorInteract
 
     public boolean func_75250_a()
     {
-        return !super.func_75250_a() ? false : (!this.field_75356_a.field_70170_p.func_82736_K().func_82766_b("mobGriefing") ? false : !this.field_151504_e.func_150015_f(this.field_75356_a.field_70170_p, this.field_75354_b, this.field_75355_c, this.field_75352_d));
+        return !super.func_75250_a() ? false : (!this.field_75356_a.field_70170_p.func_82736_K().getBooleanValue("mobGriefing") ? false : !this.field_151504_e.func_150015_f(this.field_75356_a.field_70170_p, this.field_75354_b, this.field_75355_c, this.field_75352_d));
     }
 
     public void func_75249_e()

@@ -122,7 +122,7 @@ public class EntityPig extends EntityAnimal
         }
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return this.func_70027_ad() ? Items.field_151157_am : Items.field_151147_al;
     }

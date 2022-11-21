@@ -47,7 +47,7 @@ public class BlockFire extends Block
         Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150398_cm), 60, 100);
         Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150327_N), 60, 100);
         Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150328_O), 60, 100);
-        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150325_L), 30, 60);
+        Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.WOOL), 30, 60);
         Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150395_bd), 15, 100);
         Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150402_ci), 5, 5);
         Blocks.field_150480_ab.func_149842_a(func_149682_b(Blocks.field_150407_cf), 60, 20);
@@ -92,7 +92,7 @@ public class BlockFire extends Block
 
     public void func_149674_a(World p_149674_1_, int p_149674_2_, int p_149674_3_, int p_149674_4_, Random p_149674_5_)
     {
-        if (p_149674_1_.func_82736_K().func_82766_b("doFireTick"))
+        if (p_149674_1_.func_82736_K().getBooleanValue("doFireTick"))
         {
             boolean flag = p_149674_1_.func_147439_a(p_149674_2_, p_149674_3_ - 1, p_149674_4_) == Blocks.field_150424_aL;
 

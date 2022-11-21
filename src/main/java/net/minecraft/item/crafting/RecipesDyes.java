@@ -16,7 +16,7 @@ public class RecipesDyes
 
         for (i = 0; i < 16; ++i)
         {
-            p_77607_1_.func_77596_b(new ItemStack(Blocks.field_150325_L, 1, BlockColored.func_150031_c(i)), new Object[] {new ItemStack(Items.field_151100_aR, 1, i), new ItemStack(Item.func_150898_a(Blocks.field_150325_L), 1, 0)});
+            p_77607_1_.func_77596_b(new ItemStack(Blocks.WOOL, 1, BlockColored.func_150031_c(i)), new Object[] {new ItemStack(Items.field_151100_aR, 1, i), new ItemStack(Item.func_150898_a(Blocks.WOOL), 1, 0)});
             p_77607_1_.func_92103_a(new ItemStack(Blocks.field_150406_ce, 8, BlockColored.func_150031_c(i)), new Object[] {"###", "#X#", "###", '#', new ItemStack(Blocks.field_150405_ch), 'X', new ItemStack(Items.field_151100_aR, 1, i)});
             p_77607_1_.func_92103_a(new ItemStack(Blocks.field_150399_cn, 8, BlockColored.func_150031_c(i)), new Object[] {"###", "#X#", "###", '#', new ItemStack(Blocks.field_150359_w), 'X', new ItemStack(Items.field_151100_aR, 1, i)});
             p_77607_1_.func_92103_a(new ItemStack(Blocks.field_150397_co, 16, i), new Object[] {"###", "###", '#', new ItemStack(Blocks.field_150399_cn, 1, i)});
@@ -52,7 +52,7 @@ public class RecipesDyes
 
         for (i = 0; i < 16; ++i)
         {
-            p_77607_1_.func_92103_a(new ItemStack(Blocks.field_150404_cg, 3, i), new Object[] {"##", '#', new ItemStack(Blocks.field_150325_L, 1, i)});
+            p_77607_1_.func_92103_a(new ItemStack(Blocks.field_150404_cg, 3, i), new Object[] {"##", '#', new ItemStack(Blocks.WOOL, 1, i)});
         }
     }
 }

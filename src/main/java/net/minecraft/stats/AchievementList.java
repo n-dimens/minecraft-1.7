@@ -29,7 +29,7 @@ public class AchievementList
     public final static Achievement ON_A_RAIL = (new Achievement("achievement.onARail", "onARail", 2, 3, Blocks.field_150448_aq, ACQUIRE_IRON)).func_75987_b().add();
     public final static Achievement BUILD_SWORD = (new Achievement("achievement.buildSword", "buildSword", 6, -1, Items.WOODEN_SWORD, BUILD_WORK_BENCH)).add();
     public final static Achievement KILL_ENEMY = (new Achievement("achievement.killEnemy", "killEnemy", 8, -1, Items.field_151103_aS, BUILD_SWORD)).add();
-    public final static Achievement KILL_COW = (new Achievement("achievement.killCow", "killCow", 7, -3, Items.field_151116_aA, BUILD_SWORD)).add();
+    public final static Achievement KILL_COW = (new Achievement("achievement.killCow", "killCow", 7, -3, Items.LEATHER, BUILD_SWORD)).add();
     public final static Achievement FLY_PIG = (new Achievement("achievement.flyPig", "flyPig", 9, -3, Items.field_151141_av, KILL_COW)).func_75987_b().add();
     public final static Achievement SNIPE_SKELETON = (new Achievement("achievement.snipeSkeleton", "snipeSkeleton", 7, 0, Items.field_151031_f, KILL_ENEMY)).func_75987_b().add();
     public final static Achievement DIAMONDS = (new Achievement("achievement.diamonds", "diamonds", -1, 5, Blocks.field_150482_ag, ACQUIRE_IRON)).add();

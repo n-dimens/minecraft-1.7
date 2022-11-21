@@ -34,9 +34,9 @@ public class CommandGameRule extends CommandBase
             String s2 = p_71515_2_[1];
             GameRules gamerules2 = this.func_82366_d();
 
-            if (gamerules2.func_82765_e(s1))
+            if (gamerules2.contains(s1))
             {
-                gamerules2.func_82764_b(s1, s2);
+                gamerules2.setRuleValue(s1, s2);
                 func_152373_a(p_71515_1_, this, "commands.gamerule.success", new Object[0]);
             }
             else
@@ -49,9 +49,9 @@ public class CommandGameRule extends CommandBase
             s1 = p_71515_2_[0];
             GameRules gamerules1 = this.func_82366_d();
 
-            if (gamerules1.func_82765_e(s1))
+            if (gamerules1.contains(s1))
             {
-                String s = gamerules1.func_82767_a(s1);
+                String s = gamerules1.getStringValue(s1);
                 p_71515_1_.func_145747_a((new ChatComponentText(s1)).func_150258_a(" = ").func_150258_a(s));
             }
             else
@@ -62,7 +62,7 @@ public class CommandGameRule extends CommandBase
         else if (p_71515_2_.length == 0)
         {
             GameRules gamerules = this.func_82366_d();
-            p_71515_1_.func_145747_a(new ChatComponentText(func_71527_a(gamerules.func_82763_b())));
+            p_71515_1_.func_145747_a(new ChatComponentText(func_71527_a(gamerules.getRuleNames())));
         }
         else
         {
@@ -72,7 +72,7 @@ public class CommandGameRule extends CommandBase
 
     public List func_71516_a(ICommandSender p_71516_1_, String[] p_71516_2_)
     {
-        return p_71516_2_.length == 1 ? func_71530_a(p_71516_2_, this.func_82366_d().func_82763_b()) : (p_71516_2_.length == 2 ? func_71530_a(p_71516_2_, new String[] {"true", "false"}): null);
+        return p_71516_2_.length == 1 ? func_71530_a(p_71516_2_, this.func_82366_d().getRuleNames()) : (p_71516_2_.length == 2 ? func_71530_a(p_71516_2_, new String[] {"true", "false"}): null);
     }
 
     private GameRules func_82366_d()

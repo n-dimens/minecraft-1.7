@@ -73,9 +73,9 @@ public class EntityCow extends EntityAnimal
         return 0.4F;
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
-        return Items.field_151116_aA;
+        return Items.LEATHER;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
@@ -85,7 +85,7 @@ public class EntityCow extends EntityAnimal
 
         for (k = 0; k < j; ++k)
         {
-            this.func_145779_a(Items.field_151116_aA, 1);
+            this.func_145779_a(Items.LEATHER, 1);
         }
 
         j = this.field_70146_Z.nextInt(3) + 1 + this.field_70146_Z.nextInt(1 + p_70628_2_);
@@ -94,11 +94,11 @@ public class EntityCow extends EntityAnimal
         {
             if (this.func_70027_ad())
             {
-                this.func_145779_a(Items.field_151083_be, 1);
+                this.func_145779_a(Items.COOKED_BEEF, 1);
             }
             else
             {
-                this.func_145779_a(Items.field_151082_bd, 1);
+                this.func_145779_a(Items.BEEF, 1);
             }
         }
     }

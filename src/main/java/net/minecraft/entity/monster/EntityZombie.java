@@ -320,9 +320,10 @@ public class EntityZombie extends EntityMob
         this.func_85030_a("mob.zombie.step", 0.15F, 1.0F);
     }
 
-    protected Item func_146068_u()
+    @Override
+    protected Item droppingItem()
     {
-        return Items.field_151078_bh;
+        return Items.ROTTEN_FLESH;
     }
 
     public EnumCreatureAttribute func_70668_bt()

@@ -60,7 +60,7 @@ public class WorldClient extends World
         super.func_72835_b();
         this.func_82738_a(this.func_82737_E() + 1L);
 
-        if (this.func_82736_K().func_82766_b("doDaylightCycle"))
+        if (this.func_82736_K().getBooleanValue("doDaylightCycle"))
         {
             this.func_72877_b(this.func_72820_D() + 1L);
         }
@@ -425,11 +425,11 @@ public class WorldClient extends World
         if (p_72877_1_ < 0L)
         {
             p_72877_1_ = -p_72877_1_;
-            this.func_82736_K().func_82764_b("doDaylightCycle", "false");
+            this.func_82736_K().setRuleValue("doDaylightCycle", "false");
         }
         else
         {
-            this.func_82736_K().func_82764_b("doDaylightCycle", "true");
+            this.func_82736_K().setRuleValue("doDaylightCycle", "true");
         }
 
         super.func_72877_b(p_72877_1_);

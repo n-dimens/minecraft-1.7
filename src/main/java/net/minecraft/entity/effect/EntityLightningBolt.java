@@ -25,7 +25,7 @@ public class EntityLightningBolt extends EntityWeatherEffect
         this.field_70264_a = this.field_70146_Z.nextLong();
         this.field_70263_c = this.field_70146_Z.nextInt(3) + 1;
 
-        if (!p_i1703_1_.field_72995_K && p_i1703_1_.func_82736_K().func_82766_b("doFireTick") && (p_i1703_1_.field_73013_u == EnumDifficulty.NORMAL || p_i1703_1_.field_73013_u == EnumDifficulty.HARD) && p_i1703_1_.func_72873_a(MathHelper.func_76128_c(p_i1703_2_), MathHelper.func_76128_c(p_i1703_4_), MathHelper.func_76128_c(p_i1703_6_), 10))
+        if (!p_i1703_1_.field_72995_K && p_i1703_1_.func_82736_K().getBooleanValue("doFireTick") && (p_i1703_1_.field_73013_u == EnumDifficulty.NORMAL || p_i1703_1_.field_73013_u == EnumDifficulty.HARD) && p_i1703_1_.func_72873_a(MathHelper.func_76128_c(p_i1703_2_), MathHelper.func_76128_c(p_i1703_4_), MathHelper.func_76128_c(p_i1703_6_), 10))
         {
             int i = MathHelper.func_76128_c(p_i1703_2_);
             int j = MathHelper.func_76128_c(p_i1703_4_);
@@ -74,7 +74,7 @@ public class EntityLightningBolt extends EntityWeatherEffect
                 this.field_70262_b = 1;
                 this.field_70264_a = this.field_70146_Z.nextLong();
 
-                if (!this.field_70170_p.field_72995_K && this.field_70170_p.func_82736_K().func_82766_b("doFireTick") && this.field_70170_p.func_72873_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 10))
+                if (!this.field_70170_p.field_72995_K && this.field_70170_p.func_82736_K().getBooleanValue("doFireTick") && this.field_70170_p.func_72873_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 10))
                 {
                     int i = MathHelper.func_76128_c(this.field_70165_t);
                     int j = MathHelper.func_76128_c(this.field_70163_u);

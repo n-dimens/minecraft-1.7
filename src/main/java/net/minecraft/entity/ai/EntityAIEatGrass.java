@@ -69,7 +69,7 @@ public class EntityAIEatGrass extends EntityAIBase
 
             if (this.field_151501_c.func_147439_a(i, j, k) == Blocks.field_150329_H)
             {
-                if (this.field_151501_c.func_82736_K().func_82766_b("mobGriefing"))
+                if (this.field_151501_c.func_82736_K().getBooleanValue("mobGriefing"))
                 {
                     this.field_151501_c.func_147480_a(i, j, k, false);
                 }
@@ -78,7 +78,7 @@ public class EntityAIEatGrass extends EntityAIBase
             }
             else if (this.field_151501_c.func_147439_a(i, j - 1, k) == Blocks.field_150349_c)
             {
-                if (this.field_151501_c.func_82736_K().func_82766_b("mobGriefing"))
+                if (this.field_151501_c.func_82736_K().getBooleanValue("mobGriefing"))
                 {
                     this.field_151501_c.func_72926_e(2001, i, j - 1, k, Block.func_149682_b(Blocks.field_150349_c));
                     this.field_151501_c.func_147465_d(i, j - 1, k, Blocks.field_150346_d, 0, 2);

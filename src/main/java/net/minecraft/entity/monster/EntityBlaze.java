@@ -159,7 +159,7 @@ public class EntityBlaze extends EntityMob
 
     protected void func_70069_a(float p_70069_1_) {}
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Items.field_151072_bj;
     }

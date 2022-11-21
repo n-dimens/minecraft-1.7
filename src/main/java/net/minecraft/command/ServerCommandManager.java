@@ -104,7 +104,7 @@ public class ServerCommandManager extends CommandHandler implements IAdminComman
     {
         boolean flag = true;
 
-        if (p_152372_1_ instanceof CommandBlockLogic && !MinecraftServer.func_71276_C().field_71305_c[0].func_82736_K().func_82766_b("commandBlockOutput"))
+        if (p_152372_1_ instanceof CommandBlockLogic && !MinecraftServer.func_71276_C().field_71305_c[0].func_82736_K().getBooleanValue("commandBlockOutput"))
         {
             flag = false;
         }

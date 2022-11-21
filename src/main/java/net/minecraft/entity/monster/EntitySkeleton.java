@@ -189,7 +189,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
         }
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Items.field_151032_g;
     }

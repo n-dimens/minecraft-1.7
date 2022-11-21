@@ -260,9 +260,9 @@ public class Item
             Block block = (Block)Block.field_149771_c.getById(s);
             Object object;
 
-            if (block == Blocks.field_150325_L)
+            if (block == Blocks.WOOL)
             {
-                object = (new ItemCloth(Blocks.field_150325_L)).func_77655_b("cloth");
+                object = (new ItemCloth(Blocks.WOOL)).func_77655_b("cloth");
             }
             else if (block == Blocks.field_150406_ce)
             {

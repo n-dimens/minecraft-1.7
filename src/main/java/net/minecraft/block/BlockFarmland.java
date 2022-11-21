@@ -75,7 +75,7 @@ public class BlockFarmland extends Block
     {
         if (!p_149746_1_.field_72995_K && p_149746_1_.field_73012_v.nextFloat() < p_149746_6_ - 0.5F)
         {
-            if (!(p_149746_5_ instanceof EntityPlayer) && !p_149746_1_.func_82736_K().func_82766_b("mobGriefing"))
+            if (!(p_149746_5_ instanceof EntityPlayer) && !p_149746_1_.func_82736_K().getBooleanValue("mobGriefing"))
             {
                 return;
             }

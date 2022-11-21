@@ -603,7 +603,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
                 if (this.field_71315_w % 20 == 0)
                 {
                     this.field_71304_b.func_76320_a("timeSync");
-                    this.field_71318_t.func_148537_a(new S03PacketTimeUpdate(worldserver.func_82737_E(), worldserver.func_72820_D(), worldserver.func_82736_K().func_82766_b("doDaylightCycle")), worldserver.field_73011_w.field_76574_g);
+                    this.field_71318_t.func_148537_a(new S03PacketTimeUpdate(worldserver.func_82737_E(), worldserver.func_72820_D(), worldserver.func_82736_K().getBooleanValue("doDaylightCycle")), worldserver.field_73011_w.field_76574_g);
                     this.field_71304_b.func_76319_b();
                 }
 

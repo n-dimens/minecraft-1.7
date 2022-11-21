@@ -157,7 +157,7 @@ public class EntityWolf extends EntityTameable
         return 0.4F;
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Item.func_150899_d(-1);
     }

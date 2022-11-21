@@ -224,7 +224,7 @@ public class EntityGhast extends EntityFlying implements IMob
         return "mob.ghast.death";
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Items.field_151016_H;
     }

@@ -39,7 +39,7 @@ public class CraftingManager
         this.field_77597_b.add(new RecipesMapExtending());
         this.field_77597_b.add(new RecipeFireworks());
         this.func_92103_a(new ItemStack(Items.field_151121_aF, 3), new Object[] {"###", '#', Items.field_151120_aE});
-        this.func_77596_b(new ItemStack(Items.field_151122_aG, 1), new Object[] {Items.field_151121_aF, Items.field_151121_aF, Items.field_151121_aF, Items.field_151116_aA});
+        this.func_77596_b(new ItemStack(Items.field_151122_aG, 1), new Object[] {Items.field_151121_aF, Items.field_151121_aF, Items.field_151121_aF, Items.LEATHER});
         this.func_77596_b(new ItemStack(Items.field_151099_bA, 1), new Object[] {Items.field_151122_aG, new ItemStack(Items.field_151100_aR, 1, 0), Items.field_151008_G});
         this.func_92103_a(new ItemStack(Blocks.field_150422_aJ, 2), new Object[] {"###", "###", '#', Items.field_151055_y});
         this.func_92103_a(new ItemStack(Blocks.field_150463_bK, 6, 0), new Object[] {"###", "###", '#', Blocks.field_150347_e});
@@ -56,7 +56,7 @@ public class CraftingManager
         this.func_92103_a(new ItemStack(Blocks.field_150336_V, 1), new Object[] {"##", "##", '#', Items.field_151118_aC});
         this.func_92103_a(new ItemStack(Blocks.field_150426_aN, 1), new Object[] {"##", "##", '#', Items.field_151114_aO});
         this.func_92103_a(new ItemStack(Blocks.field_150371_ca, 1), new Object[] {"##", "##", '#', Items.field_151128_bU});
-        this.func_92103_a(new ItemStack(Blocks.field_150325_L, 1), new Object[] {"##", "##", '#', Items.field_151007_F});
+        this.func_92103_a(new ItemStack(Blocks.WOOL, 1), new Object[] {"##", "##", '#', Items.field_151007_F});
         this.func_92103_a(new ItemStack(Blocks.field_150335_W, 1), new Object[] {"X#X", "#X#", "X#X", 'X', Items.field_151016_H, '#', Blocks.field_150354_m});
         this.func_92103_a(new ItemStack(Blocks.field_150333_U, 6, 3), new Object[] {"###", '#', Blocks.field_150347_e});
         this.func_92103_a(new ItemStack(Blocks.field_150333_U, 6, 0), new Object[] {"###", '#', Blocks.field_150348_b});
@@ -120,8 +120,8 @@ public class CraftingManager
         this.func_92103_a(new ItemStack(Blocks.field_150387_bl, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.field_150385_bj});
         this.func_92103_a(new ItemStack(Blocks.field_150372_bz, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.field_150322_A});
         this.func_92103_a(new ItemStack(Blocks.field_150370_cb, 4), new Object[] {"#  ", "## ", "###", '#', Blocks.field_150371_ca});
-        this.func_92103_a(new ItemStack(Items.field_151159_an, 1), new Object[] {"###", "#X#", "###", '#', Items.field_151055_y, 'X', Blocks.field_150325_L});
-        this.func_92103_a(new ItemStack(Items.field_151160_bD, 1), new Object[] {"###", "#X#", "###", '#', Items.field_151055_y, 'X', Items.field_151116_aA});
+        this.func_92103_a(new ItemStack(Items.field_151159_an, 1), new Object[] {"###", "#X#", "###", '#', Items.field_151055_y, 'X', Blocks.WOOL});
+        this.func_92103_a(new ItemStack(Items.field_151160_bD, 1), new Object[] {"###", "#X#", "###", '#', Items.field_151055_y, 'X', Items.LEATHER});
         this.func_92103_a(new ItemStack(Items.field_151153_ao, 1, 0), new Object[] {"###", "#X#", "###", '#', Items.field_151043_k, 'X', Items.field_151034_e});
         this.func_92103_a(new ItemStack(Items.field_151153_ao, 1, 1), new Object[] {"###", "#X#", "###", '#', Blocks.field_150340_R, 'X', Items.field_151034_e});
         this.func_92103_a(new ItemStack(Items.field_151150_bK, 1, 0), new Object[] {"###", "#X#", "###", '#', Items.field_151074_bl, 'X', Items.field_151172_bF});
@@ -144,10 +144,10 @@ public class CraftingManager
         this.func_92103_a(new ItemStack(Blocks.field_150409_cd, 1), new Object[] {"###", "# #", "#R#", '#', Blocks.field_150347_e, 'R', Items.field_151137_ax});
         this.func_92103_a(new ItemStack(Blocks.field_150331_J, 1), new Object[] {"TTT", "#X#", "#R#", '#', Blocks.field_150347_e, 'X', Items.field_151042_j, 'R', Items.field_151137_ax, 'T', Blocks.field_150344_f});
         this.func_92103_a(new ItemStack(Blocks.field_150320_F, 1), new Object[] {"S", "P", 'S', Items.field_151123_aH, 'P', Blocks.field_150331_J});
-        this.func_92103_a(new ItemStack(Items.field_151104_aV, 1), new Object[] {"###", "XXX", '#', Blocks.field_150325_L, 'X', Blocks.field_150344_f});
+        this.func_92103_a(new ItemStack(Items.field_151104_aV, 1), new Object[] {"###", "XXX", '#', Blocks.WOOL, 'X', Blocks.field_150344_f});
         this.func_92103_a(new ItemStack(Blocks.field_150381_bn, 1), new Object[] {" B ", "D#D", "###", '#', Blocks.field_150343_Z, 'B', Items.field_151122_aG, 'D', Items.field_151045_i});
         this.func_92103_a(new ItemStack(Blocks.field_150467_bQ, 1), new Object[] {"III", " i ", "iii", 'I', Blocks.field_150339_S, 'i', Items.field_151042_j});
-        this.func_77596_b(new ItemStack(Items.field_151061_bv, 1), new Object[] {Items.field_151079_bi, Items.field_151065_br});
+        this.func_77596_b(new ItemStack(Items.field_151061_bv, 1), new Object[] {Items.ENDER_PEARL, Items.field_151065_br});
         this.func_77596_b(new ItemStack(Items.field_151059_bz, 3), new Object[] {Items.field_151016_H, Items.field_151065_br, Items.field_151044_h});
         this.func_77596_b(new ItemStack(Items.field_151059_bz, 3), new Object[] {Items.field_151016_H, Items.field_151065_br, new ItemStack(Items.field_151044_h, 1, 1)});
         this.func_92103_a(new ItemStack(Blocks.field_150453_bW), new Object[] {"GGG", "QQQ", "WWW", 'G', Blocks.field_150359_w, 'Q', Items.field_151128_bU, 'W', Blocks.field_150376_bx});

@@ -13,7 +13,7 @@ public class RecipesArmor
 
     public RecipesArmor()
     {
-        this.field_77610_b = new Object[][] {{Items.field_151116_aA, Blocks.field_150480_ab, Items.field_151042_j, Items.field_151045_i, Items.field_151043_k}, {Items.field_151024_Q, Items.field_151020_U, Items.field_151028_Y, Items.field_151161_ac, Items.field_151169_ag}, {Items.field_151027_R, Items.field_151023_V, Items.field_151030_Z, Items.field_151163_ad, Items.field_151171_ah}, {Items.field_151026_S, Items.field_151022_W, Items.field_151165_aa, Items.field_151173_ae, Items.field_151149_ai}, {Items.field_151021_T, Items.field_151029_X, Items.field_151167_ab, Items.field_151175_af, Items.field_151151_aj}};
+        this.field_77610_b = new Object[][] {{Items.LEATHER, Blocks.field_150480_ab, Items.field_151042_j, Items.field_151045_i, Items.field_151043_k}, {Items.field_151024_Q, Items.field_151020_U, Items.field_151028_Y, Items.field_151161_ac, Items.field_151169_ag}, {Items.field_151027_R, Items.field_151023_V, Items.field_151030_Z, Items.field_151163_ad, Items.field_151171_ah}, {Items.field_151026_S, Items.field_151022_W, Items.field_151165_aa, Items.field_151173_ae, Items.field_151149_ai}, {Items.field_151021_T, Items.field_151029_X, Items.field_151167_ab, Items.field_151175_af, Items.field_151151_aj}};
     }
 
     public void func_77609_a(CraftingManager p_77609_1_)

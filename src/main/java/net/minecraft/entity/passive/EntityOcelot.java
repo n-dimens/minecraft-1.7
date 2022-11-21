@@ -138,9 +138,9 @@ public class EntityOcelot extends EntityTameable
         return 0.4F;
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
-        return Items.field_151116_aA;
+        return Items.LEATHER;
     }
 
     public boolean func_70652_k(Entity p_70652_1_)

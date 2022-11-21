@@ -25,7 +25,7 @@ public class ComponentScatteredFeaturePieces
     public static class DesertPyramid extends ComponentScatteredFeaturePieces.Feature
         {
             private boolean[] field_74940_h = new boolean[4];
-            public static final WeightedRandomChestContent[] field_74941_i = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151045_i, 0, 1, 3, 3), new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 2, 7, 15), new WeightedRandomChestContent(Items.field_151166_bC, 0, 1, 3, 2), new WeightedRandomChestContent(Items.field_151103_aS, 0, 4, 6, 20), new WeightedRandomChestContent(Items.field_151078_bh, 0, 3, 7, 16), new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 3), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151136_bY, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151125_bZ, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] field_74941_i = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151045_i, 0, 1, 3, 3), new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 2, 7, 15), new WeightedRandomChestContent(Items.field_151166_bC, 0, 1, 3, 2), new WeightedRandomChestContent(Items.field_151103_aS, 0, 4, 6, 20), new WeightedRandomChestContent(Items.ROTTEN_FLESH, 0, 3, 7, 16), new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 3), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151136_bY, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151125_bZ, 0, 1, 1, 1)};
             private static final String __OBFID = "CL_00000476";
 
             public DesertPyramid() {}
@@ -152,40 +152,40 @@ public class ComponentScatteredFeaturePieces
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 1, this.field_74939_a - 5, 2, l, p_74875_3_);
                 }
 
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 10, 0, 7, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 10, 0, 8, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 9, 0, 9, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 11, 0, 9, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 8, 0, 10, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 12, 0, 10, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 7, 0, 10, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 13, 0, 10, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 9, 0, 11, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 11, 0, 11, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 10, 0, 12, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 10, 0, 13, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b2, 10, 0, 10, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 10, 0, 7, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 10, 0, 8, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 9, 0, 9, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 11, 0, 9, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 8, 0, 10, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 12, 0, 10, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 7, 0, 10, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 13, 0, 10, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 9, 0, 11, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 11, 0, 11, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 10, 0, 12, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 10, 0, 13, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b2, 10, 0, 10, p_74875_3_);
 
                 for (l = 0; l <= this.field_74939_a - 1; l += this.field_74939_a - 1)
                 {
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 2, 1, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 2, 2, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 2, 2, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 2, 3, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 3, 1, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 3, 2, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 3, 2, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 3, 3, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 4, 1, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 4, 1, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 1, l, 4, 2, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 4, 3, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 4, 3, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 5, 1, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 5, 2, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 5, 2, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 5, 3, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 6, 1, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 6, 1, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 1, l, 6, 2, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 6, 3, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 7, 1, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 7, 2, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 7, 3, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 6, 3, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 7, 1, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 7, 2, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 7, 3, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 8, 1, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 8, 2, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 8, 3, p_74875_3_);
@@ -194,23 +194,23 @@ public class ComponentScatteredFeaturePieces
                 for (l = 2; l <= this.field_74939_a - 3; l += this.field_74939_a - 3 - 2)
                 {
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l - 1, 2, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 2, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 2, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l + 1, 2, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l - 1, 3, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 3, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 3, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l + 1, 3, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l - 1, 4, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l - 1, 4, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 1, l, 4, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l + 1, 4, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l + 1, 4, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l - 1, 5, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 5, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 5, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l + 1, 5, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l - 1, 6, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l - 1, 6, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 1, l, 6, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l + 1, 6, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l - 1, 7, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l, 7, 0, p_74875_3_);
-                    this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, l + 1, 7, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l + 1, 6, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l - 1, 7, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l, 7, 0, p_74875_3_);
+                    this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, l + 1, 7, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l - 1, 8, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l, 8, 0, p_74875_3_);
                     this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 2, l + 1, 8, 0, p_74875_3_);
@@ -219,9 +219,9 @@ public class ComponentScatteredFeaturePieces
                 this.func_151556_a(p_74875_1_, p_74875_3_, 8, 4, 0, 12, 6, 0, Blocks.field_150322_A, 2, Blocks.field_150322_A, 2, false);
                 this.func_151550_a(p_74875_1_, Blocks.field_150350_a, 0, 8, 6, 0, p_74875_3_);
                 this.func_151550_a(p_74875_1_, Blocks.field_150350_a, 0, 12, 6, 0, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 9, 5, 0, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 9, 5, 0, p_74875_3_);
                 this.func_151550_a(p_74875_1_, Blocks.field_150322_A, 1, 10, 5, 0, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, b1, 11, 5, 0, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, b1, 11, 5, 0, p_74875_3_);
                 this.func_151556_a(p_74875_1_, p_74875_3_, 8, -14, 8, 12, -11, 12, Blocks.field_150322_A, 2, Blocks.field_150322_A, 2, false);
                 this.func_151556_a(p_74875_1_, p_74875_3_, 8, -10, 8, 12, -10, 12, Blocks.field_150322_A, 1, Blocks.field_150322_A, 1, false);
                 this.func_151556_a(p_74875_1_, p_74875_3_, 8, -9, 8, 12, -9, 12, Blocks.field_150322_A, 2, Blocks.field_150322_A, 2, false);
@@ -348,7 +348,7 @@ public class ComponentScatteredFeaturePieces
             private boolean field_74948_i;
             private boolean field_74945_j;
             private boolean field_74946_k;
-            public static final WeightedRandomChestContent[] field_74943_l = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151045_i, 0, 1, 3, 3), new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 2, 7, 15), new WeightedRandomChestContent(Items.field_151166_bC, 0, 1, 3, 2), new WeightedRandomChestContent(Items.field_151103_aS, 0, 4, 6, 20), new WeightedRandomChestContent(Items.field_151078_bh, 0, 3, 7, 16), new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 3), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151136_bY, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151125_bZ, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] field_74943_l = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151045_i, 0, 1, 3, 3), new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 2, 7, 15), new WeightedRandomChestContent(Items.field_151166_bC, 0, 1, 3, 2), new WeightedRandomChestContent(Items.field_151103_aS, 0, 4, 6, 20), new WeightedRandomChestContent(Items.ROTTEN_FLESH, 0, 3, 7, 16), new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 3), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151136_bY, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151125_bZ, 0, 1, 1, 1)};
             public static final WeightedRandomChestContent[] field_74944_m = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151032_g, 0, 2, 7, 30)};
             private static ComponentScatteredFeaturePieces.JunglePyramid.Stones field_74942_n = new ComponentScatteredFeaturePieces.JunglePyramid.Stones(null);
             private static final String __OBFID = "CL_00000477";

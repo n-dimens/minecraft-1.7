@@ -128,7 +128,7 @@ public class WorldServer extends World
 
         if (this.func_73056_e())
         {
-            if (this.func_82736_K().func_82766_b("doDaylightCycle"))
+            if (this.func_82736_K().getBooleanValue("doDaylightCycle"))
             {
                 long i = this.field_72986_A.func_76073_f() + 24000L;
                 this.field_72986_A.func_76068_b(i - i % 24000L);
@@ -139,7 +139,7 @@ public class WorldServer extends World
 
         this.field_72984_F.func_76320_a("mobSpawner");
 
-        if (this.func_82736_K().func_82766_b("doMobSpawning"))
+        if (this.func_82736_K().getBooleanValue("doMobSpawning"))
         {
             this.field_135059_Q.func_77192_a(this, this.field_72985_G, this.field_72992_H, this.field_72986_A.func_82573_f() % 400L == 0L);
         }
@@ -155,7 +155,7 @@ public class WorldServer extends World
 
         this.field_72986_A.func_82572_b(this.field_72986_A.func_82573_f() + 1L);
 
-        if (this.func_82736_K().func_82766_b("doDaylightCycle"))
+        if (this.func_82736_K().getBooleanValue("doDaylightCycle"))
         {
             this.field_72986_A.func_76068_b(this.field_72986_A.func_76073_f() + 1L);
         }

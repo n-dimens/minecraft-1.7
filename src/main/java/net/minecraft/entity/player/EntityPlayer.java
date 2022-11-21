@@ -493,7 +493,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             --this.field_71101_bC;
         }
 
-        if (this.field_70170_p.field_73013_u == EnumDifficulty.PEACEFUL && this.func_110143_aJ() < this.func_110138_aP() && this.field_70170_p.func_82736_K().func_82766_b("naturalRegeneration") && this.field_70173_aa % 20 * 12 == 0)
+        if (this.field_70170_p.field_73013_u == EnumDifficulty.PEACEFUL && this.func_110143_aJ() < this.func_110138_aP() && this.field_70170_p.func_82736_K().getBooleanValue("naturalRegeneration") && this.field_70173_aa % 20 * 12 == 0)
         {
             this.func_70691_i(1.0F);
         }
@@ -600,7 +600,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             this.func_146097_a(new ItemStack(Items.field_151034_e, 1), true, false);
         }
 
-        if (!this.field_70170_p.func_82736_K().func_82766_b("keepInventory"))
+        if (!this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
         {
             this.field_71071_by.func_70436_m();
         }
@@ -1825,7 +1825,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     protected int func_70693_a(EntityPlayer p_70693_1_)
     {
-        if (this.field_70170_p.func_82736_K().func_82766_b("keepInventory"))
+        if (this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
         {
             return 0;
         }
@@ -1860,7 +1860,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             this.func_85040_s(p_71049_1_.func_71037_bA());
             this.field_82152_aq = p_71049_1_.field_82152_aq;
         }
-        else if (this.field_70170_p.func_82736_K().func_82766_b("keepInventory"))
+        else if (this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
         {
             this.field_71071_by.func_70455_b(p_71049_1_.field_71071_by);
             this.field_71068_ca = p_71049_1_.field_71068_ca;

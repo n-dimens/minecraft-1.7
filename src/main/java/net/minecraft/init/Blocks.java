@@ -68,7 +68,7 @@ public class Blocks
     public static final BlockDeadBush field_150330_I = (BlockDeadBush)Block.field_149771_c.getById("deadbush");
     public static final BlockPistonBase field_150331_J = (BlockPistonBase)Block.field_149771_c.getById("piston");
     public static final BlockPistonExtension field_150332_K = (BlockPistonExtension)Block.field_149771_c.getById("piston_head");
-    public static final Block field_150325_L = (Block)Block.field_149771_c.getById("wool");
+    public static final Block WOOL = (Block)Block.field_149771_c.getById("wool");
     public static final BlockPistonMoving field_150326_M = (BlockPistonMoving)Block.field_149771_c.getById("piston_extension");
     public static final BlockFlower field_150327_N = (BlockFlower)Block.field_149771_c.getById("yellow_flower");
     public static final BlockFlower field_150328_O = (BlockFlower)Block.field_149771_c.getById("red_flower");

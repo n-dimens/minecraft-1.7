@@ -871,7 +871,7 @@ public abstract class ServerConfigurationManager
 
     public void func_72354_b(EntityPlayerMP p_72354_1_, WorldServer p_72354_2_)
     {
-        p_72354_1_.field_71135_a.func_147359_a(new S03PacketTimeUpdate(p_72354_2_.func_82737_E(), p_72354_2_.func_72820_D(), p_72354_2_.func_82736_K().func_82766_b("doDaylightCycle")));
+        p_72354_1_.field_71135_a.func_147359_a(new S03PacketTimeUpdate(p_72354_2_.func_82737_E(), p_72354_2_.func_72820_D(), p_72354_2_.func_82736_K().getBooleanValue("doDaylightCycle")));
 
         if (p_72354_2_.func_72896_J())
         {

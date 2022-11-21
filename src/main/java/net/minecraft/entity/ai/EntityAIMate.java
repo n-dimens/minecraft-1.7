@@ -127,7 +127,7 @@ public class EntityAIMate extends EntityAIBase
                 this.field_75394_a.func_72869_a("heart", this.field_75390_d.field_70165_t + (double)(random.nextFloat() * this.field_75390_d.field_70130_N * 2.0F) - (double)this.field_75390_d.field_70130_N, this.field_75390_d.field_70163_u + 0.5D + (double)(random.nextFloat() * this.field_75390_d.field_70131_O), this.field_75390_d.field_70161_v + (double)(random.nextFloat() * this.field_75390_d.field_70130_N * 2.0F) - (double)this.field_75390_d.field_70130_N, d0, d1, d2);
             }
 
-            if (this.field_75394_a.func_82736_K().func_82766_b("doMobLoot"))
+            if (this.field_75394_a.func_82736_K().getBooleanValue("doMobLoot"))
             {
                 this.field_75394_a.func_72838_d(new EntityXPOrb(this.field_75394_a, this.field_75390_d.field_70165_t, this.field_75390_d.field_70163_u, this.field_75390_d.field_70161_v, random.nextInt(7) + 1));
             }

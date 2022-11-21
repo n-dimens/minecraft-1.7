@@ -77,7 +77,7 @@ public class EntitySnowman extends EntityGolem implements IRangedAttackMob
         }
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Items.field_151126_ay;
     }

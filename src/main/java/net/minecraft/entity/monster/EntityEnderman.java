@@ -139,7 +139,7 @@ public class EntityEnderman extends EntityMob
         this.field_110194_bu = this.field_70789_a;
         int k;
 
-        if (!this.field_70170_p.field_72995_K && this.field_70170_p.func_82736_K().func_82766_b("mobGriefing"))
+        if (!this.field_70170_p.field_72995_K && this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
         {
             int i;
             int j;
@@ -348,14 +348,14 @@ public class EntityEnderman extends EntityMob
         return "mob.endermen.death";
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
-        return Items.field_151079_bi;
+        return Items.ENDER_PEARL;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        Item item = this.func_146068_u();
+        Item item = this.droppingItem();
 
         if (item != null)
         {

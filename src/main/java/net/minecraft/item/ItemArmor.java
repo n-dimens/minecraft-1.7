@@ -283,7 +283,7 @@ public class ItemArmor extends Item
 
         public Item func_151685_b()
         {
-            return this == CLOTH ? Items.field_151116_aA : (this == CHAIN ? Items.field_151042_j : (this == GOLD ? Items.field_151043_k : (this == IRON ? Items.field_151042_j : (this == DIAMOND ? Items.field_151045_i : null))));
+            return this == CLOTH ? Items.LEATHER : (this == CHAIN ? Items.field_151042_j : (this == GOLD ? Items.field_151043_k : (this == IRON ? Items.field_151042_j : (this == DIAMOND ? Items.field_151045_i : null))));
         }
     }
 }

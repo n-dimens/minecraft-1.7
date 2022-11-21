@@ -96,7 +96,7 @@ public class EntityWitherSkull extends EntityFireball
                 }
             }
 
-            this.field_70170_p.func_72885_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, 1.0F, false, this.field_70170_p.func_82736_K().func_82766_b("mobGriefing"));
+            this.field_70170_p.func_72885_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, 1.0F, false, this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"));
             this.func_70106_y();
         }
     }

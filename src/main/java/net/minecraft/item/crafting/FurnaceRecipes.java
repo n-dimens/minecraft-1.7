@@ -30,7 +30,7 @@ public class FurnaceRecipes
         this.func_151393_a(Blocks.field_150482_ag, new ItemStack(Items.field_151045_i), 1.0F);
         this.func_151393_a(Blocks.field_150354_m, new ItemStack(Blocks.field_150359_w), 0.1F);
         this.func_151396_a(Items.field_151147_al, new ItemStack(Items.field_151157_am), 0.35F);
-        this.func_151396_a(Items.field_151082_bd, new ItemStack(Items.field_151083_be), 0.35F);
+        this.func_151396_a(Items.BEEF, new ItemStack(Items.COOKED_BEEF), 0.35F);
         this.func_151396_a(Items.field_151076_bf, new ItemStack(Items.field_151077_bg), 0.35F);
         this.func_151393_a(Blocks.field_150347_e, new ItemStack(Blocks.field_150348_b), 0.1F);
         this.func_151396_a(Items.field_151119_aD, new ItemStack(Items.field_151118_aC), 0.3F);

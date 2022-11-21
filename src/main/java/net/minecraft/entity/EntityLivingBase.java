@@ -310,7 +310,7 @@ public abstract class EntityLivingBase extends Entity
         {
             int i;
 
-            if (!this.field_70170_p.field_72995_K && (this.field_70718_bc > 0 || this.func_70684_aJ()) && this.func_146066_aG() && this.field_70170_p.func_82736_K().func_82766_b("doMobLoot"))
+            if (!this.field_70170_p.field_72995_K && (this.field_70718_bc > 0 || this.func_70684_aJ()) && this.func_146066_aG() && this.field_70170_p.func_82736_K().getBooleanValue("doMobLoot"))
             {
                 i = this.func_70693_a(this.field_70717_bb);
 
@@ -908,7 +908,7 @@ public abstract class EntityLivingBase extends Entity
                 i = EnchantmentHelper.func_77519_f((EntityLivingBase)entity);
             }
 
-            if (this.func_146066_aG() && this.field_70170_p.func_82736_K().func_82766_b("doMobLoot"))
+            if (this.func_146066_aG() && this.field_70170_p.func_82736_K().getBooleanValue("doMobLoot"))
             {
                 this.func_70628_a(this.field_70718_bc > 0, i);
                 this.func_82160_b(this.field_70718_bc > 0, i);

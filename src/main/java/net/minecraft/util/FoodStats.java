@@ -47,7 +47,7 @@ public class FoodStats
             }
         }
 
-        if (p_75118_1_.field_70170_p.func_82736_K().func_82766_b("naturalRegeneration") && this.field_75127_a >= 18 && p_75118_1_.func_70996_bM())
+        if (p_75118_1_.field_70170_p.func_82736_K().getBooleanValue("naturalRegeneration") && this.field_75127_a >= 18 && p_75118_1_.func_70996_bM())
         {
             ++this.field_75123_d;
 

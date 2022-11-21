@@ -225,14 +225,14 @@ public abstract class EntityLiving extends EntityLivingBase
         return null;
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Item.func_150899_d(0);
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        Item item = this.func_146068_u();
+        Item item = this.droppingItem();
 
         if (item != null)
         {
@@ -363,7 +363,7 @@ public abstract class EntityLiving extends EntityLivingBase
         super.func_70636_d();
         this.field_70170_p.field_72984_F.func_76320_a("looting");
 
-        if (!this.field_70170_p.field_72995_K && this.func_98052_bS() && !this.field_70729_aU && this.field_70170_p.func_82736_K().func_82766_b("mobGriefing"))
+        if (!this.field_70170_p.field_72995_K && this.func_98052_bS() && !this.field_70729_aU && this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
         {
             List list = this.field_70170_p.func_72872_a(EntityItem.class, this.field_70121_D.func_72314_b(1.0D, 0.0D, 1.0D));
             Iterator iterator = list.iterator();

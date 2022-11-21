@@ -90,7 +90,7 @@ public class Items
     public static final Item field_151137_ax = (Item)Item.REGISTRY.getById("redstone");
     public static final Item field_151126_ay = (Item)Item.REGISTRY.getById("snowball");
     public static final Item field_151124_az = (Item)Item.REGISTRY.getById("boat");
-    public static final Item field_151116_aA = (Item)Item.REGISTRY.getById("leather");
+    public static final Item LEATHER = (Item)Item.REGISTRY.getById("leather");
     public static final Item field_151117_aB = (Item)Item.REGISTRY.getById("milk_bucket");
     public static final Item field_151118_aC = (Item)Item.REGISTRY.getById("brick");
     public static final Item field_151119_aD = (Item)Item.REGISTRY.getById("clay_ball");
@@ -119,12 +119,12 @@ public class Items
     public static final Item field_151127_ba = (Item)Item.REGISTRY.getById("melon");
     public static final Item field_151080_bb = (Item)Item.REGISTRY.getById("pumpkin_seeds");
     public static final Item field_151081_bc = (Item)Item.REGISTRY.getById("melon_seeds");
-    public static final Item field_151082_bd = (Item)Item.REGISTRY.getById("beef");
-    public static final Item field_151083_be = (Item)Item.REGISTRY.getById("cooked_beef");
+    public static final Item BEEF = (Item)Item.REGISTRY.getById("beef");
+    public static final Item COOKED_BEEF = (Item)Item.REGISTRY.getById("cooked_beef");
     public static final Item field_151076_bf = (Item)Item.REGISTRY.getById("chicken");
     public static final Item field_151077_bg = (Item)Item.REGISTRY.getById("cooked_chicken");
-    public static final Item field_151078_bh = (Item)Item.REGISTRY.getById("rotten_flesh");
-    public static final Item field_151079_bi = (Item)Item.REGISTRY.getById("ender_pearl");
+    public static final Item ROTTEN_FLESH = (Item)Item.REGISTRY.getById("rotten_flesh");
+    public static final Item ENDER_PEARL = (Item)Item.REGISTRY.getById("ender_pearl");
     public static final Item field_151072_bj = (Item)Item.REGISTRY.getById("blaze_rod");
     public static final Item field_151073_bk = (Item)Item.REGISTRY.getById("ghast_tear");
     public static final Item field_151074_bl = (Item)Item.REGISTRY.getById("gold_nugget");

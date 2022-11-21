@@ -7,63 +7,63 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public class GameRules
 {
-    private TreeMap field_82771_a = new TreeMap();
+    private final TreeMap<String, Object> rules = new TreeMap<>();
     private static final String __OBFID = "CL_00000136";
 
     public GameRules()
     {
-        this.func_82769_a("doFireTick", "true");
-        this.func_82769_a("mobGriefing", "true");
-        this.func_82769_a("keepInventory", "false");
-        this.func_82769_a("doMobSpawning", "true");
-        this.func_82769_a("doMobLoot", "true");
-        this.func_82769_a("doTileDrops", "true");
-        this.func_82769_a("commandBlockOutput", "true");
-        this.func_82769_a("naturalRegeneration", "true");
-        this.func_82769_a("doDaylightCycle", "true");
+        this.addRule("doFireTick", "true");
+        this.addRule("mobGriefing", "false");
+        this.addRule("keepInventory", "true");
+        this.addRule("doMobSpawning", "true");
+        this.addRule("doMobLoot", "true");
+        this.addRule("doTileDrops", "true");
+        this.addRule("commandBlockOutput", "true");
+        this.addRule("naturalRegeneration", "true");
+        this.addRule("doDaylightCycle", "true");
     }
 
-    public void func_82769_a(String p_82769_1_, String p_82769_2_)
+    public void addRule(String name, String strValue)
     {
-        this.field_82771_a.put(p_82769_1_, new GameRules.Value(p_82769_2_));
+        this.rules.put(name, new GameRules.Value(strValue));
     }
 
-    public void func_82764_b(String p_82764_1_, String p_82764_2_)
+    public void setRuleValue(String name, String strValue)
     {
-        GameRules.Value value = (GameRules.Value)this.field_82771_a.get(p_82764_1_);
+        GameRules.Value value = (GameRules.Value)this.rules.get(name);
 
         if (value != null)
         {
-            value.func_82757_a(p_82764_2_);
+            value.parse(strValue);
         }
         else
         {
-            this.func_82769_a(p_82764_1_, p_82764_2_);
+            this.addRule(name, strValue);
         }
     }
 
-    public String func_82767_a(String p_82767_1_)
+    public String getStringValue(String ruleName)
     {
-        GameRules.Value value = (GameRules.Value)this.field_82771_a.get(p_82767_1_);
-        return value != null ? value.func_82756_a() : "";
+        GameRules.Value value = (GameRules.Value)this.rules.get(ruleName);
+        return value != null ? value.getString() : "";
     }
 
-    public boolean func_82766_b(String p_82766_1_)
+    public boolean getBooleanValue(String ruleName)
     {
-        GameRules.Value value = (GameRules.Value)this.field_82771_a.get(p_82766_1_);
-        return value != null ? value.func_82758_b() : false;
+        GameRules.Value value = (GameRules.Value)this.rules.get(ruleName);
+        return value != null ? value.getBoolean() : false;
     }
 
     public NBTTagCompound func_82770_a()
     {
         NBTTagCompound nbttagcompound = new NBTTagCompound();
-        Iterator iterator = this.field_82771_a.keySet().iterator();
+        Iterator iterator = this.rules.keySet().iterator();
 
         while (iterator.hasNext())
         {
             String s = (String)iterator.next();
-            GameRules.Value value = (GameRules.Value)this.field_82771_a.get(s);
-            nbttagcompound.func_74778_a(s, value.func_82756_a());
+            GameRules.Value value = (GameRules.Value)this.rules.get(s);
+            nbttagcompound.func_74778_a(s, value.getString());
         }
 
         return nbttagcompound;
@@ -78,41 +78,41 @@ public class GameRules
         {
             String s = (String)iterator.next();
             String s1 = p_82768_1_.func_74779_i(s);
-            this.func_82764_b(s, s1);
+            this.setRuleValue(s, s1);
         }
     }
 
-    public String[] func_82763_b()
+    public String[] getRuleNames()
     {
-        return (String[])this.field_82771_a.keySet().toArray(new String[0]);
+        return this.rules.keySet().toArray(new String[0]);
     }
 
-    public boolean func_82765_e(String p_82765_1_)
+    public boolean contains(String ruleName)
     {
-        return this.field_82771_a.containsKey(p_82765_1_);
+        return this.rules.containsKey(ruleName);
     }
 
     static class Value
         {
-            private String field_82762_a;
-            private boolean field_82760_b;
-            private int field_82761_c;
-            private double field_82759_d;
+            private String stringValue;
+            private boolean booleanValue;
+            private int intValue;
+            private double doubleValue;
             private static final String __OBFID = "CL_00000137";
 
             public Value(String p_i1949_1_)
             {
-                this.func_82757_a(p_i1949_1_);
+                this.parse(p_i1949_1_);
             }
 
-            public void func_82757_a(String p_82757_1_)
+            public void parse(String strValue)
             {
-                this.field_82762_a = p_82757_1_;
-                this.field_82760_b = Boolean.parseBoolean(p_82757_1_);
+                this.stringValue = strValue;
+                this.booleanValue = Boolean.parseBoolean(strValue);
 
                 try
                 {
-                    this.field_82761_c = Integer.parseInt(p_82757_1_);
+                    this.intValue = Integer.parseInt(strValue);
                 }
                 catch (NumberFormatException numberformatexception1)
                 {
@@ -121,7 +121,7 @@ public class GameRules
 
                 try
                 {
-                    this.field_82759_d = Double.parseDouble(p_82757_1_);
+                    this.doubleValue = Double.parseDouble(strValue);
                 }
                 catch (NumberFormatException numberformatexception)
                 {
@@ -129,14 +129,14 @@ public class GameRules
                 }
             }
 
-            public String func_82756_a()
+            public String getString()
             {
-                return this.field_82762_a;
+                return this.stringValue;
             }
 
-            public boolean func_82758_b()
+            public boolean getBoolean()
             {
-                return this.field_82760_b;
+                return this.booleanValue;
             }
         }
 }

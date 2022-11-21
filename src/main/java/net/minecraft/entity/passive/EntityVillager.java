@@ -429,7 +429,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         {
             case 0:
                 func_146091_a(merchantrecipelist, Items.field_151015_O, this.field_70146_Z, this.func_82188_j(0.9F));
-                func_146091_a(merchantrecipelist, Item.func_150898_a(Blocks.field_150325_L), this.field_70146_Z, this.func_82188_j(0.5F));
+                func_146091_a(merchantrecipelist, Item.func_150898_a(Blocks.WOOL), this.field_70146_Z, this.func_82188_j(0.5F));
                 func_146091_a(merchantrecipelist, Items.field_151076_bf, this.field_70146_Z, this.func_82188_j(0.5F));
                 func_146091_a(merchantrecipelist, Items.field_151101_aQ, this.field_70146_Z, this.func_82188_j(0.4F));
                 func_146089_b(merchantrecipelist, Items.field_151025_P, this.field_70146_Z, this.func_82188_j(0.9F));
@@ -523,14 +523,14 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
             case 4:
                 func_146091_a(merchantrecipelist, Items.field_151044_h, this.field_70146_Z, this.func_82188_j(0.7F));
                 func_146091_a(merchantrecipelist, Items.field_151147_al, this.field_70146_Z, this.func_82188_j(0.5F));
-                func_146091_a(merchantrecipelist, Items.field_151082_bd, this.field_70146_Z, this.func_82188_j(0.5F));
+                func_146091_a(merchantrecipelist, Items.BEEF, this.field_70146_Z, this.func_82188_j(0.5F));
                 func_146089_b(merchantrecipelist, Items.field_151141_av, this.field_70146_Z, this.func_82188_j(0.1F));
                 func_146089_b(merchantrecipelist, Items.field_151027_R, this.field_70146_Z, this.func_82188_j(0.3F));
                 func_146089_b(merchantrecipelist, Items.field_151021_T, this.field_70146_Z, this.func_82188_j(0.3F));
                 func_146089_b(merchantrecipelist, Items.field_151024_Q, this.field_70146_Z, this.func_82188_j(0.3F));
                 func_146089_b(merchantrecipelist, Items.field_151026_S, this.field_70146_Z, this.func_82188_j(0.3F));
                 func_146089_b(merchantrecipelist, Items.field_151157_am, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151083_be, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.COOKED_BEEF, this.field_70146_Z, this.func_82188_j(0.3F));
         }
 
         if (merchantrecipelist.isEmpty())
@@ -668,18 +668,18 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         field_70958_bB.put(Items.field_151121_aF, new Tuple(Integer.valueOf(24), Integer.valueOf(36)));
         field_70958_bB.put(Items.field_151122_aG, new Tuple(Integer.valueOf(11), Integer.valueOf(13)));
         field_70958_bB.put(Items.field_151164_bB, new Tuple(Integer.valueOf(1), Integer.valueOf(1)));
-        field_70958_bB.put(Items.field_151079_bi, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
+        field_70958_bB.put(Items.ENDER_PEARL, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
         field_70958_bB.put(Items.field_151061_bv, new Tuple(Integer.valueOf(2), Integer.valueOf(3)));
         field_70958_bB.put(Items.field_151147_al, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
-        field_70958_bB.put(Items.field_151082_bd, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
+        field_70958_bB.put(Items.BEEF, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
         field_70958_bB.put(Items.field_151076_bf, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
         field_70958_bB.put(Items.field_151101_aQ, new Tuple(Integer.valueOf(9), Integer.valueOf(13)));
         field_70958_bB.put(Items.field_151014_N, new Tuple(Integer.valueOf(34), Integer.valueOf(48)));
         field_70958_bB.put(Items.field_151081_bc, new Tuple(Integer.valueOf(30), Integer.valueOf(38)));
         field_70958_bB.put(Items.field_151080_bb, new Tuple(Integer.valueOf(30), Integer.valueOf(38)));
         field_70958_bB.put(Items.field_151015_O, new Tuple(Integer.valueOf(18), Integer.valueOf(22)));
-        field_70958_bB.put(Item.func_150898_a(Blocks.field_150325_L), new Tuple(Integer.valueOf(14), Integer.valueOf(22)));
-        field_70958_bB.put(Items.field_151078_bh, new Tuple(Integer.valueOf(36), Integer.valueOf(64)));
+        field_70958_bB.put(Item.func_150898_a(Blocks.WOOL), new Tuple(Integer.valueOf(14), Integer.valueOf(22)));
+        field_70958_bB.put(Items.ROTTEN_FLESH, new Tuple(Integer.valueOf(36), Integer.valueOf(64)));
         field_70960_bC.put(Items.field_151033_d, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
         field_70960_bC.put(Items.field_151097_aZ, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
         field_70960_bC.put(Items.IRON_SWORD, new Tuple(Integer.valueOf(7), Integer.valueOf(11)));
@@ -721,7 +721,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         field_70960_bC.put(Items.field_151113_aN, new Tuple(Integer.valueOf(10), Integer.valueOf(12)));
         field_70960_bC.put(Item.func_150898_a(Blocks.field_150426_aN), new Tuple(Integer.valueOf(-3), Integer.valueOf(-1)));
         field_70960_bC.put(Items.field_151157_am, new Tuple(Integer.valueOf(-7), Integer.valueOf(-5)));
-        field_70960_bC.put(Items.field_151083_be, new Tuple(Integer.valueOf(-7), Integer.valueOf(-5)));
+        field_70960_bC.put(Items.COOKED_BEEF, new Tuple(Integer.valueOf(-7), Integer.valueOf(-5)));
         field_70960_bC.put(Items.field_151077_bg, new Tuple(Integer.valueOf(-8), Integer.valueOf(-6)));
         field_70960_bC.put(Items.field_151061_bv, new Tuple(Integer.valueOf(7), Integer.valueOf(11)));
         field_70960_bC.put(Items.field_151032_g, new Tuple(Integer.valueOf(-12), Integer.valueOf(-8)));

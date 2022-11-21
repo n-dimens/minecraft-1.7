@@ -91,7 +91,7 @@ public class EntitySilverfish extends EntityMob
         this.func_85030_a("mob.silverfish.step", 0.15F, 1.0F);
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Item.func_150899_d(0);
     }
@@ -132,7 +132,7 @@ public class EntitySilverfish extends EntityMob
                             {
                                 if (this.field_70170_p.func_147439_a(i + i1, j + l, k + j1) == Blocks.field_150418_aU)
                                 {
-                                    if (!this.field_70170_p.func_82736_K().func_82766_b("mobGriefing"))
+                                    if (!this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
                                     {
                                         int k1 = this.field_70170_p.func_72805_g(i + i1, j + l, k + j1);
                                         ImmutablePair immutablepair = BlockSilverfish.func_150197_b(k1);

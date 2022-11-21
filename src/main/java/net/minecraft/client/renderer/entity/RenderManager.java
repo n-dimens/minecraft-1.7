@@ -153,7 +153,7 @@ public class RenderManager
         this.field_78729_o.put(EntityLeashKnot.class, new RenderLeashKnot());
         this.field_78729_o.put(EntityArrow.class, new RenderArrow());
         this.field_78729_o.put(EntitySnowball.class, new RenderSnowball(Items.field_151126_ay));
-        this.field_78729_o.put(EntityEnderPearl.class, new RenderSnowball(Items.field_151079_bi));
+        this.field_78729_o.put(EntityEnderPearl.class, new RenderSnowball(Items.ENDER_PEARL));
         this.field_78729_o.put(EntityEnderEye.class, new RenderSnowball(Items.field_151061_bv));
         this.field_78729_o.put(EntityEgg.class, new RenderSnowball(Items.field_151110_aK));
         this.field_78729_o.put(EntityPotion.class, new RenderSnowball(Items.field_151068_bn, 16384));

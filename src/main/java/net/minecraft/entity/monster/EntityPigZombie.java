@@ -149,7 +149,7 @@ public class EntityPigZombie extends EntityZombie
 
         for (k = 0; k < j; ++k)
         {
-            this.func_145779_a(Items.field_151078_bh, 1);
+            this.func_145779_a(Items.ROTTEN_FLESH, 1);
         }
 
         j = this.field_70146_Z.nextInt(2 + p_70628_2_);

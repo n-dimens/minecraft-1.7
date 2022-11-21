@@ -228,7 +228,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
 
             if (i <= 0)
             {
-                this.field_70170_p.func_72885_a(this, this.field_70165_t, this.field_70163_u + (double)this.func_70047_e(), this.field_70161_v, 7.0F, false, this.field_70170_p.func_82736_K().func_82766_b("mobGriefing"));
+                this.field_70170_p.func_72885_a(this, this.field_70165_t, this.field_70163_u + (double)this.func_70047_e(), this.field_70161_v, 7.0F, false, this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"));
                 this.field_70170_p.func_82739_e(1013, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
             }
 
@@ -329,7 +329,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
             {
                 --this.field_82222_j;
 
-                if (this.field_82222_j == 0 && this.field_70170_p.func_82736_K().func_82766_b("mobGriefing"))
+                if (this.field_82222_j == 0 && this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
                 {
                     i = MathHelper.func_76128_c(this.field_70163_u);
                     i1 = MathHelper.func_76128_c(this.field_70165_t);

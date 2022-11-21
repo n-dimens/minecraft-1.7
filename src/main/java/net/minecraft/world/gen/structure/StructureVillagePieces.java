@@ -1472,7 +1472,7 @@ public class StructureVillagePieces
                 this.func_151550_a(p_74875_1_, Blocks.field_150422_aJ, 0, 1, 0, 0, p_74875_3_);
                 this.func_151550_a(p_74875_1_, Blocks.field_150422_aJ, 0, 1, 1, 0, p_74875_3_);
                 this.func_151550_a(p_74875_1_, Blocks.field_150422_aJ, 0, 1, 2, 0, p_74875_3_);
-                this.func_151550_a(p_74875_1_, Blocks.field_150325_L, 15, 1, 3, 0, p_74875_3_);
+                this.func_151550_a(p_74875_1_, Blocks.WOOL, 15, 1, 3, 0, p_74875_3_);
                 this.func_151550_a(p_74875_1_, Blocks.field_150478_aa, 0, 0, 3, 0, p_74875_3_);
                 this.func_151550_a(p_74875_1_, Blocks.field_150478_aa, 0, 1, 3, 1, p_74875_3_);
                 this.func_151550_a(p_74875_1_, Blocks.field_150478_aa, 0, 2, 3, 0, p_74875_3_);

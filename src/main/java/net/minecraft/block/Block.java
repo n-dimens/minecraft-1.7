@@ -640,7 +640,7 @@ public class Block
 
     protected void func_149642_a(World p_149642_1_, int p_149642_2_, int p_149642_3_, int p_149642_4_, ItemStack p_149642_5_)
     {
-        if (!p_149642_1_.field_72995_K && p_149642_1_.func_82736_K().func_82766_b("doTileDrops"))
+        if (!p_149642_1_.field_72995_K && p_149642_1_.func_82736_K().getBooleanValue("doTileDrops"))
         {
             float f = 0.7F;
             double d0 = (double)(p_149642_1_.field_73012_v.nextFloat() * f) + (double)(1.0F - f) * 0.5D;

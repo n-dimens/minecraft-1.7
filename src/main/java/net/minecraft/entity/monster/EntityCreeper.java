@@ -189,7 +189,7 @@ public class EntityCreeper extends EntityMob
         return ((float)this.field_70834_e + (float)(this.field_70833_d - this.field_70834_e) * p_70831_1_) / (float)(this.field_82225_f - 2);
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Items.field_151016_H;
     }
@@ -234,7 +234,7 @@ public class EntityCreeper extends EntityMob
     {
         if (!this.field_70170_p.field_72995_K)
         {
-            boolean flag = this.field_70170_p.func_82736_K().func_82766_b("mobGriefing");
+            boolean flag = this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing");
 
             if (this.func_70830_n())
             {

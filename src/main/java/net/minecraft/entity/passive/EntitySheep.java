@@ -100,13 +100,13 @@ public class EntitySheep extends EntityAnimal
     {
         if (!this.func_70892_o())
         {
-            this.func_70099_a(new ItemStack(Item.func_150898_a(Blocks.field_150325_L), 1, this.func_70896_n()), 0.0F);
+            this.func_70099_a(new ItemStack(Item.func_150898_a(Blocks.WOOL), 1, this.func_70896_n()), 0.0F);
         }
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
-        return Item.func_150898_a(Blocks.field_150325_L);
+        return Item.func_150898_a(Blocks.WOOL);
     }
 
     @SideOnly(Side.CLIENT)
@@ -135,7 +135,7 @@ public class EntitySheep extends EntityAnimal
 
                 for (int j = 0; j < i; ++j)
                 {
-                    EntityItem entityitem = this.func_70099_a(new ItemStack(Item.func_150898_a(Blocks.field_150325_L), 1, this.func_70896_n()), 1.0F);
+                    EntityItem entityitem = this.func_70099_a(new ItemStack(Item.func_150898_a(Blocks.WOOL), 1, this.func_70896_n()), 1.0F);
                     entityitem.field_70181_x += (double)(this.field_70146_Z.nextFloat() * 0.05F);
                     entityitem.field_70159_w += (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.1F);
                     entityitem.field_70179_y += (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.1F);

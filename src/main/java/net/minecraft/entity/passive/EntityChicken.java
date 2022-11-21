@@ -120,7 +120,7 @@ public class EntityChicken extends EntityAnimal
         this.func_85030_a("mob.chicken.step", 0.15F, 1.0F);
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Items.field_151008_G;
     }

@@ -511,11 +511,11 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
         return i == 3 ? "mob.horse.zombie.death" : (i == 4 ? "mob.horse.skeleton.death" : (i != 1 && i != 2 ? "mob.horse.death" : "mob.horse.donkey.death"));
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         boolean flag = this.field_70146_Z.nextInt(4) == 0;
         int i = this.func_110265_bP();
-        return i == 4 ? Items.field_151103_aS : (i == 3 ? (flag ? Item.func_150899_d(0) : Items.field_151078_bh) : Items.field_151116_aA);
+        return i == 4 ? Items.field_151103_aS : (i == 3 ? (flag ? Item.func_150899_d(0) : Items.ROTTEN_FLESH) : Items.LEATHER);
     }
 
     protected String func_70621_aR()

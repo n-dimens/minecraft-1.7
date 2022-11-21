@@ -300,7 +300,7 @@ public class EntityItem extends Entity
                     p_70100_1_.func_71029_a(AchievementList.MINE_WOOD);
                 }
 
-                if (itemstack.func_77973_b() == Items.field_151116_aA)
+                if (itemstack.func_77973_b() == Items.LEATHER)
                 {
                     p_70100_1_.func_71029_a(AchievementList.KILL_COW);
                 }

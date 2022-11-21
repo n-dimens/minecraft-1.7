@@ -404,7 +404,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.field_71133_b.func_71203_ab().func_148539_a(this.func_110142_aN().func_151521_b());
 
-        if (!this.field_70170_p.func_82736_K().func_82766_b("keepInventory"))
+        if (!this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
         {
             this.field_71071_by.func_70436_m();
         }

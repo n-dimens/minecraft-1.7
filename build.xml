@@ -48,5 +48,5 @@
         <delete file="${target.jar}"/>
     </target>
 
-    <target name="rebuild" depends="clean, compile" />
+    <target name="rebuild" depends="clean, compile, client" />
 </project>

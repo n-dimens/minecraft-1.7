@@ -55,14 +55,14 @@ public class EntityMagmaCube extends EntitySlime
         return new EntityMagmaCube(this.field_70170_p);
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Items.field_151064_bs;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        Item item = this.func_146068_u();
+        Item item = this.droppingItem();
 
         if (item != null && this.func_70809_q() > 1)
         {

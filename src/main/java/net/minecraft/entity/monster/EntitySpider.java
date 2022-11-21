@@ -111,7 +111,7 @@ public class EntitySpider extends EntityMob
         }
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return Items.field_151007_F;
     }

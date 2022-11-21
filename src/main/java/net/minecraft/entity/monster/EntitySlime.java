@@ -238,7 +238,7 @@ public class EntitySlime extends EntityLiving implements IMob
         return "mob.slime." + (this.func_70809_q() > 1 ? "big" : "small");
     }
 
-    protected Item func_146068_u()
+    protected Item droppingItem()
     {
         return this.func_70809_q() == 1 ? Items.field_151123_aH : Item.func_150899_d(0);
     }

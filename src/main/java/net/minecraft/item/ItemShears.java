@@ -38,6 +38,6 @@ public class ItemShears extends Item
 
     public float func_150893_a(ItemStack p_150893_1_, Block p_150893_2_)
     {
-        return p_150893_2_ != Blocks.field_150321_G && p_150893_2_.func_149688_o() != Material.field_151584_j ? (p_150893_2_ == Blocks.field_150325_L ? 5.0F : super.func_150893_a(p_150893_1_, p_150893_2_)) : 15.0F;
+        return p_150893_2_ != Blocks.field_150321_G && p_150893_2_.func_149688_o() != Material.field_151584_j ? (p_150893_2_ == Blocks.WOOL ? 5.0F : super.func_150893_a(p_150893_1_, p_150893_2_)) : 15.0F;
     }
 }

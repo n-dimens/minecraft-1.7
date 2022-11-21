@@ -479,7 +479,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
 
                     if (block.func_149688_o() != Material.field_151579_a)
                     {
-                        if (block != Blocks.field_150343_Z && block != Blocks.field_150377_bs && block != Blocks.field_150357_h && this.field_70170_p.func_82736_K().func_82766_b("mobGriefing"))
+                        if (block != Blocks.field_150343_Z && block != Blocks.field_150377_bs && block != Blocks.field_150357_h && this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
                         {
                             flag1 = this.field_70170_p.func_147468_f(k1, l1, i2) || flag1;
                         }
