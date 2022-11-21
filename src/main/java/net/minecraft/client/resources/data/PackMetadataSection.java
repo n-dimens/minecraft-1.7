@@ -1,0 +1,29 @@
+package net.minecraft.client.resources.data;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.util.IChatComponent;
+
+@SideOnly(Side.CLIENT)
+public class PackMetadataSection implements IMetadataSection
+{
+    private final IChatComponent field_110464_a;
+    private final int field_110463_b;
+    private static final String __OBFID = "CL_00001112";
+
+    public PackMetadataSection(IChatComponent p_i1034_1_, int p_i1034_2_)
+    {
+        this.field_110464_a = p_i1034_1_;
+        this.field_110463_b = p_i1034_2_;
+    }
+
+    public IChatComponent func_152805_a()
+    {
+        return this.field_110464_a;
+    }
+
+    public int func_110462_b()
+    {
+        return this.field_110463_b;
+    }
+}
