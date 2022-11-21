@@ -78,7 +78,7 @@ public class BlockNetherWart extends BlockBush
 
             for (int k1 = 0; k1 < j1; ++k1)
             {
-                this.func_149642_a(p_149690_1_, p_149690_2_, p_149690_3_, p_149690_4_, new ItemStack(Items.field_151075_bm));
+                this.func_149642_a(p_149690_1_, p_149690_2_, p_149690_3_, p_149690_4_, new ItemStack(Items.NETHER_WART));
             }
         }
     }
@@ -96,7 +96,7 @@ public class BlockNetherWart extends BlockBush
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151075_bm;
+        return Items.NETHER_WART;
     }
 
     @SideOnly(Side.CLIENT)

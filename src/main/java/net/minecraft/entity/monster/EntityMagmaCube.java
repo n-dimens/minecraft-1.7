@@ -57,7 +57,7 @@ public class EntityMagmaCube extends EntitySlime
 
     protected Item droppingItem()
     {
-        return Items.field_151064_bs;
+        return Items.MAGMA_CREAM;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)

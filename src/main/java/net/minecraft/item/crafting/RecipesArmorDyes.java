@@ -37,7 +37,7 @@ public class RecipesArmorDyes implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.field_151100_aR)
+                    if (itemstack1.func_77973_b() != Items.DYE)
                     {
                         return false;
                     }
@@ -96,7 +96,7 @@ public class RecipesArmorDyes implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.field_151100_aR)
+                    if (itemstack1.func_77973_b() != Items.DYE)
                     {
                         return null;
                     }

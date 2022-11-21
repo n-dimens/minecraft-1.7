@@ -357,6 +357,6 @@ public class TileEntityBeacon extends TileEntity implements IInventory
 
     public boolean func_94041_b(int p_94041_1_, ItemStack p_94041_2_)
     {
-        return p_94041_2_.func_77973_b() == Items.field_151166_bC || p_94041_2_.func_77973_b() == Items.field_151045_i || p_94041_2_.func_77973_b() == Items.field_151043_k || p_94041_2_.func_77973_b() == Items.field_151042_j;
+        return p_94041_2_.func_77973_b() == Items.EMERALD || p_94041_2_.func_77973_b() == Items.DIAMOND || p_94041_2_.func_77973_b() == Items.GOLD_INGOT || p_94041_2_.func_77973_b() == Items.IRON_INGOT;
     }
 }

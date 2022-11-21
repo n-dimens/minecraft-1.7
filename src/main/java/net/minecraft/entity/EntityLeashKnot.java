@@ -69,7 +69,7 @@ public class EntityLeashKnot extends EntityHanging
         Iterator iterator;
         EntityLiving entityliving;
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151058_ca && !this.field_70170_p.field_72995_K)
+        if (itemstack != null && itemstack.func_77973_b() == Items.LEAD && !this.field_70170_p.field_72995_K)
         {
             d0 = 7.0D;
             list = this.field_70170_p.func_72872_a(EntityLiving.class, AxisAlignedBB.func_72330_a(this.field_70165_t - d0, this.field_70163_u - d0, this.field_70161_v - d0, this.field_70165_t + d0, this.field_70163_u + d0, this.field_70161_v + d0));

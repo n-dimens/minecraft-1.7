@@ -15,6 +15,6 @@ public class BlockGravel extends BlockFalling
             p_149650_3_ = 3;
         }
 
-        return p_149650_2_.nextInt(10 - p_149650_3_ * 3) == 0 ? Items.field_151145_ak : Item.func_150898_a(this);
+        return p_149650_2_.nextInt(10 - p_149650_3_ * 3) == 0 ? Items.FLINT : Item.func_150898_a(this);
     }
 }

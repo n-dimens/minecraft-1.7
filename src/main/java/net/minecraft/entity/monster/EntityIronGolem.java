@@ -234,7 +234,7 @@ public class EntityIronGolem extends EntityGolem
 
         for (int l = 0; l < k; ++l)
         {
-            this.func_145779_a(Items.field_151042_j, 1);
+            this.func_145779_a(Items.IRON_INGOT, 1);
         }
     }
 

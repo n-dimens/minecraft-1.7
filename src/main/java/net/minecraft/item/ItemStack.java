@@ -518,7 +518,7 @@ public final class ItemStack
                 s = s + String.format("#%04d%s", new Object[] {Integer.valueOf(i), s1});
             }
         }
-        else if (!this.func_82837_s() && this.field_151002_e == Items.field_151098_aY)
+        else if (!this.func_82837_s() && this.field_151002_e == Items.FILLED_MAP)
         {
             s = s + " #" + this.field_77991_e;
         }

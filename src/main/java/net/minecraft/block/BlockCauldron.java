@@ -123,13 +123,13 @@ public class BlockCauldron extends Block
                 int i1 = p_149727_1_.func_72805_g(p_149727_2_, p_149727_3_, p_149727_4_);
                 int j1 = func_150027_b(i1);
 
-                if (itemstack.func_77973_b() == Items.field_151131_as)
+                if (itemstack.func_77973_b() == Items.WATER_BUCKET)
                 {
                     if (j1 < 3)
                     {
                         if (!p_149727_5_.field_71075_bZ.field_75098_d)
                         {
-                            p_149727_5_.field_71071_by.func_70299_a(p_149727_5_.field_71071_by.field_70461_c, new ItemStack(Items.field_151133_ar));
+                            p_149727_5_.field_71071_by.func_70299_a(p_149727_5_.field_71071_by.field_70461_c, new ItemStack(Items.BUCKET));
                         }
 
                         this.func_150024_a(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, 3);
@@ -139,13 +139,13 @@ public class BlockCauldron extends Block
                 }
                 else
                 {
-                    if (itemstack.func_77973_b() == Items.field_151069_bo)
+                    if (itemstack.func_77973_b() == Items.GLASS_BOTTLE)
                     {
                         if (j1 > 0)
                         {
                             if (!p_149727_5_.field_71075_bZ.field_75098_d)
                             {
-                                ItemStack itemstack1 = new ItemStack(Items.field_151068_bn, 1, 0);
+                                ItemStack itemstack1 = new ItemStack(Items.POTION, 1, 0);
 
                                 if (!p_149727_5_.field_71071_by.func_70441_a(itemstack1))
                                 {
@@ -202,13 +202,13 @@ public class BlockCauldron extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151066_bu;
+        return Items.CAULDRON;
     }
 
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151066_bu;
+        return Items.CAULDRON;
     }
 
     public boolean func_149740_M()

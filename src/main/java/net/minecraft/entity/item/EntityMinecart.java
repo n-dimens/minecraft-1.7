@@ -164,7 +164,7 @@ public abstract class EntityMinecart extends Entity
     public void func_94095_a(DamageSource p_94095_1_)
     {
         this.func_70106_y();
-        ItemStack itemstack = new ItemStack(Items.field_151143_au, 1);
+        ItemStack itemstack = new ItemStack(Items.MINECART, 1);
 
         if (this.field_94102_c != null)
         {

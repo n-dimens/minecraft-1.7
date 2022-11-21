@@ -168,7 +168,7 @@ public class EntityEnderEye extends Entity
 
                 if (this.field_70221_f)
                 {
-                    this.field_70170_p.func_72838_d(new EntityItem(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, new ItemStack(Items.field_151061_bv)));
+                    this.field_70170_p.func_72838_d(new EntityItem(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, new ItemStack(Items.ENDER_EYE)));
                 }
                 else
                 {

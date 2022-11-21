@@ -29,7 +29,7 @@ public class EntityCow extends EntityAnimal
         this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
         this.field_70714_bg.func_75776_a(1, new EntityAIPanic(this, 2.0D));
         this.field_70714_bg.func_75776_a(2, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.25D, Items.field_151015_O, false));
+        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.25D, Items.WHEAT, false));
         this.field_70714_bg.func_75776_a(4, new EntityAIFollowParent(this, 1.25D));
         this.field_70714_bg.func_75776_a(5, new EntityAIWander(this, 1.0D));
         this.field_70714_bg.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -107,15 +107,15 @@ public class EntityCow extends EntityAnimal
     {
         ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151133_ar && !p_70085_1_.field_71075_bZ.field_75098_d)
+        if (itemstack != null && itemstack.func_77973_b() == Items.BUCKET && !p_70085_1_.field_71075_bZ.field_75098_d)
         {
             if (itemstack.field_77994_a-- == 1)
             {
-                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, new ItemStack(Items.field_151117_aB));
+                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, new ItemStack(Items.MILK_BUCKET));
             }
-            else if (!p_70085_1_.field_71071_by.func_70441_a(new ItemStack(Items.field_151117_aB)))
+            else if (!p_70085_1_.field_71071_by.func_70441_a(new ItemStack(Items.MILK_BUCKET)))
             {
-                p_70085_1_.func_71019_a(new ItemStack(Items.field_151117_aB, 1, 0), false);
+                p_70085_1_.func_71019_a(new ItemStack(Items.MILK_BUCKET, 1, 0), false);
             }
 
             return true;

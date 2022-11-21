@@ -71,7 +71,7 @@ public class RenderWitch extends RenderLiving
                 GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
                 GL11.glScalef(f1, -f1, f1);
             }
-            else if (itemstack.func_77973_b() == Items.field_151031_f)
+            else if (itemstack.func_77973_b() == Items.BOW)
             {
                 f1 = 0.625F;
                 GL11.glTranslatef(0.0F, 0.125F, 0.3125F);

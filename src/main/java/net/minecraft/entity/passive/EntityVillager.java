@@ -177,7 +177,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
     public boolean func_70085_c(EntityPlayer p_70085_1_)
     {
         ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
-        boolean flag = itemstack != null && itemstack.func_77973_b() == Items.field_151063_bx;
+        boolean flag = itemstack != null && itemstack.func_77973_b() == Items.SPAWN_EGG;
 
         if (!flag && this.func_70089_S() && !this.func_70940_q() && !this.func_70631_g_())
         {
@@ -370,7 +370,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
             }
         }
 
-        if (p_70933_1_.func_77394_a().func_77973_b() == Items.field_151166_bC)
+        if (p_70933_1_.func_77394_a().func_77973_b() == Items.EMERALD)
         {
             this.field_70956_bz += p_70933_1_.func_77394_a().field_77994_a;
         }
@@ -428,50 +428,50 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         switch (this.func_70946_n())
         {
             case 0:
-                func_146091_a(merchantrecipelist, Items.field_151015_O, this.field_70146_Z, this.func_82188_j(0.9F));
+                func_146091_a(merchantrecipelist, Items.WHEAT, this.field_70146_Z, this.func_82188_j(0.9F));
                 func_146091_a(merchantrecipelist, Item.func_150898_a(Blocks.WOOL), this.field_70146_Z, this.func_82188_j(0.5F));
-                func_146091_a(merchantrecipelist, Items.field_151076_bf, this.field_70146_Z, this.func_82188_j(0.5F));
-                func_146091_a(merchantrecipelist, Items.field_151101_aQ, this.field_70146_Z, this.func_82188_j(0.4F));
-                func_146089_b(merchantrecipelist, Items.field_151025_P, this.field_70146_Z, this.func_82188_j(0.9F));
-                func_146089_b(merchantrecipelist, Items.field_151127_ba, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151034_e, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151106_aX, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151097_aZ, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151033_d, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151077_bg, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151032_g, this.field_70146_Z, this.func_82188_j(0.5F));
+                func_146091_a(merchantrecipelist, Items.CHICKEN, this.field_70146_Z, this.func_82188_j(0.5F));
+                func_146091_a(merchantrecipelist, Items.COOKED_FISHED, this.field_70146_Z, this.func_82188_j(0.4F));
+                func_146089_b(merchantrecipelist, Items.BREAD, this.field_70146_Z, this.func_82188_j(0.9F));
+                func_146089_b(merchantrecipelist, Items.MELON, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.APPLE, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.COOKIE, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.SHEARS, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.FLINT_AND_STEEL, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.COOKED_CHICKEN, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.ARROW, this.field_70146_Z, this.func_82188_j(0.5F));
 
                 if (this.field_70146_Z.nextFloat() < this.func_82188_j(0.5F))
                 {
-                    merchantrecipelist.add(new MerchantRecipe(new ItemStack(Blocks.field_150351_n, 10), new ItemStack(Items.field_151166_bC), new ItemStack(Items.field_151145_ak, 4 + this.field_70146_Z.nextInt(2), 0)));
+                    merchantrecipelist.add(new MerchantRecipe(new ItemStack(Blocks.field_150351_n, 10), new ItemStack(Items.EMERALD), new ItemStack(Items.FLINT, 4 + this.field_70146_Z.nextInt(2), 0)));
                 }
 
                 break;
             case 1:
-                func_146091_a(merchantrecipelist, Items.field_151121_aF, this.field_70146_Z, this.func_82188_j(0.8F));
-                func_146091_a(merchantrecipelist, Items.field_151122_aG, this.field_70146_Z, this.func_82188_j(0.8F));
-                func_146091_a(merchantrecipelist, Items.field_151164_bB, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146091_a(merchantrecipelist, Items.PAPER, this.field_70146_Z, this.func_82188_j(0.8F));
+                func_146091_a(merchantrecipelist, Items.BOOK, this.field_70146_Z, this.func_82188_j(0.8F));
+                func_146091_a(merchantrecipelist, Items.WRITTEN_BOOK, this.field_70146_Z, this.func_82188_j(0.3F));
                 func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.field_150342_X), this.field_70146_Z, this.func_82188_j(0.8F));
                 func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.field_150359_w), this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151111_aL, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151113_aN, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.COMPASS, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.CLOCK, this.field_70146_Z, this.func_82188_j(0.2F));
 
                 if (this.field_70146_Z.nextFloat() < this.func_82188_j(0.07F))
                 {
                     Enchantment enchantment = Enchantment.field_92090_c[this.field_70146_Z.nextInt(Enchantment.field_92090_c.length)];
                     int i1 = MathHelper.func_76136_a(this.field_70146_Z, enchantment.func_77319_d(), enchantment.func_77325_b());
-                    ItemStack itemstack = Items.field_151134_bR.func_92111_a(new EnchantmentData(enchantment, i1));
+                    ItemStack itemstack = Items.ENCHANTED_BOOK.func_92111_a(new EnchantmentData(enchantment, i1));
                     k = 2 + this.field_70146_Z.nextInt(5 + i1 * 10) + 3 * i1;
-                    merchantrecipelist.add(new MerchantRecipe(new ItemStack(Items.field_151122_aG), new ItemStack(Items.field_151166_bC, k), itemstack));
+                    merchantrecipelist.add(new MerchantRecipe(new ItemStack(Items.BOOK), new ItemStack(Items.EMERALD, k), itemstack));
                 }
 
                 break;
             case 2:
-                func_146089_b(merchantrecipelist, Items.field_151061_bv, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151062_by, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151137_ax, this.field_70146_Z, this.func_82188_j(0.4F));
+                func_146089_b(merchantrecipelist, Items.ENDER_EYE, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.EXPERIENCE_BOTTLE, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.REDSTONE, this.field_70146_Z, this.func_82188_j(0.4F));
                 func_146089_b(merchantrecipelist, Item.func_150898_a(Blocks.field_150426_aN), this.field_70146_Z, this.func_82188_j(0.3F));
-                Item[] aitem = new Item[] {Items.IRON_SWORD, Items.DIAMOND_SWORD, Items.field_151030_Z, Items.field_151163_ad, Items.IRON_AXE, Items.DIAMOND_AXE, Items.IRON_PICKAXE, Items.DIAMOND_PICKAXE};
+                Item[] aitem = new Item[] {Items.IRON_SWORD, Items.DIAMOND_SWORD, Items.IRON_CHESTPLATE, Items.DIAMOND_CHESTPLATE, Items.IRON_AXE, Items.DIAMOND_AXE, Items.IRON_PICKAXE, Items.DIAMOND_PICKAXE};
                 Item[] aitem1 = aitem;
                 int j = aitem.length;
                 k = 0;
@@ -487,16 +487,16 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
                     if (this.field_70146_Z.nextFloat() < this.func_82188_j(0.05F))
                     {
-                        merchantrecipelist.add(new MerchantRecipe(new ItemStack(item, 1, 0), new ItemStack(Items.field_151166_bC, 2 + this.field_70146_Z.nextInt(3), 0), EnchantmentHelper.func_77504_a(this.field_70146_Z, new ItemStack(item, 1, 0), 5 + this.field_70146_Z.nextInt(15))));
+                        merchantrecipelist.add(new MerchantRecipe(new ItemStack(item, 1, 0), new ItemStack(Items.EMERALD, 2 + this.field_70146_Z.nextInt(3), 0), EnchantmentHelper.func_77504_a(this.field_70146_Z, new ItemStack(item, 1, 0), 5 + this.field_70146_Z.nextInt(15))));
                     }
 
                     ++k;
                 }
             case 3:
-                func_146091_a(merchantrecipelist, Items.field_151044_h, this.field_70146_Z, this.func_82188_j(0.7F));
-                func_146091_a(merchantrecipelist, Items.field_151042_j, this.field_70146_Z, this.func_82188_j(0.5F));
-                func_146091_a(merchantrecipelist, Items.field_151043_k, this.field_70146_Z, this.func_82188_j(0.5F));
-                func_146091_a(merchantrecipelist, Items.field_151045_i, this.field_70146_Z, this.func_82188_j(0.5F));
+                func_146091_a(merchantrecipelist, Items.COAL, this.field_70146_Z, this.func_82188_j(0.7F));
+                func_146091_a(merchantrecipelist, Items.IRON_INGOT, this.field_70146_Z, this.func_82188_j(0.5F));
+                func_146091_a(merchantrecipelist, Items.GOLD_INGOT, this.field_70146_Z, this.func_82188_j(0.5F));
+                func_146091_a(merchantrecipelist, Items.DIAMOND, this.field_70146_Z, this.func_82188_j(0.5F));
                 func_146089_b(merchantrecipelist, Items.IRON_SWORD, this.field_70146_Z, this.func_82188_j(0.5F));
                 func_146089_b(merchantrecipelist, Items.DIAMOND_SWORD, this.field_70146_Z, this.func_82188_j(0.5F));
                 func_146089_b(merchantrecipelist, Items.IRON_AXE, this.field_70146_Z, this.func_82188_j(0.3F));
@@ -506,36 +506,36 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
                 func_146089_b(merchantrecipelist, Items.IRON_SHOVEL, this.field_70146_Z, this.func_82188_j(0.2F));
                 func_146089_b(merchantrecipelist, Items.DIAMOND_SHOVEL, this.field_70146_Z, this.func_82188_j(0.2F));
                 func_146089_b(merchantrecipelist, Items.IRON_HOE, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151012_L, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151167_ab, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151175_af, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151028_Y, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151161_ac, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151030_Z, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151163_ad, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151165_aa, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151173_ae, this.field_70146_Z, this.func_82188_j(0.2F));
-                func_146089_b(merchantrecipelist, Items.field_151029_X, this.field_70146_Z, this.func_82188_j(0.1F));
-                func_146089_b(merchantrecipelist, Items.field_151020_U, this.field_70146_Z, this.func_82188_j(0.1F));
-                func_146089_b(merchantrecipelist, Items.field_151023_V, this.field_70146_Z, this.func_82188_j(0.1F));
-                func_146089_b(merchantrecipelist, Items.field_151022_W, this.field_70146_Z, this.func_82188_j(0.1F));
+                func_146089_b(merchantrecipelist, Items.DIAMOND_HOE, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.IRON_BOOTS, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.DIAMOND_BOOTS, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.IRON_HELMET, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.DIAMOND_HELMET, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.IRON_CHESTPLATE, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.DIAMOND_CHESTPLATE, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.IRON_LEGGINGS, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.DIAMOND_LEGGINGS, this.field_70146_Z, this.func_82188_j(0.2F));
+                func_146089_b(merchantrecipelist, Items.CHAINMAIL_BOOTS, this.field_70146_Z, this.func_82188_j(0.1F));
+                func_146089_b(merchantrecipelist, Items.CHAINMAIL_HELMET, this.field_70146_Z, this.func_82188_j(0.1F));
+                func_146089_b(merchantrecipelist, Items.CHAINMAIL_CHESTPLATE, this.field_70146_Z, this.func_82188_j(0.1F));
+                func_146089_b(merchantrecipelist, Items.CHAINMAIL_LEGGINGS, this.field_70146_Z, this.func_82188_j(0.1F));
                 break;
             case 4:
-                func_146091_a(merchantrecipelist, Items.field_151044_h, this.field_70146_Z, this.func_82188_j(0.7F));
-                func_146091_a(merchantrecipelist, Items.field_151147_al, this.field_70146_Z, this.func_82188_j(0.5F));
+                func_146091_a(merchantrecipelist, Items.COAL, this.field_70146_Z, this.func_82188_j(0.7F));
+                func_146091_a(merchantrecipelist, Items.PORKCHOP, this.field_70146_Z, this.func_82188_j(0.5F));
                 func_146091_a(merchantrecipelist, Items.BEEF, this.field_70146_Z, this.func_82188_j(0.5F));
-                func_146089_b(merchantrecipelist, Items.field_151141_av, this.field_70146_Z, this.func_82188_j(0.1F));
-                func_146089_b(merchantrecipelist, Items.field_151027_R, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151021_T, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151024_Q, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151026_S, this.field_70146_Z, this.func_82188_j(0.3F));
-                func_146089_b(merchantrecipelist, Items.field_151157_am, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.SADDLE, this.field_70146_Z, this.func_82188_j(0.1F));
+                func_146089_b(merchantrecipelist, Items.LEATHER_CHESTPLATE, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.LEATHER_BOOTS, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.LEATHER_HELMET, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.LEATHER_LEGGINGS, this.field_70146_Z, this.func_82188_j(0.3F));
+                func_146089_b(merchantrecipelist, Items.COOKED_PORKCHOP, this.field_70146_Z, this.func_82188_j(0.3F));
                 func_146089_b(merchantrecipelist, Items.COOKED_BEEF, this.field_70146_Z, this.func_82188_j(0.3F));
         }
 
         if (merchantrecipelist.isEmpty())
         {
-            func_146091_a(merchantrecipelist, Items.field_151043_k, this.field_70146_Z, 1.0F);
+            func_146091_a(merchantrecipelist, Items.GOLD_INGOT, this.field_70146_Z, 1.0F);
         }
 
         Collections.shuffle(merchantrecipelist);
@@ -558,7 +558,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
     {
         if (p_146091_2_.nextFloat() < p_146091_3_)
         {
-            p_146091_0_.add(new MerchantRecipe(func_146088_a(p_146091_1_, p_146091_2_), Items.field_151166_bC));
+            p_146091_0_.add(new MerchantRecipe(func_146088_a(p_146091_1_, p_146091_2_), Items.EMERALD));
         }
     }
 
@@ -583,12 +583,12 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
             if (i < 0)
             {
-                itemstack = new ItemStack(Items.field_151166_bC, 1, 0);
+                itemstack = new ItemStack(Items.EMERALD, 1, 0);
                 itemstack1 = new ItemStack(p_146089_1_, -i, 0);
             }
             else
             {
-                itemstack = new ItemStack(Items.field_151166_bC, i, 0);
+                itemstack = new ItemStack(Items.EMERALD, i, 0);
                 itemstack1 = new ItemStack(p_146089_1_, 1, 0);
             }
 
@@ -661,27 +661,27 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
     static
     {
-        field_70958_bB.put(Items.field_151044_h, new Tuple(Integer.valueOf(16), Integer.valueOf(24)));
-        field_70958_bB.put(Items.field_151042_j, new Tuple(Integer.valueOf(8), Integer.valueOf(10)));
-        field_70958_bB.put(Items.field_151043_k, new Tuple(Integer.valueOf(8), Integer.valueOf(10)));
-        field_70958_bB.put(Items.field_151045_i, new Tuple(Integer.valueOf(4), Integer.valueOf(6)));
-        field_70958_bB.put(Items.field_151121_aF, new Tuple(Integer.valueOf(24), Integer.valueOf(36)));
-        field_70958_bB.put(Items.field_151122_aG, new Tuple(Integer.valueOf(11), Integer.valueOf(13)));
-        field_70958_bB.put(Items.field_151164_bB, new Tuple(Integer.valueOf(1), Integer.valueOf(1)));
+        field_70958_bB.put(Items.COAL, new Tuple(Integer.valueOf(16), Integer.valueOf(24)));
+        field_70958_bB.put(Items.IRON_INGOT, new Tuple(Integer.valueOf(8), Integer.valueOf(10)));
+        field_70958_bB.put(Items.GOLD_INGOT, new Tuple(Integer.valueOf(8), Integer.valueOf(10)));
+        field_70958_bB.put(Items.DIAMOND, new Tuple(Integer.valueOf(4), Integer.valueOf(6)));
+        field_70958_bB.put(Items.PAPER, new Tuple(Integer.valueOf(24), Integer.valueOf(36)));
+        field_70958_bB.put(Items.BOOK, new Tuple(Integer.valueOf(11), Integer.valueOf(13)));
+        field_70958_bB.put(Items.WRITTEN_BOOK, new Tuple(Integer.valueOf(1), Integer.valueOf(1)));
         field_70958_bB.put(Items.ENDER_PEARL, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
-        field_70958_bB.put(Items.field_151061_bv, new Tuple(Integer.valueOf(2), Integer.valueOf(3)));
-        field_70958_bB.put(Items.field_151147_al, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
+        field_70958_bB.put(Items.ENDER_EYE, new Tuple(Integer.valueOf(2), Integer.valueOf(3)));
+        field_70958_bB.put(Items.PORKCHOP, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
         field_70958_bB.put(Items.BEEF, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
-        field_70958_bB.put(Items.field_151076_bf, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
-        field_70958_bB.put(Items.field_151101_aQ, new Tuple(Integer.valueOf(9), Integer.valueOf(13)));
-        field_70958_bB.put(Items.field_151014_N, new Tuple(Integer.valueOf(34), Integer.valueOf(48)));
-        field_70958_bB.put(Items.field_151081_bc, new Tuple(Integer.valueOf(30), Integer.valueOf(38)));
-        field_70958_bB.put(Items.field_151080_bb, new Tuple(Integer.valueOf(30), Integer.valueOf(38)));
-        field_70958_bB.put(Items.field_151015_O, new Tuple(Integer.valueOf(18), Integer.valueOf(22)));
+        field_70958_bB.put(Items.CHICKEN, new Tuple(Integer.valueOf(14), Integer.valueOf(18)));
+        field_70958_bB.put(Items.COOKED_FISHED, new Tuple(Integer.valueOf(9), Integer.valueOf(13)));
+        field_70958_bB.put(Items.WHEAT_SEEDS, new Tuple(Integer.valueOf(34), Integer.valueOf(48)));
+        field_70958_bB.put(Items.MELON_SEEDS, new Tuple(Integer.valueOf(30), Integer.valueOf(38)));
+        field_70958_bB.put(Items.PUMPKIN_SEEDS, new Tuple(Integer.valueOf(30), Integer.valueOf(38)));
+        field_70958_bB.put(Items.WHEAT, new Tuple(Integer.valueOf(18), Integer.valueOf(22)));
         field_70958_bB.put(Item.func_150898_a(Blocks.WOOL), new Tuple(Integer.valueOf(14), Integer.valueOf(22)));
         field_70958_bB.put(Items.ROTTEN_FLESH, new Tuple(Integer.valueOf(36), Integer.valueOf(64)));
-        field_70960_bC.put(Items.field_151033_d, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
-        field_70960_bC.put(Items.field_151097_aZ, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
+        field_70960_bC.put(Items.FLINT_AND_STEEL, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
+        field_70960_bC.put(Items.SHEARS, new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
         field_70960_bC.put(Items.IRON_SWORD, new Tuple(Integer.valueOf(7), Integer.valueOf(11)));
         field_70960_bC.put(Items.DIAMOND_SWORD, new Tuple(Integer.valueOf(12), Integer.valueOf(14)));
         field_70960_bC.put(Items.IRON_AXE, new Tuple(Integer.valueOf(6), Integer.valueOf(8)));
@@ -691,39 +691,39 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
         field_70960_bC.put(Items.IRON_SHOVEL, new Tuple(Integer.valueOf(4), Integer.valueOf(6)));
         field_70960_bC.put(Items.DIAMOND_SHOVEL, new Tuple(Integer.valueOf(7), Integer.valueOf(8)));
         field_70960_bC.put(Items.IRON_HOE, new Tuple(Integer.valueOf(4), Integer.valueOf(6)));
-        field_70960_bC.put(Items.field_151012_L, new Tuple(Integer.valueOf(7), Integer.valueOf(8)));
-        field_70960_bC.put(Items.field_151167_ab, new Tuple(Integer.valueOf(4), Integer.valueOf(6)));
-        field_70960_bC.put(Items.field_151175_af, new Tuple(Integer.valueOf(7), Integer.valueOf(8)));
-        field_70960_bC.put(Items.field_151028_Y, new Tuple(Integer.valueOf(4), Integer.valueOf(6)));
-        field_70960_bC.put(Items.field_151161_ac, new Tuple(Integer.valueOf(7), Integer.valueOf(8)));
-        field_70960_bC.put(Items.field_151030_Z, new Tuple(Integer.valueOf(10), Integer.valueOf(14)));
-        field_70960_bC.put(Items.field_151163_ad, new Tuple(Integer.valueOf(16), Integer.valueOf(19)));
-        field_70960_bC.put(Items.field_151165_aa, new Tuple(Integer.valueOf(8), Integer.valueOf(10)));
-        field_70960_bC.put(Items.field_151173_ae, new Tuple(Integer.valueOf(11), Integer.valueOf(14)));
-        field_70960_bC.put(Items.field_151029_X, new Tuple(Integer.valueOf(5), Integer.valueOf(7)));
-        field_70960_bC.put(Items.field_151020_U, new Tuple(Integer.valueOf(5), Integer.valueOf(7)));
-        field_70960_bC.put(Items.field_151023_V, new Tuple(Integer.valueOf(11), Integer.valueOf(15)));
-        field_70960_bC.put(Items.field_151022_W, new Tuple(Integer.valueOf(9), Integer.valueOf(11)));
-        field_70960_bC.put(Items.field_151025_P, new Tuple(Integer.valueOf(-4), Integer.valueOf(-2)));
-        field_70960_bC.put(Items.field_151127_ba, new Tuple(Integer.valueOf(-8), Integer.valueOf(-4)));
-        field_70960_bC.put(Items.field_151034_e, new Tuple(Integer.valueOf(-8), Integer.valueOf(-4)));
-        field_70960_bC.put(Items.field_151106_aX, new Tuple(Integer.valueOf(-10), Integer.valueOf(-7)));
+        field_70960_bC.put(Items.DIAMOND_HOE, new Tuple(Integer.valueOf(7), Integer.valueOf(8)));
+        field_70960_bC.put(Items.IRON_BOOTS, new Tuple(Integer.valueOf(4), Integer.valueOf(6)));
+        field_70960_bC.put(Items.DIAMOND_BOOTS, new Tuple(Integer.valueOf(7), Integer.valueOf(8)));
+        field_70960_bC.put(Items.IRON_HELMET, new Tuple(Integer.valueOf(4), Integer.valueOf(6)));
+        field_70960_bC.put(Items.DIAMOND_HELMET, new Tuple(Integer.valueOf(7), Integer.valueOf(8)));
+        field_70960_bC.put(Items.IRON_CHESTPLATE, new Tuple(Integer.valueOf(10), Integer.valueOf(14)));
+        field_70960_bC.put(Items.DIAMOND_CHESTPLATE, new Tuple(Integer.valueOf(16), Integer.valueOf(19)));
+        field_70960_bC.put(Items.IRON_LEGGINGS, new Tuple(Integer.valueOf(8), Integer.valueOf(10)));
+        field_70960_bC.put(Items.DIAMOND_LEGGINGS, new Tuple(Integer.valueOf(11), Integer.valueOf(14)));
+        field_70960_bC.put(Items.CHAINMAIL_BOOTS, new Tuple(Integer.valueOf(5), Integer.valueOf(7)));
+        field_70960_bC.put(Items.CHAINMAIL_HELMET, new Tuple(Integer.valueOf(5), Integer.valueOf(7)));
+        field_70960_bC.put(Items.CHAINMAIL_CHESTPLATE, new Tuple(Integer.valueOf(11), Integer.valueOf(15)));
+        field_70960_bC.put(Items.CHAINMAIL_LEGGINGS, new Tuple(Integer.valueOf(9), Integer.valueOf(11)));
+        field_70960_bC.put(Items.BREAD, new Tuple(Integer.valueOf(-4), Integer.valueOf(-2)));
+        field_70960_bC.put(Items.MELON, new Tuple(Integer.valueOf(-8), Integer.valueOf(-4)));
+        field_70960_bC.put(Items.APPLE, new Tuple(Integer.valueOf(-8), Integer.valueOf(-4)));
+        field_70960_bC.put(Items.COOKIE, new Tuple(Integer.valueOf(-10), Integer.valueOf(-7)));
         field_70960_bC.put(Item.func_150898_a(Blocks.field_150359_w), new Tuple(Integer.valueOf(-5), Integer.valueOf(-3)));
         field_70960_bC.put(Item.func_150898_a(Blocks.field_150342_X), new Tuple(Integer.valueOf(3), Integer.valueOf(4)));
-        field_70960_bC.put(Items.field_151027_R, new Tuple(Integer.valueOf(4), Integer.valueOf(5)));
-        field_70960_bC.put(Items.field_151021_T, new Tuple(Integer.valueOf(2), Integer.valueOf(4)));
-        field_70960_bC.put(Items.field_151024_Q, new Tuple(Integer.valueOf(2), Integer.valueOf(4)));
-        field_70960_bC.put(Items.field_151026_S, new Tuple(Integer.valueOf(2), Integer.valueOf(4)));
-        field_70960_bC.put(Items.field_151141_av, new Tuple(Integer.valueOf(6), Integer.valueOf(8)));
-        field_70960_bC.put(Items.field_151062_by, new Tuple(Integer.valueOf(-4), Integer.valueOf(-1)));
-        field_70960_bC.put(Items.field_151137_ax, new Tuple(Integer.valueOf(-4), Integer.valueOf(-1)));
-        field_70960_bC.put(Items.field_151111_aL, new Tuple(Integer.valueOf(10), Integer.valueOf(12)));
-        field_70960_bC.put(Items.field_151113_aN, new Tuple(Integer.valueOf(10), Integer.valueOf(12)));
+        field_70960_bC.put(Items.LEATHER_CHESTPLATE, new Tuple(Integer.valueOf(4), Integer.valueOf(5)));
+        field_70960_bC.put(Items.LEATHER_BOOTS, new Tuple(Integer.valueOf(2), Integer.valueOf(4)));
+        field_70960_bC.put(Items.LEATHER_HELMET, new Tuple(Integer.valueOf(2), Integer.valueOf(4)));
+        field_70960_bC.put(Items.LEATHER_LEGGINGS, new Tuple(Integer.valueOf(2), Integer.valueOf(4)));
+        field_70960_bC.put(Items.SADDLE, new Tuple(Integer.valueOf(6), Integer.valueOf(8)));
+        field_70960_bC.put(Items.EXPERIENCE_BOTTLE, new Tuple(Integer.valueOf(-4), Integer.valueOf(-1)));
+        field_70960_bC.put(Items.REDSTONE, new Tuple(Integer.valueOf(-4), Integer.valueOf(-1)));
+        field_70960_bC.put(Items.COMPASS, new Tuple(Integer.valueOf(10), Integer.valueOf(12)));
+        field_70960_bC.put(Items.CLOCK, new Tuple(Integer.valueOf(10), Integer.valueOf(12)));
         field_70960_bC.put(Item.func_150898_a(Blocks.field_150426_aN), new Tuple(Integer.valueOf(-3), Integer.valueOf(-1)));
-        field_70960_bC.put(Items.field_151157_am, new Tuple(Integer.valueOf(-7), Integer.valueOf(-5)));
+        field_70960_bC.put(Items.COOKED_PORKCHOP, new Tuple(Integer.valueOf(-7), Integer.valueOf(-5)));
         field_70960_bC.put(Items.COOKED_BEEF, new Tuple(Integer.valueOf(-7), Integer.valueOf(-5)));
-        field_70960_bC.put(Items.field_151077_bg, new Tuple(Integer.valueOf(-8), Integer.valueOf(-6)));
-        field_70960_bC.put(Items.field_151061_bv, new Tuple(Integer.valueOf(7), Integer.valueOf(11)));
-        field_70960_bC.put(Items.field_151032_g, new Tuple(Integer.valueOf(-12), Integer.valueOf(-8)));
+        field_70960_bC.put(Items.COOKED_CHICKEN, new Tuple(Integer.valueOf(-8), Integer.valueOf(-6)));
+        field_70960_bC.put(Items.ENDER_EYE, new Tuple(Integer.valueOf(7), Integer.valueOf(11)));
+        field_70960_bC.put(Items.ARROW, new Tuple(Integer.valueOf(-12), Integer.valueOf(-8)));
     }
 }

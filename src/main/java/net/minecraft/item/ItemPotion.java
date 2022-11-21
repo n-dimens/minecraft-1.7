@@ -121,10 +121,10 @@ public class ItemPotion extends Item
         {
             if (p_77654_1_.field_77994_a <= 0)
             {
-                return new ItemStack(Items.field_151069_bo);
+                return new ItemStack(Items.GLASS_BOTTLE);
             }
 
-            p_77654_3_.field_71071_by.func_70441_a(new ItemStack(Items.field_151069_bo));
+            p_77654_3_.field_71071_by.func_70441_a(new ItemStack(Items.GLASS_BOTTLE));
         }
 
         return p_77654_1_;
@@ -249,7 +249,7 @@ public class ItemPotion extends Item
                 s = StatCollector.func_74838_a("potion.prefix.grenade").trim() + " ";
             }
 
-            List list = Items.field_151068_bn.func_77832_l(p_77653_1_);
+            List list = Items.POTION.func_77832_l(p_77653_1_);
             String s1;
 
             if (list != null && !list.isEmpty())
@@ -271,7 +271,7 @@ public class ItemPotion extends Item
     {
         if (p_77624_1_.func_77960_j() != 0)
         {
-            List list1 = Items.field_151068_bn.func_77832_l(p_77624_1_);
+            List list1 = Items.POTION.func_77832_l(p_77624_1_);
             HashMultimap hashmultimap = HashMultimap.create();
             Iterator iterator1;
 
@@ -438,6 +438,6 @@ public class ItemPotion extends Item
     @SideOnly(Side.CLIENT)
     public static IIcon func_94589_d(String p_94589_0_)
     {
-        return p_94589_0_.equals("bottle_drinkable") ? Items.field_151068_bn.field_94590_d : (p_94589_0_.equals("bottle_splash") ? Items.field_151068_bn.field_94591_c : (p_94589_0_.equals("overlay") ? Items.field_151068_bn.field_94592_ct : null));
+        return p_94589_0_.equals("bottle_drinkable") ? Items.POTION.field_94590_d : (p_94589_0_.equals("bottle_splash") ? Items.POTION.field_94591_c : (p_94589_0_.equals("overlay") ? Items.POTION.field_94592_ct : null));
     }
 }

@@ -23,7 +23,7 @@ public abstract class EntityAgeable extends EntityCreature
     {
         ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151063_bx)
+        if (itemstack != null && itemstack.func_77973_b() == Items.SPAWN_EGG)
         {
             if (!this.field_70170_p.field_72995_K)
             {

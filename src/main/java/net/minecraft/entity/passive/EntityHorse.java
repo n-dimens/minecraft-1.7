@@ -266,7 +266,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
         else
         {
             Item item = p_110260_1_.func_77973_b();
-            return item == Items.field_151138_bX ? 1 : (item == Items.field_151136_bY ? 2 : (item == Items.field_151125_bZ ? 3 : 0));
+            return item == Items.IRON_HORSE_ARMOR ? 1 : (item == Items.GOLDEN_HORSE_ARMOR ? 2 : (item == Items.DIAMOND_HORSE_ARMOR ? 3 : 0));
         }
     }
 
@@ -515,7 +515,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         boolean flag = this.field_70146_Z.nextInt(4) == 0;
         int i = this.func_110265_bP();
-        return i == 4 ? Items.field_151103_aS : (i == 3 ? (flag ? Item.func_150899_d(0) : Items.ROTTEN_FLESH) : Items.LEATHER);
+        return i == 4 ? Items.BONE : (i == 3 ? (flag ? Item.func_150899_d(0) : Items.ROTTEN_FLESH) : Items.LEATHER);
     }
 
     protected String func_70621_aR()
@@ -704,7 +704,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151063_bx)
+        if (itemstack != null && itemstack.func_77973_b() == Items.SPAWN_EGG)
         {
             return super.func_70085_c(p_70085_1_);
         }
@@ -731,15 +731,15 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                 {
                     byte b0 = -1;
 
-                    if (itemstack.func_77973_b() == Items.field_151138_bX)
+                    if (itemstack.func_77973_b() == Items.IRON_HORSE_ARMOR)
                     {
                         b0 = 1;
                     }
-                    else if (itemstack.func_77973_b() == Items.field_151136_bY)
+                    else if (itemstack.func_77973_b() == Items.GOLDEN_HORSE_ARMOR)
                     {
                         b0 = 2;
                     }
-                    else if (itemstack.func_77973_b() == Items.field_151125_bZ)
+                    else if (itemstack.func_77973_b() == Items.DIAMOND_HORSE_ARMOR)
                     {
                         b0 = 3;
                     }
@@ -763,19 +763,19 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                     short short1 = 0;
                     byte b1 = 0;
 
-                    if (itemstack.func_77973_b() == Items.field_151015_O)
+                    if (itemstack.func_77973_b() == Items.WHEAT)
                     {
                         f = 2.0F;
                         short1 = 60;
                         b1 = 3;
                     }
-                    else if (itemstack.func_77973_b() == Items.field_151102_aT)
+                    else if (itemstack.func_77973_b() == Items.SUGAR)
                     {
                         f = 1.0F;
                         short1 = 30;
                         b1 = 3;
                     }
-                    else if (itemstack.func_77973_b() == Items.field_151025_P)
+                    else if (itemstack.func_77973_b() == Items.BREAD)
                     {
                         f = 7.0F;
                         short1 = 180;
@@ -786,13 +786,13 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                         f = 20.0F;
                         short1 = 180;
                     }
-                    else if (itemstack.func_77973_b() == Items.field_151034_e)
+                    else if (itemstack.func_77973_b() == Items.APPLE)
                     {
                         f = 3.0F;
                         short1 = 60;
                         b1 = 3;
                     }
-                    else if (itemstack.func_77973_b() == Items.field_151150_bK)
+                    else if (itemstack.func_77973_b() == Items.GOLDEN_CARROT)
                     {
                         f = 4.0F;
                         short1 = 60;
@@ -804,7 +804,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                             this.func_146082_f(p_70085_1_);
                         }
                     }
-                    else if (itemstack.func_77973_b() == Items.field_151153_ao)
+                    else if (itemstack.func_77973_b() == Items.GOLDEN_APPLE)
                     {
                         f = 10.0F;
                         short1 = 240;
@@ -860,7 +860,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                     this.func_110226_cD();
                 }
 
-                if (!flag && this.func_110253_bW() && !this.func_110257_ck() && itemstack.func_77973_b() == Items.field_151141_av)
+                if (!flag && this.func_110253_bW() && !this.func_110257_ck() && itemstack.func_77973_b() == Items.SADDLE)
                 {
                     this.func_110199_f(p_70085_1_);
                     return true;
@@ -1366,14 +1366,14 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
         {
             itemstack = ItemStack.func_77949_a(p_70037_1_.func_74775_l("SaddleItem"));
 
-            if (itemstack != null && itemstack.func_77973_b() == Items.field_151141_av)
+            if (itemstack != null && itemstack.func_77973_b() == Items.SADDLE)
             {
                 this.field_110296_bG.func_70299_a(0, itemstack);
             }
         }
         else if (p_70037_1_.func_74767_n("Saddle"))
         {
-            this.field_110296_bG.func_70299_a(0, new ItemStack(Items.field_151141_av));
+            this.field_110296_bG.func_70299_a(0, new ItemStack(Items.SADDLE));
         }
 
         this.func_110232_cE();
@@ -1653,7 +1653,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
 
     public static boolean func_146085_a(Item p_146085_0_)
     {
-        return p_146085_0_ == Items.field_151138_bX || p_146085_0_ == Items.field_151136_bY || p_146085_0_ == Items.field_151125_bZ;
+        return p_146085_0_ == Items.IRON_HORSE_ARMOR || p_146085_0_ == Items.GOLDEN_HORSE_ARMOR || p_146085_0_ == Items.DIAMOND_HORSE_ARMOR;
     }
 
     public boolean func_70617_f_()

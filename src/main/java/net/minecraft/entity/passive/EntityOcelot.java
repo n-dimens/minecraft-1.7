@@ -40,7 +40,7 @@ public class EntityOcelot extends EntityTameable
         this.func_70661_as().func_75491_a(true);
         this.field_70714_bg.func_75776_a(1, new EntityAISwimming(this));
         this.field_70714_bg.func_75776_a(2, this.field_70911_d);
-        this.field_70714_bg.func_75776_a(3, this.field_70914_e = new EntityAITempt(this, 0.6D, Items.field_151115_aP, true));
+        this.field_70714_bg.func_75776_a(3, this.field_70914_e = new EntityAITempt(this, 0.6D, Items.FISH, true));
         this.field_70714_bg.func_75776_a(4, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 0.8D, 1.33D));
         this.field_70714_bg.func_75776_a(5, new EntityAIFollowOwner(this, 1.0D, 10.0F, 5.0F));
         this.field_70714_bg.func_75776_a(6, new EntityAIOcelotSit(this, 1.33D));
@@ -174,7 +174,7 @@ public class EntityOcelot extends EntityTameable
                 this.field_70911_d.func_75270_a(!this.func_70906_o());
             }
         }
-        else if (this.field_70914_e.func_75277_f() && itemstack != null && itemstack.func_77973_b() == Items.field_151115_aP && p_70085_1_.func_70068_e(this) < 9.0D)
+        else if (this.field_70914_e.func_75277_f() && itemstack != null && itemstack.func_77973_b() == Items.FISH && p_70085_1_.func_70068_e(this) < 9.0D)
         {
             if (!p_70085_1_.field_71075_bZ.field_75098_d)
             {
@@ -226,7 +226,7 @@ public class EntityOcelot extends EntityTameable
 
     public boolean func_70877_b(ItemStack p_70877_1_)
     {
-        return p_70877_1_ != null && p_70877_1_.func_77973_b() == Items.field_151115_aP;
+        return p_70877_1_ != null && p_70877_1_.func_77973_b() == Items.FISH;
     }
 
     public boolean func_70878_b(EntityAnimal p_70878_1_)

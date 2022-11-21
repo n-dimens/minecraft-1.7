@@ -1046,7 +1046,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
 
                 if (itemstack1 != null)
                 {
-                    if (itemstack.func_77973_b() == Items.field_151099_bA && itemstack.func_77973_b() == itemstack1.func_77973_b())
+                    if (itemstack.func_77973_b() == Items.WRITABLE_BOOK && itemstack.func_77973_b() == itemstack1.func_77973_b())
                     {
                         itemstack1.func_77983_a("pages", itemstack.func_77978_p().func_150295_c("pages", 8));
                     }
@@ -1088,12 +1088,12 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
 
                 if (itemstack1 != null)
                 {
-                    if (itemstack.func_77973_b() == Items.field_151164_bB && itemstack1.func_77973_b() == Items.field_151099_bA)
+                    if (itemstack.func_77973_b() == Items.WRITTEN_BOOK && itemstack1.func_77973_b() == Items.WRITABLE_BOOK)
                     {
                         itemstack1.func_77983_a("author", new NBTTagString(this.field_147369_b.func_70005_c_()));
                         itemstack1.func_77983_a("title", new NBTTagString(itemstack.func_77978_p().func_74779_i("title")));
                         itemstack1.func_77983_a("pages", itemstack.func_77978_p().func_150295_c("pages", 8));
-                        itemstack1.func_150996_a(Items.field_151164_bB);
+                        itemstack1.func_150996_a(Items.WRITTEN_BOOK);
                     }
 
                     return;

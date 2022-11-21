@@ -31,7 +31,7 @@ public class RenderFireball extends Render
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         float f2 = this.field_77002_a;
         GL11.glScalef(f2 / 1.0F, f2 / 1.0F, f2 / 1.0F);
-        IIcon iicon = Items.field_151059_bz.func_77617_a(0);
+        IIcon iicon = Items.FIRE_CHARGE.func_77617_a(0);
         Tessellator tessellator = Tessellator.field_78398_a;
         float f3 = iicon.func_94209_e();
         float f4 = iicon.func_94212_f();

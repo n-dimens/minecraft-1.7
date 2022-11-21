@@ -97,7 +97,7 @@ public class EntityItemFrame extends EntityHanging
 
         if (p_146065_2_)
         {
-            this.func_70099_a(new ItemStack(Items.field_151160_bD), 0.0F);
+            this.func_70099_a(new ItemStack(Items.ITEM_FRAME), 0.0F);
         }
 
         if (itemstack != null && this.field_70146_Z.nextFloat() < this.field_82337_e)
@@ -112,7 +112,7 @@ public class EntityItemFrame extends EntityHanging
     {
         if (p_110131_1_ != null)
         {
-            if (p_110131_1_.func_77973_b() == Items.field_151098_aY)
+            if (p_110131_1_.func_77973_b() == Items.FILLED_MAP)
             {
                 MapData mapdata = ((ItemMap)p_110131_1_.func_77973_b()).func_77873_a(p_110131_1_, this.field_70170_p);
                 mapdata.field_76203_h.remove("frame-" + this.func_145782_y());

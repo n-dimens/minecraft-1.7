@@ -20,7 +20,7 @@ public class RecipesMapCloning implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() == Items.field_151098_aY)
+                if (itemstack1.func_77973_b() == Items.FILLED_MAP)
                 {
                     if (itemstack != null)
                     {
@@ -31,7 +31,7 @@ public class RecipesMapCloning implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.field_151148_bJ)
+                    if (itemstack1.func_77973_b() != Items.MAP)
                     {
                         return false;
                     }
@@ -55,7 +55,7 @@ public class RecipesMapCloning implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() == Items.field_151098_aY)
+                if (itemstack1.func_77973_b() == Items.FILLED_MAP)
                 {
                     if (itemstack != null)
                     {
@@ -66,7 +66,7 @@ public class RecipesMapCloning implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.field_151148_bJ)
+                    if (itemstack1.func_77973_b() != Items.MAP)
                     {
                         return null;
                     }
@@ -78,7 +78,7 @@ public class RecipesMapCloning implements IRecipe
 
         if (itemstack != null && i >= 1)
         {
-            ItemStack itemstack2 = new ItemStack(Items.field_151098_aY, i + 1, itemstack.func_77960_j());
+            ItemStack itemstack2 = new ItemStack(Items.FILLED_MAP, i + 1, itemstack.func_77960_j());
 
             if (itemstack.func_82837_s())
             {

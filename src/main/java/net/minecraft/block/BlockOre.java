@@ -21,7 +21,7 @@ public class BlockOre extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return this == Blocks.field_150365_q ? Items.field_151044_h : (this == Blocks.field_150482_ag ? Items.field_151045_i : (this == Blocks.field_150369_x ? Items.field_151100_aR : (this == Blocks.field_150412_bA ? Items.field_151166_bC : (this == Blocks.field_150449_bY ? Items.field_151128_bU : Item.func_150898_a(this)))));
+        return this == Blocks.field_150365_q ? Items.COAL : (this == Blocks.field_150482_ag ? Items.DIAMOND : (this == Blocks.field_150369_x ? Items.DYE : (this == Blocks.field_150412_bA ? Items.EMERALD : (this == Blocks.field_150449_bY ? Items.QUARTZ : Item.func_150898_a(this)))));
     }
 
     public int func_149745_a(Random p_149745_1_)

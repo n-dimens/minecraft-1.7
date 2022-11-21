@@ -517,7 +517,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        this.func_145779_a(Items.field_151156_bN, 1);
+        this.func_145779_a(Items.NETHER_STAR, 1);
 
         if (!this.field_70170_p.field_72995_K)
         {

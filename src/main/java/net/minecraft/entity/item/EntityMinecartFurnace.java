@@ -124,7 +124,7 @@ public class EntityMinecartFurnace extends EntityMinecart
     {
         ItemStack itemstack = p_130002_1_.field_71071_by.func_70448_g();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151044_h)
+        if (itemstack != null && itemstack.func_77973_b() == Items.COAL)
         {
             if (!p_130002_1_.field_71075_bZ.field_75098_d && --itemstack.field_77994_a == 0)
             {

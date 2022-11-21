@@ -206,10 +206,10 @@ public class GuiBeacon extends GuiContainer
         int l = (this.field_146295_m - this.field_147000_g) / 2;
         this.func_73729_b(k, l, 0, 0, this.field_146999_f, this.field_147000_g);
         field_146296_j.field_77023_b = 100.0F;
-        field_146296_j.func_82406_b(this.field_146289_q, this.field_146297_k.func_110434_K(), new ItemStack(Items.field_151166_bC), k + 42, l + 109);
-        field_146296_j.func_82406_b(this.field_146289_q, this.field_146297_k.func_110434_K(), new ItemStack(Items.field_151045_i), k + 42 + 22, l + 109);
-        field_146296_j.func_82406_b(this.field_146289_q, this.field_146297_k.func_110434_K(), new ItemStack(Items.field_151043_k), k + 42 + 44, l + 109);
-        field_146296_j.func_82406_b(this.field_146289_q, this.field_146297_k.func_110434_K(), new ItemStack(Items.field_151042_j), k + 42 + 66, l + 109);
+        field_146296_j.func_82406_b(this.field_146289_q, this.field_146297_k.func_110434_K(), new ItemStack(Items.EMERALD), k + 42, l + 109);
+        field_146296_j.func_82406_b(this.field_146289_q, this.field_146297_k.func_110434_K(), new ItemStack(Items.DIAMOND), k + 42 + 22, l + 109);
+        field_146296_j.func_82406_b(this.field_146289_q, this.field_146297_k.func_110434_K(), new ItemStack(Items.GOLD_INGOT), k + 42 + 44, l + 109);
+        field_146296_j.func_82406_b(this.field_146289_q, this.field_146297_k.func_110434_K(), new ItemStack(Items.IRON_INGOT), k + 42 + 66, l + 109);
         field_146296_j.field_77023_b = 0.0F;
     }
 

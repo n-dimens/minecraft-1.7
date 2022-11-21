@@ -489,7 +489,7 @@ public class EntityArrow extends Entity implements IProjectile
         {
             boolean flag = this.field_70251_a == 1 || this.field_70251_a == 2 && p_70100_1_.field_71075_bZ.field_75098_d;
 
-            if (this.field_70251_a == 1 && !p_70100_1_.field_71071_by.func_70441_a(new ItemStack(Items.field_151032_g, 1)))
+            if (this.field_70251_a == 1 && !p_70100_1_.field_71071_by.func_70441_a(new ItemStack(Items.ARROW, 1)))
             {
                 flag = false;
             }

@@ -166,8 +166,8 @@ public class EntityCreeper extends EntityMob
 
         if (p_70645_1_.func_76346_g() instanceof EntitySkeleton)
         {
-            int i = Item.func_150891_b(Items.field_151096_cd);
-            int j = Item.func_150891_b(Items.field_151084_co);
+            int i = Item.func_150891_b(Items.RECORD_13);
+            int j = Item.func_150891_b(Items.RECORD_WAIT);
             int k = i + this.field_70146_Z.nextInt(j - i + 1);
             this.func_145779_a(Item.func_150899_d(k), 1);
         }
@@ -191,7 +191,7 @@ public class EntityCreeper extends EntityMob
 
     protected Item droppingItem()
     {
-        return Items.field_151016_H;
+        return Items.GUNPOWDER;
     }
 
     public int func_70832_p()
@@ -214,7 +214,7 @@ public class EntityCreeper extends EntityMob
     {
         ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151033_d)
+        if (itemstack != null && itemstack.func_77973_b() == Items.FLINT_AND_STEEL)
         {
             this.field_70170_p.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.ignite", 1.0F, this.field_70146_Z.nextFloat() * 0.4F + 0.8F);
             p_70085_1_.func_71038_i();

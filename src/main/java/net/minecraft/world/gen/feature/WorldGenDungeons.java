@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 public class WorldGenDungeons extends WorldGenerator
 {
-    public static final WeightedRandomChestContent[] field_111189_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 10), new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 4, 10), new WeightedRandomChestContent(Items.field_151025_P, 0, 1, 1, 10), new WeightedRandomChestContent(Items.field_151015_O, 0, 1, 4, 10), new WeightedRandomChestContent(Items.field_151016_H, 0, 1, 4, 10), new WeightedRandomChestContent(Items.field_151007_F, 0, 1, 4, 10), new WeightedRandomChestContent(Items.field_151133_ar, 0, 1, 1, 10), new WeightedRandomChestContent(Items.field_151153_ao, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151137_ax, 0, 1, 4, 10), new WeightedRandomChestContent(Items.field_151096_cd, 0, 1, 1, 10), new WeightedRandomChestContent(Items.field_151093_ce, 0, 1, 1, 10), new WeightedRandomChestContent(Items.field_151057_cb, 0, 1, 1, 10), new WeightedRandomChestContent(Items.field_151136_bY, 0, 1, 1, 2), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 5), new WeightedRandomChestContent(Items.field_151125_bZ, 0, 1, 1, 1)};
+    public static final WeightedRandomChestContent[] field_111189_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.SADDLE, 0, 1, 1, 10), new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 4, 10), new WeightedRandomChestContent(Items.BREAD, 0, 1, 1, 10), new WeightedRandomChestContent(Items.WHEAT, 0, 1, 4, 10), new WeightedRandomChestContent(Items.GUNPOWDER, 0, 1, 4, 10), new WeightedRandomChestContent(Items.STRING, 0, 1, 4, 10), new WeightedRandomChestContent(Items.BUCKET, 0, 1, 1, 10), new WeightedRandomChestContent(Items.GOLDEN_APPLE, 0, 1, 1, 1), new WeightedRandomChestContent(Items.REDSTONE, 0, 1, 4, 10), new WeightedRandomChestContent(Items.RECORD_13, 0, 1, 1, 10), new WeightedRandomChestContent(Items.RECORD_CAT, 0, 1, 1, 10), new WeightedRandomChestContent(Items.NAME_TAG, 0, 1, 1, 10), new WeightedRandomChestContent(Items.GOLDEN_HORSE_ARMOR, 0, 1, 1, 2), new WeightedRandomChestContent(Items.IRON_HORSE_ARMOR, 0, 1, 1, 5), new WeightedRandomChestContent(Items.DIAMOND_HORSE_ARMOR, 0, 1, 1, 1)};
     private static final String __OBFID = "CL_00000425";
 
     public boolean func_76484_a(World p_76484_1_, Random p_76484_2_, int p_76484_3_, int p_76484_4_, int p_76484_5_)
@@ -123,7 +123,7 @@ public class WorldGenDungeons extends WorldGenerator
                                 if (k2 == 1)
                                 {
                                     p_76484_1_.func_147465_d(i2, p_76484_4_, j2, Blocks.field_150486_ae, 0, 2);
-                                    WeightedRandomChestContent[] aweightedrandomchestcontent = WeightedRandomChestContent.func_92080_a(field_111189_a, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92114_b(p_76484_2_)});
+                                    WeightedRandomChestContent[] aweightedrandomchestcontent = WeightedRandomChestContent.func_92080_a(field_111189_a, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_76484_2_)});
                                     TileEntityChest tileentitychest = (TileEntityChest)p_76484_1_.func_147438_o(i2, p_76484_4_, j2);
 
                                     if (tileentitychest != null)

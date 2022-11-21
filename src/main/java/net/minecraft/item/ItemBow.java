@@ -30,7 +30,7 @@ public class ItemBow extends Item
     {
         boolean flag = p_77615_3_.field_71075_bZ.field_75098_d || EnchantmentHelper.func_77506_a(Enchantment.field_77342_w.field_77352_x, p_77615_1_) > 0;
 
-        if (flag || p_77615_3_.field_71071_by.func_146028_b(Items.field_151032_g))
+        if (flag || p_77615_3_.field_71071_by.func_146028_b(Items.ARROW))
         {
             int j = this.func_77626_a(p_77615_1_) - p_77615_4_;
             float f = (float)j / 20.0F;
@@ -81,7 +81,7 @@ public class ItemBow extends Item
             }
             else
             {
-                p_77615_3_.field_71071_by.func_146026_a(Items.field_151032_g);
+                p_77615_3_.field_71071_by.func_146026_a(Items.ARROW);
             }
 
             if (!p_77615_2_.field_72995_K)
@@ -108,7 +108,7 @@ public class ItemBow extends Item
 
     public ItemStack func_77659_a(ItemStack p_77659_1_, World p_77659_2_, EntityPlayer p_77659_3_)
     {
-        if (p_77659_3_.field_71075_bZ.field_75098_d || p_77659_3_.field_71071_by.func_146028_b(Items.field_151032_g))
+        if (p_77659_3_.field_71075_bZ.field_75098_d || p_77659_3_.field_71071_by.func_146028_b(Items.ARROW))
         {
             p_77659_3_.func_71008_a(p_77659_1_, this.func_77626_a(p_77659_1_));
         }

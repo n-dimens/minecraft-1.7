@@ -170,7 +170,7 @@ public class ContainerRepair extends Container
 
             if (itemstack2 != null)
             {
-                flag = itemstack2.func_77973_b() == Items.field_151134_bR && Items.field_151134_bR.func_92110_g(itemstack2).func_74745_c() > 0;
+                flag = itemstack2.func_77973_b() == Items.ENCHANTED_BOOK && Items.ENCHANTED_BOOK.func_92110_g(itemstack2).func_74745_c() > 0;
 
                 if (itemstack1.func_77984_f() && itemstack1.func_77973_b().func_82789_a(itemstack, itemstack2))
                 {
@@ -247,7 +247,7 @@ public class ContainerRepair extends Container
                         int i2 = l1 - k1;
                         boolean flag1 = enchantment.func_92089_a(itemstack);
 
-                        if (this.field_82855_n.field_71075_bZ.field_75098_d || itemstack.func_77973_b() == Items.field_151134_bR)
+                        if (this.field_82855_n.field_71075_bZ.field_75098_d || itemstack.func_77973_b() == Items.ENCHANTED_BOOK)
                         {
                             flag1 = true;
                         }

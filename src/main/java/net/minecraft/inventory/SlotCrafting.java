@@ -70,12 +70,12 @@ public class SlotCrafting extends Slot
             this.field_75238_b.func_71064_a(AchievementList.BUILD_HOE, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Items.field_151025_P)
+        if (p_75208_1_.func_77973_b() == Items.BREAD)
         {
             this.field_75238_b.func_71064_a(AchievementList.MAKE_BREAD, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Items.field_151105_aU)
+        if (p_75208_1_.func_77973_b() == Items.CAKE)
         {
             this.field_75238_b.func_71064_a(AchievementList.BAKE_CAKE, 1);
         }

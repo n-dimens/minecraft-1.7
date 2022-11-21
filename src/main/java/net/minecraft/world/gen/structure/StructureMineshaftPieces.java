@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 
 public class StructureMineshaftPieces
 {
-    public static final WeightedRandomChestContent[] field_78818_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 1, 3, 5), new WeightedRandomChestContent(Items.field_151137_ax, 0, 4, 9, 5), new WeightedRandomChestContent(Items.field_151100_aR, 4, 4, 9, 5), new WeightedRandomChestContent(Items.field_151045_i, 0, 1, 2, 3), new WeightedRandomChestContent(Items.field_151044_h, 0, 3, 8, 10), new WeightedRandomChestContent(Items.field_151025_P, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 1), new WeightedRandomChestContent(Item.func_150898_a(Blocks.field_150448_aq), 0, 4, 8, 1), new WeightedRandomChestContent(Items.field_151081_bc, 0, 2, 4, 10), new WeightedRandomChestContent(Items.field_151080_bb, 0, 2, 4, 10), new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 3), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 1)};
+    public static final WeightedRandomChestContent[] field_78818_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 1, 3, 5), new WeightedRandomChestContent(Items.REDSTONE, 0, 4, 9, 5), new WeightedRandomChestContent(Items.DYE, 4, 4, 9, 5), new WeightedRandomChestContent(Items.DIAMOND, 0, 1, 2, 3), new WeightedRandomChestContent(Items.COAL, 0, 3, 8, 10), new WeightedRandomChestContent(Items.BREAD, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 1), new WeightedRandomChestContent(Item.func_150898_a(Blocks.field_150448_aq), 0, 4, 8, 1), new WeightedRandomChestContent(Items.MELON_SEEDS, 0, 2, 4, 10), new WeightedRandomChestContent(Items.PUMPKIN_SEEDS, 0, 2, 4, 10), new WeightedRandomChestContent(Items.SADDLE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.IRON_HORSE_ARMOR, 0, 1, 1, 1)};
     private static final String __OBFID = "CL_00000444";
 
     public static void func_143048_a()
@@ -351,12 +351,12 @@ public class StructureMineshaftPieces
 
                         if (p_74875_2_.nextInt(100) == 0)
                         {
-                            this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 2, 0, k - 1, WeightedRandomChestContent.func_92080_a(StructureMineshaftPieces.field_78818_a, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92114_b(p_74875_2_)}), 3 + p_74875_2_.nextInt(4));
+                            this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 2, 0, k - 1, WeightedRandomChestContent.func_92080_a(StructureMineshaftPieces.field_78818_a, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_74875_2_)}), 3 + p_74875_2_.nextInt(4));
                         }
 
                         if (p_74875_2_.nextInt(100) == 0)
                         {
-                            this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 0, 0, k + 1, WeightedRandomChestContent.func_92080_a(StructureMineshaftPieces.field_78818_a, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92114_b(p_74875_2_)}), 3 + p_74875_2_.nextInt(4));
+                            this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 0, 0, k + 1, WeightedRandomChestContent.func_92080_a(StructureMineshaftPieces.field_78818_a, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_74875_2_)}), 3 + p_74875_2_.nextInt(4));
                         }
 
                         if (this.field_74956_b && !this.field_74957_c)

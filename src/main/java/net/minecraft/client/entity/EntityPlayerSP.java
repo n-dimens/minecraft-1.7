@@ -308,7 +308,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
             f = 1.0F;
         }
 
-        if (this.func_71039_bw() && this.func_71011_bu().func_77973_b() == Items.field_151031_f)
+        if (this.func_71039_bw() && this.func_71011_bu().func_77973_b() == Items.BOW)
         {
             int i = this.func_71057_bx();
             float f1 = (float)i / 20.0F;
@@ -355,11 +355,11 @@ public class EntityPlayerSP extends AbstractClientPlayer
     {
         Item item = p_71048_1_.func_77973_b();
 
-        if (item == Items.field_151164_bB)
+        if (item == Items.WRITTEN_BOOK)
         {
             this.field_71159_c.func_147108_a(new GuiScreenBook(this, p_71048_1_, false));
         }
-        else if (item == Items.field_151099_bA)
+        else if (item == Items.WRITABLE_BOOK)
         {
             this.field_71159_c.func_147108_a(new GuiScreenBook(this, p_71048_1_, true));
         }

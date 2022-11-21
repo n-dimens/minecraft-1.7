@@ -25,22 +25,22 @@ public class FurnaceRecipes
 
     private FurnaceRecipes()
     {
-        this.func_151393_a(Blocks.field_150366_p, new ItemStack(Items.field_151042_j), 0.7F);
-        this.func_151393_a(Blocks.field_150352_o, new ItemStack(Items.field_151043_k), 1.0F);
-        this.func_151393_a(Blocks.field_150482_ag, new ItemStack(Items.field_151045_i), 1.0F);
+        this.func_151393_a(Blocks.field_150366_p, new ItemStack(Items.IRON_INGOT), 0.7F);
+        this.func_151393_a(Blocks.field_150352_o, new ItemStack(Items.GOLD_INGOT), 1.0F);
+        this.func_151393_a(Blocks.field_150482_ag, new ItemStack(Items.DIAMOND), 1.0F);
         this.func_151393_a(Blocks.field_150354_m, new ItemStack(Blocks.field_150359_w), 0.1F);
-        this.func_151396_a(Items.field_151147_al, new ItemStack(Items.field_151157_am), 0.35F);
+        this.func_151396_a(Items.PORKCHOP, new ItemStack(Items.COOKED_PORKCHOP), 0.35F);
         this.func_151396_a(Items.BEEF, new ItemStack(Items.COOKED_BEEF), 0.35F);
-        this.func_151396_a(Items.field_151076_bf, new ItemStack(Items.field_151077_bg), 0.35F);
+        this.func_151396_a(Items.CHICKEN, new ItemStack(Items.COOKED_CHICKEN), 0.35F);
         this.func_151393_a(Blocks.field_150347_e, new ItemStack(Blocks.field_150348_b), 0.1F);
-        this.func_151396_a(Items.field_151119_aD, new ItemStack(Items.field_151118_aC), 0.3F);
+        this.func_151396_a(Items.CLAY_BALL, new ItemStack(Items.BRICK), 0.3F);
         this.func_151393_a(Blocks.field_150435_aG, new ItemStack(Blocks.field_150405_ch), 0.35F);
-        this.func_151393_a(Blocks.field_150434_aF, new ItemStack(Items.field_151100_aR, 1, 2), 0.2F);
-        this.func_151393_a(Blocks.field_150364_r, new ItemStack(Items.field_151044_h, 1, 1), 0.15F);
-        this.func_151393_a(Blocks.field_150363_s, new ItemStack(Items.field_151044_h, 1, 1), 0.15F);
-        this.func_151393_a(Blocks.field_150412_bA, new ItemStack(Items.field_151166_bC), 1.0F);
-        this.func_151396_a(Items.field_151174_bG, new ItemStack(Items.field_151168_bH), 0.35F);
-        this.func_151393_a(Blocks.field_150424_aL, new ItemStack(Items.field_151130_bT), 0.1F);
+        this.func_151393_a(Blocks.field_150434_aF, new ItemStack(Items.DYE, 1, 2), 0.2F);
+        this.func_151393_a(Blocks.field_150364_r, new ItemStack(Items.COAL, 1, 1), 0.15F);
+        this.func_151393_a(Blocks.field_150363_s, new ItemStack(Items.COAL, 1, 1), 0.15F);
+        this.func_151393_a(Blocks.field_150412_bA, new ItemStack(Items.EMERALD), 1.0F);
+        this.func_151396_a(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0.35F);
+        this.func_151393_a(Blocks.field_150424_aL, new ItemStack(Items.NETHERBRICK), 0.1F);
         ItemFishFood.FishType[] afishtype = ItemFishFood.FishType.values();
         int i = afishtype.length;
 
@@ -50,14 +50,14 @@ public class FurnaceRecipes
 
             if (fishtype.func_150973_i())
             {
-                this.func_151394_a(new ItemStack(Items.field_151115_aP, 1, fishtype.func_150976_a()), new ItemStack(Items.field_151101_aQ, 1, fishtype.func_150976_a()), 0.35F);
+                this.func_151394_a(new ItemStack(Items.FISH, 1, fishtype.func_150976_a()), new ItemStack(Items.COOKED_FISHED, 1, fishtype.func_150976_a()), 0.35F);
             }
         }
 
-        this.func_151393_a(Blocks.field_150365_q, new ItemStack(Items.field_151044_h), 0.1F);
-        this.func_151393_a(Blocks.field_150450_ax, new ItemStack(Items.field_151137_ax), 0.7F);
-        this.func_151393_a(Blocks.field_150369_x, new ItemStack(Items.field_151100_aR, 1, 4), 0.2F);
-        this.func_151393_a(Blocks.field_150449_bY, new ItemStack(Items.field_151128_bU), 0.2F);
+        this.func_151393_a(Blocks.field_150365_q, new ItemStack(Items.COAL), 0.1F);
+        this.func_151393_a(Blocks.field_150450_ax, new ItemStack(Items.REDSTONE), 0.7F);
+        this.func_151393_a(Blocks.field_150369_x, new ItemStack(Items.DYE, 1, 4), 0.2F);
+        this.func_151393_a(Blocks.field_150449_bY, new ItemStack(Items.QUARTZ), 0.2F);
     }
 
     public void func_151393_a(Block p_151393_1_, ItemStack p_151393_2_, float p_151393_3_)

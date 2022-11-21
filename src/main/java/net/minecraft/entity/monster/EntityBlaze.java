@@ -161,7 +161,7 @@ public class EntityBlaze extends EntityMob
 
     protected Item droppingItem()
     {
-        return Items.field_151072_bj;
+        return Items.BLAZE_ROD;
     }
 
     public boolean func_70027_ad()
@@ -177,7 +177,7 @@ public class EntityBlaze extends EntityMob
 
             for (int k = 0; k < j; ++k)
             {
-                this.func_145779_a(Items.field_151072_bj, 1);
+                this.func_145779_a(Items.BLAZE_ROD, 1);
             }
         }
     }

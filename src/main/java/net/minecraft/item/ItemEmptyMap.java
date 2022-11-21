@@ -17,7 +17,7 @@ public class ItemEmptyMap extends ItemMapBase
 
     public ItemStack func_77659_a(ItemStack p_77659_1_, World p_77659_2_, EntityPlayer p_77659_3_)
     {
-        ItemStack itemstack1 = new ItemStack(Items.field_151098_aY, 1, p_77659_2_.func_72841_b("map"));
+        ItemStack itemstack1 = new ItemStack(Items.FILLED_MAP, 1, p_77659_2_.func_72841_b("map"));
         String s = "map_" + itemstack1.func_77960_j();
         MapData mapdata = new MapData(s);
         p_77659_2_.func_72823_a(s, mapdata);

@@ -44,7 +44,7 @@ public class ItemCarrotOnAStick extends Item
 
                 if (p_77659_1_.field_77994_a == 0)
                 {
-                    ItemStack itemstack1 = new ItemStack(Items.field_151112_aM);
+                    ItemStack itemstack1 = new ItemStack(Items.FISHING_ROD);
                     itemstack1.func_77982_d(p_77659_1_.field_77990_d);
                     return itemstack1;
                 }

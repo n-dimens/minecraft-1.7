@@ -30,7 +30,7 @@ public class BlockGlowstone extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151114_aO;
+        return Items.GLOWSTONE_DUST;
     }
 
     public MapColor func_149728_f(int p_149728_1_)

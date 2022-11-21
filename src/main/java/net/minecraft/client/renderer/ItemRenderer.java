@@ -282,7 +282,7 @@ public class ItemRenderer
         Render render;
         RenderPlayer renderplayer;
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151098_aY)
+        if (itemstack != null && itemstack.func_77973_b() == Items.FILLED_MAP)
         {
             GL11.glPushMatrix();
             f13 = 0.8F;
@@ -349,7 +349,7 @@ public class ItemRenderer
             tessellator.func_78374_a((double)(128 + b0), (double)(0 - b0), 0.0D, 1.0D, 0.0D);
             tessellator.func_78374_a((double)(0 - b0), (double)(0 - b0), 0.0D, 0.0D, 0.0D);
             tessellator.func_78381_a();
-            MapData mapdata = Items.field_151098_aY.func_77873_a(itemstack, this.field_78455_a.field_71441_e);
+            MapData mapdata = Items.FILLED_MAP.func_77873_a(itemstack, this.field_78455_a.field_71441_e);
 
             if (mapdata != null)
             {

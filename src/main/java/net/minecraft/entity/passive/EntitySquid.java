@@ -75,7 +75,7 @@ public class EntitySquid extends EntityWaterMob
 
         for (int k = 0; k < j; ++k)
         {
-            this.func_70099_a(new ItemStack(Items.field_151100_aR, 1, 0), 0.0F);
+            this.func_70099_a(new ItemStack(Items.DYE, 1, 0), 0.0F);
         }
     }
 

@@ -44,7 +44,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Items.field_151137_ax;
+            return Items.REDSTONE;
         }
     };
     public static final CreativeTabs field_78029_e = new CreativeTabs(3, "transportation")
@@ -62,7 +62,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Items.field_151129_at;
+            return Items.LAVA_BUCKET;
         }
     }).func_111229_a(new EnumEnchantmentType[] {EnumEnchantmentType.all});
     public static final CreativeTabs field_78027_g = (new CreativeTabs(5, "search")
@@ -71,7 +71,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Items.field_151111_aL;
+            return Items.COMPASS;
         }
     }).func_78025_a("item_search.png");
     public static final CreativeTabs field_78039_h = new CreativeTabs(6, "food")
@@ -80,7 +80,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Items.field_151034_e;
+            return Items.APPLE;
         }
     };
     public static final CreativeTabs field_78040_i = (new CreativeTabs(7, "tools")
@@ -107,7 +107,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Items.field_151068_bn;
+            return Items.POTION;
         }
     };
     public static final CreativeTabs field_78035_l = new CreativeTabs(10, "materials")
@@ -116,7 +116,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Items.field_151055_y;
+            return Items.STICK;
         }
     };
     public static final CreativeTabs field_78036_m = (new CreativeTabs(11, "inventory")
@@ -314,7 +314,7 @@ public abstract class CreativeTabs
 
                 if (flag)
                 {
-                    p_92116_1_.add(Items.field_151134_bR.func_92111_a(new EnchantmentData(enchantment, enchantment.func_77325_b())));
+                    p_92116_1_.add(Items.ENCHANTED_BOOK.func_92111_a(new EnchantmentData(enchantment, enchantment.func_77325_b())));
                 }
             }
         }

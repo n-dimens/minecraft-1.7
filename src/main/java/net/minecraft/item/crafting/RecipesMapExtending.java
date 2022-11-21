@@ -13,7 +13,7 @@ public class RecipesMapExtending extends ShapedRecipes
 
     public RecipesMapExtending()
     {
-        super(3, 3, new ItemStack[] {new ItemStack(Items.field_151121_aF), new ItemStack(Items.field_151121_aF), new ItemStack(Items.field_151121_aF), new ItemStack(Items.field_151121_aF), new ItemStack(Items.field_151098_aY, 0, 32767), new ItemStack(Items.field_151121_aF), new ItemStack(Items.field_151121_aF), new ItemStack(Items.field_151121_aF), new ItemStack(Items.field_151121_aF)}, new ItemStack(Items.field_151148_bJ, 0, 0));
+        super(3, 3, new ItemStack[] {new ItemStack(Items.PAPER), new ItemStack(Items.PAPER), new ItemStack(Items.PAPER), new ItemStack(Items.PAPER), new ItemStack(Items.FILLED_MAP, 0, 32767), new ItemStack(Items.PAPER), new ItemStack(Items.PAPER), new ItemStack(Items.PAPER), new ItemStack(Items.PAPER)}, new ItemStack(Items.MAP, 0, 0));
     }
 
     public boolean func_77569_a(InventoryCrafting p_77569_1_, World p_77569_2_)
@@ -30,7 +30,7 @@ public class RecipesMapExtending extends ShapedRecipes
             {
                 ItemStack itemstack1 = p_77569_1_.func_70301_a(i);
 
-                if (itemstack1 != null && itemstack1.func_77973_b() == Items.field_151098_aY)
+                if (itemstack1 != null && itemstack1.func_77973_b() == Items.FILLED_MAP)
                 {
                     itemstack = itemstack1;
                 }
@@ -42,7 +42,7 @@ public class RecipesMapExtending extends ShapedRecipes
             }
             else
             {
-                MapData mapdata = Items.field_151098_aY.func_77873_a(itemstack, p_77569_2_);
+                MapData mapdata = Items.FILLED_MAP.func_77873_a(itemstack, p_77569_2_);
                 return mapdata == null ? false : mapdata.field_76197_d < 4;
             }
         }
@@ -56,7 +56,7 @@ public class RecipesMapExtending extends ShapedRecipes
         {
             ItemStack itemstack1 = p_77572_1_.func_70301_a(i);
 
-            if (itemstack1 != null && itemstack1.func_77973_b() == Items.field_151098_aY)
+            if (itemstack1 != null && itemstack1.func_77973_b() == Items.FILLED_MAP)
             {
                 itemstack = itemstack1;
             }

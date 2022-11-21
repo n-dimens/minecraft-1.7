@@ -329,7 +329,7 @@ public class BlockRedstoneWire extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151137_ax;
+        return Items.REDSTONE;
     }
 
     public int func_149748_c(IBlockAccess p_149748_1_, int p_149748_2_, int p_149748_3_, int p_149748_4_, int p_149748_5_)
@@ -469,7 +469,7 @@ public class BlockRedstoneWire extends Block
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151137_ax;
+        return Items.REDSTONE;
     }
 
     @SideOnly(Side.CLIENT)

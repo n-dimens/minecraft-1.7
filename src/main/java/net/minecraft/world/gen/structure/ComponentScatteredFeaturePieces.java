@@ -25,7 +25,7 @@ public class ComponentScatteredFeaturePieces
     public static class DesertPyramid extends ComponentScatteredFeaturePieces.Feature
         {
             private boolean[] field_74940_h = new boolean[4];
-            public static final WeightedRandomChestContent[] field_74941_i = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151045_i, 0, 1, 3, 3), new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 2, 7, 15), new WeightedRandomChestContent(Items.field_151166_bC, 0, 1, 3, 2), new WeightedRandomChestContent(Items.field_151103_aS, 0, 4, 6, 20), new WeightedRandomChestContent(Items.ROTTEN_FLESH, 0, 3, 7, 16), new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 3), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151136_bY, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151125_bZ, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] field_74941_i = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.DIAMOND, 0, 1, 3, 3), new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 2, 7, 15), new WeightedRandomChestContent(Items.EMERALD, 0, 1, 3, 2), new WeightedRandomChestContent(Items.BONE, 0, 4, 6, 20), new WeightedRandomChestContent(Items.ROTTEN_FLESH, 0, 3, 7, 16), new WeightedRandomChestContent(Items.SADDLE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.IRON_HORSE_ARMOR, 0, 1, 1, 1), new WeightedRandomChestContent(Items.GOLDEN_HORSE_ARMOR, 0, 1, 1, 1), new WeightedRandomChestContent(Items.DIAMOND_HORSE_ARMOR, 0, 1, 1, 1)};
             private static final String __OBFID = "CL_00000476";
 
             public DesertPyramid() {}
@@ -252,7 +252,7 @@ public class ComponentScatteredFeaturePieces
                     {
                         int i1 = Direction.field_71583_a[l] * 2;
                         int j1 = Direction.field_71581_b[l] * 2;
-                        this.field_74940_h[l] = this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 10 + i1, -11, 10 + j1, WeightedRandomChestContent.func_92080_a(field_74941_i, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92114_b(p_74875_2_)}), 2 + p_74875_2_.nextInt(5));
+                        this.field_74940_h[l] = this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 10 + i1, -11, 10 + j1, WeightedRandomChestContent.func_92080_a(field_74941_i, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_74875_2_)}), 2 + p_74875_2_.nextInt(5));
                     }
                 }
 
@@ -348,8 +348,8 @@ public class ComponentScatteredFeaturePieces
             private boolean field_74948_i;
             private boolean field_74945_j;
             private boolean field_74946_k;
-            public static final WeightedRandomChestContent[] field_74943_l = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151045_i, 0, 1, 3, 3), new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 2, 7, 15), new WeightedRandomChestContent(Items.field_151166_bC, 0, 1, 3, 2), new WeightedRandomChestContent(Items.field_151103_aS, 0, 4, 6, 20), new WeightedRandomChestContent(Items.ROTTEN_FLESH, 0, 3, 7, 16), new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 3), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151136_bY, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151125_bZ, 0, 1, 1, 1)};
-            public static final WeightedRandomChestContent[] field_74944_m = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151032_g, 0, 2, 7, 30)};
+            public static final WeightedRandomChestContent[] field_74943_l = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.DIAMOND, 0, 1, 3, 3), new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 2, 7, 15), new WeightedRandomChestContent(Items.EMERALD, 0, 1, 3, 2), new WeightedRandomChestContent(Items.BONE, 0, 4, 6, 20), new WeightedRandomChestContent(Items.ROTTEN_FLESH, 0, 3, 7, 16), new WeightedRandomChestContent(Items.SADDLE, 0, 1, 1, 3), new WeightedRandomChestContent(Items.IRON_HORSE_ARMOR, 0, 1, 1, 1), new WeightedRandomChestContent(Items.GOLDEN_HORSE_ARMOR, 0, 1, 1, 1), new WeightedRandomChestContent(Items.DIAMOND_HORSE_ARMOR, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] field_74944_m = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.ARROW, 0, 2, 7, 30)};
             private static ComponentScatteredFeaturePieces.JunglePyramid.Stones field_74942_n = new ComponentScatteredFeaturePieces.JunglePyramid.Stones(null);
             private static final String __OBFID = "CL_00000477";
 
@@ -535,7 +535,7 @@ public class ComponentScatteredFeaturePieces
 
                     if (!this.field_74947_h)
                     {
-                        this.field_74947_h = this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 8, -3, 3, WeightedRandomChestContent.func_92080_a(field_74943_l, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92114_b(p_74875_2_)}), 2 + p_74875_2_.nextInt(5));
+                        this.field_74947_h = this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 8, -3, 3, WeightedRandomChestContent.func_92080_a(field_74943_l, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_74875_2_)}), 2 + p_74875_2_.nextInt(5));
                     }
 
                     this.func_151550_a(p_74875_1_, Blocks.field_150341_Y, 0, 9, -3, 2, p_74875_3_);
@@ -568,7 +568,7 @@ public class ComponentScatteredFeaturePieces
 
                     if (!this.field_74948_i)
                     {
-                        this.field_74948_i = this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 9, -3, 10, WeightedRandomChestContent.func_92080_a(field_74943_l, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92114_b(p_74875_2_)}), 2 + p_74875_2_.nextInt(5));
+                        this.field_74948_i = this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 9, -3, 10, WeightedRandomChestContent.func_92080_a(field_74943_l, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_74875_2_)}), 2 + p_74875_2_.nextInt(5));
                     }
 
                     return true;

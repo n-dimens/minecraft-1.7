@@ -112,7 +112,7 @@ public class EntityBoat extends Entity
 
                 if (!flag)
                 {
-                    this.func_145778_a(Items.field_151124_az, 1, 0.0F);
+                    this.func_145778_a(Items.BOAT, 1, 0.0F);
                 }
 
                 this.func_70106_y();
@@ -380,7 +380,7 @@ public class EntityBoat extends Entity
 
                     for (l = 0; l < 2; ++l)
                     {
-                        this.func_145778_a(Items.field_151055_y, 1, 0.0F);
+                        this.func_145778_a(Items.STICK, 1, 0.0F);
                     }
                 }
             }
@@ -502,7 +502,7 @@ public class EntityBoat extends Entity
 
                     for (l = 0; l < 2; ++l)
                     {
-                        this.func_145778_a(Items.field_151055_y, 1, 0.0F);
+                        this.func_145778_a(Items.STICK, 1, 0.0F);
                     }
                 }
 

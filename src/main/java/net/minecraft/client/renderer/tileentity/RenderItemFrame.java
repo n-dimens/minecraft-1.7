@@ -54,7 +54,7 @@ public class RenderItemFrame extends Render
         int k = p_76986_1_.field_146062_d + Direction.field_71581_b[p_76986_1_.field_82332_a];
         GL11.glTranslated((double)i - d3, (double)j - d4, (double)k - d5);
 
-        if (p_76986_1_.func_82335_i() != null && p_76986_1_.func_82335_i().func_77973_b() == Items.field_151098_aY)
+        if (p_76986_1_.func_82335_i() != null && p_76986_1_.func_82335_i().func_77973_b() == Items.FILLED_MAP)
         {
             this.func_147915_b(p_76986_1_);
         }
@@ -176,7 +176,7 @@ public class RenderItemFrame extends Render
                     GL11.glTranslatef(0.16F, -0.16F, 0.0F);
             }
 
-            if (item == Items.field_151098_aY)
+            if (item == Items.FILLED_MAP)
             {
                 this.field_76990_c.field_78724_e.func_110577_a(field_110789_a);
                 Tessellator tessellator = Tessellator.field_78398_a;
@@ -201,7 +201,7 @@ public class RenderItemFrame extends Render
                 }
 
                 GL11.glNormal3f(0.0F, 0.0F, -1.0F);
-                MapData mapdata = Items.field_151098_aY.func_77873_a(entityitem.func_92059_d(), p_82402_1_.field_70170_p);
+                MapData mapdata = Items.FILLED_MAP.func_77873_a(entityitem.func_92059_d(), p_82402_1_.field_70170_p);
                 GL11.glTranslatef(0.0F, 0.0F, -1.0F);
 
                 if (mapdata != null)
@@ -211,11 +211,11 @@ public class RenderItemFrame extends Render
             }
             else
             {
-                if (item == Items.field_151111_aL)
+                if (item == Items.COMPASS)
                 {
                     TextureManager texturemanager = Minecraft.func_71410_x().func_110434_K();
                     texturemanager.func_110577_a(TextureMap.field_110576_c);
-                    TextureAtlasSprite textureatlassprite1 = ((TextureMap)texturemanager.func_110581_b(TextureMap.field_110576_c)).func_110572_b(Items.field_151111_aL.func_77650_f(entityitem.func_92059_d()).func_94215_i());
+                    TextureAtlasSprite textureatlassprite1 = ((TextureMap)texturemanager.func_110581_b(TextureMap.field_110576_c)).func_110572_b(Items.COMPASS.func_77650_f(entityitem.func_92059_d()).func_94215_i());
 
                     if (textureatlassprite1 instanceof TextureCompass)
                     {
@@ -234,9 +234,9 @@ public class RenderItemFrame extends Render
                 RenderManager.field_78727_a.func_147940_a(entityitem, 0.0D, 0.0D, 0.0D, 0.0F, 0.0F);
                 RenderItem.field_82407_g = false;
 
-                if (item == Items.field_151111_aL)
+                if (item == Items.COMPASS)
                 {
-                    TextureAtlasSprite textureatlassprite = ((TextureMap)Minecraft.func_71410_x().func_110434_K().func_110581_b(TextureMap.field_110576_c)).func_110572_b(Items.field_151111_aL.func_77650_f(entityitem.func_92059_d()).func_94215_i());
+                    TextureAtlasSprite textureatlassprite = ((TextureMap)Minecraft.func_71410_x().func_110434_K().func_110581_b(TextureMap.field_110576_c)).func_110572_b(Items.COMPASS.func_77650_f(entityitem.func_92059_d()).func_94215_i());
 
                     if (textureatlassprite.func_110970_k() > 0)
                     {

@@ -146,7 +146,7 @@ public class BlockDoublePlant extends BlockBush implements IGrowable
 
     public void func_149636_a(World p_149636_1_, EntityPlayer p_149636_2_, int p_149636_3_, int p_149636_4_, int p_149636_5_, int p_149636_6_)
     {
-        if (p_149636_1_.field_72995_K || p_149636_2_.func_71045_bC() == null || p_149636_2_.func_71045_bC().func_77973_b() != Items.field_151097_aZ || func_149887_c(p_149636_6_) || !this.func_149886_b(p_149636_1_, p_149636_3_, p_149636_4_, p_149636_5_, p_149636_6_, p_149636_2_))
+        if (p_149636_1_.field_72995_K || p_149636_2_.func_71045_bC() == null || p_149636_2_.func_71045_bC().func_77973_b() != Items.SHEARS || func_149887_c(p_149636_6_) || !this.func_149886_b(p_149636_1_, p_149636_3_, p_149636_4_, p_149636_5_, p_149636_6_, p_149636_2_))
         {
             super.func_149636_a(p_149636_1_, p_149636_2_, p_149636_3_, p_149636_4_, p_149636_5_, p_149636_6_);
         }
@@ -169,7 +169,7 @@ public class BlockDoublePlant extends BlockBush implements IGrowable
                     }
                     else
                     {
-                        if (!p_149681_1_.field_72995_K && p_149681_6_.func_71045_bC() != null && p_149681_6_.func_71045_bC().func_77973_b() == Items.field_151097_aZ)
+                        if (!p_149681_1_.field_72995_K && p_149681_6_.func_71045_bC() != null && p_149681_6_.func_71045_bC().func_77973_b() == Items.SHEARS)
                         {
                             this.func_149886_b(p_149681_1_, p_149681_2_, p_149681_3_, p_149681_4_, i1, p_149681_6_);
                         }

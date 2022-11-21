@@ -56,20 +56,20 @@ public class ItemBucket extends Item
                     if (material == Material.field_151586_h && l == 0)
                     {
                         p_77659_2_.func_147468_f(i, j, k);
-                        return this.func_150910_a(p_77659_1_, p_77659_3_, Items.field_151131_as);
+                        return this.func_150910_a(p_77659_1_, p_77659_3_, Items.WATER_BUCKET);
                     }
 
                     if (material == Material.field_151587_i && l == 0)
                     {
                         p_77659_2_.func_147468_f(i, j, k);
-                        return this.func_150910_a(p_77659_1_, p_77659_3_, Items.field_151129_at);
+                        return this.func_150910_a(p_77659_1_, p_77659_3_, Items.LAVA_BUCKET);
                     }
                 }
                 else
                 {
                     if (this.field_77876_a == Blocks.field_150350_a)
                     {
-                        return new ItemStack(Items.field_151133_ar);
+                        return new ItemStack(Items.BUCKET);
                     }
 
                     if (movingobjectposition.field_72310_e == 0)
@@ -109,7 +109,7 @@ public class ItemBucket extends Item
 
                     if (this.func_77875_a(p_77659_2_, i, j, k) && !p_77659_3_.field_71075_bZ.field_75098_d)
                     {
-                        return new ItemStack(Items.field_151133_ar);
+                        return new ItemStack(Items.BUCKET);
                     }
                 }
             }

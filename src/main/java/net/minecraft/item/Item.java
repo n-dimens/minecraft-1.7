@@ -775,7 +775,7 @@ public class Item
 
         public Item func_150995_f()
         {
-            return this == WOOD ? Item.func_150898_a(Blocks.field_150344_f) : (this == STONE ? Item.func_150898_a(Blocks.field_150347_e) : (this == GOLD ? Items.field_151043_k : (this == IRON ? Items.field_151042_j : (this == EMERALD ? Items.field_151045_i : null))));
+            return this == WOOD ? Item.func_150898_a(Blocks.field_150344_f) : (this == STONE ? Item.func_150898_a(Blocks.field_150347_e) : (this == GOLD ? Items.GOLD_INGOT : (this == IRON ? Items.IRON_INGOT : (this == EMERALD ? Items.DIAMOND : null))));
         }
     }
 }

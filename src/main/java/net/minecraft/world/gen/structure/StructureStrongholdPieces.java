@@ -236,7 +236,7 @@ public class StructureStrongholdPieces
 
     public static class ChestCorridor extends StructureStrongholdPieces.Stronghold
         {
-            public static final WeightedRandomChestContent[] field_75003_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.ENDER_PEARL, 0, 1, 1, 10), new WeightedRandomChestContent(Items.field_151045_i, 0, 1, 3, 3), new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 1, 3, 5), new WeightedRandomChestContent(Items.field_151137_ax, 0, 4, 9, 5), new WeightedRandomChestContent(Items.field_151025_P, 0, 1, 3, 15), new WeightedRandomChestContent(Items.field_151034_e, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_SWORD, 0, 1, 1, 5), new WeightedRandomChestContent(Items.field_151030_Z, 0, 1, 1, 5), new WeightedRandomChestContent(Items.field_151028_Y, 0, 1, 1, 5), new WeightedRandomChestContent(Items.field_151165_aa, 0, 1, 1, 5), new WeightedRandomChestContent(Items.field_151167_ab, 0, 1, 1, 5), new WeightedRandomChestContent(Items.field_151153_ao, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151141_av, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151138_bX, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151136_bY, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151125_bZ, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] field_75003_a = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.ENDER_PEARL, 0, 1, 1, 10), new WeightedRandomChestContent(Items.DIAMOND, 0, 1, 3, 3), new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 1, 3, 5), new WeightedRandomChestContent(Items.REDSTONE, 0, 4, 9, 5), new WeightedRandomChestContent(Items.BREAD, 0, 1, 3, 15), new WeightedRandomChestContent(Items.APPLE, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_SWORD, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_CHESTPLATE, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_HELMET, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_LEGGINGS, 0, 1, 1, 5), new WeightedRandomChestContent(Items.IRON_BOOTS, 0, 1, 1, 5), new WeightedRandomChestContent(Items.GOLDEN_APPLE, 0, 1, 1, 1), new WeightedRandomChestContent(Items.SADDLE, 0, 1, 1, 1), new WeightedRandomChestContent(Items.IRON_HORSE_ARMOR, 0, 1, 1, 1), new WeightedRandomChestContent(Items.GOLDEN_HORSE_ARMOR, 0, 1, 1, 1), new WeightedRandomChestContent(Items.DIAMOND_HORSE_ARMOR, 0, 1, 1, 1)};
             private boolean field_75002_c;
             private static final String __OBFID = "CL_00000487";
 
@@ -305,7 +305,7 @@ public class StructureStrongholdPieces
                         if (p_74875_3_.func_78890_b(j, i, k))
                         {
                             this.field_75002_c = true;
-                            this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 3, 2, 3, WeightedRandomChestContent.func_92080_a(field_75003_a, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92114_b(p_74875_2_)}), 2 + p_74875_2_.nextInt(2));
+                            this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 3, 2, 3, WeightedRandomChestContent.func_92080_a(field_75003_a, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_74875_2_)}), 2 + p_74875_2_.nextInt(2));
                         }
                     }
 
@@ -597,7 +597,7 @@ public class StructureStrongholdPieces
 
     public static class Library extends StructureStrongholdPieces.Stronghold
         {
-            public static final WeightedRandomChestContent[] field_75007_b = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151122_aG, 0, 1, 3, 20), new WeightedRandomChestContent(Items.field_151121_aF, 0, 2, 7, 20), new WeightedRandomChestContent(Items.field_151148_bJ, 0, 1, 1, 1), new WeightedRandomChestContent(Items.field_151111_aL, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] field_75007_b = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.BOOK, 0, 1, 3, 20), new WeightedRandomChestContent(Items.PAPER, 0, 2, 7, 20), new WeightedRandomChestContent(Items.MAP, 0, 1, 1, 1), new WeightedRandomChestContent(Items.COMPASS, 0, 1, 1, 1)};
             private boolean field_75008_c;
             private static final String __OBFID = "CL_00000491";
 
@@ -744,12 +744,12 @@ public class StructureStrongholdPieces
                         this.func_151550_a(p_74875_1_, Blocks.field_150478_aa, 0, b1, 8, b2 + 1, p_74875_3_);
                     }
 
-                    this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 3, 3, 5, WeightedRandomChestContent.func_92080_a(field_75007_b, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92112_a(p_74875_2_, 1, 5, 2)}), 1 + p_74875_2_.nextInt(4));
+                    this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 3, 3, 5, WeightedRandomChestContent.func_92080_a(field_75007_b, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92112_a(p_74875_2_, 1, 5, 2)}), 1 + p_74875_2_.nextInt(4));
 
                     if (this.field_75008_c)
                     {
                         this.func_151550_a(p_74875_1_, Blocks.field_150350_a, 0, 12, 9, 1, p_74875_3_);
-                        this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 12, 8, 1, WeightedRandomChestContent.func_92080_a(field_75007_b, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92112_a(p_74875_2_, 1, 5, 2)}), 1 + p_74875_2_.nextInt(4));
+                        this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 12, 8, 1, WeightedRandomChestContent.func_92080_a(field_75007_b, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92112_a(p_74875_2_, 1, 5, 2)}), 1 + p_74875_2_.nextInt(4));
                     }
 
                     return true;
@@ -1021,7 +1021,7 @@ public class StructureStrongholdPieces
 
     public static class RoomCrossing extends StructureStrongholdPieces.Stronghold
         {
-            public static final WeightedRandomChestContent[] field_75014_c = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.field_151042_j, 0, 1, 5, 10), new WeightedRandomChestContent(Items.field_151043_k, 0, 1, 3, 5), new WeightedRandomChestContent(Items.field_151137_ax, 0, 4, 9, 5), new WeightedRandomChestContent(Items.field_151044_h, 0, 3, 8, 10), new WeightedRandomChestContent(Items.field_151025_P, 0, 1, 3, 15), new WeightedRandomChestContent(Items.field_151034_e, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 1)};
+            public static final WeightedRandomChestContent[] field_75014_c = new WeightedRandomChestContent[] {new WeightedRandomChestContent(Items.IRON_INGOT, 0, 1, 5, 10), new WeightedRandomChestContent(Items.GOLD_INGOT, 0, 1, 3, 5), new WeightedRandomChestContent(Items.REDSTONE, 0, 4, 9, 5), new WeightedRandomChestContent(Items.COAL, 0, 3, 8, 10), new WeightedRandomChestContent(Items.BREAD, 0, 1, 3, 15), new WeightedRandomChestContent(Items.APPLE, 0, 1, 3, 15), new WeightedRandomChestContent(Items.IRON_PICKAXE, 0, 1, 1, 1)};
             protected int field_75013_b;
             private static final String __OBFID = "CL_00000496";
 
@@ -1160,7 +1160,7 @@ public class StructureStrongholdPieces
                             this.func_151550_a(p_74875_1_, Blocks.field_150468_ap, this.func_151555_a(Blocks.field_150468_ap, 4), 9, 1, 3, p_74875_3_);
                             this.func_151550_a(p_74875_1_, Blocks.field_150468_ap, this.func_151555_a(Blocks.field_150468_ap, 4), 9, 2, 3, p_74875_3_);
                             this.func_151550_a(p_74875_1_, Blocks.field_150468_ap, this.func_151555_a(Blocks.field_150468_ap, 4), 9, 3, 3, p_74875_3_);
-                            this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 3, 4, 8, WeightedRandomChestContent.func_92080_a(field_75014_c, new WeightedRandomChestContent[] {Items.field_151134_bR.func_92114_b(p_74875_2_)}), 1 + p_74875_2_.nextInt(4));
+                            this.func_74879_a(p_74875_1_, p_74875_3_, p_74875_2_, 3, 4, 8, WeightedRandomChestContent.func_92080_a(field_75014_c, new WeightedRandomChestContent[] {Items.ENCHANTED_BOOK.func_92114_b(p_74875_2_)}), 1 + p_74875_2_.nextInt(4));
                     }
 
                     return true;

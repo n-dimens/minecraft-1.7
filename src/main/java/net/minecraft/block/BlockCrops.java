@@ -134,12 +134,12 @@ public class BlockCrops extends BlockBush implements IGrowable
 
     protected Item func_149866_i()
     {
-        return Items.field_151014_N;
+        return Items.WHEAT_SEEDS;
     }
 
     protected Item func_149865_P()
     {
-        return Items.field_151015_O;
+        return Items.WHEAT;
     }
 
     public void func_149690_a(World p_149690_1_, int p_149690_2_, int p_149690_3_, int p_149690_4_, int p_149690_5_, float p_149690_6_, int p_149690_7_)

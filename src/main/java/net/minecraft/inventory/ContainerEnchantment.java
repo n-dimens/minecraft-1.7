@@ -186,7 +186,7 @@ public class ContainerEnchantment extends Container
             if (!this.field_75172_h.field_72995_K)
             {
                 List list = EnchantmentHelper.func_77513_b(this.field_75169_l, itemstack, this.field_75167_g[p_75140_2_]);
-                boolean flag = itemstack.func_77973_b() == Items.field_151122_aG;
+                boolean flag = itemstack.func_77973_b() == Items.BOOK;
 
                 if (list != null)
                 {
@@ -194,7 +194,7 @@ public class ContainerEnchantment extends Container
 
                     if (flag)
                     {
-                        itemstack.func_150996_a(Items.field_151134_bR);
+                        itemstack.func_150996_a(Items.ENCHANTED_BOOK);
                     }
 
                     int j = flag && list.size() > 1 ? this.field_75169_l.nextInt(list.size()) : -1;
@@ -207,7 +207,7 @@ public class ContainerEnchantment extends Container
                         {
                             if (flag)
                             {
-                                Items.field_151134_bR.func_92115_a(itemstack, enchantmentdata);
+                                Items.ENCHANTED_BOOK.func_92115_a(itemstack, enchantmentdata);
                             }
                             else
                             {

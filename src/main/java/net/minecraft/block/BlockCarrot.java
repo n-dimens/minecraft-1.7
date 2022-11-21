@@ -33,12 +33,12 @@ public class BlockCarrot extends BlockCrops
 
     protected Item func_149866_i()
     {
-        return Items.field_151172_bF;
+        return Items.CARROT;
     }
 
     protected Item func_149865_P()
     {
-        return Items.field_151172_bF;
+        return Items.CARROT;
     }
 
     @SideOnly(Side.CLIENT)

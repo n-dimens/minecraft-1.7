@@ -36,8 +36,8 @@ public class EntityPig extends EntityAnimal
         this.field_70714_bg.func_75776_a(1, new EntityAIPanic(this, 1.25D));
         this.field_70714_bg.func_75776_a(2, this.field_82184_d = new EntityAIControlledByPlayer(this, 0.3F));
         this.field_70714_bg.func_75776_a(3, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(4, new EntityAITempt(this, 1.2D, Items.field_151146_bM, false));
-        this.field_70714_bg.func_75776_a(4, new EntityAITempt(this, 1.2D, Items.field_151172_bF, false));
+        this.field_70714_bg.func_75776_a(4, new EntityAITempt(this, 1.2D, Items.CARROT_ON_A_STICK, false));
+        this.field_70714_bg.func_75776_a(4, new EntityAITempt(this, 1.2D, Items.CARROT, false));
         this.field_70714_bg.func_75776_a(5, new EntityAIFollowParent(this, 1.1D));
         this.field_70714_bg.func_75776_a(6, new EntityAIWander(this, 1.0D));
         this.field_70714_bg.func_75776_a(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -64,7 +64,7 @@ public class EntityPig extends EntityAnimal
     public boolean func_82171_bF()
     {
         ItemStack itemstack = ((EntityPlayer)this.field_70153_n).func_70694_bm();
-        return itemstack != null && itemstack.func_77973_b() == Items.field_151146_bM;
+        return itemstack != null && itemstack.func_77973_b() == Items.CARROT_ON_A_STICK;
     }
 
     protected void func_70088_a()
@@ -124,7 +124,7 @@ public class EntityPig extends EntityAnimal
 
     protected Item droppingItem()
     {
-        return this.func_70027_ad() ? Items.field_151157_am : Items.field_151147_al;
+        return this.func_70027_ad() ? Items.COOKED_PORKCHOP : Items.PORKCHOP;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
@@ -135,17 +135,17 @@ public class EntityPig extends EntityAnimal
         {
             if (this.func_70027_ad())
             {
-                this.func_145779_a(Items.field_151157_am, 1);
+                this.func_145779_a(Items.COOKED_PORKCHOP, 1);
             }
             else
             {
-                this.func_145779_a(Items.field_151147_al, 1);
+                this.func_145779_a(Items.PORKCHOP, 1);
             }
         }
 
         if (this.func_70901_n())
         {
-            this.func_145779_a(Items.field_151141_av, 1);
+            this.func_145779_a(Items.SADDLE, 1);
         }
     }
 
@@ -195,7 +195,7 @@ public class EntityPig extends EntityAnimal
 
     public boolean func_70877_b(ItemStack p_70877_1_)
     {
-        return p_70877_1_ != null && p_70877_1_.func_77973_b() == Items.field_151172_bF;
+        return p_70877_1_ != null && p_70877_1_.func_77973_b() == Items.CARROT;
     }
 
     public EntityAIControlledByPlayer func_82183_n()

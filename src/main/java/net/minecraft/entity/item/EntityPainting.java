@@ -121,7 +121,7 @@ public class EntityPainting extends EntityHanging
             }
         }
 
-        this.func_70099_a(new ItemStack(Items.field_151159_an), 0.0F);
+        this.func_70099_a(new ItemStack(Items.PAINTING), 0.0F);
     }
 
     public static enum EnumArt

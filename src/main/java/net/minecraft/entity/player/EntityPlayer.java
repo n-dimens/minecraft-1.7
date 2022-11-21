@@ -597,7 +597,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
         if (this.func_70005_c_().equals("Notch"))
         {
-            this.func_146097_a(new ItemStack(Items.field_151034_e, 1), true, false);
+            this.func_146097_a(new ItemStack(Items.APPLE, 1), true, false);
         }
 
         if (!this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
@@ -1663,9 +1663,9 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
     {
         IIcon iicon = super.func_70620_b(p_70620_1_, p_70620_2_);
 
-        if (p_70620_1_.func_77973_b() == Items.field_151112_aM && this.field_71104_cf != null)
+        if (p_70620_1_.func_77973_b() == Items.FISHING_ROD && this.field_71104_cf != null)
         {
-            iicon = Items.field_151112_aM.func_94597_g();
+            iicon = Items.FISHING_ROD.func_94597_g();
         }
         else
         {
@@ -1674,23 +1674,23 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                 return p_70620_1_.func_77973_b().func_77618_c(p_70620_1_.func_77960_j(), p_70620_2_);
             }
 
-            if (this.field_71074_e != null && p_70620_1_.func_77973_b() == Items.field_151031_f)
+            if (this.field_71074_e != null && p_70620_1_.func_77973_b() == Items.BOW)
             {
                 int j = p_70620_1_.func_77988_m() - this.field_71072_f;
 
                 if (j >= 18)
                 {
-                    return Items.field_151031_f.func_94599_c(2);
+                    return Items.BOW.func_94599_c(2);
                 }
 
                 if (j > 13)
                 {
-                    return Items.field_151031_f.func_94599_c(1);
+                    return Items.BOW.func_94599_c(1);
                 }
 
                 if (j > 0)
                 {
-                    return Items.field_151031_f.func_94599_c(0);
+                    return Items.BOW.func_94599_c(0);
                 }
             }
         }

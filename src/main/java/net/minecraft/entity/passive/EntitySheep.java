@@ -52,14 +52,14 @@ public class EntitySheep extends EntityAnimal
         this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
         this.field_70714_bg.func_75776_a(1, new EntityAIPanic(this, 1.25D));
         this.field_70714_bg.func_75776_a(2, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.1D, Items.field_151015_O, false));
+        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.1D, Items.WHEAT, false));
         this.field_70714_bg.func_75776_a(4, new EntityAIFollowParent(this, 1.1D));
         this.field_70714_bg.func_75776_a(5, this.field_146087_bs);
         this.field_70714_bg.func_75776_a(6, new EntityAIWander(this, 1.0D));
         this.field_70714_bg.func_75776_a(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
         this.field_70714_bg.func_75776_a(8, new EntityAILookIdle(this));
-        this.field_90016_e.func_70299_a(0, new ItemStack(Items.field_151100_aR, 1, 0));
-        this.field_90016_e.func_70299_a(1, new ItemStack(Items.field_151100_aR, 1, 0));
+        this.field_90016_e.func_70299_a(0, new ItemStack(Items.DYE, 1, 0));
+        this.field_90016_e.func_70299_a(1, new ItemStack(Items.DYE, 1, 0));
     }
 
     protected boolean func_70650_aV()
@@ -126,7 +126,7 @@ public class EntitySheep extends EntityAnimal
     {
         ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151097_aZ && !this.func_70892_o() && !this.func_70631_g_())
+        if (itemstack != null && itemstack.func_77973_b() == Items.SHEARS && !this.func_70892_o() && !this.func_70631_g_())
         {
             if (!this.field_70170_p.field_72995_K)
             {
@@ -274,7 +274,7 @@ public class EntitySheep extends EntityAnimal
         ItemStack itemstack = CraftingManager.func_77594_a().func_82787_a(this.field_90016_e, ((EntitySheep)p_90014_1_).field_70170_p);
         int k;
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151100_aR)
+        if (itemstack != null && itemstack.func_77973_b() == Items.DYE)
         {
             k = itemstack.func_77960_j();
         }

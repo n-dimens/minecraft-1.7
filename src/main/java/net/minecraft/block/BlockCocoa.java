@@ -170,14 +170,14 @@ public class BlockCocoa extends BlockDirectional implements IGrowable
 
         for (int k1 = 0; k1 < b0; ++k1)
         {
-            this.func_149642_a(p_149690_1_, p_149690_2_, p_149690_3_, p_149690_4_, new ItemStack(Items.field_151100_aR, 1, 3));
+            this.func_149642_a(p_149690_1_, p_149690_2_, p_149690_3_, p_149690_4_, new ItemStack(Items.DYE, 1, 3));
         }
     }
 
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151100_aR;
+        return Items.DYE;
     }
 
     public int func_149643_k(World p_149643_1_, int p_149643_2_, int p_149643_3_, int p_149643_4_)

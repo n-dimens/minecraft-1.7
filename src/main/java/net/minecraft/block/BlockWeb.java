@@ -46,7 +46,7 @@ public class BlockWeb extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151007_F;
+        return Items.STRING;
     }
 
     protected boolean func_149700_E()

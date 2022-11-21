@@ -27,7 +27,7 @@ public class ItemBucketMilk extends Item
             p_77654_3_.func_70674_bp();
         }
 
-        return p_77654_1_.field_77994_a <= 0 ? new ItemStack(Items.field_151133_ar) : p_77654_1_;
+        return p_77654_1_.field_77994_a <= 0 ? new ItemStack(Items.BUCKET) : p_77654_1_;
     }
 
     public int func_77626_a(ItemStack p_77626_1_)

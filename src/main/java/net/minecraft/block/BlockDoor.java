@@ -356,7 +356,7 @@ public class BlockDoor extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return (p_149650_1_ & 8) != 0 ? null : (this.field_149764_J == Material.field_151573_f ? Items.field_151139_aw : Items.field_151135_aq);
+        return (p_149650_1_ & 8) != 0 ? null : (this.field_149764_J == Material.field_151573_f ? Items.IRON_DOOR : Items.WOODEN_DOOR);
     }
 
     public MovingObjectPosition func_149731_a(World p_149731_1_, int p_149731_2_, int p_149731_3_, int p_149731_4_, Vec3 p_149731_5_, Vec3 p_149731_6_)
@@ -400,7 +400,7 @@ public class BlockDoor extends Block
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return this.field_149764_J == Material.field_151573_f ? Items.field_151139_aw : Items.field_151135_aq;
+        return this.field_149764_J == Material.field_151573_f ? Items.IRON_DOOR : Items.WOODEN_DOOR;
     }
 
     public void func_149681_a(World p_149681_1_, int p_149681_2_, int p_149681_3_, int p_149681_4_, int p_149681_5_, EntityPlayer p_149681_6_)

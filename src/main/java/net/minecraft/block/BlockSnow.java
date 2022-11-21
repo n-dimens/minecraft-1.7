@@ -98,14 +98,14 @@ public class BlockSnow extends Block
     public void func_149636_a(World p_149636_1_, EntityPlayer p_149636_2_, int p_149636_3_, int p_149636_4_, int p_149636_5_, int p_149636_6_)
     {
         int i1 = p_149636_6_ & 7;
-        this.func_149642_a(p_149636_1_, p_149636_3_, p_149636_4_, p_149636_5_, new ItemStack(Items.field_151126_ay, i1 + 1, 0));
+        this.func_149642_a(p_149636_1_, p_149636_3_, p_149636_4_, p_149636_5_, new ItemStack(Items.SNOWBALL, i1 + 1, 0));
         p_149636_1_.func_147468_f(p_149636_3_, p_149636_4_, p_149636_5_);
         p_149636_2_.func_71064_a(StatList.field_75934_C[Block.func_149682_b(this)], 1);
     }
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151126_ay;
+        return Items.SNOWBALL;
     }
 
     public int func_149745_a(Random p_149745_1_)

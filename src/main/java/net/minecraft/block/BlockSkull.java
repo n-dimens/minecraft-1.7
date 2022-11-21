@@ -95,7 +95,7 @@ public class BlockSkull extends BlockContainer
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151144_bL;
+        return Items.SKULL;
     }
 
     public int func_149643_k(World p_149643_1_, int p_149643_2_, int p_149643_3_, int p_149643_4_)
@@ -128,7 +128,7 @@ public class BlockSkull extends BlockContainer
         {
             if ((p_149749_6_ & 8) == 0)
             {
-                ItemStack itemstack = new ItemStack(Items.field_151144_bL, 1, this.func_149643_k(p_149749_1_, p_149749_2_, p_149749_3_, p_149749_4_));
+                ItemStack itemstack = new ItemStack(Items.SKULL, 1, this.func_149643_k(p_149749_1_, p_149749_2_, p_149749_3_, p_149749_4_));
                 TileEntitySkull tileentityskull = (TileEntitySkull)p_149749_1_.func_147438_o(p_149749_2_, p_149749_3_, p_149749_4_);
 
                 if (tileentityskull.func_145904_a() == 3 && tileentityskull.func_152108_a() != null)
@@ -148,7 +148,7 @@ public class BlockSkull extends BlockContainer
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151144_bL;
+        return Items.SKULL;
     }
 
     public void func_149965_a(World p_149965_1_, int p_149965_2_, int p_149965_3_, int p_149965_4_, TileEntitySkull p_149965_5_)

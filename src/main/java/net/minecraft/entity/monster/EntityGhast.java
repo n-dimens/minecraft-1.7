@@ -226,7 +226,7 @@ public class EntityGhast extends EntityFlying implements IMob
 
     protected Item droppingItem()
     {
-        return Items.field_151016_H;
+        return Items.GUNPOWDER;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
@@ -236,14 +236,14 @@ public class EntityGhast extends EntityFlying implements IMob
 
         for (k = 0; k < j; ++k)
         {
-            this.func_145779_a(Items.field_151073_bk, 1);
+            this.func_145779_a(Items.GHAST_TEAR, 1);
         }
 
         j = this.field_70146_Z.nextInt(3) + this.field_70146_Z.nextInt(1 + p_70628_2_);
 
         for (k = 0; k < j; ++k)
         {
-            this.func_145779_a(Items.field_151016_H, 1);
+            this.func_145779_a(Items.GUNPOWDER, 1);
         }
     }
 

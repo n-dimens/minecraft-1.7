@@ -1990,7 +1990,7 @@ public class RenderGlobal implements IWorldAccess
                     }
                     else if (p_72726_1_.equals("snowballpoof"))
                     {
-                        entityfx = new EntityBreakingFX(this.field_72769_h, p_72726_2_, p_72726_4_, p_72726_6_, Items.field_151126_ay);
+                        entityfx = new EntityBreakingFX(this.field_72769_h, p_72726_2_, p_72726_4_, p_72726_6_, Items.SNOWBALL);
                     }
                     else if (p_72726_1_.equals("dripWater"))
                     {
@@ -2006,7 +2006,7 @@ public class RenderGlobal implements IWorldAccess
                     }
                     else if (p_72726_1_.equals("slime"))
                     {
-                        entityfx = new EntityBreakingFX(this.field_72769_h, p_72726_2_, p_72726_4_, p_72726_6_, Items.field_151123_aH);
+                        entityfx = new EntityBreakingFX(this.field_72769_h, p_72726_2_, p_72726_4_, p_72726_6_, Items.SLIME_BALL);
                     }
                     else if (p_72726_1_.equals("heart"))
                     {
@@ -2252,20 +2252,20 @@ public class RenderGlobal implements IWorldAccess
                 d0 = (double)p_72706_3_;
                 d1 = (double)p_72706_4_;
                 d2 = (double)p_72706_5_;
-                s = "iconcrack_" + Item.func_150891_b(Items.field_151068_bn) + "_" + p_72706_6_;
+                s = "iconcrack_" + Item.func_150891_b(Items.POTION) + "_" + p_72706_6_;
 
                 for (k1 = 0; k1 < 8; ++k1)
                 {
                     this.func_72708_a(s, d0, d1, d2, random.nextGaussian() * 0.15D, random.nextDouble() * 0.2D, random.nextGaussian() * 0.15D);
                 }
 
-                k1 = Items.field_151068_bn.func_77620_a(p_72706_6_);
+                k1 = Items.POTION.func_77620_a(p_72706_6_);
                 float f = (float)(k1 >> 16 & 255) / 255.0F;
                 float f1 = (float)(k1 >> 8 & 255) / 255.0F;
                 float f2 = (float)(k1 >> 0 & 255) / 255.0F;
                 String s1 = "spell";
 
-                if (Items.field_151068_bn.func_77833_h(p_72706_6_))
+                if (Items.POTION.func_77833_h(p_72706_6_))
                 {
                     s1 = "instantSpell";
                 }
@@ -2293,7 +2293,7 @@ public class RenderGlobal implements IWorldAccess
                 d0 = (double)p_72706_3_ + 0.5D;
                 d1 = (double)p_72706_4_;
                 d2 = (double)p_72706_5_ + 0.5D;
-                s = "iconcrack_" + Item.func_150891_b(Items.field_151061_bv);
+                s = "iconcrack_" + Item.func_150891_b(Items.ENDER_EYE);
 
                 for (k1 = 0; k1 < 8; ++k1)
                 {

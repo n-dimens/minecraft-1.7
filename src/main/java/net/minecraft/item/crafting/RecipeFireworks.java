@@ -30,45 +30,45 @@ public class RecipeFireworks implements IRecipe
 
             if (itemstack != null)
             {
-                if (itemstack.func_77973_b() == Items.field_151016_H)
+                if (itemstack.func_77973_b() == Items.GUNPOWDER)
                 {
                     ++j;
                 }
-                else if (itemstack.func_77973_b() == Items.field_151154_bQ)
+                else if (itemstack.func_77973_b() == Items.FIREWORK_CHARGE)
                 {
                     ++l;
                 }
-                else if (itemstack.func_77973_b() == Items.field_151100_aR)
+                else if (itemstack.func_77973_b() == Items.DYE)
                 {
                     ++k;
                 }
-                else if (itemstack.func_77973_b() == Items.field_151121_aF)
+                else if (itemstack.func_77973_b() == Items.PAPER)
                 {
                     ++i;
                 }
-                else if (itemstack.func_77973_b() == Items.field_151114_aO)
+                else if (itemstack.func_77973_b() == Items.GLOWSTONE_DUST)
                 {
                     ++i1;
                 }
-                else if (itemstack.func_77973_b() == Items.field_151045_i)
+                else if (itemstack.func_77973_b() == Items.DIAMOND)
                 {
                     ++i1;
                 }
-                else if (itemstack.func_77973_b() == Items.field_151059_bz)
+                else if (itemstack.func_77973_b() == Items.FIRE_CHARGE)
                 {
                     ++j1;
                 }
-                else if (itemstack.func_77973_b() == Items.field_151008_G)
+                else if (itemstack.func_77973_b() == Items.FEATHER)
                 {
                     ++j1;
                 }
-                else if (itemstack.func_77973_b() == Items.field_151074_bl)
+                else if (itemstack.func_77973_b() == Items.GOLD_NUGGET)
                 {
                     ++j1;
                 }
                 else
                 {
-                    if (itemstack.func_77973_b() != Items.field_151144_bL)
+                    if (itemstack.func_77973_b() != Items.SKULL)
                     {
                         return false;
                     }
@@ -87,7 +87,7 @@ public class RecipeFireworks implements IRecipe
 
             if (j >= 1 && i == 1 && i1 == 0)
             {
-                this.field_92102_a = new ItemStack(Items.field_151152_bP);
+                this.field_92102_a = new ItemStack(Items.FIREWORKS);
 
                 if (l > 0)
                 {
@@ -99,7 +99,7 @@ public class RecipeFireworks implements IRecipe
                     {
                         ItemStack itemstack3 = p_77569_1_.func_70301_a(k2);
 
-                        if (itemstack3 != null && itemstack3.func_77973_b() == Items.field_151154_bQ && itemstack3.func_77942_o() && itemstack3.func_77978_p().func_150297_b("Explosion", 10))
+                        if (itemstack3 != null && itemstack3.func_77973_b() == Items.FIREWORK_CHARGE && itemstack3.func_77942_o() && itemstack3.func_77978_p().func_150297_b("Explosion", 10))
                         {
                             nbttaglist.func_74742_a(itemstack3.func_77978_p().func_74775_l("Explosion"));
                         }
@@ -115,7 +115,7 @@ public class RecipeFireworks implements IRecipe
             }
             else if (j == 1 && i == 0 && l == 0 && k > 0 && j1 <= 1)
             {
-                this.field_92102_a = new ItemStack(Items.field_151154_bQ);
+                this.field_92102_a = new ItemStack(Items.FIREWORK_CHARGE);
                 nbttagcompound = new NBTTagCompound();
                 nbttagcompound1 = new NBTTagCompound();
                 byte b0 = 0;
@@ -127,31 +127,31 @@ public class RecipeFireworks implements IRecipe
 
                     if (itemstack2 != null)
                     {
-                        if (itemstack2.func_77973_b() == Items.field_151100_aR)
+                        if (itemstack2.func_77973_b() == Items.DYE)
                         {
                             arraylist.add(Integer.valueOf(ItemDye.field_150922_c[itemstack2.func_77960_j()]));
                         }
-                        else if (itemstack2.func_77973_b() == Items.field_151114_aO)
+                        else if (itemstack2.func_77973_b() == Items.GLOWSTONE_DUST)
                         {
                             nbttagcompound1.func_74757_a("Flicker", true);
                         }
-                        else if (itemstack2.func_77973_b() == Items.field_151045_i)
+                        else if (itemstack2.func_77973_b() == Items.DIAMOND)
                         {
                             nbttagcompound1.func_74757_a("Trail", true);
                         }
-                        else if (itemstack2.func_77973_b() == Items.field_151059_bz)
+                        else if (itemstack2.func_77973_b() == Items.FIRE_CHARGE)
                         {
                             b0 = 1;
                         }
-                        else if (itemstack2.func_77973_b() == Items.field_151008_G)
+                        else if (itemstack2.func_77973_b() == Items.FEATHER)
                         {
                             b0 = 4;
                         }
-                        else if (itemstack2.func_77973_b() == Items.field_151074_bl)
+                        else if (itemstack2.func_77973_b() == Items.GOLD_NUGGET)
                         {
                             b0 = 2;
                         }
-                        else if (itemstack2.func_77973_b() == Items.field_151144_bL)
+                        else if (itemstack2.func_77973_b() == Items.SKULL)
                         {
                             b0 = 3;
                         }
@@ -181,11 +181,11 @@ public class RecipeFireworks implements IRecipe
 
                     if (itemstack1 != null)
                     {
-                        if (itemstack1.func_77973_b() == Items.field_151100_aR)
+                        if (itemstack1.func_77973_b() == Items.DYE)
                         {
                             arraylist1.add(Integer.valueOf(ItemDye.field_150922_c[itemstack1.func_77960_j()]));
                         }
-                        else if (itemstack1.func_77973_b() == Items.field_151154_bQ)
+                        else if (itemstack1.func_77973_b() == Items.FIREWORK_CHARGE)
                         {
                             this.field_92102_a = itemstack1.func_77946_l();
                             this.field_92102_a.field_77994_a = 1;

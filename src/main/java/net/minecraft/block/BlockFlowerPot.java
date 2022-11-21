@@ -107,7 +107,7 @@ public class BlockFlowerPot extends BlockContainer
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
         TileEntityFlowerPot tileentityflowerpot = this.func_149929_e(p_149694_1_, p_149694_2_, p_149694_3_, p_149694_4_);
-        return tileentityflowerpot != null && tileentityflowerpot.func_145965_a() != null ? tileentityflowerpot.func_145965_a() : Items.field_151162_bE;
+        return tileentityflowerpot != null && tileentityflowerpot.func_145965_a() != null ? tileentityflowerpot.func_145965_a() : Items.FLOWER_POT;
     }
 
     public int func_149643_k(World p_149643_1_, int p_149643_2_, int p_149643_3_, int p_149643_4_)
@@ -165,7 +165,7 @@ public class BlockFlowerPot extends BlockContainer
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151162_bE;
+        return Items.FLOWER_POT;
     }
 
     private TileEntityFlowerPot func_149929_e(World p_149929_1_, int p_149929_2_, int p_149929_3_, int p_149929_4_)

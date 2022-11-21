@@ -36,7 +36,7 @@ public class BlockOldLeaf extends BlockLeaves
     {
         if ((p_150124_5_ & 3) == 0 && p_150124_1_.field_73012_v.nextInt(p_150124_6_) == 0)
         {
-            this.func_149642_a(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(Items.field_151034_e, 1, 0));
+            this.func_149642_a(p_150124_1_, p_150124_2_, p_150124_3_, p_150124_4_, new ItemStack(Items.APPLE, 1, 0));
         }
     }
 

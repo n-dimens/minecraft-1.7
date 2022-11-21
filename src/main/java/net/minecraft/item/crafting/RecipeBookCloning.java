@@ -21,7 +21,7 @@ public class RecipeBookCloning implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() == Items.field_151164_bB)
+                if (itemstack1.func_77973_b() == Items.WRITTEN_BOOK)
                 {
                     if (itemstack != null)
                     {
@@ -32,7 +32,7 @@ public class RecipeBookCloning implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.field_151099_bA)
+                    if (itemstack1.func_77973_b() != Items.WRITABLE_BOOK)
                     {
                         return false;
                     }
@@ -56,7 +56,7 @@ public class RecipeBookCloning implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() == Items.field_151164_bB)
+                if (itemstack1.func_77973_b() == Items.WRITTEN_BOOK)
                 {
                     if (itemstack != null)
                     {
@@ -67,7 +67,7 @@ public class RecipeBookCloning implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.field_151099_bA)
+                    if (itemstack1.func_77973_b() != Items.WRITABLE_BOOK)
                     {
                         return null;
                     }
@@ -79,7 +79,7 @@ public class RecipeBookCloning implements IRecipe
 
         if (itemstack != null && i >= 1)
         {
-            ItemStack itemstack2 = new ItemStack(Items.field_151164_bB, i + 1);
+            ItemStack itemstack2 = new ItemStack(Items.WRITTEN_BOOK, i + 1);
             itemstack2.func_77982_d((NBTTagCompound)itemstack.func_77978_p().func_74737_b());
 
             if (itemstack.func_82837_s())

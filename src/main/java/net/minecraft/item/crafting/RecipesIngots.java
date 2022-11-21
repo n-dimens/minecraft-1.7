@@ -12,7 +12,7 @@ public class RecipesIngots
 
     public RecipesIngots()
     {
-        this.field_77591_a = new Object[][] {{Blocks.field_150340_R, new ItemStack(Items.field_151043_k, 9)}, {Blocks.field_150339_S, new ItemStack(Items.field_151042_j, 9)}, {Blocks.field_150484_ah, new ItemStack(Items.field_151045_i, 9)}, {Blocks.field_150475_bE, new ItemStack(Items.field_151166_bC, 9)}, {Blocks.field_150368_y, new ItemStack(Items.field_151100_aR, 9, 4)}, {Blocks.field_150451_bX, new ItemStack(Items.field_151137_ax, 9)}, {Blocks.field_150402_ci, new ItemStack(Items.field_151044_h, 9, 0)}, {Blocks.field_150407_cf, new ItemStack(Items.field_151015_O, 9)}};
+        this.field_77591_a = new Object[][] {{Blocks.field_150340_R, new ItemStack(Items.GOLD_INGOT, 9)}, {Blocks.field_150339_S, new ItemStack(Items.IRON_INGOT, 9)}, {Blocks.field_150484_ah, new ItemStack(Items.DIAMOND, 9)}, {Blocks.field_150475_bE, new ItemStack(Items.EMERALD, 9)}, {Blocks.field_150368_y, new ItemStack(Items.DYE, 9, 4)}, {Blocks.field_150451_bX, new ItemStack(Items.REDSTONE, 9)}, {Blocks.field_150402_ci, new ItemStack(Items.COAL, 9, 0)}, {Blocks.field_150407_cf, new ItemStack(Items.WHEAT, 9)}};
     }
 
     public void func_77590_a(CraftingManager p_77590_1_)
@@ -25,7 +25,7 @@ public class RecipesIngots
             p_77590_1_.func_92103_a(itemstack, new Object[] {"#", '#', block});
         }
 
-        p_77590_1_.func_92103_a(new ItemStack(Items.field_151043_k), new Object[] {"###", "###", "###", '#', Items.field_151074_bl});
-        p_77590_1_.func_92103_a(new ItemStack(Items.field_151074_bl, 9), new Object[] {"#", '#', Items.field_151043_k});
+        p_77590_1_.func_92103_a(new ItemStack(Items.GOLD_INGOT), new Object[] {"###", "###", "###", '#', Items.GOLD_NUGGET});
+        p_77590_1_.func_92103_a(new ItemStack(Items.GOLD_NUGGET, 9), new Object[] {"#", '#', Items.GOLD_INGOT});
     }
 }

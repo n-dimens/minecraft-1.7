@@ -60,7 +60,7 @@ public class BlockTripWire extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151007_F;
+        return Items.STRING;
     }
 
     public void func_149695_a(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_)
@@ -99,7 +99,7 @@ public class BlockTripWire extends Block
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151007_F;
+        return Items.STRING;
     }
 
     public void func_149726_b(World p_149726_1_, int p_149726_2_, int p_149726_3_, int p_149726_4_)
@@ -118,7 +118,7 @@ public class BlockTripWire extends Block
     {
         if (!p_149681_1_.field_72995_K)
         {
-            if (p_149681_6_.func_71045_bC() != null && p_149681_6_.func_71045_bC().func_77973_b() == Items.field_151097_aZ)
+            if (p_149681_6_.func_71045_bC() != null && p_149681_6_.func_71045_bC().func_77973_b() == Items.SHEARS)
             {
                 p_149681_1_.func_72921_c(p_149681_2_, p_149681_3_, p_149681_4_, p_149681_5_ | 8, 4);
             }

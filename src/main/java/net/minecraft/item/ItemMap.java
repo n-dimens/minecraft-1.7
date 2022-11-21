@@ -264,7 +264,7 @@ public class ItemMap extends ItemMapBase
     {
         if (p_77622_1_.func_77942_o() && p_77622_1_.func_77978_p().func_74767_n("map_is_scaling"))
         {
-            MapData mapdata = Items.field_151098_aY.func_77873_a(p_77622_1_, p_77622_2_);
+            MapData mapdata = Items.FILLED_MAP.func_77873_a(p_77622_1_, p_77622_2_);
             p_77622_1_.func_77964_b(p_77622_2_.func_72841_b("map"));
             MapData mapdata1 = new MapData("map_" + p_77622_1_.func_77960_j());
             mapdata1.field_76197_d = (byte)(mapdata.field_76197_d + 1);

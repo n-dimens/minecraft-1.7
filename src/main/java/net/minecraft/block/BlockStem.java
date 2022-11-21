@@ -221,12 +221,12 @@ public class BlockStem extends BlockBush implements IGrowable
 
             if (this.field_149877_a == Blocks.field_150423_aK)
             {
-                item = Items.field_151080_bb;
+                item = Items.PUMPKIN_SEEDS;
             }
 
             if (this.field_149877_a == Blocks.field_150440_ba)
             {
-                item = Items.field_151081_bc;
+                item = Items.MELON_SEEDS;
             }
 
             for (int j1 = 0; j1 < 3; ++j1)
@@ -262,7 +262,7 @@ public class BlockStem extends BlockBush implements IGrowable
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return this.field_149877_a == Blocks.field_150423_aK ? Items.field_151080_bb : (this.field_149877_a == Blocks.field_150440_ba ? Items.field_151081_bc : Item.func_150899_d(0));
+        return this.field_149877_a == Blocks.field_150423_aK ? Items.PUMPKIN_SEEDS : (this.field_149877_a == Blocks.field_150440_ba ? Items.MELON_SEEDS : Item.func_150899_d(0));
     }
 
     @SideOnly(Side.CLIENT)

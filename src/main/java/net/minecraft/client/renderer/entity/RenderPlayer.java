@@ -181,7 +181,7 @@ public class RenderPlayer extends RendererLivingEntity
 
                 this.field_76990_c.field_78721_f.func_78443_a(p_77029_1_, itemstack, 0);
             }
-            else if (itemstack.func_77973_b() == Items.field_151144_bL)
+            else if (itemstack.func_77973_b() == Items.SKULL)
             {
                 f1 = 1.0625F;
                 GL11.glScalef(f1, -f1, -f1);
@@ -291,7 +291,7 @@ public class RenderPlayer extends RendererLivingEntity
 
             if (p_77029_1_.field_71104_cf != null)
             {
-                itemstack1 = new ItemStack(Items.field_151055_y);
+                itemstack1 = new ItemStack(Items.STICK);
             }
 
             EnumAction enumaction = null;
@@ -310,7 +310,7 @@ public class RenderPlayer extends RendererLivingEntity
                 GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
                 GL11.glScalef(-f2, -f2, f2);
             }
-            else if (itemstack1.func_77973_b() == Items.field_151031_f)
+            else if (itemstack1.func_77973_b() == Items.BOW)
             {
                 f2 = 0.625F;
                 GL11.glTranslatef(0.0F, 0.125F, 0.3125F);

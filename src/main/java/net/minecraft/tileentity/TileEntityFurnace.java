@@ -322,7 +322,7 @@ public class TileEntityFurnace extends TileEntity implements ISidedInventory
                 }
             }
 
-            return item instanceof ItemTool && ((ItemTool)item).func_77861_e().equals("WOOD") ? 200 : (item instanceof ItemSword && ((ItemSword)item).func_150932_j().equals("WOOD") ? 200 : (item instanceof ItemHoe && ((ItemHoe)item).func_77842_f().equals("WOOD") ? 200 : (item == Items.field_151055_y ? 100 : (item == Items.field_151044_h ? 1600 : (item == Items.field_151129_at ? 20000 : (item == Item.func_150898_a(Blocks.field_150345_g) ? 100 : (item == Items.field_151072_bj ? 2400 : 0)))))));
+            return item instanceof ItemTool && ((ItemTool)item).func_77861_e().equals("WOOD") ? 200 : (item instanceof ItemSword && ((ItemSword)item).func_150932_j().equals("WOOD") ? 200 : (item instanceof ItemHoe && ((ItemHoe)item).func_77842_f().equals("WOOD") ? 200 : (item == Items.STICK ? 100 : (item == Items.COAL ? 1600 : (item == Items.LAVA_BUCKET ? 20000 : (item == Item.func_150898_a(Blocks.field_150345_g) ? 100 : (item == Items.BLAZE_ROD ? 2400 : 0)))))));
         }
     }
 
@@ -357,6 +357,6 @@ public class TileEntityFurnace extends TileEntity implements ISidedInventory
 
     public boolean func_102008_b(int p_102008_1_, ItemStack p_102008_2_, int p_102008_3_)
     {
-        return p_102008_3_ != 0 || p_102008_1_ != 1 || p_102008_2_.func_77973_b() == Items.field_151133_ar;
+        return p_102008_3_ != 0 || p_102008_1_ != 1 || p_102008_2_.func_77973_b() == Items.BUCKET;
     }
 }

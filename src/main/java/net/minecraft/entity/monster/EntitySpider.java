@@ -113,7 +113,7 @@ public class EntitySpider extends EntityMob
 
     protected Item droppingItem()
     {
-        return Items.field_151007_F;
+        return Items.STRING;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
@@ -122,7 +122,7 @@ public class EntitySpider extends EntityMob
 
         if (p_70628_1_ && (this.field_70146_Z.nextInt(3) == 0 || this.field_70146_Z.nextInt(1 + p_70628_2_) > 0))
         {
-            this.func_145779_a(Items.field_151070_bp, 1);
+            this.func_145779_a(Items.SPIDER_EYE, 1);
         }
     }
 

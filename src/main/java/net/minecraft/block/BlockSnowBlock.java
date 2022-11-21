@@ -21,7 +21,7 @@ public class BlockSnowBlock extends Block
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151126_ay;
+        return Items.SNOWBALL;
     }
 
     public int func_149745_a(Random p_149745_1_)

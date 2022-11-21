@@ -440,7 +440,7 @@ public abstract class EntityLiving extends EntityLivingBase
                                 this.func_70099_a(itemstack1, 0.0F);
                             }
 
-                            if (itemstack.func_77973_b() == Items.field_151045_i && entityitem.func_145800_j() != null)
+                            if (itemstack.func_77973_b() == Items.DIAMOND && entityitem.func_145800_j() != null)
                             {
                                 EntityPlayer entityplayer = this.field_70170_p.func_72924_a(entityitem.func_145800_j());
 
@@ -776,7 +776,7 @@ public abstract class EntityLiving extends EntityLivingBase
 
     public static int func_82159_b(ItemStack p_82159_0_)
     {
-        if (p_82159_0_.func_77973_b() != Item.func_150898_a(Blocks.field_150423_aK) && p_82159_0_.func_77973_b() != Items.field_151144_bL)
+        if (p_82159_0_.func_77973_b() != Item.func_150898_a(Blocks.field_150423_aK) && p_82159_0_.func_77973_b() != Items.SKULL)
         {
             if (p_82159_0_.func_77973_b() instanceof ItemArmor)
             {
@@ -808,86 +808,86 @@ public abstract class EntityLiving extends EntityLivingBase
             case 4:
                 if (p_82161_1_ == 0)
                 {
-                    return Items.field_151024_Q;
+                    return Items.LEATHER_HELMET;
                 }
                 else if (p_82161_1_ == 1)
                 {
-                    return Items.field_151169_ag;
+                    return Items.GOLDEN_HELMET;
                 }
                 else if (p_82161_1_ == 2)
                 {
-                    return Items.field_151020_U;
+                    return Items.CHAINMAIL_HELMET;
                 }
                 else if (p_82161_1_ == 3)
                 {
-                    return Items.field_151028_Y;
+                    return Items.IRON_HELMET;
                 }
                 else if (p_82161_1_ == 4)
                 {
-                    return Items.field_151161_ac;
+                    return Items.DIAMOND_HELMET;
                 }
             case 3:
                 if (p_82161_1_ == 0)
                 {
-                    return Items.field_151027_R;
+                    return Items.LEATHER_CHESTPLATE;
                 }
                 else if (p_82161_1_ == 1)
                 {
-                    return Items.field_151171_ah;
+                    return Items.GOLDEN_CHESTPLATE;
                 }
                 else if (p_82161_1_ == 2)
                 {
-                    return Items.field_151023_V;
+                    return Items.CHAINMAIL_CHESTPLATE;
                 }
                 else if (p_82161_1_ == 3)
                 {
-                    return Items.field_151030_Z;
+                    return Items.IRON_CHESTPLATE;
                 }
                 else if (p_82161_1_ == 4)
                 {
-                    return Items.field_151163_ad;
+                    return Items.DIAMOND_CHESTPLATE;
                 }
             case 2:
                 if (p_82161_1_ == 0)
                 {
-                    return Items.field_151026_S;
+                    return Items.LEATHER_LEGGINGS;
                 }
                 else if (p_82161_1_ == 1)
                 {
-                    return Items.field_151149_ai;
+                    return Items.GOLDEN_LEGGINGS;
                 }
                 else if (p_82161_1_ == 2)
                 {
-                    return Items.field_151022_W;
+                    return Items.CHAINMAIL_LEGGINGS;
                 }
                 else if (p_82161_1_ == 3)
                 {
-                    return Items.field_151165_aa;
+                    return Items.IRON_LEGGINGS;
                 }
                 else if (p_82161_1_ == 4)
                 {
-                    return Items.field_151173_ae;
+                    return Items.DIAMOND_LEGGINGS;
                 }
             case 1:
                 if (p_82161_1_ == 0)
                 {
-                    return Items.field_151021_T;
+                    return Items.LEATHER_BOOTS;
                 }
                 else if (p_82161_1_ == 1)
                 {
-                    return Items.field_151151_aj;
+                    return Items.GOLDEN_BOOTS;
                 }
                 else if (p_82161_1_ == 2)
                 {
-                    return Items.field_151029_X;
+                    return Items.CHAINMAIL_BOOTS;
                 }
                 else if (p_82161_1_ == 3)
                 {
-                    return Items.field_151167_ab;
+                    return Items.IRON_BOOTS;
                 }
                 else if (p_82161_1_ == 4)
                 {
-                    return Items.field_151175_af;
+                    return Items.DIAMOND_BOOTS;
                 }
             default:
                 return null;
@@ -997,7 +997,7 @@ public abstract class EntityLiving extends EntityLivingBase
         {
             ItemStack itemstack = p_130002_1_.field_71071_by.func_70448_g();
 
-            if (itemstack != null && itemstack.func_77973_b() == Items.field_151058_ca && this.func_110164_bC())
+            if (itemstack != null && itemstack.func_77973_b() == Items.LEAD && this.func_110164_bC())
             {
                 if (!(this instanceof EntityTameable) || !((EntityTameable)this).func_70909_n())
                 {
@@ -1048,7 +1048,7 @@ public abstract class EntityLiving extends EntityLivingBase
 
             if (!this.field_70170_p.field_72995_K && p_110160_2_)
             {
-                this.func_145779_a(Items.field_151058_ca, 1);
+                this.func_145779_a(Items.LEAD, 1);
             }
 
             if (!this.field_70170_p.field_72995_K && p_110160_1_ && this.field_70170_p instanceof WorldServer)

@@ -191,7 +191,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
 
     protected Item droppingItem()
     {
-        return Items.field_151032_g;
+        return Items.ARROW;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
@@ -205,7 +205,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
 
             for (k = 0; k < j; ++k)
             {
-                this.func_145779_a(Items.field_151044_h, 1);
+                this.func_145779_a(Items.COAL, 1);
             }
         }
         else
@@ -214,7 +214,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
 
             for (k = 0; k < j; ++k)
             {
-                this.func_145779_a(Items.field_151032_g, 1);
+                this.func_145779_a(Items.ARROW, 1);
             }
         }
 
@@ -222,7 +222,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
 
         for (k = 0; k < j; ++k)
         {
-            this.func_145779_a(Items.field_151103_aS, 1);
+            this.func_145779_a(Items.BONE, 1);
         }
     }
 
@@ -230,14 +230,14 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
     {
         if (this.func_82202_m() == 1)
         {
-            this.func_70099_a(new ItemStack(Items.field_151144_bL, 1, 1), 0.0F);
+            this.func_70099_a(new ItemStack(Items.SKULL, 1, 1), 0.0F);
         }
     }
 
     protected void func_82164_bB()
     {
         super.func_82164_bB();
-        this.func_70062_b(0, new ItemStack(Items.field_151031_f));
+        this.func_70062_b(0, new ItemStack(Items.BOW));
     }
 
     public IEntityLivingData func_110161_a(IEntityLivingData p_110161_1_)
@@ -280,7 +280,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
         this.field_70714_bg.func_85156_a(this.field_85037_d);
         ItemStack itemstack = this.func_70694_bm();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151031_f)
+        if (itemstack != null && itemstack.func_77973_b() == Items.BOW)
         {
             this.field_70714_bg.func_75776_a(4, this.field_85037_d);
         }

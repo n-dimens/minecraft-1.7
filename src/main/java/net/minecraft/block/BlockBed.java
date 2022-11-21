@@ -205,7 +205,7 @@ public class BlockBed extends BlockDirectional
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return func_149975_b(p_149650_1_) ? Item.func_150899_d(0) : Items.field_151104_aV;
+        return func_149975_b(p_149650_1_) ? Item.func_150899_d(0) : Items.BED;
     }
 
     private void func_149978_e()
@@ -287,7 +287,7 @@ public class BlockBed extends BlockDirectional
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151104_aV;
+        return Items.BED;
     }
 
     public void func_149681_a(World p_149681_1_, int p_149681_2_, int p_149681_3_, int p_149681_4_, int p_149681_5_, EntityPlayer p_149681_6_)

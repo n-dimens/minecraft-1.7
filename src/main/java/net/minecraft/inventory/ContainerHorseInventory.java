@@ -25,7 +25,7 @@ public class ContainerHorseInventory extends Container
             private static final String __OBFID = "CL_00001752";
             public boolean func_75214_a(ItemStack p_75214_1_)
             {
-                return super.func_75214_a(p_75214_1_) && p_75214_1_.func_77973_b() == Items.field_151141_av && !this.func_75216_d();
+                return super.func_75214_a(p_75214_1_) && p_75214_1_.func_77973_b() == Items.SADDLE && !this.func_75216_d();
             }
         });
         this.func_75146_a(new Slot(p_i1817_2_, 1, 8, 36)

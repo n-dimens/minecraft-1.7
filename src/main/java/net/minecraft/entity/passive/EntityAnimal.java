@@ -306,7 +306,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
     public boolean func_70877_b(ItemStack p_70877_1_)
     {
-        return p_70877_1_.func_77973_b() == Items.field_151015_O;
+        return p_70877_1_.func_77973_b() == Items.WHEAT;
     }
 
     public boolean func_70085_c(EntityPlayer p_70085_1_)

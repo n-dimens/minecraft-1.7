@@ -201,7 +201,7 @@ public class RenderBiped extends RenderLiving
 
                 this.field_76990_c.field_78721_f.func_78443_a(p_77029_1_, itemstack1, 0);
             }
-            else if (item == Items.field_151144_bL)
+            else if (item == Items.SKULL)
             {
                 f1 = 1.0625F;
                 GL11.glScalef(f1, -f1, -f1);
@@ -252,7 +252,7 @@ public class RenderBiped extends RenderLiving
                 GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
                 GL11.glScalef(-f1, -f1, f1);
             }
-            else if (item == Items.field_151031_f)
+            else if (item == Items.BOW)
             {
                 f1 = 0.625F;
                 GL11.glTranslatef(0.0F, 0.125F, 0.3125F);

@@ -119,7 +119,7 @@ public class ItemEnchantedBook extends Item
 
     public WeightedRandomChestContent func_92112_a(Random p_92112_1_, int p_92112_2_, int p_92112_3_, int p_92112_4_)
     {
-        ItemStack itemstack = new ItemStack(Items.field_151122_aG, 1, 0);
+        ItemStack itemstack = new ItemStack(Items.BOOK, 1, 0);
         EnchantmentHelper.func_77504_a(p_92112_1_, itemstack, 30);
         return new WeightedRandomChestContent(itemstack, p_92112_2_, p_92112_3_, p_92112_4_);
     }

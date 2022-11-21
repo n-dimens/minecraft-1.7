@@ -26,13 +26,13 @@ public class BlockRedstoneComparator extends BlockRedstoneDiode implements ITile
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151132_bS;
+        return Items.COMPARATOR;
     }
 
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151132_bS;
+        return Items.COMPARATOR;
     }
 
     protected int func_149901_b(int p_149901_1_)

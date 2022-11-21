@@ -55,6 +55,6 @@ public class EntityAIBeg extends EntityAIBase
     private boolean func_75382_a(EntityPlayer p_75382_1_)
     {
         ItemStack itemstack = p_75382_1_.field_71071_by.func_70448_g();
-        return itemstack == null ? false : (!this.field_75387_a.func_70909_n() && itemstack.func_77973_b() == Items.field_151103_aS ? true : this.field_75387_a.func_70877_b(itemstack));
+        return itemstack == null ? false : (!this.field_75387_a.func_70909_n() && itemstack.func_77973_b() == Items.BONE ? true : this.field_75387_a.func_70877_b(itemstack));
     }
 }

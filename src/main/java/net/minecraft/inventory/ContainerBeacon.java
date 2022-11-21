@@ -156,7 +156,7 @@ public class ContainerBeacon extends Container
 
         public boolean func_75214_a(ItemStack p_75214_1_)
         {
-            return p_75214_1_ == null ? false : p_75214_1_.func_77973_b() == Items.field_151166_bC || p_75214_1_.func_77973_b() == Items.field_151045_i || p_75214_1_.func_77973_b() == Items.field_151043_k || p_75214_1_.func_77973_b() == Items.field_151042_j;
+            return p_75214_1_ == null ? false : p_75214_1_.func_77973_b() == Items.EMERALD || p_75214_1_.func_77973_b() == Items.DIAMOND || p_75214_1_.func_77973_b() == Items.GOLD_INGOT || p_75214_1_.func_77973_b() == Items.IRON_INGOT;
         }
 
         public int func_75219_a()

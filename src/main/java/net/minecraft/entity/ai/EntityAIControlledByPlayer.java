@@ -153,13 +153,13 @@ public class EntityAIControlledByPlayer extends EntityAIBase
         {
             ItemStack itemstack = entityplayer.func_70694_bm();
 
-            if (itemstack != null && itemstack.func_77973_b() == Items.field_151146_bM)
+            if (itemstack != null && itemstack.func_77973_b() == Items.CARROT_ON_A_STICK)
             {
                 itemstack.func_77972_a(1, entityplayer);
 
                 if (itemstack.field_77994_a == 0)
                 {
-                    ItemStack itemstack1 = new ItemStack(Items.field_151112_aM);
+                    ItemStack itemstack1 = new ItemStack(Items.FISHING_ROD);
                     itemstack1.func_77982_d(itemstack.field_77990_d);
                     entityplayer.field_71071_by.field_70462_a[entityplayer.field_71071_by.field_70461_c] = itemstack1;
                 }

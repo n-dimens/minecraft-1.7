@@ -123,7 +123,7 @@ public class BlockJukebox extends BlockContainer
     public int func_149736_g(World p_149736_1_, int p_149736_2_, int p_149736_3_, int p_149736_4_, int p_149736_5_)
     {
         ItemStack itemstack = ((BlockJukebox.TileEntityJukebox)p_149736_1_.func_147438_o(p_149736_2_, p_149736_3_, p_149736_4_)).func_145856_a();
-        return itemstack == null ? 0 : Item.func_150891_b(itemstack.func_77973_b()) + 1 - Item.func_150891_b(Items.field_151096_cd);
+        return itemstack == null ? 0 : Item.func_150891_b(itemstack.func_77973_b()) + 1 - Item.func_150891_b(Items.RECORD_13);
     }
 
     public static class TileEntityJukebox extends TileEntity

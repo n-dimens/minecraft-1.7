@@ -336,13 +336,13 @@ public class EntityZombie extends EntityMob
         switch (this.field_70146_Z.nextInt(3))
         {
             case 0:
-                this.func_145779_a(Items.field_151042_j, 1);
+                this.func_145779_a(Items.IRON_INGOT, 1);
                 break;
             case 1:
-                this.func_145779_a(Items.field_151172_bF, 1);
+                this.func_145779_a(Items.CARROT, 1);
                 break;
             case 2:
-                this.func_145779_a(Items.field_151174_bG, 1);
+                this.func_145779_a(Items.POTATO, 1);
         }
     }
 
@@ -516,7 +516,7 @@ public class EntityZombie extends EntityMob
     {
         ItemStack itemstack = p_70085_1_.func_71045_bC();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151153_ao && itemstack.func_77960_j() == 0 && this.func_82231_m() && this.func_70644_a(Potion.field_76437_t))
+        if (itemstack != null && itemstack.func_77973_b() == Items.GOLDEN_APPLE && itemstack.func_77960_j() == 0 && this.func_82231_m() && this.func_70644_a(Potion.field_76437_t))
         {
             if (!p_70085_1_.field_71075_bZ.field_75098_d)
             {

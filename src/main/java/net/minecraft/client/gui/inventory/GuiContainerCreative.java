@@ -339,7 +339,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
 
             if (enchantment != null && enchantment.field_77351_y != null)
             {
-                Items.field_151134_bR.func_92113_a(enchantment, containercreative.field_148330_a);
+                Items.ENCHANTED_BOOK.func_92113_a(enchantment, containercreative.field_148330_a);
             }
         }
 
@@ -636,7 +636,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
             List list = p_146285_1_.func_82840_a(this.field_146297_k.field_71439_g, this.field_146297_k.gameSettings.field_82882_x);
             CreativeTabs creativetabs = p_146285_1_.func_77973_b().func_77640_w();
 
-            if (creativetabs == null && p_146285_1_.func_77973_b() == Items.field_151134_bR)
+            if (creativetabs == null && p_146285_1_.func_77973_b() == Items.ENCHANTED_BOOK)
             {
                 Map map = EnchantmentHelper.func_82781_a(p_146285_1_);
 

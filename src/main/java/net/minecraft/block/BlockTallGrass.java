@@ -71,7 +71,7 @@ public class BlockTallGrass extends BlockBush implements IGrowable
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return p_149650_2_.nextInt(8) == 0 ? Items.field_151014_N : null;
+        return p_149650_2_.nextInt(8) == 0 ? Items.WHEAT_SEEDS : null;
     }
 
     public int func_149679_a(int p_149679_1_, Random p_149679_2_)
@@ -81,7 +81,7 @@ public class BlockTallGrass extends BlockBush implements IGrowable
 
     public void func_149636_a(World p_149636_1_, EntityPlayer p_149636_2_, int p_149636_3_, int p_149636_4_, int p_149636_5_, int p_149636_6_)
     {
-        if (!p_149636_1_.field_72995_K && p_149636_2_.func_71045_bC() != null && p_149636_2_.func_71045_bC().func_77973_b() == Items.field_151097_aZ)
+        if (!p_149636_1_.field_72995_K && p_149636_2_.func_71045_bC() != null && p_149636_2_.func_71045_bC().func_77973_b() == Items.SHEARS)
         {
             p_149636_2_.func_71064_a(StatList.field_75934_C[Block.func_149682_b(this)], 1);
             this.func_149642_a(p_149636_1_, p_149636_3_, p_149636_4_, p_149636_5_, new ItemStack(Blocks.field_150329_H, 1, p_149636_6_));

@@ -104,7 +104,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
 
                 for (int i = 0; i < 3; ++i)
                 {
-                    if (this.field_145945_j[i] != null && this.field_145945_j[i].func_77973_b() == Items.field_151068_bn)
+                    if (this.field_145945_j[i] != null && this.field_145945_j[i].func_77973_b() == Items.POTION)
                     {
                         int j = this.field_145945_j[i].func_77960_j();
                         int k = this.func_145936_c(j, itemstack);
@@ -115,8 +115,8 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
                             break;
                         }
 
-                        List list = Items.field_151068_bn.func_77834_f(j);
-                        List list1 = Items.field_151068_bn.func_77834_f(k);
+                        List list = Items.POTION.func_77834_f(j);
+                        List list1 = Items.POTION.func_77834_f(k);
 
                         if ((j <= 0 || list != list1) && (list == null || !list.equals(list1) && list1 != null) && j != k)
                         {
@@ -143,12 +143,12 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
 
             for (int i = 0; i < 3; ++i)
             {
-                if (this.field_145945_j[i] != null && this.field_145945_j[i].func_77973_b() == Items.field_151068_bn)
+                if (this.field_145945_j[i] != null && this.field_145945_j[i].func_77973_b() == Items.POTION)
                 {
                     int j = this.field_145945_j[i].func_77960_j();
                     int k = this.func_145936_c(j, itemstack);
-                    List list = Items.field_151068_bn.func_77834_f(j);
-                    List list1 = Items.field_151068_bn.func_77834_f(k);
+                    List list = Items.POTION.func_77834_f(j);
+                    List list1 = Items.POTION.func_77834_f(k);
 
                     if ((j <= 0 || list != list1) && (list == null || !list.equals(list1) && list1 != null))
                     {
@@ -292,7 +292,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
 
     public boolean func_94041_b(int p_94041_1_, ItemStack p_94041_2_)
     {
-        return p_94041_1_ == 3 ? p_94041_2_.func_77973_b().func_150892_m(p_94041_2_) : p_94041_2_.func_77973_b() == Items.field_151068_bn || p_94041_2_.func_77973_b() == Items.field_151069_bo;
+        return p_94041_1_ == 3 ? p_94041_2_.func_77973_b().func_150892_m(p_94041_2_) : p_94041_2_.func_77973_b() == Items.POTION || p_94041_2_.func_77973_b() == Items.GLASS_BOTTLE;
     }
 
     @SideOnly(Side.CLIENT)

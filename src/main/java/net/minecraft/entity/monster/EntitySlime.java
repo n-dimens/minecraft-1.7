@@ -240,7 +240,7 @@ public class EntitySlime extends EntityLiving implements IMob
 
     protected Item droppingItem()
     {
-        return this.func_70809_q() == 1 ? Items.field_151123_aH : Item.func_150899_d(0);
+        return this.func_70809_q() == 1 ? Items.SLIME_BALL : Item.func_150899_d(0);
     }
 
     public boolean func_70601_bi()

@@ -156,7 +156,7 @@ public class EntityPigZombie extends EntityZombie
 
         for (k = 0; k < j; ++k)
         {
-            this.func_145779_a(Items.field_151074_bl, 1);
+            this.func_145779_a(Items.GOLD_NUGGET, 1);
         }
     }
 
@@ -167,7 +167,7 @@ public class EntityPigZombie extends EntityZombie
 
     protected void func_70600_l(int p_70600_1_)
     {
-        this.func_145779_a(Items.field_151043_k, 1);
+        this.func_145779_a(Items.GOLD_INGOT, 1);
     }
 
     protected void func_82164_bB()

@@ -40,7 +40,7 @@ public class EntityChicken extends EntityAnimal
         this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
         this.field_70714_bg.func_75776_a(1, new EntityAIPanic(this, 1.4D));
         this.field_70714_bg.func_75776_a(2, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.0D, Items.field_151014_N, false));
+        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.0D, Items.WHEAT_SEEDS, false));
         this.field_70714_bg.func_75776_a(4, new EntityAIFollowParent(this, 1.1D));
         this.field_70714_bg.func_75776_a(5, new EntityAIWander(this, 1.0D));
         this.field_70714_bg.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -93,7 +93,7 @@ public class EntityChicken extends EntityAnimal
         if (!this.field_70170_p.field_72995_K && !this.func_70631_g_() && !this.func_152116_bZ() && --this.field_70887_j <= 0)
         {
             this.func_85030_a("mob.chicken.plop", 1.0F, (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F);
-            this.func_145779_a(Items.field_151110_aK, 1);
+            this.func_145779_a(Items.EGG, 1);
             this.field_70887_j = this.field_70146_Z.nextInt(6000) + 6000;
         }
     }
@@ -122,7 +122,7 @@ public class EntityChicken extends EntityAnimal
 
     protected Item droppingItem()
     {
-        return Items.field_151008_G;
+        return Items.FEATHER;
     }
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
@@ -131,16 +131,16 @@ public class EntityChicken extends EntityAnimal
 
         for (int k = 0; k < j; ++k)
         {
-            this.func_145779_a(Items.field_151008_G, 1);
+            this.func_145779_a(Items.FEATHER, 1);
         }
 
         if (this.func_70027_ad())
         {
-            this.func_145779_a(Items.field_151077_bg, 1);
+            this.func_145779_a(Items.COOKED_CHICKEN, 1);
         }
         else
         {
-            this.func_145779_a(Items.field_151076_bf, 1);
+            this.func_145779_a(Items.CHICKEN, 1);
         }
     }
 

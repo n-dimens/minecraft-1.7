@@ -218,7 +218,7 @@ public class EntityItem extends Entity
         {
             return false;
         }
-        else if (this.func_92059_d() != null && this.func_92059_d().func_77973_b() == Items.field_151156_bN && p_70097_1_.func_94541_c())
+        else if (this.func_92059_d() != null && this.func_92059_d().func_77973_b() == Items.NETHER_STAR && p_70097_1_.func_94541_c())
         {
             return false;
         }
@@ -305,17 +305,17 @@ public class EntityItem extends Entity
                     p_70100_1_.func_71029_a(AchievementList.KILL_COW);
                 }
 
-                if (itemstack.func_77973_b() == Items.field_151045_i)
+                if (itemstack.func_77973_b() == Items.DIAMOND)
                 {
                     p_70100_1_.func_71029_a(AchievementList.DIAMONDS);
                 }
 
-                if (itemstack.func_77973_b() == Items.field_151072_bj)
+                if (itemstack.func_77973_b() == Items.BLAZE_ROD)
                 {
                     p_70100_1_.func_71029_a(AchievementList.BLAZE_ROD);
                 }
 
-                if (itemstack.func_77973_b() == Items.field_151045_i && this.func_145800_j() != null)
+                if (itemstack.func_77973_b() == Items.DIAMOND && this.func_145800_j() != null)
                 {
                     EntityPlayer entityplayer1 = this.field_70170_p.func_72924_a(this.func_145800_j());
 

@@ -348,7 +348,7 @@ public class EntityWolf extends EntityTameable
                         return true;
                     }
                 }
-                else if (itemstack.func_77973_b() == Items.field_151100_aR)
+                else if (itemstack.func_77973_b() == Items.DYE)
                 {
                     int i = BlockColored.func_150032_b(itemstack.func_77960_j());
 
@@ -375,7 +375,7 @@ public class EntityWolf extends EntityTameable
                 this.func_70624_b((EntityLivingBase)null);
             }
         }
-        else if (itemstack != null && itemstack.func_77973_b() == Items.field_151103_aS && !this.func_70919_bu())
+        else if (itemstack != null && itemstack.func_77973_b() == Items.BONE && !this.func_70919_bu())
         {
             if (!p_70085_1_.field_71075_bZ.field_75098_d)
             {

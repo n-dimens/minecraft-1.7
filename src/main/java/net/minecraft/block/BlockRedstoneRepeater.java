@@ -47,13 +47,13 @@ public class BlockRedstoneRepeater extends BlockRedstoneDiode
 
     public Item func_149650_a(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Items.field_151107_aW;
+        return Items.REPEATER;
     }
 
     @SideOnly(Side.CLIENT)
     public Item func_149694_d(World p_149694_1_, int p_149694_2_, int p_149694_3_, int p_149694_4_)
     {
-        return Items.field_151107_aW;
+        return Items.REPEATER;
     }
 
     public int func_149645_b()

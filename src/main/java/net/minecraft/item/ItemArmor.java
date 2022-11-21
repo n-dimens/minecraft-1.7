@@ -234,13 +234,13 @@ public class ItemArmor extends Item
         switch (p_94602_0_)
         {
             case 0:
-                return Items.field_151161_ac.field_94604_cx;
+                return Items.DIAMOND_HELMET.field_94604_cx;
             case 1:
-                return Items.field_151163_ad.field_94604_cx;
+                return Items.DIAMOND_CHESTPLATE.field_94604_cx;
             case 2:
-                return Items.field_151173_ae.field_94604_cx;
+                return Items.DIAMOND_LEGGINGS.field_94604_cx;
             case 3:
-                return Items.field_151175_af.field_94604_cx;
+                return Items.DIAMOND_BOOTS.field_94604_cx;
             default:
                 return null;
         }
@@ -283,7 +283,7 @@ public class ItemArmor extends Item
 
         public Item func_151685_b()
         {
-            return this == CLOTH ? Items.LEATHER : (this == CHAIN ? Items.field_151042_j : (this == GOLD ? Items.field_151043_k : (this == IRON ? Items.field_151042_j : (this == DIAMOND ? Items.field_151045_i : null))));
+            return this == CLOTH ? Items.LEATHER : (this == CHAIN ? Items.IRON_INGOT : (this == GOLD ? Items.GOLD_INGOT : (this == IRON ? Items.IRON_INGOT : (this == DIAMOND ? Items.DIAMOND : null))));
         }
     }
 }

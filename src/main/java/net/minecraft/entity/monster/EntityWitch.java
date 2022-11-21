@@ -33,7 +33,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
 {
     private static final UUID field_110184_bp = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
     private static final AttributeModifier field_110185_bq = (new AttributeModifier(field_110184_bp, "Drinking speed penalty", -0.25D, 0)).func_111168_a(false);
-    private static final Item[] field_82199_d = new Item[] {Items.field_151114_aO, Items.field_151102_aT, Items.field_151137_ax, Items.field_151070_bp, Items.field_151069_bo, Items.field_151016_H, Items.field_151055_y, Items.field_151055_y};
+    private static final Item[] field_82199_d = new Item[] {Items.GLOWSTONE_DUST, Items.SUGAR, Items.REDSTONE, Items.SPIDER_EYE, Items.GLASS_BOTTLE, Items.GUNPOWDER, Items.STICK, Items.STICK};
     private int field_82200_e;
     private static final String __OBFID = "CL_00001701";
 
@@ -104,9 +104,9 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
                     ItemStack itemstack = this.func_70694_bm();
                     this.func_70062_b(0, (ItemStack)null);
 
-                    if (itemstack != null && itemstack.func_77973_b() == Items.field_151068_bn)
+                    if (itemstack != null && itemstack.func_77973_b() == Items.POTION)
                     {
-                        List list = Items.field_151068_bn.func_77832_l(itemstack);
+                        List list = Items.POTION.func_77832_l(itemstack);
 
                         if (list != null)
                         {
@@ -150,7 +150,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
 
                 if (short1 > -1)
                 {
-                    this.func_70062_b(0, new ItemStack(Items.field_151068_bn, 1, short1));
+                    this.func_70062_b(0, new ItemStack(Items.POTION, 1, short1));
                     this.field_82200_e = this.func_70694_bm().func_77988_m();
                     this.func_82197_f(true);
                     IAttributeInstance iattributeinstance = this.func_110148_a(SharedMonsterAttributes.field_111263_d);

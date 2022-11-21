@@ -26,7 +26,7 @@ public class EntityPotion extends EntityThrowable
 
     public EntityPotion(World p_i1789_1_, EntityLivingBase p_i1789_2_, int p_i1789_3_)
     {
-        this(p_i1789_1_, p_i1789_2_, new ItemStack(Items.field_151068_bn, 1, p_i1789_3_));
+        this(p_i1789_1_, p_i1789_2_, new ItemStack(Items.POTION, 1, p_i1789_3_));
     }
 
     public EntityPotion(World p_i1790_1_, EntityLivingBase p_i1790_2_, ItemStack p_i1790_3_)
@@ -38,7 +38,7 @@ public class EntityPotion extends EntityThrowable
     @SideOnly(Side.CLIENT)
     public EntityPotion(World p_i1791_1_, double p_i1791_2_, double p_i1791_4_, double p_i1791_6_, int p_i1791_8_)
     {
-        this(p_i1791_1_, p_i1791_2_, p_i1791_4_, p_i1791_6_, new ItemStack(Items.field_151068_bn, 1, p_i1791_8_));
+        this(p_i1791_1_, p_i1791_2_, p_i1791_4_, p_i1791_6_, new ItemStack(Items.POTION, 1, p_i1791_8_));
     }
 
     public EntityPotion(World p_i1792_1_, double p_i1792_2_, double p_i1792_4_, double p_i1792_6_, ItemStack p_i1792_8_)
@@ -66,7 +66,7 @@ public class EntityPotion extends EntityThrowable
     {
         if (this.field_70197_d == null)
         {
-            this.field_70197_d = new ItemStack(Items.field_151068_bn, 1, 0);
+            this.field_70197_d = new ItemStack(Items.POTION, 1, 0);
         }
 
         this.field_70197_d.func_77964_b(p_82340_1_);
@@ -76,7 +76,7 @@ public class EntityPotion extends EntityThrowable
     {
         if (this.field_70197_d == null)
         {
-            this.field_70197_d = new ItemStack(Items.field_151068_bn, 1, 0);
+            this.field_70197_d = new ItemStack(Items.POTION, 1, 0);
         }
 
         return this.field_70197_d.func_77960_j();
@@ -86,7 +86,7 @@ public class EntityPotion extends EntityThrowable
     {
         if (!this.field_70170_p.field_72995_K)
         {
-            List list = Items.field_151068_bn.func_77832_l(this.field_70197_d);
+            List list = Items.POTION.func_77832_l(this.field_70197_d);
 
             if (list != null && !list.isEmpty())
             {

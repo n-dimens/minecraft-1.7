@@ -23,7 +23,7 @@ public class ItemGlassBottle extends Item
     @SideOnly(Side.CLIENT)
     public IIcon func_77617_a(int p_77617_1_)
     {
-        return Items.field_151068_bn.func_77617_a(0);
+        return Items.POTION.func_77617_a(0);
     }
 
     public ItemStack func_77659_a(ItemStack p_77659_1_, World p_77659_2_, EntityPlayer p_77659_3_)
@@ -58,12 +58,12 @@ public class ItemGlassBottle extends Item
 
                     if (p_77659_1_.field_77994_a <= 0)
                     {
-                        return new ItemStack(Items.field_151068_bn);
+                        return new ItemStack(Items.POTION);
                     }
 
-                    if (!p_77659_3_.field_71071_by.func_70441_a(new ItemStack(Items.field_151068_bn)))
+                    if (!p_77659_3_.field_71071_by.func_70441_a(new ItemStack(Items.POTION)))
                     {
-                        p_77659_3_.func_71019_a(new ItemStack(Items.field_151068_bn, 1, 0), false);
+                        p_77659_3_.func_71019_a(new ItemStack(Items.POTION, 1, 0), false);
                     }
                 }
             }

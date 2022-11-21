@@ -35,12 +35,12 @@ public class BlockPotato extends BlockCrops
 
     protected Item func_149866_i()
     {
-        return Items.field_151174_bG;
+        return Items.POTATO;
     }
 
     protected Item func_149865_P()
     {
-        return Items.field_151174_bG;
+        return Items.POTATO;
     }
 
     public void func_149690_a(World p_149690_1_, int p_149690_2_, int p_149690_3_, int p_149690_4_, int p_149690_5_, float p_149690_6_, int p_149690_7_)
@@ -51,7 +51,7 @@ public class BlockPotato extends BlockCrops
         {
             if (p_149690_5_ >= 7 && p_149690_1_.field_73012_v.nextInt(50) == 0)
             {
-                this.func_149642_a(p_149690_1_, p_149690_2_, p_149690_3_, p_149690_4_, new ItemStack(Items.field_151170_bI));
+                this.func_149642_a(p_149690_1_, p_149690_2_, p_149690_3_, p_149690_4_, new ItemStack(Items.POISONOUS_POTATO));
             }
         }
     }

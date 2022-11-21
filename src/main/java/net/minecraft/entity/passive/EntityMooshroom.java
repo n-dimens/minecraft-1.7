@@ -22,22 +22,22 @@ public class EntityMooshroom extends EntityCow
     {
         ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151054_z && this.func_70874_b() >= 0)
+        if (itemstack != null && itemstack.func_77973_b() == Items.BOWL && this.func_70874_b() >= 0)
         {
             if (itemstack.field_77994_a == 1)
             {
-                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, new ItemStack(Items.field_151009_A));
+                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, new ItemStack(Items.MUSHROOM_STEW));
                 return true;
             }
 
-            if (p_70085_1_.field_71071_by.func_70441_a(new ItemStack(Items.field_151009_A)) && !p_70085_1_.field_71075_bZ.field_75098_d)
+            if (p_70085_1_.field_71071_by.func_70441_a(new ItemStack(Items.MUSHROOM_STEW)) && !p_70085_1_.field_71075_bZ.field_75098_d)
             {
                 p_70085_1_.field_71071_by.func_70298_a(p_70085_1_.field_71071_by.field_70461_c, 1);
                 return true;
             }
         }
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.field_151097_aZ && this.func_70874_b() >= 0)
+        if (itemstack != null && itemstack.func_77973_b() == Items.SHEARS && this.func_70874_b() >= 0)
         {
             this.func_70106_y();
             this.field_70170_p.func_72869_a("largeexplode", this.field_70165_t, this.field_70163_u + (double)(this.field_70131_O / 2.0F), this.field_70161_v, 0.0D, 0.0D, 0.0D);

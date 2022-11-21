@@ -2299,11 +2299,11 @@ public class Minecraft implements IPlayerUsage
 
                 if (this.field_71476_x.field_72308_g instanceof EntityPainting)
                 {
-                    item = Items.field_151159_an;
+                    item = Items.PAINTING;
                 }
                 else if (this.field_71476_x.field_72308_g instanceof EntityLeashKnot)
                 {
-                    item = Items.field_151058_ca;
+                    item = Items.LEAD;
                 }
                 else if (this.field_71476_x.field_72308_g instanceof EntityItemFrame)
                 {
@@ -2312,7 +2312,7 @@ public class Minecraft implements IPlayerUsage
 
                     if (itemstack == null)
                     {
-                        item = Items.field_151160_bD;
+                        item = Items.ITEM_FRAME;
                     }
                     else
                     {
@@ -2327,36 +2327,36 @@ public class Minecraft implements IPlayerUsage
 
                     if (entityminecart.func_94087_l() == 2)
                     {
-                        item = Items.field_151109_aJ;
+                        item = Items.FURNACE_MINECART;
                     }
                     else if (entityminecart.func_94087_l() == 1)
                     {
-                        item = Items.field_151108_aI;
+                        item = Items.CHEST_MINECART;
                     }
                     else if (entityminecart.func_94087_l() == 3)
                     {
-                        item = Items.field_151142_bV;
+                        item = Items.TNT_MINECART;
                     }
                     else if (entityminecart.func_94087_l() == 5)
                     {
-                        item = Items.field_151140_bW;
+                        item = Items.HOPPER_MINECART;
                     }
                     else if (entityminecart.func_94087_l() == 6)
                     {
-                        item = Items.field_151095_cc;
+                        item = Items.COMMAND_BLOCK_MINECART;
                     }
                     else
                     {
-                        item = Items.field_151143_au;
+                        item = Items.MINECART;
                     }
                 }
                 else if (this.field_71476_x.field_72308_g instanceof EntityBoat)
                 {
-                    item = Items.field_151124_az;
+                    item = Items.BOAT;
                 }
                 else
                 {
-                    item = Items.field_151063_bx;
+                    item = Items.SPAWN_EGG;
                     i = EntityList.func_75619_a(this.field_71476_x.field_72308_g);
                     flag1 = true;
 

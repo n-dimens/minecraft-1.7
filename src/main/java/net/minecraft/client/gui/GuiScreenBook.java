@@ -165,7 +165,7 @@ public class GuiScreenBook extends GuiScreen
                     s = "MC|BSign";
                     this.field_146474_h.func_77983_a("author", new NBTTagString(this.field_146468_g.func_70005_c_()));
                     this.field_146474_h.func_77983_a("title", new NBTTagString(this.field_146482_z.trim()));
-                    this.field_146474_h.func_150996_a(Items.field_151164_bB);
+                    this.field_146474_h.func_150996_a(Items.WRITTEN_BOOK);
                 }
 
                 ByteBuf bytebuf = Unpooled.buffer();
