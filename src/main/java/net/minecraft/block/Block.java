@@ -121,7 +121,7 @@ public class Block
     {
         if (field_149771_c.func_148741_d(p_149684_0_))
         {
-            return (Block)field_149771_c.func_82594_a(p_149684_0_);
+            return (Block)field_149771_c.getById(p_149684_0_);
         }
         else
         {

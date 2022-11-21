@@ -21,9 +21,9 @@ public class RegistryNamespacedDefaultedByKey extends RegistryNamespaced
         super.func_148756_a(p_148756_1_, p_148756_2_, p_148756_3_);
     }
 
-    public Object func_82594_a(String p_82594_1_)
+    public Object getById(String id)
     {
-        Object object = super.func_82594_a(p_82594_1_);
+        Object object = super.getById(id);
         return object == null ? this.field_148761_e : object;
     }
 
@@ -33,8 +33,9 @@ public class RegistryNamespacedDefaultedByKey extends RegistryNamespaced
         return object == null ? this.field_148761_e : object;
     }
 
-    public Object func_82594_a(Object p_82594_1_)
+    @Override
+    public Object get(Object key)
     {
-        return this.func_82594_a((String)p_82594_1_);
+        return this.getById((String) key);
     }
 }

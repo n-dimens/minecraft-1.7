@@ -41,7 +41,7 @@ public class Bootstrap
 
     static void func_151353_a()
     {
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151032_g, new BehaviorProjectileDispense()
+        BlockDispenser.field_149943_a.add(Items.field_151032_g, new BehaviorProjectileDispense()
         {
             private static final String __OBFID = "CL_00001398";
             protected IProjectile func_82499_a(World p_82499_1_, IPosition p_82499_2_)
@@ -51,7 +51,7 @@ public class Bootstrap
                 return entityarrow;
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151110_aK, new BehaviorProjectileDispense()
+        BlockDispenser.field_149943_a.add(Items.field_151110_aK, new BehaviorProjectileDispense()
         {
             private static final String __OBFID = "CL_00001404";
             protected IProjectile func_82499_a(World p_82499_1_, IPosition p_82499_2_)
@@ -59,7 +59,7 @@ public class Bootstrap
                 return new EntityEgg(p_82499_1_, p_82499_2_.func_82615_a(), p_82499_2_.func_82617_b(), p_82499_2_.func_82616_c());
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151126_ay, new BehaviorProjectileDispense()
+        BlockDispenser.field_149943_a.add(Items.field_151126_ay, new BehaviorProjectileDispense()
         {
             private static final String __OBFID = "CL_00001405";
             protected IProjectile func_82499_a(World p_82499_1_, IPosition p_82499_2_)
@@ -67,7 +67,7 @@ public class Bootstrap
                 return new EntitySnowball(p_82499_1_, p_82499_2_.func_82615_a(), p_82499_2_.func_82617_b(), p_82499_2_.func_82616_c());
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151062_by, new BehaviorProjectileDispense()
+        BlockDispenser.field_149943_a.add(Items.field_151062_by, new BehaviorProjectileDispense()
         {
             private static final String __OBFID = "CL_00001406";
             protected IProjectile func_82499_a(World p_82499_1_, IPosition p_82499_2_)
@@ -83,7 +83,7 @@ public class Bootstrap
                 return super.func_82500_b() * 1.25F;
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151068_bn, new IBehaviorDispenseItem()
+        BlockDispenser.field_149943_a.add(Items.field_151068_bn, new IBehaviorDispenseItem()
         {
             private final BehaviorDefaultDispenseItem field_150843_b = new BehaviorDefaultDispenseItem();
             private static final String __OBFID = "CL_00001407";
@@ -107,7 +107,7 @@ public class Bootstrap
                 }).func_82482_a(p_82482_1_, p_82482_2_): this.field_150843_b.func_82482_a(p_82482_1_, p_82482_2_);
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151063_bx, new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Items.field_151063_bx, new BehaviorDefaultDispenseItem()
         {
             private static final String __OBFID = "CL_00001410";
             public ItemStack func_82487_b(IBlockSource p_82487_1_, ItemStack p_82487_2_)
@@ -127,7 +127,7 @@ public class Bootstrap
                 return p_82487_2_;
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151152_bP, new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Items.field_151152_bP, new BehaviorDefaultDispenseItem()
         {
             private static final String __OBFID = "CL_00001411";
             public ItemStack func_82487_b(IBlockSource p_82487_1_, ItemStack p_82487_2_)
@@ -146,7 +146,7 @@ public class Bootstrap
                 p_82485_1_.func_82618_k().func_72926_e(1002, p_82485_1_.func_82623_d(), p_82485_1_.func_82622_e(), p_82485_1_.func_82621_f(), 0);
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151059_bz, new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Items.field_151059_bz, new BehaviorDefaultDispenseItem()
         {
             private static final String __OBFID = "CL_00001412";
             public ItemStack func_82487_b(IBlockSource p_82487_1_, ItemStack p_82487_2_)
@@ -170,7 +170,7 @@ public class Bootstrap
                 p_82485_1_.func_82618_k().func_72926_e(1009, p_82485_1_.func_82623_d(), p_82485_1_.func_82622_e(), p_82485_1_.func_82621_f(), 0);
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151124_az, new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Items.field_151124_az, new BehaviorDefaultDispenseItem()
         {
             private final BehaviorDefaultDispenseItem field_150842_b = new BehaviorDefaultDispenseItem();
             private static final String __OBFID = "CL_00001413";
@@ -235,9 +235,9 @@ public class Bootstrap
                 }
             }
         };
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151129_at, behaviordefaultdispenseitem);
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151131_as, behaviordefaultdispenseitem);
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151133_ar, new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Items.field_151129_at, behaviordefaultdispenseitem);
+        BlockDispenser.field_149943_a.add(Items.field_151131_as, behaviordefaultdispenseitem);
+        BlockDispenser.field_149943_a.add(Items.field_151133_ar, new BehaviorDefaultDispenseItem()
         {
             private final BehaviorDefaultDispenseItem field_150840_b = new BehaviorDefaultDispenseItem();
             private static final String __OBFID = "CL_00001400";
@@ -281,7 +281,7 @@ public class Bootstrap
                 return p_82487_2_;
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151033_d, new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Items.field_151033_d, new BehaviorDefaultDispenseItem()
         {
             private boolean field_150839_b = true;
             private static final String __OBFID = "CL_00001401";
@@ -326,7 +326,7 @@ public class Bootstrap
                 }
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Items.field_151100_aR, new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Items.field_151100_aR, new BehaviorDefaultDispenseItem()
         {
             private boolean field_150838_b = true;
             private static final String __OBFID = "CL_00001402";
@@ -371,7 +371,7 @@ public class Bootstrap
                 }
             }
         });
-        BlockDispenser.field_149943_a.func_82595_a(Item.func_150898_a(Blocks.field_150335_W), new BehaviorDefaultDispenseItem()
+        BlockDispenser.field_149943_a.add(Item.func_150898_a(Blocks.field_150335_W), new BehaviorDefaultDispenseItem()
         {
             private static final String __OBFID = "CL_00001403";
             protected ItemStack func_82487_b(IBlockSource p_82487_1_, ItemStack p_82487_2_)

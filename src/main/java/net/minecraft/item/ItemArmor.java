@@ -79,7 +79,7 @@ public class ItemArmor extends Item
         this.func_77656_e(p_i45325_1_.func_78046_a(p_i45325_3_));
         this.field_77777_bU = 1;
         this.func_77637_a(CreativeTabs.field_78037_j);
-        BlockDispenser.field_149943_a.func_82595_a(this, field_96605_cw);
+        BlockDispenser.field_149943_a.add(this, field_96605_cw);
     }
 
     @SideOnly(Side.CLIENT)

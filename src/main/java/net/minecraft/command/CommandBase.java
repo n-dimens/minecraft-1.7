@@ -299,7 +299,7 @@ public abstract class CommandBase implements ICommand
 
     public static Item func_147179_f(ICommandSender p_147179_0_, String p_147179_1_)
     {
-        Item item = (Item)Item.field_150901_e.func_82594_a(p_147179_1_);
+        Item item = (Item)Item.REGISTRY.getById(p_147179_1_);
 
         if (item == null)
         {
@@ -309,7 +309,7 @@ public abstract class CommandBase implements ICommand
 
                 if (item1 != null)
                 {
-                    ChatComponentTranslation chatcomponenttranslation = new ChatComponentTranslation("commands.generic.deprecatedId", new Object[] {Item.field_150901_e.func_148750_c(item1)});
+                    ChatComponentTranslation chatcomponenttranslation = new ChatComponentTranslation("commands.generic.deprecatedId", new Object[] {Item.REGISTRY.func_148750_c(item1)});
                     chatcomponenttranslation.func_150256_b().func_150238_a(EnumChatFormatting.GRAY);
                     p_147179_0_.func_145747_a(chatcomponenttranslation);
                 }
@@ -336,7 +336,7 @@ public abstract class CommandBase implements ICommand
     {
         if (Block.field_149771_c.func_148741_d(p_147180_1_))
         {
-            return (Block)Block.field_149771_c.func_82594_a(p_147180_1_);
+            return (Block)Block.field_149771_c.getById(p_147180_1_);
         }
         else
         {

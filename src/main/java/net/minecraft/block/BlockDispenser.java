@@ -153,7 +153,7 @@ public class BlockDispenser extends BlockContainer
 
     protected IBehaviorDispenseItem func_149940_a(ItemStack p_149940_1_)
     {
-        return (IBehaviorDispenseItem)field_149943_a.func_82594_a(p_149940_1_.func_77973_b());
+        return (IBehaviorDispenseItem)field_149943_a.get(p_149940_1_.func_77973_b());
     }
 
     public void func_149695_a(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_)

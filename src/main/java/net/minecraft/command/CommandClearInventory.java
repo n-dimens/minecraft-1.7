@@ -57,7 +57,7 @@ public class CommandClearInventory extends CommandBase
 
     public List func_71516_a(ICommandSender p_71516_1_, String[] p_71516_2_)
     {
-        return p_71516_2_.length == 1 ? func_71530_a(p_71516_2_, this.func_147209_d()) : (p_71516_2_.length == 2 ? func_71531_a(p_71516_2_, Item.field_150901_e.func_148742_b()) : null);
+        return p_71516_2_.length == 1 ? func_71530_a(p_71516_2_, this.func_147209_d()) : (p_71516_2_.length == 2 ? func_71531_a(p_71516_2_, Item.REGISTRY.func_148742_b()) : null);
     }
 
     protected String[] func_147209_d()

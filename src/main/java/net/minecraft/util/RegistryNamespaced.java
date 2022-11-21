@@ -13,23 +13,23 @@ public class RegistryNamespaced extends RegistrySimple implements IObjectIntIter
 
     public RegistryNamespaced()
     {
-        this.field_148758_b = ((BiMap)this.field_82596_a).inverse();
+        this.field_148758_b = ((BiMap)this.registry).inverse();
     }
 
     public void func_148756_a(int p_148756_1_, String p_148756_2_, Object p_148756_3_)
     {
         this.field_148759_a.func_148746_a(p_148756_3_, p_148756_1_);
-        this.func_82595_a(func_148755_c(p_148756_2_), p_148756_3_);
+        this.add(getFullId(p_148756_2_), p_148756_3_);
     }
 
-    protected Map func_148740_a()
+    protected Map createEmpty()
     {
         return HashBiMap.create();
     }
 
-    public Object func_82594_a(String p_82594_1_)
+    public Object getById(String id)
     {
-        return super.func_82594_a(func_148755_c(p_82594_1_));
+        return super.get(getFullId(id));
     }
 
     public String func_148750_c(Object p_148750_1_)
@@ -39,7 +39,7 @@ public class RegistryNamespaced extends RegistrySimple implements IObjectIntIter
 
     public boolean func_148741_d(String p_148741_1_)
     {
-        return super.func_148741_d(func_148755_c(p_148741_1_));
+        return super.func_148741_d(getFullId(p_148741_1_));
     }
 
     public int func_148757_b(Object p_148757_1_)
@@ -62,9 +62,9 @@ public class RegistryNamespaced extends RegistrySimple implements IObjectIntIter
         return this.field_148759_a.func_148744_b(p_148753_1_);
     }
 
-    protected static String func_148755_c(String p_148755_0_)
+    protected static String getFullId(String id)
     {
-        return p_148755_0_.indexOf(58) == -1 ? "minecraft:" + p_148755_0_ : p_148755_0_;
+        return id.indexOf(58) == -1 ? "minecraft:" + id : id;
     }
 
     public boolean func_148741_d(Object p_148741_1_)
@@ -72,8 +72,9 @@ public class RegistryNamespaced extends RegistrySimple implements IObjectIntIter
         return this.func_148741_d((String)p_148741_1_);
     }
 
-    public Object func_82594_a(Object p_82594_1_)
+    @Override
+    public Object get(Object key)
     {
-        return this.func_82594_a((String)p_82594_1_);
+        return this.getById((String) key);
     }
 }

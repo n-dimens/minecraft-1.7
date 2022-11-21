@@ -318,7 +318,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
     {
         GuiContainerCreative.ContainerCreative containercreative = (GuiContainerCreative.ContainerCreative)this.field_147002_h;
         containercreative.field_148330_a.clear();
-        Iterator iterator = Item.field_150901_e.iterator();
+        Iterator iterator = Item.REGISTRY.iterator();
 
         while (iterator.hasNext())
         {

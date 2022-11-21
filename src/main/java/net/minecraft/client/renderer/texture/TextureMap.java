@@ -304,7 +304,7 @@ public class TextureMap extends AbstractTexture implements ITickableTextureObjec
             RenderManager.field_78727_a.func_94178_a(this);
         }
 
-        iterator = Item.field_150901_e.iterator();
+        iterator = Item.REGISTRY.iterator();
 
         while (iterator.hasNext())
         {

@@ -28,7 +28,7 @@ public class IMetadataSerializer
 
     public void func_110504_a(IMetadataSectionSerializer p_110504_1_, Class p_110504_2_)
     {
-        this.field_110508_a.func_82595_a(p_110504_1_.func_110483_a(), new IMetadataSerializer.Registration(p_110504_1_, p_110504_2_, null));
+        this.field_110508_a.add(p_110504_1_.func_110483_a(), new IMetadataSerializer.Registration(p_110504_1_, p_110504_2_, null));
         this.field_110506_b.registerTypeAdapter(p_110504_2_, p_110504_1_);
         this.field_110507_c = null;
     }
@@ -49,7 +49,7 @@ public class IMetadataSerializer
         }
         else
         {
-            IMetadataSerializer.Registration registration = (IMetadataSerializer.Registration)this.field_110508_a.func_82594_a(p_110503_1_);
+            IMetadataSerializer.Registration registration = (IMetadataSerializer.Registration)this.field_110508_a.get(p_110503_1_);
 
             if (registration == null)
             {

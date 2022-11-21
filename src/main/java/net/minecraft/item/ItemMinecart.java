@@ -70,7 +70,7 @@ public class ItemMinecart extends Item
         this.field_77777_bU = 1;
         this.field_77841_a = p_i45345_1_;
         this.func_77637_a(CreativeTabs.field_78029_e);
-        BlockDispenser.field_149943_a.func_82595_a(this, field_96602_b);
+        BlockDispenser.field_149943_a.add(this, field_96602_b);
     }
 
     public boolean func_77648_a(ItemStack p_77648_1_, EntityPlayer p_77648_2_, World p_77648_3_, int p_77648_4_, int p_77648_5_, int p_77648_6_, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_)

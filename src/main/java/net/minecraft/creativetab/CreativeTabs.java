@@ -272,7 +272,7 @@ public abstract class CreativeTabs
     @SideOnly(Side.CLIENT)
     public void func_78018_a(List p_78018_1_)
     {
-        Iterator iterator = Item.field_150901_e.iterator();
+        Iterator iterator = Item.REGISTRY.iterator();
 
         while (iterator.hasNext())
         {

@@ -127,7 +127,7 @@ public class StatList
 
     private static void func_75925_c()
     {
-        Iterator iterator = Item.field_150901_e.iterator();
+        Iterator iterator = Item.REGISTRY.iterator();
 
         while (iterator.hasNext())
         {
@@ -150,7 +150,7 @@ public class StatList
 
     private static void func_151179_e()
     {
-        Iterator iterator = Item.field_150901_e.iterator();
+        Iterator iterator = Item.REGISTRY.iterator();
 
         while (iterator.hasNext())
         {

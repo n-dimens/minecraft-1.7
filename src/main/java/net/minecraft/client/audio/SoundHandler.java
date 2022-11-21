@@ -109,7 +109,7 @@ public class SoundHandler implements IResourceManagerReloadListener, IUpdatePlay
 
         if (this.field_147697_e.func_148741_d(p_147693_1_) && !p_147693_2_.func_148574_b())
         {
-            soundeventaccessorcomposite = (SoundEventAccessorComposite)this.field_147697_e.func_82594_a(p_147693_1_);
+            soundeventaccessorcomposite = (SoundEventAccessorComposite)this.field_147697_e.get(p_147693_1_);
         }
         else
         {
@@ -157,12 +157,12 @@ public class SoundHandler implements IResourceManagerReloadListener, IUpdatePlay
                         private static final String __OBFID = "CL_00001149";
                         public int func_148721_a()
                         {
-                            SoundEventAccessorComposite soundeventaccessorcomposite1 = (SoundEventAccessorComposite)SoundHandler.this.field_147697_e.func_82594_a(this.field_148726_a);
+                            SoundEventAccessorComposite soundeventaccessorcomposite1 = (SoundEventAccessorComposite)SoundHandler.this.field_147697_e.get(this.field_148726_a);
                             return soundeventaccessorcomposite1 == null ? 0 : soundeventaccessorcomposite1.func_148721_a();
                         }
                         public SoundPoolEntry func_148720_g()
                         {
-                            SoundEventAccessorComposite soundeventaccessorcomposite1 = (SoundEventAccessorComposite)SoundHandler.this.field_147697_e.func_82594_a(this.field_148726_a);
+                            SoundEventAccessorComposite soundeventaccessorcomposite1 = (SoundEventAccessorComposite)SoundHandler.this.field_147697_e.get(this.field_148726_a);
                             return soundeventaccessorcomposite1 == null ? SoundHandler.field_147700_a : soundeventaccessorcomposite1.func_148720_g();
                         }
                     };
@@ -177,7 +177,7 @@ public class SoundHandler implements IResourceManagerReloadListener, IUpdatePlay
 
     public SoundEventAccessorComposite func_147680_a(ResourceLocation p_147680_1_)
     {
-        return (SoundEventAccessorComposite)this.field_147697_e.func_82594_a(p_147680_1_);
+        return (SoundEventAccessorComposite)this.field_147697_e.get(p_147680_1_);
     }
 
     public void func_147682_a(ISound p_147682_1_)
@@ -243,7 +243,7 @@ public class SoundHandler implements IResourceManagerReloadListener, IUpdatePlay
         while (iterator.hasNext())
         {
             ResourceLocation resourcelocation = (ResourceLocation)iterator.next();
-            SoundEventAccessorComposite soundeventaccessorcomposite = (SoundEventAccessorComposite)this.field_147697_e.func_82594_a(resourcelocation);
+            SoundEventAccessorComposite soundeventaccessorcomposite = (SoundEventAccessorComposite)this.field_147697_e.get(resourcelocation);
 
             if (ArrayUtils.contains(p_147686_1_, soundeventaccessorcomposite.func_148728_d()))
             {
