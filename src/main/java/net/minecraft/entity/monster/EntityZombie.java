@@ -355,11 +355,11 @@ public class EntityZombie extends EntityMob
 
             if (i == 0)
             {
-                this.func_70062_b(0, new ItemStack(Items.field_151040_l));
+                this.func_70062_b(0, new ItemStack(Items.IRON_SWORD));
             }
             else
             {
-                this.func_70062_b(0, new ItemStack(Items.field_151037_a));
+                this.func_70062_b(0, new ItemStack(Items.IRON_SHOVEL));
             }
         }
     }

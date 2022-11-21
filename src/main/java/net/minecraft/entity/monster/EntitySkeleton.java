@@ -248,7 +248,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
         {
             this.field_70714_bg.func_75776_a(4, this.field_85038_e);
             this.func_82201_a(1);
-            this.func_70062_b(0, new ItemStack(Items.field_151052_q));
+            this.func_70062_b(0, new ItemStack(Items.STONE_SWORD));
             this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(4.0D);
         }
         else

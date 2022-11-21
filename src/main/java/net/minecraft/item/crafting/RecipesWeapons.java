@@ -13,7 +13,7 @@ public class RecipesWeapons
 
     public RecipesWeapons()
     {
-        this.field_77584_b = new Object[][] {{Blocks.field_150344_f, Blocks.field_150347_e, Items.field_151042_j, Items.field_151045_i, Items.field_151043_k}, {Items.field_151041_m, Items.field_151052_q, Items.field_151040_l, Items.field_151048_u, Items.field_151010_B}};
+        this.field_77584_b = new Object[][] {{Blocks.field_150344_f, Blocks.field_150347_e, Items.field_151042_j, Items.field_151045_i, Items.field_151043_k}, {Items.WOODEN_SWORD, Items.STONE_SWORD, Items.IRON_SWORD, Items.DIAMOND_SWORD, Items.GOLDEN_SWORD}};
     }
 
     public void func_77583_a(CraftingManager p_77583_1_)

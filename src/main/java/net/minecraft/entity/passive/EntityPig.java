@@ -171,7 +171,7 @@ public class EntityPig extends EntityAnimal
         if (!this.field_70170_p.field_72995_K)
         {
             EntityPigZombie entitypigzombie = new EntityPigZombie(this.field_70170_p);
-            entitypigzombie.func_70062_b(0, new ItemStack(Items.field_151010_B));
+            entitypigzombie.func_70062_b(0, new ItemStack(Items.GOLDEN_SWORD));
             entitypigzombie.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, this.field_70125_A);
             this.field_70170_p.func_72838_d(entitypigzombie);
             this.func_70106_y();

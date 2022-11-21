@@ -172,7 +172,7 @@ public class EntityPigZombie extends EntityZombie
 
     protected void func_82164_bB()
     {
-        this.func_70062_b(0, new ItemStack(Items.field_151010_B));
+        this.func_70062_b(0, new ItemStack(Items.GOLDEN_SWORD));
     }
 
     public IEntityLivingData func_110161_a(IEntityLivingData p_110161_1_)

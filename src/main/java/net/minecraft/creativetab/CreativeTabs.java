@@ -89,7 +89,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Items.field_151036_c;
+            return Items.IRON_AXE;
         }
     }).func_111229_a(new EnumEnchantmentType[] {EnumEnchantmentType.digger, EnumEnchantmentType.fishing_rod, EnumEnchantmentType.breakable});
     public static final CreativeTabs field_78037_j = (new CreativeTabs(8, "combat")
@@ -98,7 +98,7 @@ public abstract class CreativeTabs
         @SideOnly(Side.CLIENT)
         public Item func_78016_d()
         {
-            return Items.field_151010_B;
+            return Items.GOLDEN_SWORD;
         }
     }).func_111229_a(new EnumEnchantmentType[] {EnumEnchantmentType.armor, EnumEnchantmentType.armor_feet, EnumEnchantmentType.armor_head, EnumEnchantmentType.armor_legs, EnumEnchantmentType.armor_torso, EnumEnchantmentType.bow, EnumEnchantmentType.weapon});
     public static final CreativeTabs field_78038_k = new CreativeTabs(9, "brewing")
