@@ -184,7 +184,7 @@ public class EntityPig extends EntityAnimal
 
         if (p_70069_1_ > 5.0F && this.field_70153_n instanceof EntityPlayer)
         {
-            ((EntityPlayer)this.field_70153_n).func_71029_a(AchievementList.field_76021_u);
+            ((EntityPlayer)this.field_70153_n).func_71029_a(AchievementList.FLY_PIG);
         }
     }
 

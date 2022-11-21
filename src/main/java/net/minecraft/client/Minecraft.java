@@ -495,7 +495,7 @@ public class Minecraft implements IPlayerUsage
         RenderManager.field_78727_a.field_78721_f = new ItemRenderer(this);
         this.field_71460_t = new EntityRenderer(this, this.field_110451_am);
         this.field_110451_am.func_110542_a(this.field_71460_t);
-        AchievementList.OpenInventory.func_75988_a(new IStatStringFormat()
+        AchievementList.OPEN_INVENTORY.func_75988_a(new IStatStringFormat()
         {
             private static final String __OBFID = "CL_00000639";
             public String func_74535_a(String p_74535_1_)

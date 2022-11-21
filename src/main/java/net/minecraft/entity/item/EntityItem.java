@@ -292,27 +292,27 @@ public class EntityItem extends Entity
             {
                 if (itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150364_r))
                 {
-                    p_70100_1_.func_71029_a(AchievementList.field_76005_g);
+                    p_70100_1_.func_71029_a(AchievementList.MINE_WOOD);
                 }
 
                 if (itemstack.func_77973_b() == Item.func_150898_a(Blocks.field_150363_s))
                 {
-                    p_70100_1_.func_71029_a(AchievementList.field_76005_g);
+                    p_70100_1_.func_71029_a(AchievementList.MINE_WOOD);
                 }
 
                 if (itemstack.func_77973_b() == Items.field_151116_aA)
                 {
-                    p_70100_1_.func_71029_a(AchievementList.field_76022_t);
+                    p_70100_1_.func_71029_a(AchievementList.KILL_COW);
                 }
 
                 if (itemstack.func_77973_b() == Items.field_151045_i)
                 {
-                    p_70100_1_.func_71029_a(AchievementList.field_76019_w);
+                    p_70100_1_.func_71029_a(AchievementList.DIAMONDS);
                 }
 
                 if (itemstack.func_77973_b() == Items.field_151072_bj)
                 {
-                    p_70100_1_.func_71029_a(AchievementList.field_76027_z);
+                    p_70100_1_.func_71029_a(AchievementList.BLAZE_ROD);
                 }
 
                 if (itemstack.func_77973_b() == Items.field_151045_i && this.func_145800_j() != null)
@@ -321,7 +321,7 @@ public class EntityItem extends Entity
 
                     if (entityplayer1 != null && entityplayer1 != p_70100_1_)
                     {
-                        entityplayer1.func_71029_a(AchievementList.field_150966_x);
+                        entityplayer1.func_71029_a(AchievementList.DIAMONDS_TO_YOU);
                     }
                 }
 

@@ -1288,7 +1288,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
                     this.field_147299_f.field_71458_u.func_146256_a(achievement);
                     this.field_147299_f.func_152346_Z().func_152911_a(new MetadataAchievement(achievement), 0L);
 
-                    if (statbase == AchievementList.OpenInventory)
+                    if (statbase == AchievementList.OPEN_INVENTORY)
                     {
                         this.field_147299_f.gameSettings.field_151441_H = false;
                         this.field_147299_f.gameSettings.func_74303_b();
@@ -1301,7 +1301,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
 
         if (!this.field_147308_k && !flag && this.field_147299_f.gameSettings.field_151441_H)
         {
-            this.field_147299_f.field_71458_u.func_146255_b(AchievementList.OpenInventory);
+            this.field_147299_f.field_71458_u.func_146255_b(AchievementList.OPEN_INVENTORY);
         }
 
         this.field_147308_k = true;

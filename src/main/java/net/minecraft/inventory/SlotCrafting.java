@@ -52,52 +52,52 @@ public class SlotCrafting extends Slot
 
         if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.field_150462_ai))
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76017_h, 1);
+            this.field_75238_b.func_71064_a(AchievementList.BUILD_WORK_BENCH, 1);
         }
 
         if (p_75208_1_.func_77973_b() instanceof ItemPickaxe)
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76018_i, 1);
+            this.field_75238_b.func_71064_a(AchievementList.BUILD_PICKAXE, 1);
         }
 
         if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.field_150460_al))
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76015_j, 1);
+            this.field_75238_b.func_71064_a(AchievementList.BUILD_FURNACE, 1);
         }
 
         if (p_75208_1_.func_77973_b() instanceof ItemHoe)
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76013_l, 1);
+            this.field_75238_b.func_71064_a(AchievementList.BUILD_HOE, 1);
         }
 
         if (p_75208_1_.func_77973_b() == Items.field_151025_P)
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76014_m, 1);
+            this.field_75238_b.func_71064_a(AchievementList.MAKE_BREAD, 1);
         }
 
         if (p_75208_1_.func_77973_b() == Items.field_151105_aU)
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76011_n, 1);
+            this.field_75238_b.func_71064_a(AchievementList.BAKE_CAKE, 1);
         }
 
         if (p_75208_1_.func_77973_b() instanceof ItemPickaxe && ((ItemPickaxe)p_75208_1_.func_77973_b()).func_150913_i() != Item.ToolMaterial.WOOD)
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76012_o, 1);
+            this.field_75238_b.func_71064_a(AchievementList.BUILD_BETTER_PICKAXE, 1);
         }
 
         if (p_75208_1_.func_77973_b() instanceof ItemSword)
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76024_r, 1);
+            this.field_75238_b.func_71064_a(AchievementList.BUILD_SWORD, 1);
         }
 
         if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.field_150381_bn))
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_75998_D, 1);
+            this.field_75238_b.func_71064_a(AchievementList.ENCHANTMENTS, 1);
         }
 
         if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.field_150342_X))
         {
-            this.field_75238_b.func_71064_a(AchievementList.field_76000_F, 1);
+            this.field_75238_b.func_71064_a(AchievementList.BOOKCASE, 1);
         }
     }
 

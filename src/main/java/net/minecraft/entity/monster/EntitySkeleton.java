@@ -184,7 +184,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
 
             if (d0 * d0 + d1 * d1 >= 2500.0D)
             {
-                entityplayer.func_71029_a(AchievementList.field_76020_v);
+                entityplayer.func_71029_a(AchievementList.SNIPE_SKELETON);
             }
         }
     }

@@ -4,6 +4,7 @@
     <property name="src.java" location="${src}/java"/>
     <property name="lib" location="lib"/>
     <property name="target" location="target"/>
+    <property name="target.jar" location="${target}/1.7.10.jar"/>
     <property name="classes" location="${target}/classes"/>
 
     <path id="java.library.path">
@@ -36,7 +37,7 @@
     </target>
 
     <target name="client" depends="compile">
-        <jar destfile="${target}/1.7.10.jar">
+        <jar destfile="${target.jar}">
             <fileset dir="${classes}" />
             <fileset dir="${src}/resources"/>
         </jar>
@@ -44,6 +45,7 @@
 
     <target name="clean">
         <delete dir="${classes}"/>
+        <delete file="${target.jar}"/>
     </target>
 
     <target name="rebuild" depends="clean, compile" />

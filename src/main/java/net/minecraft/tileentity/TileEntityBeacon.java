@@ -137,7 +137,7 @@ public class TileEntityBeacon extends TileEntity implements IInventory
             while (iterator.hasNext())
             {
                 EntityPlayer entityplayer = (EntityPlayer)iterator.next();
-                entityplayer.func_71029_a(AchievementList.field_150965_K);
+                entityplayer.func_71029_a(AchievementList.FULL_BEACON);
             }
         }
     }

@@ -54,7 +54,7 @@ public class EntityGhast extends EntityFlying implements IMob
         else if ("fireball".equals(p_70097_1_.func_76355_l()) && p_70097_1_.func_76346_g() instanceof EntityPlayer)
         {
             super.func_70097_a(p_70097_1_, 1000.0F);
-            ((EntityPlayer)p_70097_1_.func_76346_g()).func_71029_a(AchievementList.field_76028_y);
+            ((EntityPlayer)p_70097_1_.func_76346_g()).func_71029_a(AchievementList.GHAST);
             return true;
         }
         else

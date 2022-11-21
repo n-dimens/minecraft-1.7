@@ -231,7 +231,7 @@ public class StatisticsFile extends StatFileWriter
     public void func_150884_b(EntityPlayerMP p_150884_1_)
     {
         HashMap hashmap = Maps.newHashMap();
-        Iterator iterator = AchievementList.field_76007_e.iterator();
+        Iterator iterator = AchievementList.ACHIEVEMENTS.iterator();
 
         while (iterator.hasNext())
         {

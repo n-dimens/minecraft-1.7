@@ -446,7 +446,7 @@ public abstract class EntityLiving extends EntityLivingBase
 
                                 if (entityplayer != null)
                                 {
-                                    entityplayer.func_71029_a(AchievementList.field_150966_x);
+                                    entityplayer.func_71029_a(AchievementList.DIAMONDS_TO_YOU);
                                 }
                             }
 

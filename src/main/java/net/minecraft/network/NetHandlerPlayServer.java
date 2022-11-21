@@ -820,7 +820,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
                 this.field_147369_b.func_147099_x().func_150876_a(this.field_147369_b);
                 break;
             case 3:
-                this.field_147369_b.func_71029_a(AchievementList.OpenInventory);
+                this.field_147369_b.func_71029_a(AchievementList.OPEN_INVENTORY);
         }
     }
 

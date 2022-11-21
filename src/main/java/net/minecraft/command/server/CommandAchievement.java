@@ -60,7 +60,7 @@ public class CommandAchievement extends CommandBase
             {
                 if (statbase == null)
                 {
-                    Iterator iterator = AchievementList.field_76007_e.iterator();
+                    Iterator iterator = AchievementList.ACHIEVEMENTS.iterator();
 
                     while (iterator.hasNext())
                     {
@@ -77,9 +77,9 @@ public class CommandAchievement extends CommandBase
                         Achievement achievement2 = (Achievement)statbase;
                         ArrayList arraylist;
 
-                        for (arraylist = Lists.newArrayList(); achievement2.field_75992_c != null && !entityplayermp.func_147099_x().func_77443_a(achievement2.field_75992_c); achievement2 = achievement2.field_75992_c)
+                        for (arraylist = Lists.newArrayList(); achievement2.requiredAchievement != null && !entityplayermp.func_147099_x().func_77443_a(achievement2.requiredAchievement); achievement2 = achievement2.requiredAchievement)
                         {
-                            arraylist.add(achievement2.field_75992_c);
+                            arraylist.add(achievement2.requiredAchievement);
                         }
 
                         Iterator iterator1 = Lists.reverse(arraylist).iterator();

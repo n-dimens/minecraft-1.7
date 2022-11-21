@@ -1121,7 +1121,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
                         if (f >= 18.0F)
                         {
-                            this.func_71029_a(AchievementList.field_75999_E);
+                            this.func_71029_a(AchievementList.OVERKILL);
                         }
 
                         this.func_130011_c(p_71059_1_);
@@ -1597,7 +1597,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                     }
                     else if ((double)this.field_71073_d.func_71569_e(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)) >= 1000000.0D)
                     {
-                        this.func_71064_a(AchievementList.field_76025_q, 1);
+                        this.func_71064_a(AchievementList.ON_A_RAIL, 1);
                     }
                 }
                 else if (this.field_70154_o instanceof EntityBoat)
@@ -1638,7 +1638,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
     {
         if (p_70074_1_ instanceof IMob)
         {
-            this.func_71029_a(AchievementList.field_76023_s);
+            this.func_71029_a(AchievementList.KILL_ENEMY);
         }
 
         int i = EntityList.func_75619_a(p_70074_1_);

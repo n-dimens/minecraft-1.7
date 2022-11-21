@@ -20,7 +20,7 @@ public class StatFileWriter
 
     public boolean func_77442_b(Achievement p_77442_1_)
     {
-        return p_77442_1_.field_75992_c == null || this.func_77443_a(p_77442_1_.field_75992_c);
+        return p_77442_1_.requiredAchievement == null || this.func_77443_a(p_77442_1_.requiredAchievement);
     }
 
     public void func_150871_b(EntityPlayer p_150871_1_, StatBase p_150871_2_, int p_150871_3_)
@@ -42,9 +42,9 @@ public class StatFileWriter
         {
             int i = 0;
 
-            for (Achievement achievement1 = p_150874_1_.field_75992_c; achievement1 != null && !this.func_77443_a(achievement1); ++i)
+            for (Achievement achievement1 = p_150874_1_.requiredAchievement; achievement1 != null && !this.func_77443_a(achievement1); ++i)
             {
-                achievement1 = achievement1.field_75992_c;
+                achievement1 = achievement1.requiredAchievement;
             }
 
             return i;

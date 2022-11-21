@@ -12,31 +12,31 @@ import net.minecraft.util.StatCollector;
 
 public class Achievement extends StatBase
 {
-    public final int field_75993_a;
-    public final int field_75991_b;
-    public final Achievement field_75992_c;
-    private final String field_75996_k;
+    public final int field_75993_a; // x coord
+    public final int field_75991_b; // y coord
+    public final Achievement requiredAchievement;
+    private final String descriptionId;
     @SideOnly(Side.CLIENT)
     private IStatStringFormat field_75994_l;
-    public final ItemStack field_75990_d;
+    public final ItemStack renderItem;
     private boolean field_75995_m;
     private static final String __OBFID = "CL_00001466";
 
-    public Achievement(String p_i45300_1_, String p_i45300_2_, int p_i45300_3_, int p_i45300_4_, Item p_i45300_5_, Achievement p_i45300_6_)
+    public Achievement(String id, String name, int p_i45300_3_, int p_i45300_4_, Item renderItem, Achievement requiredAchievement)
     {
-        this(p_i45300_1_, p_i45300_2_, p_i45300_3_, p_i45300_4_, new ItemStack(p_i45300_5_), p_i45300_6_);
+        this(id, name, p_i45300_3_, p_i45300_4_, new ItemStack(renderItem), requiredAchievement);
     }
 
-    public Achievement(String p_i45301_1_, String p_i45301_2_, int p_i45301_3_, int p_i45301_4_, Block p_i45301_5_, Achievement p_i45301_6_)
+    public Achievement(String id, String name, int p_i45301_3_, int p_i45301_4_, Block renderBlock, Achievement requiredAchievement)
     {
-        this(p_i45301_1_, p_i45301_2_, p_i45301_3_, p_i45301_4_, new ItemStack(p_i45301_5_), p_i45301_6_);
+        this(id, name, p_i45301_3_, p_i45301_4_, new ItemStack(renderBlock), requiredAchievement);
     }
 
-    public Achievement(String p_i45302_1_, String p_i45302_2_, int p_i45302_3_, int p_i45302_4_, ItemStack p_i45302_5_, Achievement p_i45302_6_)
+    public Achievement(String id, String name, int p_i45302_3_, int p_i45302_4_, ItemStack renderItemStack, Achievement requiredAchievement)
     {
-        super(p_i45302_1_, new ChatComponentTranslation("achievement." + p_i45302_2_, new Object[0]));
-        this.field_75990_d = p_i45302_5_;
-        this.field_75996_k = "achievement." + p_i45302_2_ + ".desc";
+        super(id, new ChatComponentTranslation("achievement." + name, new Object[0]));
+        this.renderItem = renderItemStack;
+        this.descriptionId = "achievement." + name + ".desc";
         this.field_75993_a = p_i45302_3_;
         this.field_75991_b = p_i45302_4_;
 
@@ -60,7 +60,7 @@ public class Achievement extends StatBase
             AchievementList.field_76006_d = p_i45302_4_;
         }
 
-        this.field_75992_c = p_i45302_6_;
+        this.requiredAchievement = requiredAchievement;
     }
 
     public Achievement awardOnlyLocal()
@@ -78,7 +78,7 @@ public class Achievement extends StatBase
     public Achievement add()
     {
         super.add();
-        AchievementList.field_76007_e.add(this);
+        AchievementList.ACHIEVEMENTS.add(this);
         return this;
     }
 
@@ -102,7 +102,7 @@ public class Achievement extends StatBase
     @SideOnly(Side.CLIENT)
     public String func_75989_e()
     {
-        return this.field_75994_l != null ? this.field_75994_l.func_74535_a(StatCollector.func_74838_a(this.field_75996_k)) : StatCollector.func_74838_a(this.field_75996_k);
+        return this.field_75994_l != null ? this.field_75994_l.func_74535_a(StatCollector.func_74838_a(this.descriptionId)) : StatCollector.func_74838_a(this.descriptionId);
     }
 
     @SideOnly(Side.CLIENT)

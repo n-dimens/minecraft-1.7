@@ -135,7 +135,7 @@ public class GuiAchievement extends Gui
             GL11.glEnable(GL12.GL_RESCALE_NORMAL);
             GL11.glEnable(GL11.GL_COLOR_MATERIAL);
             GL11.glEnable(GL11.GL_LIGHTING);
-            this.field_146264_m.func_82406_b(this.field_146259_f.field_71466_p, this.field_146259_f.func_110434_K(), this.field_146266_k.field_75990_d, i + 8, j + 8);
+            this.field_146264_m.func_82406_b(this.field_146259_f.field_71466_p, this.field_146259_f.func_110434_K(), this.field_146266_k.renderItem, i + 8, j + 8);
             GL11.glDisable(GL11.GL_LIGHTING);
             GL11.glDepthMask(true);
             GL11.glEnable(GL11.GL_DEPTH_TEST);

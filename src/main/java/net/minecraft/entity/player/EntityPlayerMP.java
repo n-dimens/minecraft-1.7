@@ -336,7 +336,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
                 this.field_71135_a.func_147359_a(new S1FPacketSetExperience(this.field_71106_cc, this.field_71067_cb, this.field_71068_ca));
             }
 
-            if (this.field_70173_aa % 20 * 5 == 0 && !this.func_147099_x().func_77443_a(AchievementList.field_150961_L))
+            if (this.field_70173_aa % 20 * 5 == 0 && !this.func_147099_x().func_77443_a(AchievementList.EXPLORE_ALL_BIOMES))
             {
                 this.func_147098_j();
             }
@@ -357,16 +357,16 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
         if (biomegenbase != null)
         {
             String s = biomegenbase.field_76791_y;
-            JsonSerializableSet jsonserializableset = (JsonSerializableSet)this.func_147099_x().func_150870_b(AchievementList.field_150961_L);
+            JsonSerializableSet jsonserializableset = (JsonSerializableSet)this.func_147099_x().func_150870_b(AchievementList.EXPLORE_ALL_BIOMES);
 
             if (jsonserializableset == null)
             {
-                jsonserializableset = (JsonSerializableSet)this.func_147099_x().func_150872_a(AchievementList.field_150961_L, new JsonSerializableSet());
+                jsonserializableset = (JsonSerializableSet)this.func_147099_x().func_150872_a(AchievementList.EXPLORE_ALL_BIOMES, new JsonSerializableSet());
             }
 
             jsonserializableset.add(s);
 
-            if (this.func_147099_x().func_77442_b(AchievementList.field_150961_L) && jsonserializableset.size() == BiomeGenBase.field_150597_n.size())
+            if (this.func_147099_x().func_77442_b(AchievementList.EXPLORE_ALL_BIOMES) && jsonserializableset.size() == BiomeGenBase.field_150597_n.size())
             {
                 HashSet hashset = Sets.newHashSet(BiomeGenBase.field_150597_n);
                 Iterator iterator = jsonserializableset.iterator();
@@ -394,7 +394,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
                 if (hashset.isEmpty())
                 {
-                    this.func_71029_a(AchievementList.field_150961_L);
+                    this.func_71029_a(AchievementList.EXPLORE_ALL_BIOMES);
                 }
             }
         }
@@ -488,7 +488,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         if (this.field_71093_bK == 1 && p_71027_1_ == 1)
         {
-            this.func_71029_a(AchievementList.field_76003_C);
+            this.func_71029_a(AchievementList.THE_END_2);
             this.field_70170_p.func_72900_e(this);
             this.field_71136_j = true;
             this.field_71135_a.func_147359_a(new S2BPacketChangeGameState(4, 0.0F));
@@ -497,7 +497,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
         {
             if (this.field_71093_bK == 0 && p_71027_1_ == 1)
             {
-                this.func_71029_a(AchievementList.field_76002_B);
+                this.func_71029_a(AchievementList.THE_END);
                 ChunkCoordinates chunkcoordinates = this.field_71133_b.func_71218_a(p_71027_1_).func_73054_j();
 
                 if (chunkcoordinates != null)
@@ -509,7 +509,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
             }
             else
             {
-                this.func_71029_a(AchievementList.field_76029_x);
+                this.func_71029_a(AchievementList.PORTAL);
             }
 
             this.field_71133_b.func_71203_ab().func_72356_a(this, p_71027_1_);

@@ -56,8 +56,8 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
         this.field_146556_E = p_i45026_2_;
         short short1 = 141;
         short short2 = 141;
-        this.field_146569_s = this.field_146567_u = this.field_146565_w = (double)(AchievementList.OpenInventory.field_75993_a * 24 - short1 / 2 - 12);
-        this.field_146568_t = this.field_146566_v = this.field_146573_x = (double)(AchievementList.OpenInventory.field_75991_b * 24 - short2 / 2);
+        this.field_146569_s = this.field_146567_u = this.field_146565_w = (double)(AchievementList.OPEN_INVENTORY.field_75993_a * 24 - short1 / 2 - 12);
+        this.field_146568_t = this.field_146566_v = this.field_146573_x = (double)(AchievementList.OPEN_INVENTORY.field_75991_b * 24 - short2 / 2);
     }
 
     public void func_73866_w_()
@@ -339,16 +339,16 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
         int j4;
         int l4;
 
-        for (i3 = 0; i3 < AchievementList.field_76007_e.size(); ++i3)
+        for (i3 = 0; i3 < AchievementList.ACHIEVEMENTS.size(); ++i3)
         {
-            Achievement achievement1 = (Achievement)AchievementList.field_76007_e.get(i3);
+            Achievement achievement1 = (Achievement)AchievementList.ACHIEVEMENTS.get(i3);
 
-            if (achievement1.field_75992_c != null)
+            if (achievement1.requiredAchievement != null)
             {
                 j3 = achievement1.field_75993_a * 24 - k + 11;
                 k3 = achievement1.field_75991_b * 24 - l + 11;
-                l4 = achievement1.field_75992_c.field_75993_a * 24 - k + 11;
-                int l3 = achievement1.field_75992_c.field_75991_b * 24 - l + 11;
+                l4 = achievement1.requiredAchievement.field_75993_a * 24 - k + 11;
+                int l3 = achievement1.requiredAchievement.field_75991_b * 24 - l + 11;
                 boolean flag5 = this.field_146556_E.func_77443_a(achievement1);
                 boolean flag6 = this.field_146556_E.func_77442_b(achievement1);
                 i4 = this.field_146556_E.func_150874_c(achievement1);
@@ -400,9 +400,9 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
         int i5;
         int j5;
 
-        for (l4 = 0; l4 < AchievementList.field_76007_e.size(); ++l4)
+        for (l4 = 0; l4 < AchievementList.ACHIEVEMENTS.size(); ++l4)
         {
-            Achievement achievement2 = (Achievement)AchievementList.field_76007_e.get(l4);
+            Achievement achievement2 = (Achievement)AchievementList.ACHIEVEMENTS.get(l4);
             i5 = achievement2.field_75993_a * 24 - k;
             j5 = achievement2.field_75991_b * 24 - l;
 
@@ -462,7 +462,7 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
 
                 GL11.glEnable(GL11.GL_LIGHTING);
                 GL11.glEnable(GL11.GL_CULL_FACE);
-                renderitem.func_82406_b(this.field_146297_k.field_71466_p, this.field_146297_k.func_110434_K(), achievement2.field_75990_d, i5 + 3, j5 + 3);
+                renderitem.func_82406_b(this.field_146297_k.field_71466_p, this.field_146297_k.func_110434_K(), achievement2.renderItem, i5 + 3, j5 + 3);
                 GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
                 GL11.glDisable(GL11.GL_LIGHTING);
 
@@ -509,7 +509,7 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
                 {
                     s1 = I18n.func_135052_a("achievement.unknown", new Object[0]);
                     j4 = Math.max(this.field_146289_q.func_78256_a(s1), 120);
-                    s = (new ChatComponentTranslation("achievement.requires", new Object[] {achievement.field_75992_c.func_150951_e()})).func_150260_c();
+                    s = (new ChatComponentTranslation("achievement.requires", new Object[] {achievement.requiredAchievement.func_150951_e()})).func_150260_c();
                     k4 = this.field_146289_q.func_78267_b(s, j4);
                     this.func_73733_a(i5 - 3, j5 - 3, i5 + j4 + 3, j5 + k4 + 12 + 3, -1073741824, -1073741824);
                     this.field_146289_q.func_78279_b(s, i5, j5 + 12, j4, -9416624);
@@ -517,7 +517,7 @@ public class GuiAchievements extends GuiScreen implements IProgressMeter
                 else if (i4 < 3)
                 {
                     j4 = Math.max(this.field_146289_q.func_78256_a(s1), 120);
-                    s = (new ChatComponentTranslation("achievement.requires", new Object[] {achievement.field_75992_c.func_150951_e()})).func_150260_c();
+                    s = (new ChatComponentTranslation("achievement.requires", new Object[] {achievement.requiredAchievement.func_150951_e()})).func_150260_c();
                     k4 = this.field_146289_q.func_78267_b(s, j4);
                     this.func_73733_a(i5 - 3, j5 - 3, i5 + j4 + 3, j5 + k4 + 12 + 3, -1073741824, -1073741824);
                     this.field_146289_q.func_78279_b(s, i5, j5 + 12, j4, -9416624);

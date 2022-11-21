@@ -106,7 +106,7 @@ public class EntityAIMate extends EntityAIBase
 
                 if (this.field_75390_d instanceof EntityCow)
                 {
-                    entityplayer.func_71029_a(AchievementList.field_150962_H);
+                    entityplayer.func_71029_a(AchievementList.BREED_COW);
                 }
             }
 

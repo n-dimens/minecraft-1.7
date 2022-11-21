@@ -196,7 +196,7 @@ public class ContainerBrewingStand extends Container
             {
                 if (p_82870_2_.func_77973_b() == Items.field_151068_bn && p_82870_2_.func_77960_j() > 0)
                 {
-                    this.field_75244_a.func_71064_a(AchievementList.field_76001_A, 1);
+                    this.field_75244_a.func_71064_a(AchievementList.POTION, 1);
                 }
 
                 super.func_82870_a(p_82870_1_, p_82870_2_);

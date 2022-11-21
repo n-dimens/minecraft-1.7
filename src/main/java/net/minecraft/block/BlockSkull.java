@@ -190,7 +190,7 @@ public class BlockSkull extends BlockContainer
                             while (iterator.hasNext())
                             {
                                 entityplayer = (EntityPlayer)iterator.next();
-                                entityplayer.func_71029_a(AchievementList.field_150963_I);
+                                entityplayer.func_71029_a(AchievementList.SPAWN_WITHER);
                             }
                         }
 
@@ -241,7 +241,7 @@ public class BlockSkull extends BlockContainer
                             while (iterator.hasNext())
                             {
                                 entityplayer = (EntityPlayer)iterator.next();
-                                entityplayer.func_71029_a(AchievementList.field_150963_I);
+                                entityplayer.func_71029_a(AchievementList.SPAWN_WITHER);
                             }
                         }
 

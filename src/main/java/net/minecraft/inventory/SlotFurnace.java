@@ -85,12 +85,12 @@ public class SlotFurnace extends Slot
 
         if (p_75208_1_.func_77973_b() == Items.field_151042_j)
         {
-            this.field_75229_a.func_71064_a(AchievementList.field_76016_k, 1);
+            this.field_75229_a.func_71064_a(AchievementList.ACQUIRE_IRON, 1);
         }
 
         if (p_75208_1_.func_77973_b() == Items.field_151101_aQ)
         {
-            this.field_75229_a.func_71064_a(AchievementList.field_76026_p, 1);
+            this.field_75229_a.func_71064_a(AchievementList.COOK_FISH, 1);
         }
     }
 }

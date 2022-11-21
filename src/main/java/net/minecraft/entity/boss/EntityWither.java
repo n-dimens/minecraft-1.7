@@ -526,7 +526,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
             while (iterator.hasNext())
             {
                 EntityPlayer entityplayer = (EntityPlayer)iterator.next();
-                entityplayer.func_71029_a(AchievementList.field_150964_J);
+                entityplayer.func_71029_a(AchievementList.KILL_WITHER);
             }
         }
     }
