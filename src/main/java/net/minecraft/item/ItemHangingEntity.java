@@ -47,7 +47,7 @@ public class ItemHangingEntity extends Item
                         p_77648_3_.func_72838_d(entityhanging);
                     }
 
-                    --p_77648_1_.field_77994_a;
+                    --p_77648_1_.count;
                 }
 
                 return true;

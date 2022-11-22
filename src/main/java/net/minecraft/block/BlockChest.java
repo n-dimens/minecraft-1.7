@@ -351,17 +351,17 @@ public class BlockChest extends BlockContainer
                     float f1 = this.field_149955_b.nextFloat() * 0.8F + 0.1F;
                     EntityItem entityitem;
 
-                    for (float f2 = this.field_149955_b.nextFloat() * 0.8F + 0.1F; itemstack.field_77994_a > 0; p_149749_1_.func_72838_d(entityitem))
+                    for (float f2 = this.field_149955_b.nextFloat() * 0.8F + 0.1F; itemstack.count > 0; p_149749_1_.func_72838_d(entityitem))
                     {
                         int j1 = this.field_149955_b.nextInt(21) + 10;
 
-                        if (j1 > itemstack.field_77994_a)
+                        if (j1 > itemstack.count)
                         {
-                            j1 = itemstack.field_77994_a;
+                            j1 = itemstack.count;
                         }
 
-                        itemstack.field_77994_a -= j1;
-                        entityitem = new EntityItem(p_149749_1_, (double)((float)p_149749_2_ + f), (double)((float)p_149749_3_ + f1), (double)((float)p_149749_4_ + f2), new ItemStack(itemstack.func_77973_b(), j1, itemstack.func_77960_j()));
+                        itemstack.count -= j1;
+                        entityitem = new EntityItem(p_149749_1_, (double)((float)p_149749_2_ + f), (double)((float)p_149749_3_ + f1), (double)((float)p_149749_4_ + f2), new ItemStack(itemstack.getBaseItem(), j1, itemstack.func_77960_j()));
                         float f3 = 0.05F;
                         entityitem.field_70159_w = (double)((float)this.field_149955_b.nextGaussian() * f3);
                         entityitem.field_70181_x = (double)((float)this.field_149955_b.nextGaussian() * f3 + 0.2F);

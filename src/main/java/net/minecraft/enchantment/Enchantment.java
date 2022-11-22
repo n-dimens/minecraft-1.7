@@ -117,7 +117,7 @@ public abstract class Enchantment
 
     public boolean func_92089_a(ItemStack p_92089_1_)
     {
-        return this.field_77351_y.func_77557_a(p_92089_1_.func_77973_b());
+        return this.field_77351_y.func_77557_a(p_92089_1_.getBaseItem());
     }
 
     public void func_151368_a(EntityLivingBase p_151368_1_, Entity p_151368_2_, int p_151368_3_) {}

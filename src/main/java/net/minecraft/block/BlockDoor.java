@@ -405,7 +405,7 @@ public class BlockDoor extends Block
 
     public void func_149681_a(World p_149681_1_, int p_149681_2_, int p_149681_3_, int p_149681_4_, int p_149681_5_, EntityPlayer p_149681_6_)
     {
-        if (p_149681_6_.field_71075_bZ.field_75098_d && (p_149681_5_ & 8) != 0 && p_149681_1_.func_147439_a(p_149681_2_, p_149681_3_ - 1, p_149681_4_) == this)
+        if (p_149681_6_.capabilities.instabuild && (p_149681_5_ & 8) != 0 && p_149681_1_.func_147439_a(p_149681_2_, p_149681_3_ - 1, p_149681_4_) == this)
         {
             p_149681_1_.func_147468_f(p_149681_2_, p_149681_3_ - 1, p_149681_4_);
         }

@@ -17,8 +17,8 @@ public class ItemHoe extends Item
     public ItemHoe(Item.ToolMaterial p_i45343_1_)
     {
         this.field_77843_a = p_i45343_1_;
-        this.field_77777_bU = 1;
-        this.func_77656_e(p_i45343_1_.func_77997_a());
+        this.stackMaxSize = 1;
+        this.setDurability(p_i45343_1_.func_77997_a());
         this.func_77637_a(CreativeTabs.field_78040_i);
     }
 

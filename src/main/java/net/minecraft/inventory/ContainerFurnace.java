@@ -21,7 +21,7 @@ public class ContainerFurnace extends Container
         this.field_75158_e = p_i1812_2_;
         this.func_75146_a(new Slot(p_i1812_2_, 0, 56, 17));
         this.func_75146_a(new Slot(p_i1812_2_, 1, 56, 53));
-        this.func_75146_a(new SlotFurnace(p_i1812_1_.field_70458_d, p_i1812_2_, 2, 116, 35));
+        this.func_75146_a(new SlotFurnace(p_i1812_1_.player, p_i1812_2_, 2, 116, 35));
         int i;
 
         for (i = 0; i < 3; ++i)
@@ -94,9 +94,9 @@ public class ContainerFurnace extends Container
         }
     }
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
-        return this.field_75158_e.func_70300_a(p_75145_1_);
+        return this.field_75158_e.func_70300_a(player);
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)
@@ -151,7 +151,7 @@ public class ContainerFurnace extends Container
                 return null;
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }
@@ -160,7 +160,7 @@ public class ContainerFurnace extends Container
                 slot.func_75218_e();
             }
 
-            if (itemstack1.field_77994_a == itemstack.field_77994_a)
+            if (itemstack1.count == itemstack.count)
             {
                 return null;
             }

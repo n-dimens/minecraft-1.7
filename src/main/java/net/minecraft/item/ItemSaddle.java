@@ -11,7 +11,7 @@ public class ItemSaddle extends Item
 
     public ItemSaddle()
     {
-        this.field_77777_bU = 1;
+        this.stackMaxSize = 1;
         this.func_77637_a(CreativeTabs.field_78029_e);
     }
 
@@ -25,7 +25,7 @@ public class ItemSaddle extends Item
             {
                 entitypig.func_70900_e(true);
                 entitypig.world.func_72956_a(entitypig, "mob.horse.leather", 0.5F, 1.0F);
-                --p_111207_1_.field_77994_a;
+                --p_111207_1_.count;
             }
 
             return true;

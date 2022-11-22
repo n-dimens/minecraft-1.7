@@ -16,7 +16,7 @@ public class ItemBucket extends Item
 
     public ItemBucket(Block p_i45331_1_)
     {
-        this.field_77777_bU = 1;
+        this.stackMaxSize = 1;
         this.field_77876_a = p_i45331_1_;
         this.func_77637_a(CreativeTabs.field_78026_f);
     }
@@ -107,7 +107,7 @@ public class ItemBucket extends Item
                         return p_77659_1_;
                     }
 
-                    if (this.func_77875_a(p_77659_2_, i, j, k) && !p_77659_3_.field_71075_bZ.field_75098_d)
+                    if (this.func_77875_a(p_77659_2_, i, j, k) && !p_77659_3_.capabilities.instabuild)
                     {
                         return new ItemStack(Items.BUCKET);
                     }
@@ -120,17 +120,17 @@ public class ItemBucket extends Item
 
     private ItemStack func_150910_a(ItemStack p_150910_1_, EntityPlayer p_150910_2_, Item p_150910_3_)
     {
-        if (p_150910_2_.field_71075_bZ.field_75098_d)
+        if (p_150910_2_.capabilities.instabuild)
         {
             return p_150910_1_;
         }
-        else if (--p_150910_1_.field_77994_a <= 0)
+        else if (--p_150910_1_.count <= 0)
         {
             return new ItemStack(p_150910_3_);
         }
         else
         {
-            if (!p_150910_2_.field_71071_by.func_70441_a(new ItemStack(p_150910_3_)))
+            if (!p_150910_2_.inventory.func_70441_a(new ItemStack(p_150910_3_)))
             {
                 p_150910_2_.func_71019_a(new ItemStack(p_150910_3_, 1, 0), false);
             }

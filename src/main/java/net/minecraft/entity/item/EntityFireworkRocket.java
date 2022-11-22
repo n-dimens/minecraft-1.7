@@ -52,10 +52,10 @@ public class EntityFireworkRocket extends Entity
             }
         }
 
-        this.field_70159_w = this.field_70146_Z.nextGaussian() * 0.001D;
-        this.field_70179_y = this.field_70146_Z.nextGaussian() * 0.001D;
+        this.field_70159_w = this.randomizer.nextGaussian() * 0.001D;
+        this.field_70179_y = this.randomizer.nextGaussian() * 0.001D;
         this.field_70181_x = 0.05D;
-        this.field_92055_b = 10 * i + this.field_70146_Z.nextInt(6) + this.field_70146_Z.nextInt(7);
+        this.field_92055_b = 10 * i + this.randomizer.nextInt(6) + this.randomizer.nextInt(7);
     }
 
     @SideOnly(Side.CLIENT)
@@ -118,7 +118,7 @@ public class EntityFireworkRocket extends Entity
 
         if (this.world.field_72995_K && this.field_92056_a % 2 < 2)
         {
-            this.world.func_72869_a("fireworksSpark", this.field_70165_t, this.field_70163_u - 0.3D, this.field_70161_v, this.field_70146_Z.nextGaussian() * 0.05D, -this.field_70181_x * 0.5D, this.field_70146_Z.nextGaussian() * 0.05D);
+            this.world.func_72869_a("fireworksSpark", this.field_70165_t, this.field_70163_u - 0.3D, this.field_70161_v, this.randomizer.nextGaussian() * 0.05D, -this.field_70181_x * 0.5D, this.randomizer.nextGaussian() * 0.05D);
         }
 
         if (!this.world.field_72995_K && this.field_92056_a > this.field_92055_b)

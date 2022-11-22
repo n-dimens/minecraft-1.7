@@ -35,14 +35,14 @@ public class ItemEnderEye extends Item
             {
                 p_77648_3_.func_72921_c(p_77648_4_, p_77648_5_, p_77648_6_, i1 + 4, 2);
                 p_77648_3_.func_147453_f(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.END_PORTAL_FRAME);
-                --p_77648_1_.field_77994_a;
+                --p_77648_1_.count;
                 int j1;
 
                 for (j1 = 0; j1 < 16; ++j1)
                 {
-                    double d0 = (double)((float)p_77648_4_ + (5.0F + field_77697_d.nextFloat() * 6.0F) / 16.0F);
+                    double d0 = (double)((float)p_77648_4_ + (5.0F + randomizer.nextFloat() * 6.0F) / 16.0F);
                     double d1 = (double)((float)p_77648_5_ + 0.8125F);
-                    double d2 = (double)((float)p_77648_6_ + (5.0F + field_77697_d.nextFloat() * 6.0F) / 16.0F);
+                    double d2 = (double)((float)p_77648_6_ + (5.0F + randomizer.nextFloat() * 6.0F) / 16.0F);
                     double d3 = 0.0D;
                     double d4 = 0.0D;
                     double d5 = 0.0D;
@@ -161,12 +161,12 @@ public class ItemEnderEye extends Item
                     EntityEnderEye entityendereye = new EntityEnderEye(p_77659_2_, p_77659_3_.field_70165_t, p_77659_3_.field_70163_u + 1.62D - (double)p_77659_3_.field_70129_M, p_77659_3_.field_70161_v);
                     entityendereye.func_70220_a((double)chunkposition.field_151329_a, chunkposition.field_151327_b, (double)chunkposition.field_151328_c);
                     p_77659_2_.func_72838_d(entityendereye);
-                    p_77659_2_.func_72956_a(p_77659_3_, "random.bow", 0.5F, 0.4F / (field_77697_d.nextFloat() * 0.4F + 0.8F));
+                    p_77659_2_.func_72956_a(p_77659_3_, "random.bow", 0.5F, 0.4F / (randomizer.nextFloat() * 0.4F + 0.8F));
                     p_77659_2_.func_72889_a((EntityPlayer)null, 1002, (int)p_77659_3_.field_70165_t, (int)p_77659_3_.field_70163_u, (int)p_77659_3_.field_70161_v, 0);
 
-                    if (!p_77659_3_.field_71075_bZ.field_75098_d)
+                    if (!p_77659_3_.capabilities.instabuild)
                     {
-                        --p_77659_1_.field_77994_a;
+                        --p_77659_1_.count;
                     }
                 }
             }

@@ -11,15 +11,15 @@ public class ItemBucketMilk extends Item
 
     public ItemBucketMilk()
     {
-        this.func_77625_d(1);
+        this.setStackMaxSize(1);
         this.func_77637_a(CreativeTabs.field_78026_f);
     }
 
     public ItemStack func_77654_b(ItemStack p_77654_1_, World p_77654_2_, EntityPlayer p_77654_3_)
     {
-        if (!p_77654_3_.field_71075_bZ.field_75098_d)
+        if (!p_77654_3_.capabilities.instabuild)
         {
-            --p_77654_1_.field_77994_a;
+            --p_77654_1_.count;
         }
 
         if (!p_77654_2_.field_72995_K)
@@ -27,7 +27,7 @@ public class ItemBucketMilk extends Item
             p_77654_3_.func_70674_bp();
         }
 
-        return p_77654_1_.field_77994_a <= 0 ? new ItemStack(Items.BUCKET) : p_77654_1_;
+        return p_77654_1_.count <= 0 ? new ItemStack(Items.BUCKET) : p_77654_1_;
     }
 
     public int func_77626_a(ItemStack p_77626_1_)

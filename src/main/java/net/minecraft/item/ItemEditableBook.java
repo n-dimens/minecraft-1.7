@@ -16,7 +16,7 @@ public class ItemEditableBook extends Item
 
     public ItemEditableBook()
     {
-        this.func_77625_d(1);
+        this.setStackMaxSize(1);
     }
 
     public static boolean func_77828_a(NBTTagCompound p_77828_0_)

@@ -60,7 +60,7 @@ public class EntityPigZombie extends EntityZombie
 
         if (this.field_70838_e > 0 && --this.field_70838_e == 0)
         {
-            this.func_85030_a("mob.zombiepig.zpigangry", this.func_70599_aP() * 2.0F, ((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F) * 1.8F);
+            this.func_85030_a("mob.zombiepig.zpigangry", this.func_70599_aP() * 2.0F, ((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F + 1.0F) * 1.8F);
         }
 
         super.func_70071_h_();
@@ -123,8 +123,8 @@ public class EntityPigZombie extends EntityZombie
     private void func_70835_c(Entity p_70835_1_)
     {
         this.field_70789_a = p_70835_1_;
-        this.field_70837_d = 400 + this.field_70146_Z.nextInt(400);
-        this.field_70838_e = this.field_70146_Z.nextInt(40);
+        this.field_70837_d = 400 + this.randomizer.nextInt(400);
+        this.field_70838_e = this.randomizer.nextInt(40);
     }
 
     protected String func_70639_aQ()
@@ -144,7 +144,7 @@ public class EntityPigZombie extends EntityZombie
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(2 + p_70628_2_);
+        int j = this.randomizer.nextInt(2 + p_70628_2_);
         int k;
 
         for (k = 0; k < j; ++k)
@@ -152,7 +152,7 @@ public class EntityPigZombie extends EntityZombie
             this.func_145779_a(Items.ROTTEN_FLESH, 1);
         }
 
-        j = this.field_70146_Z.nextInt(2 + p_70628_2_);
+        j = this.randomizer.nextInt(2 + p_70628_2_);
 
         for (k = 0; k < j; ++k)
         {
@@ -160,7 +160,7 @@ public class EntityPigZombie extends EntityZombie
         }
     }
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    public boolean resultOfImpact(EntityPlayer player)
     {
         return false;
     }

@@ -58,7 +58,7 @@ public class TileEntityChest extends TileEntity implements IInventory
         {
             ItemStack itemstack;
 
-            if (this.field_145985_p[p_70298_1_].field_77994_a <= p_70298_2_)
+            if (this.field_145985_p[p_70298_1_].count <= p_70298_2_)
             {
                 itemstack = this.field_145985_p[p_70298_1_];
                 this.field_145985_p[p_70298_1_] = null;
@@ -69,7 +69,7 @@ public class TileEntityChest extends TileEntity implements IInventory
             {
                 itemstack = this.field_145985_p[p_70298_1_].func_77979_a(p_70298_2_);
 
-                if (this.field_145985_p[p_70298_1_].field_77994_a == 0)
+                if (this.field_145985_p[p_70298_1_].count == 0)
                 {
                     this.field_145985_p[p_70298_1_] = null;
                 }
@@ -98,13 +98,13 @@ public class TileEntityChest extends TileEntity implements IInventory
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         this.field_145985_p[p_70299_1_] = p_70299_2_;
 
-        if (p_70299_2_ != null && p_70299_2_.field_77994_a > this.func_70297_j_())
+        if (p_70299_2_ != null && p_70299_2_.count > this.func_70297_j_())
         {
-            p_70299_2_.field_77994_a = this.func_70297_j_();
+            p_70299_2_.count = this.func_70297_j_();
         }
 
         this.func_70296_d();

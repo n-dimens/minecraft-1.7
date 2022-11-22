@@ -74,7 +74,7 @@ public final class StatList
 
             if (irecipe.func_77571_b() != null)
             {
-                hashset.add(irecipe.func_77571_b().func_77973_b());
+                hashset.add(irecipe.func_77571_b().getBaseItem());
             }
         }
 
@@ -83,7 +83,7 @@ public final class StatList
         while (iterator.hasNext())
         {
             ItemStack itemstack = (ItemStack)iterator.next();
-            hashset.add(itemstack.func_77973_b());
+            hashset.add(itemstack.getBaseItem());
         }
 
         iterator = hashset.iterator();

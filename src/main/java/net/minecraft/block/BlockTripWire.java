@@ -118,7 +118,7 @@ public class BlockTripWire extends Block
     {
         if (!p_149681_1_.field_72995_K)
         {
-            if (p_149681_6_.func_71045_bC() != null && p_149681_6_.func_71045_bC().func_77973_b() == Items.SHEARS)
+            if (p_149681_6_.func_71045_bC() != null && p_149681_6_.func_71045_bC().getBaseItem() == Items.SHEARS)
             {
                 p_149681_1_.func_72921_c(p_149681_2_, p_149681_3_, p_149681_4_, p_149681_5_ | 8, 4);
             }

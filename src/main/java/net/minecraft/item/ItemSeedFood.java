@@ -28,7 +28,7 @@ public class ItemSeedFood extends ItemFood
             if (p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_) == this.field_82809_c && p_77648_3_.func_147437_c(p_77648_4_, p_77648_5_ + 1, p_77648_6_))
             {
                 p_77648_3_.func_147449_b(p_77648_4_, p_77648_5_ + 1, p_77648_6_, this.field_150908_b);
-                --p_77648_1_.field_77994_a;
+                --p_77648_1_.count;
                 return true;
             }
             else

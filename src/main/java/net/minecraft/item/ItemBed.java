@@ -65,7 +65,7 @@ public class ItemBed extends Item
                         p_77648_3_.func_147465_d(p_77648_4_ + b0, p_77648_5_, p_77648_6_ + b1, blockbed, i1 + 8, 3);
                     }
 
-                    --p_77648_1_.field_77994_a;
+                    --p_77648_1_.count;
                     return true;
                 }
                 else

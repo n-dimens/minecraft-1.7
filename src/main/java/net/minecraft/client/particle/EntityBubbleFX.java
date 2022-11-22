@@ -19,7 +19,7 @@ public class EntityBubbleFX extends EntityFX
         this.field_70551_j = 1.0F;
         this.func_70536_a(32);
         this.func_70105_a(0.02F, 0.02F);
-        this.field_70544_f *= this.field_70146_Z.nextFloat() * 0.6F + 0.2F;
+        this.field_70544_f *= this.randomizer.nextFloat() * 0.6F + 0.2F;
         this.field_70159_w = p_i1198_8_ * 0.20000000298023224D + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.02F);
         this.field_70181_x = p_i1198_10_ * 0.20000000298023224D + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.02F);
         this.field_70179_y = p_i1198_12_ * 0.20000000298023224D + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.02F);

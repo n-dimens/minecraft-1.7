@@ -54,7 +54,7 @@ public class RenderItemFrame extends Render
         int k = p_76986_1_.field_146062_d + Direction.field_71581_b[p_76986_1_.field_82332_a];
         GL11.glTranslated((double)i - d3, (double)j - d4, (double)k - d5);
 
-        if (p_76986_1_.func_82335_i() != null && p_76986_1_.func_82335_i().func_77973_b() == Items.FILLED_MAP)
+        if (p_76986_1_.func_82335_i() != null && p_76986_1_.func_82335_i().getBaseItem() == Items.FILLED_MAP)
         {
             this.func_147915_b(p_76986_1_);
         }
@@ -156,8 +156,8 @@ public class RenderItemFrame extends Render
         if (itemstack != null)
         {
             EntityItem entityitem = new EntityItem(p_82402_1_.world, 0.0D, 0.0D, 0.0D, itemstack);
-            Item item = entityitem.func_92059_d().func_77973_b();
-            entityitem.func_92059_d().field_77994_a = 1;
+            Item item = entityitem.func_92059_d().getBaseItem();
+            entityitem.func_92059_d().count = 1;
             entityitem.field_70290_d = 0.0F;
             GL11.glPushMatrix();
             GL11.glTranslatef(-0.453125F * (float)Direction.field_71583_a[p_82402_1_.field_82332_a], -0.18F, -0.453125F * (float)Direction.field_71581_b[p_82402_1_.field_82332_a]);

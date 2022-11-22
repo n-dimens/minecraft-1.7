@@ -13,7 +13,7 @@ public class ItemCloth extends ItemBlock
     public ItemCloth(Block p_i45358_1_)
     {
         super(p_i45358_1_);
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77627_a(true);
     }
 

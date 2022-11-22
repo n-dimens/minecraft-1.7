@@ -161,7 +161,7 @@ public class GuiEnchantment extends GuiContainer
                 FontRenderer fontrenderer = this.field_146297_k.field_71464_q;
                 int k1 = 6839882;
 
-                if (this.field_146297_k.field_71439_g.field_71068_ca < j1 && !this.field_146297_k.field_71439_g.field_71075_bZ.field_75098_d)
+                if (this.field_146297_k.field_71439_g.field_71068_ca < j1 && !this.field_146297_k.field_71439_g.capabilities.instabuild)
                 {
                     this.func_73729_b(k + 60, l + 14 + 19 * i1, 0, 185, 108, 19);
                     fontrenderer.func_78279_b(s, k + 62, l + 16 + 19 * i1, 104, (k1 & 16711422) >> 1);

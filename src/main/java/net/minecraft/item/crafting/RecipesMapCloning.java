@@ -20,7 +20,7 @@ public class RecipesMapCloning implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() == Items.FILLED_MAP)
+                if (itemstack1.getBaseItem() == Items.FILLED_MAP)
                 {
                     if (itemstack != null)
                     {
@@ -31,7 +31,7 @@ public class RecipesMapCloning implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.MAP)
+                    if (itemstack1.getBaseItem() != Items.MAP)
                     {
                         return false;
                     }
@@ -55,7 +55,7 @@ public class RecipesMapCloning implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() == Items.FILLED_MAP)
+                if (itemstack1.getBaseItem() == Items.FILLED_MAP)
                 {
                     if (itemstack != null)
                     {
@@ -66,7 +66,7 @@ public class RecipesMapCloning implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.MAP)
+                    if (itemstack1.getBaseItem() != Items.MAP)
                     {
                         return null;
                     }

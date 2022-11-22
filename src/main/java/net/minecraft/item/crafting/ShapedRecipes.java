@@ -79,7 +79,7 @@ public class ShapedRecipes implements IRecipe
                         return false;
                     }
 
-                    if (itemstack.func_77973_b() != itemstack1.func_77973_b())
+                    if (itemstack.getBaseItem() != itemstack1.getBaseItem())
                     {
                         return false;
                     }

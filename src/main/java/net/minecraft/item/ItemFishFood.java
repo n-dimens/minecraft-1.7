@@ -208,7 +208,7 @@ public class ItemFishFood extends ItemFood
 
         public static ItemFishFood.FishType func_150978_a(ItemStack p_150978_0_)
         {
-            return p_150978_0_.func_77973_b() instanceof ItemFishFood ? func_150974_a(p_150978_0_.func_77960_j()) : COD;
+            return p_150978_0_.getBaseItem() instanceof ItemFishFood ? func_150974_a(p_150978_0_.func_77960_j()) : COD;
         }
 
         static

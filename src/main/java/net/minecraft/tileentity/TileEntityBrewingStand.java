@@ -60,7 +60,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
                 this.field_145946_k = 0;
                 this.func_70296_d();
             }
-            else if (this.field_145944_m != this.field_145945_j[3].func_77973_b())
+            else if (this.field_145944_m != this.field_145945_j[3].getBaseItem())
             {
                 this.field_145946_k = 0;
                 this.func_70296_d();
@@ -69,7 +69,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
         else if (this.func_145934_k())
         {
             this.field_145946_k = 400;
-            this.field_145944_m = this.field_145945_j[3].func_77973_b();
+            this.field_145944_m = this.field_145945_j[3].getBaseItem();
         }
 
         int i = this.func_145939_j();
@@ -90,11 +90,11 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
 
     private boolean func_145934_k()
     {
-        if (this.field_145945_j[3] != null && this.field_145945_j[3].field_77994_a > 0)
+        if (this.field_145945_j[3] != null && this.field_145945_j[3].count > 0)
         {
             ItemStack itemstack = this.field_145945_j[3];
 
-            if (!itemstack.func_77973_b().func_150892_m(itemstack))
+            if (!itemstack.getBaseItem().func_150892_m(itemstack))
             {
                 return false;
             }
@@ -104,7 +104,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
 
                 for (int i = 0; i < 3; ++i)
                 {
-                    if (this.field_145945_j[i] != null && this.field_145945_j[i].func_77973_b() == Items.POTION)
+                    if (this.field_145945_j[i] != null && this.field_145945_j[i].getBaseItem() == Items.POTION)
                     {
                         int j = this.field_145945_j[i].func_77960_j();
                         int k = this.func_145936_c(j, itemstack);
@@ -143,7 +143,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
 
             for (int i = 0; i < 3; ++i)
             {
-                if (this.field_145945_j[i] != null && this.field_145945_j[i].func_77973_b() == Items.POTION)
+                if (this.field_145945_j[i] != null && this.field_145945_j[i].getBaseItem() == Items.POTION)
                 {
                     int j = this.field_145945_j[i].func_77960_j();
                     int k = this.func_145936_c(j, itemstack);
@@ -164,15 +164,15 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
                 }
             }
 
-            if (itemstack.func_77973_b().func_77634_r())
+            if (itemstack.getBaseItem().func_77634_r())
             {
-                this.field_145945_j[3] = new ItemStack(itemstack.func_77973_b().func_77668_q());
+                this.field_145945_j[3] = new ItemStack(itemstack.getBaseItem().func_77668_q());
             }
             else
             {
-                --this.field_145945_j[3].field_77994_a;
+                --this.field_145945_j[3].count;
 
-                if (this.field_145945_j[3].field_77994_a <= 0)
+                if (this.field_145945_j[3].count <= 0)
                 {
                     this.field_145945_j[3] = null;
                 }
@@ -182,7 +182,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
 
     private int func_145936_c(int p_145936_1_, ItemStack p_145936_2_)
     {
-        return p_145936_2_ == null ? p_145936_1_ : (p_145936_2_.func_77973_b().func_150892_m(p_145936_2_) ? PotionHelper.func_77913_a(p_145936_1_, p_145936_2_.func_77973_b().func_150896_i(p_145936_2_)) : p_145936_1_);
+        return p_145936_2_ == null ? p_145936_1_ : (p_145936_2_.getBaseItem().func_150892_m(p_145936_2_) ? PotionHelper.func_77913_a(p_145936_1_, p_145936_2_.getBaseItem().func_150896_i(p_145936_2_)) : p_145936_1_);
     }
 
     public void func_145839_a(NBTTagCompound p_145839_1_)
@@ -268,7 +268,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         if (p_70299_1_ >= 0 && p_70299_1_ < this.field_145945_j.length)
         {
@@ -292,7 +292,7 @@ public class TileEntityBrewingStand extends TileEntity implements ISidedInventor
 
     public boolean func_94041_b(int p_94041_1_, ItemStack p_94041_2_)
     {
-        return p_94041_1_ == 3 ? p_94041_2_.func_77973_b().func_150892_m(p_94041_2_) : p_94041_2_.func_77973_b() == Items.POTION || p_94041_2_.func_77973_b() == Items.GLASS_BOTTLE;
+        return p_94041_1_ == 3 ? p_94041_2_.getBaseItem().func_150892_m(p_94041_2_) : p_94041_2_.getBaseItem() == Items.POTION || p_94041_2_.getBaseItem() == Items.GLASS_BOTTLE;
     }
 
     @SideOnly(Side.CLIENT)

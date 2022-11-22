@@ -23,7 +23,7 @@ public class ContainerWorkbench extends Container
         this.field_75164_h = p_i1808_3_;
         this.field_75165_i = p_i1808_4_;
         this.field_75163_j = p_i1808_5_;
-        this.func_75146_a(new SlotCrafting(p_i1808_1_.field_70458_d, this.field_75162_e, this.field_75160_f, 0, 124, 35));
+        this.func_75146_a(new SlotCrafting(p_i1808_1_.player, this.field_75162_e, this.field_75160_f, 0, 124, 35));
         int l;
         int i1;
 
@@ -53,7 +53,7 @@ public class ContainerWorkbench extends Container
 
     public void func_75130_a(IInventory p_75130_1_)
     {
-        this.field_75160_f.func_70299_a(0, CraftingManager.func_77594_a().func_82787_a(this.field_75162_e, this.field_75161_g));
+        this.field_75160_f.putItem(0, CraftingManager.func_77594_a().func_82787_a(this.field_75162_e, this.field_75161_g));
     }
 
     public void func_75134_a(EntityPlayer p_75134_1_)
@@ -74,9 +74,9 @@ public class ContainerWorkbench extends Container
         }
     }
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
-        return this.field_75161_g.func_147439_a(this.field_75164_h, this.field_75165_i, this.field_75163_j) != Blocks.CRAFTING_TABLE ? false : p_75145_1_.func_70092_e((double)this.field_75164_h + 0.5D, (double)this.field_75165_i + 0.5D, (double)this.field_75163_j + 0.5D) <= 64.0D;
+        return this.field_75161_g.func_147439_a(this.field_75164_h, this.field_75165_i, this.field_75163_j) != Blocks.CRAFTING_TABLE ? false : player.func_70092_e((double)this.field_75164_h + 0.5D, (double)this.field_75165_i + 0.5D, (double)this.field_75163_j + 0.5D) <= 64.0D;
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)
@@ -117,7 +117,7 @@ public class ContainerWorkbench extends Container
                 return null;
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }
@@ -126,7 +126,7 @@ public class ContainerWorkbench extends Container
                 slot.func_75218_e();
             }
 
-            if (itemstack1.field_77994_a == itemstack.field_77994_a)
+            if (itemstack1.count == itemstack.count)
             {
                 return null;
             }

@@ -35,9 +35,9 @@ public class EntityCrit2FX extends EntityFX
     {
         for (int i = 0; i < 16; ++i)
         {
-            double d0 = (double)(this.field_70146_Z.nextFloat() * 2.0F - 1.0F);
-            double d1 = (double)(this.field_70146_Z.nextFloat() * 2.0F - 1.0F);
-            double d2 = (double)(this.field_70146_Z.nextFloat() * 2.0F - 1.0F);
+            double d0 = (double)(this.randomizer.nextFloat() * 2.0F - 1.0F);
+            double d1 = (double)(this.randomizer.nextFloat() * 2.0F - 1.0F);
+            double d2 = (double)(this.randomizer.nextFloat() * 2.0F - 1.0F);
 
             if (d0 * d0 + d1 * d1 + d2 * d2 <= 1.0D)
             {

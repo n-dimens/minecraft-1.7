@@ -121,9 +121,9 @@ public class EntityArrow extends Entity implements IProjectile
         p_70186_1_ /= (double)f2;
         p_70186_3_ /= (double)f2;
         p_70186_5_ /= (double)f2;
-        p_70186_1_ += this.field_70146_Z.nextGaussian() * (double)(this.field_70146_Z.nextBoolean() ? -1 : 1) * 0.007499999832361937D * (double)p_70186_8_;
-        p_70186_3_ += this.field_70146_Z.nextGaussian() * (double)(this.field_70146_Z.nextBoolean() ? -1 : 1) * 0.007499999832361937D * (double)p_70186_8_;
-        p_70186_5_ += this.field_70146_Z.nextGaussian() * (double)(this.field_70146_Z.nextBoolean() ? -1 : 1) * 0.007499999832361937D * (double)p_70186_8_;
+        p_70186_1_ += this.randomizer.nextGaussian() * (double)(this.randomizer.nextBoolean() ? -1 : 1) * 0.007499999832361937D * (double)p_70186_8_;
+        p_70186_3_ += this.randomizer.nextGaussian() * (double)(this.randomizer.nextBoolean() ? -1 : 1) * 0.007499999832361937D * (double)p_70186_8_;
+        p_70186_5_ += this.randomizer.nextGaussian() * (double)(this.randomizer.nextBoolean() ? -1 : 1) * 0.007499999832361937D * (double)p_70186_8_;
         p_70186_1_ *= (double)p_70186_7_;
         p_70186_3_ *= (double)p_70186_7_;
         p_70186_5_ *= (double)p_70186_7_;
@@ -207,9 +207,9 @@ public class EntityArrow extends Entity implements IProjectile
             else
             {
                 this.field_70254_i = false;
-                this.field_70159_w *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
-                this.field_70181_x *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
-                this.field_70179_y *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
+                this.field_70159_w *= (double)(this.randomizer.nextFloat() * 0.2F);
+                this.field_70181_x *= (double)(this.randomizer.nextFloat() * 0.2F);
+                this.field_70179_y *= (double)(this.randomizer.nextFloat() * 0.2F);
                 this.field_70252_j = 0;
                 this.field_70257_an = 0;
             }
@@ -266,7 +266,7 @@ public class EntityArrow extends Entity implements IProjectile
             {
                 EntityPlayer entityplayer = (EntityPlayer)movingobjectposition.field_72308_g;
 
-                if (entityplayer.field_71075_bZ.field_75102_a || this.field_70250_c instanceof EntityPlayer && !((EntityPlayer)this.field_70250_c).func_96122_a(entityplayer))
+                if (entityplayer.capabilities.invulnerable || this.field_70250_c instanceof EntityPlayer && !((EntityPlayer)this.field_70250_c).func_96122_a(entityplayer))
                 {
                     movingobjectposition = null;
                 }
@@ -284,7 +284,7 @@ public class EntityArrow extends Entity implements IProjectile
 
                     if (this.func_70241_g())
                     {
-                        k += this.field_70146_Z.nextInt(k / 2 + 2);
+                        k += this.randomizer.nextInt(k / 2 + 2);
                     }
 
                     DamageSource damagesource = null;
@@ -336,7 +336,7 @@ public class EntityArrow extends Entity implements IProjectile
                             }
                         }
 
-                        this.func_85030_a("random.bowhit", 1.0F, 1.2F / (this.field_70146_Z.nextFloat() * 0.2F + 0.9F));
+                        this.func_85030_a("random.bowhit", 1.0F, 1.2F / (this.randomizer.nextFloat() * 0.2F + 0.9F));
 
                         if (!(movingobjectposition.field_72308_g instanceof EntityEnderman))
                         {
@@ -367,7 +367,7 @@ public class EntityArrow extends Entity implements IProjectile
                     this.field_70165_t -= this.field_70159_w / (double)f2 * 0.05000000074505806D;
                     this.field_70163_u -= this.field_70181_x / (double)f2 * 0.05000000074505806D;
                     this.field_70161_v -= this.field_70179_y / (double)f2 * 0.05000000074505806D;
-                    this.func_85030_a("random.bowhit", 1.0F, 1.2F / (this.field_70146_Z.nextFloat() * 0.2F + 0.9F));
+                    this.func_85030_a("random.bowhit", 1.0F, 1.2F / (this.randomizer.nextFloat() * 0.2F + 0.9F));
                     this.field_70254_i = true;
                     this.field_70249_b = 7;
                     this.func_70243_d(false);
@@ -487,16 +487,16 @@ public class EntityArrow extends Entity implements IProjectile
     {
         if (!this.world.field_72995_K && this.field_70254_i && this.field_70249_b <= 0)
         {
-            boolean flag = this.field_70251_a == 1 || this.field_70251_a == 2 && p_70100_1_.field_71075_bZ.field_75098_d;
+            boolean flag = this.field_70251_a == 1 || this.field_70251_a == 2 && p_70100_1_.capabilities.instabuild;
 
-            if (this.field_70251_a == 1 && !p_70100_1_.field_71071_by.func_70441_a(new ItemStack(Items.ARROW, 1)))
+            if (this.field_70251_a == 1 && !p_70100_1_.inventory.func_70441_a(new ItemStack(Items.ARROW, 1)))
             {
                 flag = false;
             }
 
             if (flag)
             {
-                this.func_85030_a("random.pop", 0.2F, ((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                this.func_85030_a("random.pop", 0.2F, ((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.7F + 1.0F) * 2.0F);
                 p_70100_1_.func_71001_a(this, 1);
                 this.func_70106_y();
             }

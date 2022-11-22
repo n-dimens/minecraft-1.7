@@ -14,7 +14,7 @@ public class ItemBlockWithMetadata extends ItemBlock
     {
         super(p_i45326_1_);
         this.field_150950_b = p_i45326_2_;
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77627_a(true);
     }
 

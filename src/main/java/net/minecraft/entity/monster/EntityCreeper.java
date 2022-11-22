@@ -34,13 +34,13 @@ public class EntityCreeper extends EntityMob
     public EntityCreeper(World p_i1733_1_)
     {
         super(p_i1733_1_);
-        this.field_70714_bg.func_75776_a(1, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(2, new EntityAICreeperSwell(this));
-        this.field_70714_bg.func_75776_a(3, new EntityAIAvoidEntity(this, EntityOcelot.class, 6.0F, 1.0D, 1.2D));
-        this.field_70714_bg.func_75776_a(4, new EntityAIAttackOnCollide(this, 1.0D, false));
-        this.field_70714_bg.func_75776_a(5, new EntityAIWander(this, 0.8D));
-        this.field_70714_bg.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.field_70714_bg.func_75776_a(6, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(1, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(2, new EntityAICreeperSwell(this));
+        this.aiTasks.func_75776_a(3, new EntityAIAvoidEntity(this, EntityOcelot.class, 6.0F, 1.0D, 1.2D));
+        this.aiTasks.func_75776_a(4, new EntityAIAttackOnCollide(this, 1.0D, false));
+        this.aiTasks.func_75776_a(5, new EntityAIWander(this, 0.8D));
+        this.aiTasks.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.aiTasks.func_75776_a(6, new EntityAILookIdle(this));
         this.field_70715_bh.func_75776_a(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
         this.field_70715_bh.func_75776_a(2, new EntityAIHurtByTarget(this, false));
     }
@@ -168,7 +168,7 @@ public class EntityCreeper extends EntityMob
         {
             int i = Item.func_150891_b(Items.RECORD_13);
             int j = Item.func_150891_b(Items.RECORD_WAIT);
-            int k = i + this.field_70146_Z.nextInt(j - i + 1);
+            int k = i + this.randomizer.nextInt(j - i + 1);
             this.func_145779_a(Item.func_150899_d(k), 1);
         }
     }
@@ -210,24 +210,24 @@ public class EntityCreeper extends EntityMob
         this.field_70180_af.func_75692_b(17, Byte.valueOf((byte)1));
     }
 
-    protected boolean func_70085_c(EntityPlayer p_70085_1_)
+    protected boolean resultOfImpact(EntityPlayer player)
     {
-        ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = player.inventory.getActiveItem();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.FLINT_AND_STEEL)
+        if (itemstack != null && itemstack.getBaseItem() == Items.FLINT_AND_STEEL)
         {
-            this.world.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.ignite", 1.0F, this.field_70146_Z.nextFloat() * 0.4F + 0.8F);
-            p_70085_1_.func_71038_i();
+            this.world.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.ignite", 1.0F, this.randomizer.nextFloat() * 0.4F + 0.8F);
+            player.func_71038_i();
 
             if (!this.world.field_72995_K)
             {
                 this.func_146079_cb();
-                itemstack.func_77972_a(1, p_70085_1_);
+                itemstack.func_77972_a(1, player);
                 return true;
             }
         }
 
-        return super.func_70085_c(p_70085_1_);
+        return super.resultOfImpact(player);
     }
 
     private void func_146077_cc()

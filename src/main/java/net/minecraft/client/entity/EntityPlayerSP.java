@@ -129,7 +129,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
                 if (this.field_71086_bY == 0.0F)
                 {
-                    this.field_71159_c.func_147118_V().func_147682_a(PositionedSoundRecord.func_147674_a(new ResourceLocation("portal.trigger"), this.field_70146_Z.nextFloat() * 0.4F + 0.8F));
+                    this.field_71159_c.func_147118_V().func_147682_a(PositionedSoundRecord.func_147674_a(new ResourceLocation("portal.trigger"), this.randomizer.nextFloat() * 0.4F + 0.8F));
                 }
 
                 this.field_71086_bY += 0.0125F;
@@ -189,7 +189,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
             this.func_145771_j(this.field_70165_t - (double)this.field_70130_N * 0.35D, this.field_70121_D.field_72338_b + 0.5D, this.field_70161_v - (double)this.field_70130_N * 0.35D);
             this.func_145771_j(this.field_70165_t + (double)this.field_70130_N * 0.35D, this.field_70121_D.field_72338_b + 0.5D, this.field_70161_v - (double)this.field_70130_N * 0.35D);
             this.func_145771_j(this.field_70165_t + (double)this.field_70130_N * 0.35D, this.field_70121_D.field_72338_b + 0.5D, this.field_70161_v + (double)this.field_70130_N * 0.35D);
-            boolean flag2 = (float)this.func_71024_bL().func_75116_a() > 6.0F || this.field_71075_bZ.field_75101_c;
+            boolean flag2 = (float)this.func_71024_bL().func_75116_a() > 6.0F || this.capabilities.mayfly;
 
             if (this.field_70122_E && !flag1 && this.field_71158_b.field_78900_b >= f && !this.func_70051_ag() && flag2 && !this.func_71039_bw() && !this.func_70644_a(Potion.field_76440_q))
             {
@@ -213,7 +213,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
                 this.func_70031_b(false);
             }
 
-            if (this.field_71075_bZ.field_75101_c && !flag && this.field_71158_b.field_78901_c)
+            if (this.capabilities.mayfly && !flag && this.field_71158_b.field_78901_c)
             {
                 if (this.field_71101_bC == 0)
                 {
@@ -221,13 +221,13 @@ public class EntityPlayerSP extends AbstractClientPlayer
                 }
                 else
                 {
-                    this.field_71075_bZ.field_75100_b = !this.field_71075_bZ.field_75100_b;
+                    this.capabilities.flying = !this.capabilities.flying;
                     this.func_71016_p();
                     this.field_71101_bC = 0;
                 }
             }
 
-            if (this.field_71075_bZ.field_75100_b)
+            if (this.capabilities.flying)
             {
                 if (this.field_71158_b.field_78899_d)
                 {
@@ -283,9 +283,9 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
             super.func_70636_d();
 
-            if (this.field_70122_E && this.field_71075_bZ.field_75100_b)
+            if (this.field_70122_E && this.capabilities.flying)
             {
-                this.field_71075_bZ.field_75100_b = false;
+                this.capabilities.flying = false;
                 this.func_71016_p();
             }
         }
@@ -295,20 +295,20 @@ public class EntityPlayerSP extends AbstractClientPlayer
     {
         float f = 1.0F;
 
-        if (this.field_71075_bZ.field_75100_b)
+        if (this.capabilities.flying)
         {
             f *= 1.1F;
         }
 
         IAttributeInstance iattributeinstance = this.func_110148_a(SharedMonsterAttributes.field_111263_d);
-        f = (float)((double)f * ((iattributeinstance.func_111126_e() / (double)this.field_71075_bZ.func_75094_b() + 1.0D) / 2.0D));
+        f = (float)((double)f * ((iattributeinstance.func_111126_e() / (double)this.capabilities.func_75094_b() + 1.0D) / 2.0D));
 
-        if (this.field_71075_bZ.func_75094_b() == 0.0F || Float.isNaN(f) || Float.isInfinite(f))
+        if (this.capabilities.func_75094_b() == 0.0F || Float.isNaN(f) || Float.isInfinite(f))
         {
             f = 1.0F;
         }
 
-        if (this.func_71039_bw() && this.func_71011_bu().func_77973_b() == Items.BOW)
+        if (this.func_71039_bw() && this.func_71011_bu().getBaseItem() == Items.BOW)
         {
             int i = this.func_71057_bx();
             float f1 = (float)i / 20.0F;
@@ -353,7 +353,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
     public void func_71048_c(ItemStack p_71048_1_)
     {
-        Item item = p_71048_1_.func_77973_b();
+        Item item = p_71048_1_.getBaseItem();
 
         if (item == Items.WRITTEN_BOOK)
         {
@@ -367,62 +367,62 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
     public void func_71007_a(IInventory p_71007_1_)
     {
-        this.field_71159_c.func_147108_a(new GuiChest(this.field_71071_by, p_71007_1_));
+        this.field_71159_c.func_147108_a(new GuiChest(this.inventory, p_71007_1_));
     }
 
     public void func_146093_a(TileEntityHopper p_146093_1_)
     {
-        this.field_71159_c.func_147108_a(new GuiHopper(this.field_71071_by, p_146093_1_));
+        this.field_71159_c.func_147108_a(new GuiHopper(this.inventory, p_146093_1_));
     }
 
     public void func_96125_a(EntityMinecartHopper p_96125_1_)
     {
-        this.field_71159_c.func_147108_a(new GuiHopper(this.field_71071_by, p_96125_1_));
+        this.field_71159_c.func_147108_a(new GuiHopper(this.inventory, p_96125_1_));
     }
 
     public void func_110298_a(EntityHorse p_110298_1_, IInventory p_110298_2_)
     {
-        this.field_71159_c.func_147108_a(new GuiScreenHorseInventory(this.field_71071_by, p_110298_2_, p_110298_1_));
+        this.field_71159_c.func_147108_a(new GuiScreenHorseInventory(this.inventory, p_110298_2_, p_110298_1_));
     }
 
     public void func_71058_b(int p_71058_1_, int p_71058_2_, int p_71058_3_)
     {
-        this.field_71159_c.func_147108_a(new GuiCrafting(this.field_71071_by, this.world, p_71058_1_, p_71058_2_, p_71058_3_));
+        this.field_71159_c.func_147108_a(new GuiCrafting(this.inventory, this.world, p_71058_1_, p_71058_2_, p_71058_3_));
     }
 
     public void func_71002_c(int p_71002_1_, int p_71002_2_, int p_71002_3_, String p_71002_4_)
     {
-        this.field_71159_c.func_147108_a(new GuiEnchantment(this.field_71071_by, this.world, p_71002_1_, p_71002_2_, p_71002_3_, p_71002_4_));
+        this.field_71159_c.func_147108_a(new GuiEnchantment(this.inventory, this.world, p_71002_1_, p_71002_2_, p_71002_3_, p_71002_4_));
     }
 
     public void func_82244_d(int p_82244_1_, int p_82244_2_, int p_82244_3_)
     {
-        this.field_71159_c.func_147108_a(new GuiRepair(this.field_71071_by, this.world, p_82244_1_, p_82244_2_, p_82244_3_));
+        this.field_71159_c.func_147108_a(new GuiRepair(this.inventory, this.world, p_82244_1_, p_82244_2_, p_82244_3_));
     }
 
     public void func_146101_a(TileEntityFurnace p_146101_1_)
     {
-        this.field_71159_c.func_147108_a(new GuiFurnace(this.field_71071_by, p_146101_1_));
+        this.field_71159_c.func_147108_a(new GuiFurnace(this.inventory, p_146101_1_));
     }
 
     public void func_146098_a(TileEntityBrewingStand p_146098_1_)
     {
-        this.field_71159_c.func_147108_a(new GuiBrewingStand(this.field_71071_by, p_146098_1_));
+        this.field_71159_c.func_147108_a(new GuiBrewingStand(this.inventory, p_146098_1_));
     }
 
     public void func_146104_a(TileEntityBeacon p_146104_1_)
     {
-        this.field_71159_c.func_147108_a(new GuiBeacon(this.field_71071_by, p_146104_1_));
+        this.field_71159_c.func_147108_a(new GuiBeacon(this.inventory, p_146104_1_));
     }
 
     public void func_146102_a(TileEntityDispenser p_146102_1_)
     {
-        this.field_71159_c.func_147108_a(new GuiDispenser(this.field_71071_by, p_146102_1_));
+        this.field_71159_c.func_147108_a(new GuiDispenser(this.inventory, p_146102_1_));
     }
 
     public void func_71030_a(IMerchant p_71030_1_, String p_71030_2_)
     {
-        this.field_71159_c.func_147108_a(new GuiMerchant(this.field_71071_by, p_71030_1_, this.world, p_71030_2_));
+        this.field_71159_c.func_147108_a(new GuiMerchant(this.inventory, p_71030_1_, this.world, p_71030_2_));
     }
 
     public void func_71009_b(Entity p_71009_1_)

@@ -71,7 +71,7 @@ public class InventoryCrafting implements IInventory
         {
             ItemStack itemstack;
 
-            if (this.field_70466_a[p_70298_1_].field_77994_a <= p_70298_2_)
+            if (this.field_70466_a[p_70298_1_].count <= p_70298_2_)
             {
                 itemstack = this.field_70466_a[p_70298_1_];
                 this.field_70466_a[p_70298_1_] = null;
@@ -82,7 +82,7 @@ public class InventoryCrafting implements IInventory
             {
                 itemstack = this.field_70466_a[p_70298_1_].func_77979_a(p_70298_2_);
 
-                if (this.field_70466_a[p_70298_1_].field_77994_a == 0)
+                if (this.field_70466_a[p_70298_1_].count == 0)
                 {
                     this.field_70466_a[p_70298_1_] = null;
                 }
@@ -97,7 +97,7 @@ public class InventoryCrafting implements IInventory
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         this.field_70466_a[p_70299_1_] = p_70299_2_;
         this.field_70465_c.func_75130_a(this);

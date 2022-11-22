@@ -134,7 +134,7 @@ public class EntityTrackerEntry
             EntityItemFrame entityitemframe = (EntityItemFrame)this.field_73132_a;
             ItemStack itemstack = entityitemframe.func_82335_i();
 
-            if (itemstack != null && itemstack.func_77973_b() instanceof ItemMap)
+            if (itemstack != null && itemstack.getBaseItem() instanceof ItemMap)
             {
                 MapData mapdata = Items.FILLED_MAP.func_77873_a(itemstack, this.field_73132_a.world);
                 Iterator iterator = p_73122_1_.iterator();

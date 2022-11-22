@@ -16,7 +16,7 @@ public class ItemCoal extends Item
     public ItemCoal()
     {
         this.func_77627_a(true);
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77637_a(CreativeTabs.field_78035_l);
     }
 

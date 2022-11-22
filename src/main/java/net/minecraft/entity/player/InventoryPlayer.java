@@ -16,24 +16,27 @@ import net.minecraft.util.ReportedException;
 
 public class InventoryPlayer implements IInventory
 {
-    public ItemStack[] field_70462_a = new ItemStack[36];
+    public ItemStack[] cells = new ItemStack[36];
     public ItemStack[] field_70460_b = new ItemStack[4];
-    public int field_70461_c;
+    public int activeItemPosition;
     @SideOnly(Side.CLIENT)
     private ItemStack field_70456_f;
-    public EntityPlayer field_70458_d;
+    public final EntityPlayer player;
     private ItemStack field_70457_g;
     public boolean field_70459_e;
     private static final String __OBFID = "CL_00001709";
 
-    public InventoryPlayer(EntityPlayer p_i1750_1_)
+    public InventoryPlayer(EntityPlayer player)
     {
-        this.field_70458_d = p_i1750_1_;
+        this.player = player;
     }
 
-    public ItemStack func_70448_g()
+    /**
+     * Предмет в руке
+     */
+    public ItemStack getActiveItem()
     {
-        return this.field_70461_c < 9 && this.field_70461_c >= 0 ? this.field_70462_a[this.field_70461_c] : null;
+        return this.activeItemPosition < 9 && this.activeItemPosition >= 0 ? this.cells[this.activeItemPosition] : null;
     }
 
     public static int func_70451_h()
@@ -41,11 +44,11 @@ public class InventoryPlayer implements IInventory
         return 9;
     }
 
-    private int func_146029_c(Item p_146029_1_)
+    private int getItemPosition(Item item)
     {
-        for (int i = 0; i < this.field_70462_a.length; ++i)
+        for (int i = 0; i < this.cells.length; ++i)
         {
-            if (this.field_70462_a[i] != null && this.field_70462_a[i].func_77973_b() == p_146029_1_)
+            if (this.cells[i] != null && this.cells[i].getBaseItem() == item)
             {
                 return i;
             }
@@ -55,11 +58,11 @@ public class InventoryPlayer implements IInventory
     }
 
     @SideOnly(Side.CLIENT)
-    private int func_146024_c(Item p_146024_1_, int p_146024_2_)
+    private int func_146024_c(Item item, int p_146024_2_)
     {
-        for (int j = 0; j < this.field_70462_a.length; ++j)
+        for (int j = 0; j < this.cells.length; ++j)
         {
-            if (this.field_70462_a[j] != null && this.field_70462_a[j].func_77973_b() == p_146024_1_ && this.field_70462_a[j].func_77960_j() == p_146024_2_)
+            if (this.cells[j] != null && this.cells[j].getBaseItem() == item && this.cells[j].func_77960_j() == p_146024_2_)
             {
                 return j;
             }
@@ -70,9 +73,9 @@ public class InventoryPlayer implements IInventory
 
     private int func_70432_d(ItemStack p_70432_1_)
     {
-        for (int i = 0; i < this.field_70462_a.length; ++i)
+        for (int i = 0; i < this.cells.length; ++i)
         {
-            if (this.field_70462_a[i] != null && this.field_70462_a[i].func_77973_b() == p_70432_1_.func_77973_b() && this.field_70462_a[i].func_77985_e() && this.field_70462_a[i].field_77994_a < this.field_70462_a[i].func_77976_d() && this.field_70462_a[i].field_77994_a < this.func_70297_j_() && (!this.field_70462_a[i].func_77981_g() || this.field_70462_a[i].func_77960_j() == p_70432_1_.func_77960_j()) && ItemStack.func_77970_a(this.field_70462_a[i], p_70432_1_))
+            if (this.cells[i] != null && this.cells[i].getBaseItem() == p_70432_1_.getBaseItem() && this.cells[i].func_77985_e() && this.cells[i].count < this.cells[i].func_77976_d() && this.cells[i].count < this.func_70297_j_() && (!this.cells[i].func_77981_g() || this.cells[i].func_77960_j() == p_70432_1_.func_77960_j()) && ItemStack.func_77970_a(this.cells[i], p_70432_1_))
             {
                 return i;
             }
@@ -83,9 +86,9 @@ public class InventoryPlayer implements IInventory
 
     public int func_70447_i()
     {
-        for (int i = 0; i < this.field_70462_a.length; ++i)
+        for (int i = 0; i < this.cells.length; ++i)
         {
-            if (this.field_70462_a[i] == null)
+            if (this.cells[i] == null)
             {
                 return i;
             }
@@ -98,7 +101,7 @@ public class InventoryPlayer implements IInventory
     public void func_146030_a(Item p_146030_1_, int p_146030_2_, boolean p_146030_3_, boolean p_146030_4_)
     {
         boolean flag2 = true;
-        this.field_70456_f = this.func_70448_g();
+        this.field_70456_f = this.getActiveItem();
         int k;
 
         if (p_146030_3_)
@@ -107,12 +110,12 @@ public class InventoryPlayer implements IInventory
         }
         else
         {
-            k = this.func_146029_c(p_146030_1_);
+            k = this.getItemPosition(p_146030_1_);
         }
 
         if (k >= 0 && k < 9)
         {
-            this.field_70461_c = k;
+            this.activeItemPosition = k;
         }
         else
         {
@@ -122,7 +125,7 @@ public class InventoryPlayer implements IInventory
 
                 if (j >= 0 && j < 9)
                 {
-                    this.field_70461_c = j;
+                    this.activeItemPosition = j;
                 }
 
                 this.func_70439_a(p_146030_1_, p_146030_2_);
@@ -136,14 +139,14 @@ public class InventoryPlayer implements IInventory
         int k;
         ItemStack itemstack;
 
-        for (k = 0; k < this.field_70462_a.length; ++k)
+        for (k = 0; k < this.cells.length; ++k)
         {
-            itemstack = this.field_70462_a[k];
+            itemstack = this.cells[k];
 
-            if (itemstack != null && (p_146027_1_ == null || itemstack.func_77973_b() == p_146027_1_) && (p_146027_2_ <= -1 || itemstack.func_77960_j() == p_146027_2_))
+            if (itemstack != null && (p_146027_1_ == null || itemstack.getBaseItem() == p_146027_1_) && (p_146027_2_ <= -1 || itemstack.func_77960_j() == p_146027_2_))
             {
-                j += itemstack.field_77994_a;
-                this.field_70462_a[k] = null;
+                j += itemstack.count;
+                this.cells[k] = null;
             }
         }
 
@@ -151,16 +154,16 @@ public class InventoryPlayer implements IInventory
         {
             itemstack = this.field_70460_b[k];
 
-            if (itemstack != null && (p_146027_1_ == null || itemstack.func_77973_b() == p_146027_1_) && (p_146027_2_ <= -1 || itemstack.func_77960_j() == p_146027_2_))
+            if (itemstack != null && (p_146027_1_ == null || itemstack.getBaseItem() == p_146027_1_) && (p_146027_2_ <= -1 || itemstack.func_77960_j() == p_146027_2_))
             {
-                j += itemstack.field_77994_a;
+                j += itemstack.count;
                 this.field_70460_b[k] = null;
             }
         }
 
         if (this.field_70457_g != null)
         {
-            if (p_146027_1_ != null && this.field_70457_g.func_77973_b() != p_146027_1_)
+            if (p_146027_1_ != null && this.field_70457_g.getBaseItem() != p_146027_1_)
             {
                 return j;
             }
@@ -170,7 +173,7 @@ public class InventoryPlayer implements IInventory
                 return j;
             }
 
-            j += this.field_70457_g.field_77994_a;
+            j += this.field_70457_g.count;
             this.func_70437_b((ItemStack)null);
         }
 
@@ -190,14 +193,14 @@ public class InventoryPlayer implements IInventory
             p_70453_1_ = -1;
         }
 
-        for (this.field_70461_c -= p_70453_1_; this.field_70461_c < 0; this.field_70461_c += 9)
+        for (this.activeItemPosition -= p_70453_1_; this.activeItemPosition < 0; this.activeItemPosition += 9)
         {
             ;
         }
 
-        while (this.field_70461_c >= 9)
+        while (this.activeItemPosition >= 9)
         {
-            this.field_70461_c -= 9;
+            this.activeItemPosition -= 9;
         }
     }
 
@@ -206,7 +209,7 @@ public class InventoryPlayer implements IInventory
     {
         if (p_70439_1_ != null)
         {
-            if (this.field_70456_f != null && this.field_70456_f.func_77956_u() && this.func_146024_c(this.field_70456_f.func_77973_b(), this.field_70456_f.func_77952_i()) == this.field_70461_c)
+            if (this.field_70456_f != null && this.field_70456_f.func_77956_u() && this.func_146024_c(this.field_70456_f.getBaseItem(), this.field_70456_f.func_77952_i()) == this.activeItemPosition)
             {
                 return;
             }
@@ -215,21 +218,21 @@ public class InventoryPlayer implements IInventory
 
             if (j >= 0)
             {
-                int k = this.field_70462_a[j].field_77994_a;
-                this.field_70462_a[j] = this.field_70462_a[this.field_70461_c];
-                this.field_70462_a[this.field_70461_c] = new ItemStack(p_70439_1_, k, p_70439_2_);
+                int k = this.cells[j].count;
+                this.cells[j] = this.cells[this.activeItemPosition];
+                this.cells[this.activeItemPosition] = new ItemStack(p_70439_1_, k, p_70439_2_);
             }
             else
             {
-                this.field_70462_a[this.field_70461_c] = new ItemStack(p_70439_1_, 1, p_70439_2_);
+                this.cells[this.activeItemPosition] = new ItemStack(p_70439_1_, 1, p_70439_2_);
             }
         }
     }
 
     private int func_70452_e(ItemStack p_70452_1_)
     {
-        Item item = p_70452_1_.func_77973_b();
-        int i = p_70452_1_.field_77994_a;
+        Item item = p_70452_1_.getBaseItem();
+        int i = p_70452_1_.count;
         int j;
 
         if (p_70452_1_.func_77976_d() == 1)
@@ -242,9 +245,9 @@ public class InventoryPlayer implements IInventory
             }
             else
             {
-                if (this.field_70462_a[j] == null)
+                if (this.cells[j] == null)
                 {
-                    this.field_70462_a[j] = ItemStack.func_77944_b(p_70452_1_);
+                    this.cells[j] = ItemStack.func_77944_b(p_70452_1_);
                 }
 
                 return 0;
@@ -265,26 +268,26 @@ public class InventoryPlayer implements IInventory
             }
             else
             {
-                if (this.field_70462_a[j] == null)
+                if (this.cells[j] == null)
                 {
-                    this.field_70462_a[j] = new ItemStack(item, 0, p_70452_1_.func_77960_j());
+                    this.cells[j] = new ItemStack(item, 0, p_70452_1_.func_77960_j());
 
                     if (p_70452_1_.func_77942_o())
                     {
-                        this.field_70462_a[j].func_77982_d((NBTTagCompound)p_70452_1_.func_77978_p().func_74737_b());
+                        this.cells[j].func_77982_d((NBTTagCompound)p_70452_1_.func_77978_p().func_74737_b());
                     }
                 }
 
                 int k = i;
 
-                if (i > this.field_70462_a[j].func_77976_d() - this.field_70462_a[j].field_77994_a)
+                if (i > this.cells[j].func_77976_d() - this.cells[j].count)
                 {
-                    k = this.field_70462_a[j].func_77976_d() - this.field_70462_a[j].field_77994_a;
+                    k = this.cells[j].func_77976_d() - this.cells[j].count;
                 }
 
-                if (k > this.func_70297_j_() - this.field_70462_a[j].field_77994_a)
+                if (k > this.func_70297_j_() - this.cells[j].count)
                 {
-                    k = this.func_70297_j_() - this.field_70462_a[j].field_77994_a;
+                    k = this.func_70297_j_() - this.cells[j].count;
                 }
 
                 if (k == 0)
@@ -294,8 +297,8 @@ public class InventoryPlayer implements IInventory
                 else
                 {
                     i -= k;
-                    this.field_70462_a[j].field_77994_a += k;
-                    this.field_70462_a[j].field_77992_b = 5;
+                    this.cells[j].count += k;
+                    this.cells[j].field_77992_b = 5;
                     return i;
                 }
             }
@@ -304,18 +307,18 @@ public class InventoryPlayer implements IInventory
 
     public void func_70429_k()
     {
-        for (int i = 0; i < this.field_70462_a.length; ++i)
+        for (int i = 0; i < this.cells.length; ++i)
         {
-            if (this.field_70462_a[i] != null)
+            if (this.cells[i] != null)
             {
-                this.field_70462_a[i].func_77945_a(this.field_70458_d.world, this.field_70458_d, i, this.field_70461_c == i);
+                this.cells[i].func_77945_a(this.player.world, this.player, i, this.activeItemPosition == i);
             }
         }
     }
 
     public boolean func_146026_a(Item p_146026_1_)
     {
-        int i = this.func_146029_c(p_146026_1_);
+        int i = this.getItemPosition(p_146026_1_);
 
         if (i < 0)
         {
@@ -323,9 +326,9 @@ public class InventoryPlayer implements IInventory
         }
         else
         {
-            if (--this.field_70462_a[i].field_77994_a <= 0)
+            if (--this.cells[i].count <= 0)
             {
-                this.field_70462_a[i] = null;
+                this.cells[i] = null;
             }
 
             return true;
@@ -334,13 +337,13 @@ public class InventoryPlayer implements IInventory
 
     public boolean func_146028_b(Item p_146028_1_)
     {
-        int i = this.func_146029_c(p_146028_1_);
+        int i = this.getItemPosition(p_146028_1_);
         return i >= 0;
     }
 
     public boolean func_70441_a(final ItemStack p_70441_1_)
     {
-        if (p_70441_1_ != null && p_70441_1_.field_77994_a != 0 && p_70441_1_.func_77973_b() != null)
+        if (p_70441_1_ != null && p_70441_1_.count != 0 && p_70441_1_.getBaseItem() != null)
         {
             try
             {
@@ -352,14 +355,14 @@ public class InventoryPlayer implements IInventory
 
                     if (i >= 0)
                     {
-                        this.field_70462_a[i] = ItemStack.func_77944_b(p_70441_1_);
-                        this.field_70462_a[i].field_77992_b = 5;
-                        p_70441_1_.field_77994_a = 0;
+                        this.cells[i] = ItemStack.func_77944_b(p_70441_1_);
+                        this.cells[i].field_77992_b = 5;
+                        p_70441_1_.count = 0;
                         return true;
                     }
-                    else if (this.field_70458_d.field_71075_bZ.field_75098_d)
+                    else if (this.player.capabilities.instabuild)
                     {
-                        p_70441_1_.field_77994_a = 0;
+                        p_70441_1_.count = 0;
                         return true;
                     }
                     else
@@ -371,19 +374,19 @@ public class InventoryPlayer implements IInventory
                 {
                     do
                     {
-                        i = p_70441_1_.field_77994_a;
-                        p_70441_1_.field_77994_a = this.func_70452_e(p_70441_1_);
+                        i = p_70441_1_.count;
+                        p_70441_1_.count = this.func_70452_e(p_70441_1_);
                     }
-                    while (p_70441_1_.field_77994_a > 0 && p_70441_1_.field_77994_a < i);
+                    while (p_70441_1_.count > 0 && p_70441_1_.count < i);
 
-                    if (p_70441_1_.field_77994_a == i && this.field_70458_d.field_71075_bZ.field_75098_d)
+                    if (p_70441_1_.count == i && this.player.capabilities.instabuild)
                     {
-                        p_70441_1_.field_77994_a = 0;
+                        p_70441_1_.count = 0;
                         return true;
                     }
                     else
                     {
-                        return p_70441_1_.field_77994_a < i;
+                        return p_70441_1_.count < i;
                     }
                 }
             }
@@ -391,7 +394,7 @@ public class InventoryPlayer implements IInventory
             {
                 CrashReport crashreport = CrashReport.func_85055_a(throwable, "Adding item to inventory");
                 CrashReportCategory crashreportcategory = crashreport.func_85058_a("Item being added");
-                crashreportcategory.func_71507_a("Item ID", Integer.valueOf(Item.func_150891_b(p_70441_1_.func_77973_b())));
+                crashreportcategory.func_71507_a("Item ID", Integer.valueOf(Item.func_150891_b(p_70441_1_.getBaseItem())));
                 crashreportcategory.func_71507_a("Item data", Integer.valueOf(p_70441_1_.func_77960_j()));
                 crashreportcategory.func_71500_a("Item name", new Callable()
                 {
@@ -412,19 +415,19 @@ public class InventoryPlayer implements IInventory
 
     public ItemStack func_70298_a(int p_70298_1_, int p_70298_2_)
     {
-        ItemStack[] aitemstack = this.field_70462_a;
+        ItemStack[] aitemstack = this.cells;
 
-        if (p_70298_1_ >= this.field_70462_a.length)
+        if (p_70298_1_ >= this.cells.length)
         {
             aitemstack = this.field_70460_b;
-            p_70298_1_ -= this.field_70462_a.length;
+            p_70298_1_ -= this.cells.length;
         }
 
         if (aitemstack[p_70298_1_] != null)
         {
             ItemStack itemstack;
 
-            if (aitemstack[p_70298_1_].field_77994_a <= p_70298_2_)
+            if (aitemstack[p_70298_1_].count <= p_70298_2_)
             {
                 itemstack = aitemstack[p_70298_1_];
                 aitemstack[p_70298_1_] = null;
@@ -434,7 +437,7 @@ public class InventoryPlayer implements IInventory
             {
                 itemstack = aitemstack[p_70298_1_].func_77979_a(p_70298_2_);
 
-                if (aitemstack[p_70298_1_].field_77994_a == 0)
+                if (aitemstack[p_70298_1_].count == 0)
                 {
                     aitemstack[p_70298_1_] = null;
                 }
@@ -450,12 +453,12 @@ public class InventoryPlayer implements IInventory
 
     public ItemStack func_70304_b(int p_70304_1_)
     {
-        ItemStack[] aitemstack = this.field_70462_a;
+        ItemStack[] aitemstack = this.cells;
 
-        if (p_70304_1_ >= this.field_70462_a.length)
+        if (p_70304_1_ >= this.cells.length)
         {
             aitemstack = this.field_70460_b;
-            p_70304_1_ -= this.field_70462_a.length;
+            p_70304_1_ -= this.cells.length;
         }
 
         if (aitemstack[p_70304_1_] != null)
@@ -470,26 +473,26 @@ public class InventoryPlayer implements IInventory
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int position, ItemStack item)
     {
-        ItemStack[] aitemstack = this.field_70462_a;
+        ItemStack[] inventoryCells = this.cells;
 
-        if (p_70299_1_ >= aitemstack.length)
+        if (position >= inventoryCells.length)
         {
-            p_70299_1_ -= aitemstack.length;
-            aitemstack = this.field_70460_b;
+            position -= inventoryCells.length;
+            inventoryCells = this.field_70460_b;
         }
 
-        aitemstack[p_70299_1_] = p_70299_2_;
+        inventoryCells[position] = item;
     }
 
     public float func_146023_a(Block p_146023_1_)
     {
         float f = 1.0F;
 
-        if (this.field_70462_a[this.field_70461_c] != null)
+        if (this.cells[this.activeItemPosition] != null)
         {
-            f *= this.field_70462_a[this.field_70461_c].func_150997_a(p_146023_1_);
+            f *= this.cells[this.activeItemPosition].func_150997_a(p_146023_1_);
         }
 
         return f;
@@ -500,13 +503,13 @@ public class InventoryPlayer implements IInventory
         int i;
         NBTTagCompound nbttagcompound;
 
-        for (i = 0; i < this.field_70462_a.length; ++i)
+        for (i = 0; i < this.cells.length; ++i)
         {
-            if (this.field_70462_a[i] != null)
+            if (this.cells[i] != null)
             {
                 nbttagcompound = new NBTTagCompound();
                 nbttagcompound.func_74774_a("Slot", (byte)i);
-                this.field_70462_a[i].func_77955_b(nbttagcompound);
+                this.cells[i].func_77955_b(nbttagcompound);
                 p_70442_1_.func_74742_a(nbttagcompound);
             }
         }
@@ -527,7 +530,7 @@ public class InventoryPlayer implements IInventory
 
     public void func_70443_b(NBTTagList p_70443_1_)
     {
-        this.field_70462_a = new ItemStack[36];
+        this.cells = new ItemStack[36];
         this.field_70460_b = new ItemStack[4];
 
         for (int i = 0; i < p_70443_1_.func_74745_c(); ++i)
@@ -538,9 +541,9 @@ public class InventoryPlayer implements IInventory
 
             if (itemstack != null)
             {
-                if (j >= 0 && j < this.field_70462_a.length)
+                if (j >= 0 && j < this.cells.length)
                 {
-                    this.field_70462_a[j] = itemstack;
+                    this.cells[j] = itemstack;
                 }
 
                 if (j >= 100 && j < this.field_70460_b.length + 100)
@@ -553,12 +556,12 @@ public class InventoryPlayer implements IInventory
 
     public int func_70302_i_()
     {
-        return this.field_70462_a.length + 4;
+        return this.cells.length + 4;
     }
 
     public ItemStack func_70301_a(int p_70301_1_)
     {
-        ItemStack[] aitemstack = this.field_70462_a;
+        ItemStack[] aitemstack = this.cells;
 
         if (p_70301_1_ >= aitemstack.length)
         {
@@ -592,7 +595,7 @@ public class InventoryPlayer implements IInventory
         }
         else
         {
-            ItemStack itemstack = this.func_70301_a(this.field_70461_c);
+            ItemStack itemstack = this.func_70301_a(this.activeItemPosition);
             return itemstack != null ? itemstack.func_150998_b(p_146025_1_) : false;
         }
     }
@@ -608,9 +611,9 @@ public class InventoryPlayer implements IInventory
 
         for (int j = 0; j < this.field_70460_b.length; ++j)
         {
-            if (this.field_70460_b[j] != null && this.field_70460_b[j].func_77973_b() instanceof ItemArmor)
+            if (this.field_70460_b[j] != null && this.field_70460_b[j].getBaseItem() instanceof ItemArmor)
             {
-                int k = ((ItemArmor)this.field_70460_b[j].func_77973_b()).field_77879_b;
+                int k = ((ItemArmor)this.field_70460_b[j].getBaseItem()).field_77879_b;
                 i += k;
             }
         }
@@ -629,11 +632,11 @@ public class InventoryPlayer implements IInventory
 
         for (int i = 0; i < this.field_70460_b.length; ++i)
         {
-            if (this.field_70460_b[i] != null && this.field_70460_b[i].func_77973_b() instanceof ItemArmor)
+            if (this.field_70460_b[i] != null && this.field_70460_b[i].getBaseItem() instanceof ItemArmor)
             {
-                this.field_70460_b[i].func_77972_a((int)p_70449_1_, this.field_70458_d);
+                this.field_70460_b[i].func_77972_a((int)p_70449_1_, this.player);
 
-                if (this.field_70460_b[i].field_77994_a == 0)
+                if (this.field_70460_b[i].count == 0)
                 {
                     this.field_70460_b[i] = null;
                 }
@@ -645,12 +648,12 @@ public class InventoryPlayer implements IInventory
     {
         int i;
 
-        for (i = 0; i < this.field_70462_a.length; ++i)
+        for (i = 0; i < this.cells.length; ++i)
         {
-            if (this.field_70462_a[i] != null)
+            if (this.cells[i] != null)
             {
-                this.field_70458_d.func_146097_a(this.field_70462_a[i], true, false);
-                this.field_70462_a[i] = null;
+                this.player.func_146097_a(this.cells[i], true, false);
+                this.cells[i] = null;
             }
         }
 
@@ -658,7 +661,7 @@ public class InventoryPlayer implements IInventory
         {
             if (this.field_70460_b[i] != null)
             {
-                this.field_70458_d.func_146097_a(this.field_70460_b[i], true, false);
+                this.player.func_146097_a(this.field_70460_b[i], true, false);
                 this.field_70460_b[i] = null;
             }
         }
@@ -681,7 +684,7 @@ public class InventoryPlayer implements IInventory
 
     public boolean func_70300_a(EntityPlayer p_70300_1_)
     {
-        return this.field_70458_d.field_70128_L ? false : p_70300_1_.func_70068_e(this.field_70458_d) <= 64.0D;
+        return this.player.field_70128_L ? false : p_70300_1_.func_70068_e(this.player) <= 64.0D;
     }
 
     public boolean func_70431_c(ItemStack p_70431_1_)
@@ -696,9 +699,9 @@ public class InventoryPlayer implements IInventory
             }
         }
 
-        for (i = 0; i < this.field_70462_a.length; ++i)
+        for (i = 0; i < this.cells.length; ++i)
         {
-            if (this.field_70462_a[i] != null && this.field_70462_a[i].func_77969_a(p_70431_1_))
+            if (this.cells[i] != null && this.cells[i].func_77969_a(p_70431_1_))
             {
                 return true;
             }
@@ -720,9 +723,9 @@ public class InventoryPlayer implements IInventory
     {
         int i;
 
-        for (i = 0; i < this.field_70462_a.length; ++i)
+        for (i = 0; i < this.cells.length; ++i)
         {
-            this.field_70462_a[i] = ItemStack.func_77944_b(p_70455_1_.field_70462_a[i]);
+            this.cells[i] = ItemStack.func_77944_b(p_70455_1_.cells[i]);
         }
 
         for (i = 0; i < this.field_70460_b.length; ++i)
@@ -730,6 +733,6 @@ public class InventoryPlayer implements IInventory
             this.field_70460_b[i] = ItemStack.func_77944_b(p_70455_1_.field_70460_b[i]);
         }
 
-        this.field_70461_c = p_70455_1_.field_70461_c;
+        this.activeItemPosition = p_70455_1_.activeItemPosition;
     }
 }

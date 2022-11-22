@@ -75,9 +75,9 @@ public class ContainerBeacon extends Container
         return this.field_82866_e;
     }
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
-        return this.field_82866_e.func_70300_a(p_75145_1_);
+        return this.field_82866_e.func_70300_a(player);
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)
@@ -99,7 +99,7 @@ public class ContainerBeacon extends Container
 
                 slot.func_75220_a(itemstack1, itemstack);
             }
-            else if (!this.field_82864_f.func_75216_d() && this.field_82864_f.func_75214_a(itemstack1) && itemstack1.field_77994_a == 1)
+            else if (!this.field_82864_f.func_75216_d() && this.field_82864_f.func_75214_a(itemstack1) && itemstack1.count == 1)
             {
                 if (!this.func_75135_a(itemstack1, 0, 1, false))
                 {
@@ -125,7 +125,7 @@ public class ContainerBeacon extends Container
                 return null;
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }
@@ -134,7 +134,7 @@ public class ContainerBeacon extends Container
                 slot.func_75218_e();
             }
 
-            if (itemstack1.field_77994_a == itemstack.field_77994_a)
+            if (itemstack1.count == itemstack.count)
             {
                 return null;
             }
@@ -156,7 +156,7 @@ public class ContainerBeacon extends Container
 
         public boolean func_75214_a(ItemStack p_75214_1_)
         {
-            return p_75214_1_ == null ? false : p_75214_1_.func_77973_b() == Items.EMERALD || p_75214_1_.func_77973_b() == Items.DIAMOND || p_75214_1_.func_77973_b() == Items.GOLD_INGOT || p_75214_1_.func_77973_b() == Items.IRON_INGOT;
+            return p_75214_1_ == null ? false : p_75214_1_.getBaseItem() == Items.EMERALD || p_75214_1_.getBaseItem() == Items.DIAMOND || p_75214_1_.getBaseItem() == Items.GOLD_INGOT || p_75214_1_.getBaseItem() == Items.IRON_INGOT;
         }
 
         public int func_75219_a()

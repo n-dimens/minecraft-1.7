@@ -17,9 +17,9 @@ public class EntityLavaFX extends EntityFX
         this.field_70159_w *= 0.800000011920929D;
         this.field_70181_x *= 0.800000011920929D;
         this.field_70179_y *= 0.800000011920929D;
-        this.field_70181_x = (double)(this.field_70146_Z.nextFloat() * 0.4F + 0.05F);
+        this.field_70181_x = (double)(this.randomizer.nextFloat() * 0.4F + 0.05F);
         this.field_70552_h = this.field_70553_i = this.field_70551_j = 1.0F;
-        this.field_70544_f *= this.field_70146_Z.nextFloat() * 2.0F + 0.2F;
+        this.field_70544_f *= this.randomizer.nextFloat() * 2.0F + 0.2F;
         this.field_70586_a = this.field_70544_f;
         this.field_70547_e = (int)(16.0D / (Math.random() * 0.8D + 0.2D));
         this.field_70145_X = false;
@@ -71,7 +71,7 @@ public class EntityLavaFX extends EntityFX
 
         float f = (float)this.field_70546_d / (float)this.field_70547_e;
 
-        if (this.field_70146_Z.nextFloat() > f)
+        if (this.randomizer.nextFloat() > f)
         {
             this.world.func_72869_a("smoke", this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70159_w, this.field_70181_x, this.field_70179_y);
         }

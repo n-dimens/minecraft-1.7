@@ -43,7 +43,7 @@ public class ItemArmor extends Item
                 int l = entitylivingbase instanceof EntityPlayer ? 1 : 0;
                 int i1 = EntityLiving.func_82159_b(p_82487_2_);
                 ItemStack itemstack1 = p_82487_2_.func_77946_l();
-                itemstack1.field_77994_a = 1;
+                itemstack1.count = 1;
                 entitylivingbase.func_70062_b(i1 - l, itemstack1);
 
                 if (entitylivingbase instanceof EntityLiving)
@@ -51,7 +51,7 @@ public class ItemArmor extends Item
                     ((EntityLiving)entitylivingbase).func_96120_a(i1, 2.0F);
                 }
 
-                --p_82487_2_.field_77994_a;
+                --p_82487_2_.count;
                 return p_82487_2_;
             }
             else
@@ -76,8 +76,8 @@ public class ItemArmor extends Item
         this.field_77881_a = p_i45325_3_;
         this.field_77880_c = p_i45325_2_;
         this.field_77879_b = p_i45325_1_.func_78044_b(p_i45325_3_);
-        this.func_77656_e(p_i45325_1_.func_78046_a(p_i45325_3_));
-        this.field_77777_bU = 1;
+        this.setDurability(p_i45325_1_.func_78046_a(p_i45325_3_));
+        this.stackMaxSize = 1;
         this.func_77637_a(CreativeTabs.field_78037_j);
         BlockDispenser.field_149943_a.add(this, field_96605_cw);
     }
@@ -198,7 +198,7 @@ public class ItemArmor extends Item
 
     public boolean func_82789_a(ItemStack p_82789_1_, ItemStack p_82789_2_)
     {
-        return this.field_77878_bZ.func_151685_b() == p_82789_2_.func_77973_b() ? true : super.func_82789_a(p_82789_1_, p_82789_2_);
+        return this.field_77878_bZ.func_151685_b() == p_82789_2_.getBaseItem() ? true : super.func_82789_a(p_82789_1_, p_82789_2_);
     }
 
     @SideOnly(Side.CLIENT)
@@ -222,7 +222,7 @@ public class ItemArmor extends Item
         if (itemstack1 == null)
         {
             p_77659_3_.func_70062_b(i, p_77659_1_.func_77946_l());
-            p_77659_1_.field_77994_a = 0;
+            p_77659_1_.count = 0;
         }
 
         return p_77659_1_;

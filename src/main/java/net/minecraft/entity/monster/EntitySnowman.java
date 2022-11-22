@@ -28,10 +28,10 @@ public class EntitySnowman extends EntityGolem implements IRangedAttackMob
         super(p_i1692_1_);
         this.func_70105_a(0.4F, 1.8F);
         this.func_70661_as().func_75491_a(true);
-        this.field_70714_bg.func_75776_a(1, new EntityAIArrowAttack(this, 1.25D, 20, 10.0F));
-        this.field_70714_bg.func_75776_a(2, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.field_70714_bg.func_75776_a(4, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(1, new EntityAIArrowAttack(this, 1.25D, 20, 10.0F));
+        this.aiTasks.func_75776_a(2, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.aiTasks.func_75776_a(4, new EntityAILookIdle(this));
         this.field_70715_bh.func_75776_a(1, new EntityAINearestAttackableTarget(this, EntityLiving.class, 0, true, false, IMob.field_82192_a));
     }
 
@@ -84,7 +84,7 @@ public class EntitySnowman extends EntityGolem implements IRangedAttackMob
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(16);
+        int j = this.randomizer.nextInt(16);
 
         for (int k = 0; k < j; ++k)
         {

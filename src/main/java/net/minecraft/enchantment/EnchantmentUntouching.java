@@ -35,6 +35,6 @@ public class EnchantmentUntouching extends Enchantment
 
     public boolean func_92089_a(ItemStack p_92089_1_)
     {
-        return p_92089_1_.func_77973_b() == Items.SHEARS ? true : super.func_92089_a(p_92089_1_);
+        return p_92089_1_.getBaseItem() == Items.SHEARS ? true : super.func_92089_a(p_92089_1_);
     }
 }

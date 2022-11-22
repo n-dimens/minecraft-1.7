@@ -30,45 +30,45 @@ public class RecipeFireworks implements IRecipe
 
             if (itemstack != null)
             {
-                if (itemstack.func_77973_b() == Items.GUNPOWDER)
+                if (itemstack.getBaseItem() == Items.GUNPOWDER)
                 {
                     ++j;
                 }
-                else if (itemstack.func_77973_b() == Items.FIREWORK_CHARGE)
+                else if (itemstack.getBaseItem() == Items.FIREWORK_CHARGE)
                 {
                     ++l;
                 }
-                else if (itemstack.func_77973_b() == Items.DYE)
+                else if (itemstack.getBaseItem() == Items.DYE)
                 {
                     ++k;
                 }
-                else if (itemstack.func_77973_b() == Items.PAPER)
+                else if (itemstack.getBaseItem() == Items.PAPER)
                 {
                     ++i;
                 }
-                else if (itemstack.func_77973_b() == Items.GLOWSTONE_DUST)
+                else if (itemstack.getBaseItem() == Items.GLOWSTONE_DUST)
                 {
                     ++i1;
                 }
-                else if (itemstack.func_77973_b() == Items.DIAMOND)
+                else if (itemstack.getBaseItem() == Items.DIAMOND)
                 {
                     ++i1;
                 }
-                else if (itemstack.func_77973_b() == Items.FIRE_CHARGE)
+                else if (itemstack.getBaseItem() == Items.FIRE_CHARGE)
                 {
                     ++j1;
                 }
-                else if (itemstack.func_77973_b() == Items.FEATHER)
+                else if (itemstack.getBaseItem() == Items.FEATHER)
                 {
                     ++j1;
                 }
-                else if (itemstack.func_77973_b() == Items.GOLD_NUGGET)
+                else if (itemstack.getBaseItem() == Items.GOLD_NUGGET)
                 {
                     ++j1;
                 }
                 else
                 {
-                    if (itemstack.func_77973_b() != Items.SKULL)
+                    if (itemstack.getBaseItem() != Items.SKULL)
                     {
                         return false;
                     }
@@ -99,7 +99,7 @@ public class RecipeFireworks implements IRecipe
                     {
                         ItemStack itemstack3 = p_77569_1_.func_70301_a(k2);
 
-                        if (itemstack3 != null && itemstack3.func_77973_b() == Items.FIREWORK_CHARGE && itemstack3.func_77942_o() && itemstack3.func_77978_p().func_150297_b("Explosion", 10))
+                        if (itemstack3 != null && itemstack3.getBaseItem() == Items.FIREWORK_CHARGE && itemstack3.func_77942_o() && itemstack3.func_77978_p().func_150297_b("Explosion", 10))
                         {
                             nbttaglist.func_74742_a(itemstack3.func_77978_p().func_74775_l("Explosion"));
                         }
@@ -127,31 +127,31 @@ public class RecipeFireworks implements IRecipe
 
                     if (itemstack2 != null)
                     {
-                        if (itemstack2.func_77973_b() == Items.DYE)
+                        if (itemstack2.getBaseItem() == Items.DYE)
                         {
                             arraylist.add(Integer.valueOf(ItemDye.field_150922_c[itemstack2.func_77960_j()]));
                         }
-                        else if (itemstack2.func_77973_b() == Items.GLOWSTONE_DUST)
+                        else if (itemstack2.getBaseItem() == Items.GLOWSTONE_DUST)
                         {
                             nbttagcompound1.func_74757_a("Flicker", true);
                         }
-                        else if (itemstack2.func_77973_b() == Items.DIAMOND)
+                        else if (itemstack2.getBaseItem() == Items.DIAMOND)
                         {
                             nbttagcompound1.func_74757_a("Trail", true);
                         }
-                        else if (itemstack2.func_77973_b() == Items.FIRE_CHARGE)
+                        else if (itemstack2.getBaseItem() == Items.FIRE_CHARGE)
                         {
                             b0 = 1;
                         }
-                        else if (itemstack2.func_77973_b() == Items.FEATHER)
+                        else if (itemstack2.getBaseItem() == Items.FEATHER)
                         {
                             b0 = 4;
                         }
-                        else if (itemstack2.func_77973_b() == Items.GOLD_NUGGET)
+                        else if (itemstack2.getBaseItem() == Items.GOLD_NUGGET)
                         {
                             b0 = 2;
                         }
-                        else if (itemstack2.func_77973_b() == Items.SKULL)
+                        else if (itemstack2.getBaseItem() == Items.SKULL)
                         {
                             b0 = 3;
                         }
@@ -181,14 +181,14 @@ public class RecipeFireworks implements IRecipe
 
                     if (itemstack1 != null)
                     {
-                        if (itemstack1.func_77973_b() == Items.DYE)
+                        if (itemstack1.getBaseItem() == Items.DYE)
                         {
                             arraylist1.add(Integer.valueOf(ItemDye.field_150922_c[itemstack1.func_77960_j()]));
                         }
-                        else if (itemstack1.func_77973_b() == Items.FIREWORK_CHARGE)
+                        else if (itemstack1.getBaseItem() == Items.FIREWORK_CHARGE)
                         {
                             this.field_92102_a = itemstack1.func_77946_l();
-                            this.field_92102_a.field_77994_a = 1;
+                            this.field_92102_a.count = 1;
                         }
                     }
                 }

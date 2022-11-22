@@ -30,7 +30,7 @@ public class EntitySquid extends EntityWaterMob
     {
         super(p_i1693_1_);
         this.func_70105_a(0.95F, 0.95F);
-        this.field_70864_bA = 1.0F / (this.field_70146_Z.nextFloat() + 1.0F) * 0.2F;
+        this.field_70864_bA = 1.0F / (this.randomizer.nextFloat() + 1.0F) * 0.2F;
     }
 
     protected void func_110147_ax()
@@ -71,7 +71,7 @@ public class EntitySquid extends EntityWaterMob
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(3 + p_70628_2_) + 1;
+        int j = this.randomizer.nextInt(3 + p_70628_2_) + 1;
 
         for (int k = 0; k < j; ++k)
         {
@@ -97,9 +97,9 @@ public class EntitySquid extends EntityWaterMob
         {
             this.field_70867_h -= ((float)Math.PI * 2F);
 
-            if (this.field_70146_Z.nextInt(10) == 0)
+            if (this.randomizer.nextInt(10) == 0)
             {
-                this.field_70864_bA = 1.0F / (this.field_70146_Z.nextFloat() + 1.0F) * 0.2F;
+                this.field_70864_bA = 1.0F / (this.randomizer.nextFloat() + 1.0F) * 0.2F;
             }
         }
 
@@ -171,11 +171,11 @@ public class EntitySquid extends EntityWaterMob
         {
             this.field_70872_bC = this.field_70869_bD = this.field_70870_bE = 0.0F;
         }
-        else if (this.field_70146_Z.nextInt(50) == 0 || !this.field_70171_ac || this.field_70872_bC == 0.0F && this.field_70869_bD == 0.0F && this.field_70870_bE == 0.0F)
+        else if (this.randomizer.nextInt(50) == 0 || !this.field_70171_ac || this.field_70872_bC == 0.0F && this.field_70869_bD == 0.0F && this.field_70870_bE == 0.0F)
         {
-            float f = this.field_70146_Z.nextFloat() * (float)Math.PI * 2.0F;
+            float f = this.randomizer.nextFloat() * (float)Math.PI * 2.0F;
             this.field_70872_bC = MathHelper.func_76134_b(f) * 0.2F;
-            this.field_70869_bD = -0.1F + this.field_70146_Z.nextFloat() * 0.2F;
+            this.field_70869_bD = -0.1F + this.randomizer.nextFloat() * 0.2F;
             this.field_70870_bE = MathHelper.func_76126_a(f) * 0.2F;
         }
 

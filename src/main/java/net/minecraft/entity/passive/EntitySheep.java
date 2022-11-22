@@ -34,32 +34,33 @@ public class EntitySheep extends EntityAnimal
     private final InventoryCrafting field_90016_e = new InventoryCrafting(new Container()
     {
         private static final String __OBFID = "CL_00001649";
-        public boolean func_75145_c(EntityPlayer p_75145_1_)
+        @Override
+        public boolean func_75145_c(EntityPlayer player)
         {
             return false;
         }
     }, 2, 1);
     public static final float[][] field_70898_d = new float[][] {{1.0F, 1.0F, 1.0F}, {0.85F, 0.5F, 0.2F}, {0.7F, 0.3F, 0.85F}, {0.4F, 0.6F, 0.85F}, {0.9F, 0.9F, 0.2F}, {0.5F, 0.8F, 0.1F}, {0.95F, 0.5F, 0.65F}, {0.3F, 0.3F, 0.3F}, {0.6F, 0.6F, 0.6F}, {0.3F, 0.5F, 0.6F}, {0.5F, 0.25F, 0.7F}, {0.2F, 0.3F, 0.7F}, {0.4F, 0.3F, 0.2F}, {0.4F, 0.5F, 0.2F}, {0.6F, 0.2F, 0.2F}, {0.1F, 0.1F, 0.1F}};
     private int field_70899_e;
-    private EntityAIEatGrass field_146087_bs = new EntityAIEatGrass(this);
+    private final EntityAIEatGrass eatGrassTask = new EntityAIEatGrass(this);
     private static final String __OBFID = "CL_00001648";
 
-    public EntitySheep(World p_i1691_1_)
+    public EntitySheep(World world)
     {
-        super(p_i1691_1_);
+        super(world);
         this.func_70105_a(0.9F, 1.3F);
         this.func_70661_as().func_75491_a(true);
-        this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(1, new EntityAIPanic(this, 1.25D));
-        this.field_70714_bg.func_75776_a(2, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.1D, Items.WHEAT, false));
-        this.field_70714_bg.func_75776_a(4, new EntityAIFollowParent(this, 1.1D));
-        this.field_70714_bg.func_75776_a(5, this.field_146087_bs);
-        this.field_70714_bg.func_75776_a(6, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.field_70714_bg.func_75776_a(8, new EntityAILookIdle(this));
-        this.field_90016_e.func_70299_a(0, new ItemStack(Items.DYE, 1, 0));
-        this.field_90016_e.func_70299_a(1, new ItemStack(Items.DYE, 1, 0));
+        this.aiTasks.func_75776_a(0, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(1, new EntityAIPanic(this, 1.25D));
+        this.aiTasks.func_75776_a(2, new EntityAIMate(this, 1.0D));
+        this.aiTasks.func_75776_a(3, new EntityAITempt(this, 1.1D, Items.WHEAT, false));
+        this.aiTasks.func_75776_a(4, new EntityAIFollowParent(this, 1.1D));
+        this.aiTasks.func_75776_a(5, this.eatGrassTask);
+        this.aiTasks.func_75776_a(6, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.aiTasks.func_75776_a(8, new EntityAILookIdle(this));
+        this.field_90016_e.putItem(0, new ItemStack(Items.DYE, 1, 0));
+        this.field_90016_e.putItem(1, new ItemStack(Items.DYE, 1, 0));
     }
 
     protected boolean func_70650_aV()
@@ -69,10 +70,11 @@ public class EntitySheep extends EntityAnimal
 
     protected void func_70619_bc()
     {
-        this.field_70899_e = this.field_146087_bs.func_151499_f();
+        this.field_70899_e = this.eatGrassTask.func_151499_f();
         super.func_70619_bc();
     }
 
+    @Override
     public void func_70636_d()
     {
         if (this.world.field_72995_K)
@@ -90,12 +92,14 @@ public class EntitySheep extends EntityAnimal
         this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.23000000417232513D);
     }
 
+    @Override
     protected void func_70088_a()
     {
         super.func_70088_a();
         this.field_70180_af.func_75682_a(16, new Byte((byte)0));
     }
 
+    @Override
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
         if (!this.func_70892_o())
@@ -104,6 +108,7 @@ public class EntitySheep extends EntityAnimal
         }
     }
 
+    @Override
     protected Item droppingItem()
     {
         return Item.func_150898_a(Blocks.WOOL);
@@ -122,31 +127,32 @@ public class EntitySheep extends EntityAnimal
         }
     }
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    @Override
+    public boolean resultOfImpact(EntityPlayer player)
     {
-        ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
+        ItemStack activeItemStack = player.inventory.getActiveItem();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.SHEARS && !this.func_70892_o() && !this.func_70631_g_())
+        if (activeItemStack != null && activeItemStack.getBaseItem() == Items.SHEARS && !this.func_70892_o() && !this.func_70631_g_())
         {
             if (!this.world.field_72995_K)
             {
                 this.func_70893_e(true);
-                int i = 1 + this.field_70146_Z.nextInt(3);
+                int i = 1 + this.randomizer.nextInt(3);
 
                 for (int j = 0; j < i; ++j)
                 {
                     EntityItem entityitem = this.func_70099_a(new ItemStack(Item.func_150898_a(Blocks.WOOL), 1, this.func_70896_n()), 1.0F);
-                    entityitem.field_70181_x += (double)(this.field_70146_Z.nextFloat() * 0.05F);
-                    entityitem.field_70159_w += (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.1F);
-                    entityitem.field_70179_y += (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.1F);
+                    entityitem.field_70181_x += (double)(this.randomizer.nextFloat() * 0.05F);
+                    entityitem.field_70159_w += (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.1F);
+                    entityitem.field_70179_y += (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.1F);
                 }
             }
 
-            itemstack.func_77972_a(1, p_70085_1_);
+            activeItemStack.func_77972_a(1, player);
             this.func_85030_a("mob.sheep.shear", 1.0F, 1.0F);
         }
 
-        return super.func_70085_c(p_70085_1_);
+        return super.resultOfImpact(player);
     }
 
     @SideOnly(Side.CLIENT)
@@ -169,6 +175,7 @@ public class EntitySheep extends EntityAnimal
         }
     }
 
+    @Override
     public void func_70014_b(NBTTagCompound p_70014_1_)
     {
         super.func_70014_b(p_70014_1_);
@@ -176,6 +183,7 @@ public class EntitySheep extends EntityAnimal
         p_70014_1_.func_74774_a("Color", (byte)this.func_70896_n());
     }
 
+    @Override
     public void func_70037_a(NBTTagCompound p_70037_1_)
     {
         super.func_70037_a(p_70037_1_);
@@ -266,16 +274,16 @@ public class EntitySheep extends EntityAnimal
         return p_110161_1_;
     }
 
-    private int func_90014_a(EntityAnimal p_90014_1_, EntityAnimal p_90014_2_)
+    private int func_90014_a(EntitySheep sheep, EntitySheep p_90014_2_)
     {
-        int i = this.func_90013_b(p_90014_1_);
+        int i = this.func_90013_b(sheep);
         int j = this.func_90013_b(p_90014_2_);
         this.field_90016_e.func_70301_a(0).func_77964_b(i);
         this.field_90016_e.func_70301_a(1).func_77964_b(j);
-        ItemStack itemstack = CraftingManager.func_77594_a().func_82787_a(this.field_90016_e, ((EntitySheep)p_90014_1_).world);
+        ItemStack itemstack = CraftingManager.func_77594_a().func_82787_a(this.field_90016_e, sheep.world);
         int k;
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.DYE)
+        if (itemstack != null && itemstack.getBaseItem() == Items.DYE)
         {
             k = itemstack.func_77960_j();
         }
@@ -287,8 +295,8 @@ public class EntitySheep extends EntityAnimal
         return k;
     }
 
-    private int func_90013_b(EntityAnimal p_90013_1_)
+    private int func_90013_b(EntitySheep sheep)
     {
-        return 15 - ((EntitySheep)p_90013_1_).func_70896_n();
+        return 15 - sheep.func_70896_n();
     }
 }

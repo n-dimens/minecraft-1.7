@@ -41,10 +41,10 @@ public class EntityFX extends Entity
         this.field_70137_T = p_i1218_4_;
         this.field_70136_U = p_i1218_6_;
         this.field_70552_h = this.field_70553_i = this.field_70551_j = 1.0F;
-        this.field_70548_b = this.field_70146_Z.nextFloat() * 3.0F;
-        this.field_70549_c = this.field_70146_Z.nextFloat() * 3.0F;
-        this.field_70544_f = (this.field_70146_Z.nextFloat() * 0.5F + 0.5F) * 2.0F;
-        this.field_70547_e = (int)(4.0F / (this.field_70146_Z.nextFloat() * 0.9F + 0.1F));
+        this.field_70548_b = this.randomizer.nextFloat() * 3.0F;
+        this.field_70549_c = this.randomizer.nextFloat() * 3.0F;
+        this.field_70544_f = (this.randomizer.nextFloat() * 0.5F + 0.5F) * 2.0F;
+        this.field_70547_e = (int)(4.0F / (this.randomizer.nextFloat() * 0.9F + 0.1F));
         this.field_70546_d = 0;
     }
 

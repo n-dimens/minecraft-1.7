@@ -91,14 +91,14 @@ public class EntityGhast extends EntityFlying implements IMob
 
         if (d3 < 1.0D || d3 > 3600.0D)
         {
-            this.field_70795_b = this.field_70165_t + (double)((this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * 16.0F);
-            this.field_70796_c = this.field_70163_u + (double)((this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * 16.0F);
-            this.field_70793_d = this.field_70161_v + (double)((this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * 16.0F);
+            this.field_70795_b = this.field_70165_t + (double)((this.randomizer.nextFloat() * 2.0F - 1.0F) * 16.0F);
+            this.field_70796_c = this.field_70163_u + (double)((this.randomizer.nextFloat() * 2.0F - 1.0F) * 16.0F);
+            this.field_70793_d = this.field_70161_v + (double)((this.randomizer.nextFloat() * 2.0F - 1.0F) * 16.0F);
         }
 
         if (this.field_70797_a-- <= 0)
         {
-            this.field_70797_a += this.field_70146_Z.nextInt(5) + 2;
+            this.field_70797_a += this.randomizer.nextInt(5) + 2;
             d3 = (double)MathHelper.func_76133_a(d3);
 
             if (this.func_70790_a(this.field_70795_b, this.field_70796_c, this.field_70793_d, d3))
@@ -231,7 +231,7 @@ public class EntityGhast extends EntityFlying implements IMob
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(2) + this.field_70146_Z.nextInt(1 + p_70628_2_);
+        int j = this.randomizer.nextInt(2) + this.randomizer.nextInt(1 + p_70628_2_);
         int k;
 
         for (k = 0; k < j; ++k)
@@ -239,7 +239,7 @@ public class EntityGhast extends EntityFlying implements IMob
             this.func_145779_a(Items.GHAST_TEAR, 1);
         }
 
-        j = this.field_70146_Z.nextInt(3) + this.field_70146_Z.nextInt(1 + p_70628_2_);
+        j = this.randomizer.nextInt(3) + this.randomizer.nextInt(1 + p_70628_2_);
 
         for (k = 0; k < j; ++k)
         {
@@ -254,7 +254,7 @@ public class EntityGhast extends EntityFlying implements IMob
 
     public boolean func_70601_bi()
     {
-        return this.field_70146_Z.nextInt(20) == 0 && super.func_70601_bi() && this.world.field_73013_u != EnumDifficulty.PEACEFUL;
+        return this.randomizer.nextInt(20) == 0 && super.func_70601_bi() && this.world.field_73013_u != EnumDifficulty.PEACEFUL;
     }
 
     public int func_70641_bl()

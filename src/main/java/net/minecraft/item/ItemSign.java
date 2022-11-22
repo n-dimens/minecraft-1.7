@@ -13,7 +13,7 @@ public class ItemSign extends Item
 
     public ItemSign()
     {
-        this.field_77777_bU = 16;
+        this.stackMaxSize = 16;
         this.func_77637_a(CreativeTabs.field_78031_c);
     }
 
@@ -78,7 +78,7 @@ public class ItemSign extends Item
                     p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.WALL_SIGN, p_77648_7_, 3);
                 }
 
-                --p_77648_1_.field_77994_a;
+                --p_77648_1_.count;
                 TileEntitySign tileentitysign = (TileEntitySign)p_77648_3_.func_147438_o(p_77648_4_, p_77648_5_, p_77648_6_);
 
                 if (tileentitysign != null)

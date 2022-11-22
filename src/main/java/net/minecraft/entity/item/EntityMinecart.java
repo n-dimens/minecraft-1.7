@@ -133,7 +133,7 @@ public abstract class EntityMinecart extends Entity
                 this.func_70497_h(10);
                 this.func_70018_K();
                 this.func_70492_c(this.func_70491_i() + p_70097_2_ * 10.0F);
-                boolean flag = p_70097_1_.func_76346_g() instanceof EntityPlayer && ((EntityPlayer)p_70097_1_.func_76346_g()).field_71075_bZ.field_75098_d;
+                boolean flag = p_70097_1_.func_76346_g() instanceof EntityPlayer && ((EntityPlayer)p_70097_1_.func_76346_g()).capabilities.instabuild;
 
                 if (flag || this.func_70491_i() > 40.0F)
                 {

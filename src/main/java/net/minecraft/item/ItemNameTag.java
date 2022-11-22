@@ -25,7 +25,7 @@ public class ItemNameTag extends Item
             EntityLiving entityliving = (EntityLiving)p_111207_3_;
             entityliving.func_94058_c(p_111207_1_.func_82833_r());
             entityliving.func_110163_bv();
-            --p_111207_1_.field_77994_a;
+            --p_111207_1_.count;
             return true;
         }
         else

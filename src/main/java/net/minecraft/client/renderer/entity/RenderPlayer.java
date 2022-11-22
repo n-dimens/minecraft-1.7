@@ -48,11 +48,11 @@ public class RenderPlayer extends RendererLivingEntity
 
     protected int func_77032_a(AbstractClientPlayer p_77032_1_, int p_77032_2_, float p_77032_3_)
     {
-        ItemStack itemstack = p_77032_1_.field_71071_by.func_70440_f(3 - p_77032_2_);
+        ItemStack itemstack = p_77032_1_.inventory.func_70440_f(3 - p_77032_2_);
 
         if (itemstack != null)
         {
-            Item item = itemstack.func_77973_b();
+            Item item = itemstack.getBaseItem();
 
             if (item instanceof ItemArmor)
             {
@@ -103,11 +103,11 @@ public class RenderPlayer extends RendererLivingEntity
 
     protected void func_82408_c(AbstractClientPlayer p_82408_1_, int p_82408_2_, float p_82408_3_)
     {
-        ItemStack itemstack = p_82408_1_.field_71071_by.func_70440_f(3 - p_82408_2_);
+        ItemStack itemstack = p_82408_1_.inventory.func_70440_f(3 - p_82408_2_);
 
         if (itemstack != null)
         {
-            Item item = itemstack.func_77973_b();
+            Item item = itemstack.getBaseItem();
 
             if (item instanceof ItemArmor)
             {
@@ -120,7 +120,7 @@ public class RenderPlayer extends RendererLivingEntity
     public void func_76986_a(AbstractClientPlayer p_76986_1_, double p_76986_2_, double p_76986_4_, double p_76986_6_, float p_76986_8_, float p_76986_9_)
     {
         GL11.glColor3f(1.0F, 1.0F, 1.0F);
-        ItemStack itemstack = p_76986_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = p_76986_1_.inventory.getActiveItem();
         this.field_77108_b.field_78120_m = this.field_77111_i.field_78120_m = this.field_77109_a.field_78120_m = itemstack != null ? 1 : 0;
 
         if (itemstack != null && p_76986_1_.func_71052_bv() > 0)
@@ -161,7 +161,7 @@ public class RenderPlayer extends RendererLivingEntity
         GL11.glColor3f(1.0F, 1.0F, 1.0F);
         super.func_77029_c(p_77029_1_, p_77029_2_);
         super.func_85093_e(p_77029_1_, p_77029_2_);
-        ItemStack itemstack = p_77029_1_.field_71071_by.func_70440_f(3);
+        ItemStack itemstack = p_77029_1_.inventory.func_70440_f(3);
 
         if (itemstack != null)
         {
@@ -169,9 +169,9 @@ public class RenderPlayer extends RendererLivingEntity
             this.field_77109_a.field_78116_c.func_78794_c(0.0625F);
             float f1;
 
-            if (itemstack.func_77973_b() instanceof ItemBlock)
+            if (itemstack.getBaseItem() instanceof ItemBlock)
             {
-                if (RenderBlocks.func_147739_a(Block.func_149634_a(itemstack.func_77973_b()).func_149645_b()))
+                if (RenderBlocks.func_147739_a(Block.func_149634_a(itemstack.getBaseItem()).func_149645_b()))
                 {
                     f1 = 0.625F;
                     GL11.glTranslatef(0.0F, -0.25F, 0.0F);
@@ -181,7 +181,7 @@ public class RenderPlayer extends RendererLivingEntity
 
                 this.field_76990_c.field_78721_f.func_78443_a(p_77029_1_, itemstack, 0);
             }
-            else if (itemstack.func_77973_b() == Items.SKULL)
+            else if (itemstack.getBaseItem() == Items.SKULL)
             {
                 f1 = 1.0625F;
                 GL11.glScalef(f1, -f1, -f1);
@@ -281,7 +281,7 @@ public class RenderPlayer extends RendererLivingEntity
             GL11.glPopMatrix();
         }
 
-        ItemStack itemstack1 = p_77029_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack1 = p_77029_1_.inventory.getActiveItem();
 
         if (itemstack1 != null)
         {
@@ -301,7 +301,7 @@ public class RenderPlayer extends RendererLivingEntity
                 enumaction = itemstack1.func_77975_n();
             }
 
-            if (itemstack1.func_77973_b() instanceof ItemBlock && RenderBlocks.func_147739_a(Block.func_149634_a(itemstack1.func_77973_b()).func_149645_b()))
+            if (itemstack1.getBaseItem() instanceof ItemBlock && RenderBlocks.func_147739_a(Block.func_149634_a(itemstack1.getBaseItem()).func_149645_b()))
             {
                 f2 = 0.5F;
                 GL11.glTranslatef(0.0F, 0.1875F, -0.3125F);
@@ -310,7 +310,7 @@ public class RenderPlayer extends RendererLivingEntity
                 GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
                 GL11.glScalef(-f2, -f2, f2);
             }
-            else if (itemstack1.func_77973_b() == Items.BOW)
+            else if (itemstack1.getBaseItem() == Items.BOW)
             {
                 f2 = 0.625F;
                 GL11.glTranslatef(0.0F, 0.125F, 0.3125F);
@@ -319,11 +319,11 @@ public class RenderPlayer extends RendererLivingEntity
                 GL11.glRotatef(-100.0F, 1.0F, 0.0F, 0.0F);
                 GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
             }
-            else if (itemstack1.func_77973_b().func_77662_d())
+            else if (itemstack1.getBaseItem().func_77662_d())
             {
                 f2 = 0.625F;
 
-                if (itemstack1.func_77973_b().func_77629_n_())
+                if (itemstack1.getBaseItem().func_77629_n_())
                 {
                     GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
                     GL11.glTranslatef(0.0F, -0.125F, 0.0F);
@@ -356,11 +356,11 @@ public class RenderPlayer extends RendererLivingEntity
             int k;
             float f12;
 
-            if (itemstack1.func_77973_b().func_77623_v())
+            if (itemstack1.getBaseItem().func_77623_v())
             {
                 for (k = 0; k <= 1; ++k)
                 {
-                    int i = itemstack1.func_77973_b().func_82790_a(itemstack1, k);
+                    int i = itemstack1.getBaseItem().func_82790_a(itemstack1, k);
                     f12 = (float)(i >> 16 & 255) / 255.0F;
                     f3 = (float)(i >> 8 & 255) / 255.0F;
                     f4 = (float)(i & 255) / 255.0F;
@@ -370,7 +370,7 @@ public class RenderPlayer extends RendererLivingEntity
             }
             else
             {
-                k = itemstack1.func_77973_b().func_82790_a(itemstack1, 0);
+                k = itemstack1.getBaseItem().func_82790_a(itemstack1, 0);
                 float f11 = (float)(k >> 16 & 255) / 255.0F;
                 f12 = (float)(k >> 8 & 255) / 255.0F;
                 f3 = (float)(k & 255) / 255.0F;

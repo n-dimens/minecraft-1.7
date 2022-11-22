@@ -80,11 +80,11 @@ public abstract class EntityCreature extends EntityLiving
 
         this.world.profiler.endMeasure();
 
-        if (!this.field_70787_b && this.field_70789_a != null && (this.field_70786_d == null || this.field_70146_Z.nextInt(20) == 0))
+        if (!this.field_70787_b && this.field_70789_a != null && (this.field_70786_d == null || this.randomizer.nextInt(20) == 0))
         {
             this.field_70786_d = this.world.func_72865_a(this, this.field_70789_a, f4, true, false, false, true);
         }
-        else if (!this.field_70787_b && (this.field_70786_d == null && this.field_70146_Z.nextInt(180) == 0 || this.field_70146_Z.nextInt(120) == 0 || this.field_70788_c > 0) && this.field_70708_bq < 100)
+        else if (!this.field_70787_b && (this.field_70786_d == null && this.randomizer.nextInt(180) == 0 || this.randomizer.nextInt(120) == 0 || this.field_70788_c > 0) && this.field_70708_bq < 100)
         {
             this.func_70779_j();
         }
@@ -94,7 +94,7 @@ public abstract class EntityCreature extends EntityLiving
         boolean flag1 = this.func_70058_J();
         this.field_70125_A = 0.0F;
 
-        if (this.field_70786_d != null && this.field_70146_Z.nextInt(100) != 0)
+        if (this.field_70786_d != null && this.randomizer.nextInt(100) != 0)
         {
             this.world.profiler.startMeasure("followpath");
             Vec3 vec3 = this.field_70786_d.func_75878_a(this);
@@ -165,7 +165,7 @@ public abstract class EntityCreature extends EntityLiving
                 this.field_70703_bu = true;
             }
 
-            if (this.field_70146_Z.nextFloat() < 0.8F && (flag || flag1))
+            if (this.randomizer.nextFloat() < 0.8F && (flag || flag1))
             {
                 this.field_70703_bu = true;
             }
@@ -190,9 +190,9 @@ public abstract class EntityCreature extends EntityLiving
 
         for (int l = 0; l < 10; ++l)
         {
-            int i1 = MathHelper.func_76128_c(this.field_70165_t + (double)this.field_70146_Z.nextInt(13) - 6.0D);
-            int j1 = MathHelper.func_76128_c(this.field_70163_u + (double)this.field_70146_Z.nextInt(7) - 3.0D);
-            int k1 = MathHelper.func_76128_c(this.field_70161_v + (double)this.field_70146_Z.nextInt(13) - 6.0D);
+            int i1 = MathHelper.func_76128_c(this.field_70165_t + (double)this.randomizer.nextInt(13) - 6.0D);
+            int j1 = MathHelper.func_76128_c(this.field_70163_u + (double)this.randomizer.nextInt(7) - 3.0D);
+            int k1 = MathHelper.func_76128_c(this.field_70161_v + (double)this.randomizer.nextInt(13) - 6.0D);
             float f1 = this.func_70783_a(i1, j1, k1);
 
             if (f1 > f)
@@ -311,7 +311,7 @@ public abstract class EntityCreature extends EntityLiving
 
             if (!this.field_110180_bt)
             {
-                this.field_70714_bg.func_75776_a(2, this.field_110178_bs);
+                this.aiTasks.func_75776_a(2, this.field_110178_bs);
                 this.func_70661_as().func_75491_a(false);
                 this.field_110180_bt = true;
             }
@@ -341,7 +341,7 @@ public abstract class EntityCreature extends EntityLiving
         else if (!this.func_110167_bD() && this.field_110180_bt)
         {
             this.field_110180_bt = false;
-            this.field_70714_bg.func_85156_a(this.field_110178_bs);
+            this.aiTasks.func_85156_a(this.field_110178_bs);
             this.func_70661_as().func_75491_a(true);
             this.func_110177_bN();
         }

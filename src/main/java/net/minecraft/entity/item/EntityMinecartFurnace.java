@@ -54,7 +54,7 @@ public class EntityMinecartFurnace extends EntityMinecart
 
         this.func_94107_f(this.field_94110_c > 0);
 
-        if (this.func_94108_c() && this.field_70146_Z.nextInt(4) == 0)
+        if (this.func_94108_c() && this.randomizer.nextInt(4) == 0)
         {
             this.world.func_72869_a("largesmoke", this.field_70165_t, this.field_70163_u + 0.8D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
         }
@@ -122,13 +122,13 @@ public class EntityMinecartFurnace extends EntityMinecart
 
     public boolean func_130002_c(EntityPlayer p_130002_1_)
     {
-        ItemStack itemstack = p_130002_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = p_130002_1_.inventory.getActiveItem();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.COAL)
+        if (itemstack != null && itemstack.getBaseItem() == Items.COAL)
         {
-            if (!p_130002_1_.field_71075_bZ.field_75098_d && --itemstack.field_77994_a == 0)
+            if (!p_130002_1_.capabilities.instabuild && --itemstack.count == 0)
             {
-                p_130002_1_.field_71071_by.func_70299_a(p_130002_1_.field_71071_by.field_70461_c, (ItemStack)null);
+                p_130002_1_.inventory.putItem(p_130002_1_.inventory.activeItemPosition, (ItemStack)null);
             }
 
             this.field_94110_c += 3600;

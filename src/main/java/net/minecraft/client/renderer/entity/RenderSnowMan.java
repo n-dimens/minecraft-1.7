@@ -33,12 +33,12 @@ public class RenderSnowMan extends RenderLiving
         super.func_77029_c(p_77029_1_, p_77029_2_);
         ItemStack itemstack = new ItemStack(Blocks.PUMPKIN, 1);
 
-        if (itemstack.func_77973_b() instanceof ItemBlock)
+        if (itemstack.getBaseItem() instanceof ItemBlock)
         {
             GL11.glPushMatrix();
             this.field_77094_a.field_78195_c.func_78794_c(0.0625F);
 
-            if (RenderBlocks.func_147739_a(Block.func_149634_a(itemstack.func_77973_b()).func_149645_b()))
+            if (RenderBlocks.func_147739_a(Block.func_149634_a(itemstack.getBaseItem()).func_149645_b()))
             {
                 float f1 = 0.625F;
                 GL11.glTranslatef(0.0F, -0.34375F, 0.0F);

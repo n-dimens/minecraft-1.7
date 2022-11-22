@@ -102,7 +102,7 @@ public class MapData extends WorldSavedData
             this.field_76196_g.add(mapinfo);
         }
 
-        if (!p_76191_1_.field_71071_by.func_70431_c(p_76191_2_))
+        if (!p_76191_1_.inventory.func_70431_c(p_76191_2_))
         {
             this.field_76203_h.remove(p_76191_1_.func_70005_c_());
         }
@@ -111,7 +111,7 @@ public class MapData extends WorldSavedData
         {
             MapData.MapInfo mapinfo1 = (MapData.MapInfo)this.field_76196_g.get(i);
 
-            if (!mapinfo1.field_76211_a.field_70128_L && (mapinfo1.field_76211_a.field_71071_by.func_70431_c(p_76191_2_) || p_76191_2_.func_82839_y()))
+            if (!mapinfo1.field_76211_a.field_70128_L && (mapinfo1.field_76211_a.inventory.func_70431_c(p_76191_2_) || p_76191_2_.func_82839_y()))
             {
                 if (!p_76191_2_.func_82839_y() && mapinfo1.field_76211_a.field_71093_bK == this.field_76200_c)
                 {

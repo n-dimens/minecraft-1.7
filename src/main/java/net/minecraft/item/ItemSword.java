@@ -22,8 +22,8 @@ public class ItemSword extends Item
     public ItemSword(Item.ToolMaterial p_i45356_1_)
     {
         this.field_150933_b = p_i45356_1_;
-        this.field_77777_bU = 1;
-        this.func_77656_e(p_i45356_1_.func_77997_a());
+        this.stackMaxSize = 1;
+        this.setDurability(p_i45356_1_.func_77997_a());
         this.func_77637_a(CreativeTabs.field_78037_j);
         this.field_150934_a = 4.0F + p_i45356_1_.func_78000_c();
     }
@@ -101,7 +101,7 @@ public class ItemSword extends Item
 
     public boolean func_82789_a(ItemStack p_82789_1_, ItemStack p_82789_2_)
     {
-        return this.field_150933_b.func_150995_f() == p_82789_2_.func_77973_b() ? true : super.func_82789_a(p_82789_1_, p_82789_2_);
+        return this.field_150933_b.func_150995_f() == p_82789_2_.getBaseItem() ? true : super.func_82789_a(p_82789_1_, p_82789_2_);
     }
 
     public Multimap func_111205_h()

@@ -26,14 +26,14 @@ public class EntityCow extends EntityAnimal
         super(p_i1683_1_);
         this.func_70105_a(0.9F, 1.3F);
         this.func_70661_as().func_75491_a(true);
-        this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(1, new EntityAIPanic(this, 2.0D));
-        this.field_70714_bg.func_75776_a(2, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.25D, Items.WHEAT, false));
-        this.field_70714_bg.func_75776_a(4, new EntityAIFollowParent(this, 1.25D));
-        this.field_70714_bg.func_75776_a(5, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.field_70714_bg.func_75776_a(7, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(0, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(1, new EntityAIPanic(this, 2.0D));
+        this.aiTasks.func_75776_a(2, new EntityAIMate(this, 1.0D));
+        this.aiTasks.func_75776_a(3, new EntityAITempt(this, 1.25D, Items.WHEAT, false));
+        this.aiTasks.func_75776_a(4, new EntityAIFollowParent(this, 1.25D));
+        this.aiTasks.func_75776_a(5, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.aiTasks.func_75776_a(7, new EntityAILookIdle(this));
     }
 
     public boolean func_70650_aV()
@@ -73,14 +73,16 @@ public class EntityCow extends EntityAnimal
         return 0.4F;
     }
 
+    @Override
     protected Item droppingItem()
     {
         return Items.LEATHER;
     }
 
+    @Override
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(3) + this.field_70146_Z.nextInt(1 + p_70628_2_);
+        int j = this.randomizer.nextInt(3) + this.randomizer.nextInt(1 + p_70628_2_);
         int k;
 
         for (k = 0; k < j; ++k)
@@ -88,7 +90,7 @@ public class EntityCow extends EntityAnimal
             this.func_145779_a(Items.LEATHER, 1);
         }
 
-        j = this.field_70146_Z.nextInt(3) + 1 + this.field_70146_Z.nextInt(1 + p_70628_2_);
+        j = this.randomizer.nextInt(3) + 1 + this.randomizer.nextInt(1 + p_70628_2_);
 
         for (k = 0; k < j; ++k)
         {
@@ -103,26 +105,27 @@ public class EntityCow extends EntityAnimal
         }
     }
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    @Override
+    public boolean resultOfImpact(EntityPlayer player)
     {
-        ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = player.inventory.getActiveItem();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.BUCKET && !p_70085_1_.field_71075_bZ.field_75098_d)
+        if (itemstack != null && itemstack.getBaseItem() == Items.BUCKET && !player.capabilities.instabuild)
         {
-            if (itemstack.field_77994_a-- == 1)
+            if (itemstack.count-- == 1)
             {
-                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, new ItemStack(Items.MILK_BUCKET));
+                player.inventory.putItem(player.inventory.activeItemPosition, new ItemStack(Items.MILK_BUCKET));
             }
-            else if (!p_70085_1_.field_71071_by.func_70441_a(new ItemStack(Items.MILK_BUCKET)))
+            else if (!player.inventory.func_70441_a(new ItemStack(Items.MILK_BUCKET)))
             {
-                p_70085_1_.func_71019_a(new ItemStack(Items.MILK_BUCKET, 1, 0), false);
+                player.func_71019_a(new ItemStack(Items.MILK_BUCKET, 1, 0), false);
             }
 
             return true;
         }
         else
         {
-            return super.func_70085_c(p_70085_1_);
+            return super.resultOfImpact(player);
         }
     }
 

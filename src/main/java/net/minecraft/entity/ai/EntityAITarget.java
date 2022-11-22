@@ -123,7 +123,7 @@ public abstract class EntityAITarget extends EntityAIBase
                     return false;
                 }
             }
-            else if (p_75296_1_ instanceof EntityPlayer && !p_75296_2_ && ((EntityPlayer)p_75296_1_).field_71075_bZ.field_75102_a)
+            else if (p_75296_1_ instanceof EntityPlayer && !p_75296_2_ && ((EntityPlayer)p_75296_1_).capabilities.invulnerable)
             {
                 return false;
             }

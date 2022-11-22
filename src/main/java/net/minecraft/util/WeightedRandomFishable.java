@@ -23,8 +23,8 @@ public class WeightedRandomFishable extends WeightedRandom.Item
 
         if (this.field_150712_c > 0.0F)
         {
-            int i = (int)(this.field_150712_c * (float)this.field_150711_b.func_77958_k());
-            int j = itemstack.func_77958_k() - p_150708_1_.nextInt(p_150708_1_.nextInt(i) + 1);
+            int i = (int)(this.field_150712_c * (float)this.field_150711_b.getDurability());
+            int j = itemstack.getDurability() - p_150708_1_.nextInt(p_150708_1_.nextInt(i) + 1);
 
             if (j > i)
             {

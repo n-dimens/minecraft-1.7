@@ -86,13 +86,13 @@ public class EntitySpider extends EntityMob
     {
         float f1 = this.func_70013_c(1.0F);
 
-        if (f1 > 0.5F && this.field_70146_Z.nextInt(100) == 0)
+        if (f1 > 0.5F && this.randomizer.nextInt(100) == 0)
         {
             this.field_70789_a = null;
         }
         else
         {
-            if (p_70785_2_ > 2.0F && p_70785_2_ < 6.0F && this.field_70146_Z.nextInt(10) == 0)
+            if (p_70785_2_ > 2.0F && p_70785_2_ < 6.0F && this.randomizer.nextInt(10) == 0)
             {
                 if (this.field_70122_E)
                 {
@@ -120,7 +120,7 @@ public class EntitySpider extends EntityMob
     {
         super.func_70628_a(p_70628_1_, p_70628_2_);
 
-        if (p_70628_1_ && (this.field_70146_Z.nextInt(3) == 0 || this.field_70146_Z.nextInt(1 + p_70628_2_) > 0))
+        if (p_70628_1_ && (this.randomizer.nextInt(3) == 0 || this.randomizer.nextInt(1 + p_70628_2_) > 0))
         {
             this.func_145779_a(Items.SPIDER_EYE, 1);
         }

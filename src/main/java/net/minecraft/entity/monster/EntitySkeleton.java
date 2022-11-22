@@ -45,12 +45,12 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
     public EntitySkeleton(World p_i1741_1_)
     {
         super(p_i1741_1_);
-        this.field_70714_bg.func_75776_a(1, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(2, new EntityAIRestrictSun(this));
-        this.field_70714_bg.func_75776_a(3, new EntityAIFleeSun(this, 1.0D));
-        this.field_70714_bg.func_75776_a(5, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.field_70714_bg.func_75776_a(6, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(1, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(2, new EntityAIRestrictSun(this));
+        this.aiTasks.func_75776_a(3, new EntityAIFleeSun(this, 1.0D));
+        this.aiTasks.func_75776_a(5, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.aiTasks.func_75776_a(6, new EntityAILookIdle(this));
         this.field_70715_bh.func_75776_a(1, new EntityAIHurtByTarget(this, false));
         this.field_70715_bh.func_75776_a(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 
@@ -125,7 +125,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
         {
             float f = this.func_70013_c(1.0F);
 
-            if (f > 0.5F && this.field_70146_Z.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)))
+            if (f > 0.5F && this.randomizer.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)))
             {
                 boolean flag = true;
                 ItemStack itemstack = this.func_71124_b(4);
@@ -134,9 +134,9 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
                 {
                     if (itemstack.func_77984_f())
                     {
-                        itemstack.func_77964_b(itemstack.func_77952_i() + this.field_70146_Z.nextInt(2));
+                        itemstack.func_77964_b(itemstack.func_77952_i() + this.randomizer.nextInt(2));
 
-                        if (itemstack.func_77952_i() >= itemstack.func_77958_k())
+                        if (itemstack.func_77952_i() >= itemstack.getDurability())
                         {
                             this.func_70669_a(itemstack);
                             this.func_70062_b(4, (ItemStack)null);
@@ -201,7 +201,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
 
         if (this.func_82202_m() == 1)
         {
-            j = this.field_70146_Z.nextInt(3 + p_70628_2_) - 1;
+            j = this.randomizer.nextInt(3 + p_70628_2_) - 1;
 
             for (k = 0; k < j; ++k)
             {
@@ -210,7 +210,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
         }
         else
         {
-            j = this.field_70146_Z.nextInt(3 + p_70628_2_);
+            j = this.randomizer.nextInt(3 + p_70628_2_);
 
             for (k = 0; k < j; ++k)
             {
@@ -218,7 +218,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
             }
         }
 
-        j = this.field_70146_Z.nextInt(3 + p_70628_2_);
+        j = this.randomizer.nextInt(3 + p_70628_2_);
 
         for (k = 0; k < j; ++k)
         {
@@ -246,27 +246,27 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
 
         if (this.world.field_73011_w instanceof WorldProviderHell && this.func_70681_au().nextInt(5) > 0)
         {
-            this.field_70714_bg.func_75776_a(4, this.field_85038_e);
+            this.aiTasks.func_75776_a(4, this.field_85038_e);
             this.func_82201_a(1);
             this.func_70062_b(0, new ItemStack(Items.STONE_SWORD));
             this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(4.0D);
         }
         else
         {
-            this.field_70714_bg.func_75776_a(4, this.field_85037_d);
+            this.aiTasks.func_75776_a(4, this.field_85037_d);
             this.func_82164_bB();
             this.func_82162_bC();
         }
 
-        this.func_98053_h(this.field_70146_Z.nextFloat() < 0.55F * this.world.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v));
+        this.func_98053_h(this.randomizer.nextFloat() < 0.55F * this.world.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v));
 
         if (this.func_71124_b(4) == null)
         {
             Calendar calendar = this.world.func_83015_S();
 
-            if (calendar.get(2) + 1 == 10 && calendar.get(5) == 31 && this.field_70146_Z.nextFloat() < 0.25F)
+            if (calendar.get(2) + 1 == 10 && calendar.get(5) == 31 && this.randomizer.nextFloat() < 0.25F)
             {
-                this.func_70062_b(4, new ItemStack(this.field_70146_Z.nextFloat() < 0.1F ? Blocks.LIT_PUMPKIN : Blocks.PUMPKIN));
+                this.func_70062_b(4, new ItemStack(this.randomizer.nextFloat() < 0.1F ? Blocks.LIT_PUMPKIN : Blocks.PUMPKIN));
                 this.field_82174_bp[4] = 0.0F;
             }
         }
@@ -276,17 +276,17 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
 
     public void func_85036_m()
     {
-        this.field_70714_bg.func_85156_a(this.field_85038_e);
-        this.field_70714_bg.func_85156_a(this.field_85037_d);
+        this.aiTasks.func_85156_a(this.field_85038_e);
+        this.aiTasks.func_85156_a(this.field_85037_d);
         ItemStack itemstack = this.func_70694_bm();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.BOW)
+        if (itemstack != null && itemstack.getBaseItem() == Items.BOW)
         {
-            this.field_70714_bg.func_75776_a(4, this.field_85037_d);
+            this.aiTasks.func_75776_a(4, this.field_85037_d);
         }
         else
         {
-            this.field_70714_bg.func_75776_a(4, this.field_85038_e);
+            this.aiTasks.func_75776_a(4, this.field_85038_e);
         }
     }
 
@@ -295,7 +295,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob
         EntityArrow entityarrow = new EntityArrow(this.world, this, p_82196_1_, 1.6F, (float)(14 - this.world.field_73013_u.func_151525_a() * 4));
         int i = EnchantmentHelper.func_77506_a(Enchantment.field_77345_t.field_77352_x, this.func_70694_bm());
         int j = EnchantmentHelper.func_77506_a(Enchantment.field_77344_u.field_77352_x, this.func_70694_bm());
-        entityarrow.func_70239_b((double)(p_82196_2_ * 2.0F) + this.field_70146_Z.nextGaussian() * 0.25D + (double)((float)this.world.field_73013_u.func_151525_a() * 0.11F));
+        entityarrow.func_70239_b((double)(p_82196_2_ * 2.0F) + this.randomizer.nextGaussian() * 0.25D + (double)((float)this.world.field_73013_u.func_151525_a() * 0.11F));
 
         if (i > 0)
         {

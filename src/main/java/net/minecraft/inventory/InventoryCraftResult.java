@@ -56,7 +56,7 @@ public class InventoryCraftResult implements IInventory
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         this.field_70467_a[0] = p_70299_2_;
     }

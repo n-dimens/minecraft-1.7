@@ -35,25 +35,25 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
 
             if (itemstack != null)
             {
-                float f = this.field_70146_Z.nextFloat() * 0.8F + 0.1F;
-                float f1 = this.field_70146_Z.nextFloat() * 0.8F + 0.1F;
-                float f2 = this.field_70146_Z.nextFloat() * 0.8F + 0.1F;
+                float f = this.randomizer.nextFloat() * 0.8F + 0.1F;
+                float f1 = this.randomizer.nextFloat() * 0.8F + 0.1F;
+                float f2 = this.randomizer.nextFloat() * 0.8F + 0.1F;
 
-                while (itemstack.field_77994_a > 0)
+                while (itemstack.count > 0)
                 {
-                    int j = this.field_70146_Z.nextInt(21) + 10;
+                    int j = this.randomizer.nextInt(21) + 10;
 
-                    if (j > itemstack.field_77994_a)
+                    if (j > itemstack.count)
                     {
-                        j = itemstack.field_77994_a;
+                        j = itemstack.count;
                     }
 
-                    itemstack.field_77994_a -= j;
-                    EntityItem entityitem = new EntityItem(this.world, this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, new ItemStack(itemstack.func_77973_b(), j, itemstack.func_77960_j()));
+                    itemstack.count -= j;
+                    EntityItem entityitem = new EntityItem(this.world, this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, new ItemStack(itemstack.getBaseItem(), j, itemstack.func_77960_j()));
                     float f3 = 0.05F;
-                    entityitem.field_70159_w = (double)((float)this.field_70146_Z.nextGaussian() * f3);
-                    entityitem.field_70181_x = (double)((float)this.field_70146_Z.nextGaussian() * f3 + 0.2F);
-                    entityitem.field_70179_y = (double)((float)this.field_70146_Z.nextGaussian() * f3);
+                    entityitem.field_70159_w = (double)((float)this.randomizer.nextGaussian() * f3);
+                    entityitem.field_70181_x = (double)((float)this.randomizer.nextGaussian() * f3 + 0.2F);
+                    entityitem.field_70179_y = (double)((float)this.randomizer.nextGaussian() * f3);
                     this.world.func_72838_d(entityitem);
                 }
             }
@@ -71,7 +71,7 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
         {
             ItemStack itemstack;
 
-            if (this.field_94113_a[p_70298_1_].field_77994_a <= p_70298_2_)
+            if (this.field_94113_a[p_70298_1_].count <= p_70298_2_)
             {
                 itemstack = this.field_94113_a[p_70298_1_];
                 this.field_94113_a[p_70298_1_] = null;
@@ -81,7 +81,7 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
             {
                 itemstack = this.field_94113_a[p_70298_1_].func_77979_a(p_70298_2_);
 
-                if (this.field_94113_a[p_70298_1_].field_77994_a == 0)
+                if (this.field_94113_a[p_70298_1_].count == 0)
                 {
                     this.field_94113_a[p_70298_1_] = null;
                 }
@@ -109,13 +109,13 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         this.field_94113_a[p_70299_1_] = p_70299_2_;
 
-        if (p_70299_2_ != null && p_70299_2_.field_77994_a > this.func_70297_j_())
+        if (p_70299_2_ != null && p_70299_2_.count > this.func_70297_j_())
         {
-            p_70299_2_.field_77994_a = this.func_70297_j_();
+            p_70299_2_.count = this.func_70297_j_();
         }
     }
 
@@ -161,21 +161,21 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
 
                 if (itemstack != null)
                 {
-                    float f = this.field_70146_Z.nextFloat() * 0.8F + 0.1F;
-                    float f1 = this.field_70146_Z.nextFloat() * 0.8F + 0.1F;
-                    float f2 = this.field_70146_Z.nextFloat() * 0.8F + 0.1F;
+                    float f = this.randomizer.nextFloat() * 0.8F + 0.1F;
+                    float f1 = this.randomizer.nextFloat() * 0.8F + 0.1F;
+                    float f2 = this.randomizer.nextFloat() * 0.8F + 0.1F;
 
-                    while (itemstack.field_77994_a > 0)
+                    while (itemstack.count > 0)
                     {
-                        int j = this.field_70146_Z.nextInt(21) + 10;
+                        int j = this.randomizer.nextInt(21) + 10;
 
-                        if (j > itemstack.field_77994_a)
+                        if (j > itemstack.count)
                         {
-                            j = itemstack.field_77994_a;
+                            j = itemstack.count;
                         }
 
-                        itemstack.field_77994_a -= j;
-                        EntityItem entityitem = new EntityItem(this.world, this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, new ItemStack(itemstack.func_77973_b(), j, itemstack.func_77960_j()));
+                        itemstack.count -= j;
+                        EntityItem entityitem = new EntityItem(this.world, this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, new ItemStack(itemstack.getBaseItem(), j, itemstack.func_77960_j()));
 
                         if (itemstack.func_77942_o())
                         {
@@ -183,9 +183,9 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
                         }
 
                         float f3 = 0.05F;
-                        entityitem.field_70159_w = (double)((float)this.field_70146_Z.nextGaussian() * f3);
-                        entityitem.field_70181_x = (double)((float)this.field_70146_Z.nextGaussian() * f3 + 0.2F);
-                        entityitem.field_70179_y = (double)((float)this.field_70146_Z.nextGaussian() * f3);
+                        entityitem.field_70159_w = (double)((float)this.randomizer.nextGaussian() * f3);
+                        entityitem.field_70181_x = (double)((float)this.randomizer.nextGaussian() * f3 + 0.2F);
+                        entityitem.field_70179_y = (double)((float)this.randomizer.nextGaussian() * f3);
                         this.world.func_72838_d(entityitem);
                     }
                 }

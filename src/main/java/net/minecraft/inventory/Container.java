@@ -121,7 +121,7 @@ public abstract class Container
     public ItemStack func_75144_a(int p_75144_1_, int p_75144_2_, int p_75144_3_, EntityPlayer p_75144_4_)
     {
         ItemStack itemstack = null;
-        InventoryPlayer inventoryplayer = p_75144_4_.field_71071_by;
+        InventoryPlayer inventoryplayer = p_75144_4_.inventory;
         int i1;
         ItemStack itemstack3;
 
@@ -156,7 +156,7 @@ public abstract class Container
             {
                 Slot slot = (Slot)this.field_75151_b.get(p_75144_1_);
 
-                if (slot != null && func_94527_a(slot, inventoryplayer.func_70445_o(), true) && slot.func_75214_a(inventoryplayer.func_70445_o()) && inventoryplayer.func_70445_o().field_77994_a > this.field_94537_h.size() && this.func_94531_b(slot))
+                if (slot != null && func_94527_a(slot, inventoryplayer.func_70445_o(), true) && slot.func_75214_a(inventoryplayer.func_70445_o()) && inventoryplayer.func_70445_o().count > this.field_94537_h.size() && this.func_94531_b(slot))
                 {
                     this.field_94537_h.add(slot);
                 }
@@ -166,37 +166,37 @@ public abstract class Container
                 if (!this.field_94537_h.isEmpty())
                 {
                     itemstack3 = inventoryplayer.func_70445_o().func_77946_l();
-                    i1 = inventoryplayer.func_70445_o().field_77994_a;
+                    i1 = inventoryplayer.func_70445_o().count;
                     Iterator iterator = this.field_94537_h.iterator();
 
                     while (iterator.hasNext())
                     {
                         Slot slot1 = (Slot)iterator.next();
 
-                        if (slot1 != null && func_94527_a(slot1, inventoryplayer.func_70445_o(), true) && slot1.func_75214_a(inventoryplayer.func_70445_o()) && inventoryplayer.func_70445_o().field_77994_a >= this.field_94537_h.size() && this.func_94531_b(slot1))
+                        if (slot1 != null && func_94527_a(slot1, inventoryplayer.func_70445_o(), true) && slot1.func_75214_a(inventoryplayer.func_70445_o()) && inventoryplayer.func_70445_o().count >= this.field_94537_h.size() && this.func_94531_b(slot1))
                         {
                             ItemStack itemstack1 = itemstack3.func_77946_l();
-                            int j1 = slot1.func_75216_d() ? slot1.func_75211_c().field_77994_a : 0;
+                            int j1 = slot1.func_75216_d() ? slot1.func_75211_c().count : 0;
                             func_94525_a(this.field_94537_h, this.field_94535_f, itemstack1, j1);
 
-                            if (itemstack1.field_77994_a > itemstack1.func_77976_d())
+                            if (itemstack1.count > itemstack1.func_77976_d())
                             {
-                                itemstack1.field_77994_a = itemstack1.func_77976_d();
+                                itemstack1.count = itemstack1.func_77976_d();
                             }
 
-                            if (itemstack1.field_77994_a > slot1.func_75219_a())
+                            if (itemstack1.count > slot1.func_75219_a())
                             {
-                                itemstack1.field_77994_a = slot1.func_75219_a();
+                                itemstack1.count = slot1.func_75219_a();
                             }
 
-                            i1 -= itemstack1.field_77994_a - j1;
+                            i1 -= itemstack1.count - j1;
                             slot1.func_75215_d(itemstack1);
                         }
                     }
 
-                    itemstack3.field_77994_a = i1;
+                    itemstack3.count = i1;
 
-                    if (itemstack3.field_77994_a <= 0)
+                    if (itemstack3.count <= 0)
                     {
                         itemstack3 = null;
                     }
@@ -237,7 +237,7 @@ public abstract class Container
                         {
                             p_75144_4_.func_71019_a(inventoryplayer.func_70445_o().func_77979_a(1), true);
 
-                            if (inventoryplayer.func_70445_o().field_77994_a == 0)
+                            if (inventoryplayer.func_70445_o().count == 0)
                             {
                                 inventoryplayer.func_70437_b((ItemStack)null);
                             }
@@ -259,10 +259,10 @@ public abstract class Container
 
                         if (itemstack3 != null)
                         {
-                            Item item = itemstack3.func_77973_b();
+                            Item item = itemstack3.getBaseItem();
                             itemstack = itemstack3.func_77946_l();
 
-                            if (slot2.func_75211_c() != null && slot2.func_75211_c().func_77973_b() == item)
+                            if (slot2.func_75211_c() != null && slot2.func_75211_c().getBaseItem() == item)
                             {
                                 this.func_75133_b(p_75144_1_, p_75144_2_, true, p_75144_4_);
                             }
@@ -292,19 +292,19 @@ public abstract class Container
                         {
                             if (itemstack4 != null && slot2.func_75214_a(itemstack4))
                             {
-                                l1 = p_75144_2_ == 0 ? itemstack4.field_77994_a : 1;
+                                l1 = p_75144_2_ == 0 ? itemstack4.count : 1;
 
                                 if (l1 > slot2.func_75219_a())
                                 {
                                     l1 = slot2.func_75219_a();
                                 }
 
-                                if (itemstack4.field_77994_a >= l1)
+                                if (itemstack4.count >= l1)
                                 {
                                     slot2.func_75215_d(itemstack4.func_77979_a(l1));
                                 }
 
-                                if (itemstack4.field_77994_a == 0)
+                                if (itemstack4.count == 0)
                                 {
                                     inventoryplayer.func_70437_b((ItemStack)null);
                                 }
@@ -314,11 +314,11 @@ public abstract class Container
                         {
                             if (itemstack4 == null)
                             {
-                                l1 = p_75144_2_ == 0 ? itemstack3.field_77994_a : (itemstack3.field_77994_a + 1) / 2;
+                                l1 = p_75144_2_ == 0 ? itemstack3.count : (itemstack3.count + 1) / 2;
                                 itemstack5 = slot2.func_75209_a(l1);
                                 inventoryplayer.func_70437_b(itemstack5);
 
-                                if (itemstack3.field_77994_a == 0)
+                                if (itemstack3.count == 0)
                                 {
                                     slot2.func_75215_d((ItemStack)null);
                                 }
@@ -327,45 +327,45 @@ public abstract class Container
                             }
                             else if (slot2.func_75214_a(itemstack4))
                             {
-                                if (itemstack3.func_77973_b() == itemstack4.func_77973_b() && itemstack3.func_77960_j() == itemstack4.func_77960_j() && ItemStack.func_77970_a(itemstack3, itemstack4))
+                                if (itemstack3.getBaseItem() == itemstack4.getBaseItem() && itemstack3.func_77960_j() == itemstack4.func_77960_j() && ItemStack.func_77970_a(itemstack3, itemstack4))
                                 {
-                                    l1 = p_75144_2_ == 0 ? itemstack4.field_77994_a : 1;
+                                    l1 = p_75144_2_ == 0 ? itemstack4.count : 1;
 
-                                    if (l1 > slot2.func_75219_a() - itemstack3.field_77994_a)
+                                    if (l1 > slot2.func_75219_a() - itemstack3.count)
                                     {
-                                        l1 = slot2.func_75219_a() - itemstack3.field_77994_a;
+                                        l1 = slot2.func_75219_a() - itemstack3.count;
                                     }
 
-                                    if (l1 > itemstack4.func_77976_d() - itemstack3.field_77994_a)
+                                    if (l1 > itemstack4.func_77976_d() - itemstack3.count)
                                     {
-                                        l1 = itemstack4.func_77976_d() - itemstack3.field_77994_a;
+                                        l1 = itemstack4.func_77976_d() - itemstack3.count;
                                     }
 
                                     itemstack4.func_77979_a(l1);
 
-                                    if (itemstack4.field_77994_a == 0)
+                                    if (itemstack4.count == 0)
                                     {
                                         inventoryplayer.func_70437_b((ItemStack)null);
                                     }
 
-                                    itemstack3.field_77994_a += l1;
+                                    itemstack3.count += l1;
                                 }
-                                else if (itemstack4.field_77994_a <= slot2.func_75219_a())
+                                else if (itemstack4.count <= slot2.func_75219_a())
                                 {
                                     slot2.func_75215_d(itemstack4);
                                     inventoryplayer.func_70437_b(itemstack3);
                                 }
                             }
-                            else if (itemstack3.func_77973_b() == itemstack4.func_77973_b() && itemstack4.func_77976_d() > 1 && (!itemstack3.func_77981_g() || itemstack3.func_77960_j() == itemstack4.func_77960_j()) && ItemStack.func_77970_a(itemstack3, itemstack4))
+                            else if (itemstack3.getBaseItem() == itemstack4.getBaseItem() && itemstack4.func_77976_d() > 1 && (!itemstack3.func_77981_g() || itemstack3.func_77960_j() == itemstack4.func_77960_j()) && ItemStack.func_77970_a(itemstack3, itemstack4))
                             {
-                                l1 = itemstack3.field_77994_a;
+                                l1 = itemstack3.count;
 
-                                if (l1 > 0 && l1 + itemstack4.field_77994_a <= itemstack4.func_77976_d())
+                                if (l1 > 0 && l1 + itemstack4.count <= itemstack4.func_77976_d())
                                 {
-                                    itemstack4.field_77994_a += l1;
+                                    itemstack4.count += l1;
                                     itemstack3 = slot2.func_75209_a(l1);
 
-                                    if (itemstack3.field_77994_a == 0)
+                                    if (itemstack3.count == 0)
                                     {
                                         slot2.func_75215_d((ItemStack)null);
                                     }
@@ -398,40 +398,40 @@ public abstract class Container
                     if (slot2.func_75216_d() && flag)
                     {
                         itemstack5 = slot2.func_75211_c();
-                        inventoryplayer.func_70299_a(p_75144_2_, itemstack5.func_77946_l());
+                        inventoryplayer.putItem(p_75144_2_, itemstack5.func_77946_l());
 
                         if ((slot2.field_75224_c != inventoryplayer || !slot2.func_75214_a(itemstack3)) && itemstack3 != null)
                         {
                             if (l1 > -1)
                             {
                                 inventoryplayer.func_70441_a(itemstack3);
-                                slot2.func_75209_a(itemstack5.field_77994_a);
+                                slot2.func_75209_a(itemstack5.count);
                                 slot2.func_75215_d((ItemStack)null);
                                 slot2.func_82870_a(p_75144_4_, itemstack5);
                             }
                         }
                         else
                         {
-                            slot2.func_75209_a(itemstack5.field_77994_a);
+                            slot2.func_75209_a(itemstack5.count);
                             slot2.func_75215_d(itemstack3);
                             slot2.func_82870_a(p_75144_4_, itemstack5);
                         }
                     }
                     else if (!slot2.func_75216_d() && itemstack3 != null && slot2.func_75214_a(itemstack3))
                     {
-                        inventoryplayer.func_70299_a(p_75144_2_, (ItemStack)null);
+                        inventoryplayer.putItem(p_75144_2_, (ItemStack)null);
                         slot2.func_75215_d(itemstack3);
                     }
                 }
             }
-            else if (p_75144_3_ == 3 && p_75144_4_.field_71075_bZ.field_75098_d && inventoryplayer.func_70445_o() == null && p_75144_1_ >= 0)
+            else if (p_75144_3_ == 3 && p_75144_4_.capabilities.instabuild && inventoryplayer.func_70445_o() == null && p_75144_1_ >= 0)
             {
                 slot2 = (Slot)this.field_75151_b.get(p_75144_1_);
 
                 if (slot2 != null && slot2.func_75216_d())
                 {
                     itemstack3 = slot2.func_75211_c().func_77946_l();
-                    itemstack3.field_77994_a = itemstack3.func_77976_d();
+                    itemstack3.count = itemstack3.func_77976_d();
                     inventoryplayer.func_70437_b(itemstack3);
                 }
             }
@@ -441,7 +441,7 @@ public abstract class Container
 
                 if (slot2 != null && slot2.func_75216_d() && slot2.func_82869_a(p_75144_4_))
                 {
-                    itemstack3 = slot2.func_75209_a(p_75144_2_ == 0 ? 1 : slot2.func_75211_c().field_77994_a);
+                    itemstack3 = slot2.func_75209_a(p_75144_2_ == 0 ? 1 : slot2.func_75211_c().count);
                     slot2.func_82870_a(p_75144_4_, itemstack3);
                     p_75144_4_.func_71019_a(itemstack3, true);
                 }
@@ -458,17 +458,17 @@ public abstract class Container
 
                     for (int i2 = 0; i2 < 2; ++i2)
                     {
-                        for (int j2 = i1; j2 >= 0 && j2 < this.field_75151_b.size() && itemstack3.field_77994_a < itemstack3.func_77976_d(); j2 += l1)
+                        for (int j2 = i1; j2 >= 0 && j2 < this.field_75151_b.size() && itemstack3.count < itemstack3.func_77976_d(); j2 += l1)
                         {
                             Slot slot3 = (Slot)this.field_75151_b.get(j2);
 
-                            if (slot3.func_75216_d() && func_94527_a(slot3, itemstack3, true) && slot3.func_82869_a(p_75144_4_) && this.func_94530_a(itemstack3, slot3) && (i2 != 0 || slot3.func_75211_c().field_77994_a != slot3.func_75211_c().func_77976_d()))
+                            if (slot3.func_75216_d() && func_94527_a(slot3, itemstack3, true) && slot3.func_82869_a(p_75144_4_) && this.func_94530_a(itemstack3, slot3) && (i2 != 0 || slot3.func_75211_c().count != slot3.func_75211_c().func_77976_d()))
                             {
-                                int k1 = Math.min(itemstack3.func_77976_d() - itemstack3.field_77994_a, slot3.func_75211_c().field_77994_a);
+                                int k1 = Math.min(itemstack3.func_77976_d() - itemstack3.count, slot3.func_75211_c().count);
                                 ItemStack itemstack2 = slot3.func_75209_a(k1);
-                                itemstack3.field_77994_a += k1;
+                                itemstack3.count += k1;
 
-                                if (itemstack2.field_77994_a <= 0)
+                                if (itemstack2.count <= 0)
                                 {
                                     slot3.func_75215_d((ItemStack)null);
                                 }
@@ -498,7 +498,7 @@ public abstract class Container
 
     public void func_75134_a(EntityPlayer p_75134_1_)
     {
-        InventoryPlayer inventoryplayer = p_75134_1_.field_71071_by;
+        InventoryPlayer inventoryplayer = p_75134_1_.inventory;
 
         if (inventoryplayer.func_70445_o() != null)
         {
@@ -553,7 +553,7 @@ public abstract class Container
         }
     }
 
-    public abstract boolean func_75145_c(EntityPlayer p_75145_1_);
+    public abstract boolean func_75145_c(EntityPlayer player);
 
     protected boolean func_75135_a(ItemStack p_75135_1_, int p_75135_2_, int p_75135_3_, boolean p_75135_4_)
     {
@@ -570,26 +570,26 @@ public abstract class Container
 
         if (p_75135_1_.func_77985_e())
         {
-            while (p_75135_1_.field_77994_a > 0 && (!p_75135_4_ && k < p_75135_3_ || p_75135_4_ && k >= p_75135_2_))
+            while (p_75135_1_.count > 0 && (!p_75135_4_ && k < p_75135_3_ || p_75135_4_ && k >= p_75135_2_))
             {
                 slot = (Slot)this.field_75151_b.get(k);
                 itemstack1 = slot.func_75211_c();
 
-                if (itemstack1 != null && itemstack1.func_77973_b() == p_75135_1_.func_77973_b() && (!p_75135_1_.func_77981_g() || p_75135_1_.func_77960_j() == itemstack1.func_77960_j()) && ItemStack.func_77970_a(p_75135_1_, itemstack1))
+                if (itemstack1 != null && itemstack1.getBaseItem() == p_75135_1_.getBaseItem() && (!p_75135_1_.func_77981_g() || p_75135_1_.func_77960_j() == itemstack1.func_77960_j()) && ItemStack.func_77970_a(p_75135_1_, itemstack1))
                 {
-                    int l = itemstack1.field_77994_a + p_75135_1_.field_77994_a;
+                    int l = itemstack1.count + p_75135_1_.count;
 
                     if (l <= p_75135_1_.func_77976_d())
                     {
-                        p_75135_1_.field_77994_a = 0;
-                        itemstack1.field_77994_a = l;
+                        p_75135_1_.count = 0;
+                        itemstack1.count = l;
                         slot.func_75218_e();
                         flag1 = true;
                     }
-                    else if (itemstack1.field_77994_a < p_75135_1_.func_77976_d())
+                    else if (itemstack1.count < p_75135_1_.func_77976_d())
                     {
-                        p_75135_1_.field_77994_a -= p_75135_1_.func_77976_d() - itemstack1.field_77994_a;
-                        itemstack1.field_77994_a = p_75135_1_.func_77976_d();
+                        p_75135_1_.count -= p_75135_1_.func_77976_d() - itemstack1.count;
+                        itemstack1.count = p_75135_1_.func_77976_d();
                         slot.func_75218_e();
                         flag1 = true;
                     }
@@ -606,7 +606,7 @@ public abstract class Container
             }
         }
 
-        if (p_75135_1_.field_77994_a > 0)
+        if (p_75135_1_.count > 0)
         {
             if (p_75135_4_)
             {
@@ -626,7 +626,7 @@ public abstract class Container
                 {
                     slot.func_75215_d(p_75135_1_.func_77946_l());
                     slot.func_75218_e();
-                    p_75135_1_.field_77994_a = 0;
+                    p_75135_1_.count = 0;
                     flag1 = true;
                     break;
                 }
@@ -678,8 +678,8 @@ public abstract class Container
 
         if (p_94527_0_ != null && p_94527_0_.func_75216_d() && p_94527_1_ != null && p_94527_1_.func_77969_a(p_94527_0_.func_75211_c()) && ItemStack.func_77970_a(p_94527_0_.func_75211_c(), p_94527_1_))
         {
-            int i = p_94527_2_ ? 0 : p_94527_1_.field_77994_a;
-            flag1 |= p_94527_0_.func_75211_c().field_77994_a + i <= p_94527_1_.func_77976_d();
+            int i = p_94527_2_ ? 0 : p_94527_1_.count;
+            flag1 |= p_94527_0_.func_75211_c().count + i <= p_94527_1_.func_77976_d();
         }
 
         return flag1;
@@ -690,13 +690,13 @@ public abstract class Container
         switch (p_94525_1_)
         {
             case 0:
-                p_94525_2_.field_77994_a = MathHelper.func_76141_d((float)p_94525_2_.field_77994_a / (float)p_94525_0_.size());
+                p_94525_2_.count = MathHelper.func_76141_d((float)p_94525_2_.count / (float)p_94525_0_.size());
                 break;
             case 1:
-                p_94525_2_.field_77994_a = 1;
+                p_94525_2_.count = 1;
         }
 
-        p_94525_2_.field_77994_a += p_94525_3_;
+        p_94525_2_.count += p_94525_3_;
     }
 
     public boolean func_94531_b(Slot p_94531_1_)
@@ -721,7 +721,7 @@ public abstract class Container
 
                 if (itemstack != null)
                 {
-                    f += (float)itemstack.field_77994_a / (float)Math.min(p_94526_0_.func_70297_j_(), itemstack.func_77976_d());
+                    f += (float)itemstack.count / (float)Math.min(p_94526_0_.func_70297_j_(), itemstack.func_77976_d());
                     ++i;
                 }
             }

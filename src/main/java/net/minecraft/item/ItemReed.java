@@ -61,7 +61,7 @@ public class ItemReed extends Item
         {
             return false;
         }
-        else if (p_77648_1_.field_77994_a == 0)
+        else if (p_77648_1_.count == 0)
         {
             return false;
         }
@@ -80,7 +80,7 @@ public class ItemReed extends Item
                     }
 
                     p_77648_3_.func_72908_a((double)((float)p_77648_4_ + 0.5F), (double)((float)p_77648_5_ + 0.5F), (double)((float)p_77648_6_ + 0.5F), this.field_150935_a.field_149762_H.func_150496_b(), (this.field_150935_a.field_149762_H.func_150497_c() + 1.0F) / 2.0F, this.field_150935_a.field_149762_H.func_150494_d() * 0.8F);
-                    --p_77648_1_.field_77994_a;
+                    --p_77648_1_.count;
                 }
             }
 

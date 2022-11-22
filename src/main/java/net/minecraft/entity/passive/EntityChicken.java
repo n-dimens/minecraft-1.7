@@ -36,15 +36,15 @@ public class EntityChicken extends EntityAnimal
     {
         super(p_i1682_1_);
         this.func_70105_a(0.3F, 0.7F);
-        this.field_70887_j = this.field_70146_Z.nextInt(6000) + 6000;
-        this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(1, new EntityAIPanic(this, 1.4D));
-        this.field_70714_bg.func_75776_a(2, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(3, new EntityAITempt(this, 1.0D, Items.WHEAT_SEEDS, false));
-        this.field_70714_bg.func_75776_a(4, new EntityAIFollowParent(this, 1.1D));
-        this.field_70714_bg.func_75776_a(5, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.field_70714_bg.func_75776_a(7, new EntityAILookIdle(this));
+        this.field_70887_j = this.randomizer.nextInt(6000) + 6000;
+        this.aiTasks.func_75776_a(0, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(1, new EntityAIPanic(this, 1.4D));
+        this.aiTasks.func_75776_a(2, new EntityAIMate(this, 1.0D));
+        this.aiTasks.func_75776_a(3, new EntityAITempt(this, 1.0D, Items.WHEAT_SEEDS, false));
+        this.aiTasks.func_75776_a(4, new EntityAIFollowParent(this, 1.1D));
+        this.aiTasks.func_75776_a(5, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.aiTasks.func_75776_a(7, new EntityAILookIdle(this));
     }
 
     public boolean func_70650_aV()
@@ -92,9 +92,9 @@ public class EntityChicken extends EntityAnimal
 
         if (!this.world.field_72995_K && !this.func_70631_g_() && !this.func_152116_bZ() && --this.field_70887_j <= 0)
         {
-            this.func_85030_a("mob.chicken.plop", 1.0F, (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F);
+            this.func_85030_a("mob.chicken.plop", 1.0F, (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F + 1.0F);
             this.func_145779_a(Items.EGG, 1);
-            this.field_70887_j = this.field_70146_Z.nextInt(6000) + 6000;
+            this.field_70887_j = this.randomizer.nextInt(6000) + 6000;
         }
     }
 
@@ -127,7 +127,7 @@ public class EntityChicken extends EntityAnimal
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(3) + this.field_70146_Z.nextInt(1 + p_70628_2_);
+        int j = this.randomizer.nextInt(3) + this.randomizer.nextInt(1 + p_70628_2_);
 
         for (int k = 0; k < j; ++k)
         {
@@ -151,7 +151,7 @@ public class EntityChicken extends EntityAnimal
 
     public boolean func_70877_b(ItemStack p_70877_1_)
     {
-        return p_70877_1_ != null && p_70877_1_.func_77973_b() instanceof ItemSeeds;
+        return p_70877_1_ != null && p_70877_1_.getBaseItem() instanceof ItemSeeds;
     }
 
     public void func_70037_a(NBTTagCompound p_70037_1_)

@@ -84,7 +84,7 @@ public class EntityFireworkStarterFX extends EntityFX
             }
 
             String s1 = "fireworks." + (flag1 ? "largeBlast" : "blast") + (flag ? "_far" : "");
-            this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, s1, 20.0F, 0.95F + this.field_70146_Z.nextFloat() * 0.1F, true);
+            this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, s1, 20.0F, 0.95F + this.randomizer.nextFloat() * 0.1F, true);
         }
 
         if (this.field_92042_ax % 2 == 0 && this.field_92039_az != null && this.field_92042_ax / 2 < this.field_92039_az.func_74745_c())
@@ -135,7 +135,7 @@ public class EntityFireworkStarterFX extends EntityFX
             {
                 flag = this.func_92037_i();
                 String s = "fireworks." + (flag ? "twinkle_far" : "twinkle");
-                this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, s, 20.0F, 0.9F + this.field_70146_Z.nextFloat() * 0.15F, true);
+                this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, s, 20.0F, 0.9F + this.randomizer.nextFloat() * 0.15F, true);
             }
 
             this.func_70106_y();
@@ -153,12 +153,12 @@ public class EntityFireworkStarterFX extends EntityFX
         EntityFireworkSparkFX entityfireworksparkfx = new EntityFireworkSparkFX(this.world, p_92034_1_, p_92034_3_, p_92034_5_, p_92034_7_, p_92034_9_, p_92034_11_, this.field_92040_ay);
         entityfireworksparkfx.func_92045_e(p_92034_15_);
         entityfireworksparkfx.func_92043_f(p_92034_16_);
-        int i = this.field_70146_Z.nextInt(p_92034_13_.length);
+        int i = this.randomizer.nextInt(p_92034_13_.length);
         entityfireworksparkfx.func_92044_a(p_92034_13_[i]);
 
         if (p_92034_14_ != null && p_92034_14_.length > 0)
         {
-            entityfireworksparkfx.func_92046_g(p_92034_14_[this.field_70146_Z.nextInt(p_92034_14_.length)]);
+            entityfireworksparkfx.func_92046_g(p_92034_14_[this.randomizer.nextInt(p_92034_14_.length)]);
         }
 
         this.field_92040_ay.func_78873_a(entityfireworksparkfx);
@@ -176,10 +176,10 @@ public class EntityFireworkStarterFX extends EntityFX
             {
                 for (int l = -p_92035_3_; l <= p_92035_3_; ++l)
                 {
-                    double d4 = (double)k + (this.field_70146_Z.nextDouble() - this.field_70146_Z.nextDouble()) * 0.5D;
-                    double d5 = (double)j + (this.field_70146_Z.nextDouble() - this.field_70146_Z.nextDouble()) * 0.5D;
-                    double d6 = (double)l + (this.field_70146_Z.nextDouble() - this.field_70146_Z.nextDouble()) * 0.5D;
-                    double d7 = (double)MathHelper.func_76133_a(d4 * d4 + d5 * d5 + d6 * d6) / p_92035_1_ + this.field_70146_Z.nextGaussian() * 0.05D;
+                    double d4 = (double)k + (this.randomizer.nextDouble() - this.randomizer.nextDouble()) * 0.5D;
+                    double d5 = (double)j + (this.randomizer.nextDouble() - this.randomizer.nextDouble()) * 0.5D;
+                    double d6 = (double)l + (this.randomizer.nextDouble() - this.randomizer.nextDouble()) * 0.5D;
+                    double d7 = (double)MathHelper.func_76133_a(d4 * d4 + d5 * d5 + d6 * d6) / p_92035_1_ + this.randomizer.nextGaussian() * 0.05D;
                     this.func_92034_a(d1, d2, d3, d4 / d7, d5 / d7, d6 / d7, p_92035_4_, p_92035_5_, p_92035_6_, p_92035_7_);
 
                     if (j != -p_92035_3_ && j != p_92035_3_ && k != -p_92035_3_ && k != p_92035_3_)
@@ -196,7 +196,7 @@ public class EntityFireworkStarterFX extends EntityFX
         double d1 = p_92038_3_[0][0];
         double d2 = p_92038_3_[0][1];
         this.func_92034_a(this.field_70165_t, this.field_70163_u, this.field_70161_v, d1 * p_92038_1_, d2 * p_92038_1_, 0.0D, p_92038_4_, p_92038_5_, p_92038_6_, p_92038_7_);
-        float f = this.field_70146_Z.nextFloat() * (float)Math.PI;
+        float f = this.randomizer.nextFloat() * (float)Math.PI;
         double d3 = p_92038_8_ ? 0.034D : 0.34D;
 
         for (int i = 0; i < 3; ++i)
@@ -231,14 +231,14 @@ public class EntityFireworkStarterFX extends EntityFX
 
     private void func_92036_a(int[] p_92036_1_, int[] p_92036_2_, boolean p_92036_3_, boolean p_92036_4_)
     {
-        double d0 = this.field_70146_Z.nextGaussian() * 0.05D;
-        double d1 = this.field_70146_Z.nextGaussian() * 0.05D;
+        double d0 = this.randomizer.nextGaussian() * 0.05D;
+        double d1 = this.randomizer.nextGaussian() * 0.05D;
 
         for (int i = 0; i < 70; ++i)
         {
-            double d2 = this.field_70159_w * 0.5D + this.field_70146_Z.nextGaussian() * 0.15D + d0;
-            double d3 = this.field_70179_y * 0.5D + this.field_70146_Z.nextGaussian() * 0.15D + d1;
-            double d4 = this.field_70181_x * 0.5D + this.field_70146_Z.nextDouble() * 0.5D;
+            double d2 = this.field_70159_w * 0.5D + this.randomizer.nextGaussian() * 0.15D + d0;
+            double d3 = this.field_70179_y * 0.5D + this.randomizer.nextGaussian() * 0.15D + d1;
+            double d4 = this.field_70181_x * 0.5D + this.randomizer.nextDouble() * 0.5D;
             this.func_92034_a(this.field_70165_t, this.field_70163_u, this.field_70161_v, d2, d4, d3, p_92036_1_, p_92036_2_, p_92036_3_, p_92036_4_);
         }
     }

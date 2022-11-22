@@ -63,15 +63,15 @@ public class InventoryLargeChest implements IInventory
         return p_70304_1_ >= this.field_70477_b.func_70302_i_() ? this.field_70478_c.func_70304_b(p_70304_1_ - this.field_70477_b.func_70302_i_()) : this.field_70477_b.func_70304_b(p_70304_1_);
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         if (p_70299_1_ >= this.field_70477_b.func_70302_i_())
         {
-            this.field_70478_c.func_70299_a(p_70299_1_ - this.field_70477_b.func_70302_i_(), p_70299_2_);
+            this.field_70478_c.putItem(p_70299_1_ - this.field_70477_b.func_70302_i_(), p_70299_2_);
         }
         else
         {
-            this.field_70477_b.func_70299_a(p_70299_1_, p_70299_2_);
+            this.field_70477_b.putItem(p_70299_1_, p_70299_2_);
         }
     }
 

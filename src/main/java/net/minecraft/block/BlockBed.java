@@ -292,7 +292,7 @@ public class BlockBed extends BlockDirectional
 
     public void func_149681_a(World p_149681_1_, int p_149681_2_, int p_149681_3_, int p_149681_4_, int p_149681_5_, EntityPlayer p_149681_6_)
     {
-        if (p_149681_6_.field_71075_bZ.field_75098_d && func_149975_b(p_149681_5_))
+        if (p_149681_6_.capabilities.instabuild && func_149975_b(p_149681_5_))
         {
             int i1 = func_149895_l(p_149681_5_);
             p_149681_2_ -= field_149981_a[i1][0];

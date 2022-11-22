@@ -465,11 +465,11 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
 
         if (i == 0)
         {
-            entityotherplayermp.field_71071_by.field_70462_a[entityotherplayermp.field_71071_by.field_70461_c] = null;
+            entityotherplayermp.inventory.cells[entityotherplayermp.inventory.activeItemPosition] = null;
         }
         else
         {
-            entityotherplayermp.field_71071_by.field_70462_a[entityotherplayermp.field_71071_by.field_70461_c] = new ItemStack(Item.func_150899_d(i), 1, 0);
+            entityotherplayermp.inventory.cells[entityotherplayermp.inventory.activeItemPosition] = new ItemStack(Item.func_150899_d(i), 1, 0);
         }
 
         entityotherplayermp.func_70080_a(d0, d1, d2, f, f1);
@@ -504,7 +504,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
     {
         if (p_147257_1_.func_149385_c() >= 0 && p_147257_1_.func_149385_c() < InventoryPlayer.func_70451_h())
         {
-            this.field_147299_f.field_71439_g.field_71071_by.field_70461_c = p_147257_1_.func_149385_c();
+            this.field_147299_f.field_71439_g.inventory.activeItemPosition = p_147257_1_.func_149385_c();
         }
     }
 
@@ -986,7 +986,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
 
         if (p_147266_1_.func_149175_c() == -1)
         {
-            entityclientplayermp.field_71071_by.func_70437_b(p_147266_1_.func_149174_e());
+            entityclientplayermp.inventory.func_70437_b(p_147266_1_.func_149174_e());
         }
         else
         {
@@ -1002,7 +1002,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
             {
                 ItemStack itemstack = entityclientplayermp.field_71069_bz.func_75139_a(p_147266_1_.func_149173_d()).func_75211_c();
 
-                if (p_147266_1_.func_149174_e() != null && (itemstack == null || itemstack.field_77994_a < p_147266_1_.func_149174_e().field_77994_a))
+                if (p_147266_1_.func_149174_e() != null && (itemstack == null || itemstack.count < p_147266_1_.func_149174_e().count))
                 {
                     p_147266_1_.func_149174_e().field_77992_b = 5;
                 }
@@ -1370,12 +1370,12 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
     public void func_147270_a(S39PacketPlayerAbilities p_147270_1_)
     {
         EntityClientPlayerMP entityclientplayermp = this.field_147299_f.field_71439_g;
-        entityclientplayermp.field_71075_bZ.field_75100_b = p_147270_1_.func_149106_d();
-        entityclientplayermp.field_71075_bZ.field_75098_d = p_147270_1_.func_149103_f();
-        entityclientplayermp.field_71075_bZ.field_75102_a = p_147270_1_.func_149112_c();
-        entityclientplayermp.field_71075_bZ.field_75101_c = p_147270_1_.func_149105_e();
-        entityclientplayermp.field_71075_bZ.func_75092_a(p_147270_1_.func_149101_g());
-        entityclientplayermp.field_71075_bZ.func_82877_b(p_147270_1_.func_149107_h());
+        entityclientplayermp.capabilities.flying = p_147270_1_.func_149106_d();
+        entityclientplayermp.capabilities.instabuild = p_147270_1_.func_149103_f();
+        entityclientplayermp.capabilities.invulnerable = p_147270_1_.func_149112_c();
+        entityclientplayermp.capabilities.mayfly = p_147270_1_.func_149105_e();
+        entityclientplayermp.capabilities.func_75092_a(p_147270_1_.func_149101_g());
+        entityclientplayermp.capabilities.func_82877_b(p_147270_1_.func_149107_h());
     }
 
     public void func_147274_a(S3APacketTabComplete p_147274_1_)

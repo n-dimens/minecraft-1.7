@@ -67,9 +67,9 @@ public abstract class EntityFireball extends Entity
         this.func_70107_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
         this.field_70129_M = 0.0F;
         this.field_70159_w = this.field_70181_x = this.field_70179_y = 0.0D;
-        p_i1761_3_ += this.field_70146_Z.nextGaussian() * 0.4D;
-        p_i1761_5_ += this.field_70146_Z.nextGaussian() * 0.4D;
-        p_i1761_7_ += this.field_70146_Z.nextGaussian() * 0.4D;
+        p_i1761_3_ += this.randomizer.nextGaussian() * 0.4D;
+        p_i1761_5_ += this.randomizer.nextGaussian() * 0.4D;
+        p_i1761_7_ += this.randomizer.nextGaussian() * 0.4D;
         double d3 = (double)MathHelper.func_76133_a(p_i1761_3_ * p_i1761_3_ + p_i1761_5_ * p_i1761_5_ + p_i1761_7_ * p_i1761_7_);
         this.field_70232_b = p_i1761_3_ / d3 * 0.1D;
         this.field_70233_c = p_i1761_5_ / d3 * 0.1D;
@@ -102,9 +102,9 @@ public abstract class EntityFireball extends Entity
                 }
 
                 this.field_70238_i = false;
-                this.field_70159_w *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
-                this.field_70181_x *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
-                this.field_70179_y *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
+                this.field_70159_w *= (double)(this.randomizer.nextFloat() * 0.2F);
+                this.field_70181_x *= (double)(this.randomizer.nextFloat() * 0.2F);
+                this.field_70179_y *= (double)(this.randomizer.nextFloat() * 0.2F);
                 this.field_70236_j = 0;
                 this.field_70234_an = 0;
             }

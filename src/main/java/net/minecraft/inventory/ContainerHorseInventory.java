@@ -25,7 +25,7 @@ public class ContainerHorseInventory extends Container
             private static final String __OBFID = "CL_00001752";
             public boolean func_75214_a(ItemStack p_75214_1_)
             {
-                return super.func_75214_a(p_75214_1_) && p_75214_1_.func_77973_b() == Items.SADDLE && !this.func_75216_d();
+                return super.func_75214_a(p_75214_1_) && p_75214_1_.getBaseItem() == Items.SADDLE && !this.func_75216_d();
             }
         });
         this.func_75146_a(new Slot(p_i1817_2_, 1, 8, 36)
@@ -33,7 +33,7 @@ public class ContainerHorseInventory extends Container
             private static final String __OBFID = "CL_00001753";
             public boolean func_75214_a(ItemStack p_75214_1_)
             {
-                return super.func_75214_a(p_75214_1_) && p_i1817_3_.func_110259_cr() && EntityHorse.func_146085_a(p_75214_1_.func_77973_b());
+                return super.func_75214_a(p_75214_1_) && p_i1817_3_.func_110259_cr() && EntityHorse.func_146085_a(p_75214_1_.getBaseItem());
             }
             @SideOnly(Side.CLIENT)
             public boolean func_111238_b()
@@ -69,9 +69,9 @@ public class ContainerHorseInventory extends Container
         }
     }
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
-        return this.field_111243_a.func_70300_a(p_75145_1_) && this.field_111242_f.func_70089_S() && this.field_111242_f.func_70032_d(p_75145_1_) < 8.0F;
+        return this.field_111243_a.func_70300_a(player) && this.field_111242_f.func_70089_S() && this.field_111242_f.func_70032_d(player) < 8.0F;
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)
@@ -110,7 +110,7 @@ public class ContainerHorseInventory extends Container
                 return null;
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }

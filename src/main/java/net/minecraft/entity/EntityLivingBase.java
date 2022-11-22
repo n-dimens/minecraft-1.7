@@ -201,7 +201,7 @@ public abstract class EntityLivingBase extends Entity
             this.func_70066_B();
         }
 
-        boolean flag = this instanceof EntityPlayer && ((EntityPlayer)this).field_71075_bZ.field_75102_a;
+        boolean flag = this instanceof EntityPlayer && ((EntityPlayer)this).capabilities.invulnerable;
 
         if (this.func_70089_S() && this.func_70055_a(Material.field_151586_h))
         {
@@ -215,9 +215,9 @@ public abstract class EntityLivingBase extends Entity
 
                     for (int i = 0; i < 8; ++i)
                     {
-                        float f = this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat();
-                        float f1 = this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat();
-                        float f2 = this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat();
+                        float f = this.randomizer.nextFloat() - this.randomizer.nextFloat();
+                        float f1 = this.randomizer.nextFloat() - this.randomizer.nextFloat();
+                        float f2 = this.randomizer.nextFloat() - this.randomizer.nextFloat();
                         this.world.func_72869_a("bubble", this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                     }
 
@@ -326,10 +326,10 @@ public abstract class EntityLivingBase extends Entity
 
             for (i = 0; i < 20; ++i)
             {
-                double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-                double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
-                double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
-                this.world.func_72869_a("explode", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d2, d0, d1);
+                double d2 = this.randomizer.nextGaussian() * 0.02D;
+                double d0 = this.randomizer.nextGaussian() * 0.02D;
+                double d1 = this.randomizer.nextGaussian() * 0.02D;
+                this.world.func_72869_a("explode", this.field_70165_t + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + (double)(this.randomizer.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d2, d0, d1);
             }
         }
     }
@@ -342,7 +342,7 @@ public abstract class EntityLivingBase extends Entity
     protected int func_70682_h(int p_70682_1_)
     {
         int j = EnchantmentHelper.func_77501_a(this);
-        return j > 0 && this.field_70146_Z.nextInt(j + 1) > 0 ? p_70682_1_ : p_70682_1_ - 1;
+        return j > 0 && this.randomizer.nextInt(j + 1) > 0 ? p_70682_1_ : p_70682_1_ - 1;
     }
 
     protected int func_70693_a(EntityPlayer p_70693_1_)
@@ -357,7 +357,7 @@ public abstract class EntityLivingBase extends Entity
 
     public Random func_70681_au()
     {
-        return this.field_70146_Z;
+        return this.randomizer;
     }
 
     public EntityLivingBase func_70643_av()
@@ -565,16 +565,16 @@ public abstract class EntityLivingBase extends Entity
 
             if (!this.func_82150_aj())
             {
-                flag = this.field_70146_Z.nextBoolean();
+                flag = this.randomizer.nextBoolean();
             }
             else
             {
-                flag = this.field_70146_Z.nextInt(15) == 0;
+                flag = this.randomizer.nextInt(15) == 0;
             }
 
             if (flag1)
             {
-                flag &= this.field_70146_Z.nextInt(5) == 0;
+                flag &= this.randomizer.nextInt(5) == 0;
             }
 
             if (flag && i > 0)
@@ -582,7 +582,7 @@ public abstract class EntityLivingBase extends Entity
                 double d0 = (double)(i >> 16 & 255) / 255.0D;
                 double d1 = (double)(i >> 8 & 255) / 255.0D;
                 double d2 = (double)(i >> 0 & 255) / 255.0D;
-                this.world.func_72869_a(flag1 ? "mobSpellAmbient" : "mobSpell", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O - (double)this.field_70129_M, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, d0, d1, d2);
+                this.world.func_72869_a(flag1 ? "mobSpellAmbient" : "mobSpell", this.field_70165_t + (this.randomizer.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.randomizer.nextDouble() * (double)this.field_70131_O - (double)this.field_70129_M, this.field_70161_v + (this.randomizer.nextDouble() - 0.5D) * (double)this.field_70130_N, d0, d1, d2);
             }
         }
     }
@@ -754,7 +754,7 @@ public abstract class EntityLivingBase extends Entity
             {
                 if ((p_70097_1_ == DamageSource.field_82728_o || p_70097_1_ == DamageSource.field_82729_p) && this.func_71124_b(4) != null)
                 {
-                    this.func_71124_b(4).func_77972_a((int)(p_70097_2_ * 4.0F + this.field_70146_Z.nextFloat() * p_70097_2_ * 2.0F), this);
+                    this.func_71124_b(4).func_77972_a((int)(p_70097_2_ * 4.0F + this.randomizer.nextFloat() * p_70097_2_ * 2.0F), this);
                     p_70097_2_ *= 0.75F;
                 }
 
@@ -870,14 +870,14 @@ public abstract class EntityLivingBase extends Entity
 
         for (int i = 0; i < 5; ++i)
         {
-            Vec3 vec3 = Vec3.func_72443_a(((double)this.field_70146_Z.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D);
+            Vec3 vec3 = Vec3.func_72443_a(((double)this.randomizer.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D);
             vec3.func_72440_a(-this.field_70125_A * (float)Math.PI / 180.0F);
             vec3.func_72442_b(-this.field_70177_z * (float)Math.PI / 180.0F);
-            Vec3 vec31 = Vec3.func_72443_a(((double)this.field_70146_Z.nextFloat() - 0.5D) * 0.3D, (double)(-this.field_70146_Z.nextFloat()) * 0.6D - 0.3D, 0.6D);
+            Vec3 vec31 = Vec3.func_72443_a(((double)this.randomizer.nextFloat() - 0.5D) * 0.3D, (double)(-this.randomizer.nextFloat()) * 0.6D - 0.3D, 0.6D);
             vec31.func_72440_a(-this.field_70125_A * (float)Math.PI / 180.0F);
             vec31.func_72442_b(-this.field_70177_z * (float)Math.PI / 180.0F);
             vec31 = vec31.func_72441_c(this.field_70165_t, this.field_70163_u + (double)this.func_70047_e(), this.field_70161_v);
-            this.world.func_72869_a("iconcrack_" + Item.func_150891_b(p_70669_1_.func_77973_b()), vec31.field_72450_a, vec31.field_72448_b, vec31.field_72449_c, vec3.field_72450_a, vec3.field_72448_b + 0.05D, vec3.field_72449_c);
+            this.world.func_72869_a("iconcrack_" + Item.func_150891_b(p_70669_1_.getBaseItem()), vec31.field_72450_a, vec31.field_72448_b, vec31.field_72449_c, vec3.field_72450_a, vec3.field_72448_b + 0.05D, vec3.field_72449_c);
         }
     }
 
@@ -915,7 +915,7 @@ public abstract class EntityLivingBase extends Entity
 
                 if (this.field_70718_bc > 0)
                 {
-                    int j = this.field_70146_Z.nextInt(200) - i;
+                    int j = this.randomizer.nextInt(200) - i;
 
                     if (j < 5)
                     {
@@ -932,7 +932,7 @@ public abstract class EntityLivingBase extends Entity
 
     public void func_70653_a(Entity p_70653_1_, float p_70653_2_, double p_70653_3_, double p_70653_5_)
     {
-        if (this.field_70146_Z.nextDouble() >= this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111126_e())
+        if (this.randomizer.nextDouble() >= this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111126_e())
         {
             this.field_70160_al = true;
             float f1 = MathHelper.func_76133_a(p_70653_3_ * p_70653_3_ + p_70653_5_ * p_70653_5_);
@@ -1025,9 +1025,9 @@ public abstract class EntityLivingBase extends Entity
         {
             ItemStack itemstack = aitemstack[k];
 
-            if (itemstack != null && itemstack.func_77973_b() instanceof ItemArmor)
+            if (itemstack != null && itemstack.getBaseItem() instanceof ItemArmor)
             {
-                int l = ((ItemArmor)itemstack.func_77973_b()).field_77879_b;
+                int l = ((ItemArmor)itemstack.getBaseItem()).field_77879_b;
                 i += l;
             }
         }
@@ -1173,12 +1173,12 @@ public abstract class EntityLivingBase extends Entity
             this.field_70172_ad = this.field_70771_an;
             this.field_70737_aN = this.field_70738_aO = 10;
             this.field_70739_aP = 0.0F;
-            this.func_85030_a(this.func_70621_aR(), this.func_70599_aP(), (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F);
+            this.func_85030_a(this.func_70621_aR(), this.func_70599_aP(), (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F + 1.0F);
             this.func_70097_a(DamageSource.field_76377_j, 0.0F);
         }
         else if (p_70103_1_ == 3)
         {
-            this.func_85030_a(this.func_70673_aS(), this.func_70599_aP(), (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F);
+            this.func_85030_a(this.func_70673_aS(), this.func_70599_aP(), (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F + 1.0F);
             this.func_70606_j(0.0F);
             this.func_70645_a(DamageSource.field_76377_j);
         }
@@ -1266,7 +1266,7 @@ public abstract class EntityLivingBase extends Entity
 
     protected float func_70647_i()
     {
-        return this.func_70631_g_() ? (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.5F : (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F;
+        return this.func_70631_g_() ? (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F + 1.5F : (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F + 1.0F;
     }
 
     protected boolean func_70610_aX()
@@ -1327,7 +1327,7 @@ public abstract class EntityLivingBase extends Entity
     @SideOnly(Side.CLIENT)
     public IIcon func_70620_b(ItemStack p_70620_1_, int p_70620_2_)
     {
-        return p_70620_1_.func_77973_b().func_77623_v() ? p_70620_1_.func_77973_b().func_77618_c(p_70620_1_.func_77960_j(), p_70620_2_) : p_70620_1_.func_77954_c();
+        return p_70620_1_.getBaseItem().func_77623_v() ? p_70620_1_.getBaseItem().func_77618_c(p_70620_1_.func_77960_j(), p_70620_2_) : p_70620_1_.func_77954_c();
     }
 
     protected void func_70664_aZ()
@@ -1353,7 +1353,7 @@ public abstract class EntityLivingBase extends Entity
     {
         double d0;
 
-        if (this.func_70090_H() && (!(this instanceof EntityPlayer) || !((EntityPlayer)this).field_71075_bZ.field_75100_b))
+        if (this.func_70090_H() && (!(this instanceof EntityPlayer) || !((EntityPlayer)this).capabilities.flying))
         {
             d0 = this.field_70163_u;
             this.func_70060_a(p_70612_1_, p_70612_2_, this.func_70650_aV() ? 0.04F : 0.02F);
@@ -1368,7 +1368,7 @@ public abstract class EntityLivingBase extends Entity
                 this.field_70181_x = 0.30000001192092896D;
             }
         }
-        else if (this.func_70058_J() && (!(this instanceof EntityPlayer) || !((EntityPlayer)this).field_71075_bZ.field_75100_b))
+        else if (this.func_70058_J() && (!(this instanceof EntityPlayer) || !((EntityPlayer)this).capabilities.flying))
         {
             d0 = this.field_70163_u;
             this.func_70060_a(p_70612_1_, p_70612_2_, 0.02F);
@@ -1963,7 +1963,7 @@ public abstract class EntityLivingBase extends Entity
 
     protected void func_70018_K()
     {
-        this.field_70133_I = this.field_70146_Z.nextDouble() >= this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111126_e();
+        this.field_70133_I = this.randomizer.nextDouble() >= this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111126_e();
     }
 
     public float func_70079_am()

@@ -21,7 +21,7 @@ public class EntityRainFX extends EntityFX
         this.field_70552_h = 1.0F;
         this.field_70553_i = 1.0F;
         this.field_70551_j = 1.0F;
-        this.func_70536_a(19 + this.field_70146_Z.nextInt(4));
+        this.func_70536_a(19 + this.randomizer.nextInt(4));
         this.func_70105_a(0.01F, 0.01F);
         this.field_70545_g = 0.06F;
         this.field_70547_e = (int)(8.0D / (Math.random() * 0.8D + 0.2D));

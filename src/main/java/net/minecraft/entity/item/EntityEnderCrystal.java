@@ -23,7 +23,7 @@ public class EntityEnderCrystal extends Entity
         this.func_70105_a(2.0F, 2.0F);
         this.field_70129_M = this.field_70131_O / 2.0F;
         this.field_70260_b = 5;
-        this.field_70261_a = this.field_70146_Z.nextInt(100000);
+        this.field_70261_a = this.randomizer.nextInt(100000);
     }
 
     @SideOnly(Side.CLIENT)

@@ -18,7 +18,7 @@ public abstract class EntityAmbientCreature extends EntityLiving implements IAni
         return false;
     }
 
-    protected boolean func_70085_c(EntityPlayer p_70085_1_)
+    protected boolean resultOfImpact(EntityPlayer player)
     {
         return false;
     }

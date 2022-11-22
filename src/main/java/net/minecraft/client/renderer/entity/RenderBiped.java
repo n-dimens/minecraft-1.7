@@ -79,7 +79,7 @@ public class RenderBiped extends RenderLiving
 
         if (itemstack != null)
         {
-            Item item = itemstack.func_77973_b();
+            Item item = itemstack.getBaseItem();
 
             if (item instanceof ItemArmor)
             {
@@ -134,7 +134,7 @@ public class RenderBiped extends RenderLiving
 
         if (itemstack != null)
         {
-            Item item = itemstack.func_77973_b();
+            Item item = itemstack.getBaseItem();
 
             if (item instanceof ItemArmor)
             {
@@ -187,7 +187,7 @@ public class RenderBiped extends RenderLiving
         {
             GL11.glPushMatrix();
             this.field_77071_a.field_78116_c.func_78794_c(0.0625F);
-            item = itemstack1.func_77973_b();
+            item = itemstack1.getBaseItem();
 
             if (item instanceof ItemBlock)
             {
@@ -227,9 +227,9 @@ public class RenderBiped extends RenderLiving
             GL11.glPopMatrix();
         }
 
-        if (itemstack != null && itemstack.func_77973_b() != null)
+        if (itemstack != null && itemstack.getBaseItem() != null)
         {
-            item = itemstack.func_77973_b();
+            item = itemstack.getBaseItem();
             GL11.glPushMatrix();
 
             if (this.field_77045_g.field_78091_s)
@@ -290,11 +290,11 @@ public class RenderBiped extends RenderLiving
             int i;
             float f5;
 
-            if (itemstack.func_77973_b().func_77623_v())
+            if (itemstack.getBaseItem().func_77623_v())
             {
                 for (i = 0; i <= 1; ++i)
                 {
-                    int j = itemstack.func_77973_b().func_82790_a(itemstack, i);
+                    int j = itemstack.getBaseItem().func_82790_a(itemstack, i);
                     f5 = (float)(j >> 16 & 255) / 255.0F;
                     f2 = (float)(j >> 8 & 255) / 255.0F;
                     float f3 = (float)(j & 255) / 255.0F;
@@ -304,7 +304,7 @@ public class RenderBiped extends RenderLiving
             }
             else
             {
-                i = itemstack.func_77973_b().func_82790_a(itemstack, 0);
+                i = itemstack.getBaseItem().func_82790_a(itemstack, 0);
                 float f4 = (float)(i >> 16 & 255) / 255.0F;
                 f5 = (float)(i >> 8 & 255) / 255.0F;
                 f2 = (float)(i & 255) / 255.0F;

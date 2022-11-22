@@ -25,7 +25,7 @@ public class MerchantRecipeList extends ArrayList
         if (p_77203_3_ > 0 && p_77203_3_ < this.size())
         {
             MerchantRecipe merchantrecipe1 = (MerchantRecipe)this.get(p_77203_3_);
-            return p_77203_1_.func_77973_b() == merchantrecipe1.func_77394_a().func_77973_b() && (p_77203_2_ == null && !merchantrecipe1.func_77398_c() || merchantrecipe1.func_77398_c() && p_77203_2_ != null && merchantrecipe1.func_77396_b().func_77973_b() == p_77203_2_.func_77973_b()) && p_77203_1_.field_77994_a >= merchantrecipe1.func_77394_a().field_77994_a && (!merchantrecipe1.func_77398_c() || p_77203_2_.field_77994_a >= merchantrecipe1.func_77396_b().field_77994_a) ? merchantrecipe1 : null;
+            return p_77203_1_.getBaseItem() == merchantrecipe1.func_77394_a().getBaseItem() && (p_77203_2_ == null && !merchantrecipe1.func_77398_c() || merchantrecipe1.func_77398_c() && p_77203_2_ != null && merchantrecipe1.func_77396_b().getBaseItem() == p_77203_2_.getBaseItem()) && p_77203_1_.count >= merchantrecipe1.func_77394_a().count && (!merchantrecipe1.func_77398_c() || p_77203_2_.count >= merchantrecipe1.func_77396_b().count) ? merchantrecipe1 : null;
         }
         else
         {
@@ -33,7 +33,7 @@ public class MerchantRecipeList extends ArrayList
             {
                 MerchantRecipe merchantrecipe = (MerchantRecipe)this.get(j);
 
-                if (p_77203_1_.func_77973_b() == merchantrecipe.func_77394_a().func_77973_b() && p_77203_1_.field_77994_a >= merchantrecipe.func_77394_a().field_77994_a && (!merchantrecipe.func_77398_c() && p_77203_2_ == null || merchantrecipe.func_77398_c() && p_77203_2_ != null && merchantrecipe.func_77396_b().func_77973_b() == p_77203_2_.func_77973_b() && p_77203_2_.field_77994_a >= merchantrecipe.func_77396_b().field_77994_a))
+                if (p_77203_1_.getBaseItem() == merchantrecipe.func_77394_a().getBaseItem() && p_77203_1_.count >= merchantrecipe.func_77394_a().count && (!merchantrecipe.func_77398_c() && p_77203_2_ == null || merchantrecipe.func_77398_c() && p_77203_2_ != null && merchantrecipe.func_77396_b().getBaseItem() == p_77203_2_.getBaseItem() && p_77203_2_.count >= merchantrecipe.func_77396_b().count))
                 {
                     return merchantrecipe;
                 }

@@ -27,15 +27,15 @@ public class ItemEmptyMap extends ItemMapBase
         mapdata.field_76199_b = (int)(Math.round(p_77659_3_.field_70161_v / (double)i) * (long)i);
         mapdata.field_76200_c = (byte)p_77659_2_.field_73011_w.field_76574_g;
         mapdata.func_76185_a();
-        --p_77659_1_.field_77994_a;
+        --p_77659_1_.count;
 
-        if (p_77659_1_.field_77994_a <= 0)
+        if (p_77659_1_.count <= 0)
         {
             return itemstack1;
         }
         else
         {
-            if (!p_77659_3_.field_71071_by.func_70441_a(itemstack1.func_77946_l()))
+            if (!p_77659_3_.inventory.func_70441_a(itemstack1.func_77946_l()))
             {
                 p_77659_3_.func_71019_a(itemstack1, false);
             }

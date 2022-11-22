@@ -286,7 +286,7 @@ public class TileEntityBeacon extends TileEntity implements IInventory
     {
         if (p_70298_1_ == 0 && this.field_146011_o != null)
         {
-            if (p_70298_2_ >= this.field_146011_o.field_77994_a)
+            if (p_70298_2_ >= this.field_146011_o.count)
             {
                 ItemStack itemstack = this.field_146011_o;
                 this.field_146011_o = null;
@@ -294,8 +294,8 @@ public class TileEntityBeacon extends TileEntity implements IInventory
             }
             else
             {
-                this.field_146011_o.field_77994_a -= p_70298_2_;
-                return new ItemStack(this.field_146011_o.func_77973_b(), p_70298_2_, this.field_146011_o.func_77960_j());
+                this.field_146011_o.count -= p_70298_2_;
+                return new ItemStack(this.field_146011_o.getBaseItem(), p_70298_2_, this.field_146011_o.func_77960_j());
             }
         }
         else
@@ -318,7 +318,7 @@ public class TileEntityBeacon extends TileEntity implements IInventory
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         if (p_70299_1_ == 0)
         {
@@ -357,6 +357,6 @@ public class TileEntityBeacon extends TileEntity implements IInventory
 
     public boolean func_94041_b(int p_94041_1_, ItemStack p_94041_2_)
     {
-        return p_94041_2_.func_77973_b() == Items.EMERALD || p_94041_2_.func_77973_b() == Items.DIAMOND || p_94041_2_.func_77973_b() == Items.GOLD_INGOT || p_94041_2_.func_77973_b() == Items.IRON_INGOT;
+        return p_94041_2_.getBaseItem() == Items.EMERALD || p_94041_2_.getBaseItem() == Items.DIAMOND || p_94041_2_.getBaseItem() == Items.GOLD_INGOT || p_94041_2_.getBaseItem() == Items.IRON_INGOT;
     }
 }

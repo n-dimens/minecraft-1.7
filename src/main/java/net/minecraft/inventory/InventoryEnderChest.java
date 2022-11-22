@@ -27,7 +27,7 @@ public class InventoryEnderChest extends InventoryBasic
 
         for (i = 0; i < this.func_70302_i_(); ++i)
         {
-            this.func_70299_a(i, (ItemStack)null);
+            this.putItem(i, (ItemStack)null);
         }
 
         for (i = 0; i < p_70486_1_.func_74745_c(); ++i)
@@ -37,7 +37,7 @@ public class InventoryEnderChest extends InventoryBasic
 
             if (j >= 0 && j < this.func_70302_i_())
             {
-                this.func_70299_a(j, ItemStack.func_77949_a(nbttagcompound));
+                this.putItem(j, ItemStack.func_77949_a(nbttagcompound));
             }
         }
     }

@@ -210,7 +210,7 @@ public class EntityClientPlayerMP extends EntityPlayerSP
 
     public void func_92015_f()
     {
-        this.field_71071_by.func_70437_b((ItemStack)null);
+        this.inventory.func_70437_b((ItemStack)null);
         super.func_71053_j();
     }
 
@@ -240,7 +240,7 @@ public class EntityClientPlayerMP extends EntityPlayerSP
 
     public void func_71016_p()
     {
-        this.field_71174_a.func_147297_a(new C13PacketPlayerAbilities(this.field_71075_bZ));
+        this.field_71174_a.func_147297_a(new C13PacketPlayerAbilities(this.capabilities));
     }
 
     protected void func_110318_g()

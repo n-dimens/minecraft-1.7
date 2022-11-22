@@ -51,7 +51,7 @@ public class ItemRenderer
     {
         GL11.glPushMatrix();
         TextureManager texturemanager = this.field_78455_a.func_110434_K();
-        Item item = p_78443_2_.func_77973_b();
+        Item item = p_78443_2_.getBaseItem();
         Block block = Block.func_149634_a(item);
 
         if (p_78443_2_ != null && block != null && block.func_149701_w() != 0)
@@ -247,7 +247,7 @@ public class ItemRenderer
         GL11.glRotatef((entityclientplayermp.field_70177_z - f4) * 0.1F, 0.0F, 1.0F, 0.0F);
         ItemStack itemstack = this.field_78453_b;
 
-        if (itemstack != null && itemstack.func_77973_b() instanceof ItemCloth)
+        if (itemstack != null && itemstack.getBaseItem() instanceof ItemCloth)
         {
             GL11.glEnable(GL11.GL_BLEND);
             OpenGlHelper.func_148821_a(770, 771, 1, 0);
@@ -264,7 +264,7 @@ public class ItemRenderer
 
         if (itemstack != null)
         {
-            int l = itemstack.func_77973_b().func_82790_a(itemstack, 0);
+            int l = itemstack.getBaseItem().func_82790_a(itemstack, 0);
             f5 = (float)(l >> 16 & 255) / 255.0F;
             f6 = (float)(l >> 8 & 255) / 255.0F;
             f7 = (float)(l & 255) / 255.0F;
@@ -282,7 +282,7 @@ public class ItemRenderer
         Render render;
         RenderPlayer renderplayer;
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.FILLED_MAP)
+        if (itemstack != null && itemstack.getBaseItem() == Items.FILLED_MAP)
         {
             GL11.glPushMatrix();
             f13 = 0.8F;
@@ -448,15 +448,15 @@ public class ItemRenderer
                 }
             }
 
-            if (itemstack.func_77973_b().func_77629_n_())
+            if (itemstack.getBaseItem().func_77629_n_())
             {
                 GL11.glRotatef(180.0F, 0.0F, 1.0F, 0.0F);
             }
 
-            if (itemstack.func_77973_b().func_77623_v())
+            if (itemstack.getBaseItem().func_77623_v())
             {
                 this.func_78443_a(entityclientplayermp, itemstack, 0);
-                int k1 = itemstack.func_77973_b().func_82790_a(itemstack, 1);
+                int k1 = itemstack.getBaseItem().func_82790_a(itemstack, 1);
                 f10 = (float)(k1 >> 16 & 255) / 255.0F;
                 f11 = (float)(k1 >> 8 & 255) / 255.0F;
                 f12 = (float)(k1 & 255) / 255.0F;
@@ -501,7 +501,7 @@ public class ItemRenderer
             GL11.glPopMatrix();
         }
 
-        if (itemstack != null && itemstack.func_77973_b() instanceof ItemCloth)
+        if (itemstack != null && itemstack.getBaseItem() instanceof ItemCloth)
         {
             GL11.glDisable(GL11.GL_BLEND);
         }
@@ -657,15 +657,15 @@ public class ItemRenderer
     {
         this.field_78451_d = this.field_78454_c;
         EntityClientPlayerMP entityclientplayermp = this.field_78455_a.field_71439_g;
-        ItemStack itemstack = entityclientplayermp.field_71071_by.func_70448_g();
-        boolean flag = this.field_78450_g == entityclientplayermp.field_71071_by.field_70461_c && itemstack == this.field_78453_b;
+        ItemStack itemstack = entityclientplayermp.inventory.getActiveItem();
+        boolean flag = this.field_78450_g == entityclientplayermp.inventory.activeItemPosition && itemstack == this.field_78453_b;
 
         if (this.field_78453_b == null && itemstack == null)
         {
             flag = true;
         }
 
-        if (itemstack != null && this.field_78453_b != null && itemstack != this.field_78453_b && itemstack.func_77973_b() == this.field_78453_b.func_77973_b() && itemstack.func_77960_j() == this.field_78453_b.func_77960_j())
+        if (itemstack != null && this.field_78453_b != null && itemstack != this.field_78453_b && itemstack.getBaseItem() == this.field_78453_b.getBaseItem() && itemstack.func_77960_j() == this.field_78453_b.func_77960_j())
         {
             this.field_78453_b = itemstack;
             flag = true;
@@ -690,7 +690,7 @@ public class ItemRenderer
         if (this.field_78454_c < 0.1F)
         {
             this.field_78453_b = itemstack;
-            this.field_78450_g = entityclientplayermp.field_71071_by.field_70461_c;
+            this.field_78450_g = entityclientplayermp.inventory.activeItemPosition;
         }
     }
 

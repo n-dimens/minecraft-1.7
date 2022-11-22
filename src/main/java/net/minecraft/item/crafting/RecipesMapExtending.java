@@ -30,7 +30,7 @@ public class RecipesMapExtending extends ShapedRecipes
             {
                 ItemStack itemstack1 = p_77569_1_.func_70301_a(i);
 
-                if (itemstack1 != null && itemstack1.func_77973_b() == Items.FILLED_MAP)
+                if (itemstack1 != null && itemstack1.getBaseItem() == Items.FILLED_MAP)
                 {
                     itemstack = itemstack1;
                 }
@@ -56,14 +56,14 @@ public class RecipesMapExtending extends ShapedRecipes
         {
             ItemStack itemstack1 = p_77572_1_.func_70301_a(i);
 
-            if (itemstack1 != null && itemstack1.func_77973_b() == Items.FILLED_MAP)
+            if (itemstack1 != null && itemstack1.getBaseItem() == Items.FILLED_MAP)
             {
                 itemstack = itemstack1;
             }
         }
 
         itemstack = itemstack.func_77946_l();
-        itemstack.field_77994_a = 1;
+        itemstack.count = 1;
 
         if (itemstack.func_77978_p() == null)
         {

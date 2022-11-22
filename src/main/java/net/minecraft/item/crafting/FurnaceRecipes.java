@@ -97,7 +97,7 @@ public class FurnaceRecipes
 
     private boolean func_151397_a(ItemStack p_151397_1_, ItemStack p_151397_2_)
     {
-        return p_151397_2_.func_77973_b() == p_151397_1_.func_77973_b() && (p_151397_2_.func_77960_j() == 32767 || p_151397_2_.func_77960_j() == p_151397_1_.func_77960_j());
+        return p_151397_2_.getBaseItem() == p_151397_1_.getBaseItem() && (p_151397_2_.func_77960_j() == 32767 || p_151397_2_.func_77960_j() == p_151397_1_.func_77960_j());
     }
 
     public Map func_77599_b()

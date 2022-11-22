@@ -62,7 +62,7 @@ public class RenderWitch extends RenderLiving
             this.field_82414_a.field_82898_f.func_78794_c(0.0625F);
             GL11.glTranslatef(-0.0625F, 0.53125F, 0.21875F);
 
-            if (itemstack.func_77973_b() instanceof ItemBlock && RenderBlocks.func_147739_a(Block.func_149634_a(itemstack.func_77973_b()).func_149645_b()))
+            if (itemstack.getBaseItem() instanceof ItemBlock && RenderBlocks.func_147739_a(Block.func_149634_a(itemstack.getBaseItem()).func_149645_b()))
             {
                 f1 = 0.5F;
                 GL11.glTranslatef(0.0F, 0.1875F, -0.3125F);
@@ -71,7 +71,7 @@ public class RenderWitch extends RenderLiving
                 GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
                 GL11.glScalef(f1, -f1, f1);
             }
-            else if (itemstack.func_77973_b() == Items.BOW)
+            else if (itemstack.getBaseItem() == Items.BOW)
             {
                 f1 = 0.625F;
                 GL11.glTranslatef(0.0F, 0.125F, 0.3125F);
@@ -80,11 +80,11 @@ public class RenderWitch extends RenderLiving
                 GL11.glRotatef(-100.0F, 1.0F, 0.0F, 0.0F);
                 GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
             }
-            else if (itemstack.func_77973_b().func_77662_d())
+            else if (itemstack.getBaseItem().func_77662_d())
             {
                 f1 = 0.625F;
 
-                if (itemstack.func_77973_b().func_77629_n_())
+                if (itemstack.getBaseItem().func_77629_n_())
                 {
                     GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
                     GL11.glTranslatef(0.0F, -0.125F, 0.0F);
@@ -109,7 +109,7 @@ public class RenderWitch extends RenderLiving
             GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
             this.field_76990_c.field_78721_f.func_78443_a(p_77029_1_, itemstack, 0);
 
-            if (itemstack.func_77973_b().func_77623_v())
+            if (itemstack.getBaseItem().func_77623_v())
             {
                 this.field_76990_c.field_78721_f.func_78443_a(p_77029_1_, itemstack, 1);
             }

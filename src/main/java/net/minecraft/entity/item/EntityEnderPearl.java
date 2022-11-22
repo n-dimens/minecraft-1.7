@@ -39,7 +39,7 @@ public class EntityEnderPearl extends EntityThrowable
 
         for (int i = 0; i < 32; ++i)
         {
-            this.world.func_72869_a("portal", this.field_70165_t, this.field_70163_u + this.field_70146_Z.nextDouble() * 2.0D, this.field_70161_v, this.field_70146_Z.nextGaussian(), 0.0D, this.field_70146_Z.nextGaussian());
+            this.world.func_72869_a("portal", this.field_70165_t, this.field_70163_u + this.randomizer.nextDouble() * 2.0D, this.field_70161_v, this.randomizer.nextGaussian(), 0.0D, this.randomizer.nextGaussian());
         }
 
         if (!this.world.field_72995_K)

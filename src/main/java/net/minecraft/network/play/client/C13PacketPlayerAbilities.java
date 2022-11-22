@@ -21,10 +21,10 @@ public class C13PacketPlayerAbilities extends Packet
 
     public C13PacketPlayerAbilities(PlayerCapabilities p_i45257_1_)
     {
-        this.func_149490_a(p_i45257_1_.field_75102_a);
-        this.func_149483_b(p_i45257_1_.field_75100_b);
-        this.func_149491_c(p_i45257_1_.field_75101_c);
-        this.func_149493_d(p_i45257_1_.field_75098_d);
+        this.func_149490_a(p_i45257_1_.invulnerable);
+        this.func_149483_b(p_i45257_1_.flying);
+        this.func_149491_c(p_i45257_1_.mayfly);
+        this.func_149493_d(p_i45257_1_.instabuild);
         this.func_149485_a(p_i45257_1_.func_75093_a());
         this.func_149492_b(p_i45257_1_.func_75094_b());
     }

@@ -19,9 +19,9 @@ public class ContainerBrewingStand extends Container
     public ContainerBrewingStand(InventoryPlayer p_i1805_1_, TileEntityBrewingStand p_i1805_2_)
     {
         this.field_75188_e = p_i1805_2_;
-        this.func_75146_a(new ContainerBrewingStand.Potion(p_i1805_1_.field_70458_d, p_i1805_2_, 0, 56, 46));
-        this.func_75146_a(new ContainerBrewingStand.Potion(p_i1805_1_.field_70458_d, p_i1805_2_, 1, 79, 53));
-        this.func_75146_a(new ContainerBrewingStand.Potion(p_i1805_1_.field_70458_d, p_i1805_2_, 2, 102, 46));
+        this.func_75146_a(new ContainerBrewingStand.Potion(p_i1805_1_.player, p_i1805_2_, 0, 56, 46));
+        this.func_75146_a(new ContainerBrewingStand.Potion(p_i1805_1_.player, p_i1805_2_, 1, 79, 53));
+        this.func_75146_a(new ContainerBrewingStand.Potion(p_i1805_1_.player, p_i1805_2_, 2, 102, 46));
         this.field_75186_f = this.func_75146_a(new ContainerBrewingStand.Ingredient(p_i1805_2_, 3, 79, 17));
         int i;
 
@@ -71,9 +71,9 @@ public class ContainerBrewingStand extends Container
         }
     }
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
-        return this.field_75188_e.func_70300_a(p_75145_1_);
+        return this.field_75188_e.func_70300_a(player);
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)
@@ -131,7 +131,7 @@ public class ContainerBrewingStand extends Container
                 slot.func_75220_a(itemstack1, itemstack);
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }
@@ -140,7 +140,7 @@ public class ContainerBrewingStand extends Container
                 slot.func_75218_e();
             }
 
-            if (itemstack1.field_77994_a == itemstack.field_77994_a)
+            if (itemstack1.count == itemstack.count)
             {
                 return null;
             }
@@ -162,7 +162,7 @@ public class ContainerBrewingStand extends Container
 
         public boolean func_75214_a(ItemStack p_75214_1_)
         {
-            return p_75214_1_ != null ? p_75214_1_.func_77973_b().func_150892_m(p_75214_1_) : false;
+            return p_75214_1_ != null ? p_75214_1_.getBaseItem().func_150892_m(p_75214_1_) : false;
         }
 
         public int func_75219_a()
@@ -194,7 +194,7 @@ public class ContainerBrewingStand extends Container
 
             public void func_82870_a(EntityPlayer p_82870_1_, ItemStack p_82870_2_)
             {
-                if (p_82870_2_.func_77973_b() == Items.POTION && p_82870_2_.func_77960_j() > 0)
+                if (p_82870_2_.getBaseItem() == Items.POTION && p_82870_2_.func_77960_j() > 0)
                 {
                     this.field_75244_a.func_71064_a(AchievementList.POTION, 1);
                 }
@@ -204,7 +204,7 @@ public class ContainerBrewingStand extends Container
 
             public static boolean func_75243_a_(ItemStack p_75243_0_)
             {
-                return p_75243_0_ != null && (p_75243_0_.func_77973_b() == Items.POTION || p_75243_0_.func_77973_b() == Items.GLASS_BOTTLE);
+                return p_75243_0_ != null && (p_75243_0_.getBaseItem() == Items.POTION || p_75243_0_.getBaseItem() == Items.GLASS_BOTTLE);
             }
         }
 }

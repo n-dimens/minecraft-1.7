@@ -30,7 +30,7 @@ public class ItemDye extends Item
     public ItemDye()
     {
         this.func_77627_a(true);
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77637_a(CreativeTabs.field_78035_l);
     }
 
@@ -109,9 +109,9 @@ public class ItemDye extends Item
                         int j1 = Blocks.COCOA.func_149660_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_8_, p_77648_9_, p_77648_10_, 0);
                         p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.COCOA, j1, 2);
 
-                        if (!p_77648_2_.field_71075_bZ.field_75098_d)
+                        if (!p_77648_2_.capabilities.instabuild)
                         {
-                            --p_77648_1_.field_77994_a;
+                            --p_77648_1_.count;
                         }
                     }
 
@@ -140,7 +140,7 @@ public class ItemDye extends Item
                         igrowable.func_149853_b(p_150919_1_, p_150919_1_.field_73012_v, p_150919_2_, p_150919_3_, p_150919_4_);
                     }
 
-                    --p_150919_0_.field_77994_a;
+                    --p_150919_0_.count;
                 }
 
                 return true;
@@ -166,10 +166,10 @@ public class ItemDye extends Item
 
             for (int i1 = 0; i1 < p_150918_4_; ++i1)
             {
-                double d0 = field_77697_d.nextGaussian() * 0.02D;
-                double d1 = field_77697_d.nextGaussian() * 0.02D;
-                double d2 = field_77697_d.nextGaussian() * 0.02D;
-                p_150918_0_.func_72869_a("happyVillager", (double)((float)p_150918_1_ + field_77697_d.nextFloat()), (double)p_150918_2_ + (double)field_77697_d.nextFloat() * block.func_149669_A(), (double)((float)p_150918_3_ + field_77697_d.nextFloat()), d0, d1, d2);
+                double d0 = randomizer.nextGaussian() * 0.02D;
+                double d1 = randomizer.nextGaussian() * 0.02D;
+                double d2 = randomizer.nextGaussian() * 0.02D;
+                p_150918_0_.func_72869_a("happyVillager", (double)((float)p_150918_1_ + randomizer.nextFloat()), (double)p_150918_2_ + (double) randomizer.nextFloat() * block.func_149669_A(), (double)((float)p_150918_3_ + randomizer.nextFloat()), d0, d1, d2);
             }
         }
     }
@@ -184,7 +184,7 @@ public class ItemDye extends Item
             if (!entitysheep.func_70892_o() && entitysheep.func_70896_n() != i)
             {
                 entitysheep.func_70891_b(i);
-                --p_111207_1_.field_77994_a;
+                --p_111207_1_.count;
             }
 
             return true;

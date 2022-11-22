@@ -181,12 +181,12 @@ public class ContainerEnchantment extends Container
     {
         ItemStack itemstack = this.field_75168_e.func_70301_a(0);
 
-        if (this.field_75167_g[p_75140_2_] > 0 && itemstack != null && (p_75140_1_.field_71068_ca >= this.field_75167_g[p_75140_2_] || p_75140_1_.field_71075_bZ.field_75098_d))
+        if (this.field_75167_g[p_75140_2_] > 0 && itemstack != null && (p_75140_1_.field_71068_ca >= this.field_75167_g[p_75140_2_] || p_75140_1_.capabilities.instabuild))
         {
             if (!this.field_75172_h.field_72995_K)
             {
                 List list = EnchantmentHelper.func_77513_b(this.field_75169_l, itemstack, this.field_75167_g[p_75140_2_]);
-                boolean flag = itemstack.func_77973_b() == Items.BOOK;
+                boolean flag = itemstack.getBaseItem() == Items.BOOK;
 
                 if (list != null)
                 {
@@ -243,9 +243,9 @@ public class ContainerEnchantment extends Container
         }
     }
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
-        return this.field_75172_h.func_147439_a(this.field_75173_i, this.field_75170_j, this.field_75171_k) != Blocks.ENCHANTING_TABLE ? false : p_75145_1_.func_70092_e((double)this.field_75173_i + 0.5D, (double)this.field_75170_j + 0.5D, (double)this.field_75171_k + 0.5D) <= 64.0D;
+        return this.field_75172_h.func_147439_a(this.field_75173_i, this.field_75170_j, this.field_75171_k) != Blocks.ENCHANTING_TABLE ? false : player.func_70092_e((double)this.field_75173_i + 0.5D, (double)this.field_75170_j + 0.5D, (double)this.field_75171_k + 0.5D) <= 64.0D;
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)
@@ -272,19 +272,19 @@ public class ContainerEnchantment extends Container
                     return null;
                 }
 
-                if (itemstack1.func_77942_o() && itemstack1.field_77994_a == 1)
+                if (itemstack1.func_77942_o() && itemstack1.count == 1)
                 {
                     ((Slot)this.field_75151_b.get(0)).func_75215_d(itemstack1.func_77946_l());
-                    itemstack1.field_77994_a = 0;
+                    itemstack1.count = 0;
                 }
-                else if (itemstack1.field_77994_a >= 1)
+                else if (itemstack1.count >= 1)
                 {
-                    ((Slot)this.field_75151_b.get(0)).func_75215_d(new ItemStack(itemstack1.func_77973_b(), 1, itemstack1.func_77960_j()));
-                    --itemstack1.field_77994_a;
+                    ((Slot)this.field_75151_b.get(0)).func_75215_d(new ItemStack(itemstack1.getBaseItem(), 1, itemstack1.func_77960_j()));
+                    --itemstack1.count;
                 }
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }
@@ -293,7 +293,7 @@ public class ContainerEnchantment extends Container
                 slot.func_75218_e();
             }
 
-            if (itemstack1.field_77994_a == itemstack.field_77994_a)
+            if (itemstack1.count == itemstack.count)
             {
                 return null;
             }

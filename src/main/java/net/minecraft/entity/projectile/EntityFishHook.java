@@ -111,9 +111,9 @@ public class EntityFishHook extends Entity
         p_146035_1_ /= (double)f2;
         p_146035_3_ /= (double)f2;
         p_146035_5_ /= (double)f2;
-        p_146035_1_ += this.field_70146_Z.nextGaussian() * 0.007499999832361937D * (double)p_146035_8_;
-        p_146035_3_ += this.field_70146_Z.nextGaussian() * 0.007499999832361937D * (double)p_146035_8_;
-        p_146035_5_ += this.field_70146_Z.nextGaussian() * 0.007499999832361937D * (double)p_146035_8_;
+        p_146035_1_ += this.randomizer.nextGaussian() * 0.007499999832361937D * (double)p_146035_8_;
+        p_146035_3_ += this.randomizer.nextGaussian() * 0.007499999832361937D * (double)p_146035_8_;
+        p_146035_5_ += this.randomizer.nextGaussian() * 0.007499999832361937D * (double)p_146035_8_;
         p_146035_1_ *= (double)p_146035_7_;
         p_146035_3_ *= (double)p_146035_7_;
         p_146035_5_ *= (double)p_146035_7_;
@@ -178,7 +178,7 @@ public class EntityFishHook extends Entity
             {
                 ItemStack itemstack = this.field_146042_b.func_71045_bC();
 
-                if (this.field_146042_b.field_70128_L || !this.field_146042_b.func_70089_S() || itemstack == null || itemstack.func_77973_b() != Items.FISHING_ROD || this.func_70068_e(this.field_146042_b) > 1024.0D)
+                if (this.field_146042_b.field_70128_L || !this.field_146042_b.func_70089_S() || itemstack == null || itemstack.getBaseItem() != Items.FISHING_ROD || this.func_70068_e(this.field_146042_b) > 1024.0D)
                 {
                     this.func_70106_y();
                     this.field_146042_b.field_71104_cf = null;
@@ -219,9 +219,9 @@ public class EntityFishHook extends Entity
                 }
 
                 this.field_146051_au = false;
-                this.field_70159_w *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
-                this.field_70181_x *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
-                this.field_70179_y *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
+                this.field_70159_w *= (double)(this.randomizer.nextFloat() * 0.2F);
+                this.field_70181_x *= (double)(this.randomizer.nextFloat() * 0.2F);
+                this.field_70179_y *= (double)(this.randomizer.nextFloat() * 0.2F);
                 this.field_146049_av = 0;
                 this.field_146047_aw = 0;
             }
@@ -344,12 +344,12 @@ public class EntityFishHook extends Entity
                     WorldServer worldserver = (WorldServer)this.world;
                     int k = 1;
 
-                    if (this.field_70146_Z.nextFloat() < 0.25F && this.world.func_72951_B(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) + 1, MathHelper.func_76128_c(this.field_70161_v)))
+                    if (this.randomizer.nextFloat() < 0.25F && this.world.func_72951_B(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) + 1, MathHelper.func_76128_c(this.field_70161_v)))
                     {
                         k = 2;
                     }
 
-                    if (this.field_70146_Z.nextFloat() < 0.5F && !this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) + 1, MathHelper.func_76128_c(this.field_70161_v)))
+                    if (this.randomizer.nextFloat() < 0.5F && !this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) + 1, MathHelper.func_76128_c(this.field_70161_v)))
                     {
                         --k;
                     }
@@ -380,15 +380,15 @@ public class EntityFishHook extends Entity
                             if (this.field_146038_az <= 0)
                             {
                                 this.field_70181_x -= 0.20000000298023224D;
-                                this.func_85030_a("random.splash", 0.25F, 1.0F + (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.4F);
+                                this.func_85030_a("random.splash", 0.25F, 1.0F + (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.4F);
                                 f1 = (float)MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
                                 worldserver.func_147487_a("bubble", this.field_70165_t, (double)(f1 + 1.0F), this.field_70161_v, (int)(1.0F + this.field_70130_N * 20.0F), (double)this.field_70130_N, 0.0D, (double)this.field_70130_N, 0.20000000298023224D);
                                 worldserver.func_147487_a("wake", this.field_70165_t, (double)(f1 + 1.0F), this.field_70161_v, (int)(1.0F + this.field_70130_N * 20.0F), (double)this.field_70130_N, 0.0D, (double)this.field_70130_N, 0.20000000298023224D);
-                                this.field_146045_ax = MathHelper.func_76136_a(this.field_70146_Z, 10, 30);
+                                this.field_146045_ax = MathHelper.func_76136_a(this.randomizer, 10, 30);
                             }
                             else
                             {
-                                this.field_146054_aA = (float)((double)this.field_146054_aA + this.field_70146_Z.nextGaussian() * 4.0D);
+                                this.field_146054_aA = (float)((double)this.field_146054_aA + this.randomizer.nextGaussian() * 4.0D);
                                 f1 = this.field_146054_aA * 0.017453292F;
                                 f7 = MathHelper.func_76126_a(f1);
                                 f2 = MathHelper.func_76134_b(f1);
@@ -396,7 +396,7 @@ public class EntityFishHook extends Entity
                                 d5 = (double)((float)MathHelper.func_76128_c(this.field_70121_D.field_72338_b) + 1.0F);
                                 d6 = this.field_70161_v + (double)(f2 * (float)this.field_146038_az * 0.1F);
 
-                                if (this.field_70146_Z.nextFloat() < 0.15F)
+                                if (this.randomizer.nextFloat() < 0.15F)
                                 {
                                     worldserver.func_147487_a("bubble", d11, d5 - 0.10000000149011612D, d6, 1, (double)f7, 0.1D, (double)f2, 0.0D);
                                 }
@@ -425,32 +425,32 @@ public class EntityFishHook extends Entity
                                 f1 = (float)((double)f1 + (double)(60 - this.field_146040_ay) * 0.01D);
                             }
 
-                            if (this.field_70146_Z.nextFloat() < f1)
+                            if (this.randomizer.nextFloat() < f1)
                             {
-                                f7 = MathHelper.func_151240_a(this.field_70146_Z, 0.0F, 360.0F) * 0.017453292F;
-                                f2 = MathHelper.func_151240_a(this.field_70146_Z, 25.0F, 60.0F);
+                                f7 = MathHelper.func_151240_a(this.randomizer, 0.0F, 360.0F) * 0.017453292F;
+                                f2 = MathHelper.func_151240_a(this.randomizer, 25.0F, 60.0F);
                                 d11 = this.field_70165_t + (double)(MathHelper.func_76126_a(f7) * f2 * 0.1F);
                                 d5 = (double)((float)MathHelper.func_76128_c(this.field_70121_D.field_72338_b) + 1.0F);
                                 d6 = this.field_70161_v + (double)(MathHelper.func_76134_b(f7) * f2 * 0.1F);
-                                worldserver.func_147487_a("splash", d11, d5, d6, 2 + this.field_70146_Z.nextInt(2), 0.10000000149011612D, 0.0D, 0.10000000149011612D, 0.0D);
+                                worldserver.func_147487_a("splash", d11, d5, d6, 2 + this.randomizer.nextInt(2), 0.10000000149011612D, 0.0D, 0.10000000149011612D, 0.0D);
                             }
 
                             if (this.field_146040_ay <= 0)
                             {
-                                this.field_146054_aA = MathHelper.func_151240_a(this.field_70146_Z, 0.0F, 360.0F);
-                                this.field_146038_az = MathHelper.func_76136_a(this.field_70146_Z, 20, 80);
+                                this.field_146054_aA = MathHelper.func_151240_a(this.randomizer, 0.0F, 360.0F);
+                                this.field_146038_az = MathHelper.func_76136_a(this.randomizer, 20, 80);
                             }
                         }
                         else
                         {
-                            this.field_146040_ay = MathHelper.func_76136_a(this.field_70146_Z, 100, 900);
+                            this.field_146040_ay = MathHelper.func_76136_a(this.randomizer, 100, 900);
                             this.field_146040_ay -= EnchantmentHelper.func_151387_h(this.field_146042_b) * 20 * 5;
                         }
                     }
 
                     if (this.field_146045_ax > 0)
                     {
-                        this.field_70181_x -= (double)(this.field_70146_Z.nextFloat() * this.field_70146_Z.nextFloat() * this.field_70146_Z.nextFloat()) * 0.2D;
+                        this.field_70181_x -= (double)(this.randomizer.nextFloat() * this.randomizer.nextFloat() * this.randomizer.nextFloat()) * 0.2D;
                     }
                 }
 
@@ -531,7 +531,7 @@ public class EntityFishHook extends Entity
                 entityitem.field_70181_x = d3 * d9 + (double)MathHelper.func_76133_a(d7) * 0.08D;
                 entityitem.field_70179_y = d5 * d9;
                 this.world.func_72838_d(entityitem);
-                this.field_146042_b.world.func_72838_d(new EntityXPOrb(this.field_146042_b.world, this.field_146042_b.field_70165_t, this.field_146042_b.field_70163_u + 0.5D, this.field_146042_b.field_70161_v + 0.5D, this.field_70146_Z.nextInt(6) + 1));
+                this.field_146042_b.world.func_72838_d(new EntityXPOrb(this.field_146042_b.world, this.field_146042_b.field_70165_t, this.field_146042_b.field_70163_u + 0.5D, this.field_146042_b.field_70161_v + 0.5D, this.randomizer.nextInt(6) + 1));
                 b0 = 1;
             }
 
@@ -559,7 +559,7 @@ public class EntityFishHook extends Entity
         if (f < f1)
         {
             this.field_146042_b.func_71064_a(StatList.JUNK_FISHED, 1);
-            return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.field_70146_Z, field_146039_d)).func_150708_a(this.field_70146_Z);
+            return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.randomizer, field_146039_d)).func_150708_a(this.randomizer);
         }
         else
         {
@@ -568,13 +568,13 @@ public class EntityFishHook extends Entity
             if (f < f2)
             {
                 this.field_146042_b.func_71064_a(StatList.TREASURE_FISHED, 1);
-                return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.field_70146_Z, field_146041_e)).func_150708_a(this.field_70146_Z);
+                return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.randomizer, field_146041_e)).func_150708_a(this.randomizer);
             }
             else
             {
                 float f3 = f - f2;
                 this.field_146042_b.func_71064_a(StatList.FISH_CAUGHT, 1);
-                return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.field_70146_Z, field_146036_f)).func_150708_a(this.field_70146_Z);
+                return ((WeightedRandomFishable)WeightedRandom.func_76271_a(this.randomizer, field_146036_f)).func_150708_a(this.randomizer);
             }
         }
     }

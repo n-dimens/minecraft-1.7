@@ -27,7 +27,7 @@ public class EntityFireworkSparkFX extends EntityFX
         this.field_70179_y = p_i1207_12_;
         this.field_92047_az = p_i1207_14_;
         this.field_70544_f *= 0.75F;
-        this.field_70547_e = 48 + this.field_70146_Z.nextInt(12);
+        this.field_70547_e = 48 + this.randomizer.nextInt(12);
         this.field_70145_X = false;
     }
 

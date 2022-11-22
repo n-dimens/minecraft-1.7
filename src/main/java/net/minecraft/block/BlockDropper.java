@@ -66,7 +66,7 @@ public class BlockDropper extends BlockDispenser
                     {
                         itemstack1 = itemstack.func_77946_l();
 
-                        if (--itemstack1.field_77994_a == 0)
+                        if (--itemstack1.count == 0)
                         {
                             itemstack1 = null;
                         }
@@ -80,13 +80,13 @@ public class BlockDropper extends BlockDispenser
                 {
                     itemstack1 = this.field_149947_P.func_82482_a(blocksourceimpl, itemstack);
 
-                    if (itemstack1 != null && itemstack1.field_77994_a == 0)
+                    if (itemstack1 != null && itemstack1.count == 0)
                     {
                         itemstack1 = null;
                     }
                 }
 
-                tileentitydispenser.func_70299_a(l, itemstack1);
+                tileentitydispenser.putItem(l, itemstack1);
             }
         }
     }

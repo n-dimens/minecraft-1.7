@@ -17,8 +17,8 @@ public class ItemFishingRod extends Item
 
     public ItemFishingRod()
     {
-        this.func_77656_e(64);
-        this.func_77625_d(1);
+        this.setDurability(64);
+        this.setStackMaxSize(1);
         this.func_77637_a(CreativeTabs.field_78040_i);
     }
 
@@ -44,7 +44,7 @@ public class ItemFishingRod extends Item
         }
         else
         {
-            p_77659_2_.func_72956_a(p_77659_3_, "random.bow", 0.5F, 0.4F / (field_77697_d.nextFloat() * 0.4F + 0.8F));
+            p_77659_2_.func_72956_a(p_77659_3_, "random.bow", 0.5F, 0.4F / (randomizer.nextFloat() * 0.4F + 0.8F));
 
             if (!p_77659_2_.field_72995_K)
             {

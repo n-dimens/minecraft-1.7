@@ -61,13 +61,13 @@ public class ItemFireball extends Item
             {
                 if (p_77648_3_.func_147439_a(p_77648_4_, p_77648_5_, p_77648_6_).func_149688_o() == Material.field_151579_a)
                 {
-                    p_77648_3_.func_72908_a((double)p_77648_4_ + 0.5D, (double)p_77648_5_ + 0.5D, (double)p_77648_6_ + 0.5D, "fire.ignite", 1.0F, field_77697_d.nextFloat() * 0.4F + 0.8F);
+                    p_77648_3_.func_72908_a((double)p_77648_4_ + 0.5D, (double)p_77648_5_ + 0.5D, (double)p_77648_6_ + 0.5D, "fire.ignite", 1.0F, randomizer.nextFloat() * 0.4F + 0.8F);
                     p_77648_3_.func_147449_b(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.FIRE);
                 }
 
-                if (!p_77648_2_.field_71075_bZ.field_75098_d)
+                if (!p_77648_2_.capabilities.instabuild)
                 {
-                    --p_77648_1_.field_77994_a;
+                    --p_77648_1_.count;
                 }
 
                 return true;

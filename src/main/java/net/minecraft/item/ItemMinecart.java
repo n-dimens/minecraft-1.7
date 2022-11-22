@@ -46,7 +46,7 @@ public class ItemMinecart extends Item
                 d3 = -1.0D;
             }
 
-            EntityMinecart entityminecart = EntityMinecart.func_94090_a(world, d0, d1 + d3, d2, ((ItemMinecart)p_82487_2_.func_77973_b()).field_77841_a);
+            EntityMinecart entityminecart = EntityMinecart.func_94090_a(world, d0, d1 + d3, d2, ((ItemMinecart)p_82487_2_.getBaseItem()).field_77841_a);
 
             if (p_82487_2_.func_82837_s())
             {
@@ -67,7 +67,7 @@ public class ItemMinecart extends Item
 
     public ItemMinecart(int p_i45345_1_)
     {
-        this.field_77777_bU = 1;
+        this.stackMaxSize = 1;
         this.field_77841_a = p_i45345_1_;
         this.func_77637_a(CreativeTabs.field_78029_e);
         BlockDispenser.field_149943_a.add(this, field_96602_b);
@@ -89,7 +89,7 @@ public class ItemMinecart extends Item
                 p_77648_3_.func_72838_d(entityminecart);
             }
 
-            --p_77648_1_.field_77994_a;
+            --p_77648_1_.count;
             return true;
         }
         else

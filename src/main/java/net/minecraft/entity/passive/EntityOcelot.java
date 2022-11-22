@@ -38,17 +38,17 @@ public class EntityOcelot extends EntityTameable
         super(p_i1688_1_);
         this.func_70105_a(0.6F, 0.8F);
         this.func_70661_as().func_75491_a(true);
-        this.field_70714_bg.func_75776_a(1, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(2, this.field_70911_d);
-        this.field_70714_bg.func_75776_a(3, this.field_70914_e = new EntityAITempt(this, 0.6D, Items.FISH, true));
-        this.field_70714_bg.func_75776_a(4, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 0.8D, 1.33D));
-        this.field_70714_bg.func_75776_a(5, new EntityAIFollowOwner(this, 1.0D, 10.0F, 5.0F));
-        this.field_70714_bg.func_75776_a(6, new EntityAIOcelotSit(this, 1.33D));
-        this.field_70714_bg.func_75776_a(7, new EntityAILeapAtTarget(this, 0.3F));
-        this.field_70714_bg.func_75776_a(8, new EntityAIOcelotAttack(this));
-        this.field_70714_bg.func_75776_a(9, new EntityAIMate(this, 0.8D));
-        this.field_70714_bg.func_75776_a(10, new EntityAIWander(this, 0.8D));
-        this.field_70714_bg.func_75776_a(11, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
+        this.aiTasks.func_75776_a(1, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(2, this.field_70911_d);
+        this.aiTasks.func_75776_a(3, this.field_70914_e = new EntityAITempt(this, 0.6D, Items.FISH, true));
+        this.aiTasks.func_75776_a(4, new EntityAIAvoidEntity(this, EntityPlayer.class, 16.0F, 0.8D, 1.33D));
+        this.aiTasks.func_75776_a(5, new EntityAIFollowOwner(this, 1.0D, 10.0F, 5.0F));
+        this.aiTasks.func_75776_a(6, new EntityAIOcelotSit(this, 1.33D));
+        this.aiTasks.func_75776_a(7, new EntityAILeapAtTarget(this, 0.3F));
+        this.aiTasks.func_75776_a(8, new EntityAIOcelotAttack(this));
+        this.aiTasks.func_75776_a(9, new EntityAIMate(this, 0.8D));
+        this.aiTasks.func_75776_a(10, new EntityAIWander(this, 0.8D));
+        this.aiTasks.func_75776_a(11, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
         this.field_70715_bh.func_75776_a(1, new EntityAITargetNonTamed(this, EntityChicken.class, 750, false));
     }
 
@@ -120,7 +120,7 @@ public class EntityOcelot extends EntityTameable
 
     protected String func_70639_aQ()
     {
-        return this.func_70909_n() ? (this.func_70880_s() ? "mob.cat.purr" : (this.field_70146_Z.nextInt(4) == 0 ? "mob.cat.purreow" : "mob.cat.meow")) : "";
+        return this.func_70909_n() ? (this.func_70880_s() ? "mob.cat.purr" : (this.randomizer.nextInt(4) == 0 ? "mob.cat.purreow" : "mob.cat.meow")) : "";
     }
 
     protected String func_70621_aR()
@@ -163,36 +163,36 @@ public class EntityOcelot extends EntityTameable
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_) {}
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    public boolean resultOfImpact(EntityPlayer player)
     {
-        ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = player.inventory.getActiveItem();
 
         if (this.func_70909_n())
         {
-            if (this.func_152114_e(p_70085_1_) && !this.world.field_72995_K && !this.func_70877_b(itemstack))
+            if (this.func_152114_e(player) && !this.world.field_72995_K && !this.func_70877_b(itemstack))
             {
                 this.field_70911_d.func_75270_a(!this.func_70906_o());
             }
         }
-        else if (this.field_70914_e.func_75277_f() && itemstack != null && itemstack.func_77973_b() == Items.FISH && p_70085_1_.func_70068_e(this) < 9.0D)
+        else if (this.field_70914_e.func_75277_f() && itemstack != null && itemstack.getBaseItem() == Items.FISH && player.func_70068_e(this) < 9.0D)
         {
-            if (!p_70085_1_.field_71075_bZ.field_75098_d)
+            if (!player.capabilities.instabuild)
             {
-                --itemstack.field_77994_a;
+                --itemstack.count;
             }
 
-            if (itemstack.field_77994_a <= 0)
+            if (itemstack.count <= 0)
             {
-                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
+                player.inventory.putItem(player.inventory.activeItemPosition, (ItemStack)null);
             }
 
             if (!this.world.field_72995_K)
             {
-                if (this.field_70146_Z.nextInt(3) == 0)
+                if (this.randomizer.nextInt(3) == 0)
                 {
                     this.func_70903_f(true);
                     this.func_70912_b(1 + this.world.field_73012_v.nextInt(3));
-                    this.func_152115_b(p_70085_1_.func_110124_au().toString());
+                    this.func_152115_b(player.func_110124_au().toString());
                     this.func_70908_e(true);
                     this.field_70911_d.func_75270_a(true);
                     this.world.func_72960_a(this, (byte)7);
@@ -207,7 +207,7 @@ public class EntityOcelot extends EntityTameable
             return true;
         }
 
-        return super.func_70085_c(p_70085_1_);
+        return super.resultOfImpact(player);
     }
 
     public EntityOcelot func_90011_a(EntityAgeable p_90011_1_)
@@ -226,7 +226,7 @@ public class EntityOcelot extends EntityTameable
 
     public boolean func_70877_b(ItemStack p_70877_1_)
     {
-        return p_70877_1_ != null && p_70877_1_.func_77973_b() == Items.FISH;
+        return p_70877_1_ != null && p_70877_1_.getBaseItem() == Items.FISH;
     }
 
     public boolean func_70878_b(EntityAnimal p_70878_1_)

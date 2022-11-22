@@ -113,7 +113,7 @@ public class BlockSkull extends BlockContainer
 
     public void func_149681_a(World p_149681_1_, int p_149681_2_, int p_149681_3_, int p_149681_4_, int p_149681_5_, EntityPlayer p_149681_6_)
     {
-        if (p_149681_6_.field_71075_bZ.field_75098_d)
+        if (p_149681_6_.capabilities.instabuild)
         {
             p_149681_5_ |= 8;
             p_149681_1_.func_72921_c(p_149681_2_, p_149681_3_, p_149681_4_, p_149681_5_, 4);

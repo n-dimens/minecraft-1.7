@@ -123,8 +123,8 @@ public abstract class ServerConfigurationManager
         nethandlerplayserver.func_147359_a(new S01PacketJoinGame(p_72355_2_.func_145782_y(), p_72355_2_.field_71134_c.func_73081_b(), worldserver.func_72912_H().func_76093_s(), worldserver.field_73011_w.field_76574_g, worldserver.field_73013_u, this.func_72352_l(), worldserver.func_72912_H().func_76067_t()));
         nethandlerplayserver.func_147359_a(new S3FPacketCustomPayload("MC|Brand", this.func_72365_p().getServerModName().getBytes(Charsets.UTF_8)));
         nethandlerplayserver.func_147359_a(new S05PacketSpawnPosition(chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c));
-        nethandlerplayserver.func_147359_a(new S39PacketPlayerAbilities(p_72355_2_.field_71075_bZ));
-        nethandlerplayserver.func_147359_a(new S09PacketHeldItemChange(p_72355_2_.field_71071_by.field_70461_c));
+        nethandlerplayserver.func_147359_a(new S39PacketPlayerAbilities(p_72355_2_.capabilities));
+        nethandlerplayserver.func_147359_a(new S09PacketHeldItemChange(p_72355_2_.inventory.activeItemPosition));
         p_72355_2_.func_147099_x().func_150877_d();
         p_72355_2_.func_147099_x().func_150884_b(p_72355_2_);
         this.func_96456_a((ServerScoreboard)worldserver.func_96441_U(), p_72355_2_);
@@ -885,7 +885,7 @@ public abstract class ServerConfigurationManager
     {
         p_72385_1_.func_71120_a(p_72385_1_.field_71069_bz);
         p_72385_1_.func_71118_n();
-        p_72385_1_.field_71135_a.func_147359_a(new S09PacketHeldItemChange(p_72385_1_.field_71071_by.field_70461_c));
+        p_72385_1_.field_71135_a.func_147359_a(new S09PacketHeldItemChange(p_72385_1_.inventory.activeItemPosition));
     }
 
     public int func_72394_k()

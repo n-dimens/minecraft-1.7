@@ -27,9 +27,9 @@ public class Slot
     {
         if (p_75220_1_ != null && p_75220_2_ != null)
         {
-            if (p_75220_1_.func_77973_b() == p_75220_2_.func_77973_b())
+            if (p_75220_1_.getBaseItem() == p_75220_2_.getBaseItem())
             {
-                int i = p_75220_2_.field_77994_a - p_75220_1_.field_77994_a;
+                int i = p_75220_2_.count - p_75220_1_.count;
 
                 if (i > 0)
                 {
@@ -65,7 +65,7 @@ public class Slot
 
     public void func_75215_d(ItemStack p_75215_1_)
     {
-        this.field_75224_c.func_70299_a(this.field_75225_a, p_75215_1_);
+        this.field_75224_c.putItem(this.field_75225_a, p_75215_1_);
         this.func_75218_e();
     }
 

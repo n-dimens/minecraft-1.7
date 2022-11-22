@@ -32,16 +32,16 @@ public class EntityPig extends EntityAnimal
         super(p_i1689_1_);
         this.func_70105_a(0.9F, 0.9F);
         this.func_70661_as().func_75491_a(true);
-        this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(1, new EntityAIPanic(this, 1.25D));
-        this.field_70714_bg.func_75776_a(2, this.field_82184_d = new EntityAIControlledByPlayer(this, 0.3F));
-        this.field_70714_bg.func_75776_a(3, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(4, new EntityAITempt(this, 1.2D, Items.CARROT_ON_A_STICK, false));
-        this.field_70714_bg.func_75776_a(4, new EntityAITempt(this, 1.2D, Items.CARROT, false));
-        this.field_70714_bg.func_75776_a(5, new EntityAIFollowParent(this, 1.1D));
-        this.field_70714_bg.func_75776_a(6, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.field_70714_bg.func_75776_a(8, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(0, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(1, new EntityAIPanic(this, 1.25D));
+        this.aiTasks.func_75776_a(2, this.field_82184_d = new EntityAIControlledByPlayer(this, 0.3F));
+        this.aiTasks.func_75776_a(3, new EntityAIMate(this, 1.0D));
+        this.aiTasks.func_75776_a(4, new EntityAITempt(this, 1.2D, Items.CARROT_ON_A_STICK, false));
+        this.aiTasks.func_75776_a(4, new EntityAITempt(this, 1.2D, Items.CARROT, false));
+        this.aiTasks.func_75776_a(5, new EntityAIFollowParent(this, 1.1D));
+        this.aiTasks.func_75776_a(6, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.aiTasks.func_75776_a(8, new EntityAILookIdle(this));
     }
 
     public boolean func_70650_aV()
@@ -64,7 +64,7 @@ public class EntityPig extends EntityAnimal
     public boolean func_82171_bF()
     {
         ItemStack itemstack = ((EntityPlayer)this.field_70153_n).func_70694_bm();
-        return itemstack != null && itemstack.func_77973_b() == Items.CARROT_ON_A_STICK;
+        return itemstack != null && itemstack.getBaseItem() == Items.CARROT_ON_A_STICK;
     }
 
     protected void func_70088_a()
@@ -105,15 +105,15 @@ public class EntityPig extends EntityAnimal
         this.func_85030_a("mob.pig.step", 0.15F, 1.0F);
     }
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    public boolean resultOfImpact(EntityPlayer player)
     {
-        if (super.func_70085_c(p_70085_1_))
+        if (super.resultOfImpact(player))
         {
             return true;
         }
-        else if (this.func_70901_n() && !this.world.field_72995_K && (this.field_70153_n == null || this.field_70153_n == p_70085_1_))
+        else if (this.func_70901_n() && !this.world.field_72995_K && (this.field_70153_n == null || this.field_70153_n == player))
         {
-            p_70085_1_.func_70078_a(this);
+            player.func_70078_a(this);
             return true;
         }
         else
@@ -129,7 +129,7 @@ public class EntityPig extends EntityAnimal
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(3) + 1 + this.field_70146_Z.nextInt(1 + p_70628_2_);
+        int j = this.randomizer.nextInt(3) + 1 + this.randomizer.nextInt(1 + p_70628_2_);
 
         for (int k = 0; k < j; ++k)
         {
@@ -195,7 +195,7 @@ public class EntityPig extends EntityAnimal
 
     public boolean func_70877_b(ItemStack p_70877_1_)
     {
-        return p_70877_1_ != null && p_70877_1_.func_77973_b() == Items.CARROT;
+        return p_70877_1_ != null && p_70877_1_.getBaseItem() == Items.CARROT;
     }
 
     public EntityAIControlledByPlayer func_82183_n()

@@ -22,9 +22,9 @@ public class ItemFirework extends Item
             EntityFireworkRocket entityfireworkrocket = new EntityFireworkRocket(p_77648_3_, (double)((float)p_77648_4_ + p_77648_8_), (double)((float)p_77648_5_ + p_77648_9_), (double)((float)p_77648_6_ + p_77648_10_), p_77648_1_);
             p_77648_3_.func_72838_d(entityfireworkrocket);
 
-            if (!p_77648_2_.field_71075_bZ.field_75098_d)
+            if (!p_77648_2_.capabilities.instabuild)
             {
-                --p_77648_1_.field_77994_a;
+                --p_77648_1_.count;
             }
 
             return true;

@@ -60,7 +60,7 @@ public class C0EPacketClickWindow extends Packet
 
     public String func_148835_b()
     {
-        return this.field_149551_e != null ? String.format("id=%d, slot=%d, button=%d, type=%d, itemid=%d, itemcount=%d, itemaux=%d", new Object[] {Integer.valueOf(this.field_149554_a), Integer.valueOf(this.field_149552_b), Integer.valueOf(this.field_149553_c), Integer.valueOf(this.field_149549_f), Integer.valueOf(Item.func_150891_b(this.field_149551_e.func_77973_b())), Integer.valueOf(this.field_149551_e.field_77994_a), Integer.valueOf(this.field_149551_e.func_77960_j())}): String.format("id=%d, slot=%d, button=%d, type=%d, itemid=-1", new Object[] {Integer.valueOf(this.field_149554_a), Integer.valueOf(this.field_149552_b), Integer.valueOf(this.field_149553_c), Integer.valueOf(this.field_149549_f)});
+        return this.field_149551_e != null ? String.format("id=%d, slot=%d, button=%d, type=%d, itemid=%d, itemcount=%d, itemaux=%d", new Object[] {Integer.valueOf(this.field_149554_a), Integer.valueOf(this.field_149552_b), Integer.valueOf(this.field_149553_c), Integer.valueOf(this.field_149549_f), Integer.valueOf(Item.func_150891_b(this.field_149551_e.getBaseItem())), Integer.valueOf(this.field_149551_e.count), Integer.valueOf(this.field_149551_e.func_77960_j())}): String.format("id=%d, slot=%d, button=%d, type=%d, itemid=-1", new Object[] {Integer.valueOf(this.field_149554_a), Integer.valueOf(this.field_149552_b), Integer.valueOf(this.field_149553_c), Integer.valueOf(this.field_149549_f)});
     }
 
     public int func_149548_c()

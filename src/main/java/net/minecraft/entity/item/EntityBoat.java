@@ -101,7 +101,7 @@ public class EntityBoat extends Entity
             this.func_70265_b(10);
             this.func_70266_a(this.func_70271_g() + p_70097_2_ * 10.0F);
             this.func_70018_K();
-            boolean flag = p_70097_1_.func_76346_g() instanceof EntityPlayer && ((EntityPlayer)p_70097_1_.func_76346_g()).field_71075_bZ.field_75098_d;
+            boolean flag = p_70097_1_.func_76346_g() instanceof EntityPlayer && ((EntityPlayer)p_70097_1_.func_76346_g()).capabilities.instabuild;
 
             if (flag || this.func_70271_g() > 40.0F)
             {
@@ -223,12 +223,12 @@ public class EntityBoat extends Entity
 
             for (j = 0; (double)j < 1.0D + d10 * 60.0D; ++j)
             {
-                double d5 = (double)(this.field_70146_Z.nextFloat() * 2.0F - 1.0F);
-                double d6 = (double)(this.field_70146_Z.nextInt(2) * 2 - 1) * 0.7D;
+                double d5 = (double)(this.randomizer.nextFloat() * 2.0F - 1.0F);
+                double d6 = (double)(this.randomizer.nextInt(2) * 2 - 1) * 0.7D;
                 double d8;
                 double d9;
 
-                if (this.field_70146_Z.nextBoolean())
+                if (this.randomizer.nextBoolean())
                 {
                     d8 = this.field_70165_t - d2 * d5 * 0.8D + d4 * d6;
                     d9 = this.field_70161_v - d4 * d5 * 0.8D - d2 * d6;

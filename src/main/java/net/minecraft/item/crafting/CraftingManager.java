@@ -299,20 +299,20 @@ public class CraftingManager
             }
         }
 
-        if (i == 2 && itemstack.func_77973_b() == itemstack1.func_77973_b() && itemstack.field_77994_a == 1 && itemstack1.field_77994_a == 1 && itemstack.func_77973_b().func_77645_m())
+        if (i == 2 && itemstack.getBaseItem() == itemstack1.getBaseItem() && itemstack.count == 1 && itemstack1.count == 1 && itemstack.getBaseItem().func_77645_m())
         {
-            Item item = itemstack.func_77973_b();
-            int j1 = item.func_77612_l() - itemstack.func_77952_i();
-            int k = item.func_77612_l() - itemstack1.func_77952_i();
-            int l = j1 + k + item.func_77612_l() * 5 / 100;
-            int i1 = item.func_77612_l() - l;
+            Item item = itemstack.getBaseItem();
+            int j1 = item.getDurability() - itemstack.func_77952_i();
+            int k = item.getDurability() - itemstack1.func_77952_i();
+            int l = j1 + k + item.getDurability() * 5 / 100;
+            int i1 = item.getDurability() - l;
 
             if (i1 < 0)
             {
                 i1 = 0;
             }
 
-            return new ItemStack(itemstack.func_77973_b(), 1, i1);
+            return new ItemStack(itemstack.getBaseItem(), 1, i1);
         }
         else
         {

@@ -42,7 +42,7 @@ public class EntityPainting extends EntityHanging
 
         if (!arraylist.isEmpty())
         {
-            this.field_70522_e = (EntityPainting.EnumArt)arraylist.get(this.field_70146_Z.nextInt(arraylist.size()));
+            this.field_70522_e = (EntityPainting.EnumArt)arraylist.get(this.randomizer.nextInt(arraylist.size()));
         }
 
         this.func_82328_a(p_i1600_5_);
@@ -115,7 +115,7 @@ public class EntityPainting extends EntityHanging
         {
             EntityPlayer entityplayer = (EntityPlayer)p_110128_1_;
 
-            if (entityplayer.field_71075_bZ.field_75098_d)
+            if (entityplayer.capabilities.instabuild)
             {
                 return;
             }

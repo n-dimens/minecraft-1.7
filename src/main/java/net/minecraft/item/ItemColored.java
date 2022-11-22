@@ -18,7 +18,7 @@ public class ItemColored extends ItemBlock
 
         if (p_i45332_2_)
         {
-            this.func_77656_e(0);
+            this.setDurability(0);
             this.func_77627_a(true);
         }
     }

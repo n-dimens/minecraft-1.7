@@ -56,10 +56,10 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
             if (this.field_70881_d % 10 == 0)
             {
-                double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
-                double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
-                double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-                this.world.func_72869_a(s, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+                double d0 = this.randomizer.nextGaussian() * 0.02D;
+                double d1 = this.randomizer.nextGaussian() * 0.02D;
+                double d2 = this.randomizer.nextGaussian() * 0.02D;
+                this.world.func_72869_a(s, this.field_70165_t + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.randomizer.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
             }
         }
         else
@@ -113,7 +113,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
                     if (this.field_70882_e % 4 == 0)
                     {
-                        this.world.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, 0.0D, 0.0D, 0.0D);
+                        this.world.func_72869_a("heart", this.field_70165_t + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.randomizer.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, 0.0D, 0.0D, 0.0D);
                     }
 
                     if (this.field_70882_e == 60)
@@ -168,10 +168,10 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
             for (int i = 0; i < 7; ++i)
             {
-                double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
-                double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
-                double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-                this.world.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+                double d0 = this.randomizer.nextGaussian() * 0.02D;
+                double d1 = this.randomizer.nextGaussian() * 0.02D;
+                double d2 = this.randomizer.nextGaussian() * 0.02D;
+                this.world.func_72869_a("heart", this.field_70165_t + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.randomizer.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
             }
 
             this.world.func_72838_d(entityageable);
@@ -306,31 +306,31 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
     public boolean func_70877_b(ItemStack p_70877_1_)
     {
-        return p_70877_1_.func_77973_b() == Items.WHEAT;
+        return p_70877_1_.getBaseItem() == Items.WHEAT;
     }
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    public boolean resultOfImpact(EntityPlayer player)
     {
-        ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = player.inventory.getActiveItem();
 
         if (itemstack != null && this.func_70877_b(itemstack) && this.func_70874_b() == 0 && this.field_70881_d <= 0)
         {
-            if (!p_70085_1_.field_71075_bZ.field_75098_d)
+            if (!player.capabilities.instabuild)
             {
-                --itemstack.field_77994_a;
+                --itemstack.count;
 
-                if (itemstack.field_77994_a <= 0)
+                if (itemstack.count <= 0)
                 {
-                    p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
+                    player.inventory.putItem(player.inventory.activeItemPosition, (ItemStack)null);
                 }
             }
 
-            this.func_146082_f(p_70085_1_);
+            this.func_146082_f(player);
             return true;
         }
         else
         {
-            return super.func_70085_c(p_70085_1_);
+            return super.resultOfImpact(player);
         }
     }
 
@@ -369,10 +369,10 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
         {
             for (int i = 0; i < 7; ++i)
             {
-                double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
-                double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
-                double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-                this.world.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+                double d0 = this.randomizer.nextGaussian() * 0.02D;
+                double d1 = this.randomizer.nextGaussian() * 0.02D;
+                double d2 = this.randomizer.nextGaussian() * 0.02D;
+                this.world.func_72869_a("heart", this.field_70165_t + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.randomizer.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
             }
         }
         else

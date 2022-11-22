@@ -127,19 +127,19 @@ public final class WorldSettings
         {
             if (this == CREATIVE)
             {
-                p_77147_1_.field_75101_c = true;
-                p_77147_1_.field_75098_d = true;
-                p_77147_1_.field_75102_a = true;
+                p_77147_1_.mayfly = true;
+                p_77147_1_.instabuild = true;
+                p_77147_1_.invulnerable = true;
             }
             else
             {
-                p_77147_1_.field_75101_c = false;
-                p_77147_1_.field_75098_d = false;
-                p_77147_1_.field_75102_a = false;
-                p_77147_1_.field_75100_b = false;
+                p_77147_1_.mayfly = false;
+                p_77147_1_.instabuild = false;
+                p_77147_1_.invulnerable = false;
+                p_77147_1_.flying = false;
             }
 
-            p_77147_1_.field_75099_e = !this.func_82752_c();
+            p_77147_1_.mayBuild = !this.func_82752_c();
         }
 
         public boolean func_82752_c()

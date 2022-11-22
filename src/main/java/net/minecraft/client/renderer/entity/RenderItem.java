@@ -49,7 +49,7 @@ public class RenderItem extends Render
     {
         ItemStack itemstack = p_76986_1_.func_92059_d();
 
-        if (itemstack.func_77973_b() != null)
+        if (itemstack.getBaseItem() != null)
         {
             this.func_110777_b(p_76986_1_);
             TextureUtil.func_152777_a(false, false, 1.0F);
@@ -59,22 +59,22 @@ public class RenderItem extends Render
             float f3 = (((float)p_76986_1_.field_70292_b + p_76986_9_) / 20.0F + p_76986_1_.field_70290_d) * (180F / (float)Math.PI);
             byte b0 = 1;
 
-            if (p_76986_1_.func_92059_d().field_77994_a > 1)
+            if (p_76986_1_.func_92059_d().count > 1)
             {
                 b0 = 2;
             }
 
-            if (p_76986_1_.func_92059_d().field_77994_a > 5)
+            if (p_76986_1_.func_92059_d().count > 5)
             {
                 b0 = 3;
             }
 
-            if (p_76986_1_.func_92059_d().field_77994_a > 20)
+            if (p_76986_1_.func_92059_d().count > 20)
             {
                 b0 = 4;
             }
 
-            if (p_76986_1_.func_92059_d().field_77994_a > 40)
+            if (p_76986_1_.func_92059_d().count > 40)
             {
                 b0 = 5;
             }
@@ -85,9 +85,9 @@ public class RenderItem extends Render
             float f7;
             int k;
 
-            if (itemstack.func_94608_d() == 0 && itemstack.func_77973_b() instanceof ItemBlock && RenderBlocks.func_147739_a(Block.func_149634_a(itemstack.func_77973_b()).func_149645_b()))
+            if (itemstack.func_94608_d() == 0 && itemstack.getBaseItem() instanceof ItemBlock && RenderBlocks.func_147739_a(Block.func_149634_a(itemstack.getBaseItem()).func_149645_b()))
             {
-                Block block = Block.func_149634_a(itemstack.func_77973_b());
+                Block block = Block.func_149634_a(itemstack.getBaseItem());
                 GL11.glRotatef(f3, 0.0F, 1.0F, 0.0F);
 
                 if (field_82407_g)
@@ -139,7 +139,7 @@ public class RenderItem extends Render
             {
                 float f5;
 
-                if (itemstack.func_94608_d() == 1 && itemstack.func_77973_b().func_77623_v())
+                if (itemstack.func_94608_d() == 1 && itemstack.getBaseItem().func_77623_v())
                 {
                     if (field_82407_g)
                     {
@@ -154,11 +154,11 @@ public class RenderItem extends Render
                     for (int j = 0; j <= 1; ++j)
                     {
                         this.field_77025_h.setSeed(187L);
-                        IIcon iicon1 = itemstack.func_77973_b().func_77618_c(itemstack.func_77960_j(), j);
+                        IIcon iicon1 = itemstack.getBaseItem().func_77618_c(itemstack.func_77960_j(), j);
 
                         if (this.field_77024_a)
                         {
-                            k = itemstack.func_77973_b().func_82790_a(itemstack, j);
+                            k = itemstack.getBaseItem().func_82790_a(itemstack, j);
                             f5 = (float)(k >> 16 & 255) / 255.0F;
                             f6 = (float)(k >> 8 & 255) / 255.0F;
                             f7 = (float)(k & 255) / 255.0F;
@@ -173,7 +173,7 @@ public class RenderItem extends Render
                 }
                 else
                 {
-                    if (itemstack != null && itemstack.func_77973_b() instanceof ItemCloth)
+                    if (itemstack != null && itemstack.getBaseItem() instanceof ItemCloth)
                     {
                         GL11.glAlphaFunc(GL11.GL_GREATER, 0.1F);
                         GL11.glEnable(GL11.GL_BLEND);
@@ -194,7 +194,7 @@ public class RenderItem extends Render
 
                     if (this.field_77024_a)
                     {
-                        int i = itemstack.func_77973_b().func_82790_a(itemstack, 0);
+                        int i = itemstack.getBaseItem().func_82790_a(itemstack, 0);
                         float f4 = (float)(i >> 16 & 255) / 255.0F;
                         f5 = (float)(i >> 8 & 255) / 255.0F;
                         f6 = (float)(i & 255) / 255.0F;
@@ -205,7 +205,7 @@ public class RenderItem extends Render
                         this.func_77020_a(p_76986_1_, iicon, b0, p_76986_9_, 1.0F, 1.0F, 1.0F);
                     }
 
-                    if (itemstack != null && itemstack.func_77973_b() instanceof ItemCloth)
+                    if (itemstack != null && itemstack.getBaseItem() instanceof ItemCloth)
                     {
                         GL11.glDisable(GL11.GL_BLEND);
                     }
@@ -260,7 +260,7 @@ public class RenderItem extends Render
             float f9 = 0.0625F;
             f10 = 0.021875F;
             ItemStack itemstack = p_77020_1_.func_92059_d();
-            int j = itemstack.field_77994_a;
+            int j = itemstack.count;
             byte b0;
 
             if (j < 2)
@@ -373,10 +373,10 @@ public class RenderItem extends Render
         float f3;
         float f4;
 
-        if (p_77015_3_.func_94608_d() == 0 && RenderBlocks.func_147739_a(Block.func_149634_a(p_77015_3_.func_77973_b()).func_149645_b()))
+        if (p_77015_3_.func_94608_d() == 0 && RenderBlocks.func_147739_a(Block.func_149634_a(p_77015_3_.getBaseItem()).func_149645_b()))
         {
             p_77015_2_.func_110577_a(TextureMap.field_110575_b);
-            Block block = Block.func_149634_a(p_77015_3_.func_77973_b());
+            Block block = Block.func_149634_a(p_77015_3_.getBaseItem());
             GL11.glEnable(GL11.GL_ALPHA_TEST);
 
             if (block.func_149701_w() != 0)
@@ -398,7 +398,7 @@ public class RenderItem extends Render
             GL11.glScalef(1.0F, 1.0F, -1.0F);
             GL11.glRotatef(210.0F, 1.0F, 0.0F, 0.0F);
             GL11.glRotatef(45.0F, 0.0F, 1.0F, 0.0F);
-            l = p_77015_3_.func_77973_b().func_82790_a(p_77015_3_, 0);
+            l = p_77015_3_.getBaseItem().func_82790_a(p_77015_3_, 0);
             f3 = (float)(l >> 16 & 255) / 255.0F;
             f4 = (float)(l >> 8 & 255) / 255.0F;
             f = (float)(l & 255) / 255.0F;
@@ -420,7 +420,7 @@ public class RenderItem extends Render
 
             GL11.glPopMatrix();
         }
-        else if (p_77015_3_.func_77973_b().func_77623_v())
+        else if (p_77015_3_.getBaseItem().func_77623_v())
         {
             GL11.glDisable(GL11.GL_LIGHTING);
             GL11.glEnable(GL11.GL_ALPHA_TEST);
@@ -446,8 +446,8 @@ public class RenderItem extends Render
 
             for (l = 0; l <= 1; ++l)
             {
-                IIcon iicon = p_77015_3_.func_77973_b().func_77618_c(k, l);
-                int i1 = p_77015_3_.func_77973_b().func_82790_a(p_77015_3_, l);
+                IIcon iicon = p_77015_3_.getBaseItem().func_77618_c(k, l);
+                int i1 = p_77015_3_.getBaseItem().func_82790_a(p_77015_3_, l);
                 f = (float)(i1 >> 16 & 255) / 255.0F;
                 float f1 = (float)(i1 >> 8 & 255) / 255.0F;
                 float f2 = (float)(i1 & 255) / 255.0F;
@@ -475,7 +475,7 @@ public class RenderItem extends Render
                 object = ((TextureMap)Minecraft.func_71410_x().func_110434_K().func_110581_b(resourcelocation)).func_110572_b("missingno");
             }
 
-            l = p_77015_3_.func_77973_b().func_82790_a(p_77015_3_, 0);
+            l = p_77015_3_.getBaseItem().func_82790_a(p_77015_3_, 0);
             f3 = (float)(l >> 16 & 255) / 255.0F;
             f4 = (float)(l >> 8 & 255) / 255.0F;
             f = (float)(l & 255) / 255.0F;
@@ -512,7 +512,7 @@ public class RenderItem extends Render
                     private static final String __OBFID = "CL_00001004";
                     public String call()
                     {
-                        return String.valueOf(p_82406_3_.func_77973_b());
+                        return String.valueOf(p_82406_3_.getBaseItem());
                     }
                 });
                 crashreportcategory.func_71500_a("Item Aux", new Callable()
@@ -597,9 +597,9 @@ public class RenderItem extends Render
     {
         if (p_94148_3_ != null)
         {
-            if (p_94148_3_.field_77994_a > 1 || p_94148_6_ != null)
+            if (p_94148_3_.count > 1 || p_94148_6_ != null)
             {
-                String s1 = p_94148_6_ == null ? String.valueOf(p_94148_3_.field_77994_a) : p_94148_6_;
+                String s1 = p_94148_6_ == null ? String.valueOf(p_94148_3_.count) : p_94148_6_;
                 GL11.glDisable(GL11.GL_LIGHTING);
                 GL11.glDisable(GL11.GL_DEPTH_TEST);
                 GL11.glDisable(GL11.GL_BLEND);
@@ -610,8 +610,8 @@ public class RenderItem extends Render
 
             if (p_94148_3_.func_77951_h())
             {
-                int j1 = (int)Math.round(13.0D - (double)p_94148_3_.func_77952_i() * 13.0D / (double)p_94148_3_.func_77958_k());
-                int k = (int)Math.round(255.0D - (double)p_94148_3_.func_77952_i() * 255.0D / (double)p_94148_3_.func_77958_k());
+                int j1 = (int)Math.round(13.0D - (double)p_94148_3_.func_77952_i() * 13.0D / (double)p_94148_3_.getDurability());
+                int k = (int)Math.round(255.0D - (double)p_94148_3_.func_77952_i() * 255.0D / (double)p_94148_3_.getDurability());
                 GL11.glDisable(GL11.GL_LIGHTING);
                 GL11.glDisable(GL11.GL_DEPTH_TEST);
                 GL11.glDisable(GL11.GL_TEXTURE_2D);

@@ -88,7 +88,7 @@ public class EntityMinecartTNT extends EntityMinecart
                 d1 = 5.0D;
             }
 
-            this.world.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)(4.0D + this.field_70146_Z.nextDouble() * 1.5D * d1), true);
+            this.world.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)(4.0D + this.randomizer.nextDouble() * 1.5D * d1), true);
             this.func_70106_y();
         }
     }

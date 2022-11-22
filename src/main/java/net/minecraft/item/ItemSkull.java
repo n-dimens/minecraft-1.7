@@ -30,7 +30,7 @@ public class ItemSkull extends Item
     public ItemSkull()
     {
         this.func_77637_a(CreativeTabs.field_78031_c);
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77627_a(true);
     }
 
@@ -114,7 +114,7 @@ public class ItemSkull extends Item
                     ((BlockSkull)Blocks.SKULL).func_149965_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, (TileEntitySkull)tileentity);
                 }
 
-                --p_77648_1_.field_77994_a;
+                --p_77648_1_.count;
             }
 
             return true;

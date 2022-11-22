@@ -13,8 +13,8 @@ public class ItemShears extends Item
 
     public ItemShears()
     {
-        this.func_77625_d(1);
-        this.func_77656_e(238);
+        this.setStackMaxSize(1);
+        this.setDurability(238);
         this.func_77637_a(CreativeTabs.field_78040_i);
     }
 

@@ -34,7 +34,7 @@ public class EnchantmentThorns extends Enchantment
 
     public boolean func_92089_a(ItemStack p_92089_1_)
     {
-        return p_92089_1_.func_77973_b() instanceof ItemArmor ? true : super.func_92089_a(p_92089_1_);
+        return p_92089_1_.getBaseItem() instanceof ItemArmor ? true : super.func_92089_a(p_92089_1_);
     }
 
     public void func_151367_b(EntityLivingBase p_151367_1_, Entity p_151367_2_, int p_151367_3_)

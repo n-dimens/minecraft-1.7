@@ -17,9 +17,9 @@ public class EntityFlameFX extends EntityFX
         this.field_70159_w = this.field_70159_w * 0.009999999776482582D + p_i1209_8_;
         this.field_70181_x = this.field_70181_x * 0.009999999776482582D + p_i1209_10_;
         this.field_70179_y = this.field_70179_y * 0.009999999776482582D + p_i1209_12_;
-        double d6 = p_i1209_2_ + (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.05F);
-        d6 = p_i1209_4_ + (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.05F);
-        d6 = p_i1209_6_ + (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.05F);
+        double d6 = p_i1209_2_ + (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.05F);
+        d6 = p_i1209_4_ + (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.05F);
+        d6 = p_i1209_6_ + (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.05F);
         this.field_70562_a = this.field_70544_f;
         this.field_70552_h = this.field_70553_i = this.field_70551_j = 1.0F;
         this.field_70547_e = (int)(8.0D / (Math.random() * 0.8D + 0.2D)) + 4;

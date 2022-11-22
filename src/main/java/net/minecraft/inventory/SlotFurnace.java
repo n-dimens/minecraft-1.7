@@ -29,7 +29,7 @@ public class SlotFurnace extends Slot
     {
         if (this.func_75216_d())
         {
-            this.field_75228_b += Math.min(p_75209_1_, this.func_75211_c().field_77994_a);
+            this.field_75228_b += Math.min(p_75209_1_, this.func_75211_c().count);
         }
 
         return super.func_75209_a(p_75209_1_);
@@ -83,12 +83,12 @@ public class SlotFurnace extends Slot
 
         this.field_75228_b = 0;
 
-        if (p_75208_1_.func_77973_b() == Items.IRON_INGOT)
+        if (p_75208_1_.getBaseItem() == Items.IRON_INGOT)
         {
             this.field_75229_a.func_71064_a(AchievementList.ACQUIRE_IRON, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Items.COOKED_FISHED)
+        if (p_75208_1_.getBaseItem() == Items.COOKED_FISHED)
         {
             this.field_75229_a.func_71064_a(AchievementList.COOK_FISH, 1);
         }

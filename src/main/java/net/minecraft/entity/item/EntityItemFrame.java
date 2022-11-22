@@ -88,7 +88,7 @@ public class EntityItemFrame extends EntityHanging
         {
             EntityPlayer entityplayer = (EntityPlayer)p_146065_1_;
 
-            if (entityplayer.field_71075_bZ.field_75098_d)
+            if (entityplayer.capabilities.instabuild)
             {
                 this.func_110131_b(itemstack);
                 return;
@@ -100,7 +100,7 @@ public class EntityItemFrame extends EntityHanging
             this.func_70099_a(new ItemStack(Items.ITEM_FRAME), 0.0F);
         }
 
-        if (itemstack != null && this.field_70146_Z.nextFloat() < this.field_82337_e)
+        if (itemstack != null && this.randomizer.nextFloat() < this.field_82337_e)
         {
             itemstack = itemstack.func_77946_l();
             this.func_110131_b(itemstack);
@@ -112,9 +112,9 @@ public class EntityItemFrame extends EntityHanging
     {
         if (p_110131_1_ != null)
         {
-            if (p_110131_1_.func_77973_b() == Items.FILLED_MAP)
+            if (p_110131_1_.getBaseItem() == Items.FILLED_MAP)
             {
-                MapData mapdata = ((ItemMap)p_110131_1_.func_77973_b()).func_77873_a(p_110131_1_, this.world);
+                MapData mapdata = ((ItemMap)p_110131_1_.getBaseItem()).func_77873_a(p_110131_1_, this.world);
                 mapdata.field_76203_h.remove("frame-" + this.func_145782_y());
             }
 
@@ -132,7 +132,7 @@ public class EntityItemFrame extends EntityHanging
         if (p_82334_1_ != null)
         {
             p_82334_1_ = p_82334_1_.func_77946_l();
-            p_82334_1_.field_77994_a = 1;
+            p_82334_1_.count = 1;
             p_82334_1_.func_82842_a(this);
         }
 
@@ -190,9 +190,9 @@ public class EntityItemFrame extends EntityHanging
             {
                 this.func_82334_a(itemstack);
 
-                if (!p_130002_1_.field_71075_bZ.field_75098_d && --itemstack.field_77994_a <= 0)
+                if (!p_130002_1_.capabilities.instabuild && --itemstack.count <= 0)
                 {
-                    p_130002_1_.field_71071_by.func_70299_a(p_130002_1_.field_71071_by.field_70461_c, (ItemStack)null);
+                    p_130002_1_.inventory.putItem(p_130002_1_.inventory.activeItemPosition, (ItemStack)null);
                 }
             }
         }

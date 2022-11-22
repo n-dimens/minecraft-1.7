@@ -34,7 +34,7 @@ public class ItemFood extends Item
 
     public ItemStack func_77654_b(ItemStack p_77654_1_, World p_77654_2_, EntityPlayer p_77654_3_)
     {
-        --p_77654_1_.field_77994_a;
+        --p_77654_1_.count;
         p_77654_3_.func_71024_bL().func_151686_a(this, p_77654_1_);
         p_77654_2_.func_72956_a(p_77654_3_, "random.burp", 0.5F, p_77654_2_.field_73012_v.nextFloat() * 0.1F + 0.9F);
         this.func_77849_c(p_77654_1_, p_77654_2_, p_77654_3_);

@@ -15,9 +15,9 @@ public class EntityExplodeFX extends EntityFX
         this.field_70159_w = p_i1205_8_ + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.05F);
         this.field_70181_x = p_i1205_10_ + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.05F);
         this.field_70179_y = p_i1205_12_ + (double)((float)(Math.random() * 2.0D - 1.0D) * 0.05F);
-        this.field_70552_h = this.field_70553_i = this.field_70551_j = this.field_70146_Z.nextFloat() * 0.3F + 0.7F;
-        this.field_70544_f = this.field_70146_Z.nextFloat() * this.field_70146_Z.nextFloat() * 6.0F + 1.0F;
-        this.field_70547_e = (int)(16.0D / ((double)this.field_70146_Z.nextFloat() * 0.8D + 0.2D)) + 2;
+        this.field_70552_h = this.field_70553_i = this.field_70551_j = this.randomizer.nextFloat() * 0.3F + 0.7F;
+        this.field_70544_f = this.randomizer.nextFloat() * this.randomizer.nextFloat() * 6.0F + 1.0F;
+        this.field_70547_e = (int)(16.0D / ((double)this.randomizer.nextFloat() * 0.8D + 0.2D)) + 2;
     }
 
     public void func_70071_h_()

@@ -55,7 +55,7 @@ public class EnchantmentDamage extends Enchantment
 
     public boolean func_92089_a(ItemStack p_92089_1_)
     {
-        return p_92089_1_.func_77973_b() instanceof ItemAxe ? true : super.func_92089_a(p_92089_1_);
+        return p_92089_1_.getBaseItem() instanceof ItemAxe ? true : super.func_92089_a(p_92089_1_);
     }
 
     public void func_151368_a(EntityLivingBase p_151368_1_, Entity p_151368_2_, int p_151368_3_)

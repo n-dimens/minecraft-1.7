@@ -77,7 +77,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
 
         if (p_146984_1_ == null && field_147058_w != CreativeTabs.field_78036_m.func_78021_a() && p_146984_4_ != 5)
         {
-            inventoryplayer = this.field_146297_k.field_71439_g.field_71071_by;
+            inventoryplayer = this.field_146297_k.field_71439_g.inventory;
 
             if (inventoryplayer.func_70445_o() != null)
             {
@@ -94,7 +94,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                     this.field_146297_k.field_71439_g.func_71019_a(itemstack1, true);
                     this.field_146297_k.field_71442_b.func_78752_a(itemstack1);
 
-                    if (inventoryplayer.func_70445_o().field_77994_a == 0)
+                    if (inventoryplayer.func_70445_o().count == 0)
                     {
                         inventoryplayer.func_70437_b((ItemStack)null);
                     }
@@ -120,7 +120,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                 {
                     if (p_146984_1_ == this.field_147064_C)
                     {
-                        this.field_146297_k.field_71439_g.field_71071_by.func_70437_b((ItemStack)null);
+                        this.field_146297_k.field_71439_g.inventory.func_70437_b((ItemStack)null);
                     }
                     else if (p_146984_4_ == 4 && p_146984_1_ != null && p_146984_1_.func_75216_d())
                     {
@@ -128,11 +128,11 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                         this.field_146297_k.field_71439_g.func_71019_a(itemstack, true);
                         this.field_146297_k.field_71442_b.func_78752_a(itemstack);
                     }
-                    else if (p_146984_4_ == 4 && this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() != null)
+                    else if (p_146984_4_ == 4 && this.field_146297_k.field_71439_g.inventory.func_70445_o() != null)
                     {
-                        this.field_146297_k.field_71439_g.func_71019_a(this.field_146297_k.field_71439_g.field_71071_by.func_70445_o(), true);
-                        this.field_146297_k.field_71442_b.func_78752_a(this.field_146297_k.field_71439_g.field_71071_by.func_70445_o());
-                        this.field_146297_k.field_71439_g.field_71071_by.func_70437_b((ItemStack)null);
+                        this.field_146297_k.field_71439_g.func_71019_a(this.field_146297_k.field_71439_g.inventory.func_70445_o(), true);
+                        this.field_146297_k.field_71442_b.func_78752_a(this.field_146297_k.field_71439_g.inventory.func_70445_o());
+                        this.field_146297_k.field_71439_g.inventory.func_70437_b((ItemStack)null);
                     }
                     else
                     {
@@ -142,7 +142,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                 }
                 else if (p_146984_4_ != 5 && p_146984_1_.field_75224_c == field_147060_v)
                 {
-                    inventoryplayer = this.field_146297_k.field_71439_g.field_71071_by;
+                    inventoryplayer = this.field_146297_k.field_71439_g.inventory;
                     itemstack1 = inventoryplayer.func_70445_o();
                     ItemStack itemstack2 = p_146984_1_.func_75211_c();
                     ItemStack itemstack3;
@@ -152,8 +152,8 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                         if (itemstack2 != null && p_146984_3_ >= 0 && p_146984_3_ < 9)
                         {
                             itemstack3 = itemstack2.func_77946_l();
-                            itemstack3.field_77994_a = itemstack3.func_77976_d();
-                            this.field_146297_k.field_71439_g.field_71071_by.func_70299_a(p_146984_3_, itemstack3);
+                            itemstack3.count = itemstack3.func_77976_d();
+                            this.field_146297_k.field_71439_g.inventory.putItem(p_146984_3_, itemstack3);
                             this.field_146297_k.field_71439_g.field_71069_bz.func_75142_b();
                         }
 
@@ -165,7 +165,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                         if (inventoryplayer.func_70445_o() == null && p_146984_1_.func_75216_d())
                         {
                             itemstack3 = p_146984_1_.func_75211_c().func_77946_l();
-                            itemstack3.field_77994_a = itemstack3.func_77976_d();
+                            itemstack3.count = itemstack3.func_77976_d();
                             inventoryplayer.func_70437_b(itemstack3);
                         }
 
@@ -177,7 +177,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                         if (itemstack2 != null)
                         {
                             itemstack3 = itemstack2.func_77946_l();
-                            itemstack3.field_77994_a = p_146984_3_ == 0 ? 1 : itemstack3.func_77976_d();
+                            itemstack3.count = p_146984_3_ == 0 ? 1 : itemstack3.func_77976_d();
                             this.field_146297_k.field_71439_g.func_71019_a(itemstack3, true);
                             this.field_146297_k.field_71442_b.func_78752_a(itemstack3);
                         }
@@ -191,20 +191,20 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                         {
                             if (flag)
                             {
-                                itemstack1.field_77994_a = itemstack1.func_77976_d();
+                                itemstack1.count = itemstack1.func_77976_d();
                             }
-                            else if (itemstack1.field_77994_a < itemstack1.func_77976_d())
+                            else if (itemstack1.count < itemstack1.func_77976_d())
                             {
-                                ++itemstack1.field_77994_a;
+                                ++itemstack1.count;
                             }
                         }
-                        else if (itemstack1.field_77994_a <= 1)
+                        else if (itemstack1.count <= 1)
                         {
                             inventoryplayer.func_70437_b((ItemStack)null);
                         }
                         else
                         {
-                            --itemstack1.field_77994_a;
+                            --itemstack1.count;
                         }
                     }
                     else if (itemstack2 != null && itemstack1 == null)
@@ -214,7 +214,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
 
                         if (flag)
                         {
-                            itemstack1.field_77994_a = itemstack1.func_77976_d();
+                            itemstack1.count = itemstack1.func_77976_d();
                         }
                     }
                     else
@@ -271,7 +271,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
     {
         super.func_146281_b();
 
-        if (this.field_146297_k.field_71439_g != null && this.field_146297_k.field_71439_g.field_71071_by != null)
+        if (this.field_146297_k.field_71439_g != null && this.field_146297_k.field_71439_g.inventory != null)
         {
             this.field_146297_k.field_71439_g.field_71069_bz.func_82847_b(this.field_147059_E);
         }
@@ -634,9 +634,9 @@ public class GuiContainerCreative extends InventoryEffectRenderer
         if (field_147058_w == CreativeTabs.field_78027_g.func_78021_a())
         {
             List list = p_146285_1_.func_82840_a(this.field_146297_k.field_71439_g, this.field_146297_k.gameSettings.field_82882_x);
-            CreativeTabs creativetabs = p_146285_1_.func_77973_b().func_77640_w();
+            CreativeTabs creativetabs = p_146285_1_.getBaseItem().func_77640_w();
 
-            if (creativetabs == null && p_146285_1_.func_77973_b() == Items.ENCHANTED_BOOK)
+            if (creativetabs == null && p_146285_1_.getBaseItem() == Items.ENCHANTED_BOOK)
             {
                 Map map = EnchantmentHelper.func_82781_a(p_146285_1_);
 
@@ -869,7 +869,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
 
             public ContainerCreative(EntityPlayer p_i1086_1_)
             {
-                InventoryPlayer inventoryplayer = p_i1086_1_.field_71071_by;
+                InventoryPlayer inventoryplayer = p_i1086_1_.inventory;
                 int i;
 
                 for (i = 0; i < 5; ++i)
@@ -888,7 +888,7 @@ public class GuiContainerCreative extends InventoryEffectRenderer
                 this.func_148329_a(0.0F);
             }
 
-            public boolean func_75145_c(EntityPlayer p_75145_1_)
+            public boolean func_75145_c(EntityPlayer player)
             {
                 return true;
             }
@@ -911,11 +911,11 @@ public class GuiContainerCreative extends InventoryEffectRenderer
 
                         if (i1 >= 0 && i1 < this.field_148330_a.size())
                         {
-                            GuiContainerCreative.field_147060_v.func_70299_a(l + k * 9, (ItemStack)this.field_148330_a.get(i1));
+                            GuiContainerCreative.field_147060_v.putItem(l + k * 9, (ItemStack)this.field_148330_a.get(i1));
                         }
                         else
                         {
-                            GuiContainerCreative.field_147060_v.func_70299_a(l + k * 9, (ItemStack)null);
+                            GuiContainerCreative.field_147060_v.putItem(l + k * 9, (ItemStack)null);
                         }
                     }
                 }

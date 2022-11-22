@@ -19,11 +19,11 @@ public abstract class EntityAgeable extends EntityCreature
 
     public abstract EntityAgeable func_90011_a(EntityAgeable p_90011_1_);
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    public boolean resultOfImpact(EntityPlayer player)
     {
-        ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = player.inventory.getActiveItem();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.SPAWN_EGG)
+        if (itemstack != null && itemstack.getBaseItem() == Items.SPAWN_EGG)
         {
             if (!this.world.field_72995_K)
             {
@@ -44,13 +44,13 @@ public abstract class EntityAgeable extends EntityCreature
                             entityageable.func_94058_c(itemstack.func_82833_r());
                         }
 
-                        if (!p_70085_1_.field_71075_bZ.field_75098_d)
+                        if (!player.capabilities.instabuild)
                         {
-                            --itemstack.field_77994_a;
+                            --itemstack.count;
 
-                            if (itemstack.field_77994_a <= 0)
+                            if (itemstack.count <= 0)
                             {
-                                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
+                                player.inventory.putItem(player.inventory.activeItemPosition, (ItemStack)null);
                             }
                         }
                     }

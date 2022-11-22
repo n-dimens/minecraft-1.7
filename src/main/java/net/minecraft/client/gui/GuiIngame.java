@@ -87,9 +87,9 @@ public class GuiIngame extends Gui
             OpenGlHelper.func_148821_a(770, 771, 1, 0);
         }
 
-        ItemStack itemstack = this.field_73839_d.field_71439_g.field_71071_by.func_70440_f(3);
+        ItemStack itemstack = this.field_73839_d.field_71439_g.inventory.func_70440_f(3);
 
-        if (this.field_73839_d.gameSettings.field_74320_O == 0 && itemstack != null && itemstack.func_77973_b() == Item.func_150898_a(Blocks.PUMPKIN))
+        if (this.field_73839_d.gameSettings.field_74320_O == 0 && itemstack != null && itemstack.getBaseItem() == Item.func_150898_a(Blocks.PUMPKIN))
         {
             this.func_73836_a(k, l);
         }
@@ -112,10 +112,10 @@ public class GuiIngame extends Gui
         {
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field_73839_d.func_110434_K().func_110577_a(field_110330_c);
-            InventoryPlayer inventoryplayer = this.field_73839_d.field_71439_g.field_71071_by;
+            InventoryPlayer inventoryplayer = this.field_73839_d.field_71439_g.inventory;
             this.field_73735_i = -90.0F;
             this.func_73729_b(k / 2 - 91, l - 22, 0, 0, 182, 22);
-            this.func_73729_b(k / 2 - 91 - 1 + inventoryplayer.field_70461_c * 20, l - 22 - 1, 0, 22, 24, 22);
+            this.func_73729_b(k / 2 - 91 - 1 + inventoryplayer.activeItemPosition * 20, l - 22 - 1, 0, 22, 24, 22);
             this.field_73839_d.func_110434_K().func_110577_a(field_110324_m);
             GL11.glEnable(GL11.GL_BLEND);
             OpenGlHelper.func_148821_a(775, 769, 1, 0);
@@ -329,7 +329,7 @@ public class GuiIngame extends Gui
                 this.func_73731_b(fontrenderer, "lc: " + (chunk.func_76625_h() + 15) + " b: " + chunk.func_76591_a(j3 & 15, l3 & 15, this.field_73839_d.field_71441_e.func_72959_q()).field_76791_y + " bl: " + chunk.func_76614_a(EnumSkyBlock.Block, j3 & 15, k3, l3 & 15) + " sl: " + chunk.func_76614_a(EnumSkyBlock.Sky, j3 & 15, k3, l3 & 15) + " rl: " + chunk.func_76629_c(j3 & 15, k3, l3 & 15, 0), 2, 96, 14737632);
             }
 
-            this.func_73731_b(fontrenderer, String.format("ws: %.3f, fs: %.3f, g: %b, fl: %d", new Object[] {Float.valueOf(this.field_73839_d.field_71439_g.field_71075_bZ.func_75094_b()), Float.valueOf(this.field_73839_d.field_71439_g.field_71075_bZ.func_75093_a()), Boolean.valueOf(this.field_73839_d.field_71439_g.field_70122_E), Integer.valueOf(this.field_73839_d.field_71441_e.func_72976_f(j3, l3))}), 2, 104, 14737632);
+            this.func_73731_b(fontrenderer, String.format("ws: %.3f, fs: %.3f, g: %b, fl: %d", new Object[] {Float.valueOf(this.field_73839_d.field_71439_g.capabilities.func_75094_b()), Float.valueOf(this.field_73839_d.field_71439_g.capabilities.func_75093_a()), Boolean.valueOf(this.field_73839_d.field_71439_g.field_70122_E), Integer.valueOf(this.field_73839_d.field_71441_e.func_72976_f(j3, l3))}), 2, 104, 14737632);
 
             if (this.field_73839_d.field_71460_t != null && this.field_73839_d.field_71460_t.func_147702_a())
             {
@@ -931,7 +931,7 @@ public class GuiIngame extends Gui
 
     protected void func_73832_a(int p_73832_1_, int p_73832_2_, int p_73832_3_, float p_73832_4_)
     {
-        ItemStack itemstack = this.field_73839_d.field_71439_g.field_71071_by.field_70462_a[p_73832_1_];
+        ItemStack itemstack = this.field_73839_d.field_71439_g.inventory.cells[p_73832_1_];
 
         if (itemstack != null)
         {
@@ -969,13 +969,13 @@ public class GuiIngame extends Gui
 
         if (this.field_73839_d.field_71439_g != null)
         {
-            ItemStack itemstack = this.field_73839_d.field_71439_g.field_71071_by.func_70448_g();
+            ItemStack itemstack = this.field_73839_d.field_71439_g.inventory.getActiveItem();
 
             if (itemstack == null)
             {
                 this.field_92017_k = 0;
             }
-            else if (this.field_92016_l != null && itemstack.func_77973_b() == this.field_92016_l.func_77973_b() && ItemStack.func_77970_a(itemstack, this.field_92016_l) && (itemstack.func_77984_f() || itemstack.func_77960_j() == this.field_92016_l.func_77960_j()))
+            else if (this.field_92016_l != null && itemstack.getBaseItem() == this.field_92016_l.getBaseItem() && ItemStack.func_77970_a(itemstack, this.field_92016_l) && (itemstack.func_77984_f() || itemstack.func_77960_j() == this.field_92016_l.func_77960_j()))
             {
                 if (this.field_92017_k > 0)
                 {

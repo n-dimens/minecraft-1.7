@@ -140,8 +140,8 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
         if (!p_i45285_2_.field_73011_w.field_76576_e && p_i45285_2_.func_72912_H().func_76077_q() != WorldSettings.GameType.ADVENTURE)
         {
             int l = Math.max(5, p_i45285_1_.func_82357_ak() - 6);
-            i += this.field_70146_Z.nextInt(l * 2) - l;
-            j += this.field_70146_Z.nextInt(l * 2) - l;
+            i += this.randomizer.nextInt(l * 2) - l;
+            j += this.randomizer.nextInt(l * 2) - l;
             k = p_i45285_2_.func_72825_h(i, j);
         }
 
@@ -294,13 +294,13 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
         {
             super.func_70071_h_();
 
-            for (int i = 0; i < this.field_71071_by.func_70302_i_(); ++i)
+            for (int i = 0; i < this.inventory.func_70302_i_(); ++i)
             {
-                ItemStack itemstack = this.field_71071_by.func_70301_a(i);
+                ItemStack itemstack = this.inventory.func_70301_a(i);
 
-                if (itemstack != null && itemstack.func_77973_b().func_77643_m_())
+                if (itemstack != null && itemstack.getBaseItem().func_77643_m_())
                 {
-                    Packet packet = ((ItemMapBase)itemstack.func_77973_b()).func_150911_c(itemstack, this.world, this);
+                    Packet packet = ((ItemMapBase)itemstack.getBaseItem()).func_150911_c(itemstack, this.world, this);
 
                     if (packet != null)
                     {
@@ -406,7 +406,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
         if (!this.world.func_82736_K().getBooleanValue("keepInventory"))
         {
-            this.field_71071_by.func_70436_m();
+            this.inventory.func_70436_m();
         }
 
         Collection collection = this.world.func_96441_U().func_96520_a(IScoreObjectiveCriteria.field_96642_c);
@@ -600,7 +600,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 1, "Crafting", 9, true));
-        this.field_71070_bA = new ContainerWorkbench(this.field_71071_by, this.world, p_71058_1_, p_71058_2_, p_71058_3_);
+        this.field_71070_bA = new ContainerWorkbench(this.inventory, this.world, p_71058_1_, p_71058_2_, p_71058_3_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -609,7 +609,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 4, p_71002_4_ == null ? "" : p_71002_4_, 9, p_71002_4_ != null));
-        this.field_71070_bA = new ContainerEnchantment(this.field_71071_by, this.world, p_71002_1_, p_71002_2_, p_71002_3_);
+        this.field_71070_bA = new ContainerEnchantment(this.inventory, this.world, p_71002_1_, p_71002_2_, p_71002_3_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -618,7 +618,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 8, "Repairing", 9, true));
-        this.field_71070_bA = new ContainerRepair(this.field_71071_by, this.world, p_82244_1_, p_82244_2_, p_82244_3_, this);
+        this.field_71070_bA = new ContainerRepair(this.inventory, this.world, p_82244_1_, p_82244_2_, p_82244_3_, this);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -632,7 +632,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 0, p_71007_1_.func_145825_b(), p_71007_1_.func_70302_i_(), p_71007_1_.func_145818_k_()));
-        this.field_71070_bA = new ContainerChest(this.field_71071_by, p_71007_1_);
+        this.field_71070_bA = new ContainerChest(this.inventory, p_71007_1_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -641,7 +641,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 9, p_146093_1_.func_145825_b(), p_146093_1_.func_70302_i_(), p_146093_1_.func_145818_k_()));
-        this.field_71070_bA = new ContainerHopper(this.field_71071_by, p_146093_1_);
+        this.field_71070_bA = new ContainerHopper(this.inventory, p_146093_1_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -650,7 +650,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 9, p_96125_1_.func_145825_b(), p_96125_1_.func_70302_i_(), p_96125_1_.func_145818_k_()));
-        this.field_71070_bA = new ContainerHopper(this.field_71071_by, p_96125_1_);
+        this.field_71070_bA = new ContainerHopper(this.inventory, p_96125_1_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -659,7 +659,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 2, p_146101_1_.func_145825_b(), p_146101_1_.func_70302_i_(), p_146101_1_.func_145818_k_()));
-        this.field_71070_bA = new ContainerFurnace(this.field_71071_by, p_146101_1_);
+        this.field_71070_bA = new ContainerFurnace(this.inventory, p_146101_1_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -668,7 +668,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, p_146102_1_ instanceof TileEntityDropper ? 10 : 3, p_146102_1_.func_145825_b(), p_146102_1_.func_70302_i_(), p_146102_1_.func_145818_k_()));
-        this.field_71070_bA = new ContainerDispenser(this.field_71071_by, p_146102_1_);
+        this.field_71070_bA = new ContainerDispenser(this.inventory, p_146102_1_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -677,7 +677,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 5, p_146098_1_.func_145825_b(), p_146098_1_.func_70302_i_(), p_146098_1_.func_145818_k_()));
-        this.field_71070_bA = new ContainerBrewingStand(this.field_71071_by, p_146098_1_);
+        this.field_71070_bA = new ContainerBrewingStand(this.inventory, p_146098_1_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -686,7 +686,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 7, p_146104_1_.func_145825_b(), p_146104_1_.func_70302_i_(), p_146104_1_.func_145818_k_()));
-        this.field_71070_bA = new ContainerBeacon(this.field_71071_by, p_146104_1_);
+        this.field_71070_bA = new ContainerBeacon(this.inventory, p_146104_1_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -694,7 +694,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     public void func_71030_a(IMerchant p_71030_1_, String p_71030_2_)
     {
         this.func_71117_bO();
-        this.field_71070_bA = new ContainerMerchant(this.field_71071_by, p_71030_1_, this.world);
+        this.field_71070_bA = new ContainerMerchant(this.inventory, p_71030_1_, this.world);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
         InventoryMerchant inventorymerchant = ((ContainerMerchant)this.field_71070_bA).func_75174_d();
@@ -731,7 +731,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 11, p_110298_2_.func_145825_b(), p_110298_2_.func_70302_i_(), p_110298_2_.func_145818_k_(), p_110298_1_.func_145782_y()));
-        this.field_71070_bA = new ContainerHorseInventory(this.field_71071_by, p_110298_2_, p_110298_1_);
+        this.field_71070_bA = new ContainerHorseInventory(this.inventory, p_110298_2_, p_110298_1_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -755,7 +755,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     public void func_71110_a(Container p_71110_1_, List p_71110_2_)
     {
         this.field_71135_a.func_147359_a(new S30PacketWindowItems(p_71110_1_.field_75152_c, p_71110_2_));
-        this.field_71135_a.func_147359_a(new S2FPacketSetSlot(-1, -1, this.field_71071_by.func_70445_o()));
+        this.field_71135_a.func_147359_a(new S2FPacketSetSlot(-1, -1, this.inventory.func_70445_o()));
     }
 
     public void func_71112_a(Container p_71112_1_, int p_71112_2_, int p_71112_3_)
@@ -773,7 +773,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         if (!this.field_71137_h)
         {
-            this.field_71135_a.func_147359_a(new S2FPacketSetSlot(-1, -1, this.field_71071_by.func_70445_o()));
+            this.field_71135_a.func_147359_a(new S2FPacketSetSlot(-1, -1, this.inventory.func_70445_o()));
         }
     }
 
@@ -855,7 +855,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         super.func_71008_a(p_71008_1_, p_71008_2_);
 
-        if (p_71008_1_ != null && p_71008_1_.func_77973_b() != null && p_71008_1_.func_77973_b().func_77661_b(p_71008_1_) == EnumAction.eat)
+        if (p_71008_1_ != null && p_71008_1_.getBaseItem() != null && p_71008_1_.getBaseItem().func_77661_b(p_71008_1_) == EnumAction.eat)
         {
             this.func_71121_q().func_73039_n().func_151248_b(this, new S0BPacketAnimation(this, 3));
         }
@@ -907,7 +907,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         if (this.field_71135_a != null)
         {
-            this.field_71135_a.func_147359_a(new S39PacketPlayerAbilities(this.field_71075_bZ));
+            this.field_71135_a.func_147359_a(new S39PacketPlayerAbilities(this.capabilities));
         }
     }
 

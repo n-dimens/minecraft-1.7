@@ -93,9 +93,9 @@ public class EntityXPOrb extends Entity
         if (this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() == Material.field_151587_i)
         {
             this.field_70181_x = 0.20000000298023224D;
-            this.field_70159_w = (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F);
-            this.field_70179_y = (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F);
-            this.func_85030_a("random.fizz", 0.4F, 2.0F + this.field_70146_Z.nextFloat() * 0.4F);
+            this.field_70159_w = (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F);
+            this.field_70179_y = (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F);
+            this.func_85030_a("random.fizz", 0.4F, 2.0F + this.randomizer.nextFloat() * 0.4F);
         }
 
         this.func_145771_j(this.field_70165_t, (this.field_70121_D.field_72338_b + this.field_70121_D.field_72337_e) / 2.0D, this.field_70161_v);
@@ -205,7 +205,7 @@ public class EntityXPOrb extends Entity
             if (this.field_70532_c == 0 && p_70100_1_.field_71090_bL == 0)
             {
                 p_70100_1_.field_71090_bL = 2;
-                this.world.func_72956_a(p_70100_1_, "random.orb", 0.1F, 0.5F * ((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.7F + 1.8F));
+                this.world.func_72956_a(p_70100_1_, "random.orb", 0.1F, 0.5F * ((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.7F + 1.8F));
                 p_70100_1_.func_71001_a(this, 1);
                 p_70100_1_.func_71023_q(this.field_70530_e);
                 this.func_70106_y();

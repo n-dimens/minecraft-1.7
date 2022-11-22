@@ -89,9 +89,9 @@ public abstract class EntityThrowable extends Entity implements IProjectile
         p_70186_1_ /= (double)f2;
         p_70186_3_ /= (double)f2;
         p_70186_5_ /= (double)f2;
-        p_70186_1_ += this.field_70146_Z.nextGaussian() * 0.007499999832361937D * (double)p_70186_8_;
-        p_70186_3_ += this.field_70146_Z.nextGaussian() * 0.007499999832361937D * (double)p_70186_8_;
-        p_70186_5_ += this.field_70146_Z.nextGaussian() * 0.007499999832361937D * (double)p_70186_8_;
+        p_70186_1_ += this.randomizer.nextGaussian() * 0.007499999832361937D * (double)p_70186_8_;
+        p_70186_3_ += this.randomizer.nextGaussian() * 0.007499999832361937D * (double)p_70186_8_;
+        p_70186_5_ += this.randomizer.nextGaussian() * 0.007499999832361937D * (double)p_70186_8_;
         p_70186_1_ *= (double)p_70186_7_;
         p_70186_3_ *= (double)p_70186_7_;
         p_70186_5_ *= (double)p_70186_7_;
@@ -146,9 +146,9 @@ public abstract class EntityThrowable extends Entity implements IProjectile
             }
 
             this.field_70193_a = false;
-            this.field_70159_w *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
-            this.field_70181_x *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
-            this.field_70179_y *= (double)(this.field_70146_Z.nextFloat() * 0.2F);
+            this.field_70159_w *= (double)(this.randomizer.nextFloat() * 0.2F);
+            this.field_70181_x *= (double)(this.randomizer.nextFloat() * 0.2F);
+            this.field_70179_y *= (double)(this.randomizer.nextFloat() * 0.2F);
             this.field_70194_h = 0;
             this.field_70195_i = 0;
         }

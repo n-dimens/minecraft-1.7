@@ -19,10 +19,10 @@ public class ContainerMerchant extends Container
     {
         this.field_75178_e = p_i1821_2_;
         this.field_75177_g = p_i1821_3_;
-        this.field_75176_f = new InventoryMerchant(p_i1821_1_.field_70458_d, p_i1821_2_);
+        this.field_75176_f = new InventoryMerchant(p_i1821_1_.player, p_i1821_2_);
         this.func_75146_a(new Slot(this.field_75176_f, 0, 36, 53));
         this.func_75146_a(new Slot(this.field_75176_f, 1, 62, 53));
-        this.func_75146_a(new SlotMerchantResult(p_i1821_1_.field_70458_d, p_i1821_2_, this.field_75176_f, 2, 120, 53));
+        this.func_75146_a(new SlotMerchantResult(p_i1821_1_.player, p_i1821_2_, this.field_75176_f, 2, 120, 53));
         int i;
 
         for (i = 0; i < 3; ++i)
@@ -68,9 +68,9 @@ public class ContainerMerchant extends Container
     @SideOnly(Side.CLIENT)
     public void func_75137_b(int p_75137_1_, int p_75137_2_) {}
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
-        return this.field_75178_e.func_70931_l_() == p_75145_1_;
+        return this.field_75178_e.func_70931_l_() == player;
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)
@@ -111,7 +111,7 @@ public class ContainerMerchant extends Container
                 return null;
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }
@@ -120,7 +120,7 @@ public class ContainerMerchant extends Container
                 slot.func_75218_e();
             }
 
-            if (itemstack1.field_77994_a == itemstack.field_77994_a)
+            if (itemstack1.count == itemstack.count)
             {
                 return null;
             }

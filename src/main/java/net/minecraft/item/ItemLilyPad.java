@@ -48,9 +48,9 @@ public class ItemLilyPad extends ItemColored
                 {
                     p_77659_2_.func_147449_b(i, j + 1, k, Blocks.WATERLILY);
 
-                    if (!p_77659_3_.field_71075_bZ.field_75098_d)
+                    if (!p_77659_3_.capabilities.instabuild)
                     {
-                        --p_77659_1_.field_77994_a;
+                        --p_77659_1_.count;
                     }
                 }
             }

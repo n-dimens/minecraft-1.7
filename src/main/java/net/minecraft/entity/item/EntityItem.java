@@ -95,9 +95,9 @@ public class EntityItem extends Entity
                 if (this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() == Material.field_151587_i)
                 {
                     this.field_70181_x = 0.20000000298023224D;
-                    this.field_70159_w = (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F);
-                    this.field_70179_y = (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F);
-                    this.func_85030_a("random.fizz", 0.4F, 2.0F + this.field_70146_Z.nextFloat() * 0.4F);
+                    this.field_70159_w = (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F);
+                    this.field_70179_y = (double)((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F);
+                    this.func_85030_a("random.fizz", 0.4F, 2.0F + this.randomizer.nextFloat() * 0.4F);
                 }
 
                 if (!this.world.field_72995_K)
@@ -153,7 +153,7 @@ public class EntityItem extends Entity
             ItemStack itemstack = this.func_92059_d();
             ItemStack itemstack1 = p_70289_1_.func_92059_d();
 
-            if (itemstack1.func_77973_b() != itemstack.func_77973_b())
+            if (itemstack1.getBaseItem() != itemstack.getBaseItem())
             {
                 return false;
             }
@@ -165,25 +165,25 @@ public class EntityItem extends Entity
             {
                 return false;
             }
-            else if (itemstack1.func_77973_b() == null)
+            else if (itemstack1.getBaseItem() == null)
             {
                 return false;
             }
-            else if (itemstack1.func_77973_b().func_77614_k() && itemstack1.func_77960_j() != itemstack.func_77960_j())
+            else if (itemstack1.getBaseItem().func_77614_k() && itemstack1.func_77960_j() != itemstack.func_77960_j())
             {
                 return false;
             }
-            else if (itemstack1.field_77994_a < itemstack.field_77994_a)
+            else if (itemstack1.count < itemstack.count)
             {
                 return p_70289_1_.func_70289_a(this);
             }
-            else if (itemstack1.field_77994_a + itemstack.field_77994_a > itemstack1.func_77976_d())
+            else if (itemstack1.count + itemstack.count > itemstack1.func_77976_d())
             {
                 return false;
             }
             else
             {
-                itemstack1.field_77994_a += itemstack.field_77994_a;
+                itemstack1.count += itemstack.count;
                 p_70289_1_.field_145804_b = Math.max(p_70289_1_.field_145804_b, this.field_145804_b);
                 p_70289_1_.field_70292_b = Math.min(p_70289_1_.field_70292_b, this.field_70292_b);
                 p_70289_1_.func_92058_a(itemstack1);
@@ -218,7 +218,7 @@ public class EntityItem extends Entity
         {
             return false;
         }
-        else if (this.func_92059_d() != null && this.func_92059_d().func_77973_b() == Items.NETHER_STAR && p_70097_1_.func_94541_c())
+        else if (this.func_92059_d() != null && this.func_92059_d().getBaseItem() == Items.NETHER_STAR && p_70097_1_.func_94541_c())
         {
             return false;
         }
@@ -286,36 +286,36 @@ public class EntityItem extends Entity
         if (!this.world.field_72995_K)
         {
             ItemStack itemstack = this.func_92059_d();
-            int i = itemstack.field_77994_a;
+            int i = itemstack.count;
 
-            if (this.field_145804_b == 0 && (this.field_145802_g == null || 6000 - this.field_70292_b <= 200 || this.field_145802_g.equals(p_70100_1_.func_70005_c_())) && p_70100_1_.field_71071_by.func_70441_a(itemstack))
+            if (this.field_145804_b == 0 && (this.field_145802_g == null || 6000 - this.field_70292_b <= 200 || this.field_145802_g.equals(p_70100_1_.func_70005_c_())) && p_70100_1_.inventory.func_70441_a(itemstack))
             {
-                if (itemstack.func_77973_b() == Item.func_150898_a(Blocks.LOG))
+                if (itemstack.getBaseItem() == Item.func_150898_a(Blocks.LOG))
                 {
                     p_70100_1_.func_71029_a(AchievementList.MINE_WOOD);
                 }
 
-                if (itemstack.func_77973_b() == Item.func_150898_a(Blocks.LOG_2))
+                if (itemstack.getBaseItem() == Item.func_150898_a(Blocks.LOG_2))
                 {
                     p_70100_1_.func_71029_a(AchievementList.MINE_WOOD);
                 }
 
-                if (itemstack.func_77973_b() == Items.LEATHER)
+                if (itemstack.getBaseItem() == Items.LEATHER)
                 {
                     p_70100_1_.func_71029_a(AchievementList.KILL_COW);
                 }
 
-                if (itemstack.func_77973_b() == Items.DIAMOND)
+                if (itemstack.getBaseItem() == Items.DIAMOND)
                 {
                     p_70100_1_.func_71029_a(AchievementList.DIAMONDS);
                 }
 
-                if (itemstack.func_77973_b() == Items.BLAZE_ROD)
+                if (itemstack.getBaseItem() == Items.BLAZE_ROD)
                 {
                     p_70100_1_.func_71029_a(AchievementList.BLAZE_ROD);
                 }
 
-                if (itemstack.func_77973_b() == Items.DIAMOND && this.func_145800_j() != null)
+                if (itemstack.getBaseItem() == Items.DIAMOND && this.func_145800_j() != null)
                 {
                     EntityPlayer entityplayer1 = this.world.func_72924_a(this.func_145800_j());
 
@@ -325,10 +325,10 @@ public class EntityItem extends Entity
                     }
                 }
 
-                this.world.func_72956_a(p_70100_1_, "random.pop", 0.2F, ((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                this.world.func_72956_a(p_70100_1_, "random.pop", 0.2F, ((this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.7F + 1.0F) * 2.0F);
                 p_70100_1_.func_71001_a(this, i);
 
-                if (itemstack.field_77994_a <= 0)
+                if (itemstack.count <= 0)
                 {
                     this.func_70106_y();
                 }

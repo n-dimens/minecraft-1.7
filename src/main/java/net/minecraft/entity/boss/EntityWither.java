@@ -60,11 +60,11 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
         this.func_70105_a(0.9F, 4.0F);
         this.field_70178_ae = true;
         this.func_70661_as().func_75495_e(true);
-        this.field_70714_bg.func_75776_a(0, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(2, new EntityAIArrowAttack(this, 1.0D, 40, 20.0F));
-        this.field_70714_bg.func_75776_a(5, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.field_70714_bg.func_75776_a(7, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(0, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(2, new EntityAIArrowAttack(this, 1.0D, 40, 20.0F));
+        this.aiTasks.func_75776_a(5, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(6, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.aiTasks.func_75776_a(7, new EntityAILookIdle(this));
         this.field_70715_bh.func_75776_a(1, new EntityAIHurtByTarget(this, false));
         this.field_70715_bh.func_75776_a(2, new EntityAINearestAttackableTarget(this, EntityLiving.class, 0, false, false, field_82219_bJ));
         this.field_70728_aV = 50;
@@ -201,11 +201,11 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
             double d10 = this.func_82214_u(j);
             double d2 = this.func_82208_v(j);
             double d4 = this.func_82213_w(j);
-            this.world.func_72869_a("smoke", d10 + this.field_70146_Z.nextGaussian() * 0.30000001192092896D, d2 + this.field_70146_Z.nextGaussian() * 0.30000001192092896D, d4 + this.field_70146_Z.nextGaussian() * 0.30000001192092896D, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("smoke", d10 + this.randomizer.nextGaussian() * 0.30000001192092896D, d2 + this.randomizer.nextGaussian() * 0.30000001192092896D, d4 + this.randomizer.nextGaussian() * 0.30000001192092896D, 0.0D, 0.0D, 0.0D);
 
             if (flag && this.world.field_73012_v.nextInt(4) == 0)
             {
-                this.world.func_72869_a("mobSpell", d10 + this.field_70146_Z.nextGaussian() * 0.30000001192092896D, d2 + this.field_70146_Z.nextGaussian() * 0.30000001192092896D, d4 + this.field_70146_Z.nextGaussian() * 0.30000001192092896D, 0.699999988079071D, 0.699999988079071D, 0.5D);
+                this.world.func_72869_a("mobSpell", d10 + this.randomizer.nextGaussian() * 0.30000001192092896D, d2 + this.randomizer.nextGaussian() * 0.30000001192092896D, d4 + this.randomizer.nextGaussian() * 0.30000001192092896D, 0.699999988079071D, 0.699999988079071D, 0.5D);
             }
         }
 
@@ -213,7 +213,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
         {
             for (j = 0; j < 3; ++j)
             {
-                this.world.func_72869_a("mobSpell", this.field_70165_t + this.field_70146_Z.nextGaussian() * 1.0D, this.field_70163_u + (double)(this.field_70146_Z.nextFloat() * 3.3F), this.field_70161_v + this.field_70146_Z.nextGaussian() * 1.0D, 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D);
+                this.world.func_72869_a("mobSpell", this.field_70165_t + this.randomizer.nextGaussian() * 1.0D, this.field_70163_u + (double)(this.randomizer.nextFloat() * 3.3F), this.field_70161_v + this.randomizer.nextGaussian() * 1.0D, 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D);
             }
         }
     }
@@ -248,7 +248,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
             {
                 if (this.field_70173_aa >= this.field_82223_h[i - 1])
                 {
-                    this.field_82223_h[i - 1] = this.field_70173_aa + 10 + this.field_70146_Z.nextInt(10);
+                    this.field_82223_h[i - 1] = this.field_70173_aa + 10 + this.randomizer.nextInt(10);
 
                     if (this.world.field_73013_u == EnumDifficulty.NORMAL || this.world.field_73013_u == EnumDifficulty.HARD)
                     {
@@ -260,9 +260,9 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
                         {
                             float f = 10.0F;
                             float f1 = 5.0F;
-                            double d0 = MathHelper.func_82716_a(this.field_70146_Z, this.field_70165_t - (double)f, this.field_70165_t + (double)f);
-                            double d1 = MathHelper.func_82716_a(this.field_70146_Z, this.field_70163_u - (double)f1, this.field_70163_u + (double)f1);
-                            double d2 = MathHelper.func_82716_a(this.field_70146_Z, this.field_70161_v - (double)f, this.field_70161_v + (double)f);
+                            double d0 = MathHelper.func_82716_a(this.randomizer, this.field_70165_t - (double)f, this.field_70165_t + (double)f);
+                            double d1 = MathHelper.func_82716_a(this.randomizer, this.field_70163_u - (double)f1, this.field_70163_u + (double)f1);
+                            double d2 = MathHelper.func_82716_a(this.randomizer, this.field_70161_v - (double)f, this.field_70161_v + (double)f);
                             this.func_82209_a(i + 1, d0, d1, d2, true);
                             this.field_82224_i[i - 1] = 0;
                         }
@@ -277,7 +277,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
                         if (entity != null && entity.func_70089_S() && this.func_70068_e(entity) <= 900.0D && this.func_70685_l(entity))
                         {
                             this.func_82216_a(i + 1, (EntityLivingBase)entity);
-                            this.field_82223_h[i - 1] = this.field_70173_aa + 40 + this.field_70146_Z.nextInt(20);
+                            this.field_82223_h[i - 1] = this.field_70173_aa + 40 + this.randomizer.nextInt(20);
                             this.field_82224_i[i - 1] = 0;
                         }
                         else
@@ -291,13 +291,13 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
 
                         for (int k1 = 0; k1 < 10 && !list.isEmpty(); ++k1)
                         {
-                            EntityLivingBase entitylivingbase = (EntityLivingBase)list.get(this.field_70146_Z.nextInt(list.size()));
+                            EntityLivingBase entitylivingbase = (EntityLivingBase)list.get(this.randomizer.nextInt(list.size()));
 
                             if (entitylivingbase != this && entitylivingbase.func_70089_S() && this.func_70685_l(entitylivingbase))
                             {
                                 if (entitylivingbase instanceof EntityPlayer)
                                 {
-                                    if (!((EntityPlayer)entitylivingbase).field_71075_bZ.field_75102_a)
+                                    if (!((EntityPlayer)entitylivingbase).capabilities.invulnerable)
                                     {
                                         this.func_82211_c(i, entitylivingbase.func_145782_y());
                                     }
@@ -434,7 +434,7 @@ public class EntityWither extends EntityMob implements IBossDisplayData, IRanged
 
     private void func_82216_a(int p_82216_1_, EntityLivingBase p_82216_2_)
     {
-        this.func_82209_a(p_82216_1_, p_82216_2_.field_70165_t, p_82216_2_.field_70163_u + (double)p_82216_2_.func_70047_e() * 0.5D, p_82216_2_.field_70161_v, p_82216_1_ == 0 && this.field_70146_Z.nextFloat() < 0.001F);
+        this.func_82209_a(p_82216_1_, p_82216_2_.field_70165_t, p_82216_2_.field_70163_u + (double)p_82216_2_.func_70047_e() * 0.5D, p_82216_2_.field_70161_v, p_82216_1_ == 0 && this.randomizer.nextFloat() < 0.001F);
     }
 
     private void func_82209_a(int p_82209_1_, double p_82209_2_, double p_82209_4_, double p_82209_6_, boolean p_82209_8_)

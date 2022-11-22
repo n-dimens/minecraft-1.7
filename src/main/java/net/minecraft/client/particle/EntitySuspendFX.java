@@ -19,7 +19,7 @@ public class EntitySuspendFX extends EntityFX
         this.field_70551_j = 0.7F;
         this.func_70536_a(0);
         this.func_70105_a(0.01F, 0.01F);
-        this.field_70544_f *= this.field_70146_Z.nextFloat() * 0.6F + 0.2F;
+        this.field_70544_f *= this.randomizer.nextFloat() * 0.6F + 0.2F;
         this.field_70159_w = p_i1231_8_ * 0.0D;
         this.field_70181_x = p_i1231_10_ * 0.0D;
         this.field_70179_y = p_i1231_12_ * 0.0D;

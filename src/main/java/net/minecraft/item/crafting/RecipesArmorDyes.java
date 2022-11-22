@@ -24,9 +24,9 @@ public class RecipesArmorDyes implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() instanceof ItemArmor)
+                if (itemstack1.getBaseItem() instanceof ItemArmor)
                 {
-                    ItemArmor itemarmor = (ItemArmor)itemstack1.func_77973_b();
+                    ItemArmor itemarmor = (ItemArmor)itemstack1.getBaseItem();
 
                     if (itemarmor.func_82812_d() != ItemArmor.ArmorMaterial.CLOTH || itemstack != null)
                     {
@@ -37,7 +37,7 @@ public class RecipesArmorDyes implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.DYE)
+                    if (itemstack1.getBaseItem() != Items.DYE)
                     {
                         return false;
                     }
@@ -69,9 +69,9 @@ public class RecipesArmorDyes implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() instanceof ItemArmor)
+                if (itemstack1.getBaseItem() instanceof ItemArmor)
                 {
-                    itemarmor = (ItemArmor)itemstack1.func_77973_b();
+                    itemarmor = (ItemArmor)itemstack1.getBaseItem();
 
                     if (itemarmor.func_82812_d() != ItemArmor.ArmorMaterial.CLOTH || itemstack != null)
                     {
@@ -79,7 +79,7 @@ public class RecipesArmorDyes implements IRecipe
                     }
 
                     itemstack = itemstack1.func_77946_l();
-                    itemstack.field_77994_a = 1;
+                    itemstack.count = 1;
 
                     if (itemarmor.func_82816_b_(itemstack1))
                     {
@@ -96,7 +96,7 @@ public class RecipesArmorDyes implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.DYE)
+                    if (itemstack1.getBaseItem() != Items.DYE)
                     {
                         return null;
                     }

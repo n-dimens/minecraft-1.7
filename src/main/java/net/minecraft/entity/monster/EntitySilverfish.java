@@ -145,7 +145,7 @@ public class EntitySilverfish extends EntityMob
 
                                     Blocks.MONSTER_EGG.func_149664_b(this.world, i + i1, j + l, k + j1, 0);
 
-                                    if (this.field_70146_Z.nextBoolean())
+                                    if (this.randomizer.nextBoolean())
                                     {
                                         flag = true;
                                         break;
@@ -162,7 +162,7 @@ public class EntitySilverfish extends EntityMob
                 i = MathHelper.func_76128_c(this.field_70165_t);
                 j = MathHelper.func_76128_c(this.field_70163_u + 0.5D);
                 k = MathHelper.func_76128_c(this.field_70161_v);
-                int l1 = this.field_70146_Z.nextInt(6);
+                int l1 = this.randomizer.nextInt(6);
                 Block block = this.world.func_147439_a(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1]);
                 i1 = this.world.func_72805_g(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1]);
 

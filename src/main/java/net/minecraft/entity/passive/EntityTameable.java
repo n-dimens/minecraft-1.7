@@ -81,10 +81,10 @@ public abstract class EntityTameable extends EntityAnimal implements IEntityOwna
 
         for (int i = 0; i < 7; ++i)
         {
-            double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
-            double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
-            double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-            this.world.func_72869_a(s, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+            double d0 = this.randomizer.nextGaussian() * 0.02D;
+            double d1 = this.randomizer.nextGaussian() * 0.02D;
+            double d2 = this.randomizer.nextGaussian() * 0.02D;
+            this.world.func_72869_a(s, this.field_70165_t + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.randomizer.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.randomizer.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
         }
     }
 

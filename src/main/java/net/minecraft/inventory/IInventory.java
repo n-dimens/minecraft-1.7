@@ -13,7 +13,7 @@ public interface IInventory
 
     ItemStack func_70304_b(int p_70304_1_);
 
-    void func_70299_a(int p_70299_1_, ItemStack p_70299_2_);
+    void putItem(int p_70299_1_, ItemStack p_70299_2_);
 
     String func_145825_b();
 

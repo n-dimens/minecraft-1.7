@@ -24,9 +24,9 @@ public class ItemBlock extends Item
         this.field_150939_a = p_i45328_1_;
     }
 
-    public ItemBlock func_77655_b(String p_77655_1_)
+    public ItemBlock setId(String value)
     {
-        super.func_77655_b(p_77655_1_);
+        super.setId(value);
         return this;
     }
 
@@ -83,7 +83,7 @@ public class ItemBlock extends Item
             }
         }
 
-        if (p_77648_1_.field_77994_a == 0)
+        if (p_77648_1_.count == 0)
         {
             return false;
         }
@@ -109,7 +109,7 @@ public class ItemBlock extends Item
                 }
 
                 p_77648_3_.func_72908_a((double)((float)p_77648_4_ + 0.5F), (double)((float)p_77648_5_ + 0.5F), (double)((float)p_77648_6_ + 0.5F), this.field_150939_a.field_149762_H.func_150496_b(), (this.field_150939_a.field_149762_H.func_150497_c() + 1.0F) / 2.0F, this.field_150939_a.field_149762_H.func_150494_d() * 0.8F);
-                --p_77648_1_.field_77994_a;
+                --p_77648_1_.count;
             }
 
             return true;

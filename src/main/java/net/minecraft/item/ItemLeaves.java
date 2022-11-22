@@ -14,7 +14,7 @@ public class ItemLeaves extends ItemBlock
     {
         super(p_i45344_1_);
         this.field_150940_b = p_i45344_1_;
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77627_a(true);
     }
 

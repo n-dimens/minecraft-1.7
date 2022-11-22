@@ -1801,7 +1801,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
         if (entitylivingbase instanceof EntityPlayer)
         {
-            flag = ((EntityPlayer)entitylivingbase).field_71075_bZ.field_75098_d;
+            flag = ((EntityPlayer)entitylivingbase).capabilities.instabuild;
         }
 
         if (p_78468_1_ == 999)

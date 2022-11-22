@@ -84,7 +84,7 @@ public abstract class Entity
     public float field_70138_W;
     public boolean field_70145_X;
     public float field_70144_Y;
-    protected Random field_70146_Z;
+    protected final Random randomizer;
     public int field_70173_aa;
     public int field_70174_ab;
     private int field_70151_c;
@@ -136,7 +136,7 @@ public abstract class Entity
         this.field_70130_N = 0.6F;
         this.field_70131_O = 1.8F;
         this.field_70150_b = 1;
-        this.field_70146_Z = new Random();
+        this.randomizer = new Random();
         this.field_70174_ab = 1;
         this.field_70148_d = true;
         this.field_96093_i = UUID.randomUUID();
@@ -367,7 +367,7 @@ public abstract class Entity
 
             if (block.func_149688_o() != Material.field_151579_a)
             {
-                this.world.func_72869_a("blockcrack_" + Block.func_149682_b(block) + "_" + this.world.func_72805_g(j, i, k), this.field_70165_t + ((double)this.field_70146_Z.nextFloat() - 0.5D) * (double)this.field_70130_N, this.field_70121_D.field_72338_b + 0.1D, this.field_70161_v + ((double)this.field_70146_Z.nextFloat() - 0.5D) * (double)this.field_70130_N, -this.field_70159_w * 4.0D, 1.5D, -this.field_70179_y * 4.0D);
+                this.world.func_72869_a("blockcrack_" + Block.func_149682_b(block) + "_" + this.world.func_72805_g(j, i, k), this.field_70165_t + ((double)this.randomizer.nextFloat() - 0.5D) * (double)this.field_70130_N, this.field_70121_D.field_72338_b + 0.1D, this.field_70161_v + ((double)this.randomizer.nextFloat() - 0.5D) * (double)this.field_70130_N, -this.field_70159_w * 4.0D, 1.5D, -this.field_70179_y * 4.0D);
             }
         }
 
@@ -761,7 +761,7 @@ public abstract class Entity
                             f = 1.0F;
                         }
 
-                        this.func_85030_a(this.func_145776_H(), f, 1.0F + (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.4F);
+                        this.func_85030_a(this.func_145776_H(), f, 1.0F + (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.4F);
                     }
 
                     this.func_145780_a(j1, k, l, block);
@@ -804,7 +804,7 @@ public abstract class Entity
 
             if (flag2 && this.field_70151_c > 0)
             {
-                this.func_85030_a("random.fizz", 0.7F, 1.6F + (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.4F);
+                this.func_85030_a("random.fizz", 0.7F, 1.6F + (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.4F);
                 this.field_70151_c = -this.field_70174_ab;
             }
 
@@ -943,7 +943,7 @@ public abstract class Entity
                     f = 1.0F;
                 }
 
-                this.func_85030_a(this.func_145777_O(), f, 1.0F + (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.4F);
+                this.func_85030_a(this.func_145777_O(), f, 1.0F + (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.4F);
                 float f1 = (float)MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
                 int i;
                 float f2;
@@ -951,15 +951,15 @@ public abstract class Entity
 
                 for (i = 0; (float)i < 1.0F + this.field_70130_N * 20.0F; ++i)
                 {
-                    f2 = (this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * this.field_70130_N;
-                    f3 = (this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * this.field_70130_N;
-                    this.world.func_72869_a("bubble", this.field_70165_t + (double)f2, (double)(f1 + 1.0F), this.field_70161_v + (double)f3, this.field_70159_w, this.field_70181_x - (double)(this.field_70146_Z.nextFloat() * 0.2F), this.field_70179_y);
+                    f2 = (this.randomizer.nextFloat() * 2.0F - 1.0F) * this.field_70130_N;
+                    f3 = (this.randomizer.nextFloat() * 2.0F - 1.0F) * this.field_70130_N;
+                    this.world.func_72869_a("bubble", this.field_70165_t + (double)f2, (double)(f1 + 1.0F), this.field_70161_v + (double)f3, this.field_70159_w, this.field_70181_x - (double)(this.randomizer.nextFloat() * 0.2F), this.field_70179_y);
                 }
 
                 for (i = 0; (float)i < 1.0F + this.field_70130_N * 20.0F; ++i)
                 {
-                    f2 = (this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * this.field_70130_N;
-                    f3 = (this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * this.field_70130_N;
+                    f2 = (this.randomizer.nextFloat() * 2.0F - 1.0F) * this.field_70130_N;
+                    f3 = (this.randomizer.nextFloat() * 2.0F - 1.0F) * this.field_70130_N;
                     this.world.func_72869_a("splash", this.field_70165_t + (double)f2, (double)(f1 + 1.0F), this.field_70161_v + (double)f3, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                 }
             }
@@ -1419,7 +1419,7 @@ public abstract class Entity
 
     public EntityItem func_70099_a(ItemStack p_70099_1_, float p_70099_2_)
     {
-        if (p_70099_1_.field_77994_a != 0 && p_70099_1_.func_77973_b() != null)
+        if (p_70099_1_.count != 0 && p_70099_1_.getBaseItem() != null)
         {
             EntityItem entityitem = new EntityItem(this.world, this.field_70165_t, this.field_70163_u + (double)p_70099_2_, this.field_70161_v, p_70099_1_);
             entityitem.field_145804_b = 10;
@@ -1834,7 +1834,7 @@ public abstract class Entity
                 b0 = 5;
             }
 
-            float f = this.field_70146_Z.nextFloat() * 0.2F + 0.1F;
+            float f = this.randomizer.nextFloat() * 0.2F + 0.1F;
 
             if (b0 == 0)
             {

@@ -22,7 +22,7 @@ public class ItemRecord extends Item
     protected ItemRecord(String p_i45350_1_)
     {
         this.field_150929_a = p_i45350_1_;
-        this.field_77777_bU = 1;
+        this.stackMaxSize = 1;
         this.func_77637_a(CreativeTabs.field_78026_f);
         field_150928_b.put(p_i45350_1_, this);
     }
@@ -45,7 +45,7 @@ public class ItemRecord extends Item
             {
                 ((BlockJukebox)Blocks.JUKEBOX).func_149926_b(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_1_);
                 p_77648_3_.func_72889_a((EntityPlayer)null, 1005, p_77648_4_, p_77648_5_, p_77648_6_, Item.func_150891_b(this));
-                --p_77648_1_.field_77994_a;
+                --p_77648_1_.count;
                 return true;
             }
         }

@@ -23,8 +23,8 @@ public class ItemTool extends Item
     {
         this.field_77862_b = p_i45333_2_;
         this.field_150914_c = p_i45333_3_;
-        this.field_77777_bU = 1;
-        this.func_77656_e(p_i45333_2_.func_77997_a());
+        this.stackMaxSize = 1;
+        this.setDurability(p_i45333_2_.func_77997_a());
         this.field_77864_a = p_i45333_2_.func_77998_b();
         this.field_77865_bY = p_i45333_1_ + p_i45333_2_.func_78000_c();
         this.func_77637_a(CreativeTabs.field_78040_i);
@@ -74,7 +74,7 @@ public class ItemTool extends Item
 
     public boolean func_82789_a(ItemStack p_82789_1_, ItemStack p_82789_2_)
     {
-        return this.field_77862_b.func_150995_f() == p_82789_2_.func_77973_b() ? true : super.func_82789_a(p_82789_1_, p_82789_2_);
+        return this.field_77862_b.func_150995_f() == p_82789_2_.getBaseItem() ? true : super.func_82789_a(p_82789_1_, p_82789_2_);
     }
 
     public Multimap func_111205_h()

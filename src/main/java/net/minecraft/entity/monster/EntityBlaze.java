@@ -78,7 +78,7 @@ public class EntityBlaze extends EntityMob
             if (this.field_70848_e <= 0)
             {
                 this.field_70848_e = 100;
-                this.field_70847_d = 0.5F + (float)this.field_70146_Z.nextGaussian() * 3.0F;
+                this.field_70847_d = 0.5F + (float)this.randomizer.nextGaussian() * 3.0F;
             }
 
             if (this.func_70777_m() != null && this.func_70777_m().field_70163_u + (double)this.func_70777_m().func_70047_e() > this.field_70163_u + (double)this.func_70047_e() + (double)this.field_70847_d)
@@ -87,9 +87,9 @@ public class EntityBlaze extends EntityMob
             }
         }
 
-        if (this.field_70146_Z.nextInt(24) == 0)
+        if (this.randomizer.nextInt(24) == 0)
         {
-            this.world.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.fire", 1.0F + this.field_70146_Z.nextFloat(), this.field_70146_Z.nextFloat() * 0.7F + 0.3F);
+            this.world.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.fire", 1.0F + this.randomizer.nextFloat(), this.randomizer.nextFloat() * 0.7F + 0.3F);
         }
 
         if (!this.field_70122_E && this.field_70181_x < 0.0D)
@@ -99,7 +99,7 @@ public class EntityBlaze extends EntityMob
 
         for (int i = 0; i < 2; ++i)
         {
-            this.world.func_72869_a("largesmoke", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("largesmoke", this.field_70165_t + (this.randomizer.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.randomizer.nextDouble() * (double)this.field_70131_O, this.field_70161_v + (this.randomizer.nextDouble() - 0.5D) * (double)this.field_70130_N, 0.0D, 0.0D, 0.0D);
         }
 
         super.func_70636_d();
@@ -145,7 +145,7 @@ public class EntityBlaze extends EntityMob
 
                     for (int i = 0; i < 1; ++i)
                     {
-                        EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.world, this, d0 + this.field_70146_Z.nextGaussian() * (double)f1, d1, d2 + this.field_70146_Z.nextGaussian() * (double)f1);
+                        EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.world, this, d0 + this.randomizer.nextGaussian() * (double)f1, d1, d2 + this.randomizer.nextGaussian() * (double)f1);
                         entitysmallfireball.field_70163_u = this.field_70163_u + (double)(this.field_70131_O / 2.0F) + 0.5D;
                         this.world.func_72838_d(entitysmallfireball);
                     }
@@ -173,7 +173,7 @@ public class EntityBlaze extends EntityMob
     {
         if (p_70628_1_)
         {
-            int j = this.field_70146_Z.nextInt(2 + p_70628_2_);
+            int j = this.randomizer.nextInt(2 + p_70628_2_);
 
             for (int k = 0; k < j; ++k)
             {

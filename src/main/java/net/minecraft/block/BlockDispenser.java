@@ -145,7 +145,7 @@ public class BlockDispenser extends BlockContainer
                 if (ibehaviordispenseitem != IBehaviorDispenseItem.field_82483_a)
                 {
                     ItemStack itemstack1 = ibehaviordispenseitem.func_82482_a(blocksourceimpl, itemstack);
-                    tileentitydispenser.func_70299_a(l, itemstack1.field_77994_a == 0 ? null : itemstack1);
+                    tileentitydispenser.putItem(l, itemstack1.count == 0 ? null : itemstack1);
                 }
             }
         }
@@ -153,7 +153,7 @@ public class BlockDispenser extends BlockContainer
 
     protected IBehaviorDispenseItem func_149940_a(ItemStack p_149940_1_)
     {
-        return (IBehaviorDispenseItem)field_149943_a.get(p_149940_1_.func_77973_b());
+        return (IBehaviorDispenseItem)field_149943_a.get(p_149940_1_.getBaseItem());
     }
 
     public void func_149695_a(World p_149695_1_, int p_149695_2_, int p_149695_3_, int p_149695_4_, Block p_149695_5_)
@@ -213,17 +213,17 @@ public class BlockDispenser extends BlockContainer
                     float f1 = this.field_149942_b.nextFloat() * 0.8F + 0.1F;
                     float f2 = this.field_149942_b.nextFloat() * 0.8F + 0.1F;
 
-                    while (itemstack.field_77994_a > 0)
+                    while (itemstack.count > 0)
                     {
                         int j1 = this.field_149942_b.nextInt(21) + 10;
 
-                        if (j1 > itemstack.field_77994_a)
+                        if (j1 > itemstack.count)
                         {
-                            j1 = itemstack.field_77994_a;
+                            j1 = itemstack.count;
                         }
 
-                        itemstack.field_77994_a -= j1;
-                        EntityItem entityitem = new EntityItem(p_149749_1_, (double)((float)p_149749_2_ + f), (double)((float)p_149749_3_ + f1), (double)((float)p_149749_4_ + f2), new ItemStack(itemstack.func_77973_b(), j1, itemstack.func_77960_j()));
+                        itemstack.count -= j1;
+                        EntityItem entityitem = new EntityItem(p_149749_1_, (double)((float)p_149749_2_ + f), (double)((float)p_149749_3_ + f1), (double)((float)p_149749_4_ + f2), new ItemStack(itemstack.getBaseItem(), j1, itemstack.func_77960_j()));
 
                         if (itemstack.func_77942_o())
                         {

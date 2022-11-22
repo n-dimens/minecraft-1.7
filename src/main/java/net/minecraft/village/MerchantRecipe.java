@@ -60,12 +60,12 @@ public class MerchantRecipe
 
     public boolean func_77393_a(MerchantRecipe p_77393_1_)
     {
-        return this.field_77403_a.func_77973_b() == p_77393_1_.field_77403_a.func_77973_b() && this.field_77402_c.func_77973_b() == p_77393_1_.field_77402_c.func_77973_b() ? this.field_77401_b == null && p_77393_1_.field_77401_b == null || this.field_77401_b != null && p_77393_1_.field_77401_b != null && this.field_77401_b.func_77973_b() == p_77393_1_.field_77401_b.func_77973_b() : false;
+        return this.field_77403_a.getBaseItem() == p_77393_1_.field_77403_a.getBaseItem() && this.field_77402_c.getBaseItem() == p_77393_1_.field_77402_c.getBaseItem() ? this.field_77401_b == null && p_77393_1_.field_77401_b == null || this.field_77401_b != null && p_77393_1_.field_77401_b != null && this.field_77401_b.getBaseItem() == p_77393_1_.field_77401_b.getBaseItem() : false;
     }
 
     public boolean func_77391_b(MerchantRecipe p_77391_1_)
     {
-        return this.func_77393_a(p_77391_1_) && (this.field_77403_a.field_77994_a < p_77391_1_.field_77403_a.field_77994_a || this.field_77401_b != null && this.field_77401_b.field_77994_a < p_77391_1_.field_77401_b.field_77994_a);
+        return this.func_77393_a(p_77391_1_) && (this.field_77403_a.count < p_77391_1_.field_77403_a.count || this.field_77401_b != null && this.field_77401_b.count < p_77391_1_.field_77401_b.count);
     }
 
     public void func_77399_f()

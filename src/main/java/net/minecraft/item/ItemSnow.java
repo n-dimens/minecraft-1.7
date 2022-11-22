@@ -16,7 +16,7 @@ public class ItemSnow extends ItemBlockWithMetadata
 
     public boolean func_77648_a(ItemStack p_77648_1_, EntityPlayer p_77648_2_, World p_77648_3_, int p_77648_4_, int p_77648_5_, int p_77648_6_, int p_77648_7_, float p_77648_8_, float p_77648_9_, float p_77648_10_)
     {
-        if (p_77648_1_.field_77994_a == 0)
+        if (p_77648_1_.count == 0)
         {
             return false;
         }
@@ -36,7 +36,7 @@ public class ItemSnow extends ItemBlockWithMetadata
                 if (j1 <= 6 && p_77648_3_.func_72855_b(this.field_150939_a.func_149668_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_)) && p_77648_3_.func_72921_c(p_77648_4_, p_77648_5_, p_77648_6_, j1 + 1 | i1 & -8, 2))
                 {
                     p_77648_3_.func_72908_a((double)((float)p_77648_4_ + 0.5F), (double)((float)p_77648_5_ + 0.5F), (double)((float)p_77648_6_ + 0.5F), this.field_150939_a.field_149762_H.func_150496_b(), (this.field_150939_a.field_149762_H.func_150497_c() + 1.0F) / 2.0F, this.field_150939_a.field_149762_H.func_150494_d() * 0.8F);
-                    --p_77648_1_.field_77994_a;
+                    --p_77648_1_.count;
                     return true;
                 }
             }

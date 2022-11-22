@@ -62,7 +62,7 @@ public class ItemRedstone extends Item
         {
             if (Blocks.REDSTONE_WIRE.func_149742_c(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_))
             {
-                --p_77648_1_.field_77994_a;
+                --p_77648_1_.count;
                 p_77648_3_.func_147449_b(p_77648_4_, p_77648_5_, p_77648_6_, Blocks.REDSTONE_WIRE);
             }
 

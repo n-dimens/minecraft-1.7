@@ -62,7 +62,7 @@ public class PlayerControllerMP
 
     public void func_78748_a(EntityPlayer p_78748_1_)
     {
-        this.field_78779_k.func_77147_a(p_78748_1_.field_71075_bZ);
+        this.field_78779_k.func_77147_a(p_78748_1_.capabilities);
     }
 
     public boolean func_78747_a()
@@ -73,7 +73,7 @@ public class PlayerControllerMP
     public void func_78746_a(WorldSettings.GameType p_78746_1_)
     {
         this.field_78779_k = p_78746_1_;
-        this.field_78779_k.func_77147_a(this.field_78776_a.field_71439_g.field_71075_bZ);
+        this.field_78779_k.func_77147_a(this.field_78776_a.field_71439_g.capabilities);
     }
 
     public void func_78745_b(EntityPlayer p_78745_1_)
@@ -92,7 +92,7 @@ public class PlayerControllerMP
         {
             return false;
         }
-        else if (this.field_78779_k.func_77145_d() && this.field_78776_a.field_71439_g.func_70694_bm() != null && this.field_78776_a.field_71439_g.func_70694_bm().func_77973_b() instanceof ItemSword)
+        else if (this.field_78779_k.func_77145_d() && this.field_78776_a.field_71439_g.func_70694_bm() != null && this.field_78776_a.field_71439_g.func_70694_bm().getBaseItem() instanceof ItemSword)
         {
             return false;
         }
@@ -126,7 +126,7 @@ public class PlayerControllerMP
                     {
                         itemstack.func_150999_a(worldclient, block, p_78751_1_, p_78751_2_, p_78751_3_, this.field_78776_a.field_71439_g);
 
-                        if (itemstack.field_77994_a == 0)
+                        if (itemstack.count == 0)
                         {
                             this.field_78776_a.field_71439_g.func_71028_bD();
                         }
@@ -279,7 +279,7 @@ public class PlayerControllerMP
 
         if (this.field_85183_f != null && itemstack != null)
         {
-            flag = itemstack.func_77973_b() == this.field_85183_f.func_77973_b() && ItemStack.func_77970_a(itemstack, this.field_85183_f) && (itemstack.func_77984_f() || itemstack.func_77960_j() == this.field_85183_f.func_77960_j());
+            flag = itemstack.getBaseItem() == this.field_85183_f.getBaseItem() && ItemStack.func_77970_a(itemstack, this.field_85183_f) && (itemstack.func_77984_f() || itemstack.func_77960_j() == this.field_85183_f.func_77960_j());
         }
 
         return p_85182_1_ == this.field_78775_c && p_85182_2_ == this.field_78772_d && p_85182_3_ == this.field_78773_e && flag;
@@ -287,7 +287,7 @@ public class PlayerControllerMP
 
     private void func_78750_j()
     {
-        int i = this.field_78776_a.field_71439_g.field_71071_by.field_70461_c;
+        int i = this.field_78776_a.field_71439_g.inventory.activeItemPosition;
 
         if (i != this.field_78777_l)
         {
@@ -309,9 +309,9 @@ public class PlayerControllerMP
             flag = true;
         }
 
-        if (!flag && p_78760_3_ != null && p_78760_3_.func_77973_b() instanceof ItemBlock)
+        if (!flag && p_78760_3_ != null && p_78760_3_.getBaseItem() instanceof ItemBlock)
         {
-            ItemBlock itemblock = (ItemBlock)p_78760_3_.func_77973_b();
+            ItemBlock itemblock = (ItemBlock)p_78760_3_.getBaseItem();
 
             if (!itemblock.func_150936_a(p_78760_2_, p_78760_4_, p_78760_5_, p_78760_6_, p_78760_7_, p_78760_1_, p_78760_3_))
             {
@@ -319,7 +319,7 @@ public class PlayerControllerMP
             }
         }
 
-        this.field_78774_b.func_147297_a(new C08PacketPlayerBlockPlacement(p_78760_4_, p_78760_5_, p_78760_6_, p_78760_7_, p_78760_1_.field_71071_by.func_70448_g(), f, f1, f2));
+        this.field_78774_b.func_147297_a(new C08PacketPlayerBlockPlacement(p_78760_4_, p_78760_5_, p_78760_6_, p_78760_7_, p_78760_1_.inventory.getActiveItem(), f, f1, f2));
 
         if (flag)
         {
@@ -332,10 +332,10 @@ public class PlayerControllerMP
         else if (this.field_78779_k.func_77145_d())
         {
             int j1 = p_78760_3_.func_77960_j();
-            int i1 = p_78760_3_.field_77994_a;
+            int i1 = p_78760_3_.count;
             boolean flag1 = p_78760_3_.func_77943_a(p_78760_1_, p_78760_2_, p_78760_4_, p_78760_5_, p_78760_6_, p_78760_7_, f, f1, f2);
             p_78760_3_.func_77964_b(j1);
-            p_78760_3_.field_77994_a = i1;
+            p_78760_3_.count = i1;
             return flag1;
         }
         else
@@ -347,21 +347,21 @@ public class PlayerControllerMP
     public boolean func_78769_a(EntityPlayer p_78769_1_, World p_78769_2_, ItemStack p_78769_3_)
     {
         this.func_78750_j();
-        this.field_78774_b.func_147297_a(new C08PacketPlayerBlockPlacement(-1, -1, -1, 255, p_78769_1_.field_71071_by.func_70448_g(), 0.0F, 0.0F, 0.0F));
-        int i = p_78769_3_.field_77994_a;
+        this.field_78774_b.func_147297_a(new C08PacketPlayerBlockPlacement(-1, -1, -1, 255, p_78769_1_.inventory.getActiveItem(), 0.0F, 0.0F, 0.0F));
+        int i = p_78769_3_.count;
         ItemStack itemstack1 = p_78769_3_.func_77957_a(p_78769_2_, p_78769_1_);
 
-        if (itemstack1 == p_78769_3_ && (itemstack1 == null || itemstack1.field_77994_a == i))
+        if (itemstack1 == p_78769_3_ && (itemstack1 == null || itemstack1.count == i))
         {
             return false;
         }
         else
         {
-            p_78769_1_.field_71071_by.field_70462_a[p_78769_1_.field_71071_by.field_70461_c] = itemstack1;
+            p_78769_1_.inventory.cells[p_78769_1_.inventory.activeItemPosition] = itemstack1;
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
-                p_78769_1_.field_71071_by.field_70462_a[p_78769_1_.field_71071_by.field_70461_c] = null;
+                p_78769_1_.inventory.cells[p_78769_1_.inventory.activeItemPosition] = null;
             }
 
             return true;
@@ -389,7 +389,7 @@ public class PlayerControllerMP
 
     public ItemStack func_78753_a(int p_78753_1_, int p_78753_2_, int p_78753_3_, int p_78753_4_, EntityPlayer p_78753_5_)
     {
-        short short1 = p_78753_5_.field_71070_bA.func_75136_a(p_78753_5_.field_71071_by);
+        short short1 = p_78753_5_.field_71070_bA.func_75136_a(p_78753_5_.inventory);
         ItemStack itemstack = p_78753_5_.field_71070_bA.func_75144_a(p_78753_2_, p_78753_3_, p_78753_4_, p_78753_5_);
         this.field_78774_b.func_147297_a(new C0EPacketClickWindow(p_78753_1_, p_78753_2_, p_78753_3_, p_78753_4_, itemstack, short1));
         return itemstack;

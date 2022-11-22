@@ -16,7 +16,7 @@ public class ItemDoor extends Item
     public ItemDoor(Material p_i45334_1_)
     {
         this.field_77870_a = p_i45334_1_;
-        this.field_77777_bU = 1;
+        this.stackMaxSize = 1;
         this.func_77637_a(CreativeTabs.field_78028_d);
     }
 
@@ -50,7 +50,7 @@ public class ItemDoor extends Item
                 {
                     int i1 = MathHelper.func_76128_c((double)((p_77648_2_.field_70177_z + 180.0F) * 4.0F / 360.0F) - 0.5D) & 3;
                     func_150924_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, i1, block);
-                    --p_77648_1_.field_77994_a;
+                    --p_77648_1_.count;
                     return true;
                 }
             }

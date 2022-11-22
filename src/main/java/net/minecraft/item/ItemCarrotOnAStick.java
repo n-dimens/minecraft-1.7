@@ -15,8 +15,8 @@ public class ItemCarrotOnAStick extends Item
     public ItemCarrotOnAStick()
     {
         this.func_77637_a(CreativeTabs.field_78029_e);
-        this.func_77625_d(1);
-        this.func_77656_e(25);
+        this.setStackMaxSize(1);
+        this.setDurability(25);
     }
 
     @SideOnly(Side.CLIENT)
@@ -37,12 +37,12 @@ public class ItemCarrotOnAStick extends Item
         {
             EntityPig entitypig = (EntityPig)p_77659_3_.field_70154_o;
 
-            if (entitypig.func_82183_n().func_82633_h() && p_77659_1_.func_77958_k() - p_77659_1_.func_77960_j() >= 7)
+            if (entitypig.func_82183_n().func_82633_h() && p_77659_1_.getDurability() - p_77659_1_.func_77960_j() >= 7)
             {
                 entitypig.func_82183_n().func_82632_g();
                 p_77659_1_.func_77972_a(7, p_77659_3_);
 
-                if (p_77659_1_.field_77994_a == 0)
+                if (p_77659_1_.count == 0)
                 {
                     ItemStack itemstack1 = new ItemStack(Items.FISHING_ROD);
                     itemstack1.func_77982_d(p_77659_1_.field_77990_d);

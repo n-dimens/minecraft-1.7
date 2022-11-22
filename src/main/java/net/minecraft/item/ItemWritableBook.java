@@ -11,7 +11,7 @@ public class ItemWritableBook extends Item
 
     public ItemWritableBook()
     {
-        this.func_77625_d(1);
+        this.setStackMaxSize(1);
     }
 
     public ItemStack func_77659_a(ItemStack p_77659_1_, World p_77659_2_, EntityPlayer p_77659_3_)

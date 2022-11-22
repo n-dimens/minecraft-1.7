@@ -4,7 +4,7 @@ import com.google.common.base.Charsets;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.ByteBufProcessor;
-import io.netty.util.ReferenceCounted;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -104,12 +104,12 @@ public class PacketBuffer extends ByteBuf
         }
         else
         {
-            this.writeShort(Item.func_150891_b(p_150788_1_.func_77973_b()));
-            this.writeByte(p_150788_1_.field_77994_a);
+            this.writeShort(Item.func_150891_b(p_150788_1_.getBaseItem()));
+            this.writeByte(p_150788_1_.count);
             this.writeShort(p_150788_1_.func_77960_j());
             NBTTagCompound nbttagcompound = null;
 
-            if (p_150788_1_.func_77973_b().func_77645_m() || p_150788_1_.func_77973_b().func_77651_p())
+            if (p_150788_1_.getBaseItem().func_77645_m() || p_150788_1_.getBaseItem().func_77651_p())
             {
                 nbttagcompound = p_150788_1_.field_77990_d;
             }

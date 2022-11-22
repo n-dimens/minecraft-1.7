@@ -37,48 +37,49 @@ import net.minecraft.world.World;
 public final class ItemStack
 {
     public static final DecimalFormat field_111284_a = new DecimalFormat("#.###");
-    public int field_77994_a;
+    public int count;
     public int field_77992_b;
-    private Item field_151002_e;
+    private Item baseItem;
     public NBTTagCompound field_77990_d;
-    int field_77991_e;
+    /** Наносимый урон */
+    int damage;
     private EntityItemFrame field_82843_f;
     private static final String __OBFID = "CL_00000043";
 
-    public ItemStack(Block p_i1876_1_)
+    public ItemStack(Block baseBlock)
     {
-        this(p_i1876_1_, 1);
+        this(baseBlock, 1);
     }
 
-    public ItemStack(Block p_i1877_1_, int p_i1877_2_)
+    public ItemStack(Block baseBlock, int count)
     {
-        this(p_i1877_1_, p_i1877_2_, 0);
+        this(baseBlock, count, 0);
     }
 
-    public ItemStack(Block p_i1878_1_, int p_i1878_2_, int p_i1878_3_)
+    public ItemStack(Block baseBlock, int count, int damage)
     {
-        this(Item.func_150898_a(p_i1878_1_), p_i1878_2_, p_i1878_3_);
+        this(Item.func_150898_a(baseBlock), count, damage);
     }
 
-    public ItemStack(Item p_i1879_1_)
+    public ItemStack(Item baseItem)
     {
-        this(p_i1879_1_, 1);
+        this(baseItem, 1);
     }
 
-    public ItemStack(Item p_i1880_1_, int p_i1880_2_)
+    public ItemStack(Item baseItem, int count)
     {
-        this(p_i1880_1_, p_i1880_2_, 0);
+        this(baseItem, count, 0);
     }
 
-    public ItemStack(Item p_i1881_1_, int p_i1881_2_, int p_i1881_3_)
+    public ItemStack(Item baseItem, int count, int damage)
     {
-        this.field_151002_e = p_i1881_1_;
-        this.field_77994_a = p_i1881_2_;
-        this.field_77991_e = p_i1881_3_;
+        this.baseItem = baseItem;
+        this.count = count;
+        this.damage = damage;
 
-        if (this.field_77991_e < 0)
+        if (this.damage < 0)
         {
-            this.field_77991_e = 0;
+            this.damage = 0;
         }
     }
 
@@ -86,48 +87,48 @@ public final class ItemStack
     {
         ItemStack itemstack = new ItemStack();
         itemstack.func_77963_c(p_77949_0_);
-        return itemstack.func_77973_b() != null ? itemstack : null;
+        return itemstack.getBaseItem() != null ? itemstack : null;
     }
 
     private ItemStack() {}
 
     public ItemStack func_77979_a(int p_77979_1_)
     {
-        ItemStack itemstack = new ItemStack(this.field_151002_e, p_77979_1_, this.field_77991_e);
+        ItemStack itemstack = new ItemStack(this.baseItem, p_77979_1_, this.damage);
 
         if (this.field_77990_d != null)
         {
             itemstack.field_77990_d = (NBTTagCompound)this.field_77990_d.func_74737_b();
         }
 
-        this.field_77994_a -= p_77979_1_;
+        this.count -= p_77979_1_;
         return itemstack;
     }
 
-    public Item func_77973_b()
+    public Item getBaseItem()
     {
-        return this.field_151002_e;
+        return this.baseItem;
     }
 
     @SideOnly(Side.CLIENT)
     public IIcon func_77954_c()
     {
-        return this.func_77973_b().func_77650_f(this);
+        return this.getBaseItem().func_77650_f(this);
     }
 
     @SideOnly(Side.CLIENT)
     public int func_94608_d()
     {
-        return this.func_77973_b().func_94901_k();
+        return this.getBaseItem().func_94901_k();
     }
 
     public boolean func_77943_a(EntityPlayer p_77943_1_, World p_77943_2_, int p_77943_3_, int p_77943_4_, int p_77943_5_, int p_77943_6_, float p_77943_7_, float p_77943_8_, float p_77943_9_)
     {
-        boolean flag = this.func_77973_b().func_77648_a(this, p_77943_1_, p_77943_2_, p_77943_3_, p_77943_4_, p_77943_5_, p_77943_6_, p_77943_7_, p_77943_8_, p_77943_9_);
+        boolean flag = this.getBaseItem().func_77648_a(this, p_77943_1_, p_77943_2_, p_77943_3_, p_77943_4_, p_77943_5_, p_77943_6_, p_77943_7_, p_77943_8_, p_77943_9_);
 
         if (flag)
         {
-            p_77943_1_.func_71064_a(StatList.field_75929_E[Item.func_150891_b(this.field_151002_e)], 1);
+            p_77943_1_.func_71064_a(StatList.field_75929_E[Item.func_150891_b(this.baseItem)], 1);
         }
 
         return flag;
@@ -135,24 +136,24 @@ public final class ItemStack
 
     public float func_150997_a(Block p_150997_1_)
     {
-        return this.func_77973_b().func_150893_a(this, p_150997_1_);
+        return this.getBaseItem().func_150893_a(this, p_150997_1_);
     }
 
     public ItemStack func_77957_a(World p_77957_1_, EntityPlayer p_77957_2_)
     {
-        return this.func_77973_b().func_77659_a(this, p_77957_1_, p_77957_2_);
+        return this.getBaseItem().func_77659_a(this, p_77957_1_, p_77957_2_);
     }
 
     public ItemStack func_77950_b(World p_77950_1_, EntityPlayer p_77950_2_)
     {
-        return this.func_77973_b().func_77654_b(this, p_77950_1_, p_77950_2_);
+        return this.getBaseItem().func_77654_b(this, p_77950_1_, p_77950_2_);
     }
 
     public NBTTagCompound func_77955_b(NBTTagCompound p_77955_1_)
     {
-        p_77955_1_.func_74777_a("id", (short)Item.func_150891_b(this.field_151002_e));
-        p_77955_1_.func_74774_a("Count", (byte)this.field_77994_a);
-        p_77955_1_.func_74777_a("Damage", (short)this.field_77991_e);
+        p_77955_1_.func_74777_a("id", (short)Item.func_150891_b(this.baseItem));
+        p_77955_1_.func_74774_a("Count", (byte)this.count);
+        p_77955_1_.func_74777_a("Damage", (short)this.damage);
 
         if (this.field_77990_d != null)
         {
@@ -164,13 +165,13 @@ public final class ItemStack
 
     public void func_77963_c(NBTTagCompound p_77963_1_)
     {
-        this.field_151002_e = Item.func_150899_d(p_77963_1_.func_74765_d("id"));
-        this.field_77994_a = p_77963_1_.func_74771_c("Count");
-        this.field_77991_e = p_77963_1_.func_74765_d("Damage");
+        this.baseItem = Item.func_150899_d(p_77963_1_.func_74765_d("id"));
+        this.count = p_77963_1_.func_74771_c("Count");
+        this.damage = p_77963_1_.func_74765_d("Damage");
 
-        if (this.field_77991_e < 0)
+        if (this.damage < 0)
         {
-            this.field_77991_e = 0;
+            this.damage = 0;
         }
 
         if (p_77963_1_.func_150297_b("tag", 10))
@@ -181,7 +182,7 @@ public final class ItemStack
 
     public int func_77976_d()
     {
-        return this.func_77973_b().func_77639_j();
+        return this.getBaseItem().getStackMaxSize();
     }
 
     public boolean func_77985_e()
@@ -191,42 +192,42 @@ public final class ItemStack
 
     public boolean func_77984_f()
     {
-        return this.field_151002_e.func_77612_l() <= 0 ? false : !this.func_77942_o() || !this.func_77978_p().func_74767_n("Unbreakable");
+        return this.baseItem.getDurability() <= 0 ? false : !this.func_77942_o() || !this.func_77978_p().func_74767_n("Unbreakable");
     }
 
     public boolean func_77981_g()
     {
-        return this.field_151002_e.func_77614_k();
+        return this.baseItem.func_77614_k();
     }
 
     public boolean func_77951_h()
     {
-        return this.func_77984_f() && this.field_77991_e > 0;
+        return this.func_77984_f() && this.damage > 0;
     }
 
     public int func_77952_i()
     {
-        return this.field_77991_e;
+        return this.damage;
     }
 
     public int func_77960_j()
     {
-        return this.field_77991_e;
+        return this.damage;
     }
 
     public void func_77964_b(int p_77964_1_)
     {
-        this.field_77991_e = p_77964_1_;
+        this.damage = p_77964_1_;
 
-        if (this.field_77991_e < 0)
+        if (this.damage < 0)
         {
-            this.field_77991_e = 0;
+            this.damage = 0;
         }
     }
 
-    public int func_77958_k()
+    public int getDurability()
     {
-        return this.field_151002_e.func_77612_l();
+        return this.baseItem.getDurability();
     }
 
     public boolean func_96631_a(int p_96631_1_, Random p_96631_2_)
@@ -258,39 +259,39 @@ public final class ItemStack
                 }
             }
 
-            this.field_77991_e += p_96631_1_;
-            return this.field_77991_e > this.func_77958_k();
+            this.damage += p_96631_1_;
+            return this.damage > this.getDurability();
         }
     }
 
-    public void func_77972_a(int p_77972_1_, EntityLivingBase p_77972_2_)
+    public void func_77972_a(int value, EntityLivingBase owner)
     {
-        if (!(p_77972_2_ instanceof EntityPlayer) || !((EntityPlayer)p_77972_2_).field_71075_bZ.field_75098_d)
+        if (!(owner instanceof EntityPlayer) || !((EntityPlayer)owner).capabilities.instabuild)
         {
             if (this.func_77984_f())
             {
-                if (this.func_96631_a(p_77972_1_, p_77972_2_.func_70681_au()))
+                if (this.func_96631_a(value, owner.func_70681_au()))
                 {
-                    p_77972_2_.func_70669_a(this);
-                    --this.field_77994_a;
+                    owner.func_70669_a(this);
+                    --this.count;
 
-                    if (p_77972_2_ instanceof EntityPlayer)
+                    if (owner instanceof EntityPlayer)
                     {
-                        EntityPlayer entityplayer = (EntityPlayer)p_77972_2_;
-                        entityplayer.func_71064_a(StatList.field_75930_F[Item.func_150891_b(this.field_151002_e)], 1);
+                        EntityPlayer player = (EntityPlayer)owner;
+                        player.func_71064_a(StatList.field_75930_F[Item.func_150891_b(this.baseItem)], 1);
 
-                        if (this.field_77994_a == 0 && this.func_77973_b() instanceof ItemBow)
+                        if (this.count == 0 && this.getBaseItem() instanceof ItemBow)
                         {
-                            entityplayer.func_71028_bD();
+                            player.func_71028_bD();
                         }
                     }
 
-                    if (this.field_77994_a < 0)
+                    if (this.count < 0)
                     {
-                        this.field_77994_a = 0;
+                        this.count = 0;
                     }
 
-                    this.field_77991_e = 0;
+                    this.damage = 0;
                 }
             }
         }
@@ -298,37 +299,37 @@ public final class ItemStack
 
     public void func_77961_a(EntityLivingBase p_77961_1_, EntityPlayer p_77961_2_)
     {
-        boolean flag = this.field_151002_e.func_77644_a(this, p_77961_1_, p_77961_2_);
+        boolean flag = this.baseItem.func_77644_a(this, p_77961_1_, p_77961_2_);
 
         if (flag)
         {
-            p_77961_2_.func_71064_a(StatList.field_75929_E[Item.func_150891_b(this.field_151002_e)], 1);
+            p_77961_2_.func_71064_a(StatList.field_75929_E[Item.func_150891_b(this.baseItem)], 1);
         }
     }
 
     public void func_150999_a(World p_150999_1_, Block p_150999_2_, int p_150999_3_, int p_150999_4_, int p_150999_5_, EntityPlayer p_150999_6_)
     {
-        boolean flag = this.field_151002_e.func_150894_a(this, p_150999_1_, p_150999_2_, p_150999_3_, p_150999_4_, p_150999_5_, p_150999_6_);
+        boolean flag = this.baseItem.func_150894_a(this, p_150999_1_, p_150999_2_, p_150999_3_, p_150999_4_, p_150999_5_, p_150999_6_);
 
         if (flag)
         {
-            p_150999_6_.func_71064_a(StatList.field_75929_E[Item.func_150891_b(this.field_151002_e)], 1);
+            p_150999_6_.func_71064_a(StatList.field_75929_E[Item.func_150891_b(this.baseItem)], 1);
         }
     }
 
     public boolean func_150998_b(Block p_150998_1_)
     {
-        return this.field_151002_e.func_150897_b(p_150998_1_);
+        return this.baseItem.func_150897_b(p_150998_1_);
     }
 
     public boolean func_111282_a(EntityPlayer p_111282_1_, EntityLivingBase p_111282_2_)
     {
-        return this.field_151002_e.func_111207_a(this, p_111282_1_, p_111282_2_);
+        return this.baseItem.func_111207_a(this, p_111282_1_, p_111282_2_);
     }
 
     public ItemStack func_77946_l()
     {
-        ItemStack itemstack = new ItemStack(this.field_151002_e, this.field_77994_a, this.field_77991_e);
+        ItemStack itemstack = new ItemStack(this.baseItem, this.count, this.damage);
 
         if (this.field_77990_d != null)
         {
@@ -350,17 +351,17 @@ public final class ItemStack
 
     private boolean func_77959_d(ItemStack p_77959_1_)
     {
-        return this.field_77994_a != p_77959_1_.field_77994_a ? false : (this.field_151002_e != p_77959_1_.field_151002_e ? false : (this.field_77991_e != p_77959_1_.field_77991_e ? false : (this.field_77990_d == null && p_77959_1_.field_77990_d != null ? false : this.field_77990_d == null || this.field_77990_d.equals(p_77959_1_.field_77990_d))));
+        return this.count != p_77959_1_.count ? false : (this.baseItem != p_77959_1_.baseItem ? false : (this.damage != p_77959_1_.damage ? false : (this.field_77990_d == null && p_77959_1_.field_77990_d != null ? false : this.field_77990_d == null || this.field_77990_d.equals(p_77959_1_.field_77990_d))));
     }
 
     public boolean func_77969_a(ItemStack p_77969_1_)
     {
-        return this.field_151002_e == p_77969_1_.field_151002_e && this.field_77991_e == p_77969_1_.field_77991_e;
+        return this.baseItem == p_77969_1_.baseItem && this.damage == p_77969_1_.damage;
     }
 
     public String func_77977_a()
     {
-        return this.field_151002_e.func_77667_c(this);
+        return this.baseItem.func_77667_c(this);
     }
 
     public static ItemStack func_77944_b(ItemStack p_77944_0_)
@@ -370,7 +371,7 @@ public final class ItemStack
 
     public String toString()
     {
-        return this.field_77994_a + "x" + this.field_151002_e.func_77658_a() + "@" + this.field_77991_e;
+        return this.count + "x" + this.baseItem.func_77658_a() + "@" + this.damage;
     }
 
     public void func_77945_a(World p_77945_1_, Entity p_77945_2_, int p_77945_3_, boolean p_77945_4_)
@@ -380,28 +381,28 @@ public final class ItemStack
             --this.field_77992_b;
         }
 
-        this.field_151002_e.func_77663_a(this, p_77945_1_, p_77945_2_, p_77945_3_, p_77945_4_);
+        this.baseItem.func_77663_a(this, p_77945_1_, p_77945_2_, p_77945_3_, p_77945_4_);
     }
 
     public void func_77980_a(World p_77980_1_, EntityPlayer p_77980_2_, int p_77980_3_)
     {
-        p_77980_2_.func_71064_a(StatList.field_75928_D[Item.func_150891_b(this.field_151002_e)], p_77980_3_);
-        this.field_151002_e.func_77622_d(this, p_77980_1_, p_77980_2_);
+        p_77980_2_.func_71064_a(StatList.field_75928_D[Item.func_150891_b(this.baseItem)], p_77980_3_);
+        this.baseItem.func_77622_d(this, p_77980_1_, p_77980_2_);
     }
 
     public int func_77988_m()
     {
-        return this.func_77973_b().func_77626_a(this);
+        return this.getBaseItem().func_77626_a(this);
     }
 
     public EnumAction func_77975_n()
     {
-        return this.func_77973_b().func_77661_b(this);
+        return this.getBaseItem().func_77661_b(this);
     }
 
     public void func_77974_b(World p_77974_1_, EntityPlayer p_77974_2_, int p_77974_3_)
     {
-        this.func_77973_b().func_77615_a(this, p_77974_1_, p_77974_2_, p_77974_3_);
+        this.getBaseItem().func_77615_a(this, p_77974_1_, p_77974_2_, p_77974_3_);
     }
 
     public boolean func_77942_o()
@@ -426,7 +427,7 @@ public final class ItemStack
 
     public String func_82833_r()
     {
-        String s = this.func_77973_b().func_77653_i(this);
+        String s = this.getBaseItem().func_77653_i(this);
 
         if (this.field_77990_d != null && this.field_77990_d.func_150297_b("display", 10))
         {
@@ -507,24 +508,24 @@ public final class ItemStack
                 s1 = ")";
             }
 
-            i = Item.func_150891_b(this.field_151002_e);
+            i = Item.func_150891_b(this.baseItem);
 
             if (this.func_77981_g())
             {
-                s = s + String.format("#%04d/%d%s", new Object[] {Integer.valueOf(i), Integer.valueOf(this.field_77991_e), s1});
+                s = s + String.format("#%04d/%d%s", new Object[] {Integer.valueOf(i), Integer.valueOf(this.damage), s1});
             }
             else
             {
                 s = s + String.format("#%04d%s", new Object[] {Integer.valueOf(i), s1});
             }
         }
-        else if (!this.func_82837_s() && this.field_151002_e == Items.FILLED_MAP)
+        else if (!this.func_82837_s() && this.baseItem == Items.FILLED_MAP)
         {
-            s = s + " #" + this.field_77991_e;
+            s = s + " #" + this.damage;
         }
 
         arraylist.add(s);
-        this.field_151002_e.func_77624_a(this, p_82840_1_, arraylist, p_82840_2_);
+        this.baseItem.func_77624_a(this, p_82840_1_, arraylist, p_82840_2_);
 
         if (this.func_77942_o())
         {
@@ -623,7 +624,7 @@ public final class ItemStack
 
         if (p_82840_2_ && this.func_77951_h())
         {
-            arraylist.add("Durability: " + (this.func_77958_k() - this.func_77952_i()) + " / " + this.func_77958_k());
+            arraylist.add("Durability: " + (this.getDurability() - this.func_77952_i()) + " / " + this.getDurability());
         }
 
         return arraylist;
@@ -632,17 +633,17 @@ public final class ItemStack
     @SideOnly(Side.CLIENT)
     public boolean func_77962_s()
     {
-        return this.func_77973_b().func_77636_d(this);
+        return this.getBaseItem().func_77636_d(this);
     }
 
     public EnumRarity func_77953_t()
     {
-        return this.func_77973_b().func_77613_e(this);
+        return this.getBaseItem().func_77613_e(this);
     }
 
     public boolean func_77956_u()
     {
-        return !this.func_77973_b().func_77616_k(this) ? false : !this.func_77948_v();
+        return !this.getBaseItem().func_77616_k(this) ? false : !this.func_77948_v();
     }
 
     public void func_77966_a(Enchantment p_77966_1_, int p_77966_2_)
@@ -681,7 +682,7 @@ public final class ItemStack
 
     public boolean func_82835_x()
     {
-        return this.func_77973_b().func_82788_x();
+        return this.getBaseItem().func_82788_x();
     }
 
     public boolean func_82839_y()
@@ -736,7 +737,7 @@ public final class ItemStack
         }
         else
         {
-            object = this.func_77973_b().func_111205_h();
+            object = this.getBaseItem().func_111205_h();
         }
 
         return (Multimap)object;
@@ -744,14 +745,14 @@ public final class ItemStack
 
     public void func_150996_a(Item p_150996_1_)
     {
-        this.field_151002_e = p_150996_1_;
+        this.baseItem = p_150996_1_;
     }
 
     public IChatComponent func_151000_E()
     {
         IChatComponent ichatcomponent = (new ChatComponentText("[")).func_150258_a(this.func_82833_r()).func_150258_a("]");
 
-        if (this.field_151002_e != null)
+        if (this.baseItem != null)
         {
             NBTTagCompound nbttagcompound = new NBTTagCompound();
             this.func_77955_b(nbttagcompound);

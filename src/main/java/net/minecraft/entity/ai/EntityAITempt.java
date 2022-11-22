@@ -49,7 +49,7 @@ public class EntityAITempt extends EntityAIBase
             else
             {
                 ItemStack itemstack = this.field_75289_h.func_71045_bC();
-                return itemstack == null ? false : itemstack.func_77973_b() == this.field_151484_k;
+                return itemstack == null ? false : itemstack.getBaseItem() == this.field_151484_k;
             }
         }
     }

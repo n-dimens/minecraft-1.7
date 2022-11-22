@@ -18,7 +18,7 @@ public class ItemBoat extends Item
 
     public ItemBoat()
     {
-        this.field_77777_bU = 1;
+        this.stackMaxSize = 1;
         this.func_77637_a(CreativeTabs.field_78029_e);
     }
 
@@ -99,9 +99,9 @@ public class ItemBoat extends Item
                         p_77659_2_.func_72838_d(entityboat);
                     }
 
-                    if (!p_77659_3_.field_71075_bZ.field_75098_d)
+                    if (!p_77659_3_.capabilities.instabuild)
                     {
-                        --p_77659_1_.field_77994_a;
+                        --p_77659_1_.count;
                     }
                 }
 

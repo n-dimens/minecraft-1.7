@@ -40,7 +40,7 @@ public class EntityBat extends EntityAmbientCreature
 
     protected String func_70639_aQ()
     {
-        return this.func_82235_h() && this.field_70146_Z.nextInt(4) != 0 ? null : "mob.bat.idle";
+        return this.func_82235_h() && this.randomizer.nextInt(4) != 0 ? null : "mob.bat.idle";
     }
 
     protected String func_70621_aR()
@@ -120,9 +120,9 @@ public class EntityBat extends EntityAmbientCreature
             }
             else
             {
-                if (this.field_70146_Z.nextInt(200) == 0)
+                if (this.randomizer.nextInt(200) == 0)
                 {
-                    this.field_70759_as = (float)this.field_70146_Z.nextInt(360);
+                    this.field_70759_as = (float)this.randomizer.nextInt(360);
                 }
 
                 if (this.world.func_72890_a(this, 4.0D) != null)
@@ -139,9 +139,9 @@ public class EntityBat extends EntityAmbientCreature
                 this.field_82237_a = null;
             }
 
-            if (this.field_82237_a == null || this.field_70146_Z.nextInt(30) == 0 || this.field_82237_a.func_71569_e((int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v) < 4.0F)
+            if (this.field_82237_a == null || this.randomizer.nextInt(30) == 0 || this.field_82237_a.func_71569_e((int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v) < 4.0F)
             {
-                this.field_82237_a = new ChunkCoordinates((int)this.field_70165_t + this.field_70146_Z.nextInt(7) - this.field_70146_Z.nextInt(7), (int)this.field_70163_u + this.field_70146_Z.nextInt(6) - 2, (int)this.field_70161_v + this.field_70146_Z.nextInt(7) - this.field_70146_Z.nextInt(7));
+                this.field_82237_a = new ChunkCoordinates((int)this.field_70165_t + this.randomizer.nextInt(7) - this.randomizer.nextInt(7), (int)this.field_70163_u + this.randomizer.nextInt(6) - 2, (int)this.field_70161_v + this.randomizer.nextInt(7) - this.randomizer.nextInt(7));
             }
 
             double d0 = (double)this.field_82237_a.field_71574_a + 0.5D - this.field_70165_t;
@@ -155,7 +155,7 @@ public class EntityBat extends EntityAmbientCreature
             this.field_70701_bs = 0.5F;
             this.field_70177_z += f1;
 
-            if (this.field_70146_Z.nextInt(100) == 0 && this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), (int)this.field_70163_u + 1, MathHelper.func_76128_c(this.field_70161_v)).func_149721_r())
+            if (this.randomizer.nextInt(100) == 0 && this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), (int)this.field_70163_u + 1, MathHelper.func_76128_c(this.field_70161_v)).func_149721_r())
             {
                 this.func_82236_f(true);
             }
@@ -223,7 +223,7 @@ public class EntityBat extends EntityAmbientCreature
 
             if ((calendar.get(2) + 1 != 10 || calendar.get(5) < 20) && (calendar.get(2) + 1 != 11 || calendar.get(5) > 3))
             {
-                if (this.field_70146_Z.nextBoolean())
+                if (this.randomizer.nextBoolean())
                 {
                     return false;
                 }
@@ -233,7 +233,7 @@ public class EntityBat extends EntityAmbientCreature
                 b0 = 7;
             }
 
-            return l > this.field_70146_Z.nextInt(b0) ? false : super.func_70601_bi();
+            return l > this.randomizer.nextInt(b0) ? false : super.func_70601_bi();
         }
     }
 }

@@ -16,7 +16,7 @@ public class ItemMultiTexture extends ItemBlock
         super(p_i45346_1_);
         this.field_150941_b = p_i45346_2_;
         this.field_150942_c = p_i45346_3_;
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77627_a(true);
     }
 

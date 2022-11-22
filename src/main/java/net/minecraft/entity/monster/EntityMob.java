@@ -166,7 +166,7 @@ public abstract class EntityMob extends EntityCreature implements IMob
         int j = MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
         int k = MathHelper.func_76128_c(this.field_70161_v);
 
-        if (this.world.func_72972_b(EnumSkyBlock.Sky, i, j, k) > this.field_70146_Z.nextInt(32))
+        if (this.world.func_72972_b(EnumSkyBlock.Sky, i, j, k) > this.randomizer.nextInt(32))
         {
             return false;
         }
@@ -182,7 +182,7 @@ public abstract class EntityMob extends EntityCreature implements IMob
                 this.world.field_73008_k = i1;
             }
 
-            return l <= this.field_70146_Z.nextInt(8);
+            return l <= this.randomizer.nextInt(8);
         }
     }
 

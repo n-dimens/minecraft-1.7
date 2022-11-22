@@ -112,7 +112,7 @@ public class BlockCauldron extends Block
         }
         else
         {
-            ItemStack itemstack = p_149727_5_.field_71071_by.func_70448_g();
+            ItemStack itemstack = p_149727_5_.inventory.getActiveItem();
 
             if (itemstack == null)
             {
@@ -123,13 +123,13 @@ public class BlockCauldron extends Block
                 int i1 = p_149727_1_.func_72805_g(p_149727_2_, p_149727_3_, p_149727_4_);
                 int j1 = func_150027_b(i1);
 
-                if (itemstack.func_77973_b() == Items.WATER_BUCKET)
+                if (itemstack.getBaseItem() == Items.WATER_BUCKET)
                 {
                     if (j1 < 3)
                     {
-                        if (!p_149727_5_.field_71075_bZ.field_75098_d)
+                        if (!p_149727_5_.capabilities.instabuild)
                         {
-                            p_149727_5_.field_71071_by.func_70299_a(p_149727_5_.field_71071_by.field_70461_c, new ItemStack(Items.BUCKET));
+                            p_149727_5_.inventory.putItem(p_149727_5_.inventory.activeItemPosition, new ItemStack(Items.BUCKET));
                         }
 
                         this.func_150024_a(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, 3);
@@ -139,15 +139,15 @@ public class BlockCauldron extends Block
                 }
                 else
                 {
-                    if (itemstack.func_77973_b() == Items.GLASS_BOTTLE)
+                    if (itemstack.getBaseItem() == Items.GLASS_BOTTLE)
                     {
                         if (j1 > 0)
                         {
-                            if (!p_149727_5_.field_71075_bZ.field_75098_d)
+                            if (!p_149727_5_.capabilities.instabuild)
                             {
                                 ItemStack itemstack1 = new ItemStack(Items.POTION, 1, 0);
 
-                                if (!p_149727_5_.field_71071_by.func_70441_a(itemstack1))
+                                if (!p_149727_5_.inventory.func_70441_a(itemstack1))
                                 {
                                     p_149727_1_.func_72838_d(new EntityItem(p_149727_1_, (double)p_149727_2_ + 0.5D, (double)p_149727_3_ + 1.5D, (double)p_149727_4_ + 0.5D, itemstack1));
                                 }
@@ -156,20 +156,20 @@ public class BlockCauldron extends Block
                                     ((EntityPlayerMP)p_149727_5_).func_71120_a(p_149727_5_.field_71069_bz);
                                 }
 
-                                --itemstack.field_77994_a;
+                                --itemstack.count;
 
-                                if (itemstack.field_77994_a <= 0)
+                                if (itemstack.count <= 0)
                                 {
-                                    p_149727_5_.field_71071_by.func_70299_a(p_149727_5_.field_71071_by.field_70461_c, (ItemStack)null);
+                                    p_149727_5_.inventory.putItem(p_149727_5_.inventory.activeItemPosition, (ItemStack)null);
                                 }
                             }
 
                             this.func_150024_a(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, j1 - 1);
                         }
                     }
-                    else if (j1 > 0 && itemstack.func_77973_b() instanceof ItemArmor && ((ItemArmor)itemstack.func_77973_b()).func_82812_d() == ItemArmor.ArmorMaterial.CLOTH)
+                    else if (j1 > 0 && itemstack.getBaseItem() instanceof ItemArmor && ((ItemArmor)itemstack.getBaseItem()).func_82812_d() == ItemArmor.ArmorMaterial.CLOTH)
                     {
-                        ItemArmor itemarmor = (ItemArmor)itemstack.func_77973_b();
+                        ItemArmor itemarmor = (ItemArmor)itemstack.getBaseItem();
                         itemarmor.func_82815_c(itemstack);
                         this.func_150024_a(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_, j1 - 1);
                         return true;

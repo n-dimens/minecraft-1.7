@@ -96,7 +96,7 @@ public class TileEntityHopper extends TileEntity implements IHopper
         {
             ItemStack itemstack;
 
-            if (this.field_145900_a[p_70298_1_].field_77994_a <= p_70298_2_)
+            if (this.field_145900_a[p_70298_1_].count <= p_70298_2_)
             {
                 itemstack = this.field_145900_a[p_70298_1_];
                 this.field_145900_a[p_70298_1_] = null;
@@ -106,7 +106,7 @@ public class TileEntityHopper extends TileEntity implements IHopper
             {
                 itemstack = this.field_145900_a[p_70298_1_].func_77979_a(p_70298_2_);
 
-                if (this.field_145900_a[p_70298_1_].field_77994_a == 0)
+                if (this.field_145900_a[p_70298_1_].count == 0)
                 {
                     this.field_145900_a[p_70298_1_] = null;
                 }
@@ -134,13 +134,13 @@ public class TileEntityHopper extends TileEntity implements IHopper
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         this.field_145900_a[p_70299_1_] = p_70299_2_;
 
-        if (p_70299_2_ != null && p_70299_2_.field_77994_a > this.func_70297_j_())
+        if (p_70299_2_ != null && p_70299_2_.count > this.func_70297_j_())
         {
-            p_70299_2_.field_77994_a = this.func_70297_j_();
+            p_70299_2_.count = this.func_70297_j_();
         }
     }
 
@@ -253,7 +253,7 @@ public class TileEntityHopper extends TileEntity implements IHopper
         {
             ItemStack itemstack = aitemstack[j];
 
-            if (itemstack == null || itemstack.field_77994_a != itemstack.func_77976_d())
+            if (itemstack == null || itemstack.count != itemstack.func_77976_d())
             {
                 return false;
             }
@@ -287,13 +287,13 @@ public class TileEntityHopper extends TileEntity implements IHopper
                         ItemStack itemstack = this.func_70301_a(j).func_77946_l();
                         ItemStack itemstack1 = func_145889_a(iinventory, this.func_70298_a(j, 1), i);
 
-                        if (itemstack1 == null || itemstack1.field_77994_a == 0)
+                        if (itemstack1 == null || itemstack1.count == 0)
                         {
                             iinventory.func_70296_d();
                             return true;
                         }
 
-                        this.func_70299_a(j, itemstack);
+                        this.putItem(j, itemstack);
                     }
                 }
 
@@ -313,7 +313,7 @@ public class TileEntityHopper extends TileEntity implements IHopper
             {
                 ItemStack itemstack1 = isidedinventory.func_70301_a(aint[l]);
 
-                if (itemstack1 == null || itemstack1.field_77994_a != itemstack1.func_77976_d())
+                if (itemstack1 == null || itemstack1.count != itemstack1.func_77976_d())
                 {
                     return false;
                 }
@@ -327,7 +327,7 @@ public class TileEntityHopper extends TileEntity implements IHopper
             {
                 ItemStack itemstack = p_152102_1_.func_70301_a(k);
 
-                if (itemstack == null || itemstack.field_77994_a != itemstack.func_77976_d())
+                if (itemstack == null || itemstack.count != itemstack.func_77976_d())
                 {
                     return false;
                 }
@@ -429,13 +429,13 @@ public class TileEntityHopper extends TileEntity implements IHopper
             ItemStack itemstack1 = itemstack.func_77946_l();
             ItemStack itemstack2 = func_145889_a(p_145892_0_, p_145892_1_.func_70298_a(p_145892_2_, 1), -1);
 
-            if (itemstack2 == null || itemstack2.field_77994_a == 0)
+            if (itemstack2 == null || itemstack2.count == 0)
             {
                 p_145892_1_.func_70296_d();
                 return true;
             }
 
-            p_145892_1_.func_70299_a(p_145892_2_, itemstack1);
+            p_145892_1_.putItem(p_145892_2_, itemstack1);
         }
 
         return false;
@@ -454,7 +454,7 @@ public class TileEntityHopper extends TileEntity implements IHopper
             ItemStack itemstack = p_145898_1_.func_92059_d().func_77946_l();
             ItemStack itemstack1 = func_145889_a(p_145898_0_, itemstack, -1);
 
-            if (itemstack1 != null && itemstack1.field_77994_a != 0)
+            if (itemstack1 != null && itemstack1.count != 0)
             {
                 p_145898_1_.func_92058_a(itemstack1);
             }
@@ -475,7 +475,7 @@ public class TileEntityHopper extends TileEntity implements IHopper
             ISidedInventory isidedinventory = (ISidedInventory)p_145889_0_;
             int[] aint = isidedinventory.func_94128_d(p_145889_2_);
 
-            for (int l = 0; l < aint.length && p_145889_1_ != null && p_145889_1_.field_77994_a > 0; ++l)
+            for (int l = 0; l < aint.length && p_145889_1_ != null && p_145889_1_.count > 0; ++l)
             {
                 p_145889_1_ = func_145899_c(p_145889_0_, p_145889_1_, aint[l], p_145889_2_);
             }
@@ -484,13 +484,13 @@ public class TileEntityHopper extends TileEntity implements IHopper
         {
             int j = p_145889_0_.func_70302_i_();
 
-            for (int k = 0; k < j && p_145889_1_ != null && p_145889_1_.field_77994_a > 0; ++k)
+            for (int k = 0; k < j && p_145889_1_ != null && p_145889_1_.count > 0; ++k)
             {
                 p_145889_1_ = func_145899_c(p_145889_0_, p_145889_1_, k, p_145889_2_);
             }
         }
 
-        if (p_145889_1_ != null && p_145889_1_.field_77994_a == 0)
+        if (p_145889_1_ != null && p_145889_1_.count == 0)
         {
             p_145889_1_ = null;
         }
@@ -518,16 +518,16 @@ public class TileEntityHopper extends TileEntity implements IHopper
 
             if (itemstack1 == null)
             {
-                p_145899_0_.func_70299_a(p_145899_2_, p_145899_1_);
+                p_145899_0_.putItem(p_145899_2_, p_145899_1_);
                 p_145899_1_ = null;
                 flag = true;
             }
             else if (func_145894_a(itemstack1, p_145899_1_))
             {
-                int k = p_145899_1_.func_77976_d() - itemstack1.field_77994_a;
-                int l = Math.min(p_145899_1_.field_77994_a, k);
-                p_145899_1_.field_77994_a -= l;
-                itemstack1.field_77994_a += l;
+                int k = p_145899_1_.func_77976_d() - itemstack1.count;
+                int l = Math.min(p_145899_1_.count, k);
+                p_145899_1_.count -= l;
+                itemstack1.count += l;
                 flag = l > 0;
             }
 
@@ -601,7 +601,7 @@ public class TileEntityHopper extends TileEntity implements IHopper
 
     private static boolean func_145894_a(ItemStack p_145894_0_, ItemStack p_145894_1_)
     {
-        return p_145894_0_.func_77973_b() != p_145894_1_.func_77973_b() ? false : (p_145894_0_.func_77960_j() != p_145894_1_.func_77960_j() ? false : (p_145894_0_.field_77994_a > p_145894_0_.func_77976_d() ? false : ItemStack.func_77970_a(p_145894_0_, p_145894_1_)));
+        return p_145894_0_.getBaseItem() != p_145894_1_.getBaseItem() ? false : (p_145894_0_.func_77960_j() != p_145894_1_.func_77960_j() ? false : (p_145894_0_.count > p_145894_0_.func_77976_d() ? false : ItemStack.func_77970_a(p_145894_0_, p_145894_1_)));
     }
 
     public double func_96107_aA()

@@ -43,7 +43,7 @@ public class InventoryMerchant implements IInventory
                 this.field_70474_b[p_70298_1_] = null;
                 return itemstack;
             }
-            else if (this.field_70474_b[p_70298_1_].field_77994_a <= p_70298_2_)
+            else if (this.field_70474_b[p_70298_1_].count <= p_70298_2_)
             {
                 itemstack = this.field_70474_b[p_70298_1_];
                 this.field_70474_b[p_70298_1_] = null;
@@ -59,7 +59,7 @@ public class InventoryMerchant implements IInventory
             {
                 itemstack = this.field_70474_b[p_70298_1_].func_77979_a(p_70298_2_);
 
-                if (this.field_70474_b[p_70298_1_].field_77994_a == 0)
+                if (this.field_70474_b[p_70298_1_].count == 0)
                 {
                     this.field_70474_b[p_70298_1_] = null;
                 }
@@ -97,13 +97,13 @@ public class InventoryMerchant implements IInventory
         }
     }
 
-    public void func_70299_a(int p_70299_1_, ItemStack p_70299_2_)
+    public void putItem(int p_70299_1_, ItemStack p_70299_2_)
     {
         this.field_70474_b[p_70299_1_] = p_70299_2_;
 
-        if (p_70299_2_ != null && p_70299_2_.field_77994_a > this.func_70297_j_())
+        if (p_70299_2_ != null && p_70299_2_.count > this.func_70297_j_())
         {
-            p_70299_2_.field_77994_a = this.func_70297_j_();
+            p_70299_2_.count = this.func_70297_j_();
         }
 
         if (this.func_70469_d(p_70299_1_))
@@ -160,7 +160,7 @@ public class InventoryMerchant implements IInventory
 
         if (itemstack == null)
         {
-            this.func_70299_a(2, (ItemStack)null);
+            this.putItem(2, (ItemStack)null);
         }
         else
         {
@@ -173,7 +173,7 @@ public class InventoryMerchant implements IInventory
                 if (merchantrecipe != null && !merchantrecipe.func_82784_g())
                 {
                     this.field_70472_d = merchantrecipe;
-                    this.func_70299_a(2, merchantrecipe.func_77397_d().func_77946_l());
+                    this.putItem(2, merchantrecipe.func_77397_d().func_77946_l());
                 }
                 else if (itemstack1 != null)
                 {
@@ -182,16 +182,16 @@ public class InventoryMerchant implements IInventory
                     if (merchantrecipe != null && !merchantrecipe.func_82784_g())
                     {
                         this.field_70472_d = merchantrecipe;
-                        this.func_70299_a(2, merchantrecipe.func_77397_d().func_77946_l());
+                        this.putItem(2, merchantrecipe.func_77397_d().func_77946_l());
                     }
                     else
                     {
-                        this.func_70299_a(2, (ItemStack)null);
+                        this.putItem(2, (ItemStack)null);
                     }
                 }
                 else
                 {
-                    this.func_70299_a(2, (ItemStack)null);
+                    this.putItem(2, (ItemStack)null);
                 }
             }
         }

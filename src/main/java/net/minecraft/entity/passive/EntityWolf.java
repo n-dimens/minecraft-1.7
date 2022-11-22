@@ -50,16 +50,16 @@ public class EntityWolf extends EntityTameable
         super(p_i1696_1_);
         this.func_70105_a(0.6F, 0.8F);
         this.func_70661_as().func_75491_a(true);
-        this.field_70714_bg.func_75776_a(1, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(2, this.field_70911_d);
-        this.field_70714_bg.func_75776_a(3, new EntityAILeapAtTarget(this, 0.4F));
-        this.field_70714_bg.func_75776_a(4, new EntityAIAttackOnCollide(this, 1.0D, true));
-        this.field_70714_bg.func_75776_a(5, new EntityAIFollowOwner(this, 1.0D, 10.0F, 2.0F));
-        this.field_70714_bg.func_75776_a(6, new EntityAIMate(this, 1.0D));
-        this.field_70714_bg.func_75776_a(7, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(8, new EntityAIBeg(this, 8.0F));
-        this.field_70714_bg.func_75776_a(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.field_70714_bg.func_75776_a(9, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(1, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(2, this.field_70911_d);
+        this.aiTasks.func_75776_a(3, new EntityAILeapAtTarget(this, 0.4F));
+        this.aiTasks.func_75776_a(4, new EntityAIAttackOnCollide(this, 1.0D, true));
+        this.aiTasks.func_75776_a(5, new EntityAIFollowOwner(this, 1.0D, 10.0F, 2.0F));
+        this.aiTasks.func_75776_a(6, new EntityAIMate(this, 1.0D));
+        this.aiTasks.func_75776_a(7, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(8, new EntityAIBeg(this, 8.0F));
+        this.aiTasks.func_75776_a(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.aiTasks.func_75776_a(9, new EntityAILookIdle(this));
         this.field_70715_bh.func_75776_a(1, new EntityAIOwnerHurtByTarget(this));
         this.field_70715_bh.func_75776_a(2, new EntityAIOwnerHurtTarget(this));
         this.field_70715_bh.func_75776_a(3, new EntityAIHurtByTarget(this, true));
@@ -139,7 +139,7 @@ public class EntityWolf extends EntityTameable
 
     protected String func_70639_aQ()
     {
-        return this.func_70919_bu() ? "mob.wolf.growl" : (this.field_70146_Z.nextInt(3) == 0 ? (this.func_70909_n() && this.field_70180_af.func_111145_d(18) < 10.0F ? "mob.wolf.whine" : "mob.wolf.panting") : "mob.wolf.bark");
+        return this.func_70919_bu() ? "mob.wolf.growl" : (this.randomizer.nextInt(3) == 0 ? (this.func_70909_n() && this.field_70180_af.func_111145_d(18) < 10.0F ? "mob.wolf.whine" : "mob.wolf.panting") : "mob.wolf.bark");
     }
 
     protected String func_70621_aR()
@@ -205,7 +205,7 @@ public class EntityWolf extends EntityTameable
         {
             if (this.field_70929_i == 0.0F)
             {
-                this.func_85030_a("mob.wolf.shake", this.func_70599_aP(), (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F);
+                this.func_85030_a("mob.wolf.shake", this.func_70599_aP(), (this.randomizer.nextFloat() - this.randomizer.nextFloat()) * 0.2F + 1.0F);
             }
 
             this.field_70927_j = this.field_70929_i;
@@ -226,8 +226,8 @@ public class EntityWolf extends EntityTameable
 
                 for (int j = 0; j < i; ++j)
                 {
-                    float f1 = (this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * this.field_70130_N * 0.5F;
-                    float f2 = (this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * this.field_70130_N * 0.5F;
+                    float f1 = (this.randomizer.nextFloat() * 2.0F - 1.0F) * this.field_70130_N * 0.5F;
+                    float f2 = (this.randomizer.nextFloat() * 2.0F - 1.0F) * this.field_70130_N * 0.5F;
                     this.world.func_72869_a("splash", this.field_70165_t + (double)f1, (double)(f + 0.8F), this.field_70161_v + (double)f2, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                 }
             }
@@ -319,36 +319,36 @@ public class EntityWolf extends EntityTameable
         }
     }
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    public boolean resultOfImpact(EntityPlayer player)
     {
-        ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = player.inventory.getActiveItem();
 
         if (this.func_70909_n())
         {
             if (itemstack != null)
             {
-                if (itemstack.func_77973_b() instanceof ItemFood)
+                if (itemstack.getBaseItem() instanceof ItemFood)
                 {
-                    ItemFood itemfood = (ItemFood)itemstack.func_77973_b();
+                    ItemFood itemfood = (ItemFood)itemstack.getBaseItem();
 
                     if (itemfood.func_77845_h() && this.field_70180_af.func_111145_d(18) < 20.0F)
                     {
-                        if (!p_70085_1_.field_71075_bZ.field_75098_d)
+                        if (!player.capabilities.instabuild)
                         {
-                            --itemstack.field_77994_a;
+                            --itemstack.count;
                         }
 
                         this.func_70691_i((float)itemfood.func_150905_g(itemstack));
 
-                        if (itemstack.field_77994_a <= 0)
+                        if (itemstack.count <= 0)
                         {
-                            p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
+                            player.inventory.putItem(player.inventory.activeItemPosition, (ItemStack)null);
                         }
 
                         return true;
                     }
                 }
-                else if (itemstack.func_77973_b() == Items.DYE)
+                else if (itemstack.getBaseItem() == Items.DYE)
                 {
                     int i = BlockColored.func_150032_b(itemstack.func_77960_j());
 
@@ -356,9 +356,9 @@ public class EntityWolf extends EntityTameable
                     {
                         this.func_82185_r(i);
 
-                        if (!p_70085_1_.field_71075_bZ.field_75098_d && --itemstack.field_77994_a <= 0)
+                        if (!player.capabilities.instabuild && --itemstack.count <= 0)
                         {
-                            p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
+                            player.inventory.putItem(player.inventory.activeItemPosition, (ItemStack)null);
                         }
 
                         return true;
@@ -366,7 +366,7 @@ public class EntityWolf extends EntityTameable
                 }
             }
 
-            if (this.func_152114_e(p_70085_1_) && !this.world.field_72995_K && !this.func_70877_b(itemstack))
+            if (this.func_152114_e(player) && !this.world.field_72995_K && !this.func_70877_b(itemstack))
             {
                 this.field_70911_d.func_75270_a(!this.func_70906_o());
                 this.field_70703_bu = false;
@@ -375,28 +375,28 @@ public class EntityWolf extends EntityTameable
                 this.func_70624_b((EntityLivingBase)null);
             }
         }
-        else if (itemstack != null && itemstack.func_77973_b() == Items.BONE && !this.func_70919_bu())
+        else if (itemstack != null && itemstack.getBaseItem() == Items.BONE && !this.func_70919_bu())
         {
-            if (!p_70085_1_.field_71075_bZ.field_75098_d)
+            if (!player.capabilities.instabuild)
             {
-                --itemstack.field_77994_a;
+                --itemstack.count;
             }
 
-            if (itemstack.field_77994_a <= 0)
+            if (itemstack.count <= 0)
             {
-                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
+                player.inventory.putItem(player.inventory.activeItemPosition, (ItemStack)null);
             }
 
             if (!this.world.field_72995_K)
             {
-                if (this.field_70146_Z.nextInt(3) == 0)
+                if (this.randomizer.nextInt(3) == 0)
                 {
                     this.func_70903_f(true);
                     this.func_70778_a((PathEntity)null);
                     this.func_70624_b((EntityLivingBase)null);
                     this.field_70911_d.func_75270_a(true);
                     this.func_70606_j(20.0F);
-                    this.func_152115_b(p_70085_1_.func_110124_au().toString());
+                    this.func_152115_b(player.func_110124_au().toString());
                     this.func_70908_e(true);
                     this.world.func_72960_a(this, (byte)7);
                 }
@@ -410,7 +410,7 @@ public class EntityWolf extends EntityTameable
             return true;
         }
 
-        return super.func_70085_c(p_70085_1_);
+        return super.resultOfImpact(player);
     }
 
     @SideOnly(Side.CLIENT)
@@ -436,7 +436,7 @@ public class EntityWolf extends EntityTameable
 
     public boolean func_70877_b(ItemStack p_70877_1_)
     {
-        return p_70877_1_ == null ? false : (!(p_70877_1_.func_77973_b() instanceof ItemFood) ? false : ((ItemFood)p_70877_1_.func_77973_b()).func_77845_h());
+        return p_70877_1_ == null ? false : (!(p_70877_1_.getBaseItem() instanceof ItemFood) ? false : ((ItemFood)p_70877_1_.getBaseItem()).func_77845_h());
     }
 
     public int func_70641_bl()

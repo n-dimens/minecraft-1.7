@@ -30,7 +30,7 @@ public class SlotMerchantResult extends Slot
     {
         if (this.func_75216_d())
         {
-            this.field_75231_g += Math.min(p_75209_1_, this.func_75211_c().field_77994_a);
+            this.field_75231_g += Math.min(p_75209_1_, this.func_75211_c().count);
         }
 
         return super.func_75209_a(p_75209_1_);
@@ -62,18 +62,18 @@ public class SlotMerchantResult extends Slot
             {
                 this.field_75234_h.func_70933_a(merchantrecipe);
 
-                if (itemstack1 != null && itemstack1.field_77994_a <= 0)
+                if (itemstack1 != null && itemstack1.count <= 0)
                 {
                     itemstack1 = null;
                 }
 
-                if (itemstack2 != null && itemstack2.field_77994_a <= 0)
+                if (itemstack2 != null && itemstack2.count <= 0)
                 {
                     itemstack2 = null;
                 }
 
-                this.field_75233_a.func_70299_a(0, itemstack1);
-                this.field_75233_a.func_70299_a(1, itemstack2);
+                this.field_75233_a.putItem(0, itemstack1);
+                this.field_75233_a.putItem(1, itemstack2);
             }
         }
     }
@@ -83,18 +83,18 @@ public class SlotMerchantResult extends Slot
         ItemStack itemstack2 = p_75230_1_.func_77394_a();
         ItemStack itemstack3 = p_75230_1_.func_77396_b();
 
-        if (p_75230_2_ != null && p_75230_2_.func_77973_b() == itemstack2.func_77973_b())
+        if (p_75230_2_ != null && p_75230_2_.getBaseItem() == itemstack2.getBaseItem())
         {
-            if (itemstack3 != null && p_75230_3_ != null && itemstack3.func_77973_b() == p_75230_3_.func_77973_b())
+            if (itemstack3 != null && p_75230_3_ != null && itemstack3.getBaseItem() == p_75230_3_.getBaseItem())
             {
-                p_75230_2_.field_77994_a -= itemstack2.field_77994_a;
-                p_75230_3_.field_77994_a -= itemstack3.field_77994_a;
+                p_75230_2_.count -= itemstack2.count;
+                p_75230_3_.count -= itemstack3.count;
                 return true;
             }
 
             if (itemstack3 == null && p_75230_3_ == null)
             {
-                p_75230_2_.field_77994_a -= itemstack2.field_77994_a;
+                p_75230_2_.count -= itemstack2.count;
                 return true;
             }
         }

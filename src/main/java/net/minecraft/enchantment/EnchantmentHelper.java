@@ -63,7 +63,7 @@ public class EnchantmentHelper
     public static Map func_82781_a(ItemStack p_82781_0_)
     {
         LinkedHashMap linkedhashmap = new LinkedHashMap();
-        NBTTagList nbttaglist = p_82781_0_.func_77973_b() == Items.ENCHANTED_BOOK ? Items.ENCHANTED_BOOK.func_92110_g(p_82781_0_) : p_82781_0_.func_77986_q();
+        NBTTagList nbttaglist = p_82781_0_.getBaseItem() == Items.ENCHANTED_BOOK ? Items.ENCHANTED_BOOK.func_92110_g(p_82781_0_) : p_82781_0_.func_77986_q();
 
         if (nbttaglist != null)
         {
@@ -91,7 +91,7 @@ public class EnchantmentHelper
             nbttagcompound.func_74777_a("lvl", (short)((Integer)p_82782_0_.get(Integer.valueOf(i))).intValue());
             nbttaglist.func_74742_a(nbttagcompound);
 
-            if (p_82782_1_.func_77973_b() == Items.ENCHANTED_BOOK)
+            if (p_82782_1_.getBaseItem() == Items.ENCHANTED_BOOK)
             {
                 Items.ENCHANTED_BOOK.func_92115_a(p_82782_1_, new EnchantmentData(i, ((Integer)p_82782_0_.get(Integer.valueOf(i))).intValue()));
             }
@@ -99,7 +99,7 @@ public class EnchantmentHelper
 
         if (nbttaglist.func_74745_c() > 0)
         {
-            if (p_82782_1_.func_77973_b() != Items.ENCHANTED_BOOK)
+            if (p_82782_1_.getBaseItem() != Items.ENCHANTED_BOOK)
             {
                 p_82782_1_.func_77983_a("ench", nbttaglist);
             }
@@ -292,7 +292,7 @@ public class EnchantmentHelper
 
     public static int func_77514_a(Random p_77514_0_, int p_77514_1_, int p_77514_2_, ItemStack p_77514_3_)
     {
-        Item item = p_77514_3_.func_77973_b();
+        Item item = p_77514_3_.getBaseItem();
         int k = item.func_77619_b();
 
         if (k <= 0)
@@ -314,7 +314,7 @@ public class EnchantmentHelper
     public static ItemStack func_77504_a(Random p_77504_0_, ItemStack p_77504_1_, int p_77504_2_)
     {
         List list = func_77513_b(p_77504_0_, p_77504_1_, p_77504_2_);
-        boolean flag = p_77504_1_.func_77973_b() == Items.BOOK;
+        boolean flag = p_77504_1_.getBaseItem() == Items.BOOK;
 
         if (flag)
         {
@@ -345,7 +345,7 @@ public class EnchantmentHelper
 
     public static List func_77513_b(Random p_77513_0_, ItemStack p_77513_1_, int p_77513_2_)
     {
-        Item item = p_77513_1_.func_77973_b();
+        Item item = p_77513_1_.getBaseItem();
         int j = item.func_77619_b();
 
         if (j <= 0)
@@ -425,9 +425,9 @@ public class EnchantmentHelper
 
     public static Map func_77505_b(int p_77505_0_, ItemStack p_77505_1_)
     {
-        Item item = p_77505_1_.func_77973_b();
+        Item item = p_77505_1_.getBaseItem();
         HashMap hashmap = null;
-        boolean flag = p_77505_1_.func_77973_b() == Items.BOOK;
+        boolean flag = p_77505_1_.getBaseItem() == Items.BOOK;
         Enchantment[] aenchantment = Enchantment.field_77331_b;
         int j = aenchantment.length;
 

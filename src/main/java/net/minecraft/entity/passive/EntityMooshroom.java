@@ -18,26 +18,26 @@ public class EntityMooshroom extends EntityCow
         this.func_70105_a(0.9F, 1.3F);
     }
 
-    public boolean func_70085_c(EntityPlayer p_70085_1_)
+    public boolean resultOfImpact(EntityPlayer player)
     {
-        ItemStack itemstack = p_70085_1_.field_71071_by.func_70448_g();
+        ItemStack itemstack = player.inventory.getActiveItem();
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.BOWL && this.func_70874_b() >= 0)
+        if (itemstack != null && itemstack.getBaseItem() == Items.BOWL && this.func_70874_b() >= 0)
         {
-            if (itemstack.field_77994_a == 1)
+            if (itemstack.count == 1)
             {
-                p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, new ItemStack(Items.MUSHROOM_STEW));
+                player.inventory.putItem(player.inventory.activeItemPosition, new ItemStack(Items.MUSHROOM_STEW));
                 return true;
             }
 
-            if (p_70085_1_.field_71071_by.func_70441_a(new ItemStack(Items.MUSHROOM_STEW)) && !p_70085_1_.field_71075_bZ.field_75098_d)
+            if (player.inventory.func_70441_a(new ItemStack(Items.MUSHROOM_STEW)) && !player.capabilities.instabuild)
             {
-                p_70085_1_.field_71071_by.func_70298_a(p_70085_1_.field_71071_by.field_70461_c, 1);
+                player.inventory.func_70298_a(player.inventory.activeItemPosition, 1);
                 return true;
             }
         }
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.SHEARS && this.func_70874_b() >= 0)
+        if (itemstack != null && itemstack.getBaseItem() == Items.SHEARS && this.func_70874_b() >= 0)
         {
             this.func_70106_y();
             this.world.func_72869_a("largeexplode", this.field_70165_t, this.field_70163_u + (double)(this.field_70131_O / 2.0F), this.field_70161_v, 0.0D, 0.0D, 0.0D);
@@ -55,7 +55,7 @@ public class EntityMooshroom extends EntityCow
                     this.world.func_72838_d(new EntityItem(this.world, this.field_70165_t, this.field_70163_u + (double)this.field_70131_O, this.field_70161_v, new ItemStack(Blocks.RED_MUSHROOM)));
                 }
 
-                itemstack.func_77972_a(1, p_70085_1_);
+                itemstack.func_77972_a(1, player);
                 this.func_85030_a("mob.sheep.shear", 1.0F, 1.0F);
             }
 
@@ -63,7 +63,7 @@ public class EntityMooshroom extends EntityCow
         }
         else
         {
-            return super.func_70085_c(p_70085_1_);
+            return super.resultOfImpact(player);
         }
     }
 

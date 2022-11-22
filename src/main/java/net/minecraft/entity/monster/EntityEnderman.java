@@ -101,9 +101,9 @@ public class EntityEnderman extends EntityMob
 
     private boolean func_70821_d(EntityPlayer p_70821_1_)
     {
-        ItemStack itemstack = p_70821_1_.field_71071_by.field_70460_b[3];
+        ItemStack itemstack = p_70821_1_.inventory.field_70460_b[3];
 
-        if (itemstack != null && itemstack.func_77973_b() == Item.func_150898_a(Blocks.PUMPKIN))
+        if (itemstack != null && itemstack.getBaseItem() == Item.func_150898_a(Blocks.PUMPKIN))
         {
             return false;
         }
@@ -147,11 +147,11 @@ public class EntityEnderman extends EntityMob
 
             if (this.func_146080_bZ().func_149688_o() == Material.field_151579_a)
             {
-                if (this.field_70146_Z.nextInt(20) == 0)
+                if (this.randomizer.nextInt(20) == 0)
                 {
-                    k = MathHelper.func_76128_c(this.field_70165_t - 2.0D + this.field_70146_Z.nextDouble() * 4.0D);
-                    i = MathHelper.func_76128_c(this.field_70163_u + this.field_70146_Z.nextDouble() * 3.0D);
-                    j = MathHelper.func_76128_c(this.field_70161_v - 2.0D + this.field_70146_Z.nextDouble() * 4.0D);
+                    k = MathHelper.func_76128_c(this.field_70165_t - 2.0D + this.randomizer.nextDouble() * 4.0D);
+                    i = MathHelper.func_76128_c(this.field_70163_u + this.randomizer.nextDouble() * 3.0D);
+                    j = MathHelper.func_76128_c(this.field_70161_v - 2.0D + this.randomizer.nextDouble() * 4.0D);
                     block = this.world.func_147439_a(k, i, j);
 
                     if (field_70827_d[Block.func_149682_b(block)])
@@ -162,11 +162,11 @@ public class EntityEnderman extends EntityMob
                     }
                 }
             }
-            else if (this.field_70146_Z.nextInt(2000) == 0)
+            else if (this.randomizer.nextInt(2000) == 0)
             {
-                k = MathHelper.func_76128_c(this.field_70165_t - 1.0D + this.field_70146_Z.nextDouble() * 2.0D);
-                i = MathHelper.func_76128_c(this.field_70163_u + this.field_70146_Z.nextDouble() * 2.0D);
-                j = MathHelper.func_76128_c(this.field_70161_v - 1.0D + this.field_70146_Z.nextDouble() * 2.0D);
+                k = MathHelper.func_76128_c(this.field_70165_t - 1.0D + this.randomizer.nextDouble() * 2.0D);
+                i = MathHelper.func_76128_c(this.field_70163_u + this.randomizer.nextDouble() * 2.0D);
+                j = MathHelper.func_76128_c(this.field_70161_v - 1.0D + this.randomizer.nextDouble() * 2.0D);
                 block = this.world.func_147439_a(k, i, j);
                 Block block1 = this.world.func_147439_a(k, i - 1, j);
 
@@ -180,14 +180,14 @@ public class EntityEnderman extends EntityMob
 
         for (k = 0; k < 2; ++k)
         {
-            this.world.func_72869_a("portal", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O - 0.25D, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, (this.field_70146_Z.nextDouble() - 0.5D) * 2.0D, -this.field_70146_Z.nextDouble(), (this.field_70146_Z.nextDouble() - 0.5D) * 2.0D);
+            this.world.func_72869_a("portal", this.field_70165_t + (this.randomizer.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.randomizer.nextDouble() * (double)this.field_70131_O - 0.25D, this.field_70161_v + (this.randomizer.nextDouble() - 0.5D) * (double)this.field_70130_N, (this.randomizer.nextDouble() - 0.5D) * 2.0D, -this.randomizer.nextDouble(), (this.randomizer.nextDouble() - 0.5D) * 2.0D);
         }
 
         if (this.world.func_72935_r() && !this.world.field_72995_K)
         {
             float f = this.func_70013_c(1.0F);
 
-            if (f > 0.5F && this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)) && this.field_70146_Z.nextFloat() * 30.0F < (f - 0.4F) * 2.0F)
+            if (f > 0.5F && this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)) && this.randomizer.nextFloat() * 30.0F < (f - 0.4F) * 2.0F)
             {
                 this.field_70789_a = null;
                 this.func_70819_e(false);
@@ -204,7 +204,7 @@ public class EntityEnderman extends EntityMob
             this.func_70820_n();
         }
 
-        if (this.func_70823_r() && !this.field_104003_g && this.field_70146_Z.nextInt(100) == 0)
+        if (this.func_70823_r() && !this.field_104003_g && this.randomizer.nextInt(100) == 0)
         {
             this.func_70819_e(false);
         }
@@ -246,9 +246,9 @@ public class EntityEnderman extends EntityMob
 
     protected boolean func_70820_n()
     {
-        double d0 = this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * 64.0D;
-        double d1 = this.field_70163_u + (double)(this.field_70146_Z.nextInt(64) - 32);
-        double d2 = this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * 64.0D;
+        double d0 = this.field_70165_t + (this.randomizer.nextDouble() - 0.5D) * 64.0D;
+        double d1 = this.field_70163_u + (double)(this.randomizer.nextInt(64) - 32);
+        double d2 = this.field_70161_v + (this.randomizer.nextDouble() - 0.5D) * 64.0D;
         return this.func_70825_j(d0, d1, d2);
     }
 
@@ -257,9 +257,9 @@ public class EntityEnderman extends EntityMob
         Vec3 vec3 = Vec3.func_72443_a(this.field_70165_t - p_70816_1_.field_70165_t, this.field_70121_D.field_72338_b + (double)(this.field_70131_O / 2.0F) - p_70816_1_.field_70163_u + (double)p_70816_1_.func_70047_e(), this.field_70161_v - p_70816_1_.field_70161_v);
         vec3 = vec3.func_72432_b();
         double d0 = 16.0D;
-        double d1 = this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * 8.0D - vec3.field_72450_a * d0;
-        double d2 = this.field_70163_u + (double)(this.field_70146_Z.nextInt(16) - 8) - vec3.field_72448_b * d0;
-        double d3 = this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * 8.0D - vec3.field_72449_c * d0;
+        double d1 = this.field_70165_t + (this.randomizer.nextDouble() - 0.5D) * 8.0D - vec3.field_72450_a * d0;
+        double d2 = this.field_70163_u + (double)(this.randomizer.nextInt(16) - 8) - vec3.field_72448_b * d0;
+        double d3 = this.field_70161_v + (this.randomizer.nextDouble() - 0.5D) * 8.0D - vec3.field_72449_c * d0;
         return this.func_70825_j(d1, d2, d3);
     }
 
@@ -318,12 +318,12 @@ public class EntityEnderman extends EntityMob
             for (int l = 0; l < short1; ++l)
             {
                 double d6 = (double)l / ((double)short1 - 1.0D);
-                float f = (this.field_70146_Z.nextFloat() - 0.5F) * 0.2F;
-                float f1 = (this.field_70146_Z.nextFloat() - 0.5F) * 0.2F;
-                float f2 = (this.field_70146_Z.nextFloat() - 0.5F) * 0.2F;
-                double d7 = d3 + (this.field_70165_t - d3) * d6 + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N * 2.0D;
-                double d8 = d4 + (this.field_70163_u - d4) * d6 + this.field_70146_Z.nextDouble() * (double)this.field_70131_O;
-                double d9 = d5 + (this.field_70161_v - d5) * d6 + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N * 2.0D;
+                float f = (this.randomizer.nextFloat() - 0.5F) * 0.2F;
+                float f1 = (this.randomizer.nextFloat() - 0.5F) * 0.2F;
+                float f2 = (this.randomizer.nextFloat() - 0.5F) * 0.2F;
+                double d7 = d3 + (this.field_70165_t - d3) * d6 + (this.randomizer.nextDouble() - 0.5D) * (double)this.field_70130_N * 2.0D;
+                double d8 = d4 + (this.field_70163_u - d4) * d6 + this.randomizer.nextDouble() * (double)this.field_70131_O;
+                double d9 = d5 + (this.field_70161_v - d5) * d6 + (this.randomizer.nextDouble() - 0.5D) * (double)this.field_70130_N * 2.0D;
                 this.world.func_72869_a("portal", d7, d8, d9, (double)f, (double)f1, (double)f2);
             }
 
@@ -359,7 +359,7 @@ public class EntityEnderman extends EntityMob
 
         if (item != null)
         {
-            int j = this.field_70146_Z.nextInt(2 + p_70628_2_);
+            int j = this.randomizer.nextInt(2 + p_70628_2_);
 
             for (int k = 0; k < j; ++k)
             {

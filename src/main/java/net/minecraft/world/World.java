@@ -3295,7 +3295,7 @@ public abstract class World implements IBlockAccess
         {
             EntityPlayer entityplayer1 = (EntityPlayer)this.field_73010_i.get(i);
 
-            if (!entityplayer1.field_71075_bZ.field_75102_a && entityplayer1.func_70089_S())
+            if (!entityplayer1.capabilities.invulnerable && entityplayer1.func_70089_S())
             {
                 double d5 = entityplayer1.func_70092_e(p_72846_1_, p_72846_3_, p_72846_5_);
                 double d6 = p_72846_7_;

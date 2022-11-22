@@ -69,7 +69,7 @@ public class GuiRepair extends GuiContainer implements ICrafting
             boolean flag = true;
             String s = I18n.func_135052_a("container.repair.cost", new Object[] {Integer.valueOf(this.field_147092_v.field_82854_e)});
 
-            if (this.field_147092_v.field_82854_e >= 40 && !this.field_146297_k.field_71439_g.field_71075_bZ.field_75098_d)
+            if (this.field_147092_v.field_82854_e >= 40 && !this.field_146297_k.field_71439_g.capabilities.instabuild)
             {
                 s = I18n.func_135052_a("container.repair.expensive", new Object[0]);
                 k = 16736352;
@@ -78,7 +78,7 @@ public class GuiRepair extends GuiContainer implements ICrafting
             {
                 flag = false;
             }
-            else if (!this.field_147092_v.func_75139_a(2).func_82869_a(this.field_147094_x.field_70458_d))
+            else if (!this.field_147092_v.func_75139_a(2).func_82869_a(this.field_147094_x.player))
             {
                 k = 16736352;
             }

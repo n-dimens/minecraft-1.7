@@ -43,14 +43,14 @@ public class EntityIronGolem extends EntityGolem
         super(p_i1694_1_);
         this.func_70105_a(1.4F, 2.9F);
         this.func_70661_as().func_75491_a(true);
-        this.field_70714_bg.func_75776_a(1, new EntityAIAttackOnCollide(this, 1.0D, true));
-        this.field_70714_bg.func_75776_a(2, new EntityAIMoveTowardsTarget(this, 0.9D, 32.0F));
-        this.field_70714_bg.func_75776_a(3, new EntityAIMoveThroughVillage(this, 0.6D, true));
-        this.field_70714_bg.func_75776_a(4, new EntityAIMoveTowardsRestriction(this, 1.0D));
-        this.field_70714_bg.func_75776_a(5, new EntityAILookAtVillager(this));
-        this.field_70714_bg.func_75776_a(6, new EntityAIWander(this, 0.6D));
-        this.field_70714_bg.func_75776_a(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.field_70714_bg.func_75776_a(8, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(1, new EntityAIAttackOnCollide(this, 1.0D, true));
+        this.aiTasks.func_75776_a(2, new EntityAIMoveTowardsTarget(this, 0.9D, 32.0F));
+        this.aiTasks.func_75776_a(3, new EntityAIMoveThroughVillage(this, 0.6D, true));
+        this.aiTasks.func_75776_a(4, new EntityAIMoveTowardsRestriction(this, 1.0D));
+        this.aiTasks.func_75776_a(5, new EntityAILookAtVillager(this));
+        this.aiTasks.func_75776_a(6, new EntityAIWander(this, 0.6D));
+        this.aiTasks.func_75776_a(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.aiTasks.func_75776_a(8, new EntityAILookIdle(this));
         this.field_70715_bh.func_75776_a(1, new EntityAIDefendVillage(this));
         this.field_70715_bh.func_75776_a(2, new EntityAIHurtByTarget(this, false));
         this.field_70715_bh.func_75776_a(3, new EntityAINearestAttackableTarget(this, EntityLiving.class, 0, false, true, IMob.field_82192_a));
@@ -71,7 +71,7 @@ public class EntityIronGolem extends EntityGolem
     {
         if (--this.field_70858_e <= 0)
         {
-            this.field_70858_e = 70 + this.field_70146_Z.nextInt(50);
+            this.field_70858_e = 70 + this.randomizer.nextInt(50);
             this.field_70857_d = this.world.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 32);
 
             if (this.field_70857_d == null)
@@ -124,7 +124,7 @@ public class EntityIronGolem extends EntityGolem
             --this.field_70856_g;
         }
 
-        if (this.field_70159_w * this.field_70159_w + this.field_70179_y * this.field_70179_y > 2.500000277905201E-7D && this.field_70146_Z.nextInt(5) == 0)
+        if (this.field_70159_w * this.field_70159_w + this.field_70179_y * this.field_70179_y > 2.500000277905201E-7D && this.randomizer.nextInt(5) == 0)
         {
             int i = MathHelper.func_76128_c(this.field_70165_t);
             int j = MathHelper.func_76128_c(this.field_70163_u - 0.20000000298023224D - (double)this.field_70129_M);
@@ -133,7 +133,7 @@ public class EntityIronGolem extends EntityGolem
 
             if (block.func_149688_o() != Material.field_151579_a)
             {
-                this.world.func_72869_a("blockcrack_" + Block.func_149682_b(block) + "_" + this.world.func_72805_g(i, j, k), this.field_70165_t + ((double)this.field_70146_Z.nextFloat() - 0.5D) * (double)this.field_70130_N, this.field_70121_D.field_72338_b + 0.1D, this.field_70161_v + ((double)this.field_70146_Z.nextFloat() - 0.5D) * (double)this.field_70130_N, 4.0D * ((double)this.field_70146_Z.nextFloat() - 0.5D), 0.5D, ((double)this.field_70146_Z.nextFloat() - 0.5D) * 4.0D);
+                this.world.func_72869_a("blockcrack_" + Block.func_149682_b(block) + "_" + this.world.func_72805_g(i, j, k), this.field_70165_t + ((double)this.randomizer.nextFloat() - 0.5D) * (double)this.field_70130_N, this.field_70121_D.field_72338_b + 0.1D, this.field_70161_v + ((double)this.randomizer.nextFloat() - 0.5D) * (double)this.field_70130_N, 4.0D * ((double)this.randomizer.nextFloat() - 0.5D), 0.5D, ((double)this.randomizer.nextFloat() - 0.5D) * 4.0D);
             }
         }
     }
@@ -159,7 +159,7 @@ public class EntityIronGolem extends EntityGolem
     {
         this.field_70855_f = 10;
         this.world.func_72960_a(this, (byte)4);
-        boolean flag = p_70652_1_.func_70097_a(DamageSource.func_76358_a(this), (float)(7 + this.field_70146_Z.nextInt(15)));
+        boolean flag = p_70652_1_.func_70097_a(DamageSource.func_76358_a(this), (float)(7 + this.randomizer.nextInt(15)));
 
         if (flag)
         {
@@ -222,7 +222,7 @@ public class EntityIronGolem extends EntityGolem
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(3);
+        int j = this.randomizer.nextInt(3);
         int k;
 
         for (k = 0; k < j; ++k)
@@ -230,7 +230,7 @@ public class EntityIronGolem extends EntityGolem
             this.func_145778_a(Item.func_150898_a(Blocks.RED_FLOWER), 1, 0.0F);
         }
 
-        k = 3 + this.field_70146_Z.nextInt(3);
+        k = 3 + this.randomizer.nextInt(3);
 
         for (int l = 0; l < k; ++l)
         {

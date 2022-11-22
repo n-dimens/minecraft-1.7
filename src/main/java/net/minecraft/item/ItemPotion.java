@@ -41,9 +41,9 @@ public class ItemPotion extends Item
 
     public ItemPotion()
     {
-        this.func_77625_d(1);
+        this.setStackMaxSize(1);
         this.func_77627_a(true);
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77637_a(CreativeTabs.field_78038_k);
     }
 
@@ -96,9 +96,9 @@ public class ItemPotion extends Item
 
     public ItemStack func_77654_b(ItemStack p_77654_1_, World p_77654_2_, EntityPlayer p_77654_3_)
     {
-        if (!p_77654_3_.field_71075_bZ.field_75098_d)
+        if (!p_77654_3_.capabilities.instabuild)
         {
-            --p_77654_1_.field_77994_a;
+            --p_77654_1_.count;
         }
 
         if (!p_77654_2_.field_72995_K)
@@ -117,14 +117,14 @@ public class ItemPotion extends Item
             }
         }
 
-        if (!p_77654_3_.field_71075_bZ.field_75098_d)
+        if (!p_77654_3_.capabilities.instabuild)
         {
-            if (p_77654_1_.field_77994_a <= 0)
+            if (p_77654_1_.count <= 0)
             {
                 return new ItemStack(Items.GLASS_BOTTLE);
             }
 
-            p_77654_3_.field_71071_by.func_70441_a(new ItemStack(Items.GLASS_BOTTLE));
+            p_77654_3_.inventory.func_70441_a(new ItemStack(Items.GLASS_BOTTLE));
         }
 
         return p_77654_1_;
@@ -144,12 +144,12 @@ public class ItemPotion extends Item
     {
         if (func_77831_g(p_77659_1_.func_77960_j()))
         {
-            if (!p_77659_3_.field_71075_bZ.field_75098_d)
+            if (!p_77659_3_.capabilities.instabuild)
             {
-                --p_77659_1_.field_77994_a;
+                --p_77659_1_.count;
             }
 
-            p_77659_2_.func_72956_a(p_77659_3_, "random.bow", 0.5F, 0.4F / (field_77697_d.nextFloat() * 0.4F + 0.8F));
+            p_77659_2_.func_72956_a(p_77659_3_, "random.bow", 0.5F, 0.4F / (randomizer.nextFloat() * 0.4F + 0.8F));
 
             if (!p_77659_2_.field_72995_K)
             {

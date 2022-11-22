@@ -57,39 +57,39 @@ public class ContainerRepair extends Container
             }
             public boolean func_82869_a(EntityPlayer p_82869_1_)
             {
-                return (p_82869_1_.field_71075_bZ.field_75098_d || p_82869_1_.field_71068_ca >= ContainerRepair.this.field_82854_e) && ContainerRepair.this.field_82854_e > 0 && this.func_75216_d();
+                return (p_82869_1_.capabilities.instabuild || p_82869_1_.field_71068_ca >= ContainerRepair.this.field_82854_e) && ContainerRepair.this.field_82854_e > 0 && this.func_75216_d();
             }
             public void func_82870_a(EntityPlayer p_82870_1_, ItemStack p_82870_2_)
             {
-                if (!p_82870_1_.field_71075_bZ.field_75098_d)
+                if (!p_82870_1_.capabilities.instabuild)
                 {
                     p_82870_1_.func_82242_a(-ContainerRepair.this.field_82854_e);
                 }
 
-                ContainerRepair.this.field_82853_g.func_70299_a(0, (ItemStack)null);
+                ContainerRepair.this.field_82853_g.putItem(0, (ItemStack)null);
 
                 if (ContainerRepair.this.field_82856_l > 0)
                 {
                     ItemStack itemstack1 = ContainerRepair.this.field_82853_g.func_70301_a(1);
 
-                    if (itemstack1 != null && itemstack1.field_77994_a > ContainerRepair.this.field_82856_l)
+                    if (itemstack1 != null && itemstack1.count > ContainerRepair.this.field_82856_l)
                     {
-                        itemstack1.field_77994_a -= ContainerRepair.this.field_82856_l;
-                        ContainerRepair.this.field_82853_g.func_70299_a(1, itemstack1);
+                        itemstack1.count -= ContainerRepair.this.field_82856_l;
+                        ContainerRepair.this.field_82853_g.putItem(1, itemstack1);
                     }
                     else
                     {
-                        ContainerRepair.this.field_82853_g.func_70299_a(1, (ItemStack)null);
+                        ContainerRepair.this.field_82853_g.putItem(1, (ItemStack)null);
                     }
                 }
                 else
                 {
-                    ContainerRepair.this.field_82853_g.func_70299_a(1, (ItemStack)null);
+                    ContainerRepair.this.field_82853_g.putItem(1, (ItemStack)null);
                 }
 
                 ContainerRepair.this.field_82854_e = 0;
 
-                if (!p_82870_1_.field_71075_bZ.field_75098_d && !p_i1800_2_.field_72995_K && p_i1800_2_.func_147439_a(p_i1800_3_, p_i1800_4_, p_i1800_5_) == Blocks.ANVIL && p_82870_1_.func_70681_au().nextFloat() < 0.12F)
+                if (!p_82870_1_.capabilities.instabuild && !p_i1800_2_.field_72995_K && p_i1800_2_.func_147439_a(p_i1800_3_, p_i1800_4_, p_i1800_5_) == Blocks.ANVIL && p_82870_1_.func_70681_au().nextFloat() < 0.12F)
                 {
                     int i1 = p_i1800_2_.func_72805_g(p_i1800_3_, p_i1800_4_, p_i1800_5_);
                     int k = i1 & 3;
@@ -149,7 +149,7 @@ public class ContainerRepair extends Container
 
         if (itemstack == null)
         {
-            this.field_82852_f.func_70299_a(0, (ItemStack)null);
+            this.field_82852_f.putItem(0, (ItemStack)null);
             this.field_82854_e = 0;
         }
         else
@@ -170,45 +170,45 @@ public class ContainerRepair extends Container
 
             if (itemstack2 != null)
             {
-                flag = itemstack2.func_77973_b() == Items.ENCHANTED_BOOK && Items.ENCHANTED_BOOK.func_92110_g(itemstack2).func_74745_c() > 0;
+                flag = itemstack2.getBaseItem() == Items.ENCHANTED_BOOK && Items.ENCHANTED_BOOK.func_92110_g(itemstack2).func_74745_c() > 0;
 
-                if (itemstack1.func_77984_f() && itemstack1.func_77973_b().func_82789_a(itemstack, itemstack2))
+                if (itemstack1.func_77984_f() && itemstack1.getBaseItem().func_82789_a(itemstack, itemstack2))
                 {
-                    k = Math.min(itemstack1.func_77952_i(), itemstack1.func_77958_k() / 4);
+                    k = Math.min(itemstack1.func_77952_i(), itemstack1.getDurability() / 4);
 
                     if (k <= 0)
                     {
-                        this.field_82852_f.func_70299_a(0, (ItemStack)null);
+                        this.field_82852_f.putItem(0, (ItemStack)null);
                         this.field_82854_e = 0;
                         return;
                     }
 
-                    for (l = 0; k > 0 && l < itemstack2.field_77994_a; ++l)
+                    for (l = 0; k > 0 && l < itemstack2.count; ++l)
                     {
                         i1 = itemstack1.func_77952_i() - k;
                         itemstack1.func_77964_b(i1);
                         i += Math.max(1, k / 100) + map.size();
-                        k = Math.min(itemstack1.func_77952_i(), itemstack1.func_77958_k() / 4);
+                        k = Math.min(itemstack1.func_77952_i(), itemstack1.getDurability() / 4);
                     }
 
                     this.field_82856_l = l;
                 }
                 else
                 {
-                    if (!flag && (itemstack1.func_77973_b() != itemstack2.func_77973_b() || !itemstack1.func_77984_f()))
+                    if (!flag && (itemstack1.getBaseItem() != itemstack2.getBaseItem() || !itemstack1.func_77984_f()))
                     {
-                        this.field_82852_f.func_70299_a(0, (ItemStack)null);
+                        this.field_82852_f.putItem(0, (ItemStack)null);
                         this.field_82854_e = 0;
                         return;
                     }
 
                     if (itemstack1.func_77984_f() && !flag)
                     {
-                        k = itemstack.func_77958_k() - itemstack.func_77952_i();
-                        l = itemstack2.func_77958_k() - itemstack2.func_77952_i();
-                        i1 = l + itemstack1.func_77958_k() * 12 / 100;
+                        k = itemstack.getDurability() - itemstack.func_77952_i();
+                        l = itemstack2.getDurability() - itemstack2.func_77952_i();
+                        i1 = l + itemstack1.getDurability() * 12 / 100;
                         int j1 = k + i1;
-                        k1 = itemstack1.func_77958_k() - j1;
+                        k1 = itemstack1.getDurability() - j1;
 
                         if (k1 < 0)
                         {
@@ -247,7 +247,7 @@ public class ContainerRepair extends Container
                         int i2 = l1 - k1;
                         boolean flag1 = enchantment.func_92089_a(itemstack);
 
-                        if (this.field_82855_n.field_71075_bZ.field_75098_d || itemstack.func_77973_b() == Items.ENCHANTED_BOOK)
+                        if (this.field_82855_n.capabilities.instabuild || itemstack.getBaseItem() == Items.ENCHANTED_BOOK)
                         {
                             flag1 = true;
                         }
@@ -312,14 +312,14 @@ public class ContainerRepair extends Container
             {
                 if (itemstack.func_82837_s())
                 {
-                    j = itemstack.func_77984_f() ? 7 : itemstack.field_77994_a * 5;
+                    j = itemstack.func_77984_f() ? 7 : itemstack.count * 5;
                     i += j;
                     itemstack1.func_135074_t();
                 }
             }
             else if (!this.field_82857_m.equals(itemstack.func_82833_r()))
             {
-                j = itemstack.func_77984_f() ? 7 : itemstack.field_77994_a * 5;
+                j = itemstack.func_77984_f() ? 7 : itemstack.count * 5;
                 i += j;
 
                 if (itemstack.func_82837_s())
@@ -385,7 +385,7 @@ public class ContainerRepair extends Container
                 this.field_82854_e = 39;
             }
 
-            if (this.field_82854_e >= 40 && !this.field_82855_n.field_71075_bZ.field_75098_d)
+            if (this.field_82854_e >= 40 && !this.field_82855_n.capabilities.instabuild)
             {
                 itemstack1 = null;
             }
@@ -414,7 +414,7 @@ public class ContainerRepair extends Container
                 EnchantmentHelper.func_82782_a(map, itemstack1);
             }
 
-            this.field_82852_f.func_70299_a(0, itemstack1);
+            this.field_82852_f.putItem(0, itemstack1);
             this.func_75142_b();
         }
     }
@@ -452,9 +452,9 @@ public class ContainerRepair extends Container
         }
     }
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
-        return this.field_82860_h.func_147439_a(this.field_82861_i, this.field_82858_j, this.field_82859_k) != Blocks.ANVIL ? false : p_75145_1_.func_70092_e((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
+        return this.field_82860_h.func_147439_a(this.field_82861_i, this.field_82858_j, this.field_82859_k) != Blocks.ANVIL ? false : player.func_70092_e((double)this.field_82861_i + 0.5D, (double)this.field_82858_j + 0.5D, (double)this.field_82859_k + 0.5D) <= 64.0D;
     }
 
     public ItemStack func_82846_b(EntityPlayer p_82846_1_, int p_82846_2_)
@@ -488,7 +488,7 @@ public class ContainerRepair extends Container
                 return null;
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }
@@ -497,7 +497,7 @@ public class ContainerRepair extends Container
                 slot.func_75218_e();
             }
 
-            if (itemstack1.field_77994_a == itemstack.field_77994_a)
+            if (itemstack1.count == itemstack.count)
             {
                 return null;
             }

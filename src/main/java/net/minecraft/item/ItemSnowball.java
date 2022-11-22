@@ -11,18 +11,18 @@ public class ItemSnowball extends Item
 
     public ItemSnowball()
     {
-        this.field_77777_bU = 16;
+        this.stackMaxSize = 16;
         this.func_77637_a(CreativeTabs.field_78026_f);
     }
 
     public ItemStack func_77659_a(ItemStack p_77659_1_, World p_77659_2_, EntityPlayer p_77659_3_)
     {
-        if (!p_77659_3_.field_71075_bZ.field_75098_d)
+        if (!p_77659_3_.capabilities.instabuild)
         {
-            --p_77659_1_.field_77994_a;
+            --p_77659_1_.count;
         }
 
-        p_77659_2_.func_72956_a(p_77659_3_, "random.bow", 0.5F, 0.4F / (field_77697_d.nextFloat() * 0.4F + 0.8F));
+        p_77659_2_.func_72956_a(p_77659_3_, "random.bow", 0.5F, 0.4F / (randomizer.nextFloat() * 0.4F + 0.8F));
 
         if (!p_77659_2_.field_72995_K)
         {

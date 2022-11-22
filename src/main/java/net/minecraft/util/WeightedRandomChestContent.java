@@ -39,16 +39,16 @@ public class WeightedRandomChestContent extends WeightedRandom.Item
             if (weightedrandomchestcontent.field_76297_b.func_77976_d() >= k)
             {
                 ItemStack itemstack = weightedrandomchestcontent.field_76297_b.func_77946_l();
-                itemstack.field_77994_a = k;
-                p_76293_2_.func_70299_a(p_76293_0_.nextInt(p_76293_2_.func_70302_i_()), itemstack);
+                itemstack.count = k;
+                p_76293_2_.putItem(p_76293_0_.nextInt(p_76293_2_.func_70302_i_()), itemstack);
             }
             else
             {
                 for (int l = 0; l < k; ++l)
                 {
                     ItemStack itemstack1 = weightedrandomchestcontent.field_76297_b.func_77946_l();
-                    itemstack1.field_77994_a = 1;
-                    p_76293_2_.func_70299_a(p_76293_0_.nextInt(p_76293_2_.func_70302_i_()), itemstack1);
+                    itemstack1.count = 1;
+                    p_76293_2_.putItem(p_76293_0_.nextInt(p_76293_2_.func_70302_i_()), itemstack1);
                 }
             }
         }
@@ -64,16 +64,16 @@ public class WeightedRandomChestContent extends WeightedRandom.Item
             if (weightedrandomchestcontent.field_76297_b.func_77976_d() >= k)
             {
                 ItemStack itemstack = weightedrandomchestcontent.field_76297_b.func_77946_l();
-                itemstack.field_77994_a = k;
-                p_150706_2_.func_70299_a(p_150706_0_.nextInt(p_150706_2_.func_70302_i_()), itemstack);
+                itemstack.count = k;
+                p_150706_2_.putItem(p_150706_0_.nextInt(p_150706_2_.func_70302_i_()), itemstack);
             }
             else
             {
                 for (int l = 0; l < k; ++l)
                 {
                     ItemStack itemstack1 = weightedrandomchestcontent.field_76297_b.func_77946_l();
-                    itemstack1.field_77994_a = 1;
-                    p_150706_2_.func_70299_a(p_150706_0_.nextInt(p_150706_2_.func_70302_i_()), itemstack1);
+                    itemstack1.count = 1;
+                    p_150706_2_.putItem(p_150706_0_.nextInt(p_150706_2_.func_70302_i_()), itemstack1);
                 }
             }
         }

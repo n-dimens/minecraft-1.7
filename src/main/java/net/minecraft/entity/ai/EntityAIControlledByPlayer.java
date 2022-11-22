@@ -149,19 +149,19 @@ public class EntityAIControlledByPlayer extends EntityAIBase
             }
         }
 
-        if (!entityplayer.field_71075_bZ.field_75098_d && this.field_82639_c >= this.field_82638_b * 0.5F && this.field_82640_a.func_70681_au().nextFloat() < 0.006F && !this.field_82636_d)
+        if (!entityplayer.capabilities.instabuild && this.field_82639_c >= this.field_82638_b * 0.5F && this.field_82640_a.func_70681_au().nextFloat() < 0.006F && !this.field_82636_d)
         {
             ItemStack itemstack = entityplayer.func_70694_bm();
 
-            if (itemstack != null && itemstack.func_77973_b() == Items.CARROT_ON_A_STICK)
+            if (itemstack != null && itemstack.getBaseItem() == Items.CARROT_ON_A_STICK)
             {
                 itemstack.func_77972_a(1, entityplayer);
 
-                if (itemstack.field_77994_a == 0)
+                if (itemstack.count == 0)
                 {
                     ItemStack itemstack1 = new ItemStack(Items.FISHING_ROD);
                     itemstack1.func_77982_d(itemstack.field_77990_d);
-                    entityplayer.field_71071_by.field_70462_a[entityplayer.field_71071_by.field_70461_c] = itemstack1;
+                    entityplayer.inventory.cells[entityplayer.inventory.activeItemPosition] = itemstack1;
                 }
             }
         }

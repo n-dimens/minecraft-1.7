@@ -32,11 +32,11 @@ public class EntityEgg extends EntityThrowable
             p_70184_1_.field_72308_g.func_70097_a(DamageSource.func_76356_a(this, this.func_85052_h()), 0.0F);
         }
 
-        if (!this.world.field_72995_K && this.field_70146_Z.nextInt(8) == 0)
+        if (!this.world.field_72995_K && this.randomizer.nextInt(8) == 0)
         {
             byte b0 = 1;
 
-            if (this.field_70146_Z.nextInt(32) == 0)
+            if (this.randomizer.nextInt(32) == 0)
             {
                 b0 = 4;
             }

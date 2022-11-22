@@ -193,7 +193,7 @@ public class EntityFallingBlock extends Entity
                     entity.func_70097_a(damagesource, (float)Math.min(MathHelper.func_76141_d((float)i * this.field_145816_i), this.field_145815_h));
                 }
 
-                if (flag && (double)this.field_70146_Z.nextFloat() < 0.05000000074505806D + (double)i * 0.05D)
+                if (flag && (double)this.randomizer.nextFloat() < 0.05000000074505806D + (double)i * 0.05D)
                 {
                     int j = this.field_145814_a >> 2;
                     int k = this.field_145814_a & 3;

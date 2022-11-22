@@ -102,7 +102,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
 
             if (f1 <= -0.3F && f >= -0.3F)
             {
-                this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, "mob.enderdragon.wings", 5.0F, 0.8F + this.field_70146_Z.nextFloat() * 0.3F, false);
+                this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, "mob.enderdragon.wings", 5.0F, 0.8F + this.randomizer.nextFloat() * 0.3F, false);
             }
         }
 
@@ -111,9 +111,9 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
 
         if (this.func_110143_aJ() <= 0.0F)
         {
-            f = (this.field_70146_Z.nextFloat() - 0.5F) * 8.0F;
-            f1 = (this.field_70146_Z.nextFloat() - 0.5F) * 4.0F;
-            f2 = (this.field_70146_Z.nextFloat() - 0.5F) * 8.0F;
+            f = (this.randomizer.nextFloat() - 0.5F) * 8.0F;
+            f1 = (this.randomizer.nextFloat() - 0.5F) * 4.0F;
+            f2 = (this.randomizer.nextFloat() - 0.5F) * 8.0F;
             this.world.func_72869_a("largeexplode", this.field_70165_t + (double)f, this.field_70163_u + 2.0D + (double)f1, this.field_70161_v + (double)f2, 0.0D, 0.0D, 0.0D);
         }
         else
@@ -195,8 +195,8 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
                 }
                 else
                 {
-                    this.field_70980_b += this.field_70146_Z.nextGaussian() * 2.0D;
-                    this.field_70978_d += this.field_70146_Z.nextGaussian() * 2.0D;
+                    this.field_70980_b += this.randomizer.nextGaussian() * 2.0D;
+                    this.field_70978_d += this.randomizer.nextGaussian() * 2.0D;
                 }
 
                 if (this.field_70989_bE || d2 < 100.0D || d2 > 22500.0D || this.field_70123_F || this.field_70124_G)
@@ -366,7 +366,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             }
         }
 
-        if (this.field_70146_Z.nextInt(10) == 0)
+        if (this.randomizer.nextInt(10) == 0)
         {
             float f = 32.0F;
             List list = this.world.func_72872_a(EntityEnderCrystal.class, this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
@@ -427,9 +427,9 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
     {
         this.field_70989_bE = false;
 
-        if (this.field_70146_Z.nextInt(2) == 0 && !this.world.field_73010_i.isEmpty())
+        if (this.randomizer.nextInt(2) == 0 && !this.world.field_73010_i.isEmpty())
         {
-            this.field_70993_bI = (Entity)this.world.field_73010_i.get(this.field_70146_Z.nextInt(this.world.field_73010_i.size()));
+            this.field_70993_bI = (Entity)this.world.field_73010_i.get(this.randomizer.nextInt(this.world.field_73010_i.size()));
         }
         else
         {
@@ -438,10 +438,10 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             do
             {
                 this.field_70980_b = 0.0D;
-                this.field_70981_c = (double)(70.0F + this.field_70146_Z.nextFloat() * 50.0F);
+                this.field_70981_c = (double)(70.0F + this.randomizer.nextFloat() * 50.0F);
                 this.field_70978_d = 0.0D;
-                this.field_70980_b += (double)(this.field_70146_Z.nextFloat() * 120.0F - 60.0F);
-                this.field_70978_d += (double)(this.field_70146_Z.nextFloat() * 120.0F - 60.0F);
+                this.field_70980_b += (double)(this.randomizer.nextFloat() * 120.0F - 60.0F);
+                this.field_70978_d += (double)(this.randomizer.nextFloat() * 120.0F - 60.0F);
                 double d0 = this.field_70165_t - this.field_70980_b;
                 double d1 = this.field_70163_u - this.field_70981_c;
                 double d2 = this.field_70161_v - this.field_70978_d;
@@ -494,9 +494,9 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
 
         if (flag1)
         {
-            double d1 = p_70972_1_.field_72340_a + (p_70972_1_.field_72336_d - p_70972_1_.field_72340_a) * (double)this.field_70146_Z.nextFloat();
-            double d2 = p_70972_1_.field_72338_b + (p_70972_1_.field_72337_e - p_70972_1_.field_72338_b) * (double)this.field_70146_Z.nextFloat();
-            double d0 = p_70972_1_.field_72339_c + (p_70972_1_.field_72334_f - p_70972_1_.field_72339_c) * (double)this.field_70146_Z.nextFloat();
+            double d1 = p_70972_1_.field_72340_a + (p_70972_1_.field_72336_d - p_70972_1_.field_72340_a) * (double)this.randomizer.nextFloat();
+            double d2 = p_70972_1_.field_72338_b + (p_70972_1_.field_72337_e - p_70972_1_.field_72338_b) * (double)this.randomizer.nextFloat();
+            double d0 = p_70972_1_.field_72339_c + (p_70972_1_.field_72334_f - p_70972_1_.field_72339_c) * (double)this.randomizer.nextFloat();
             this.world.func_72869_a("largeexplode", d1, d2, d0, 0.0D, 0.0D, 0.0D);
         }
 
@@ -513,9 +513,9 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
         float f1 = this.field_70177_z * (float)Math.PI / 180.0F;
         float f2 = MathHelper.func_76126_a(f1);
         float f3 = MathHelper.func_76134_b(f1);
-        this.field_70980_b = this.field_70165_t + (double)(f2 * 5.0F) + (double)((this.field_70146_Z.nextFloat() - 0.5F) * 2.0F);
-        this.field_70981_c = this.field_70163_u + (double)(this.field_70146_Z.nextFloat() * 3.0F) + 1.0D;
-        this.field_70978_d = this.field_70161_v - (double)(f3 * 5.0F) + (double)((this.field_70146_Z.nextFloat() - 0.5F) * 2.0F);
+        this.field_70980_b = this.field_70165_t + (double)(f2 * 5.0F) + (double)((this.randomizer.nextFloat() - 0.5F) * 2.0F);
+        this.field_70981_c = this.field_70163_u + (double)(this.randomizer.nextFloat() * 3.0F) + 1.0D;
+        this.field_70978_d = this.field_70161_v - (double)(f3 * 5.0F) + (double)((this.randomizer.nextFloat() - 0.5F) * 2.0F);
         this.field_70993_bI = null;
 
         if (p_70965_2_.func_76346_g() instanceof EntityPlayer || p_70965_2_.func_94541_c())
@@ -542,9 +542,9 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
 
         if (this.field_70995_bG >= 180 && this.field_70995_bG <= 200)
         {
-            float f = (this.field_70146_Z.nextFloat() - 0.5F) * 8.0F;
-            float f1 = (this.field_70146_Z.nextFloat() - 0.5F) * 4.0F;
-            float f2 = (this.field_70146_Z.nextFloat() - 0.5F) * 8.0F;
+            float f = (this.randomizer.nextFloat() - 0.5F) * 8.0F;
+            float f1 = (this.randomizer.nextFloat() - 0.5F) * 4.0F;
+            float f2 = (this.randomizer.nextFloat() - 0.5F) * 8.0F;
             this.world.func_72869_a("hugeexplosion", this.field_70165_t + (double)f, this.field_70163_u + 2.0D + (double)f1, this.field_70161_v + (double)f2, 0.0D, 0.0D, 0.0D);
         }
 

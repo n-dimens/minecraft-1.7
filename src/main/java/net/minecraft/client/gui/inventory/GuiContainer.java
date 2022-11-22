@@ -113,7 +113,7 @@ public abstract class GuiContainer extends GuiScreen
         }
 
         this.func_146979_b(p_73863_1_, p_73863_2_);
-        InventoryPlayer inventoryplayer = this.field_146297_k.field_71439_g.field_71071_by;
+        InventoryPlayer inventoryplayer = this.field_146297_k.field_71439_g.inventory;
         ItemStack itemstack = this.field_147012_x == null ? inventoryplayer.func_70445_o() : this.field_147012_x;
 
         if (itemstack != null)
@@ -125,14 +125,14 @@ public abstract class GuiContainer extends GuiScreen
             if (this.field_147012_x != null && this.field_147004_w)
             {
                 itemstack = itemstack.func_77946_l();
-                itemstack.field_77994_a = MathHelper.func_76123_f((float)itemstack.field_77994_a / 2.0F);
+                itemstack.count = MathHelper.func_76123_f((float)itemstack.count / 2.0F);
             }
             else if (this.field_147007_t && this.field_147008_s.size() > 1)
             {
                 itemstack = itemstack.func_77946_l();
-                itemstack.field_77994_a = this.field_146996_I;
+                itemstack.count = this.field_146996_I;
 
-                if (itemstack.field_77994_a == 0)
+                if (itemstack.count == 0)
                 {
                     s = "" + EnumChatFormatting.YELLOW + "0";
                 }
@@ -193,13 +193,13 @@ public abstract class GuiContainer extends GuiScreen
         ItemStack itemstack = p_146977_1_.func_75211_c();
         boolean flag = false;
         boolean flag1 = p_146977_1_ == this.field_147005_v && this.field_147012_x != null && !this.field_147004_w;
-        ItemStack itemstack1 = this.field_146297_k.field_71439_g.field_71071_by.func_70445_o();
+        ItemStack itemstack1 = this.field_146297_k.field_71439_g.inventory.func_70445_o();
         String s = null;
 
         if (p_146977_1_ == this.field_147005_v && this.field_147012_x != null && this.field_147004_w && itemstack != null)
         {
             itemstack = itemstack.func_77946_l();
-            itemstack.field_77994_a /= 2;
+            itemstack.count /= 2;
         }
         else if (this.field_147007_t && this.field_147008_s.contains(p_146977_1_) && itemstack1 != null)
         {
@@ -212,18 +212,18 @@ public abstract class GuiContainer extends GuiScreen
             {
                 itemstack = itemstack1.func_77946_l();
                 flag = true;
-                Container.func_94525_a(this.field_147008_s, this.field_146987_F, itemstack, p_146977_1_.func_75211_c() == null ? 0 : p_146977_1_.func_75211_c().field_77994_a);
+                Container.func_94525_a(this.field_147008_s, this.field_146987_F, itemstack, p_146977_1_.func_75211_c() == null ? 0 : p_146977_1_.func_75211_c().count);
 
-                if (itemstack.field_77994_a > itemstack.func_77976_d())
+                if (itemstack.count > itemstack.func_77976_d())
                 {
                     s = EnumChatFormatting.YELLOW + "" + itemstack.func_77976_d();
-                    itemstack.field_77994_a = itemstack.func_77976_d();
+                    itemstack.count = itemstack.func_77976_d();
                 }
 
-                if (itemstack.field_77994_a > p_146977_1_.func_75219_a())
+                if (itemstack.count > p_146977_1_.func_75219_a())
                 {
                     s = EnumChatFormatting.YELLOW + "" + p_146977_1_.func_75219_a();
-                    itemstack.field_77994_a = p_146977_1_.func_75219_a();
+                    itemstack.count = p_146977_1_.func_75219_a();
                 }
             }
             else
@@ -268,29 +268,29 @@ public abstract class GuiContainer extends GuiScreen
 
     private void func_146980_g()
     {
-        ItemStack itemstack = this.field_146297_k.field_71439_g.field_71071_by.func_70445_o();
+        ItemStack itemstack = this.field_146297_k.field_71439_g.inventory.func_70445_o();
 
         if (itemstack != null && this.field_147007_t)
         {
-            this.field_146996_I = itemstack.field_77994_a;
+            this.field_146996_I = itemstack.count;
             ItemStack itemstack1;
             int i;
 
-            for (Iterator iterator = this.field_147008_s.iterator(); iterator.hasNext(); this.field_146996_I -= itemstack1.field_77994_a - i)
+            for (Iterator iterator = this.field_147008_s.iterator(); iterator.hasNext(); this.field_146996_I -= itemstack1.count - i)
             {
                 Slot slot = (Slot)iterator.next();
                 itemstack1 = itemstack.func_77946_l();
-                i = slot.func_75211_c() == null ? 0 : slot.func_75211_c().field_77994_a;
+                i = slot.func_75211_c() == null ? 0 : slot.func_75211_c().count;
                 Container.func_94525_a(this.field_147008_s, this.field_146987_F, itemstack1, i);
 
-                if (itemstack1.field_77994_a > itemstack1.func_77976_d())
+                if (itemstack1.count > itemstack1.func_77976_d())
                 {
-                    itemstack1.field_77994_a = itemstack1.func_77976_d();
+                    itemstack1.count = itemstack1.func_77976_d();
                 }
 
-                if (itemstack1.field_77994_a > slot.func_75219_a())
+                if (itemstack1.count > slot.func_75219_a())
                 {
-                    itemstack1.field_77994_a = slot.func_75219_a();
+                    itemstack1.count = slot.func_75219_a();
                 }
             }
         }
@@ -337,7 +337,7 @@ public abstract class GuiContainer extends GuiScreen
                 k1 = -999;
             }
 
-            if (this.field_146297_k.gameSettings.field_85185_A && flag1 && this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() == null)
+            if (this.field_146297_k.gameSettings.field_85185_A && flag1 && this.field_146297_k.field_71439_g.inventory.func_70445_o() == null)
             {
                 this.field_146297_k.func_147108_a((GuiScreen)null);
                 return;
@@ -360,7 +360,7 @@ public abstract class GuiContainer extends GuiScreen
                 }
                 else if (!this.field_147007_t)
                 {
-                    if (this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() == null)
+                    if (this.field_146297_k.field_71439_g.inventory.func_70445_o() == null)
                     {
                         if (p_73864_3_ == this.field_146297_k.gameSettings.field_74322_I.getEventKey() + 100)
                         {
@@ -413,7 +413,7 @@ public abstract class GuiContainer extends GuiScreen
     protected void func_146273_a(int p_146273_1_, int p_146273_2_, int p_146273_3_, long p_146273_4_)
     {
         Slot slot = this.func_146975_c(p_146273_1_, p_146273_2_);
-        ItemStack itemstack = this.field_146297_k.field_71439_g.field_71071_by.func_70445_o();
+        ItemStack itemstack = this.field_146297_k.field_71439_g.inventory.func_70445_o();
 
         if (this.field_147005_v != null && this.field_146297_k.gameSettings.field_85185_A)
         {
@@ -426,7 +426,7 @@ public abstract class GuiContainer extends GuiScreen
                         this.field_147012_x = this.field_147005_v.func_75211_c().func_77946_l();
                     }
                 }
-                else if (this.field_147012_x.field_77994_a > 1 && slot != null && Container.func_94527_a(slot, this.field_147012_x, false))
+                else if (this.field_147012_x.count > 1 && slot != null && Container.func_94527_a(slot, this.field_147012_x, false))
                 {
                     long i1 = Minecraft.func_71386_F();
 
@@ -438,7 +438,7 @@ public abstract class GuiContainer extends GuiScreen
                             this.func_146984_a(slot, slot.field_75222_d, 1, 0);
                             this.func_146984_a(this.field_147005_v, this.field_147005_v.field_75222_d, 0, 0);
                             this.field_146986_E = i1 + 750L;
-                            --this.field_147012_x.field_77994_a;
+                            --this.field_147012_x.count;
                         }
                     }
                     else
@@ -449,7 +449,7 @@ public abstract class GuiContainer extends GuiScreen
                 }
             }
         }
-        else if (this.field_147007_t && slot != null && itemstack != null && itemstack.field_77994_a > this.field_147008_s.size() && Container.func_94527_a(slot, itemstack, true) && slot.func_75214_a(itemstack) && this.field_147002_h.func_94531_b(slot))
+        else if (this.field_147007_t && slot != null && itemstack != null && itemstack.count > this.field_147008_s.size() && Container.func_94527_a(slot, itemstack, true) && slot.func_75214_a(itemstack) && this.field_147002_h.func_94531_b(slot))
         {
             this.field_147008_s.add(slot);
             this.func_146980_g();
@@ -538,7 +538,7 @@ public abstract class GuiContainer extends GuiScreen
                         this.func_146984_a(this.field_147005_v, this.field_147005_v.field_75222_d, p_146286_3_, 0);
                         this.func_146984_a(slot, j1, 0, 0);
 
-                        if (this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() != null)
+                        if (this.field_146297_k.field_71439_g.inventory.func_70445_o() != null)
                         {
                             this.func_146984_a(this.field_147005_v, this.field_147005_v.field_75222_d, p_146286_3_, 0);
                             this.field_147011_y = p_146286_1_ - l;
@@ -578,7 +578,7 @@ public abstract class GuiContainer extends GuiScreen
 
                 this.func_146984_a((Slot)null, -999, Container.func_94534_d(2, this.field_146987_F), 5);
             }
-            else if (this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() != null)
+            else if (this.field_146297_k.field_71439_g.inventory.func_70445_o() != null)
             {
                 if (p_146286_3_ == this.field_146297_k.gameSettings.field_74322_I.getEventKey() + 100)
                 {
@@ -598,7 +598,7 @@ public abstract class GuiContainer extends GuiScreen
             }
         }
 
-        if (this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() == null)
+        if (this.field_146297_k.field_71439_g.inventory.func_70445_o() == null)
         {
             this.field_146997_J = 0L;
         }
@@ -654,7 +654,7 @@ public abstract class GuiContainer extends GuiScreen
 
     protected boolean func_146983_a(int p_146983_1_)
     {
-        if (this.field_146297_k.field_71439_g.field_71071_by.func_70445_o() == null && this.field_147006_u != null)
+        if (this.field_146297_k.field_71439_g.inventory.func_70445_o() == null && this.field_147006_u != null)
         {
             for (int j = 0; j < 9; ++j)
             {

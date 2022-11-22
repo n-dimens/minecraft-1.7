@@ -48,9 +48,9 @@ public class BlockFlowerPot extends BlockContainer
 
     public boolean func_149727_a(World p_149727_1_, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer p_149727_5_, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_)
     {
-        ItemStack itemstack = p_149727_5_.field_71071_by.func_70448_g();
+        ItemStack itemstack = p_149727_5_.inventory.getActiveItem();
 
-        if (itemstack != null && itemstack.func_77973_b() instanceof ItemBlock)
+        if (itemstack != null && itemstack.getBaseItem() instanceof ItemBlock)
         {
             TileEntityFlowerPot tileentityflowerpot = this.func_149929_e(p_149727_1_, p_149727_2_, p_149727_3_, p_149727_4_);
 
@@ -62,7 +62,7 @@ public class BlockFlowerPot extends BlockContainer
                 }
                 else
                 {
-                    Block block = Block.func_149634_a(itemstack.func_77973_b());
+                    Block block = Block.func_149634_a(itemstack.getBaseItem());
 
                     if (!this.func_149928_a(block, itemstack.func_77960_j()))
                     {
@@ -70,7 +70,7 @@ public class BlockFlowerPot extends BlockContainer
                     }
                     else
                     {
-                        tileentityflowerpot.func_145964_a(itemstack.func_77973_b(), itemstack.func_77960_j());
+                        tileentityflowerpot.func_145964_a(itemstack.getBaseItem(), itemstack.func_77960_j());
                         tileentityflowerpot.func_70296_d();
 
                         if (!p_149727_1_.func_72921_c(p_149727_2_, p_149727_3_, p_149727_4_, itemstack.func_77960_j(), 2))
@@ -78,9 +78,9 @@ public class BlockFlowerPot extends BlockContainer
                             p_149727_1_.func_147471_g(p_149727_2_, p_149727_3_, p_149727_4_);
                         }
 
-                        if (!p_149727_5_.field_71075_bZ.field_75098_d && --itemstack.field_77994_a <= 0)
+                        if (!p_149727_5_.capabilities.instabuild && --itemstack.count <= 0)
                         {
-                            p_149727_5_.field_71071_by.func_70299_a(p_149727_5_.field_71071_by.field_70461_c, (ItemStack)null);
+                            p_149727_5_.inventory.putItem(p_149727_5_.inventory.activeItemPosition, (ItemStack)null);
                         }
 
                         return true;
@@ -152,7 +152,7 @@ public class BlockFlowerPot extends BlockContainer
     {
         super.func_149681_a(p_149681_1_, p_149681_2_, p_149681_3_, p_149681_4_, p_149681_5_, p_149681_6_);
 
-        if (p_149681_6_.field_71075_bZ.field_75098_d)
+        if (p_149681_6_.capabilities.instabuild)
         {
             TileEntityFlowerPot tileentityflowerpot = this.func_149929_e(p_149681_1_, p_149681_2_, p_149681_3_, p_149681_4_);
 

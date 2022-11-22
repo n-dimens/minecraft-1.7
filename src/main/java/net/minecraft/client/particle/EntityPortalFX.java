@@ -23,8 +23,8 @@ public class EntityPortalFX extends EntityFX
         this.field_70574_aq = this.field_70165_t = p_i1222_2_;
         this.field_70573_ar = this.field_70163_u = p_i1222_4_;
         this.field_70572_as = this.field_70161_v = p_i1222_6_;
-        float f = this.field_70146_Z.nextFloat() * 0.6F + 0.4F;
-        this.field_70571_a = this.field_70544_f = this.field_70146_Z.nextFloat() * 0.2F + 0.5F;
+        float f = this.randomizer.nextFloat() * 0.6F + 0.4F;
+        this.field_70571_a = this.field_70544_f = this.randomizer.nextFloat() * 0.2F + 0.5F;
         this.field_70552_h = this.field_70553_i = this.field_70551_j = 1.0F * f;
         this.field_70553_i *= 0.3F;
         this.field_70552_h *= 0.9F;

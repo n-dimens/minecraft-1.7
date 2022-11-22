@@ -21,7 +21,7 @@ public class ItemSlab extends ItemBlock
         this.field_150949_c = p_i45355_2_;
         this.field_150947_d = p_i45355_3_;
         this.field_150948_b = p_i45355_4_;
-        this.func_77656_e(0);
+        this.setDurability(0);
         this.func_77627_a(true);
     }
 
@@ -47,7 +47,7 @@ public class ItemSlab extends ItemBlock
         {
             return super.func_77648_a(p_77648_1_, p_77648_2_, p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_, p_77648_7_, p_77648_8_, p_77648_9_, p_77648_10_);
         }
-        else if (p_77648_1_.field_77994_a == 0)
+        else if (p_77648_1_.count == 0)
         {
             return false;
         }
@@ -67,7 +67,7 @@ public class ItemSlab extends ItemBlock
                 if (p_77648_3_.func_72855_b(this.field_150947_d.func_149668_a(p_77648_3_, p_77648_4_, p_77648_5_, p_77648_6_)) && p_77648_3_.func_147465_d(p_77648_4_, p_77648_5_, p_77648_6_, this.field_150947_d, j1, 3))
                 {
                     p_77648_3_.func_72908_a((double)((float)p_77648_4_ + 0.5F), (double)((float)p_77648_5_ + 0.5F), (double)((float)p_77648_6_ + 0.5F), this.field_150947_d.field_149762_H.func_150496_b(), (this.field_150947_d.field_149762_H.func_150497_c() + 1.0F) / 2.0F, this.field_150947_d.field_149762_H.func_150494_d() * 0.8F);
-                    --p_77648_1_.field_77994_a;
+                    --p_77648_1_.count;
                 }
 
                 return true;
@@ -174,7 +174,7 @@ public class ItemSlab extends ItemBlock
             if (p_150946_3_.func_72855_b(this.field_150947_d.func_149668_a(p_150946_3_, p_150946_4_, p_150946_5_, p_150946_6_)) && p_150946_3_.func_147465_d(p_150946_4_, p_150946_5_, p_150946_6_, this.field_150947_d, j1, 3))
             {
                 p_150946_3_.func_72908_a((double)((float)p_150946_4_ + 0.5F), (double)((float)p_150946_5_ + 0.5F), (double)((float)p_150946_6_ + 0.5F), this.field_150947_d.field_149762_H.func_150496_b(), (this.field_150947_d.field_149762_H.func_150497_c() + 1.0F) / 2.0F, this.field_150947_d.field_149762_H.func_150494_d() * 0.8F);
-                --p_150946_1_.field_77994_a;
+                --p_150946_1_.count;
             }
 
             return true;

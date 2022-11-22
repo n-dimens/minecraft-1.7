@@ -40,7 +40,7 @@ public class ItemInWorldManager
     public void func_73076_a(WorldSettings.GameType p_73076_1_)
     {
         this.field_73091_c = p_73076_1_;
-        p_73076_1_.func_77147_a(this.field_73090_b.field_71075_bZ);
+        p_73076_1_.func_77147_a(this.field_73090_b.capabilities);
         this.field_73090_b.func_71016_p();
     }
 
@@ -221,7 +221,7 @@ public class ItemInWorldManager
         {
             return false;
         }
-        else if (this.field_73091_c.func_77145_d() && this.field_73090_b.func_70694_bm() != null && this.field_73090_b.func_70694_bm().func_77973_b() instanceof ItemSword)
+        else if (this.field_73091_c.func_77145_d() && this.field_73090_b.func_70694_bm() != null && this.field_73090_b.func_70694_bm().getBaseItem() instanceof ItemSword)
         {
             return false;
         }
@@ -245,7 +245,7 @@ public class ItemInWorldManager
                 {
                     itemstack.func_150999_a(this.field_73092_a, block, p_73084_1_, p_73084_2_, p_73084_3_, this.field_73090_b);
 
-                    if (itemstack.field_77994_a == 0)
+                    if (itemstack.count == 0)
                     {
                         this.field_73090_b.func_71028_bD();
                     }
@@ -263,21 +263,21 @@ public class ItemInWorldManager
 
     public boolean func_73085_a(EntityPlayer p_73085_1_, World p_73085_2_, ItemStack p_73085_3_)
     {
-        int i = p_73085_3_.field_77994_a;
+        int i = p_73085_3_.count;
         int j = p_73085_3_.func_77960_j();
         ItemStack itemstack1 = p_73085_3_.func_77957_a(p_73085_2_, p_73085_1_);
 
-        if (itemstack1 == p_73085_3_ && (itemstack1 == null || itemstack1.field_77994_a == i && itemstack1.func_77988_m() <= 0 && itemstack1.func_77960_j() == j))
+        if (itemstack1 == p_73085_3_ && (itemstack1 == null || itemstack1.count == i && itemstack1.func_77988_m() <= 0 && itemstack1.func_77960_j() == j))
         {
             return false;
         }
         else
         {
-            p_73085_1_.field_71071_by.field_70462_a[p_73085_1_.field_71071_by.field_70461_c] = itemstack1;
+            p_73085_1_.inventory.cells[p_73085_1_.inventory.activeItemPosition] = itemstack1;
 
             if (this.func_73083_d())
             {
-                itemstack1.field_77994_a = i;
+                itemstack1.count = i;
 
                 if (itemstack1.func_77984_f())
                 {
@@ -285,9 +285,9 @@ public class ItemInWorldManager
                 }
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
-                p_73085_1_.field_71071_by.field_70462_a[p_73085_1_.field_71071_by.field_70461_c] = null;
+                p_73085_1_.inventory.cells[p_73085_1_.inventory.activeItemPosition] = null;
             }
 
             if (!p_73085_1_.func_71039_bw())
@@ -312,10 +312,10 @@ public class ItemInWorldManager
         else if (this.func_73083_d())
         {
             int i1 = p_73078_3_.func_77960_j();
-            int j1 = p_73078_3_.field_77994_a;
+            int j1 = p_73078_3_.count;
             boolean flag = p_73078_3_.func_77943_a(p_73078_1_, p_73078_2_, p_73078_4_, p_73078_5_, p_73078_6_, p_73078_7_, p_73078_8_, p_73078_9_, p_73078_10_);
             p_73078_3_.func_77964_b(i1);
-            p_73078_3_.field_77994_a = j1;
+            p_73078_3_.count = j1;
             return flag;
         }
         else

@@ -24,7 +24,7 @@ public class ContainerPlayer extends Container
     {
         this.field_75180_g = p_i1819_2_;
         this.field_82862_h = p_i1819_3_;
-        this.func_75146_a(new SlotCrafting(p_i1819_1_.field_70458_d, this.field_75181_e, this.field_75179_f, 0, 144, 36));
+        this.func_75146_a(new SlotCrafting(p_i1819_1_.player, this.field_75181_e, this.field_75179_f, 0, 144, 36));
         int i;
         int j;
 
@@ -48,7 +48,7 @@ public class ContainerPlayer extends Container
                 }
                 public boolean func_75214_a(ItemStack p_75214_1_)
                 {
-                    return p_75214_1_ == null ? false : (p_75214_1_.func_77973_b() instanceof ItemArmor ? ((ItemArmor)p_75214_1_.func_77973_b()).field_77881_a == k : (p_75214_1_.func_77973_b() != Item.func_150898_a(Blocks.PUMPKIN) && p_75214_1_.func_77973_b() != Items.SKULL ? false : k == 0));
+                    return p_75214_1_ == null ? false : (p_75214_1_.getBaseItem() instanceof ItemArmor ? ((ItemArmor)p_75214_1_.getBaseItem()).field_77881_a == k : (p_75214_1_.getBaseItem() != Item.func_150898_a(Blocks.PUMPKIN) && p_75214_1_.getBaseItem() != Items.SKULL ? false : k == 0));
                 }
                 @SideOnly(Side.CLIENT)
                 public IIcon func_75212_b()
@@ -76,7 +76,7 @@ public class ContainerPlayer extends Container
 
     public void func_75130_a(IInventory p_75130_1_)
     {
-        this.field_75179_f.func_70299_a(0, CraftingManager.func_77594_a().func_82787_a(this.field_75181_e, this.field_82862_h.world));
+        this.field_75179_f.putItem(0, CraftingManager.func_77594_a().func_82787_a(this.field_75181_e, this.field_82862_h.world));
     }
 
     public void func_75134_a(EntityPlayer p_75134_1_)
@@ -93,10 +93,10 @@ public class ContainerPlayer extends Container
             }
         }
 
-        this.field_75179_f.func_70299_a(0, (ItemStack)null);
+        this.field_75179_f.putItem(0, (ItemStack)null);
     }
 
-    public boolean func_75145_c(EntityPlayer p_75145_1_)
+    public boolean func_75145_c(EntityPlayer player)
     {
         return true;
     }
@@ -134,9 +134,9 @@ public class ContainerPlayer extends Container
                     return null;
                 }
             }
-            else if (itemstack.func_77973_b() instanceof ItemArmor && !((Slot)this.field_75151_b.get(5 + ((ItemArmor)itemstack.func_77973_b()).field_77881_a)).func_75216_d())
+            else if (itemstack.getBaseItem() instanceof ItemArmor && !((Slot)this.field_75151_b.get(5 + ((ItemArmor)itemstack.getBaseItem()).field_77881_a)).func_75216_d())
             {
-                int j = 5 + ((ItemArmor)itemstack.func_77973_b()).field_77881_a;
+                int j = 5 + ((ItemArmor)itemstack.getBaseItem()).field_77881_a;
 
                 if (!this.func_75135_a(itemstack1, j, j + 1, false))
                 {
@@ -162,7 +162,7 @@ public class ContainerPlayer extends Container
                 return null;
             }
 
-            if (itemstack1.field_77994_a == 0)
+            if (itemstack1.count == 0)
             {
                 slot.func_75215_d((ItemStack)null);
             }
@@ -171,7 +171,7 @@ public class ContainerPlayer extends Container
                 slot.func_75218_e();
             }
 
-            if (itemstack1.field_77994_a == itemstack.field_77994_a)
+            if (itemstack1.count == itemstack.count)
             {
                 return null;
             }

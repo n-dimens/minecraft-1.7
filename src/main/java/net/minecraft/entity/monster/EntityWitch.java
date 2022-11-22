@@ -40,11 +40,11 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
     public EntityWitch(World p_i1744_1_)
     {
         super(p_i1744_1_);
-        this.field_70714_bg.func_75776_a(1, new EntityAISwimming(this));
-        this.field_70714_bg.func_75776_a(2, new EntityAIArrowAttack(this, 1.0D, 60, 10.0F));
-        this.field_70714_bg.func_75776_a(2, new EntityAIWander(this, 1.0D));
-        this.field_70714_bg.func_75776_a(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.field_70714_bg.func_75776_a(3, new EntityAILookIdle(this));
+        this.aiTasks.func_75776_a(1, new EntityAISwimming(this));
+        this.aiTasks.func_75776_a(2, new EntityAIArrowAttack(this, 1.0D, 60, 10.0F));
+        this.aiTasks.func_75776_a(2, new EntityAIWander(this, 1.0D));
+        this.aiTasks.func_75776_a(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.aiTasks.func_75776_a(3, new EntityAILookIdle(this));
         this.field_70715_bh.func_75776_a(1, new EntityAIHurtByTarget(this, false));
         this.field_70715_bh.func_75776_a(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
     }
@@ -104,7 +104,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
                     ItemStack itemstack = this.func_70694_bm();
                     this.func_70062_b(0, (ItemStack)null);
 
-                    if (itemstack != null && itemstack.func_77973_b() == Items.POTION)
+                    if (itemstack != null && itemstack.getBaseItem() == Items.POTION)
                     {
                         List list = Items.POTION.func_77832_l(itemstack);
 
@@ -127,23 +127,23 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
             {
                 short short1 = -1;
 
-                if (this.field_70146_Z.nextFloat() < 0.15F && this.func_70055_a(Material.field_151586_h) && !this.func_70644_a(Potion.field_76427_o))
+                if (this.randomizer.nextFloat() < 0.15F && this.func_70055_a(Material.field_151586_h) && !this.func_70644_a(Potion.field_76427_o))
                 {
                     short1 = 8237;
                 }
-                else if (this.field_70146_Z.nextFloat() < 0.15F && this.func_70027_ad() && !this.func_70644_a(Potion.field_76426_n))
+                else if (this.randomizer.nextFloat() < 0.15F && this.func_70027_ad() && !this.func_70644_a(Potion.field_76426_n))
                 {
                     short1 = 16307;
                 }
-                else if (this.field_70146_Z.nextFloat() < 0.05F && this.func_110143_aJ() < this.func_110138_aP())
+                else if (this.randomizer.nextFloat() < 0.05F && this.func_110143_aJ() < this.func_110138_aP())
                 {
                     short1 = 16341;
                 }
-                else if (this.field_70146_Z.nextFloat() < 0.25F && this.func_70638_az() != null && !this.func_70644_a(Potion.field_76424_c) && this.func_70638_az().func_70068_e(this) > 121.0D)
+                else if (this.randomizer.nextFloat() < 0.25F && this.func_70638_az() != null && !this.func_70644_a(Potion.field_76424_c) && this.func_70638_az().func_70068_e(this) > 121.0D)
                 {
                     short1 = 16274;
                 }
-                else if (this.field_70146_Z.nextFloat() < 0.25F && this.func_70638_az() != null && !this.func_70644_a(Potion.field_76424_c) && this.func_70638_az().func_70068_e(this) > 121.0D)
+                else if (this.randomizer.nextFloat() < 0.25F && this.func_70638_az() != null && !this.func_70644_a(Potion.field_76424_c) && this.func_70638_az().func_70068_e(this) > 121.0D)
                 {
                     short1 = 16274;
                 }
@@ -159,7 +159,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
                 }
             }
 
-            if (this.field_70146_Z.nextFloat() < 7.5E-4F)
+            if (this.randomizer.nextFloat() < 7.5E-4F)
             {
                 this.world.func_72960_a(this, (byte)15);
             }
@@ -173,9 +173,9 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
     {
         if (p_70103_1_ == 15)
         {
-            for (int i = 0; i < this.field_70146_Z.nextInt(35) + 10; ++i)
+            for (int i = 0; i < this.randomizer.nextInt(35) + 10; ++i)
             {
-                this.world.func_72869_a("witchMagic", this.field_70165_t + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, this.field_70121_D.field_72337_e + 0.5D + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, this.field_70161_v + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, 0.0D, 0.0D, 0.0D);
+                this.world.func_72869_a("witchMagic", this.field_70165_t + this.randomizer.nextGaussian() * 0.12999999523162842D, this.field_70121_D.field_72337_e + 0.5D + this.randomizer.nextGaussian() * 0.12999999523162842D, this.field_70161_v + this.randomizer.nextGaussian() * 0.12999999523162842D, 0.0D, 0.0D, 0.0D);
             }
         }
         else
@@ -203,16 +203,16 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
 
     protected void func_70628_a(boolean p_70628_1_, int p_70628_2_)
     {
-        int j = this.field_70146_Z.nextInt(3) + 1;
+        int j = this.randomizer.nextInt(3) + 1;
 
         for (int k = 0; k < j; ++k)
         {
-            int l = this.field_70146_Z.nextInt(3);
-            Item item = field_82199_d[this.field_70146_Z.nextInt(field_82199_d.length)];
+            int l = this.randomizer.nextInt(3);
+            Item item = field_82199_d[this.randomizer.nextInt(field_82199_d.length)];
 
             if (p_70628_2_ > 0)
             {
-                l += this.field_70146_Z.nextInt(p_70628_2_ + 1);
+                l += this.randomizer.nextInt(p_70628_2_ + 1);
             }
 
             for (int i1 = 0; i1 < l; ++i1)
@@ -241,7 +241,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
             {
                 entitypotion.func_82340_a(32660);
             }
-            else if (f1 <= 3.0F && !p_82196_1_.func_70644_a(Potion.field_76437_t) && this.field_70146_Z.nextFloat() < 0.25F)
+            else if (f1 <= 3.0F && !p_82196_1_.func_70644_a(Potion.field_76437_t) && this.randomizer.nextFloat() < 0.25F)
             {
                 entitypotion.func_82340_a(32696);
             }

@@ -54,14 +54,14 @@ public class ItemGlassBottle extends Item
 
                 if (p_77659_2_.func_147439_a(i, j, k).func_149688_o() == Material.field_151586_h)
                 {
-                    --p_77659_1_.field_77994_a;
+                    --p_77659_1_.count;
 
-                    if (p_77659_1_.field_77994_a <= 0)
+                    if (p_77659_1_.count <= 0)
                     {
                         return new ItemStack(Items.POTION);
                     }
 
-                    if (!p_77659_3_.field_71071_by.func_70441_a(new ItemStack(Items.POTION)))
+                    if (!p_77659_3_.inventory.func_70441_a(new ItemStack(Items.POTION)))
                     {
                         p_77659_3_.func_71019_a(new ItemStack(Items.POTION, 1, 0), false);
                     }

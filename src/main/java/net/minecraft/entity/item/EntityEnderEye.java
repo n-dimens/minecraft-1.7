@@ -63,7 +63,7 @@ public class EntityEnderEye extends Entity
         }
 
         this.field_70223_e = 0;
-        this.field_70221_f = this.field_70146_Z.nextInt(5) > 0;
+        this.field_70221_f = this.randomizer.nextInt(5) > 0;
     }
 
     @SideOnly(Side.CLIENT)
@@ -154,7 +154,7 @@ public class EntityEnderEye extends Entity
         }
         else
         {
-            this.world.func_72869_a("portal", this.field_70165_t - this.field_70159_w * (double)f3 + this.field_70146_Z.nextDouble() * 0.6D - 0.3D, this.field_70163_u - this.field_70181_x * (double)f3 - 0.5D, this.field_70161_v - this.field_70179_y * (double)f3 + this.field_70146_Z.nextDouble() * 0.6D - 0.3D, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+            this.world.func_72869_a("portal", this.field_70165_t - this.field_70159_w * (double)f3 + this.randomizer.nextDouble() * 0.6D - 0.3D, this.field_70163_u - this.field_70181_x * (double)f3 - 0.5D, this.field_70161_v - this.field_70179_y * (double)f3 + this.randomizer.nextDouble() * 0.6D - 0.3D, this.field_70159_w, this.field_70181_x, this.field_70179_y);
         }
 
         if (!this.world.field_72995_K)

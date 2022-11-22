@@ -33,7 +33,7 @@ public class SlotCrafting extends Slot
     {
         if (this.func_75216_d())
         {
-            this.field_75237_g += Math.min(p_75209_1_, this.func_75211_c().field_77994_a);
+            this.field_75237_g += Math.min(p_75209_1_, this.func_75211_c().count);
         }
 
         return super.func_75209_a(p_75209_1_);
@@ -50,52 +50,52 @@ public class SlotCrafting extends Slot
         p_75208_1_.func_77980_a(this.field_75238_b.world, this.field_75238_b, this.field_75237_g);
         this.field_75237_g = 0;
 
-        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.CRAFTING_TABLE))
+        if (p_75208_1_.getBaseItem() == Item.func_150898_a(Blocks.CRAFTING_TABLE))
         {
             this.field_75238_b.func_71064_a(AchievementList.BUILD_WORK_BENCH, 1);
         }
 
-        if (p_75208_1_.func_77973_b() instanceof ItemPickaxe)
+        if (p_75208_1_.getBaseItem() instanceof ItemPickaxe)
         {
             this.field_75238_b.func_71064_a(AchievementList.BUILD_PICKAXE, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.FURNACE))
+        if (p_75208_1_.getBaseItem() == Item.func_150898_a(Blocks.FURNACE))
         {
             this.field_75238_b.func_71064_a(AchievementList.BUILD_FURNACE, 1);
         }
 
-        if (p_75208_1_.func_77973_b() instanceof ItemHoe)
+        if (p_75208_1_.getBaseItem() instanceof ItemHoe)
         {
             this.field_75238_b.func_71064_a(AchievementList.BUILD_HOE, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Items.BREAD)
+        if (p_75208_1_.getBaseItem() == Items.BREAD)
         {
             this.field_75238_b.func_71064_a(AchievementList.MAKE_BREAD, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Items.CAKE)
+        if (p_75208_1_.getBaseItem() == Items.CAKE)
         {
             this.field_75238_b.func_71064_a(AchievementList.BAKE_CAKE, 1);
         }
 
-        if (p_75208_1_.func_77973_b() instanceof ItemPickaxe && ((ItemPickaxe)p_75208_1_.func_77973_b()).func_150913_i() != Item.ToolMaterial.WOOD)
+        if (p_75208_1_.getBaseItem() instanceof ItemPickaxe && ((ItemPickaxe)p_75208_1_.getBaseItem()).func_150913_i() != Item.ToolMaterial.WOOD)
         {
             this.field_75238_b.func_71064_a(AchievementList.BUILD_BETTER_PICKAXE, 1);
         }
 
-        if (p_75208_1_.func_77973_b() instanceof ItemSword)
+        if (p_75208_1_.getBaseItem() instanceof ItemSword)
         {
             this.field_75238_b.func_71064_a(AchievementList.BUILD_SWORD, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.ENCHANTING_TABLE))
+        if (p_75208_1_.getBaseItem() == Item.func_150898_a(Blocks.ENCHANTING_TABLE))
         {
             this.field_75238_b.func_71064_a(AchievementList.ENCHANTMENTS, 1);
         }
 
-        if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.BOOKSHELF))
+        if (p_75208_1_.getBaseItem() == Item.func_150898_a(Blocks.BOOKSHELF))
         {
             this.field_75238_b.func_71064_a(AchievementList.BOOKCASE, 1);
         }
@@ -113,15 +113,15 @@ public class SlotCrafting extends Slot
             {
                 this.field_75239_a.func_70298_a(i, 1);
 
-                if (itemstack1.func_77973_b().func_77634_r())
+                if (itemstack1.getBaseItem().func_77634_r())
                 {
-                    ItemStack itemstack2 = new ItemStack(itemstack1.func_77973_b().func_77668_q());
+                    ItemStack itemstack2 = new ItemStack(itemstack1.getBaseItem().func_77668_q());
 
-                    if (!itemstack1.func_77973_b().func_77630_h(itemstack1) || !this.field_75238_b.field_71071_by.func_70441_a(itemstack2))
+                    if (!itemstack1.getBaseItem().func_77630_h(itemstack1) || !this.field_75238_b.inventory.func_70441_a(itemstack2))
                     {
                         if (this.field_75239_a.func_70301_a(i) == null)
                         {
-                            this.field_75239_a.func_70299_a(i, itemstack2);
+                            this.field_75239_a.putItem(i, itemstack2);
                         }
                         else
                         {

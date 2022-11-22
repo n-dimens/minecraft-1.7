@@ -217,7 +217,7 @@ public class Bootstrap
             private static final String __OBFID = "CL_00001399";
             public ItemStack func_82487_b(IBlockSource p_82487_1_, ItemStack p_82487_2_)
             {
-                ItemBucket itembucket = (ItemBucket)p_82487_2_.func_77973_b();
+                ItemBucket itembucket = (ItemBucket)p_82487_2_.getBaseItem();
                 int i = p_82487_1_.func_82623_d();
                 int j = p_82487_1_.func_82622_e();
                 int k = p_82487_1_.func_82621_f();
@@ -226,7 +226,7 @@ public class Bootstrap
                 if (itembucket.func_77875_a(p_82487_1_.func_82618_k(), i + enumfacing.func_82601_c(), j + enumfacing.func_96559_d(), k + enumfacing.func_82599_e()))
                 {
                     p_82487_2_.func_150996_a(Items.BUCKET);
-                    p_82487_2_.field_77994_a = 1;
+                    p_82487_2_.count = 1;
                     return p_82487_2_;
                 }
                 else
@@ -268,10 +268,10 @@ public class Bootstrap
 
                 world.func_147468_f(i, j, k);
 
-                if (--p_82487_2_.field_77994_a == 0)
+                if (--p_82487_2_.count == 0)
                 {
                     p_82487_2_.func_150996_a(item);
-                    p_82487_2_.field_77994_a = 1;
+                    p_82487_2_.count = 1;
                 }
                 else if (((TileEntityDispenser)p_82487_1_.func_150835_j()).func_146019_a(new ItemStack(item)) < 0)
                 {
@@ -299,7 +299,7 @@ public class Bootstrap
 
                     if (p_82487_2_.func_96631_a(1, world.field_73012_v))
                     {
-                        p_82487_2_.field_77994_a = 0;
+                        p_82487_2_.count = 0;
                     }
                 }
                 else if (world.func_147439_a(i, j, k) == Blocks.TNT)
@@ -383,7 +383,7 @@ public class Bootstrap
                 int k = p_82487_1_.func_82621_f() + enumfacing.func_82599_e();
                 EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(world, (double)((float)i + 0.5F), (double)((float)j + 0.5F), (double)((float)k + 0.5F), (EntityLivingBase)null);
                 world.func_72838_d(entitytntprimed);
-                --p_82487_2_.field_77994_a;
+                --p_82487_2_.count;
                 return p_82487_2_;
             }
         });
@@ -396,7 +396,7 @@ public class Bootstrap
             field_151355_a = true;
             Block.func_149671_p();
             BlockFire.func_149843_e();
-            Item.func_150900_l();
+            Item.fillRegistry();
             StatList.func_151178_a();
             func_151353_a();
         }

@@ -21,10 +21,10 @@ public class S39PacketPlayerAbilities extends Packet
 
     public S39PacketPlayerAbilities(PlayerCapabilities p_i45208_1_)
     {
-        this.func_149108_a(p_i45208_1_.field_75102_a);
-        this.func_149102_b(p_i45208_1_.field_75100_b);
-        this.func_149109_c(p_i45208_1_.field_75101_c);
-        this.func_149111_d(p_i45208_1_.field_75098_d);
+        this.func_149108_a(p_i45208_1_.invulnerable);
+        this.func_149102_b(p_i45208_1_.flying);
+        this.func_149109_c(p_i45208_1_.mayfly);
+        this.func_149111_d(p_i45208_1_.instabuild);
         this.func_149104_a(p_i45208_1_.func_75093_a());
         this.func_149110_b(p_i45208_1_.func_75094_b());
     }

@@ -485,7 +485,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
     public void func_147346_a(C08PacketPlayerBlockPlacement p_147346_1_)
     {
         WorldServer worldserver = this.field_147367_d.func_71218_a(this.field_147369_b.field_71093_bK);
-        ItemStack itemstack = this.field_147369_b.field_71071_by.func_70448_g();
+        ItemStack itemstack = this.field_147369_b.inventory.getActiveItem();
         boolean flag = false;
         int i = p_147346_1_.func_149576_c();
         int j = p_147346_1_.func_149571_d();
@@ -556,25 +556,25 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
             this.field_147369_b.field_71135_a.func_147359_a(new S23PacketBlockChange(i, j, k, worldserver));
         }
 
-        itemstack = this.field_147369_b.field_71071_by.func_70448_g();
+        itemstack = this.field_147369_b.inventory.getActiveItem();
 
-        if (itemstack != null && itemstack.field_77994_a == 0)
+        if (itemstack != null && itemstack.count == 0)
         {
-            this.field_147369_b.field_71071_by.field_70462_a[this.field_147369_b.field_71071_by.field_70461_c] = null;
+            this.field_147369_b.inventory.cells[this.field_147369_b.inventory.activeItemPosition] = null;
             itemstack = null;
         }
 
         if (itemstack == null || itemstack.func_77988_m() == 0)
         {
             this.field_147369_b.field_71137_h = true;
-            this.field_147369_b.field_71071_by.field_70462_a[this.field_147369_b.field_71071_by.field_70461_c] = ItemStack.func_77944_b(this.field_147369_b.field_71071_by.field_70462_a[this.field_147369_b.field_71071_by.field_70461_c]);
-            Slot slot = this.field_147369_b.field_71070_bA.func_75147_a(this.field_147369_b.field_71071_by, this.field_147369_b.field_71071_by.field_70461_c);
+            this.field_147369_b.inventory.cells[this.field_147369_b.inventory.activeItemPosition] = ItemStack.func_77944_b(this.field_147369_b.inventory.cells[this.field_147369_b.inventory.activeItemPosition]);
+            Slot slot = this.field_147369_b.field_71070_bA.func_75147_a(this.field_147369_b.inventory, this.field_147369_b.inventory.activeItemPosition);
             this.field_147369_b.field_71070_bA.func_75142_b();
             this.field_147369_b.field_71137_h = false;
 
-            if (!ItemStack.func_77989_b(this.field_147369_b.field_71071_by.func_70448_g(), p_147346_1_.func_149574_g()))
+            if (!ItemStack.func_77989_b(this.field_147369_b.inventory.getActiveItem(), p_147346_1_.func_149574_g()))
             {
-                this.func_147359_a(new S2FPacketSetSlot(this.field_147369_b.field_71070_bA.field_75152_c, slot.field_75222_d, this.field_147369_b.field_71071_by.func_70448_g()));
+                this.func_147359_a(new S2FPacketSetSlot(this.field_147369_b.field_71070_bA.field_75152_c, slot.field_75222_d, this.field_147369_b.inventory.getActiveItem()));
             }
         }
     }
@@ -638,7 +638,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
     {
         if (p_147355_1_.func_149614_c() >= 0 && p_147355_1_.func_149614_c() < InventoryPlayer.func_70451_h())
         {
-            this.field_147369_b.field_71071_by.field_70461_c = p_147355_1_.func_149614_c();
+            this.field_147369_b.inventory.activeItemPosition = p_147355_1_.func_149614_c();
             this.field_147369_b.func_143004_u();
         }
         else
@@ -880,8 +880,8 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
             boolean flag = p_147344_1_.func_149627_c() < 0;
             ItemStack itemstack = p_147344_1_.func_149625_d();
             boolean flag1 = p_147344_1_.func_149627_c() >= 1 && p_147344_1_.func_149627_c() < 36 + InventoryPlayer.func_70451_h();
-            boolean flag2 = itemstack == null || itemstack.func_77973_b() != null;
-            boolean flag3 = itemstack == null || itemstack.func_77960_j() >= 0 && itemstack.field_77994_a <= 64 && itemstack.field_77994_a > 0;
+            boolean flag2 = itemstack == null || itemstack.getBaseItem() != null;
+            boolean flag3 = itemstack == null || itemstack.func_77960_j() >= 0 && itemstack.count <= 64 && itemstack.count > 0;
 
             if (flag1 && flag2 && flag3)
             {
@@ -996,7 +996,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
 
     public void func_147348_a(C13PacketPlayerAbilities p_147348_1_)
     {
-        this.field_147369_b.field_71075_bZ.field_75100_b = p_147348_1_.func_149488_d() && this.field_147369_b.field_71075_bZ.field_75101_c;
+        this.field_147369_b.capabilities.flying = p_147348_1_.func_149488_d() && this.field_147369_b.capabilities.mayfly;
     }
 
     public void func_147341_a(C14PacketTabComplete p_147341_1_)
@@ -1042,11 +1042,11 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
                     throw new IOException("Invalid book tag!");
                 }
 
-                itemstack1 = this.field_147369_b.field_71071_by.func_70448_g();
+                itemstack1 = this.field_147369_b.inventory.getActiveItem();
 
                 if (itemstack1 != null)
                 {
-                    if (itemstack.func_77973_b() == Items.WRITABLE_BOOK && itemstack.func_77973_b() == itemstack1.func_77973_b())
+                    if (itemstack.getBaseItem() == Items.WRITABLE_BOOK && itemstack.getBaseItem() == itemstack1.getBaseItem())
                     {
                         itemstack1.func_77983_a("pages", itemstack.func_77978_p().func_150295_c("pages", 8));
                     }
@@ -1084,11 +1084,11 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
                     throw new IOException("Invalid book tag!");
                 }
 
-                itemstack1 = this.field_147369_b.field_71071_by.func_70448_g();
+                itemstack1 = this.field_147369_b.inventory.getActiveItem();
 
                 if (itemstack1 != null)
                 {
-                    if (itemstack.func_77973_b() == Items.WRITTEN_BOOK && itemstack1.func_77973_b() == Items.WRITABLE_BOOK)
+                    if (itemstack.getBaseItem() == Items.WRITTEN_BOOK && itemstack1.getBaseItem() == Items.WRITABLE_BOOK)
                     {
                         itemstack1.func_77983_a("author", new NBTTagString(this.field_147369_b.func_70005_c_()));
                         itemstack1.func_77983_a("title", new NBTTagString(itemstack.func_77978_p().func_74779_i("title")));
@@ -1140,7 +1140,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
                 {
                     this.field_147369_b.func_145747_a(new ChatComponentTranslation("advMode.notEnabled", new Object[0]));
                 }
-                else if (this.field_147369_b.func_70003_b(2, "") && this.field_147369_b.field_71075_bZ.field_75098_d)
+                else if (this.field_147369_b.func_70003_b(2, "") && this.field_147369_b.capabilities.instabuild)
                 {
                     packetbuffer = new PacketBuffer(Unpooled.wrappedBuffer(p_147349_1_.func_149558_e()));
 

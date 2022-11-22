@@ -21,7 +21,7 @@ public class RecipeBookCloning implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() == Items.WRITTEN_BOOK)
+                if (itemstack1.getBaseItem() == Items.WRITTEN_BOOK)
                 {
                     if (itemstack != null)
                     {
@@ -32,7 +32,7 @@ public class RecipeBookCloning implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.WRITABLE_BOOK)
+                    if (itemstack1.getBaseItem() != Items.WRITABLE_BOOK)
                     {
                         return false;
                     }
@@ -56,7 +56,7 @@ public class RecipeBookCloning implements IRecipe
 
             if (itemstack1 != null)
             {
-                if (itemstack1.func_77973_b() == Items.WRITTEN_BOOK)
+                if (itemstack1.getBaseItem() == Items.WRITTEN_BOOK)
                 {
                     if (itemstack != null)
                     {
@@ -67,7 +67,7 @@ public class RecipeBookCloning implements IRecipe
                 }
                 else
                 {
-                    if (itemstack1.func_77973_b() != Items.WRITABLE_BOOK)
+                    if (itemstack1.getBaseItem() != Items.WRITABLE_BOOK)
                     {
                         return null;
                     }

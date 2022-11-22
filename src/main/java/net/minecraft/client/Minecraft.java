@@ -1389,7 +1389,7 @@ public class Minecraft implements IPlayerUsage
     {
         this.field_71467_ac = 4;
         boolean flag = true;
-        ItemStack itemstack = this.field_71439_g.field_71071_by.func_70448_g();
+        ItemStack itemstack = this.field_71439_g.inventory.getActiveItem();
 
         if (this.field_71476_x == null)
         {
@@ -1413,7 +1413,7 @@ public class Minecraft implements IPlayerUsage
 
                     if (this.field_71441_e.func_147439_a(i, j, k).func_149688_o() != Material.field_151579_a)
                     {
-                        int l = itemstack != null ? itemstack.field_77994_a : 0;
+                        int l = itemstack != null ? itemstack.count : 0;
 
                         if (this.field_71442_b.func_78760_a(this.field_71439_g, this.field_71441_e, itemstack, i, j, k, this.field_71476_x.field_72310_e, this.field_71476_x.field_72307_f))
                         {
@@ -1426,11 +1426,11 @@ public class Minecraft implements IPlayerUsage
                             return;
                         }
 
-                        if (itemstack.field_77994_a == 0)
+                        if (itemstack.count == 0)
                         {
-                            this.field_71439_g.field_71071_by.field_70462_a[this.field_71439_g.field_71071_by.field_70461_c] = null;
+                            this.field_71439_g.inventory.cells[this.field_71439_g.inventory.activeItemPosition] = null;
                         }
-                        else if (itemstack.field_77994_a != l || this.field_71442_b.func_78758_h())
+                        else if (itemstack.count != l || this.field_71442_b.func_78758_h())
                         {
                             this.field_71460_t.field_78516_c.func_78444_b();
                         }
@@ -1440,7 +1440,7 @@ public class Minecraft implements IPlayerUsage
 
         if (flag)
         {
-            ItemStack itemstack1 = this.field_71439_g.field_71071_by.func_70448_g();
+            ItemStack itemstack1 = this.field_71439_g.inventory.getActiveItem();
 
             if (itemstack1 != null && this.field_71442_b.func_78769_a(this.field_71439_g, this.field_71441_e, itemstack1))
             {
@@ -1668,7 +1668,7 @@ public class Minecraft implements IPlayerUsage
 
                     if (i != 0)
                     {
-                        this.field_71439_g.field_71071_by.func_70453_c(i);
+                        this.field_71439_g.inventory.func_70453_c(i);
 
                         if (this.gameSettings.field_74331_S)
                         {
@@ -1841,7 +1841,7 @@ public class Minecraft implements IPlayerUsage
             {
                 if (this.gameSettings.field_151456_ac[j].func_151468_f())
                 {
-                    this.field_71439_g.field_71071_by.field_70461_c = j;
+                    this.field_71439_g.inventory.activeItemPosition = j;
                 }
             }
 
@@ -2261,7 +2261,7 @@ public class Minecraft implements IPlayerUsage
     {
         if (this.field_71476_x != null)
         {
-            boolean flag = this.field_71439_g.field_71075_bZ.field_75098_d;
+            boolean flag = this.field_71439_g.capabilities.instabuild;
             int i = 0;
             boolean flag1 = false;
             Item item;
@@ -2316,7 +2316,7 @@ public class Minecraft implements IPlayerUsage
                     }
                     else
                     {
-                        item = itemstack.func_77973_b();
+                        item = itemstack.getBaseItem();
                         i = itemstack.func_77960_j();
                         flag1 = true;
                     }
@@ -2367,12 +2367,12 @@ public class Minecraft implements IPlayerUsage
                 }
             }
 
-            this.field_71439_g.field_71071_by.func_146030_a(item, i, flag1, flag);
+            this.field_71439_g.inventory.func_146030_a(item, i, flag1, flag);
 
             if (flag)
             {
-                j = this.field_71439_g.field_71069_bz.field_75151_b.size() - 9 + this.field_71439_g.field_71071_by.field_70461_c;
-                this.field_71442_b.func_78761_a(this.field_71439_g.field_71071_by.func_70301_a(this.field_71439_g.field_71071_by.field_70461_c), j);
+                j = this.field_71439_g.field_71069_bz.field_75151_b.size() - 9 + this.field_71439_g.inventory.activeItemPosition;
+                this.field_71442_b.func_78761_a(this.field_71439_g.inventory.func_70301_a(this.field_71439_g.inventory.activeItemPosition), j);
             }
         }
     }
@@ -2765,7 +2765,7 @@ public class Minecraft implements IPlayerUsage
 
     public MusicTicker.MusicType func_147109_W()
     {
-        return this.field_71462_r instanceof GuiWinGame ? MusicTicker.MusicType.CREDITS : (this.field_71439_g != null ? (this.field_71439_g.world.field_73011_w instanceof WorldProviderHell ? MusicTicker.MusicType.NETHER : (this.field_71439_g.world.field_73011_w instanceof WorldProviderEnd ? (BossStatus.field_82827_c != null && BossStatus.field_82826_b > 0 ? MusicTicker.MusicType.END_BOSS : MusicTicker.MusicType.END) : (this.field_71439_g.field_71075_bZ.field_75098_d && this.field_71439_g.field_71075_bZ.field_75101_c ? MusicTicker.MusicType.CREATIVE : MusicTicker.MusicType.GAME))) : MusicTicker.MusicType.MENU);
+        return this.field_71462_r instanceof GuiWinGame ? MusicTicker.MusicType.CREDITS : (this.field_71439_g != null ? (this.field_71439_g.world.field_73011_w instanceof WorldProviderHell ? MusicTicker.MusicType.NETHER : (this.field_71439_g.world.field_73011_w instanceof WorldProviderEnd ? (BossStatus.field_82827_c != null && BossStatus.field_82826_b > 0 ? MusicTicker.MusicType.END_BOSS : MusicTicker.MusicType.END) : (this.field_71439_g.capabilities.instabuild && this.field_71439_g.capabilities.mayfly ? MusicTicker.MusicType.CREATIVE : MusicTicker.MusicType.GAME))) : MusicTicker.MusicType.MENU);
     }
 
     public IStream func_152346_Z()

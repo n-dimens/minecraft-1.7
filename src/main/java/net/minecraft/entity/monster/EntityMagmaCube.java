@@ -66,11 +66,11 @@ public class EntityMagmaCube extends EntitySlime
 
         if (item != null && this.func_70809_q() > 1)
         {
-            int j = this.field_70146_Z.nextInt(4) - 2;
+            int j = this.randomizer.nextInt(4) - 2;
 
             if (p_70628_2_ > 0)
             {
-                j += this.field_70146_Z.nextInt(p_70628_2_ + 1);
+                j += this.randomizer.nextInt(p_70628_2_ + 1);
             }
 
             for (int k = 0; k < j; ++k)

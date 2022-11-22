@@ -23,8 +23,8 @@ public class EntityLargeExplodeFX extends EntityFX
     {
         super(p_i1213_2_, p_i1213_3_, p_i1213_5_, p_i1213_7_, 0.0D, 0.0D, 0.0D);
         this.field_70583_ar = p_i1213_1_;
-        this.field_70584_aq = 6 + this.field_70146_Z.nextInt(4);
-        this.field_70552_h = this.field_70553_i = this.field_70551_j = this.field_70146_Z.nextFloat() * 0.6F + 0.4F;
+        this.field_70584_aq = 6 + this.randomizer.nextInt(4);
+        this.field_70552_h = this.field_70553_i = this.field_70551_j = this.randomizer.nextFloat() * 0.6F + 0.4F;
         this.field_70582_as = 1.0F - (float)p_i1213_9_ * 0.5F;
     }
 

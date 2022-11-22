@@ -70,10 +70,10 @@ public class EntityOtherPlayerMP extends AbstractClientPlayer
         this.field_70721_aZ += (f - this.field_70721_aZ) * 0.4F;
         this.field_70754_ba += this.field_70721_aZ;
 
-        if (!this.field_71186_a && this.func_70113_ah() && this.field_71071_by.field_70462_a[this.field_71071_by.field_70461_c] != null)
+        if (!this.field_71186_a && this.func_70113_ah() && this.inventory.cells[this.inventory.activeItemPosition] != null)
         {
-            ItemStack itemstack = this.field_71071_by.field_70462_a[this.field_71071_by.field_70461_c];
-            this.func_71008_a(this.field_71071_by.field_70462_a[this.field_71071_by.field_70461_c], itemstack.func_77973_b().func_77626_a(itemstack));
+            ItemStack itemstack = this.inventory.cells[this.inventory.activeItemPosition];
+            this.func_71008_a(this.inventory.cells[this.inventory.activeItemPosition], itemstack.getBaseItem().func_77626_a(itemstack));
             this.field_71186_a = true;
         }
         else if (this.field_71186_a && !this.func_70113_ah())
@@ -143,11 +143,11 @@ public class EntityOtherPlayerMP extends AbstractClientPlayer
     {
         if (p_70062_1_ == 0)
         {
-            this.field_71071_by.field_70462_a[this.field_71071_by.field_70461_c] = p_70062_2_;
+            this.inventory.cells[this.inventory.activeItemPosition] = p_70062_2_;
         }
         else
         {
-            this.field_71071_by.field_70460_b[p_70062_1_ - 1] = p_70062_2_;
+            this.inventory.field_70460_b[p_70062_1_ - 1] = p_70062_2_;
         }
     }
 

@@ -36,10 +36,10 @@ public class CommandClearInventory extends CommandBase
         }
         else
         {
-            int j = entityplayermp.field_71071_by.func_146027_a(item, i);
+            int j = entityplayermp.inventory.func_146027_a(item, i);
             entityplayermp.field_71069_bz.func_75142_b();
 
-            if (!entityplayermp.field_71075_bZ.field_75098_d)
+            if (!entityplayermp.capabilities.instabuild)
             {
                 entityplayermp.func_71113_k();
             }

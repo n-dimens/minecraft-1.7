@@ -43,8 +43,8 @@ public class S0CPacketSpawnPlayer extends Packet
         this.field_148954_e = MathHelper.func_76128_c(p_i45171_1_.field_70161_v * 32.0D);
         this.field_148951_f = (byte)((int)(p_i45171_1_.field_70177_z * 256.0F / 360.0F));
         this.field_148952_g = (byte)((int)(p_i45171_1_.field_70125_A * 256.0F / 360.0F));
-        ItemStack itemstack = p_i45171_1_.field_71071_by.func_70448_g();
-        this.field_148959_h = itemstack == null ? 0 : Item.func_150891_b(itemstack.func_77973_b());
+        ItemStack itemstack = p_i45171_1_.inventory.getActiveItem();
+        this.field_148959_h = itemstack == null ? 0 : Item.func_150891_b(itemstack.getBaseItem());
         this.field_148960_i = p_i45171_1_.func_70096_w();
     }
 
