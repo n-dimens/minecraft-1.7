@@ -23,14 +23,14 @@ public class EntityAIOpenDoor extends EntityAIDoorInteract
     public void func_75249_e()
     {
         this.field_75360_j = 20;
-        this.field_151504_e.func_150014_a(this.field_75356_a.field_70170_p, this.field_75354_b, this.field_75355_c, this.field_75352_d, true);
+        this.field_151504_e.func_150014_a(this.field_75356_a.world, this.field_75354_b, this.field_75355_c, this.field_75352_d, true);
     }
 
     public void func_75251_c()
     {
         if (this.field_75361_i)
         {
-            this.field_151504_e.func_150014_a(this.field_75356_a.field_70170_p, this.field_75354_b, this.field_75355_c, this.field_75352_d, false);
+            this.field_151504_e.func_150014_a(this.field_75356_a.world, this.field_75354_b, this.field_75355_c, this.field_75352_d, false);
         }
     }
 

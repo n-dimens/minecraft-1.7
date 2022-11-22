@@ -121,7 +121,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
     {
         this.field_147366_g = false;
         ++this.field_147368_e;
-        this.field_147367_d.field_71304_b.func_76320_a("keepAlive");
+        this.field_147367_d.profiler.startMeasure("keepAlive");
 
         if ((long)this.field_147368_e - this.field_147377_k > 40L)
         {
@@ -1151,7 +1151,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
 
                         if (b0 == 0)
                         {
-                            TileEntity tileentity = this.field_147369_b.field_70170_p.func_147438_o(packetbuffer.readInt(), packetbuffer.readInt(), packetbuffer.readInt());
+                            TileEntity tileentity = this.field_147369_b.world.func_147438_o(packetbuffer.readInt(), packetbuffer.readInt(), packetbuffer.readInt());
 
                             if (tileentity instanceof TileEntityCommandBlock)
                             {
@@ -1160,7 +1160,7 @@ public class NetHandlerPlayServer implements INetHandlerPlayServer
                         }
                         else if (b0 == 1)
                         {
-                            Entity entity = this.field_147369_b.field_70170_p.func_73045_a(packetbuffer.readInt());
+                            Entity entity = this.field_147369_b.world.func_73045_a(packetbuffer.readInt());
 
                             if (entity instanceof EntityMinecartCommandBlock)
                             {

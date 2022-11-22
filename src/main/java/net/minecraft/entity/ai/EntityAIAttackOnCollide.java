@@ -30,7 +30,7 @@ public class EntityAIAttackOnCollide extends EntityAIBase
     public EntityAIAttackOnCollide(EntityCreature p_i1636_1_, double p_i1636_2_, boolean p_i1636_4_)
     {
         this.field_75441_b = p_i1636_1_;
-        this.field_75443_a = p_i1636_1_.field_70170_p;
+        this.field_75443_a = p_i1636_1_.world;
         this.field_75440_e = p_i1636_2_;
         this.field_75437_f = p_i1636_4_;
         this.func_75248_a(3);

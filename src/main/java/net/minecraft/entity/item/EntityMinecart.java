@@ -121,7 +121,7 @@ public abstract class EntityMinecart extends Entity
 
     public boolean func_70097_a(DamageSource p_70097_1_, float p_70097_2_)
     {
-        if (!this.field_70170_p.field_72995_K && !this.field_70128_L)
+        if (!this.world.field_72995_K && !this.field_70128_L)
         {
             if (this.func_85032_ar())
             {
@@ -211,10 +211,10 @@ public abstract class EntityMinecart extends Entity
 
         int i;
 
-        if (!this.field_70170_p.field_72995_K && this.field_70170_p instanceof WorldServer)
+        if (!this.world.field_72995_K && this.world instanceof WorldServer)
         {
-            this.field_70170_p.field_72984_F.func_76320_a("portal");
-            MinecraftServer minecraftserver = ((WorldServer)this.field_70170_p).func_73046_m();
+            this.world.profiler.startMeasure("portal");
+            MinecraftServer minecraftserver = ((WorldServer)this.world).func_73046_m();
             i = this.func_82145_z();
 
             if (this.field_71087_bX)
@@ -227,7 +227,7 @@ public abstract class EntityMinecart extends Entity
                         this.field_71088_bW = this.func_82147_ab();
                         byte b0;
 
-                        if (this.field_70170_p.field_73011_w.field_76574_g == -1)
+                        if (this.world.field_73011_w.field_76574_g == -1)
                         {
                             b0 = 0;
                         }
@@ -260,10 +260,10 @@ public abstract class EntityMinecart extends Entity
                 --this.field_71088_bW;
             }
 
-            this.field_70170_p.field_72984_F.func_76319_b();
+            this.world.profiler.endMeasure();
         }
 
-        if (this.field_70170_p.field_72995_K)
+        if (this.world.field_72995_K)
         {
             if (this.field_70510_h > 0)
             {
@@ -293,18 +293,18 @@ public abstract class EntityMinecart extends Entity
             i = MathHelper.func_76128_c(this.field_70163_u);
             int i1 = MathHelper.func_76128_c(this.field_70161_v);
 
-            if (BlockRailBase.func_150049_b_(this.field_70170_p, l, i - 1, i1))
+            if (BlockRailBase.func_150049_b_(this.world, l, i - 1, i1))
             {
                 --i;
             }
 
             double d0 = 0.4D;
             double d2 = 0.0078125D;
-            Block block = this.field_70170_p.func_147439_a(l, i, i1);
+            Block block = this.world.func_147439_a(l, i, i1);
 
             if (BlockRailBase.func_150051_a(block))
             {
-                int j = this.field_70170_p.func_72805_g(l, i, i1);
+                int j = this.world.func_72805_g(l, i, i1);
                 this.func_145821_a(l, i, i1, d0, d2, block, j);
 
                 if (block == Blocks.ACTIVATOR_RAIL)
@@ -341,7 +341,7 @@ public abstract class EntityMinecart extends Entity
             }
 
             this.func_70101_b(this.field_70177_z, this.field_70125_A);
-            List list = this.field_70170_p.func_72839_b(this, this.field_70121_D.func_72314_b(0.20000000298023224D, 0.0D, 0.20000000298023224D));
+            List list = this.world.func_72839_b(this, this.field_70121_D.func_72314_b(0.20000000298023224D, 0.0D, 0.20000000298023224D));
 
             if (list != null && !list.isEmpty())
             {
@@ -625,22 +625,22 @@ public abstract class EntityMinecart extends Entity
             }
             else if (p_145821_9_ == 1)
             {
-                if (this.field_70170_p.func_147439_a(p_145821_1_ - 1, p_145821_2_, p_145821_3_).func_149721_r())
+                if (this.world.func_147439_a(p_145821_1_ - 1, p_145821_2_, p_145821_3_).func_149721_r())
                 {
                     this.field_70159_w = 0.02D;
                 }
-                else if (this.field_70170_p.func_147439_a(p_145821_1_ + 1, p_145821_2_, p_145821_3_).func_149721_r())
+                else if (this.world.func_147439_a(p_145821_1_ + 1, p_145821_2_, p_145821_3_).func_149721_r())
                 {
                     this.field_70159_w = -0.02D;
                 }
             }
             else if (p_145821_9_ == 0)
             {
-                if (this.field_70170_p.func_147439_a(p_145821_1_, p_145821_2_, p_145821_3_ - 1).func_149721_r())
+                if (this.world.func_147439_a(p_145821_1_, p_145821_2_, p_145821_3_ - 1).func_149721_r())
                 {
                     this.field_70179_y = 0.02D;
                 }
-                else if (this.field_70170_p.func_147439_a(p_145821_1_, p_145821_2_, p_145821_3_ + 1).func_149721_r())
+                else if (this.world.func_147439_a(p_145821_1_, p_145821_2_, p_145821_3_ + 1).func_149721_r())
                 {
                     this.field_70179_y = -0.02D;
                 }
@@ -671,12 +671,12 @@ public abstract class EntityMinecart extends Entity
         int j = MathHelper.func_76128_c(p_70495_3_);
         int k = MathHelper.func_76128_c(p_70495_5_);
 
-        if (BlockRailBase.func_150049_b_(this.field_70170_p, i, j - 1, k))
+        if (BlockRailBase.func_150049_b_(this.world, i, j - 1, k))
         {
             --j;
         }
 
-        Block block = this.field_70170_p.func_147439_a(i, j, k);
+        Block block = this.world.func_147439_a(i, j, k);
 
         if (!BlockRailBase.func_150051_a(block))
         {
@@ -684,7 +684,7 @@ public abstract class EntityMinecart extends Entity
         }
         else
         {
-            int l = this.field_70170_p.func_72805_g(i, j, k);
+            int l = this.world.func_72805_g(i, j, k);
 
             if (((BlockRailBase)block).func_150050_e())
             {
@@ -726,16 +726,16 @@ public abstract class EntityMinecart extends Entity
         int j = MathHelper.func_76128_c(p_70489_3_);
         int k = MathHelper.func_76128_c(p_70489_5_);
 
-        if (BlockRailBase.func_150049_b_(this.field_70170_p, i, j - 1, k))
+        if (BlockRailBase.func_150049_b_(this.world, i, j - 1, k))
         {
             --j;
         }
 
-        Block block = this.field_70170_p.func_147439_a(i, j, k);
+        Block block = this.world.func_147439_a(i, j, k);
 
         if (BlockRailBase.func_150051_a(block))
         {
-            int l = this.field_70170_p.func_72805_g(i, j, k);
+            int l = this.world.func_72805_g(i, j, k);
             p_70489_3_ = (double)j;
 
             if (((BlockRailBase)block).func_150050_e())
@@ -838,7 +838,7 @@ public abstract class EntityMinecart extends Entity
 
     public void func_70108_f(Entity p_70108_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (p_70108_1_ != this.field_70153_n)
             {

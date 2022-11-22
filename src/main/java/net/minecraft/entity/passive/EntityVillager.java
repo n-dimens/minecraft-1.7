@@ -113,9 +113,9 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
     {
         if (--this.field_70955_e <= 0)
         {
-            this.field_70170_p.field_72982_D.func_75551_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v));
+            this.world.field_72982_D.func_75551_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v));
             this.field_70955_e = 70 + this.field_70146_Z.nextInt(50);
-            this.field_70954_d = this.field_70170_p.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 32);
+            this.field_70954_d = this.world.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 32);
 
             if (this.field_70954_d == null)
             {
@@ -162,7 +162,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
                     if (this.field_70954_d != null && this.field_82189_bL != null)
                     {
-                        this.field_70170_p.func_72960_a(this, (byte)14);
+                        this.world.func_72960_a(this, (byte)14);
                         this.field_70954_d.func_82688_a(this.field_82189_bL, 1);
                     }
                 }
@@ -181,7 +181,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
         if (!flag && this.func_70089_S() && !this.func_70940_q() && !this.func_70631_g_())
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_70932_a_(p_70085_1_);
                 p_70085_1_.func_71030_a(this, this.func_94057_bL());
@@ -297,7 +297,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
                 if (this.func_70089_S())
                 {
-                    this.field_70170_p.func_72960_a(this, (byte)13);
+                    this.world.func_72960_a(this, (byte)13);
                 }
             }
         }
@@ -322,7 +322,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
             }
             else if (entity == null)
             {
-                EntityPlayer entityplayer = this.field_70170_p.func_72890_a(this, 16.0D);
+                EntityPlayer entityplayer = this.world.func_72890_a(this, 16.0D);
 
                 if (entityplayer != null)
                 {
@@ -378,7 +378,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
     public void func_110297_a_(ItemStack p_110297_1_)
     {
-        if (!this.field_70170_p.field_72995_K && this.field_70757_a > -this.func_70627_aG() + 20)
+        if (!this.world.field_72995_K && this.field_70757_a > -this.func_70627_aG() + 20)
         {
             this.field_70757_a = -this.func_70627_aG();
 
@@ -626,7 +626,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
     public IEntityLivingData func_110161_a(IEntityLivingData p_110161_1_)
     {
         p_110161_1_ = super.func_110161_a(p_110161_1_);
-        this.func_70938_b(this.field_70170_p.field_73012_v.nextInt(5));
+        this.func_70938_b(this.world.field_73012_v.nextInt(5));
         return p_110161_1_;
     }
 
@@ -638,7 +638,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
             double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
             double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
             double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-            this.field_70170_p.func_72869_a(p_70942_1_, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 1.0D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+            this.world.func_72869_a(p_70942_1_, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 1.0D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
         }
     }
 
@@ -649,7 +649,7 @@ public class EntityVillager extends EntityAgeable implements IMerchant, INpc
 
     public EntityVillager func_90011_a(EntityAgeable p_90011_1_)
     {
-        EntityVillager entityvillager = new EntityVillager(this.field_70170_p);
+        EntityVillager entityvillager = new EntityVillager(this.world);
         entityvillager.func_110161_a((IEntityLivingData)null);
         return entityvillager;
     }

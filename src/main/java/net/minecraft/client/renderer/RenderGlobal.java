@@ -385,7 +385,7 @@ public class RenderGlobal implements IWorldAccess
             double d0 = p_147589_1_.field_70169_q + (p_147589_1_.field_70165_t - p_147589_1_.field_70169_q) * (double)p_147589_3_;
             double d1 = p_147589_1_.field_70167_r + (p_147589_1_.field_70163_u - p_147589_1_.field_70167_r) * (double)p_147589_3_;
             double d2 = p_147589_1_.field_70166_s + (p_147589_1_.field_70161_v - p_147589_1_.field_70166_s) * (double)p_147589_3_;
-            this.field_72769_h.field_72984_F.func_76320_a("prepare");
+            this.field_72769_h.profiler.startMeasure("prepare");
             TileEntityRendererDispatcher.field_147556_a.func_147542_a(this.field_72769_h, this.field_72777_q.func_110434_K(), this.field_72777_q.field_71466_p, this.field_72777_q.field_71451_h, p_147589_3_);
             RenderManager.field_78727_a.func_147938_a(this.field_72769_h, this.field_72777_q.func_110434_K(), this.field_72777_q.field_71466_p, this.field_72777_q.field_71451_h, this.field_72777_q.field_147125_j, this.field_72777_q.gameSettings, p_147589_3_);
             this.field_72748_H = 0;
@@ -398,7 +398,7 @@ public class RenderGlobal implements IWorldAccess
             TileEntityRendererDispatcher.field_147554_b = d3;
             TileEntityRendererDispatcher.field_147555_c = d4;
             TileEntityRendererDispatcher.field_147552_d = d5;
-            this.field_72769_h.field_72984_F.func_76318_c("staticentities");
+            this.field_72769_h.profiler.startNewMeasure("staticentities");
 
             if (this.field_147595_R)
             {
@@ -417,7 +417,7 @@ public class RenderGlobal implements IWorldAccess
             RenderManager.field_78726_c = d4;
             RenderManager.field_78723_d = d5;
             this.field_72777_q.field_71460_t.func_78463_b((double)p_147589_3_);
-            this.field_72769_h.field_72984_F.func_76318_c("global");
+            this.field_72769_h.profiler.startNewMeasure("global");
             List list = this.field_72769_h.func_72910_y();
             this.field_72748_H = list.size();
             int i;
@@ -434,7 +434,7 @@ public class RenderGlobal implements IWorldAccess
                 }
             }
 
-            this.field_72769_h.field_72984_F.func_76318_c("entities");
+            this.field_72769_h.profiler.startNewMeasure("entities");
 
             for (i = 0; i < list.size(); ++i)
             {
@@ -459,7 +459,7 @@ public class RenderGlobal implements IWorldAccess
                 }
             }
 
-            this.field_72769_h.field_72984_F.func_76318_c("blockentities");
+            this.field_72769_h.profiler.startNewMeasure("blockentities");
             RenderHelper.func_74519_b();
 
             for (i = 0; i < this.field_147598_a.size(); ++i)
@@ -468,7 +468,7 @@ public class RenderGlobal implements IWorldAccess
             }
 
             this.field_72777_q.field_71460_t.func_78483_a((double)p_147589_3_);
-            this.field_72769_h.field_72984_F.func_76319_b();
+            this.field_72769_h.profiler.endMeasure();
         }
     }
 
@@ -489,7 +489,7 @@ public class RenderGlobal implements IWorldAccess
 
     public void func_147591_f()
     {
-        this.field_72769_h.field_72984_F.func_76320_a("staticentityrebuild");
+        this.field_72769_h.profiler.startMeasure("staticentityrebuild");
         GL11.glPushMatrix();
         GL11.glNewList(this.field_147594_S, GL11.GL_COMPILE);
         List list = this.field_72769_h.func_72910_y();
@@ -507,7 +507,7 @@ public class RenderGlobal implements IWorldAccess
 
         GL11.glEndList();
         GL11.glPopMatrix();
-        this.field_72769_h.field_72984_F.func_76319_b();
+        this.field_72769_h.profiler.endMeasure();
     }
 
     private void func_72722_c(int p_72722_1_, int p_72722_2_, int p_72722_3_)
@@ -599,7 +599,7 @@ public class RenderGlobal implements IWorldAccess
 
     public int func_72719_a(EntityLivingBase p_72719_1_, int p_72719_2_, double p_72719_3_)
     {
-        this.field_72769_h.field_72984_F.func_76320_a("sortchunks");
+        this.field_72769_h.profiler.startMeasure("sortchunks");
 
         for (int j = 0; j < 10; ++j)
         {
@@ -677,12 +677,12 @@ public class RenderGlobal implements IWorldAccess
                 this.field_72768_k[i1].field_78936_t = true;
             }
 
-            this.field_72769_h.field_72984_F.func_76318_c("render");
+            this.field_72769_h.profiler.startNewMeasure("render");
             k = b1 + this.func_72724_a(b0, l, p_72719_2_, p_72719_3_);
 
             do
             {
-                this.field_72769_h.field_72984_F.func_76318_c("occ");
+                this.field_72769_h.profiler.startNewMeasure("occ");
                 int l1 = l;
                 l *= 2;
 
@@ -697,9 +697,9 @@ public class RenderGlobal implements IWorldAccess
                 GL11.glDisable(GL11.GL_FOG);
                 GL11.glColorMask(false, false, false, false);
                 GL11.glDepthMask(false);
-                this.field_72769_h.field_72984_F.func_76320_a("check");
+                this.field_72769_h.profiler.startMeasure("check");
                 this.func_72720_a(l1, l);
-                this.field_72769_h.field_72984_F.func_76319_b();
+                this.field_72769_h.profiler.endMeasure();
                 GL11.glPushMatrix();
                 float f9 = 0.0F;
                 float f = 0.0F;
@@ -741,11 +741,11 @@ public class RenderGlobal implements IWorldAccess
                                     f1 += f8;
                                 }
 
-                                this.field_72769_h.field_72984_F.func_76320_a("bb");
+                                this.field_72769_h.profiler.startMeasure("bb");
                                 ARBOcclusionQuery.glBeginQueryARB(ARBOcclusionQuery.GL_SAMPLES_PASSED_ARB, this.field_72768_k[j1].field_78934_v);
                                 this.field_72768_k[j1].func_78904_d();
                                 ARBOcclusionQuery.glEndQueryARB(ARBOcclusionQuery.GL_SAMPLES_PASSED_ARB);
-                                this.field_72769_h.field_72984_F.func_76319_b();
+                                this.field_72769_h.profiler.endMeasure();
                                 this.field_72768_k[j1].field_78935_u = true;
                             }
                         }
@@ -774,18 +774,18 @@ public class RenderGlobal implements IWorldAccess
                 GL11.glEnable(GL11.GL_TEXTURE_2D);
                 GL11.glEnable(GL11.GL_ALPHA_TEST);
                 GL11.glEnable(GL11.GL_FOG);
-                this.field_72769_h.field_72984_F.func_76318_c("render");
+                this.field_72769_h.profiler.startNewMeasure("render");
                 k += this.func_72724_a(l1, l, p_72719_2_, p_72719_3_);
             }
             while (l < this.field_72768_k.length);
         }
         else
         {
-            this.field_72769_h.field_72984_F.func_76318_c("render");
+            this.field_72769_h.profiler.startNewMeasure("render");
             k = b1 + this.func_72724_a(0, this.field_72768_k.length, p_72719_2_, p_72719_3_);
         }
 
-        this.field_72769_h.field_72984_F.func_76319_b();
+        this.field_72769_h.profiler.endMeasure();
         return k;
     }
 
@@ -1424,7 +1424,7 @@ public class RenderGlobal implements IWorldAccess
         ArrayList arraylist = null;
         int i = this.field_72767_j.size();
         int j = 0;
-        this.field_72769_h.field_72984_F.func_76320_a("nearChunksSearch");
+        this.field_72769_h.profiler.startMeasure("nearChunksSearch");
         int k;
         WorldRenderer worldrenderer;
         int l;
@@ -1485,8 +1485,8 @@ public class RenderGlobal implements IWorldAccess
             }
         }
 
-        this.field_72769_h.field_72984_F.func_76319_b();
-        this.field_72769_h.field_72984_F.func_76320_a("sort");
+        this.field_72769_h.profiler.endMeasure();
+        this.field_72769_h.profiler.startMeasure("sort");
 
         if (arraylist != null)
         {
@@ -1503,9 +1503,9 @@ public class RenderGlobal implements IWorldAccess
             }
         }
 
-        this.field_72769_h.field_72984_F.func_76319_b();
+        this.field_72769_h.profiler.endMeasure();
         k = 0;
-        this.field_72769_h.field_72984_F.func_76320_a("rebuild");
+        this.field_72769_h.profiler.startMeasure("rebuild");
         int k1;
 
         for (k1 = b0 - 1; k1 >= 0; --k1)
@@ -1527,8 +1527,8 @@ public class RenderGlobal implements IWorldAccess
             }
         }
 
-        this.field_72769_h.field_72984_F.func_76319_b();
-        this.field_72769_h.field_72984_F.func_76320_a("cleanup");
+        this.field_72769_h.profiler.endMeasure();
+        this.field_72769_h.profiler.startMeasure("cleanup");
         k1 = 0;
         l = 0;
 
@@ -1560,8 +1560,8 @@ public class RenderGlobal implements IWorldAccess
             }
         }
 
-        this.field_72769_h.field_72984_F.func_76319_b();
-        this.field_72769_h.field_72984_F.func_76320_a("trim");
+        this.field_72769_h.profiler.endMeasure();
+        this.field_72769_h.profiler.startMeasure("trim");
 
         while (true)
         {
@@ -1569,7 +1569,7 @@ public class RenderGlobal implements IWorldAccess
 
             if (k1 < l)
             {
-                this.field_72769_h.field_72984_F.func_76319_b();
+                this.field_72769_h.profiler.endMeasure();
                 return i == j + k;
             }
 

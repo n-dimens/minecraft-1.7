@@ -65,7 +65,7 @@ public class WorldClient extends World
             this.func_72877_b(this.func_72820_D() + 1L);
         }
 
-        this.field_72984_F.func_76320_a("reEntryProcessing");
+        this.profiler.startMeasure("reEntryProcessing");
 
         for (int i = 0; i < 10 && !this.field_73036_L.isEmpty(); ++i)
         {
@@ -78,13 +78,13 @@ public class WorldClient extends World
             }
         }
 
-        this.field_72984_F.func_76318_c("connection");
+        this.profiler.startNewMeasure("connection");
         this.field_73035_a.func_147233_a();
-        this.field_72984_F.func_76318_c("chunkCache");
+        this.profiler.startNewMeasure("chunkCache");
         this.field_73033_b.func_73156_b();
-        this.field_72984_F.func_76318_c("blocks");
+        this.profiler.startNewMeasure("blocks");
         this.func_147456_g();
-        this.field_72984_F.func_76319_b();
+        this.profiler.endMeasure();
     }
 
     public void func_73031_a(int p_73031_1_, int p_73031_2_, int p_73031_3_, int p_73031_4_, int p_73031_5_, int p_73031_6_) {}
@@ -116,10 +116,10 @@ public class WorldClient extends World
             {
                 int j = chunkcoordintpair.field_77276_a * 16;
                 int k = chunkcoordintpair.field_77275_b * 16;
-                this.field_72984_F.func_76320_a("getChunk");
+                this.profiler.startMeasure("getChunk");
                 Chunk chunk = this.func_72964_e(chunkcoordintpair.field_77276_a, chunkcoordintpair.field_77275_b);
                 this.func_147467_a(j, k, chunk);
-                this.field_72984_F.func_76319_b();
+                this.profiler.endMeasure();
                 this.field_73038_N.add(chunkcoordintpair);
                 ++i;
 

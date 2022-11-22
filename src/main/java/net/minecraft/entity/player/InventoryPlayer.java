@@ -308,7 +308,7 @@ public class InventoryPlayer implements IInventory
         {
             if (this.field_70462_a[i] != null)
             {
-                this.field_70462_a[i].func_77945_a(this.field_70458_d.field_70170_p, this.field_70458_d, i, this.field_70461_c == i);
+                this.field_70462_a[i].func_77945_a(this.field_70458_d.world, this.field_70458_d, i, this.field_70461_c == i);
             }
         }
     }

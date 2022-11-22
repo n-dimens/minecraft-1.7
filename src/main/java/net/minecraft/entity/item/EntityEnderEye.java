@@ -116,7 +116,7 @@ public class EntityEnderEye extends Entity
         this.field_70125_A = this.field_70127_C + (this.field_70125_A - this.field_70127_C) * 0.2F;
         this.field_70177_z = this.field_70126_B + (this.field_70177_z - this.field_70126_B) * 0.2F;
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             double d0 = this.field_70224_b - this.field_70165_t;
             double d1 = this.field_70222_d - this.field_70161_v;
@@ -149,30 +149,30 @@ public class EntityEnderEye extends Entity
         {
             for (int i = 0; i < 4; ++i)
             {
-                this.field_70170_p.func_72869_a("bubble", this.field_70165_t - this.field_70159_w * (double)f3, this.field_70163_u - this.field_70181_x * (double)f3, this.field_70161_v - this.field_70179_y * (double)f3, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+                this.world.func_72869_a("bubble", this.field_70165_t - this.field_70159_w * (double)f3, this.field_70163_u - this.field_70181_x * (double)f3, this.field_70161_v - this.field_70179_y * (double)f3, this.field_70159_w, this.field_70181_x, this.field_70179_y);
             }
         }
         else
         {
-            this.field_70170_p.func_72869_a("portal", this.field_70165_t - this.field_70159_w * (double)f3 + this.field_70146_Z.nextDouble() * 0.6D - 0.3D, this.field_70163_u - this.field_70181_x * (double)f3 - 0.5D, this.field_70161_v - this.field_70179_y * (double)f3 + this.field_70146_Z.nextDouble() * 0.6D - 0.3D, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+            this.world.func_72869_a("portal", this.field_70165_t - this.field_70159_w * (double)f3 + this.field_70146_Z.nextDouble() * 0.6D - 0.3D, this.field_70163_u - this.field_70181_x * (double)f3 - 0.5D, this.field_70161_v - this.field_70179_y * (double)f3 + this.field_70146_Z.nextDouble() * 0.6D - 0.3D, this.field_70159_w, this.field_70181_x, this.field_70179_y);
         }
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_70107_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
             ++this.field_70223_e;
 
-            if (this.field_70223_e > 80 && !this.field_70170_p.field_72995_K)
+            if (this.field_70223_e > 80 && !this.world.field_72995_K)
             {
                 this.func_70106_y();
 
                 if (this.field_70221_f)
                 {
-                    this.field_70170_p.func_72838_d(new EntityItem(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, new ItemStack(Items.ENDER_EYE)));
+                    this.world.func_72838_d(new EntityItem(this.world, this.field_70165_t, this.field_70163_u, this.field_70161_v, new ItemStack(Items.ENDER_EYE)));
                 }
                 else
                 {
-                    this.field_70170_p.func_72926_e(2003, (int)Math.round(this.field_70165_t), (int)Math.round(this.field_70163_u), (int)Math.round(this.field_70161_v), 0);
+                    this.world.func_72926_e(2003, (int)Math.round(this.field_70165_t), (int)Math.round(this.field_70163_u), (int)Math.round(this.field_70161_v), 0);
                 }
             }
         }

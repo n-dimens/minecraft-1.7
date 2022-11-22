@@ -16,7 +16,7 @@ public class EntityAIEatGrass extends EntityAIBase
     public EntityAIEatGrass(EntityLiving p_i45314_1_)
     {
         this.field_151500_b = p_i45314_1_;
-        this.field_151501_c = p_i45314_1_.field_70170_p;
+        this.field_151501_c = p_i45314_1_.world;
         this.func_75248_a(7);
     }
 

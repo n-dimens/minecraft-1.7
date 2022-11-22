@@ -128,6 +128,6 @@ public class EntityCow extends EntityAnimal
 
     public EntityCow func_90011_a(EntityAgeable p_90011_1_)
     {
-        return new EntityCow(this.field_70170_p);
+        return new EntityCow(this.world);
     }
 }

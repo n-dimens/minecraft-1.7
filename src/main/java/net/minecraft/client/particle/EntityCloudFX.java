@@ -65,7 +65,7 @@ public class EntityCloudFX extends EntityFX
         this.field_70159_w *= 0.9599999785423279D;
         this.field_70181_x *= 0.9599999785423279D;
         this.field_70179_y *= 0.9599999785423279D;
-        EntityPlayer entityplayer = this.field_70170_p.func_72890_a(this, 2.0D);
+        EntityPlayer entityplayer = this.world.func_72890_a(this, 2.0D);
 
         if (entityplayer != null && this.field_70163_u > entityplayer.field_70121_D.field_72338_b)
         {

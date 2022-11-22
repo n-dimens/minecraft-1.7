@@ -59,7 +59,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
                 double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
                 double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
                 double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-                this.field_70170_p.func_72869_a(s, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+                this.world.func_72869_a(s, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
             }
         }
         else
@@ -113,7 +113,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
                     if (this.field_70882_e % 4 == 0)
                     {
-                        this.field_70170_p.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, 0.0D, 0.0D, 0.0D);
+                        this.world.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, 0.0D, 0.0D, 0.0D);
                     }
 
                     if (this.field_70882_e == 60)
@@ -171,10 +171,10 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
                 double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
                 double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
                 double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-                this.field_70170_p.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+                this.world.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
             }
 
-            this.field_70170_p.func_72838_d(entityageable);
+            this.world.func_72838_d(entityageable);
         }
     }
 
@@ -206,7 +206,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
     public float func_70783_a(int p_70783_1_, int p_70783_2_, int p_70783_3_)
     {
-        return this.field_70170_p.func_147439_a(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == Blocks.GRASS ? 10.0F : this.field_70170_p.func_72801_o(p_70783_1_, p_70783_2_, p_70783_3_) - 0.5F;
+        return this.world.func_147439_a(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == Blocks.GRASS ? 10.0F : this.world.func_72801_o(p_70783_1_, p_70783_2_, p_70783_3_) - 0.5F;
     }
 
     public void func_70014_b(NBTTagCompound p_70014_1_)
@@ -236,7 +236,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
             if (this.field_70881_d > 0)
             {
-                list = this.field_70170_p.func_72872_a(this.getClass(), this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
+                list = this.world.func_72872_a(this.getClass(), this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
 
                 for (i = 0; i < list.size(); ++i)
                 {
@@ -250,7 +250,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
             }
             else if (this.func_70874_b() == 0)
             {
-                list = this.field_70170_p.func_72872_a(EntityPlayer.class, this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
+                list = this.world.func_72872_a(EntityPlayer.class, this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
 
                 for (i = 0; i < list.size(); ++i)
                 {
@@ -264,7 +264,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
             }
             else if (this.func_70874_b() > 0)
             {
-                list = this.field_70170_p.func_72872_a(this.getClass(), this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
+                list = this.world.func_72872_a(this.getClass(), this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
 
                 for (i = 0; i < list.size(); ++i)
                 {
@@ -286,7 +286,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
         int i = MathHelper.func_76128_c(this.field_70165_t);
         int j = MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
         int k = MathHelper.func_76128_c(this.field_70161_v);
-        return this.field_70170_p.func_147439_a(i, j - 1, k) == Blocks.GRASS && this.field_70170_p.func_72883_k(i, j, k) > 8 && super.func_70601_bi();
+        return this.world.func_147439_a(i, j - 1, k) == Blocks.GRASS && this.world.func_72883_k(i, j, k) > 8 && super.func_70601_bi();
     }
 
     public int func_70627_aG()
@@ -301,7 +301,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
 
     protected int func_70693_a(EntityPlayer p_70693_1_)
     {
-        return 1 + this.field_70170_p.field_73012_v.nextInt(3);
+        return 1 + this.world.field_73012_v.nextInt(3);
     }
 
     public boolean func_70877_b(ItemStack p_70877_1_)
@@ -339,7 +339,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
         this.field_70881_d = 600;
         this.field_146084_br = p_146082_1_;
         this.field_70789_a = null;
-        this.field_70170_p.func_72960_a(this, (byte)18);
+        this.world.func_72960_a(this, (byte)18);
     }
 
     public EntityPlayer func_146083_cb()
@@ -372,7 +372,7 @@ public abstract class EntityAnimal extends EntityAgeable implements IAnimals
                 double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
                 double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
                 double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-                this.field_70170_p.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+                this.world.func_72869_a("heart", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
             }
         }
         else

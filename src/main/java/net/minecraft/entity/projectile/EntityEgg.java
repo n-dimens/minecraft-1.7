@@ -32,7 +32,7 @@ public class EntityEgg extends EntityThrowable
             p_70184_1_.field_72308_g.func_70097_a(DamageSource.func_76356_a(this, this.func_85052_h()), 0.0F);
         }
 
-        if (!this.field_70170_p.field_72995_K && this.field_70146_Z.nextInt(8) == 0)
+        if (!this.world.field_72995_K && this.field_70146_Z.nextInt(8) == 0)
         {
             byte b0 = 1;
 
@@ -43,19 +43,19 @@ public class EntityEgg extends EntityThrowable
 
             for (int i = 0; i < b0; ++i)
             {
-                EntityChicken entitychicken = new EntityChicken(this.field_70170_p);
+                EntityChicken entitychicken = new EntityChicken(this.world);
                 entitychicken.func_70873_a(-24000);
                 entitychicken.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, 0.0F);
-                this.field_70170_p.func_72838_d(entitychicken);
+                this.world.func_72838_d(entitychicken);
             }
         }
 
         for (int j = 0; j < 8; ++j)
         {
-            this.field_70170_p.func_72869_a("snowballpoof", this.field_70165_t, this.field_70163_u, this.field_70161_v, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("snowballpoof", this.field_70165_t, this.field_70163_u, this.field_70161_v, 0.0D, 0.0D, 0.0D);
         }
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_70106_y();
         }

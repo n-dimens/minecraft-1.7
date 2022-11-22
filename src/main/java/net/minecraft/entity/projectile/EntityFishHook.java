@@ -174,7 +174,7 @@ public class EntityFishHook extends Entity
         }
         else
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 ItemStack itemstack = this.field_146042_b.func_71045_bC();
 
@@ -206,7 +206,7 @@ public class EntityFishHook extends Entity
 
             if (this.field_146051_au)
             {
-                if (this.field_70170_p.func_147439_a(this.field_146037_g, this.field_146048_h, this.field_146050_i) == this.field_146046_j)
+                if (this.world.func_147439_a(this.field_146037_g, this.field_146048_h, this.field_146050_i) == this.field_146046_j)
                 {
                     ++this.field_146049_av;
 
@@ -232,7 +232,7 @@ public class EntityFishHook extends Entity
 
             Vec3 vec31 = Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v);
             Vec3 vec3 = Vec3.func_72443_a(this.field_70165_t + this.field_70159_w, this.field_70163_u + this.field_70181_x, this.field_70161_v + this.field_70179_y);
-            MovingObjectPosition movingobjectposition = this.field_70170_p.func_72933_a(vec31, vec3);
+            MovingObjectPosition movingobjectposition = this.world.func_72933_a(vec31, vec3);
             vec31 = Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v);
             vec3 = Vec3.func_72443_a(this.field_70165_t + this.field_70159_w, this.field_70163_u + this.field_70181_x, this.field_70161_v + this.field_70179_y);
 
@@ -242,7 +242,7 @@ public class EntityFishHook extends Entity
             }
 
             Entity entity = null;
-            List list = this.field_70170_p.func_72839_b(this, this.field_70121_D.func_72321_a(this.field_70159_w, this.field_70181_x, this.field_70179_y).func_72314_b(1.0D, 1.0D, 1.0D));
+            List list = this.world.func_72839_b(this, this.field_70121_D.func_72321_a(this.field_70159_w, this.field_70181_x, this.field_70179_y).func_72314_b(1.0D, 1.0D, 1.0D));
             double d0 = 0.0D;
             double d2;
 
@@ -333,23 +333,23 @@ public class EntityFishHook extends Entity
                     double d4 = this.field_70121_D.field_72338_b + (this.field_70121_D.field_72337_e - this.field_70121_D.field_72338_b) * (double)(j + 1) / (double)b0 - 0.125D + 0.125D;
                     AxisAlignedBB axisalignedbb1 = AxisAlignedBB.func_72330_a(this.field_70121_D.field_72340_a, d3, this.field_70121_D.field_72339_c, this.field_70121_D.field_72336_d, d4, this.field_70121_D.field_72334_f);
 
-                    if (this.field_70170_p.func_72830_b(axisalignedbb1, Material.field_151586_h))
+                    if (this.world.func_72830_b(axisalignedbb1, Material.field_151586_h))
                     {
                         d10 += 1.0D / (double)b0;
                     }
                 }
 
-                if (!this.field_70170_p.field_72995_K && d10 > 0.0D)
+                if (!this.world.field_72995_K && d10 > 0.0D)
                 {
-                    WorldServer worldserver = (WorldServer)this.field_70170_p;
+                    WorldServer worldserver = (WorldServer)this.world;
                     int k = 1;
 
-                    if (this.field_70146_Z.nextFloat() < 0.25F && this.field_70170_p.func_72951_B(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) + 1, MathHelper.func_76128_c(this.field_70161_v)))
+                    if (this.field_70146_Z.nextFloat() < 0.25F && this.world.func_72951_B(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) + 1, MathHelper.func_76128_c(this.field_70161_v)))
                     {
                         k = 2;
                     }
 
-                    if (this.field_70146_Z.nextFloat() < 0.5F && !this.field_70170_p.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) + 1, MathHelper.func_76128_c(this.field_70161_v)))
+                    if (this.field_70146_Z.nextFloat() < 0.5F && !this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) + 1, MathHelper.func_76128_c(this.field_70161_v)))
                     {
                         --k;
                     }
@@ -499,7 +499,7 @@ public class EntityFishHook extends Entity
 
     public int func_146034_e()
     {
-        if (this.field_70170_p.field_72995_K)
+        if (this.world.field_72995_K)
         {
             return 0;
         }
@@ -521,7 +521,7 @@ public class EntityFishHook extends Entity
             }
             else if (this.field_146045_ax > 0)
             {
-                EntityItem entityitem = new EntityItem(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, this.func_146033_f());
+                EntityItem entityitem = new EntityItem(this.world, this.field_70165_t, this.field_70163_u, this.field_70161_v, this.func_146033_f());
                 double d1 = this.field_146042_b.field_70165_t - this.field_70165_t;
                 double d3 = this.field_146042_b.field_70163_u - this.field_70163_u;
                 double d5 = this.field_146042_b.field_70161_v - this.field_70161_v;
@@ -530,8 +530,8 @@ public class EntityFishHook extends Entity
                 entityitem.field_70159_w = d1 * d9;
                 entityitem.field_70181_x = d3 * d9 + (double)MathHelper.func_76133_a(d7) * 0.08D;
                 entityitem.field_70179_y = d5 * d9;
-                this.field_70170_p.func_72838_d(entityitem);
-                this.field_146042_b.field_70170_p.func_72838_d(new EntityXPOrb(this.field_146042_b.field_70170_p, this.field_146042_b.field_70165_t, this.field_146042_b.field_70163_u + 0.5D, this.field_146042_b.field_70161_v + 0.5D, this.field_70146_Z.nextInt(6) + 1));
+                this.world.func_72838_d(entityitem);
+                this.field_146042_b.world.func_72838_d(new EntityXPOrb(this.field_146042_b.world, this.field_146042_b.field_70165_t, this.field_146042_b.field_70163_u + 0.5D, this.field_146042_b.field_70161_v + 0.5D, this.field_70146_Z.nextInt(6) + 1));
                 b0 = 1;
             }
 
@@ -548,7 +548,7 @@ public class EntityFishHook extends Entity
 
     private ItemStack func_146033_f()
     {
-        float f = this.field_70170_p.field_73012_v.nextFloat();
+        float f = this.world.field_73012_v.nextFloat();
         int i = EnchantmentHelper.func_151386_g(this.field_146042_b);
         int j = EnchantmentHelper.func_151387_h(this.field_146042_b);
         float f1 = 0.1F - (float)i * 0.025F - (float)j * 0.01F;

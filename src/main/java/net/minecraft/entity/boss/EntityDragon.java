@@ -95,14 +95,14 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
         float f;
         float f1;
 
-        if (this.field_70170_p.field_72995_K)
+        if (this.world.field_72995_K)
         {
             f = MathHelper.func_76134_b(this.field_70988_bD * (float)Math.PI * 2.0F);
             f1 = MathHelper.func_76134_b(this.field_70991_bC * (float)Math.PI * 2.0F);
 
             if (f1 <= -0.3F && f >= -0.3F)
             {
-                this.field_70170_p.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, "mob.enderdragon.wings", 5.0F, 0.8F + this.field_70146_Z.nextFloat() * 0.3F, false);
+                this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, "mob.enderdragon.wings", 5.0F, 0.8F + this.field_70146_Z.nextFloat() * 0.3F, false);
             }
         }
 
@@ -114,7 +114,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             f = (this.field_70146_Z.nextFloat() - 0.5F) * 8.0F;
             f1 = (this.field_70146_Z.nextFloat() - 0.5F) * 4.0F;
             f2 = (this.field_70146_Z.nextFloat() - 0.5F) * 8.0F;
-            this.field_70170_p.func_72869_a("largeexplode", this.field_70165_t + (double)f, this.field_70163_u + 2.0D + (double)f1, this.field_70161_v + (double)f2, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("largeexplode", this.field_70165_t + (double)f, this.field_70163_u + 2.0D + (double)f1, this.field_70161_v + (double)f2, 0.0D, 0.0D, 0.0D);
         }
         else
         {
@@ -155,7 +155,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             double d10;
             float f12;
 
-            if (this.field_70170_p.field_72995_K)
+            if (this.world.field_72995_K)
             {
                 if (this.field_70716_bi > 0)
                 {
@@ -297,11 +297,11 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             this.field_70990_bB.func_70071_h_();
             this.field_70990_bB.func_70012_b(this.field_70165_t - (double)(f4 * 4.5F), this.field_70163_u + 2.0D, this.field_70161_v - (double)(f11 * 4.5F), 0.0F, 0.0F);
 
-            if (!this.field_70170_p.field_72995_K && this.field_70737_aN == 0)
+            if (!this.world.field_72995_K && this.field_70737_aN == 0)
             {
-                this.func_70970_a(this.field_70170_p.func_72839_b(this, this.field_70983_bA.field_70121_D.func_72314_b(4.0D, 2.0D, 4.0D).func_72317_d(0.0D, -2.0D, 0.0D)));
-                this.func_70970_a(this.field_70170_p.func_72839_b(this, this.field_70990_bB.field_70121_D.func_72314_b(4.0D, 2.0D, 4.0D).func_72317_d(0.0D, -2.0D, 0.0D)));
-                this.func_70971_b(this.field_70170_p.func_72839_b(this, this.field_70986_h.field_70121_D.func_72314_b(1.0D, 1.0D, 1.0D)));
+                this.func_70970_a(this.world.func_72839_b(this, this.field_70983_bA.field_70121_D.func_72314_b(4.0D, 2.0D, 4.0D).func_72317_d(0.0D, -2.0D, 0.0D)));
+                this.func_70970_a(this.world.func_72839_b(this, this.field_70990_bB.field_70121_D.func_72314_b(4.0D, 2.0D, 4.0D).func_72317_d(0.0D, -2.0D, 0.0D)));
+                this.func_70971_b(this.world.func_72839_b(this, this.field_70986_h.field_70121_D.func_72314_b(1.0D, 1.0D, 1.0D)));
             }
 
             double[] adouble1 = this.func_70974_a(5, 1.0F);
@@ -340,7 +340,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
                 entitydragonpart.func_70012_b(this.field_70165_t - (double)((f11 * f17 + f15 * f18) * f2), this.field_70163_u + (adouble2[1] - adouble1[1]) * 1.0D - (double)((f18 + f17) * f10) + 1.5D, this.field_70161_v + (double)((f4 * f17 + f16 * f18) * f2), 0.0F, 0.0F);
             }
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.field_70994_bF = this.func_70972_a(this.field_70986_h.field_70121_D) | this.func_70972_a(this.field_70987_i.field_70121_D);
             }
@@ -353,7 +353,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
         {
             if (this.field_70992_bH.field_70128_L)
             {
-                if (!this.field_70170_p.field_72995_K)
+                if (!this.world.field_72995_K)
                 {
                     this.func_70965_a(this.field_70986_h, DamageSource.func_94539_a((Explosion)null), 10.0F);
                 }
@@ -369,7 +369,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
         if (this.field_70146_Z.nextInt(10) == 0)
         {
             float f = 32.0F;
-            List list = this.field_70170_p.func_72872_a(EntityEnderCrystal.class, this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
+            List list = this.world.func_72872_a(EntityEnderCrystal.class, this.field_70121_D.func_72314_b((double)f, (double)f, (double)f));
             EntityEnderCrystal entityendercrystal = null;
             double d0 = Double.MAX_VALUE;
             Iterator iterator = list.iterator();
@@ -427,9 +427,9 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
     {
         this.field_70989_bE = false;
 
-        if (this.field_70146_Z.nextInt(2) == 0 && !this.field_70170_p.field_73010_i.isEmpty())
+        if (this.field_70146_Z.nextInt(2) == 0 && !this.world.field_73010_i.isEmpty())
         {
-            this.field_70993_bI = (Entity)this.field_70170_p.field_73010_i.get(this.field_70146_Z.nextInt(this.field_70170_p.field_73010_i.size()));
+            this.field_70993_bI = (Entity)this.world.field_73010_i.get(this.field_70146_Z.nextInt(this.world.field_73010_i.size()));
         }
         else
         {
@@ -475,13 +475,13 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             {
                 for (int i2 = k; i2 <= j1; ++i2)
                 {
-                    Block block = this.field_70170_p.func_147439_a(k1, l1, i2);
+                    Block block = this.world.func_147439_a(k1, l1, i2);
 
                     if (block.func_149688_o() != Material.field_151579_a)
                     {
-                        if (block != Blocks.OBSIDIAN && block != Blocks.END_STONE && block != Blocks.BEDROCK && this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
+                        if (block != Blocks.OBSIDIAN && block != Blocks.END_STONE && block != Blocks.BEDROCK && this.world.func_82736_K().getBooleanValue("mobGriefing"))
                         {
-                            flag1 = this.field_70170_p.func_147468_f(k1, l1, i2) || flag1;
+                            flag1 = this.world.func_147468_f(k1, l1, i2) || flag1;
                         }
                         else
                         {
@@ -497,7 +497,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             double d1 = p_70972_1_.field_72340_a + (p_70972_1_.field_72336_d - p_70972_1_.field_72340_a) * (double)this.field_70146_Z.nextFloat();
             double d2 = p_70972_1_.field_72338_b + (p_70972_1_.field_72337_e - p_70972_1_.field_72338_b) * (double)this.field_70146_Z.nextFloat();
             double d0 = p_70972_1_.field_72339_c + (p_70972_1_.field_72334_f - p_70972_1_.field_72339_c) * (double)this.field_70146_Z.nextFloat();
-            this.field_70170_p.func_72869_a("largeexplode", d1, d2, d0, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("largeexplode", d1, d2, d0, 0.0D, 0.0D, 0.0D);
         }
 
         return flag;
@@ -545,13 +545,13 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             float f = (this.field_70146_Z.nextFloat() - 0.5F) * 8.0F;
             float f1 = (this.field_70146_Z.nextFloat() - 0.5F) * 4.0F;
             float f2 = (this.field_70146_Z.nextFloat() - 0.5F) * 8.0F;
-            this.field_70170_p.func_72869_a("hugeexplosion", this.field_70165_t + (double)f, this.field_70163_u + 2.0D + (double)f1, this.field_70161_v + (double)f2, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("hugeexplosion", this.field_70165_t + (double)f, this.field_70163_u + 2.0D + (double)f1, this.field_70161_v + (double)f2, 0.0D, 0.0D, 0.0D);
         }
 
         int i;
         int j;
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (this.field_70995_bG > 150 && this.field_70995_bG % 5 == 0)
             {
@@ -561,20 +561,20 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
                 {
                     j = EntityXPOrb.func_70527_a(i);
                     i -= j;
-                    this.field_70170_p.func_72838_d(new EntityXPOrb(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, j));
+                    this.world.func_72838_d(new EntityXPOrb(this.world, this.field_70165_t, this.field_70163_u, this.field_70161_v, j));
                 }
             }
 
             if (this.field_70995_bG == 1)
             {
-                this.field_70170_p.func_82739_e(1018, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
+                this.world.func_82739_e(1018, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
             }
         }
 
         this.func_70091_d(0.0D, 0.10000000149011612D, 0.0D);
         this.field_70761_aq = this.field_70177_z += 20.0F;
 
-        if (this.field_70995_bG == 200 && !this.field_70170_p.field_72995_K)
+        if (this.field_70995_bG == 200 && !this.world.field_72995_K)
         {
             i = 2000;
 
@@ -582,7 +582,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
             {
                 j = EntityXPOrb.func_70527_a(i);
                 i -= j;
-                this.field_70170_p.func_72838_d(new EntityXPOrb(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, j));
+                this.world.func_72838_d(new EntityXPOrb(this.world, this.field_70165_t, this.field_70163_u, this.field_70161_v, j));
             }
 
             this.func_70975_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70161_v));
@@ -612,35 +612,35 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
                         {
                             if (d2 <= ((double)(b1 - 1) - 0.5D) * ((double)(b1 - 1) - 0.5D))
                             {
-                                this.field_70170_p.func_147449_b(l, k, i1, Blocks.BEDROCK);
+                                this.world.func_147449_b(l, k, i1, Blocks.BEDROCK);
                             }
                         }
                         else if (k > b0)
                         {
-                            this.field_70170_p.func_147449_b(l, k, i1, Blocks.AIR);
+                            this.world.func_147449_b(l, k, i1, Blocks.AIR);
                         }
                         else if (d2 > ((double)(b1 - 1) - 0.5D) * ((double)(b1 - 1) - 0.5D))
                         {
-                            this.field_70170_p.func_147449_b(l, k, i1, Blocks.BEDROCK);
+                            this.world.func_147449_b(l, k, i1, Blocks.BEDROCK);
                         }
                         else
                         {
-                            this.field_70170_p.func_147449_b(l, k, i1, Blocks.END_PORTAL);
+                            this.world.func_147449_b(l, k, i1, Blocks.END_PORTAL);
                         }
                     }
                 }
             }
         }
 
-        this.field_70170_p.func_147449_b(p_70975_1_, b0 + 0, p_70975_2_, Blocks.BEDROCK);
-        this.field_70170_p.func_147449_b(p_70975_1_, b0 + 1, p_70975_2_, Blocks.BEDROCK);
-        this.field_70170_p.func_147449_b(p_70975_1_, b0 + 2, p_70975_2_, Blocks.BEDROCK);
-        this.field_70170_p.func_147449_b(p_70975_1_ - 1, b0 + 2, p_70975_2_, Blocks.TORCH);
-        this.field_70170_p.func_147449_b(p_70975_1_ + 1, b0 + 2, p_70975_2_, Blocks.TORCH);
-        this.field_70170_p.func_147449_b(p_70975_1_, b0 + 2, p_70975_2_ - 1, Blocks.TORCH);
-        this.field_70170_p.func_147449_b(p_70975_1_, b0 + 2, p_70975_2_ + 1, Blocks.TORCH);
-        this.field_70170_p.func_147449_b(p_70975_1_, b0 + 3, p_70975_2_, Blocks.BEDROCK);
-        this.field_70170_p.func_147449_b(p_70975_1_, b0 + 4, p_70975_2_, Blocks.DRAGON_EGG);
+        this.world.func_147449_b(p_70975_1_, b0 + 0, p_70975_2_, Blocks.BEDROCK);
+        this.world.func_147449_b(p_70975_1_, b0 + 1, p_70975_2_, Blocks.BEDROCK);
+        this.world.func_147449_b(p_70975_1_, b0 + 2, p_70975_2_, Blocks.BEDROCK);
+        this.world.func_147449_b(p_70975_1_ - 1, b0 + 2, p_70975_2_, Blocks.TORCH);
+        this.world.func_147449_b(p_70975_1_ + 1, b0 + 2, p_70975_2_, Blocks.TORCH);
+        this.world.func_147449_b(p_70975_1_, b0 + 2, p_70975_2_ - 1, Blocks.TORCH);
+        this.world.func_147449_b(p_70975_1_, b0 + 2, p_70975_2_ + 1, Blocks.TORCH);
+        this.world.func_147449_b(p_70975_1_, b0 + 3, p_70975_2_, Blocks.BEDROCK);
+        this.world.func_147449_b(p_70975_1_, b0 + 4, p_70975_2_, Blocks.DRAGON_EGG);
         BlockEndPortal.field_149948_a = false;
     }
 
@@ -658,7 +658,7 @@ public class EntityDragon extends EntityLiving implements IBossDisplayData, IEnt
 
     public World func_82194_d()
     {
-        return this.field_70170_p;
+        return this.world;
     }
 
     protected String func_70639_aQ()

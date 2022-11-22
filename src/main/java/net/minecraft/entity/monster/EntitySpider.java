@@ -34,7 +34,7 @@ public class EntitySpider extends EntityMob
     {
         super.func_70071_h_();
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_70839_e(this.field_70123_F);
         }
@@ -54,7 +54,7 @@ public class EntitySpider extends EntityMob
         if (f < 0.5F)
         {
             double d0 = 16.0D;
-            return this.field_70170_p.func_72856_b(this, d0);
+            return this.world.func_72856_b(this, d0);
         }
         else
         {
@@ -168,12 +168,12 @@ public class EntitySpider extends EntityMob
     {
         Object p_110161_1_1 = super.func_110161_a(p_110161_1_);
 
-        if (this.field_70170_p.field_73012_v.nextInt(100) == 0)
+        if (this.world.field_73012_v.nextInt(100) == 0)
         {
-            EntitySkeleton entityskeleton = new EntitySkeleton(this.field_70170_p);
+            EntitySkeleton entityskeleton = new EntitySkeleton(this.world);
             entityskeleton.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, 0.0F);
             entityskeleton.func_110161_a((IEntityLivingData)null);
-            this.field_70170_p.func_72838_d(entityskeleton);
+            this.world.func_72838_d(entityskeleton);
             entityskeleton.func_70078_a(this);
         }
 
@@ -181,9 +181,9 @@ public class EntitySpider extends EntityMob
         {
             p_110161_1_1 = new EntitySpider.GroupData();
 
-            if (this.field_70170_p.field_73013_u == EnumDifficulty.HARD && this.field_70170_p.field_73012_v.nextFloat() < 0.1F * this.field_70170_p.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v))
+            if (this.world.field_73013_u == EnumDifficulty.HARD && this.world.field_73012_v.nextFloat() < 0.1F * this.world.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v))
             {
-                ((EntitySpider.GroupData)p_110161_1_1).func_111104_a(this.field_70170_p.field_73012_v);
+                ((EntitySpider.GroupData)p_110161_1_1).func_111104_a(this.world.field_73012_v);
             }
         }
 

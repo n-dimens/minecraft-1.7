@@ -25,13 +25,13 @@ public class EntityAIFollowGolem extends EntityAIBase
         {
             return false;
         }
-        else if (!this.field_75294_a.field_70170_p.func_72935_r())
+        else if (!this.field_75294_a.world.func_72935_r())
         {
             return false;
         }
         else
         {
-            List list = this.field_75294_a.field_70170_p.func_72872_a(EntityIronGolem.class, this.field_75294_a.field_70121_D.func_72314_b(6.0D, 2.0D, 6.0D));
+            List list = this.field_75294_a.world.func_72872_a(EntityIronGolem.class, this.field_75294_a.field_70121_D.func_72314_b(6.0D, 2.0D, 6.0D));
 
             if (list.isEmpty())
             {

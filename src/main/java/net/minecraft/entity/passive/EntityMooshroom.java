@@ -40,19 +40,19 @@ public class EntityMooshroom extends EntityCow
         if (itemstack != null && itemstack.func_77973_b() == Items.SHEARS && this.func_70874_b() >= 0)
         {
             this.func_70106_y();
-            this.field_70170_p.func_72869_a("largeexplode", this.field_70165_t, this.field_70163_u + (double)(this.field_70131_O / 2.0F), this.field_70161_v, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("largeexplode", this.field_70165_t, this.field_70163_u + (double)(this.field_70131_O / 2.0F), this.field_70161_v, 0.0D, 0.0D, 0.0D);
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
-                EntityCow entitycow = new EntityCow(this.field_70170_p);
+                EntityCow entitycow = new EntityCow(this.world);
                 entitycow.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, this.field_70125_A);
                 entitycow.func_70606_j(this.func_110143_aJ());
                 entitycow.field_70761_aq = this.field_70761_aq;
-                this.field_70170_p.func_72838_d(entitycow);
+                this.world.func_72838_d(entitycow);
 
                 for (int i = 0; i < 5; ++i)
                 {
-                    this.field_70170_p.func_72838_d(new EntityItem(this.field_70170_p, this.field_70165_t, this.field_70163_u + (double)this.field_70131_O, this.field_70161_v, new ItemStack(Blocks.RED_MUSHROOM)));
+                    this.world.func_72838_d(new EntityItem(this.world, this.field_70165_t, this.field_70163_u + (double)this.field_70131_O, this.field_70161_v, new ItemStack(Blocks.RED_MUSHROOM)));
                 }
 
                 itemstack.func_77972_a(1, p_70085_1_);
@@ -69,6 +69,6 @@ public class EntityMooshroom extends EntityCow
 
     public EntityMooshroom func_90011_a(EntityAgeable p_90011_1_)
     {
-        return new EntityMooshroom(this.field_70170_p);
+        return new EntityMooshroom(this.world);
     }
 }

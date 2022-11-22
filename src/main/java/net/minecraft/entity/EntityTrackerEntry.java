@@ -136,7 +136,7 @@ public class EntityTrackerEntry
 
             if (itemstack != null && itemstack.func_77973_b() instanceof ItemMap)
             {
-                MapData mapdata = Items.FILLED_MAP.func_77873_a(itemstack, this.field_73132_a.field_70170_p);
+                MapData mapdata = Items.FILLED_MAP.func_77873_a(itemstack, this.field_73132_a.world);
                 Iterator iterator = p_73122_1_.iterator();
 
                 while (iterator.hasNext())
@@ -144,7 +144,7 @@ public class EntityTrackerEntry
                     EntityPlayer entityplayer = (EntityPlayer)iterator.next();
                     EntityPlayerMP entityplayermp = (EntityPlayerMP)entityplayer;
                     mapdata.func_76191_a(entityplayermp, itemstack);
-                    Packet packet = Items.FILLED_MAP.func_150911_c(itemstack, this.field_73132_a.field_70170_p, entityplayermp);
+                    Packet packet = Items.FILLED_MAP.func_150911_c(itemstack, this.field_73132_a.world, entityplayermp);
 
                     if (packet != null)
                     {

@@ -26,7 +26,7 @@ public class EntityAIMoveIndoors extends EntityAIBase
         int j = MathHelper.func_76128_c(this.field_75424_a.field_70163_u);
         int k = MathHelper.func_76128_c(this.field_75424_a.field_70161_v);
 
-        if ((!this.field_75424_a.field_70170_p.func_72935_r() || this.field_75424_a.field_70170_p.func_72896_J() || !this.field_75424_a.field_70170_p.func_72807_a(i, k).func_76738_d()) && !this.field_75424_a.field_70170_p.field_73011_w.field_76576_e)
+        if ((!this.field_75424_a.world.func_72935_r() || this.field_75424_a.world.func_72896_J() || !this.field_75424_a.world.func_72807_a(i, k).func_76738_d()) && !this.field_75424_a.world.field_73011_w.field_76576_e)
         {
             if (this.field_75424_a.func_70681_au().nextInt(50) != 0)
             {
@@ -38,7 +38,7 @@ public class EntityAIMoveIndoors extends EntityAIBase
             }
             else
             {
-                Village village = this.field_75424_a.field_70170_p.field_72982_D.func_75550_a(i, j, k, 14);
+                Village village = this.field_75424_a.world.field_72982_D.func_75550_a(i, j, k, 14);
 
                 if (village == null)
                 {

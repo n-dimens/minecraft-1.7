@@ -24,7 +24,7 @@ public class EntityAIMate extends EntityAIBase
     public EntityAIMate(EntityAnimal p_i1619_1_, double p_i1619_2_)
     {
         this.field_75390_d = p_i1619_1_;
-        this.field_75394_a = p_i1619_1_.field_70170_p;
+        this.field_75394_a = p_i1619_1_.world;
         this.field_75393_c = p_i1619_2_;
         this.func_75248_a(3);
     }

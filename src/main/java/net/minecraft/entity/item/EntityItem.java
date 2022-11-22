@@ -92,7 +92,7 @@ public class EntityItem extends Entity
 
             if (flag || this.field_70173_aa % 25 == 0)
             {
-                if (this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() == Material.field_151587_i)
+                if (this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() == Material.field_151587_i)
                 {
                     this.field_70181_x = 0.20000000298023224D;
                     this.field_70159_w = (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F);
@@ -100,7 +100,7 @@ public class EntityItem extends Entity
                     this.func_85030_a("random.fizz", 0.4F, 2.0F + this.field_70146_Z.nextFloat() * 0.4F);
                 }
 
-                if (!this.field_70170_p.field_72995_K)
+                if (!this.world.field_72995_K)
                 {
                     this.func_85054_d();
                 }
@@ -110,7 +110,7 @@ public class EntityItem extends Entity
 
             if (this.field_70122_E)
             {
-                f = this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.98F;
+                f = this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.98F;
             }
 
             this.field_70159_w *= (double)f;
@@ -124,7 +124,7 @@ public class EntityItem extends Entity
 
             ++this.field_70292_b;
 
-            if (!this.field_70170_p.field_72995_K && this.field_70292_b >= 6000)
+            if (!this.world.field_72995_K && this.field_70292_b >= 6000)
             {
                 this.func_70106_y();
             }
@@ -133,7 +133,7 @@ public class EntityItem extends Entity
 
     private void func_85054_d()
     {
-        Iterator iterator = this.field_70170_p.func_72872_a(EntityItem.class, this.field_70121_D.func_72314_b(0.5D, 0.0D, 0.5D)).iterator();
+        Iterator iterator = this.world.func_72872_a(EntityItem.class, this.field_70121_D.func_72314_b(0.5D, 0.0D, 0.5D)).iterator();
 
         while (iterator.hasNext())
         {
@@ -204,7 +204,7 @@ public class EntityItem extends Entity
 
     public boolean func_70072_I()
     {
-        return this.field_70170_p.func_72918_a(this.field_70121_D, Material.field_151586_h, this);
+        return this.world.func_72918_a(this.field_70121_D, Material.field_151586_h, this);
     }
 
     protected void func_70081_e(int p_70081_1_)
@@ -283,7 +283,7 @@ public class EntityItem extends Entity
 
     public void func_70100_b_(EntityPlayer p_70100_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             ItemStack itemstack = this.func_92059_d();
             int i = itemstack.field_77994_a;
@@ -317,7 +317,7 @@ public class EntityItem extends Entity
 
                 if (itemstack.func_77973_b() == Items.DIAMOND && this.func_145800_j() != null)
                 {
-                    EntityPlayer entityplayer1 = this.field_70170_p.func_72924_a(this.func_145800_j());
+                    EntityPlayer entityplayer1 = this.world.func_72924_a(this.func_145800_j());
 
                     if (entityplayer1 != null && entityplayer1 != p_70100_1_)
                     {
@@ -325,7 +325,7 @@ public class EntityItem extends Entity
                     }
                 }
 
-                this.field_70170_p.func_72956_a(p_70100_1_, "random.pop", 0.2F, ((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                this.world.func_72956_a(p_70100_1_, "random.pop", 0.2F, ((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.7F + 1.0F) * 2.0F);
                 p_70100_1_.func_71001_a(this, i);
 
                 if (itemstack.field_77994_a <= 0)
@@ -350,7 +350,7 @@ public class EntityItem extends Entity
     {
         super.func_71027_c(p_71027_1_);
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_85054_d();
         }

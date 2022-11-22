@@ -47,7 +47,7 @@ public class SlotCrafting extends Slot
 
     protected void func_75208_c(ItemStack p_75208_1_)
     {
-        p_75208_1_.func_77980_a(this.field_75238_b.field_70170_p, this.field_75238_b, this.field_75237_g);
+        p_75208_1_.func_77980_a(this.field_75238_b.world, this.field_75238_b, this.field_75237_g);
         this.field_75237_g = 0;
 
         if (p_75208_1_.func_77973_b() == Item.func_150898_a(Blocks.CRAFTING_TABLE))

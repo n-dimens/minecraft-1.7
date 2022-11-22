@@ -54,9 +54,9 @@ public class EntityEnderCrystal extends Entity
         int j = MathHelper.func_76128_c(this.field_70163_u);
         int k = MathHelper.func_76128_c(this.field_70161_v);
 
-        if (this.field_70170_p.field_73011_w instanceof WorldProviderEnd && this.field_70170_p.func_147439_a(i, j, k) != Blocks.FIRE)
+        if (this.world.field_73011_w instanceof WorldProviderEnd && this.world.func_147439_a(i, j, k) != Blocks.FIRE)
         {
-            this.field_70170_p.func_147449_b(i, j, k, Blocks.FIRE);
+            this.world.func_147449_b(i, j, k, Blocks.FIRE);
         }
     }
 
@@ -83,7 +83,7 @@ public class EntityEnderCrystal extends Entity
         }
         else
         {
-            if (!this.field_70128_L && !this.field_70170_p.field_72995_K)
+            if (!this.field_70128_L && !this.world.field_72995_K)
             {
                 this.field_70260_b = 0;
 
@@ -91,9 +91,9 @@ public class EntityEnderCrystal extends Entity
                 {
                     this.func_70106_y();
 
-                    if (!this.field_70170_p.field_72995_K)
+                    if (!this.world.field_72995_K)
                     {
-                        this.field_70170_p.func_72876_a((Entity)null, this.field_70165_t, this.field_70163_u, this.field_70161_v, 6.0F, true);
+                        this.world.func_72876_a((Entity)null, this.field_70165_t, this.field_70163_u, this.field_70161_v, 6.0F, true);
                     }
                 }
             }

@@ -216,10 +216,10 @@ public class EntityCreeper extends EntityMob
 
         if (itemstack != null && itemstack.func_77973_b() == Items.FLINT_AND_STEEL)
         {
-            this.field_70170_p.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.ignite", 1.0F, this.field_70146_Z.nextFloat() * 0.4F + 0.8F);
+            this.world.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.ignite", 1.0F, this.field_70146_Z.nextFloat() * 0.4F + 0.8F);
             p_70085_1_.func_71038_i();
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_146079_cb();
                 itemstack.func_77972_a(1, p_70085_1_);
@@ -232,17 +232,17 @@ public class EntityCreeper extends EntityMob
 
     private void func_146077_cc()
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
-            boolean flag = this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing");
+            boolean flag = this.world.func_82736_K().getBooleanValue("mobGriefing");
 
             if (this.func_70830_n())
             {
-                this.field_70170_p.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)(this.field_82226_g * 2), flag);
+                this.world.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)(this.field_82226_g * 2), flag);
             }
             else
             {
-                this.field_70170_p.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)this.field_82226_g, flag);
+                this.world.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)this.field_82226_g, flag);
             }
 
             this.func_70106_y();

@@ -83,7 +83,7 @@ public class EntitySlime extends EntityLiving implements IMob
 
     public void func_70071_h_()
     {
-        if (!this.field_70170_p.field_72995_K && this.field_70170_p.field_73013_u == EnumDifficulty.PEACEFUL && this.func_70809_q() > 0)
+        if (!this.world.field_72995_K && this.world.field_73013_u == EnumDifficulty.PEACEFUL && this.func_70809_q() > 0)
         {
             this.field_70128_L = true;
         }
@@ -104,7 +104,7 @@ public class EntitySlime extends EntityLiving implements IMob
                 float f1 = this.field_70146_Z.nextFloat() * 0.5F + 0.5F;
                 float f2 = MathHelper.func_76126_a(f) * (float)i * 0.5F * f1;
                 float f3 = MathHelper.func_76134_b(f) * (float)i * 0.5F * f1;
-                this.field_70170_p.func_72869_a(this.func_70801_i(), this.field_70165_t + (double)f2, this.field_70121_D.field_72338_b, this.field_70161_v + (double)f3, 0.0D, 0.0D, 0.0D);
+                this.world.func_72869_a(this.func_70801_i(), this.field_70165_t + (double)f2, this.field_70121_D.field_72338_b, this.field_70161_v + (double)f3, 0.0D, 0.0D, 0.0D);
             }
 
             if (this.func_70804_p())
@@ -121,7 +121,7 @@ public class EntitySlime extends EntityLiving implements IMob
 
         this.func_70808_l();
 
-        if (this.field_70170_p.field_72995_K)
+        if (this.world.field_72995_K)
         {
             i = this.func_70809_q();
             this.func_70105_a(0.6F * (float)i, 0.6F * (float)i);
@@ -131,7 +131,7 @@ public class EntitySlime extends EntityLiving implements IMob
     protected void func_70626_be()
     {
         this.func_70623_bb();
-        EntityPlayer entityplayer = this.field_70170_p.func_72856_b(this, 16.0D);
+        EntityPlayer entityplayer = this.world.func_72856_b(this, 16.0D);
 
         if (entityplayer != null)
         {
@@ -180,14 +180,14 @@ public class EntitySlime extends EntityLiving implements IMob
 
     protected EntitySlime func_70802_j()
     {
-        return new EntitySlime(this.field_70170_p);
+        return new EntitySlime(this.world);
     }
 
     public void func_70106_y()
     {
         int i = this.func_70809_q();
 
-        if (!this.field_70170_p.field_72995_K && i > 1 && this.func_110143_aJ() <= 0.0F)
+        if (!this.world.field_72995_K && i > 1 && this.func_110143_aJ() <= 0.0F)
         {
             int j = 2 + this.field_70146_Z.nextInt(3);
 
@@ -198,7 +198,7 @@ public class EntitySlime extends EntityLiving implements IMob
                 EntitySlime entityslime = this.func_70802_j();
                 entityslime.func_70799_a(i / 2);
                 entityslime.func_70012_b(this.field_70165_t + (double)f, this.field_70163_u + 0.5D, this.field_70161_v + (double)f1, this.field_70146_Z.nextFloat() * 360.0F, 0.0F);
-                this.field_70170_p.func_72838_d(entityslime);
+                this.world.func_72838_d(entityslime);
             }
         }
 
@@ -245,19 +245,19 @@ public class EntitySlime extends EntityLiving implements IMob
 
     public boolean func_70601_bi()
     {
-        Chunk chunk = this.field_70170_p.func_72938_d(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70161_v));
+        Chunk chunk = this.world.func_72938_d(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70161_v));
 
-        if (this.field_70170_p.func_72912_H().func_76067_t() == WorldType.field_77138_c && this.field_70146_Z.nextInt(4) != 1)
+        if (this.world.func_72912_H().func_76067_t() == WorldType.field_77138_c && this.field_70146_Z.nextInt(4) != 1)
         {
             return false;
         }
         else
         {
-            if (this.func_70809_q() == 1 || this.field_70170_p.field_73013_u != EnumDifficulty.PEACEFUL)
+            if (this.func_70809_q() == 1 || this.world.field_73013_u != EnumDifficulty.PEACEFUL)
             {
-                BiomeGenBase biomegenbase = this.field_70170_p.func_72807_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70161_v));
+                BiomeGenBase biomegenbase = this.world.func_72807_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70161_v));
 
-                if (biomegenbase == BiomeGenBase.field_76780_h && this.field_70163_u > 50.0D && this.field_70163_u < 70.0D && this.field_70146_Z.nextFloat() < 0.5F && this.field_70146_Z.nextFloat() < this.field_70170_p.func_130001_d() && this.field_70170_p.func_72957_l(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)) <= this.field_70146_Z.nextInt(8))
+                if (biomegenbase == BiomeGenBase.field_76780_h && this.field_70163_u > 50.0D && this.field_70163_u < 70.0D && this.field_70146_Z.nextFloat() < 0.5F && this.field_70146_Z.nextFloat() < this.world.func_130001_d() && this.world.func_72957_l(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)) <= this.field_70146_Z.nextInt(8))
                 {
                     return super.func_70601_bi();
                 }

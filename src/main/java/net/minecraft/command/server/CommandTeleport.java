@@ -63,7 +63,7 @@ public class CommandTeleport extends CommandBase
                         throw new PlayerNotFoundException();
                     }
 
-                    if (entityplayermp1.field_70170_p != entityplayermp.field_70170_p)
+                    if (entityplayermp1.world != entityplayermp.world)
                     {
                         func_152373_a(p_71515_1_, this, "commands.tp.notSameDimension", new Object[0]);
                         return;
@@ -74,7 +74,7 @@ public class CommandTeleport extends CommandBase
                     func_152373_a(p_71515_1_, this, "commands.tp.success", new Object[] {entityplayermp.func_70005_c_(), entityplayermp1.func_70005_c_()});
                 }
             }
-            else if (entityplayermp.field_70170_p != null)
+            else if (entityplayermp.world != null)
             {
                 int i = p_71515_2_.length - 3;
                 double d0 = func_110666_a(p_71515_1_, entityplayermp.field_70165_t, p_71515_2_[i++]);

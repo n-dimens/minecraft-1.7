@@ -49,9 +49,9 @@ public class SlotFurnace extends Slot
 
     protected void func_75208_c(ItemStack p_75208_1_)
     {
-        p_75208_1_.func_77980_a(this.field_75229_a.field_70170_p, this.field_75229_a, this.field_75228_b);
+        p_75208_1_.func_77980_a(this.field_75229_a.world, this.field_75229_a, this.field_75228_b);
 
-        if (!this.field_75229_a.field_70170_p.field_72995_K)
+        if (!this.field_75229_a.world.field_72995_K)
         {
             int i = this.field_75228_b;
             float f = FurnaceRecipes.func_77602_a().func_151398_b(p_75208_1_);
@@ -77,7 +77,7 @@ public class SlotFurnace extends Slot
             {
                 j = EntityXPOrb.func_70527_a(i);
                 i -= j;
-                this.field_75229_a.field_70170_p.func_72838_d(new EntityXPOrb(this.field_75229_a.field_70170_p, this.field_75229_a.field_70165_t, this.field_75229_a.field_70163_u + 0.5D, this.field_75229_a.field_70161_v + 0.5D, j));
+                this.field_75229_a.world.func_72838_d(new EntityXPOrb(this.field_75229_a.world, this.field_75229_a.field_70165_t, this.field_75229_a.field_70163_u + 0.5D, this.field_75229_a.field_70161_v + 0.5D, j));
             }
         }
 

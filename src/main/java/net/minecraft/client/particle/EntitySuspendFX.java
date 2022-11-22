@@ -33,7 +33,7 @@ public class EntitySuspendFX extends EntityFX
         this.field_70166_s = this.field_70161_v;
         this.func_70091_d(this.field_70159_w, this.field_70181_x, this.field_70179_y);
 
-        if (this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() != Material.field_151586_h)
+        if (this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() != Material.field_151586_h)
         {
             this.func_70106_y();
         }

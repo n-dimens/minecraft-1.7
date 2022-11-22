@@ -50,7 +50,7 @@ public class EntityMinecartHopper extends EntityMinecartContainer implements IHo
 
     public boolean func_130002_c(EntityPlayer p_130002_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             p_130002_1_.func_96125_a(this);
         }
@@ -80,7 +80,7 @@ public class EntityMinecartHopper extends EntityMinecartContainer implements IHo
 
     public World func_145831_w()
     {
-        return this.field_70170_p;
+        return this.world;
     }
 
     public double func_96107_aA()
@@ -102,7 +102,7 @@ public class EntityMinecartHopper extends EntityMinecartContainer implements IHo
     {
         super.func_70071_h_();
 
-        if (!this.field_70170_p.field_72995_K && this.func_70089_S() && this.func_96111_ay())
+        if (!this.world.field_72995_K && this.func_70089_S() && this.func_96111_ay())
         {
             --this.field_98044_b;
 
@@ -127,7 +127,7 @@ public class EntityMinecartHopper extends EntityMinecartContainer implements IHo
         }
         else
         {
-            List list = this.field_70170_p.func_82733_a(EntityItem.class, this.field_70121_D.func_72314_b(0.25D, 0.0D, 0.25D), IEntitySelector.field_94557_a);
+            List list = this.world.func_82733_a(EntityItem.class, this.field_70121_D.func_72314_b(0.25D, 0.0D, 0.25D), IEntitySelector.field_94557_a);
 
             if (list.size() > 0)
             {

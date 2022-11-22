@@ -84,7 +84,7 @@ public class EntityFireworkStarterFX extends EntityFX
             }
 
             String s1 = "fireworks." + (flag1 ? "largeBlast" : "blast") + (flag ? "_far" : "");
-            this.field_70170_p.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, s1, 20.0F, 0.95F + this.field_70146_Z.nextFloat() * 0.1F, true);
+            this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, s1, 20.0F, 0.95F + this.field_70146_Z.nextFloat() * 0.1F, true);
         }
 
         if (this.field_92042_ax % 2 == 0 && this.field_92039_az != null && this.field_92042_ax / 2 < this.field_92039_az.func_74745_c())
@@ -122,7 +122,7 @@ public class EntityFireworkStarterFX extends EntityFX
             float f = (float)((j & 16711680) >> 16) / 255.0F;
             float f1 = (float)((j & 65280) >> 8) / 255.0F;
             float f2 = (float)((j & 255) >> 0) / 255.0F;
-            EntityFireworkOverlayFX entityfireworkoverlayfx = new EntityFireworkOverlayFX(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v);
+            EntityFireworkOverlayFX entityfireworkoverlayfx = new EntityFireworkOverlayFX(this.world, this.field_70165_t, this.field_70163_u, this.field_70161_v);
             entityfireworkoverlayfx.func_70538_b(f, f1, f2);
             this.field_92040_ay.func_78873_a(entityfireworkoverlayfx);
         }
@@ -135,7 +135,7 @@ public class EntityFireworkStarterFX extends EntityFX
             {
                 flag = this.func_92037_i();
                 String s = "fireworks." + (flag ? "twinkle_far" : "twinkle");
-                this.field_70170_p.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, s, 20.0F, 0.9F + this.field_70146_Z.nextFloat() * 0.15F, true);
+                this.world.func_72980_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, s, 20.0F, 0.9F + this.field_70146_Z.nextFloat() * 0.15F, true);
             }
 
             this.func_70106_y();
@@ -150,7 +150,7 @@ public class EntityFireworkStarterFX extends EntityFX
 
     private void func_92034_a(double p_92034_1_, double p_92034_3_, double p_92034_5_, double p_92034_7_, double p_92034_9_, double p_92034_11_, int[] p_92034_13_, int[] p_92034_14_, boolean p_92034_15_, boolean p_92034_16_)
     {
-        EntityFireworkSparkFX entityfireworksparkfx = new EntityFireworkSparkFX(this.field_70170_p, p_92034_1_, p_92034_3_, p_92034_5_, p_92034_7_, p_92034_9_, p_92034_11_, this.field_92040_ay);
+        EntityFireworkSparkFX entityfireworksparkfx = new EntityFireworkSparkFX(this.world, p_92034_1_, p_92034_3_, p_92034_5_, p_92034_7_, p_92034_9_, p_92034_11_, this.field_92040_ay);
         entityfireworksparkfx.func_92045_e(p_92034_15_);
         entityfireworksparkfx.func_92043_f(p_92034_16_);
         int i = this.field_70146_Z.nextInt(p_92034_13_.length);

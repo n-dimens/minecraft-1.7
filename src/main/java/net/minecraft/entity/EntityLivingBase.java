@@ -158,23 +158,23 @@ public abstract class EntityLivingBase extends Entity
             int i = MathHelper.func_76128_c(this.field_70165_t);
             int j = MathHelper.func_76128_c(this.field_70163_u - 0.20000000298023224D - (double)this.field_70129_M);
             int k = MathHelper.func_76128_c(this.field_70161_v);
-            Block block = this.field_70170_p.func_147439_a(i, j, k);
+            Block block = this.world.func_147439_a(i, j, k);
 
             if (block.func_149688_o() == Material.field_151579_a)
             {
-                int l = this.field_70170_p.func_147439_a(i, j - 1, k).func_149645_b();
+                int l = this.world.func_147439_a(i, j - 1, k).func_149645_b();
 
                 if (l == 11 || l == 32 || l == 21)
                 {
-                    block = this.field_70170_p.func_147439_a(i, j - 1, k);
+                    block = this.world.func_147439_a(i, j - 1, k);
                 }
             }
-            else if (!this.field_70170_p.field_72995_K && this.field_70143_R > 3.0F)
+            else if (!this.world.field_72995_K && this.field_70143_R > 3.0F)
             {
-                this.field_70170_p.func_72926_e(2006, i, j, k, MathHelper.func_76123_f(this.field_70143_R - 3.0F));
+                this.world.func_72926_e(2006, i, j, k, MathHelper.func_76123_f(this.field_70143_R - 3.0F));
             }
 
-            block.func_149746_a(this.field_70170_p, i, j, k, this, this.field_70143_R);
+            block.func_149746_a(this.world, i, j, k, this, this.field_70143_R);
         }
 
         super.func_70064_a(p_70064_1_, p_70064_3_);
@@ -189,14 +189,14 @@ public abstract class EntityLivingBase extends Entity
     {
         this.field_70732_aI = this.field_70733_aJ;
         super.func_70030_z();
-        this.field_70170_p.field_72984_F.func_76320_a("livingEntityBaseTick");
+        this.world.profiler.startMeasure("livingEntityBaseTick");
 
         if (this.func_70089_S() && this.func_70094_T())
         {
             this.func_70097_a(DamageSource.field_76368_d, 1.0F);
         }
 
-        if (this.func_70045_F() || this.field_70170_p.field_72995_K)
+        if (this.func_70045_F() || this.world.field_72995_K)
         {
             this.func_70066_B();
         }
@@ -218,14 +218,14 @@ public abstract class EntityLivingBase extends Entity
                         float f = this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat();
                         float f1 = this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat();
                         float f2 = this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat();
-                        this.field_70170_p.func_72869_a("bubble", this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+                        this.world.func_72869_a("bubble", this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                     }
 
                     this.func_70097_a(DamageSource.field_76369_e, 2.0F);
                 }
             }
 
-            if (!this.field_70170_p.field_72995_K && this.func_70115_ae() && this.field_70154_o instanceof EntityLivingBase)
+            if (!this.world.field_72995_K && this.func_70115_ae() && this.field_70154_o instanceof EntityLivingBase)
             {
                 this.func_70078_a((Entity)null);
             }
@@ -294,7 +294,7 @@ public abstract class EntityLivingBase extends Entity
         this.field_70758_at = this.field_70759_as;
         this.field_70126_B = this.field_70177_z;
         this.field_70127_C = this.field_70125_A;
-        this.field_70170_p.field_72984_F.func_76319_b();
+        this.world.profiler.endMeasure();
     }
 
     public boolean func_70631_g_()
@@ -310,7 +310,7 @@ public abstract class EntityLivingBase extends Entity
         {
             int i;
 
-            if (!this.field_70170_p.field_72995_K && (this.field_70718_bc > 0 || this.func_70684_aJ()) && this.func_146066_aG() && this.field_70170_p.func_82736_K().getBooleanValue("doMobLoot"))
+            if (!this.world.field_72995_K && (this.field_70718_bc > 0 || this.func_70684_aJ()) && this.func_146066_aG() && this.world.func_82736_K().getBooleanValue("doMobLoot"))
             {
                 i = this.func_70693_a(this.field_70717_bb);
 
@@ -318,7 +318,7 @@ public abstract class EntityLivingBase extends Entity
                 {
                     int j = EntityXPOrb.func_70527_a(i);
                     i -= j;
-                    this.field_70170_p.func_72838_d(new EntityXPOrb(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, j));
+                    this.world.func_72838_d(new EntityXPOrb(this.world, this.field_70165_t, this.field_70163_u, this.field_70161_v, j));
                 }
             }
 
@@ -329,7 +329,7 @@ public abstract class EntityLivingBase extends Entity
                 double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
                 double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
                 double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
-                this.field_70170_p.func_72869_a("explode", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d2, d0, d1);
+                this.world.func_72869_a("explode", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d2, d0, d1);
             }
         }
     }
@@ -461,7 +461,7 @@ public abstract class EntityLivingBase extends Entity
     {
         this.func_110149_m(p_70037_1_.func_74760_g("AbsorptionAmount"));
 
-        if (p_70037_1_.func_150297_b("Attributes", 9) && this.field_70170_p != null && !this.field_70170_p.field_72995_K)
+        if (p_70037_1_.func_150297_b("Attributes", 9) && this.world != null && !this.world.field_72995_K)
         {
             SharedMonsterAttributes.func_151475_a(this.func_110140_aT(), p_70037_1_.func_150295_c("Attributes", 10));
         }
@@ -520,7 +520,7 @@ public abstract class EntityLivingBase extends Entity
 
             if (!potioneffect.func_76455_a(this))
             {
-                if (!this.field_70170_p.field_72995_K)
+                if (!this.world.field_72995_K)
                 {
                     iterator.remove();
                     this.func_70688_c(potioneffect);
@@ -536,7 +536,7 @@ public abstract class EntityLivingBase extends Entity
 
         if (this.field_70752_e)
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 if (this.field_70713_bf.isEmpty())
                 {
@@ -582,7 +582,7 @@ public abstract class EntityLivingBase extends Entity
                 double d0 = (double)(i >> 16 & 255) / 255.0D;
                 double d1 = (double)(i >> 8 & 255) / 255.0D;
                 double d2 = (double)(i >> 0 & 255) / 255.0D;
-                this.field_70170_p.func_72869_a(flag1 ? "mobSpellAmbient" : "mobSpell", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O - (double)this.field_70129_M, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, d0, d1, d2);
+                this.world.func_72869_a(flag1 ? "mobSpellAmbient" : "mobSpell", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O - (double)this.field_70129_M, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, d0, d1, d2);
             }
         }
     }
@@ -596,7 +596,7 @@ public abstract class EntityLivingBase extends Entity
             Integer integer = (Integer)iterator.next();
             PotionEffect potioneffect = (PotionEffect)this.field_70713_bf.get(integer);
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 iterator.remove();
                 this.func_70688_c(potioneffect);
@@ -681,7 +681,7 @@ public abstract class EntityLivingBase extends Entity
     {
         this.field_70752_e = true;
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             Potion.field_76425_a[p_70670_1_.func_76456_a()].func_111185_a(this, this.func_110140_aT(), p_70670_1_.func_76458_c());
         }
@@ -691,7 +691,7 @@ public abstract class EntityLivingBase extends Entity
     {
         this.field_70752_e = true;
 
-        if (p_70695_2_ && !this.field_70170_p.field_72995_K)
+        if (p_70695_2_ && !this.world.field_72995_K)
         {
             Potion.field_76425_a[p_70695_1_.func_76456_a()].func_111187_a(this, this.func_110140_aT(), p_70695_1_.func_76458_c());
             Potion.field_76425_a[p_70695_1_.func_76456_a()].func_111185_a(this, this.func_110140_aT(), p_70695_1_.func_76458_c());
@@ -702,7 +702,7 @@ public abstract class EntityLivingBase extends Entity
     {
         this.field_70752_e = true;
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             Potion.field_76425_a[p_70688_1_.func_76456_a()].func_111187_a(this, this.func_110140_aT(), p_70688_1_.func_76458_c());
         }
@@ -734,7 +734,7 @@ public abstract class EntityLivingBase extends Entity
         {
             return false;
         }
-        else if (this.field_70170_p.field_72995_K)
+        else if (this.world.field_72995_K)
         {
             return false;
         }
@@ -810,7 +810,7 @@ public abstract class EntityLivingBase extends Entity
 
                 if (flag)
                 {
-                    this.field_70170_p.func_72960_a(this, (byte)2);
+                    this.world.func_72960_a(this, (byte)2);
 
                     if (p_70097_1_ != DamageSource.field_76369_e)
                     {
@@ -866,7 +866,7 @@ public abstract class EntityLivingBase extends Entity
 
     public void func_70669_a(ItemStack p_70669_1_)
     {
-        this.func_85030_a("random.break", 0.8F, 0.8F + this.field_70170_p.field_73012_v.nextFloat() * 0.4F);
+        this.func_85030_a("random.break", 0.8F, 0.8F + this.world.field_73012_v.nextFloat() * 0.4F);
 
         for (int i = 0; i < 5; ++i)
         {
@@ -877,7 +877,7 @@ public abstract class EntityLivingBase extends Entity
             vec31.func_72440_a(-this.field_70125_A * (float)Math.PI / 180.0F);
             vec31.func_72442_b(-this.field_70177_z * (float)Math.PI / 180.0F);
             vec31 = vec31.func_72441_c(this.field_70165_t, this.field_70163_u + (double)this.func_70047_e(), this.field_70161_v);
-            this.field_70170_p.func_72869_a("iconcrack_" + Item.func_150891_b(p_70669_1_.func_77973_b()), vec31.field_72450_a, vec31.field_72448_b, vec31.field_72449_c, vec3.field_72450_a, vec3.field_72448_b + 0.05D, vec3.field_72449_c);
+            this.world.func_72869_a("iconcrack_" + Item.func_150891_b(p_70669_1_.func_77973_b()), vec31.field_72450_a, vec31.field_72448_b, vec31.field_72449_c, vec3.field_72450_a, vec3.field_72448_b + 0.05D, vec3.field_72449_c);
         }
     }
 
@@ -899,7 +899,7 @@ public abstract class EntityLivingBase extends Entity
         this.field_70729_aU = true;
         this.func_110142_aN().func_94549_h();
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             int i = 0;
 
@@ -908,7 +908,7 @@ public abstract class EntityLivingBase extends Entity
                 i = EnchantmentHelper.func_77519_f((EntityLivingBase)entity);
             }
 
-            if (this.func_146066_aG() && this.field_70170_p.func_82736_K().getBooleanValue("doMobLoot"))
+            if (this.func_146066_aG() && this.world.func_82736_K().getBooleanValue("doMobLoot"))
             {
                 this.func_70628_a(this.field_70718_bc > 0, i);
                 this.func_82160_b(this.field_70718_bc > 0, i);
@@ -925,7 +925,7 @@ public abstract class EntityLivingBase extends Entity
             }
         }
 
-        this.field_70170_p.func_72960_a(this, (byte)3);
+        this.world.func_72960_a(this, (byte)3);
     }
 
     protected void func_82160_b(boolean p_82160_1_, int p_82160_2_) {}
@@ -970,7 +970,7 @@ public abstract class EntityLivingBase extends Entity
         int i = MathHelper.func_76128_c(this.field_70165_t);
         int j = MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
         int k = MathHelper.func_76128_c(this.field_70161_v);
-        Block block = this.field_70170_p.func_147439_a(i, j, k);
+        Block block = this.world.func_147439_a(i, j, k);
         return block == Blocks.LADDER || block == Blocks.VINE;
     }
 
@@ -993,7 +993,7 @@ public abstract class EntityLivingBase extends Entity
             int j = MathHelper.func_76128_c(this.field_70165_t);
             int k = MathHelper.func_76128_c(this.field_70163_u - 0.20000000298023224D - (double)this.field_70129_M);
             int l = MathHelper.func_76128_c(this.field_70161_v);
-            Block block = this.field_70170_p.func_147439_a(j, k, l);
+            Block block = this.world.func_147439_a(j, k, l);
 
             if (block.func_149688_o() != Material.field_151579_a)
             {
@@ -1157,9 +1157,9 @@ public abstract class EntityLivingBase extends Entity
             this.field_110158_av = -1;
             this.field_82175_bq = true;
 
-            if (this.field_70170_p instanceof WorldServer)
+            if (this.world instanceof WorldServer)
             {
-                ((WorldServer)this.field_70170_p).func_73039_n().func_151247_a(this, new S0BPacketAnimation(this, 0));
+                ((WorldServer)this.world).func_73039_n().func_151247_a(this, new S0BPacketAnimation(this, 0));
             }
         }
     }
@@ -1296,15 +1296,15 @@ public abstract class EntityLivingBase extends Entity
                     int l = (int)(this.field_70161_v + (double)j);
                     AxisAlignedBB axisalignedbb = this.field_70121_D.func_72325_c((double)i, 1.0D, (double)j);
 
-                    if (this.field_70170_p.func_147461_a(axisalignedbb).isEmpty())
+                    if (this.world.func_147461_a(axisalignedbb).isEmpty())
                     {
-                        if (World.func_147466_a(this.field_70170_p, k, (int)this.field_70163_u, l))
+                        if (World.func_147466_a(this.world, k, (int)this.field_70163_u, l))
                         {
                             this.func_70634_a(this.field_70165_t + (double)i, this.field_70163_u + 1.0D, this.field_70161_v + (double)j);
                             return;
                         }
 
-                        if (World.func_147466_a(this.field_70170_p, k, (int)this.field_70163_u - 1, l) || this.field_70170_p.func_147439_a(k, (int)this.field_70163_u - 1, l).func_149688_o() == Material.field_151586_h)
+                        if (World.func_147466_a(this.world, k, (int)this.field_70163_u - 1, l) || this.world.func_147439_a(k, (int)this.field_70163_u - 1, l).func_149688_o() == Material.field_151586_h)
                         {
                             d0 = this.field_70165_t + (double)i;
                             d1 = this.field_70163_u + 1.0D;
@@ -1389,7 +1389,7 @@ public abstract class EntityLivingBase extends Entity
 
             if (this.field_70122_E)
             {
-                f2 = this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.91F;
+                f2 = this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.91F;
             }
 
             float f3 = 0.16277136F / (f2 * f2 * f2);
@@ -1409,7 +1409,7 @@ public abstract class EntityLivingBase extends Entity
 
             if (this.field_70122_E)
             {
-                f2 = this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.91F;
+                f2 = this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.91F;
             }
 
             if (this.func_70617_f_())
@@ -1458,7 +1458,7 @@ public abstract class EntityLivingBase extends Entity
                 this.field_70181_x = 0.2D;
             }
 
-            if (this.field_70170_p.field_72995_K && (!this.field_70170_p.func_72899_e((int)this.field_70165_t, 0, (int)this.field_70161_v) || !this.field_70170_p.func_72938_d((int)this.field_70165_t, (int)this.field_70161_v).field_76636_d))
+            if (this.world.field_72995_K && (!this.world.func_72899_e((int)this.field_70165_t, 0, (int)this.field_70161_v) || !this.world.func_72938_d((int)this.field_70165_t, (int)this.field_70161_v).field_76636_d))
             {
                 if (this.field_70163_u > 0.0D)
                 {
@@ -1523,7 +1523,7 @@ public abstract class EntityLivingBase extends Entity
     {
         super.func_70071_h_();
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             int i = this.func_85035_bI();
 
@@ -1549,7 +1549,7 @@ public abstract class EntityLivingBase extends Entity
 
                 if (!ItemStack.func_77989_b(itemstack1, itemstack))
                 {
-                    ((WorldServer)this.field_70170_p).func_73039_n().func_151247_a(this, new S04PacketEntityEquipment(this.func_145782_y(), j, itemstack1));
+                    ((WorldServer)this.world).func_73039_n().func_151247_a(this, new S04PacketEntityEquipment(this.func_145782_y(), j, itemstack1));
 
                     if (itemstack != null)
                     {
@@ -1598,10 +1598,10 @@ public abstract class EntityLivingBase extends Entity
         }
 
         this.field_110154_aX += (f3 - this.field_110154_aX) * 0.3F;
-        this.field_70170_p.field_72984_F.func_76320_a("headTurn");
+        this.world.profiler.startMeasure("headTurn");
         f2 = this.func_110146_f(f1, f2);
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("rangeChecks");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("rangeChecks");
 
         while (this.field_70177_z - this.field_70126_B < -180.0F)
         {
@@ -1643,7 +1643,7 @@ public abstract class EntityLivingBase extends Entity
             this.field_70758_at += 360.0F;
         }
 
-        this.field_70170_p.field_72984_F.func_76319_b();
+        this.world.profiler.endMeasure();
         this.field_70764_aw += f2;
     }
 
@@ -1720,7 +1720,7 @@ public abstract class EntityLivingBase extends Entity
             this.field_70179_y = 0.0D;
         }
 
-        this.field_70170_p.field_72984_F.func_76320_a("ai");
+        this.world.profiler.startMeasure("ai");
 
         if (this.func_70610_aX())
         {
@@ -1733,21 +1733,21 @@ public abstract class EntityLivingBase extends Entity
         {
             if (this.func_70650_aV())
             {
-                this.field_70170_p.field_72984_F.func_76320_a("newAi");
+                this.world.profiler.startMeasure("newAi");
                 this.func_70619_bc();
-                this.field_70170_p.field_72984_F.func_76319_b();
+                this.world.profiler.endMeasure();
             }
             else
             {
-                this.field_70170_p.field_72984_F.func_76320_a("oldAi");
+                this.world.profiler.startMeasure("oldAi");
                 this.func_70626_be();
-                this.field_70170_p.field_72984_F.func_76319_b();
+                this.world.profiler.endMeasure();
                 this.field_70759_as = this.field_70177_z;
             }
         }
 
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("jump");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("jump");
 
         if (this.field_70703_bu)
         {
@@ -1769,28 +1769,28 @@ public abstract class EntityLivingBase extends Entity
             this.field_70773_bE = 0;
         }
 
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("travel");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("travel");
         this.field_70702_br *= 0.98F;
         this.field_70701_bs *= 0.98F;
         this.field_70704_bt *= 0.9F;
         this.func_70612_e(this.field_70702_br, this.field_70701_bs);
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("push");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("push");
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_85033_bc();
         }
 
-        this.field_70170_p.field_72984_F.func_76319_b();
+        this.world.profiler.endMeasure();
     }
 
     protected void func_70619_bc() {}
 
     protected void func_85033_bc()
     {
-        List list = this.field_70170_p.func_72839_b(this, this.field_70121_D.func_72314_b(0.20000000298023224D, 0.0D, 0.20000000298023224D));
+        List list = this.world.func_72839_b(this, this.field_70121_D.func_72314_b(0.20000000298023224D, 0.0D, 0.20000000298023224D));
 
         if (list != null && !list.isEmpty())
         {
@@ -1845,9 +1845,9 @@ public abstract class EntityLivingBase extends Entity
 
     public void func_71001_a(Entity p_71001_1_, int p_71001_2_)
     {
-        if (!p_71001_1_.field_70128_L && !this.field_70170_p.field_72995_K)
+        if (!p_71001_1_.field_70128_L && !this.world.field_72995_K)
         {
-            EntityTracker entitytracker = ((WorldServer)this.field_70170_p).func_73039_n();
+            EntityTracker entitytracker = ((WorldServer)this.world).func_73039_n();
 
             if (p_71001_1_ instanceof EntityItem)
             {
@@ -1868,7 +1868,7 @@ public abstract class EntityLivingBase extends Entity
 
     public boolean func_70685_l(Entity p_70685_1_)
     {
-        return this.field_70170_p.func_72933_a(Vec3.func_72443_a(this.field_70165_t, this.field_70163_u + (double)this.func_70047_e(), this.field_70161_v), Vec3.func_72443_a(p_70685_1_.field_70165_t, p_70685_1_.field_70163_u + (double)p_70685_1_.func_70047_e(), p_70685_1_.field_70161_v)) == null;
+        return this.world.func_72933_a(Vec3.func_72443_a(this.field_70165_t, this.field_70163_u + (double)this.func_70047_e(), this.field_70161_v), Vec3.func_72443_a(p_70685_1_.field_70165_t, p_70685_1_.field_70163_u + (double)p_70685_1_.func_70047_e(), p_70685_1_.field_70161_v)) == null;
     }
 
     public Vec3 func_70040_Z()
@@ -1938,12 +1938,12 @@ public abstract class EntityLivingBase extends Entity
         Vec3 vec3 = this.func_70666_h(p_70614_3_);
         Vec3 vec31 = this.func_70676_i(p_70614_3_);
         Vec3 vec32 = vec3.func_72441_c(vec31.field_72450_a * p_70614_1_, vec31.field_72448_b * p_70614_1_, vec31.field_72449_c * p_70614_1_);
-        return this.field_70170_p.func_147447_a(vec3, vec32, false, false, true);
+        return this.world.func_147447_a(vec3, vec32, false, false, true);
     }
 
     public boolean func_70613_aW()
     {
-        return !this.field_70170_p.field_72995_K;
+        return !this.world.field_72995_K;
     }
 
     public boolean func_70067_L()

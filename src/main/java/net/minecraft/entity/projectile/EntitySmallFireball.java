@@ -30,7 +30,7 @@ public class EntitySmallFireball extends EntityFireball
 
     protected void func_70227_a(MovingObjectPosition p_70227_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (p_70227_1_.field_72308_g != null)
             {
@@ -66,9 +66,9 @@ public class EntitySmallFireball extends EntityFireball
                         ++i;
                 }
 
-                if (this.field_70170_p.func_147437_c(i, j, k))
+                if (this.world.func_147437_c(i, j, k))
                 {
-                    this.field_70170_p.func_147449_b(i, j, k, Blocks.FIRE);
+                    this.world.func_147449_b(i, j, k, Blocks.FIRE);
                 }
             }
 

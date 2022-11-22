@@ -44,7 +44,7 @@ public class SlotMerchantResult extends Slot
 
     protected void func_75208_c(ItemStack p_75208_1_)
     {
-        p_75208_1_.func_77980_a(this.field_75232_b.field_70170_p, this.field_75232_b, this.field_75231_g);
+        p_75208_1_.func_77980_a(this.field_75232_b.world, this.field_75232_b, this.field_75231_g);
         this.field_75231_g = 0;
     }
 

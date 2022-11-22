@@ -262,7 +262,7 @@ public class PathFinder
             {
                 for (int j1 = p_82565_3_; j1 < p_82565_3_ + p_82565_4_.field_75838_c; ++j1)
                 {
-                    Block block = p_82565_0_.field_70170_p.func_147439_a(l, i1, j1);
+                    Block block = p_82565_0_.world.func_147439_a(l, i1, j1);
 
                     if (block.func_149688_o() != Material.field_151579_a)
                     {
@@ -289,18 +289,18 @@ public class PathFinder
 
                         int k1 = block.func_149645_b();
 
-                        if (p_82565_0_.field_70170_p.func_147439_a(l, i1, j1).func_149645_b() == 9)
+                        if (p_82565_0_.world.func_147439_a(l, i1, j1).func_149645_b() == 9)
                         {
                             int j2 = MathHelper.func_76128_c(p_82565_0_.field_70165_t);
                             int l1 = MathHelper.func_76128_c(p_82565_0_.field_70163_u);
                             int i2 = MathHelper.func_76128_c(p_82565_0_.field_70161_v);
 
-                            if (p_82565_0_.field_70170_p.func_147439_a(j2, l1, i2).func_149645_b() != 9 && p_82565_0_.field_70170_p.func_147439_a(j2, l1 - 1, i2).func_149645_b() != 9)
+                            if (p_82565_0_.world.func_147439_a(j2, l1, i2).func_149645_b() != 9 && p_82565_0_.world.func_147439_a(j2, l1 - 1, i2).func_149645_b() != 9)
                             {
                                 return -3;
                             }
                         }
-                        else if (!block.func_149655_b(p_82565_0_.field_70170_p, l, i1, j1) && (!p_82565_6_ || block != Blocks.WOODEN_DOOR))
+                        else if (!block.func_149655_b(p_82565_0_.world, l, i1, j1) && (!p_82565_6_ || block != Blocks.WOODEN_DOOR))
                         {
                             if (k1 == 11 || block == Blocks.FENCE_GATE || k1 == 32)
                             {

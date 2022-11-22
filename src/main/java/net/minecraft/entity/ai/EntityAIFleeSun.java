@@ -20,7 +20,7 @@ public class EntityAIFleeSun extends EntityAIBase
     {
         this.field_75372_a = p_i1623_1_;
         this.field_75369_e = p_i1623_2_;
-        this.field_75367_f = p_i1623_1_.field_70170_p;
+        this.field_75367_f = p_i1623_1_.world;
         this.func_75248_a(1);
     }
 

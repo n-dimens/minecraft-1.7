@@ -352,7 +352,7 @@ public abstract class RendererLivingEntity extends Render
 
         if (i > 0)
         {
-            EntityArrow entityarrow = new EntityArrow(p_85093_1_.field_70170_p, p_85093_1_.field_70165_t, p_85093_1_.field_70163_u, p_85093_1_.field_70161_v);
+            EntityArrow entityarrow = new EntityArrow(p_85093_1_.world, p_85093_1_.field_70165_t, p_85093_1_.field_70163_u, p_85093_1_.field_70161_v);
             Random random = new Random((long)p_85093_1_.func_145782_y());
             RenderHelper.func_74518_a();
 

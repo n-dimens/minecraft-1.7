@@ -155,7 +155,7 @@ public class RenderItemFrame extends Render
 
         if (itemstack != null)
         {
-            EntityItem entityitem = new EntityItem(p_82402_1_.field_70170_p, 0.0D, 0.0D, 0.0D, itemstack);
+            EntityItem entityitem = new EntityItem(p_82402_1_.world, 0.0D, 0.0D, 0.0D, itemstack);
             Item item = entityitem.func_92059_d().func_77973_b();
             entityitem.func_92059_d().field_77994_a = 1;
             entityitem.field_70290_d = 0.0F;
@@ -201,7 +201,7 @@ public class RenderItemFrame extends Render
                 }
 
                 GL11.glNormal3f(0.0F, 0.0F, -1.0F);
-                MapData mapdata = Items.FILLED_MAP.func_77873_a(entityitem.func_92059_d(), p_82402_1_.field_70170_p);
+                MapData mapdata = Items.FILLED_MAP.func_77873_a(entityitem.func_92059_d(), p_82402_1_.world);
                 GL11.glTranslatef(0.0F, 0.0F, -1.0F);
 
                 if (mapdata != null)
@@ -224,7 +224,7 @@ public class RenderItemFrame extends Render
                         double d1 = texturecompass.field_94242_j;
                         texturecompass.field_94244_i = 0.0D;
                         texturecompass.field_94242_j = 0.0D;
-                        texturecompass.func_94241_a(p_82402_1_.field_70170_p, p_82402_1_.field_70165_t, p_82402_1_.field_70161_v, (double)MathHelper.func_76142_g((float)(180 + p_82402_1_.field_82332_a * 90)), false, true);
+                        texturecompass.func_94241_a(p_82402_1_.world, p_82402_1_.field_70165_t, p_82402_1_.field_70161_v, (double)MathHelper.func_76142_g((float)(180 + p_82402_1_.field_82332_a * 90)), false, true);
                         texturecompass.field_94244_i = d0;
                         texturecompass.field_94242_j = d1;
                     }

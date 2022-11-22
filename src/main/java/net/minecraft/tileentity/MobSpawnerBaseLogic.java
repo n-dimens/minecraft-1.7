@@ -160,9 +160,9 @@ public abstract class MobSpawnerBaseLogic
 
             p_98265_1_.func_70020_e(nbttagcompound);
 
-            if (p_98265_1_.field_70170_p != null)
+            if (p_98265_1_.world != null)
             {
-                p_98265_1_.field_70170_p.func_72838_d(p_98265_1_);
+                p_98265_1_.world.func_72838_d(p_98265_1_);
             }
 
             NBTTagCompound nbttagcompound2;
@@ -170,7 +170,7 @@ public abstract class MobSpawnerBaseLogic
             for (Entity entity1 = p_98265_1_; nbttagcompound.func_150297_b("Riding", 10); nbttagcompound = nbttagcompound2)
             {
                 nbttagcompound2 = nbttagcompound.func_74775_l("Riding");
-                Entity entity2 = EntityList.func_75620_a(nbttagcompound2.func_74779_i("id"), p_98265_1_.field_70170_p);
+                Entity entity2 = EntityList.func_75620_a(nbttagcompound2.func_74779_i("id"), p_98265_1_.world);
 
                 if (entity2 != null)
                 {
@@ -188,9 +188,9 @@ public abstract class MobSpawnerBaseLogic
                     entity2.func_70020_e(nbttagcompound1);
                     entity2.func_70012_b(entity1.field_70165_t, entity1.field_70163_u, entity1.field_70161_v, entity1.field_70177_z, entity1.field_70125_A);
 
-                    if (p_98265_1_.field_70170_p != null)
+                    if (p_98265_1_.world != null)
                     {
-                        p_98265_1_.field_70170_p.func_72838_d(entity2);
+                        p_98265_1_.world.func_72838_d(entity2);
                     }
 
                     entity1.func_70078_a(entity2);
@@ -199,7 +199,7 @@ public abstract class MobSpawnerBaseLogic
                 entity1 = entity2;
             }
         }
-        else if (p_98265_1_ instanceof EntityLivingBase && p_98265_1_.field_70170_p != null)
+        else if (p_98265_1_ instanceof EntityLivingBase && p_98265_1_.world != null)
         {
             ((EntityLiving)p_98265_1_).func_110161_a((IEntityLivingData)null);
             this.func_98271_a().func_72838_d(p_98265_1_);

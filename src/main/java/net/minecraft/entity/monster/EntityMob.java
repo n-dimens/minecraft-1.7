@@ -39,7 +39,7 @@ public abstract class EntityMob extends EntityCreature implements IMob
     {
         super.func_70071_h_();
 
-        if (!this.field_70170_p.field_72995_K && this.field_70170_p.field_73013_u == EnumDifficulty.PEACEFUL)
+        if (!this.world.field_72995_K && this.world.field_73013_u == EnumDifficulty.PEACEFUL)
         {
             this.func_70106_y();
         }
@@ -57,7 +57,7 @@ public abstract class EntityMob extends EntityCreature implements IMob
 
     protected Entity func_70782_k()
     {
-        EntityPlayer entityplayer = this.field_70170_p.func_72856_b(this, 16.0D);
+        EntityPlayer entityplayer = this.world.func_72856_b(this, 16.0D);
         return entityplayer != null && this.func_70685_l(entityplayer) ? entityplayer : null;
     }
 
@@ -157,7 +157,7 @@ public abstract class EntityMob extends EntityCreature implements IMob
 
     public float func_70783_a(int p_70783_1_, int p_70783_2_, int p_70783_3_)
     {
-        return 0.5F - this.field_70170_p.func_72801_o(p_70783_1_, p_70783_2_, p_70783_3_);
+        return 0.5F - this.world.func_72801_o(p_70783_1_, p_70783_2_, p_70783_3_);
     }
 
     protected boolean func_70814_o()
@@ -166,20 +166,20 @@ public abstract class EntityMob extends EntityCreature implements IMob
         int j = MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
         int k = MathHelper.func_76128_c(this.field_70161_v);
 
-        if (this.field_70170_p.func_72972_b(EnumSkyBlock.Sky, i, j, k) > this.field_70146_Z.nextInt(32))
+        if (this.world.func_72972_b(EnumSkyBlock.Sky, i, j, k) > this.field_70146_Z.nextInt(32))
         {
             return false;
         }
         else
         {
-            int l = this.field_70170_p.func_72957_l(i, j, k);
+            int l = this.world.func_72957_l(i, j, k);
 
-            if (this.field_70170_p.func_72911_I())
+            if (this.world.func_72911_I())
             {
-                int i1 = this.field_70170_p.field_73008_k;
-                this.field_70170_p.field_73008_k = 10;
-                l = this.field_70170_p.func_72957_l(i, j, k);
-                this.field_70170_p.field_73008_k = i1;
+                int i1 = this.world.field_73008_k;
+                this.world.field_73008_k = 10;
+                l = this.world.func_72957_l(i, j, k);
+                this.world.field_73008_k = i1;
             }
 
             return l <= this.field_70146_Z.nextInt(8);
@@ -188,7 +188,7 @@ public abstract class EntityMob extends EntityCreature implements IMob
 
     public boolean func_70601_bi()
     {
-        return this.field_70170_p.field_73013_u != EnumDifficulty.PEACEFUL && this.func_70814_o() && super.func_70601_bi();
+        return this.world.field_73013_u != EnumDifficulty.PEACEFUL && this.func_70814_o() && super.func_70601_bi();
     }
 
     protected void func_110147_ax()

@@ -75,7 +75,7 @@ public class EntitySheep extends EntityAnimal
 
     public void func_70636_d()
     {
-        if (this.field_70170_p.field_72995_K)
+        if (this.world.field_72995_K)
         {
             this.field_70899_e = Math.max(0, this.field_70899_e - 1);
         }
@@ -128,7 +128,7 @@ public class EntitySheep extends EntityAnimal
 
         if (itemstack != null && itemstack.func_77973_b() == Items.SHEARS && !this.func_70892_o() && !this.func_70631_g_())
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_70893_e(true);
                 int i = 1 + this.field_70146_Z.nextInt(3);
@@ -183,6 +183,7 @@ public class EntitySheep extends EntityAnimal
         this.func_70891_b(p_70037_1_.func_74771_c("Color"));
     }
 
+    @Override
     protected String func_70639_aQ()
     {
         return "mob.sheep.say";
@@ -242,7 +243,7 @@ public class EntitySheep extends EntityAnimal
     public EntitySheep func_90011_a(EntityAgeable p_90011_1_)
     {
         EntitySheep entitysheep = (EntitySheep)p_90011_1_;
-        EntitySheep entitysheep1 = new EntitySheep(this.field_70170_p);
+        EntitySheep entitysheep1 = new EntitySheep(this.world);
         int i = this.func_90014_a(this, entitysheep);
         entitysheep1.func_70891_b(15 - i);
         return entitysheep1;
@@ -261,7 +262,7 @@ public class EntitySheep extends EntityAnimal
     public IEntityLivingData func_110161_a(IEntityLivingData p_110161_1_)
     {
         p_110161_1_ = super.func_110161_a(p_110161_1_);
-        this.func_70891_b(func_70895_a(this.field_70170_p.field_73012_v));
+        this.func_70891_b(func_70895_a(this.world.field_73012_v));
         return p_110161_1_;
     }
 
@@ -271,7 +272,7 @@ public class EntitySheep extends EntityAnimal
         int j = this.func_90013_b(p_90014_2_);
         this.field_90016_e.func_70301_a(0).func_77964_b(i);
         this.field_90016_e.func_70301_a(1).func_77964_b(j);
-        ItemStack itemstack = CraftingManager.func_77594_a().func_82787_a(this.field_90016_e, ((EntitySheep)p_90014_1_).field_70170_p);
+        ItemStack itemstack = CraftingManager.func_77594_a().func_82787_a(this.field_90016_e, ((EntitySheep)p_90014_1_).world);
         int k;
 
         if (itemstack != null && itemstack.func_77973_b() == Items.DYE)
@@ -280,7 +281,7 @@ public class EntitySheep extends EntityAnimal
         }
         else
         {
-            k = this.field_70170_p.field_73012_v.nextBoolean() ? i : j;
+            k = this.world.field_73012_v.nextBoolean() ? i : j;
         }
 
         return k;

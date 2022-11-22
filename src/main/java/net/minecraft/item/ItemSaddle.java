@@ -24,7 +24,7 @@ public class ItemSaddle extends Item
             if (!entitypig.func_70901_n() && !entitypig.func_70631_g_())
             {
                 entitypig.func_70900_e(true);
-                entitypig.field_70170_p.func_72956_a(entitypig, "mob.horse.leather", 0.5F, 1.0F);
+                entitypig.world.func_72956_a(entitypig, "mob.horse.leather", 0.5F, 1.0F);
                 --p_111207_1_.field_77994_a;
             }
 

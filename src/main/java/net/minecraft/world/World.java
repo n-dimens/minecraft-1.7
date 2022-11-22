@@ -82,7 +82,7 @@ public abstract class World implements IBlockAccess
     public MapStorage field_72988_C;
     public VillageCollection field_72982_D;
     protected final VillageSiege field_72983_E = new VillageSiege(this);
-    public final Profiler field_72984_F;
+    public final Profiler profiler;
     private final Calendar field_83016_L = Calendar.getInstance();
     protected Scoreboard field_96442_D = new Scoreboard();
     public boolean field_72995_K;
@@ -132,7 +132,7 @@ public abstract class World implements IBlockAccess
     }
 
     @SideOnly(Side.CLIENT)
-    public World(ISaveHandler p_i45368_1_, String p_i45368_2_, WorldProvider p_i45368_3_, WorldSettings p_i45368_4_, Profiler p_i45368_5_)
+    public World(ISaveHandler p_i45368_1_, String p_i45368_2_, WorldProvider p_i45368_3_, WorldSettings p_i45368_4_, Profiler profiler)
     {
         this.field_72990_M = this.field_73012_v.nextInt(12000);
         this.field_72985_G = true;
@@ -140,7 +140,7 @@ public abstract class World implements IBlockAccess
         this.field_72998_d = new ArrayList();
         this.field_72994_J = new int[32768];
         this.field_73019_z = p_i45368_1_;
-        this.field_72984_F = p_i45368_5_;
+        this.profiler = profiler;
         this.field_72986_A = new WorldInfo(p_i45368_4_, p_i45368_2_);
         this.field_73011_w = p_i45368_3_;
         this.field_72988_C = new MapStorage(p_i45368_1_);
@@ -163,7 +163,7 @@ public abstract class World implements IBlockAccess
         this.func_72947_a();
     }
 
-    public World(ISaveHandler p_i45369_1_, String p_i45369_2_, WorldSettings p_i45369_3_, WorldProvider p_i45369_4_, Profiler p_i45369_5_)
+    public World(ISaveHandler p_i45369_1_, String p_i45369_2_, WorldSettings p_i45369_3_, WorldProvider p_i45369_4_, Profiler profiler)
     {
         this.field_72990_M = this.field_73012_v.nextInt(12000);
         this.field_72985_G = true;
@@ -171,7 +171,7 @@ public abstract class World implements IBlockAccess
         this.field_72998_d = new ArrayList();
         this.field_72994_J = new int[32768];
         this.field_73019_z = p_i45369_1_;
-        this.field_72984_F = p_i45369_5_;
+        this.profiler = profiler;
         this.field_72988_C = new MapStorage(p_i45369_1_);
         this.field_72986_A = p_i45369_1_.func_75757_d();
 
@@ -374,9 +374,9 @@ public abstract class World implements IBlockAccess
                 }
 
                 boolean flag = chunk.func_150807_a(p_147465_1_ & 15, p_147465_2_, p_147465_3_ & 15, p_147465_4_, p_147465_5_);
-                this.field_72984_F.func_76320_a("checkLight");
+                this.profiler.startMeasure("checkLight");
                 this.func_147451_t(p_147465_1_, p_147465_2_, p_147465_3_);
-                this.field_72984_F.func_76319_b();
+                this.profiler.endMeasure();
 
                 if (flag)
                 {
@@ -1645,8 +1645,8 @@ public abstract class World implements IBlockAccess
 
     public void func_72939_s()
     {
-        this.field_72984_F.func_76320_a("entities");
-        this.field_72984_F.func_76320_a("global");
+        this.profiler.startMeasure("entities");
+        this.profiler.startMeasure("global");
         int i;
         Entity entity;
         CrashReport crashreport;
@@ -1684,7 +1684,7 @@ public abstract class World implements IBlockAccess
             }
         }
 
-        this.field_72984_F.func_76318_c("remove");
+        this.profiler.startNewMeasure("remove");
         this.field_72996_f.removeAll(this.field_72997_g);
         int j;
         int l;
@@ -1707,7 +1707,7 @@ public abstract class World implements IBlockAccess
         }
 
         this.field_72997_g.clear();
-        this.field_72984_F.func_76318_c("regular");
+        this.profiler.startNewMeasure("regular");
 
         for (i = 0; i < this.field_72996_f.size(); ++i)
         {
@@ -1724,7 +1724,7 @@ public abstract class World implements IBlockAccess
                 entity.field_70154_o = null;
             }
 
-            this.field_72984_F.func_76320_a("tick");
+            this.profiler.startMeasure("tick");
 
             if (!entity.field_70128_L)
             {
@@ -1741,8 +1741,8 @@ public abstract class World implements IBlockAccess
                 }
             }
 
-            this.field_72984_F.func_76319_b();
-            this.field_72984_F.func_76320_a("remove");
+            this.profiler.endMeasure();
+            this.profiler.startMeasure("remove");
 
             if (entity.field_70128_L)
             {
@@ -1758,10 +1758,10 @@ public abstract class World implements IBlockAccess
                 this.func_72847_b(entity);
             }
 
-            this.field_72984_F.func_76319_b();
+            this.profiler.endMeasure();
         }
 
-        this.field_72984_F.func_76318_c("blockEntities");
+        this.profiler.startNewMeasure("blockEntities");
         this.field_147481_N = true;
         Iterator iterator = this.field_147482_g.iterator();
 
@@ -1808,7 +1808,7 @@ public abstract class World implements IBlockAccess
             this.field_147483_b.clear();
         }
 
-        this.field_72984_F.func_76318_c("pendingBlockEntities");
+        this.profiler.startNewMeasure("pendingBlockEntities");
 
         if (!this.field_147484_a.isEmpty())
         {
@@ -1840,8 +1840,8 @@ public abstract class World implements IBlockAccess
             this.field_147484_a.clear();
         }
 
-        this.field_72984_F.func_76319_b();
-        this.field_72984_F.func_76319_b();
+        this.profiler.endMeasure();
+        this.profiler.endMeasure();
     }
 
     public void func_147448_a(Collection p_147448_1_)
@@ -1889,7 +1889,7 @@ public abstract class World implements IBlockAccess
                 }
             }
 
-            this.field_72984_F.func_76320_a("chunkCheck");
+            this.profiler.startMeasure("chunkCheck");
 
             if (Double.isNaN(p_72866_1_.field_70165_t) || Double.isInfinite(p_72866_1_.field_70165_t))
             {
@@ -1938,7 +1938,7 @@ public abstract class World implements IBlockAccess
                 }
             }
 
-            this.field_72984_F.func_76319_b();
+            this.profiler.endMeasure();
 
             if (p_72866_2_ && p_72866_1_.field_70175_ag && p_72866_1_.field_70153_n != null)
             {
@@ -2598,7 +2598,7 @@ public abstract class World implements IBlockAccess
     protected void func_72903_x()
     {
         this.field_72993_I.clear();
-        this.field_72984_F.func_76320_a("buildList");
+        this.profiler.startMeasure("buildList");
         int i;
         EntityPlayer entityplayer;
         int j;
@@ -2621,14 +2621,14 @@ public abstract class World implements IBlockAccess
             }
         }
 
-        this.field_72984_F.func_76319_b();
+        this.profiler.endMeasure();
 
         if (this.field_72990_M > 0)
         {
             --this.field_72990_M;
         }
 
-        this.field_72984_F.func_76320_a("playerCheckLight");
+        this.profiler.startMeasure("playerCheckLight");
 
         if (!this.field_73010_i.isEmpty())
         {
@@ -2640,14 +2640,14 @@ public abstract class World implements IBlockAccess
             this.func_147451_t(j, k, l);
         }
 
-        this.field_72984_F.func_76319_b();
+        this.profiler.endMeasure();
     }
 
     protected abstract int func_152379_p();
 
     protected void func_147467_a(int p_147467_1_, int p_147467_2_, Chunk p_147467_3_)
     {
-        this.field_72984_F.func_76318_c("moodSound");
+        this.profiler.startNewMeasure("moodSound");
 
         if (this.field_72990_M == 0 && !this.field_72995_K)
         {
@@ -2672,7 +2672,7 @@ public abstract class World implements IBlockAccess
             }
         }
 
-        this.field_72984_F.func_76318_c("checkLight");
+        this.profiler.startNewMeasure("checkLight");
         p_147467_3_.func_76594_o();
     }
 
@@ -2853,7 +2853,7 @@ public abstract class World implements IBlockAccess
         {
             int l = 0;
             int i1 = 0;
-            this.field_72984_F.func_76320_a("getBrightness");
+            this.profiler.startMeasure("getBrightness");
             int j1 = this.func_72972_b(p_147463_1_, p_147463_2_, p_147463_3_, p_147463_4_);
             int k1 = this.func_98179_a(p_147463_2_, p_147463_3_, p_147463_4_, p_147463_1_);
             int l1;
@@ -2916,8 +2916,8 @@ public abstract class World implements IBlockAccess
                 l = 0;
             }
 
-            this.field_72984_F.func_76319_b();
-            this.field_72984_F.func_76320_a("checkedPosition < toCheckCount");
+            this.profiler.endMeasure();
+            this.profiler.startMeasure("checkedPosition < toCheckCount");
 
             while (l < i1)
             {
@@ -2975,7 +2975,7 @@ public abstract class World implements IBlockAccess
                 }
             }
 
-            this.field_72984_F.func_76319_b();
+            this.profiler.endMeasure();
             return true;
         }
     }
@@ -3126,7 +3126,7 @@ public abstract class World implements IBlockAccess
 
     public PathEntity func_72865_a(Entity p_72865_1_, Entity p_72865_2_, float p_72865_3_, boolean p_72865_4_, boolean p_72865_5_, boolean p_72865_6_, boolean p_72865_7_)
     {
-        this.field_72984_F.func_76320_a("pathfind");
+        this.profiler.startMeasure("pathfind");
         int i = MathHelper.func_76128_c(p_72865_1_.field_70165_t);
         int j = MathHelper.func_76128_c(p_72865_1_.field_70163_u + 1.0D);
         int k = MathHelper.func_76128_c(p_72865_1_.field_70161_v);
@@ -3139,13 +3139,13 @@ public abstract class World implements IBlockAccess
         int j2 = k + l;
         ChunkCache chunkcache = new ChunkCache(this, i1, j1, k1, l1, i2, j2, 0);
         PathEntity pathentity = (new PathFinder(chunkcache, p_72865_4_, p_72865_5_, p_72865_6_, p_72865_7_)).func_75856_a(p_72865_1_, p_72865_2_, p_72865_3_);
-        this.field_72984_F.func_76319_b();
+        this.profiler.endMeasure();
         return pathentity;
     }
 
     public PathEntity func_72844_a(Entity p_72844_1_, int p_72844_2_, int p_72844_3_, int p_72844_4_, float p_72844_5_, boolean p_72844_6_, boolean p_72844_7_, boolean p_72844_8_, boolean p_72844_9_)
     {
-        this.field_72984_F.func_76320_a("pathfind");
+        this.profiler.startMeasure("pathfind");
         int l = MathHelper.func_76128_c(p_72844_1_.field_70165_t);
         int i1 = MathHelper.func_76128_c(p_72844_1_.field_70163_u);
         int j1 = MathHelper.func_76128_c(p_72844_1_.field_70161_v);
@@ -3158,7 +3158,7 @@ public abstract class World implements IBlockAccess
         int i3 = j1 + k1;
         ChunkCache chunkcache = new ChunkCache(this, l1, i2, j2, k2, l2, i3, 0);
         PathEntity pathentity = (new PathFinder(chunkcache, p_72844_6_, p_72844_7_, p_72844_8_, p_72844_9_)).func_75859_a(p_72844_1_, p_72844_2_, p_72844_3_, p_72844_4_, p_72844_5_);
-        this.field_72984_F.func_76319_b();
+        this.profiler.endMeasure();
         return pathentity;
     }
 

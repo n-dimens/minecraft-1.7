@@ -95,7 +95,7 @@ public class EntityFallingBlock extends Entity
             this.field_70181_x *= 0.9800000190734863D;
             this.field_70179_y *= 0.9800000190734863D;
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 int i = MathHelper.func_76128_c(this.field_70165_t);
                 int j = MathHelper.func_76128_c(this.field_70163_u);
@@ -103,13 +103,13 @@ public class EntityFallingBlock extends Entity
 
                 if (this.field_145812_b == 1)
                 {
-                    if (this.field_70170_p.func_147439_a(i, j, k) != this.field_145811_e)
+                    if (this.world.func_147439_a(i, j, k) != this.field_145811_e)
                     {
                         this.func_70106_y();
                         return;
                     }
 
-                    this.field_70170_p.func_147468_f(i, j, k);
+                    this.world.func_147468_f(i, j, k);
                 }
 
                 if (this.field_70122_E)
@@ -118,20 +118,20 @@ public class EntityFallingBlock extends Entity
                     this.field_70179_y *= 0.699999988079071D;
                     this.field_70181_x *= -0.5D;
 
-                    if (this.field_70170_p.func_147439_a(i, j, k) != Blocks.PISTON_EXTENSION)
+                    if (this.world.func_147439_a(i, j, k) != Blocks.PISTON_EXTENSION)
                     {
                         this.func_70106_y();
 
-                        if (!this.field_145808_f && this.field_70170_p.func_147472_a(this.field_145811_e, i, j, k, true, 1, (Entity)null, (ItemStack)null) && !BlockFalling.func_149831_e(this.field_70170_p, i, j - 1, k) && this.field_70170_p.func_147465_d(i, j, k, this.field_145811_e, this.field_145814_a, 3))
+                        if (!this.field_145808_f && this.world.func_147472_a(this.field_145811_e, i, j, k, true, 1, (Entity)null, (ItemStack)null) && !BlockFalling.func_149831_e(this.world, i, j - 1, k) && this.world.func_147465_d(i, j, k, this.field_145811_e, this.field_145814_a, 3))
                         {
                             if (this.field_145811_e instanceof BlockFalling)
                             {
-                                ((BlockFalling)this.field_145811_e).func_149828_a(this.field_70170_p, i, j, k, this.field_145814_a);
+                                ((BlockFalling)this.field_145811_e).func_149828_a(this.world, i, j, k, this.field_145814_a);
                             }
 
                             if (this.field_145810_d != null && this.field_145811_e instanceof ITileEntityProvider)
                             {
-                                TileEntity tileentity = this.field_70170_p.func_147438_o(i, j, k);
+                                TileEntity tileentity = this.world.func_147438_o(i, j, k);
 
                                 if (tileentity != null)
                                 {
@@ -161,7 +161,7 @@ public class EntityFallingBlock extends Entity
                         }
                     }
                 }
-                else if (this.field_145812_b > 100 && !this.field_70170_p.field_72995_K && (j < 1 || j > 256) || this.field_145812_b > 600)
+                else if (this.field_145812_b > 100 && !this.world.field_72995_K && (j < 1 || j > 256) || this.field_145812_b > 600)
                 {
                     if (this.field_145813_c)
                     {
@@ -182,7 +182,7 @@ public class EntityFallingBlock extends Entity
 
             if (i > 0)
             {
-                ArrayList arraylist = new ArrayList(this.field_70170_p.func_72839_b(this, this.field_70121_D));
+                ArrayList arraylist = new ArrayList(this.world.func_72839_b(this, this.field_70121_D));
                 boolean flag = this.field_145811_e == Blocks.ANVIL;
                 DamageSource damagesource = flag ? DamageSource.field_82728_o : DamageSource.field_82729_p;
                 Iterator iterator = arraylist.iterator();
@@ -291,7 +291,7 @@ public class EntityFallingBlock extends Entity
     @SideOnly(Side.CLIENT)
     public World func_145807_e()
     {
-        return this.field_70170_p;
+        return this.world;
     }
 
     @SideOnly(Side.CLIENT)

@@ -81,7 +81,7 @@ public class EntitySquid extends EntityWaterMob
 
     public boolean func_70090_H()
     {
-        return this.field_70170_p.func_72918_a(this.field_70121_D.func_72314_b(0.0D, -0.6000000238418579D, 0.0D), Material.field_151586_h, this);
+        return this.world.func_72918_a(this.field_70121_D.func_72314_b(0.0D, -0.6000000238418579D, 0.0D), Material.field_151586_h, this);
     }
 
     public void func_70636_d()
@@ -129,7 +129,7 @@ public class EntitySquid extends EntityWaterMob
                 this.field_70871_bB *= 0.99F;
             }
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.field_70159_w = (double)(this.field_70872_bC * this.field_70863_bz);
                 this.field_70181_x = (double)(this.field_70869_bD * this.field_70863_bz);
@@ -146,7 +146,7 @@ public class EntitySquid extends EntityWaterMob
         {
             this.field_70866_j = MathHelper.func_76135_e(MathHelper.func_76126_a(this.field_70867_h)) * (float)Math.PI * 0.25F;
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.field_70159_w = 0.0D;
                 this.field_70181_x -= 0.08D;

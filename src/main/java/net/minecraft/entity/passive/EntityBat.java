@@ -113,10 +113,10 @@ public class EntityBat extends EntityAmbientCreature
 
         if (this.func_82235_h())
         {
-            if (!this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), (int)this.field_70163_u + 1, MathHelper.func_76128_c(this.field_70161_v)).func_149721_r())
+            if (!this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), (int)this.field_70163_u + 1, MathHelper.func_76128_c(this.field_70161_v)).func_149721_r())
             {
                 this.func_82236_f(false);
-                this.field_70170_p.func_72889_a((EntityPlayer)null, 1015, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
+                this.world.func_72889_a((EntityPlayer)null, 1015, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
             }
             else
             {
@@ -125,16 +125,16 @@ public class EntityBat extends EntityAmbientCreature
                     this.field_70759_as = (float)this.field_70146_Z.nextInt(360);
                 }
 
-                if (this.field_70170_p.func_72890_a(this, 4.0D) != null)
+                if (this.world.func_72890_a(this, 4.0D) != null)
                 {
                     this.func_82236_f(false);
-                    this.field_70170_p.func_72889_a((EntityPlayer)null, 1015, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
+                    this.world.func_72889_a((EntityPlayer)null, 1015, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
                 }
             }
         }
         else
         {
-            if (this.field_82237_a != null && (!this.field_70170_p.func_147437_c(this.field_82237_a.field_71574_a, this.field_82237_a.field_71572_b, this.field_82237_a.field_71573_c) || this.field_82237_a.field_71572_b < 1))
+            if (this.field_82237_a != null && (!this.world.func_147437_c(this.field_82237_a.field_71574_a, this.field_82237_a.field_71572_b, this.field_82237_a.field_71573_c) || this.field_82237_a.field_71572_b < 1))
             {
                 this.field_82237_a = null;
             }
@@ -155,7 +155,7 @@ public class EntityBat extends EntityAmbientCreature
             this.field_70701_bs = 0.5F;
             this.field_70177_z += f1;
 
-            if (this.field_70146_Z.nextInt(100) == 0 && this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), (int)this.field_70163_u + 1, MathHelper.func_76128_c(this.field_70161_v)).func_149721_r())
+            if (this.field_70146_Z.nextInt(100) == 0 && this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), (int)this.field_70163_u + 1, MathHelper.func_76128_c(this.field_70161_v)).func_149721_r())
             {
                 this.func_82236_f(true);
             }
@@ -184,7 +184,7 @@ public class EntityBat extends EntityAmbientCreature
         }
         else
         {
-            if (!this.field_70170_p.field_72995_K && this.func_82235_h())
+            if (!this.world.field_72995_K && this.func_82235_h())
             {
                 this.func_82236_f(false);
             }
@@ -217,9 +217,9 @@ public class EntityBat extends EntityAmbientCreature
         {
             int j = MathHelper.func_76128_c(this.field_70165_t);
             int k = MathHelper.func_76128_c(this.field_70161_v);
-            int l = this.field_70170_p.func_72957_l(j, i, k);
+            int l = this.world.func_72957_l(j, i, k);
             byte b0 = 4;
-            Calendar calendar = this.field_70170_p.func_83015_S();
+            Calendar calendar = this.world.func_83015_S();
 
             if ((calendar.get(2) + 1 != 10 || calendar.get(5) < 20) && (calendar.get(2) + 1 != 11 || calendar.get(5) > 3))
             {

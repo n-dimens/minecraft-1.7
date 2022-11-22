@@ -169,7 +169,7 @@ public class EntityOcelot extends EntityTameable
 
         if (this.func_70909_n())
         {
-            if (this.func_152114_e(p_70085_1_) && !this.field_70170_p.field_72995_K && !this.func_70877_b(itemstack))
+            if (this.func_152114_e(p_70085_1_) && !this.world.field_72995_K && !this.func_70877_b(itemstack))
             {
                 this.field_70911_d.func_75270_a(!this.func_70906_o());
             }
@@ -186,21 +186,21 @@ public class EntityOcelot extends EntityTameable
                 p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
             }
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 if (this.field_70146_Z.nextInt(3) == 0)
                 {
                     this.func_70903_f(true);
-                    this.func_70912_b(1 + this.field_70170_p.field_73012_v.nextInt(3));
+                    this.func_70912_b(1 + this.world.field_73012_v.nextInt(3));
                     this.func_152115_b(p_70085_1_.func_110124_au().toString());
                     this.func_70908_e(true);
                     this.field_70911_d.func_75270_a(true);
-                    this.field_70170_p.func_72960_a(this, (byte)7);
+                    this.world.func_72960_a(this, (byte)7);
                 }
                 else
                 {
                     this.func_70908_e(false);
-                    this.field_70170_p.func_72960_a(this, (byte)6);
+                    this.world.func_72960_a(this, (byte)6);
                 }
             }
 
@@ -212,7 +212,7 @@ public class EntityOcelot extends EntityTameable
 
     public EntityOcelot func_90011_a(EntityAgeable p_90011_1_)
     {
-        EntityOcelot entityocelot = new EntityOcelot(this.field_70170_p);
+        EntityOcelot entityocelot = new EntityOcelot(this.world);
 
         if (this.func_70909_n())
         {
@@ -262,13 +262,13 @@ public class EntityOcelot extends EntityTameable
 
     public boolean func_70601_bi()
     {
-        if (this.field_70170_p.field_73012_v.nextInt(3) == 0)
+        if (this.world.field_73012_v.nextInt(3) == 0)
         {
             return false;
         }
         else
         {
-            if (this.field_70170_p.func_72855_b(this.field_70121_D) && this.field_70170_p.func_72945_a(this, this.field_70121_D).isEmpty() && !this.field_70170_p.func_72953_d(this.field_70121_D))
+            if (this.world.func_72855_b(this.field_70121_D) && this.world.func_72945_a(this, this.field_70121_D).isEmpty() && !this.world.func_72953_d(this.field_70121_D))
             {
                 int i = MathHelper.func_76128_c(this.field_70165_t);
                 int j = MathHelper.func_76128_c(this.field_70121_D.field_72338_b);
@@ -279,7 +279,7 @@ public class EntityOcelot extends EntityTameable
                     return false;
                 }
 
-                Block block = this.field_70170_p.func_147439_a(i, j - 1, k);
+                Block block = this.world.func_147439_a(i, j - 1, k);
 
                 if (block == Blocks.GRASS || block.func_149688_o() == Material.field_151584_j)
                 {
@@ -300,14 +300,14 @@ public class EntityOcelot extends EntityTameable
     {
         p_110161_1_ = super.func_110161_a(p_110161_1_);
 
-        if (this.field_70170_p.field_73012_v.nextInt(7) == 0)
+        if (this.world.field_73012_v.nextInt(7) == 0)
         {
             for (int i = 0; i < 2; ++i)
             {
-                EntityOcelot entityocelot = new EntityOcelot(this.field_70170_p);
+                EntityOcelot entityocelot = new EntityOcelot(this.world);
                 entityocelot.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, 0.0F);
                 entityocelot.func_70873_a(-24000);
-                this.field_70170_p.func_72838_d(entityocelot);
+                this.world.func_72838_d(entityocelot);
             }
         }
 

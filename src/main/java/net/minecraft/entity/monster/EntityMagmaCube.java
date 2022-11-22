@@ -26,7 +26,7 @@ public class EntityMagmaCube extends EntitySlime
 
     public boolean func_70601_bi()
     {
-        return this.field_70170_p.field_73013_u != EnumDifficulty.PEACEFUL && this.field_70170_p.func_72855_b(this.field_70121_D) && this.field_70170_p.func_72945_a(this, this.field_70121_D).isEmpty() && !this.field_70170_p.func_72953_d(this.field_70121_D);
+        return this.world.field_73013_u != EnumDifficulty.PEACEFUL && this.world.func_72855_b(this.field_70121_D) && this.world.func_72945_a(this, this.field_70121_D).isEmpty() && !this.world.func_72953_d(this.field_70121_D);
     }
 
     public int func_70658_aO()
@@ -52,7 +52,7 @@ public class EntityMagmaCube extends EntitySlime
 
     protected EntitySlime func_70802_j()
     {
-        return new EntityMagmaCube(this.field_70170_p);
+        return new EntityMagmaCube(this.world);
     }
 
     protected Item droppingItem()

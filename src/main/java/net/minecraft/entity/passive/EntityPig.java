@@ -111,7 +111,7 @@ public class EntityPig extends EntityAnimal
         {
             return true;
         }
-        else if (this.func_70901_n() && !this.field_70170_p.field_72995_K && (this.field_70153_n == null || this.field_70153_n == p_70085_1_))
+        else if (this.func_70901_n() && !this.world.field_72995_K && (this.field_70153_n == null || this.field_70153_n == p_70085_1_))
         {
             p_70085_1_.func_70078_a(this);
             return true;
@@ -168,12 +168,12 @@ public class EntityPig extends EntityAnimal
 
     public void func_70077_a(EntityLightningBolt p_70077_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
-            EntityPigZombie entitypigzombie = new EntityPigZombie(this.field_70170_p);
+            EntityPigZombie entitypigzombie = new EntityPigZombie(this.world);
             entitypigzombie.func_70062_b(0, new ItemStack(Items.GOLDEN_SWORD));
             entitypigzombie.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, this.field_70125_A);
-            this.field_70170_p.func_72838_d(entitypigzombie);
+            this.world.func_72838_d(entitypigzombie);
             this.func_70106_y();
         }
     }
@@ -190,7 +190,7 @@ public class EntityPig extends EntityAnimal
 
     public EntityPig func_90011_a(EntityAgeable p_90011_1_)
     {
-        return new EntityPig(this.field_70170_p);
+        return new EntityPig(this.world);
     }
 
     public boolean func_70877_b(ItemStack p_70877_1_)

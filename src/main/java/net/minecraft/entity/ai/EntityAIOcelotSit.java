@@ -33,7 +33,7 @@ public class EntityAIOcelotSit extends EntityAIBase
 
     public boolean func_75253_b()
     {
-        return this.field_151492_c <= this.field_151490_e && this.field_151489_d <= 60 && this.func_151486_a(this.field_151493_a.field_70170_p, this.field_151487_f, this.field_151488_g, this.field_151494_h);
+        return this.field_151492_c <= this.field_151490_e && this.field_151489_d <= 60 && this.func_151486_a(this.field_151493_a.world, this.field_151487_f, this.field_151488_g, this.field_151494_h);
     }
 
     public void func_75249_e()
@@ -80,7 +80,7 @@ public class EntityAIOcelotSit extends EntityAIBase
         {
             for (int k = (int)this.field_151493_a.field_70161_v - 8; (double)k < this.field_151493_a.field_70161_v + 8.0D; ++k)
             {
-                if (this.func_151486_a(this.field_151493_a.field_70170_p, j, i, k) && this.field_151493_a.field_70170_p.func_147437_c(j, i + 1, k))
+                if (this.func_151486_a(this.field_151493_a.world, j, i, k) && this.field_151493_a.world.func_147437_c(j, i + 1, k))
                 {
                     double d1 = this.field_151493_a.func_70092_e((double)j, (double)i, (double)k);
 

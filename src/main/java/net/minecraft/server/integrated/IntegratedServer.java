@@ -75,16 +75,16 @@ public class IntegratedServer extends MinecraftServer
             {
                 if (this.func_71242_L())
                 {
-                    this.field_71305_c[j] = new DemoWorldServer(this, isavehandler, p_71247_2_, b0, this.field_71304_b);
+                    this.field_71305_c[j] = new DemoWorldServer(this, isavehandler, p_71247_2_, b0, this.profiler);
                 }
                 else
                 {
-                    this.field_71305_c[j] = new WorldServer(this, isavehandler, p_71247_2_, b0, this.field_71350_m, this.field_71304_b);
+                    this.field_71305_c[j] = new WorldServer(this, isavehandler, p_71247_2_, b0, this.field_71350_m, this.profiler);
                 }
             }
             else
             {
-                this.field_71305_c[j] = new WorldServerMulti(this, isavehandler, p_71247_2_, b0, this.field_71350_m, this.field_71305_c[0], this.field_71304_b);
+                this.field_71305_c[j] = new WorldServerMulti(this, isavehandler, p_71247_2_, b0, this.field_71350_m, this.field_71305_c[0], this.profiler);
             }
 
             this.field_71305_c[j].func_72954_a(new WorldManager(this, this.field_71305_c[j]));

@@ -39,16 +39,16 @@ public class EntityEnderPearl extends EntityThrowable
 
         for (int i = 0; i < 32; ++i)
         {
-            this.field_70170_p.func_72869_a("portal", this.field_70165_t, this.field_70163_u + this.field_70146_Z.nextDouble() * 2.0D, this.field_70161_v, this.field_70146_Z.nextGaussian(), 0.0D, this.field_70146_Z.nextGaussian());
+            this.world.func_72869_a("portal", this.field_70165_t, this.field_70163_u + this.field_70146_Z.nextDouble() * 2.0D, this.field_70161_v, this.field_70146_Z.nextGaussian(), 0.0D, this.field_70146_Z.nextGaussian());
         }
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (this.func_85052_h() != null && this.func_85052_h() instanceof EntityPlayerMP)
             {
                 EntityPlayerMP entityplayermp = (EntityPlayerMP)this.func_85052_h();
 
-                if (entityplayermp.field_71135_a.func_147362_b().func_150724_d() && entityplayermp.field_70170_p == this.field_70170_p)
+                if (entityplayermp.field_71135_a.func_147362_b().func_150724_d() && entityplayermp.world == this.world)
                 {
                     if (this.func_85052_h().func_70115_ae())
                     {

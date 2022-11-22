@@ -18,7 +18,7 @@ public class EntityAIVillagerMate extends EntityAIBase
     public EntityAIVillagerMate(EntityVillager p_i1634_1_)
     {
         this.field_75450_b = p_i1634_1_;
-        this.field_75448_d = p_i1634_1_.field_70170_p;
+        this.field_75448_d = p_i1634_1_.world;
         this.func_75248_a(3);
     }
 

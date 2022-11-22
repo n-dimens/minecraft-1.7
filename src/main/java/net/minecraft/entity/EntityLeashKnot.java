@@ -69,10 +69,10 @@ public class EntityLeashKnot extends EntityHanging
         Iterator iterator;
         EntityLiving entityliving;
 
-        if (itemstack != null && itemstack.func_77973_b() == Items.LEAD && !this.field_70170_p.field_72995_K)
+        if (itemstack != null && itemstack.func_77973_b() == Items.LEAD && !this.world.field_72995_K)
         {
             d0 = 7.0D;
-            list = this.field_70170_p.func_72872_a(EntityLiving.class, AxisAlignedBB.func_72330_a(this.field_70165_t - d0, this.field_70163_u - d0, this.field_70161_v - d0, this.field_70165_t + d0, this.field_70163_u + d0, this.field_70161_v + d0));
+            list = this.world.func_72872_a(EntityLiving.class, AxisAlignedBB.func_72330_a(this.field_70165_t - d0, this.field_70163_u - d0, this.field_70161_v - d0, this.field_70165_t + d0, this.field_70163_u + d0, this.field_70161_v + d0));
 
             if (list != null)
             {
@@ -91,14 +91,14 @@ public class EntityLeashKnot extends EntityHanging
             }
         }
 
-        if (!this.field_70170_p.field_72995_K && !flag)
+        if (!this.world.field_72995_K && !flag)
         {
             this.func_70106_y();
 
             if (p_130002_1_.field_71075_bZ.field_75098_d)
             {
                 d0 = 7.0D;
-                list = this.field_70170_p.func_72872_a(EntityLiving.class, AxisAlignedBB.func_72330_a(this.field_70165_t - d0, this.field_70163_u - d0, this.field_70161_v - d0, this.field_70165_t + d0, this.field_70163_u + d0, this.field_70161_v + d0));
+                list = this.world.func_72872_a(EntityLiving.class, AxisAlignedBB.func_72330_a(this.field_70165_t - d0, this.field_70163_u - d0, this.field_70161_v - d0, this.field_70165_t + d0, this.field_70163_u + d0, this.field_70161_v + d0));
 
                 if (list != null)
                 {
@@ -122,7 +122,7 @@ public class EntityLeashKnot extends EntityHanging
 
     public boolean func_70518_d()
     {
-        return this.field_70170_p.func_147439_a(this.field_146063_b, this.field_146064_c, this.field_146062_d).func_149645_b() == 11;
+        return this.world.func_147439_a(this.field_146063_b, this.field_146064_c, this.field_146062_d).func_149645_b() == 11;
     }
 
     public static EntityLeashKnot func_110129_a(World p_110129_0_, int p_110129_1_, int p_110129_2_, int p_110129_3_)

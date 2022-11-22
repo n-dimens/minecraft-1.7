@@ -115,7 +115,7 @@ public class MapData extends WorldSavedData
             {
                 if (!p_76191_2_.func_82839_y() && mapinfo1.field_76211_a.field_71093_bK == this.field_76200_c)
                 {
-                    this.func_82567_a(0, mapinfo1.field_76211_a.field_70170_p, mapinfo1.field_76211_a.func_70005_c_(), mapinfo1.field_76211_a.field_70165_t, mapinfo1.field_76211_a.field_70161_v, (double)mapinfo1.field_76211_a.field_70177_z);
+                    this.func_82567_a(0, mapinfo1.field_76211_a.world, mapinfo1.field_76211_a.func_70005_c_(), mapinfo1.field_76211_a.field_70165_t, mapinfo1.field_76211_a.field_70161_v, (double)mapinfo1.field_76211_a.field_70177_z);
                 }
             }
             else
@@ -127,7 +127,7 @@ public class MapData extends WorldSavedData
 
         if (p_76191_2_.func_82839_y())
         {
-            this.func_82567_a(1, p_76191_1_.field_70170_p, "frame-" + p_76191_2_.func_82836_z().func_145782_y(), (double)p_76191_2_.func_82836_z().field_146063_b, (double)p_76191_2_.func_82836_z().field_146062_d, (double)(p_76191_2_.func_82836_z().field_82332_a * 90));
+            this.func_82567_a(1, p_76191_1_.world, "frame-" + p_76191_2_.func_82836_z().func_145782_y(), (double)p_76191_2_.func_82836_z().field_146063_b, (double)p_76191_2_.func_82836_z().field_146062_d, (double)(p_76191_2_.func_82836_z().field_82332_a * 90));
         }
     }
 

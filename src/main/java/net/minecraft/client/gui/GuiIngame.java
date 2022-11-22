@@ -121,16 +121,16 @@ public class GuiIngame extends Gui
             OpenGlHelper.func_148821_a(775, 769, 1, 0);
             this.func_73729_b(k / 2 - 7, l / 2 - 7, 0, 0, 16, 16);
             OpenGlHelper.func_148821_a(770, 771, 1, 0);
-            this.field_73839_d.field_71424_I.func_76320_a("bossHealth");
+            this.field_73839_d.profiler.startMeasure("bossHealth");
             this.func_73828_d();
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
 
             if (this.field_73839_d.field_71442_b.func_78755_b())
             {
                 this.func_110327_a(k, l);
             }
 
-            this.field_73839_d.field_71424_I.func_76320_a("actionBar");
+            this.field_73839_d.profiler.startMeasure("actionBar");
             GL11.glEnable(GL12.GL_RESCALE_NORMAL);
             RenderHelper.func_74520_c();
 
@@ -143,7 +143,7 @@ public class GuiIngame extends Gui
 
             RenderHelper.func_74518_a();
             GL11.glDisable(GL12.GL_RESCALE_NORMAL);
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
             GL11.glDisable(GL11.GL_BLEND);
         }
 
@@ -151,7 +151,7 @@ public class GuiIngame extends Gui
 
         if (this.field_73839_d.field_71439_g.func_71060_bI() > 0)
         {
-            this.field_73839_d.field_71424_I.func_76320_a("sleep");
+            this.field_73839_d.profiler.startMeasure("sleep");
             GL11.glDisable(GL11.GL_DEPTH_TEST);
             GL11.glDisable(GL11.GL_ALPHA_TEST);
             l4 = this.field_73839_d.field_71439_g.func_71060_bI();
@@ -166,7 +166,7 @@ public class GuiIngame extends Gui
             func_73734_a(0, 0, k, l, j1);
             GL11.glEnable(GL11.GL_ALPHA_TEST);
             GL11.glEnable(GL11.GL_DEPTH_TEST);
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
         }
 
         l4 = 16777215;
@@ -181,7 +181,7 @@ public class GuiIngame extends Gui
 
         if (this.field_73839_d.field_71439_g.func_110317_t())
         {
-            this.field_73839_d.field_71424_I.func_76320_a("jumpBar");
+            this.field_73839_d.profiler.startMeasure("jumpBar");
             this.field_73839_d.func_110434_K().func_110577_a(Gui.field_110324_m);
             f3 = this.field_73839_d.field_71439_g.func_110319_bJ();
             short1 = 182;
@@ -194,11 +194,11 @@ public class GuiIngame extends Gui
                 this.func_73729_b(i1, i2, 0, 89, l1, 5);
             }
 
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
         }
         else if (this.field_73839_d.field_71442_b.func_78763_f())
         {
-            this.field_73839_d.field_71424_I.func_76320_a("expBar");
+            this.field_73839_d.profiler.startMeasure("expBar");
             this.field_73839_d.func_110434_K().func_110577_a(Gui.field_110324_m);
             j1 = this.field_73839_d.field_71439_g.func_71050_bK();
 
@@ -215,11 +215,11 @@ public class GuiIngame extends Gui
                 }
             }
 
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
 
             if (this.field_73839_d.field_71439_g.field_71068_ca > 0)
             {
-                this.field_73839_d.field_71424_I.func_76320_a("expLevel");
+                this.field_73839_d.profiler.startMeasure("expLevel");
                 boolean flag2 = false;
                 l1 = flag2 ? 16777215 : 8453920;
                 String s3 = "" + this.field_73839_d.field_71439_g.field_71068_ca;
@@ -231,7 +231,7 @@ public class GuiIngame extends Gui
                 fontrenderer.func_78276_b(s3, j2, k2 + 1, 0);
                 fontrenderer.func_78276_b(s3, j2, k2 - 1, 0);
                 fontrenderer.func_78276_b(s3, j2, k2, l1);
-                this.field_73839_d.field_71424_I.func_76319_b();
+                this.field_73839_d.profiler.endMeasure();
             }
         }
 
@@ -239,7 +239,7 @@ public class GuiIngame extends Gui
 
         if (this.field_73839_d.gameSettings.field_92117_D)
         {
-            this.field_73839_d.field_71424_I.func_76320_a("toolHighlight");
+            this.field_73839_d.profiler.startMeasure("toolHighlight");
 
             if (this.field_92017_k > 0 && this.field_92016_l != null)
             {
@@ -270,12 +270,12 @@ public class GuiIngame extends Gui
                 }
             }
 
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
         }
 
         if (this.field_73839_d.func_71355_q())
         {
-            this.field_73839_d.field_71424_I.func_76320_a("demo");
+            this.field_73839_d.profiler.startMeasure("demo");
             s2 = "";
 
             if (this.field_73839_d.field_71441_e.func_82737_E() >= 120500L)
@@ -289,7 +289,7 @@ public class GuiIngame extends Gui
 
             k1 = fontrenderer.func_78256_a(s2);
             fontrenderer.func_78261_a(s2, k - k1 - 10, 5, 16777215);
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
         }
 
         int i3;
@@ -298,7 +298,7 @@ public class GuiIngame extends Gui
 
         if (this.field_73839_d.gameSettings.field_74330_P)
         {
-            this.field_73839_d.field_71424_I.func_76320_a("debug");
+            this.field_73839_d.profiler.startMeasure("debug");
             GL11.glPushMatrix();
             fontrenderer.func_78261_a("Minecraft 1.7.10 (" + this.field_73839_d.field_71426_K + ")", 2, 2, 16777215);
             fontrenderer.func_78261_a(this.field_73839_d.func_71393_m(), 2, 12, 16777215);
@@ -337,12 +337,12 @@ public class GuiIngame extends Gui
             }
 
             GL11.glPopMatrix();
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
         }
 
         if (this.field_73845_h > 0)
         {
-            this.field_73839_d.field_71424_I.func_76320_a("overlayMessage");
+            this.field_73839_d.profiler.startMeasure("overlayMessage");
             f3 = (float)this.field_73845_h - p_73830_1_;
             k1 = (int)(f3 * 255.0F / 20.0F);
 
@@ -369,7 +369,7 @@ public class GuiIngame extends Gui
                 GL11.glPopMatrix();
             }
 
-            this.field_73839_d.field_71424_I.func_76319_b();
+            this.field_73839_d.profiler.endMeasure();
         }
 
         ScoreObjective scoreobjective = this.field_73839_d.field_71441_e.func_96441_U().func_96539_a(1);
@@ -384,15 +384,15 @@ public class GuiIngame extends Gui
         GL11.glDisable(GL11.GL_ALPHA_TEST);
         GL11.glPushMatrix();
         GL11.glTranslatef(0.0F, (float)(l - 48), 0.0F);
-        this.field_73839_d.field_71424_I.func_76320_a("chat");
+        this.field_73839_d.profiler.startMeasure("chat");
         this.field_73840_e.func_146230_a(this.field_73837_f);
-        this.field_73839_d.field_71424_I.func_76319_b();
+        this.field_73839_d.profiler.endMeasure();
         GL11.glPopMatrix();
         scoreobjective = this.field_73839_d.field_71441_e.func_96441_U().func_96539_a(0);
 
         if (this.field_73839_d.gameSettings.field_74321_H.func_151470_d() && (!this.field_73839_d.func_71387_A() || this.field_73839_d.field_71439_g.field_71174_a.field_147303_b.size() > 1 || scoreobjective != null))
         {
-            this.field_73839_d.field_71424_I.func_76320_a("playerList");
+            this.field_73839_d.profiler.startMeasure("playerList");
             NetHandlerPlayClient nethandlerplayclient = this.field_73839_d.field_71439_g.field_71174_a;
             List list = nethandlerplayclient.field_147303_b;
             i2 = nethandlerplayclient.field_147304_c;
@@ -572,7 +572,7 @@ public class GuiIngame extends Gui
             j3 = this.field_73837_f % MathHelper.func_76123_f(f + 5.0F);
         }
 
-        this.field_73839_d.field_71424_I.func_76320_a("armor");
+        this.field_73839_d.profiler.startMeasure("armor");
         int k3;
         int l3;
 
@@ -599,7 +599,7 @@ public class GuiIngame extends Gui
             }
         }
 
-        this.field_73839_d.field_71424_I.func_76318_c("health");
+        this.field_73839_d.profiler.startNewMeasure("health");
         int i4;
         int j4;
         int k4;
@@ -692,7 +692,7 @@ public class GuiIngame extends Gui
 
         if (entity == null)
         {
-            this.field_73839_d.field_71424_I.func_76318_c("food");
+            this.field_73839_d.profiler.startNewMeasure("food");
 
             for (l3 = 0; l3 < 10; ++l3)
             {
@@ -745,7 +745,7 @@ public class GuiIngame extends Gui
         }
         else if (entity instanceof EntityLivingBase)
         {
-            this.field_73839_d.field_71424_I.func_76318_c("mountHealth");
+            this.field_73839_d.profiler.startNewMeasure("mountHealth");
             EntityLivingBase entitylivingbase = (EntityLivingBase)entity;
             k5 = (int)Math.ceil((double)entitylivingbase.func_110143_aJ());
             float f3 = entitylivingbase.func_110138_aP();
@@ -791,7 +791,7 @@ public class GuiIngame extends Gui
             }
         }
 
-        this.field_73839_d.field_71424_I.func_76318_c("air");
+        this.field_73839_d.profiler.startNewMeasure("air");
 
         if (this.field_73839_d.field_71439_g.func_70055_a(Material.field_151586_h))
         {
@@ -812,7 +812,7 @@ public class GuiIngame extends Gui
             }
         }
 
-        this.field_73839_d.field_71424_I.func_76319_b();
+        this.field_73839_d.profiler.endMeasure();
     }
 
     protected void func_73828_d()

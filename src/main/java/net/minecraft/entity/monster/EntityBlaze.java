@@ -66,7 +66,7 @@ public class EntityBlaze extends EntityMob
 
     public void func_70636_d()
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (this.func_70026_G())
             {
@@ -89,7 +89,7 @@ public class EntityBlaze extends EntityMob
 
         if (this.field_70146_Z.nextInt(24) == 0)
         {
-            this.field_70170_p.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.fire", 1.0F + this.field_70146_Z.nextFloat(), this.field_70146_Z.nextFloat() * 0.7F + 0.3F);
+            this.world.func_72908_a(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "fire.fire", 1.0F + this.field_70146_Z.nextFloat(), this.field_70146_Z.nextFloat() * 0.7F + 0.3F);
         }
 
         if (!this.field_70122_E && this.field_70181_x < 0.0D)
@@ -99,7 +99,7 @@ public class EntityBlaze extends EntityMob
 
         for (int i = 0; i < 2; ++i)
         {
-            this.field_70170_p.func_72869_a("largesmoke", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("largesmoke", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, 0.0D, 0.0D, 0.0D);
         }
 
         super.func_70636_d();
@@ -141,13 +141,13 @@ public class EntityBlaze extends EntityMob
                 if (this.field_70846_g > 1)
                 {
                     float f1 = MathHelper.func_76129_c(p_70785_2_) * 0.5F;
-                    this.field_70170_p.func_72889_a((EntityPlayer)null, 1009, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
+                    this.world.func_72889_a((EntityPlayer)null, 1009, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
 
                     for (int i = 0; i < 1; ++i)
                     {
-                        EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.field_70170_p, this, d0 + this.field_70146_Z.nextGaussian() * (double)f1, d1, d2 + this.field_70146_Z.nextGaussian() * (double)f1);
+                        EntitySmallFireball entitysmallfireball = new EntitySmallFireball(this.world, this, d0 + this.field_70146_Z.nextGaussian() * (double)f1, d1, d2 + this.field_70146_Z.nextGaussian() * (double)f1);
                         entitysmallfireball.field_70163_u = this.field_70163_u + (double)(this.field_70131_O / 2.0F) + 0.5D;
-                        this.field_70170_p.func_72838_d(entitysmallfireball);
+                        this.world.func_72838_d(entitysmallfireball);
                     }
                 }
             }

@@ -60,7 +60,7 @@ public class EntityWitherSkull extends EntityFireball
 
     protected void func_70227_a(MovingObjectPosition p_70227_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (p_70227_1_.field_72308_g != null)
             {
@@ -80,11 +80,11 @@ public class EntityWitherSkull extends EntityFireball
                 {
                     byte b0 = 0;
 
-                    if (this.field_70170_p.field_73013_u == EnumDifficulty.NORMAL)
+                    if (this.world.field_73013_u == EnumDifficulty.NORMAL)
                     {
                         b0 = 10;
                     }
-                    else if (this.field_70170_p.field_73013_u == EnumDifficulty.HARD)
+                    else if (this.world.field_73013_u == EnumDifficulty.HARD)
                     {
                         b0 = 40;
                     }
@@ -96,7 +96,7 @@ public class EntityWitherSkull extends EntityFireball
                 }
             }
 
-            this.field_70170_p.func_72885_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, 1.0F, false, this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"));
+            this.world.func_72885_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, 1.0F, false, this.world.func_82736_K().getBooleanValue("mobGriefing"));
             this.func_70106_y();
         }
     }

@@ -133,7 +133,7 @@ public abstract class EntityThrowable extends Entity implements IProjectile
 
         if (this.field_70193_a)
         {
-            if (this.field_70170_p.func_147439_a(this.field_145788_c, this.field_145786_d, this.field_145787_e) == this.field_145785_f)
+            if (this.world.func_147439_a(this.field_145788_c, this.field_145786_d, this.field_145787_e) == this.field_145785_f)
             {
                 ++this.field_70194_h;
 
@@ -159,7 +159,7 @@ public abstract class EntityThrowable extends Entity implements IProjectile
 
         Vec3 vec3 = Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v);
         Vec3 vec31 = Vec3.func_72443_a(this.field_70165_t + this.field_70159_w, this.field_70163_u + this.field_70181_x, this.field_70161_v + this.field_70179_y);
-        MovingObjectPosition movingobjectposition = this.field_70170_p.func_72933_a(vec3, vec31);
+        MovingObjectPosition movingobjectposition = this.world.func_72933_a(vec3, vec31);
         vec3 = Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v);
         vec31 = Vec3.func_72443_a(this.field_70165_t + this.field_70159_w, this.field_70163_u + this.field_70181_x, this.field_70161_v + this.field_70179_y);
 
@@ -168,10 +168,10 @@ public abstract class EntityThrowable extends Entity implements IProjectile
             vec31 = Vec3.func_72443_a(movingobjectposition.field_72307_f.field_72450_a, movingobjectposition.field_72307_f.field_72448_b, movingobjectposition.field_72307_f.field_72449_c);
         }
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             Entity entity = null;
-            List list = this.field_70170_p.func_72839_b(this, this.field_70121_D.func_72321_a(this.field_70159_w, this.field_70181_x, this.field_70179_y).func_72314_b(1.0D, 1.0D, 1.0D));
+            List list = this.world.func_72839_b(this, this.field_70121_D.func_72321_a(this.field_70159_w, this.field_70181_x, this.field_70179_y).func_72314_b(1.0D, 1.0D, 1.0D));
             double d0 = 0.0D;
             EntityLivingBase entitylivingbase = this.func_85052_h();
 
@@ -206,7 +206,7 @@ public abstract class EntityThrowable extends Entity implements IProjectile
 
         if (movingobjectposition != null)
         {
-            if (movingobjectposition.field_72313_a == MovingObjectPosition.MovingObjectType.BLOCK && this.field_70170_p.func_147439_a(movingobjectposition.field_72311_b, movingobjectposition.field_72312_c, movingobjectposition.field_72309_d) == Blocks.PORTAL)
+            if (movingobjectposition.field_72313_a == MovingObjectPosition.MovingObjectType.BLOCK && this.world.func_147439_a(movingobjectposition.field_72311_b, movingobjectposition.field_72312_c, movingobjectposition.field_72309_d) == Blocks.PORTAL)
             {
                 this.func_70063_aa();
             }
@@ -252,7 +252,7 @@ public abstract class EntityThrowable extends Entity implements IProjectile
             for (int i = 0; i < 4; ++i)
             {
                 float f4 = 0.25F;
-                this.field_70170_p.func_72869_a("bubble", this.field_70165_t - this.field_70159_w * (double)f4, this.field_70163_u - this.field_70181_x * (double)f4, this.field_70161_v - this.field_70179_y * (double)f4, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+                this.world.func_72869_a("bubble", this.field_70165_t - this.field_70159_w * (double)f4, this.field_70163_u - this.field_70181_x * (double)f4, this.field_70161_v - this.field_70179_y * (double)f4, this.field_70159_w, this.field_70181_x, this.field_70179_y);
             }
 
             f2 = 0.8F;
@@ -315,7 +315,7 @@ public abstract class EntityThrowable extends Entity implements IProjectile
     {
         if (this.field_70192_c == null && this.field_85053_h != null && this.field_85053_h.length() > 0)
         {
-            this.field_70192_c = this.field_70170_p.func_72924_a(this.field_85053_h);
+            this.field_70192_c = this.world.func_72924_a(this.field_85053_h);
         }
 
         return this.field_70192_c;

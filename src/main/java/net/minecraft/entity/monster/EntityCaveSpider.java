@@ -33,11 +33,11 @@ public class EntityCaveSpider extends EntitySpider
             {
                 byte b0 = 0;
 
-                if (this.field_70170_p.field_73013_u == EnumDifficulty.NORMAL)
+                if (this.world.field_73013_u == EnumDifficulty.NORMAL)
                 {
                     b0 = 7;
                 }
-                else if (this.field_70170_p.field_73013_u == EnumDifficulty.HARD)
+                else if (this.world.field_73013_u == EnumDifficulty.HARD)
                 {
                     b0 = 15;
                 }

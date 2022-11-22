@@ -92,7 +92,7 @@ public class EntityAIControlledByPlayer extends EntityAIBase
 
         if (this.field_82640_a.field_70122_E)
         {
-            f2 = this.field_82640_a.field_70170_p.func_147439_a(MathHelper.func_76141_d((float)i), MathHelper.func_76141_d((float)j) - 1, MathHelper.func_76141_d((float)k)).field_149765_K * 0.91F;
+            f2 = this.field_82640_a.world.func_147439_a(MathHelper.func_76141_d((float)i), MathHelper.func_76141_d((float)j) - 1, MathHelper.func_76141_d((float)k)).field_149765_K * 0.91F;
         }
 
         float f3 = 0.16277136F / (f2 * f2 * f2);
@@ -140,8 +140,8 @@ public class EntityAIControlledByPlayer extends EntityAIBase
 
         if (i != l || k != i1)
         {
-            Block block = this.field_82640_a.field_70170_p.func_147439_a(i, j, k);
-            boolean flag = !this.func_151498_a(block) && (block.func_149688_o() != Material.field_151579_a || !this.func_151498_a(this.field_82640_a.field_70170_p.func_147439_a(i, j - 1, k)));
+            Block block = this.field_82640_a.world.func_147439_a(i, j, k);
+            boolean flag = !this.func_151498_a(block) && (block.func_149688_o() != Material.field_151579_a || !this.func_151498_a(this.field_82640_a.world.func_147439_a(i, j - 1, k)));
 
             if (flag && PathFinder.func_82565_a(this.field_82640_a, l, j, i1, pathpoint, false, false, true) == 0 && PathFinder.func_82565_a(this.field_82640_a, i, j + 1, k, pathpoint, false, false, true) == 1 && PathFinder.func_82565_a(this.field_82640_a, l, j + 1, i1, pathpoint, false, false, true) == 1)
             {

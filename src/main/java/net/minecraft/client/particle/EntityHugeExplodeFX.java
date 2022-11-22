@@ -26,7 +26,7 @@ public class EntityHugeExplodeFX extends EntityFX
             double d0 = this.field_70165_t + (this.field_70146_Z.nextDouble() - this.field_70146_Z.nextDouble()) * 4.0D;
             double d1 = this.field_70163_u + (this.field_70146_Z.nextDouble() - this.field_70146_Z.nextDouble()) * 4.0D;
             double d2 = this.field_70161_v + (this.field_70146_Z.nextDouble() - this.field_70146_Z.nextDouble()) * 4.0D;
-            this.field_70170_p.func_72869_a("largeexplode", d0, d1, d2, (double)((float)this.field_70579_a / (float)this.field_70580_aq), 0.0D, 0.0D);
+            this.world.func_72869_a("largeexplode", d0, d1, d2, (double)((float)this.field_70579_a / (float)this.field_70580_aq), 0.0D, 0.0D);
         }
 
         ++this.field_70579_a;

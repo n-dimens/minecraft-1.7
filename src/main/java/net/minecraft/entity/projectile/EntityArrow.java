@@ -173,12 +173,12 @@ public class EntityArrow extends Entity implements IProjectile
             this.field_70127_C = this.field_70125_A = (float)(Math.atan2(this.field_70181_x, (double)f) * 180.0D / Math.PI);
         }
 
-        Block block = this.field_70170_p.func_147439_a(this.field_145791_d, this.field_145792_e, this.field_145789_f);
+        Block block = this.world.func_147439_a(this.field_145791_d, this.field_145792_e, this.field_145789_f);
 
         if (block.func_149688_o() != Material.field_151579_a)
         {
-            block.func_149719_a(this.field_70170_p, this.field_145791_d, this.field_145792_e, this.field_145789_f);
-            AxisAlignedBB axisalignedbb = block.func_149668_a(this.field_70170_p, this.field_145791_d, this.field_145792_e, this.field_145789_f);
+            block.func_149719_a(this.world, this.field_145791_d, this.field_145792_e, this.field_145789_f);
+            AxisAlignedBB axisalignedbb = block.func_149668_a(this.world, this.field_145791_d, this.field_145792_e, this.field_145789_f);
 
             if (axisalignedbb != null && axisalignedbb.func_72318_a(Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v)))
             {
@@ -193,7 +193,7 @@ public class EntityArrow extends Entity implements IProjectile
 
         if (this.field_70254_i)
         {
-            int j = this.field_70170_p.func_72805_g(this.field_145791_d, this.field_145792_e, this.field_145789_f);
+            int j = this.world.func_72805_g(this.field_145791_d, this.field_145792_e, this.field_145789_f);
 
             if (block == this.field_145790_g && j == this.field_70253_h)
             {
@@ -219,7 +219,7 @@ public class EntityArrow extends Entity implements IProjectile
             ++this.field_70257_an;
             Vec3 vec31 = Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v);
             Vec3 vec3 = Vec3.func_72443_a(this.field_70165_t + this.field_70159_w, this.field_70163_u + this.field_70181_x, this.field_70161_v + this.field_70179_y);
-            MovingObjectPosition movingobjectposition = this.field_70170_p.func_147447_a(vec31, vec3, false, true, false);
+            MovingObjectPosition movingobjectposition = this.world.func_147447_a(vec31, vec3, false, true, false);
             vec31 = Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v);
             vec3 = Vec3.func_72443_a(this.field_70165_t + this.field_70159_w, this.field_70163_u + this.field_70181_x, this.field_70161_v + this.field_70179_y);
 
@@ -229,7 +229,7 @@ public class EntityArrow extends Entity implements IProjectile
             }
 
             Entity entity = null;
-            List list = this.field_70170_p.func_72839_b(this, this.field_70121_D.func_72321_a(this.field_70159_w, this.field_70181_x, this.field_70179_y).func_72314_b(1.0D, 1.0D, 1.0D));
+            List list = this.world.func_72839_b(this, this.field_70121_D.func_72321_a(this.field_70159_w, this.field_70181_x, this.field_70179_y).func_72314_b(1.0D, 1.0D, 1.0D));
             double d0 = 0.0D;
             int i;
             float f1;
@@ -309,7 +309,7 @@ public class EntityArrow extends Entity implements IProjectile
                         {
                             EntityLivingBase entitylivingbase = (EntityLivingBase)movingobjectposition.field_72308_g;
 
-                            if (!this.field_70170_p.field_72995_K)
+                            if (!this.world.field_72995_K)
                             {
                                 entitylivingbase.func_85034_r(entitylivingbase.func_85035_bI() + 1);
                             }
@@ -358,8 +358,8 @@ public class EntityArrow extends Entity implements IProjectile
                     this.field_145791_d = movingobjectposition.field_72311_b;
                     this.field_145792_e = movingobjectposition.field_72312_c;
                     this.field_145789_f = movingobjectposition.field_72309_d;
-                    this.field_145790_g = this.field_70170_p.func_147439_a(this.field_145791_d, this.field_145792_e, this.field_145789_f);
-                    this.field_70253_h = this.field_70170_p.func_72805_g(this.field_145791_d, this.field_145792_e, this.field_145789_f);
+                    this.field_145790_g = this.world.func_147439_a(this.field_145791_d, this.field_145792_e, this.field_145789_f);
+                    this.field_70253_h = this.world.func_72805_g(this.field_145791_d, this.field_145792_e, this.field_145789_f);
                     this.field_70159_w = (double)((float)(movingobjectposition.field_72307_f.field_72450_a - this.field_70165_t));
                     this.field_70181_x = (double)((float)(movingobjectposition.field_72307_f.field_72448_b - this.field_70163_u));
                     this.field_70179_y = (double)((float)(movingobjectposition.field_72307_f.field_72449_c - this.field_70161_v));
@@ -374,7 +374,7 @@ public class EntityArrow extends Entity implements IProjectile
 
                     if (this.field_145790_g.func_149688_o() != Material.field_151579_a)
                     {
-                        this.field_145790_g.func_149670_a(this.field_70170_p, this.field_145791_d, this.field_145792_e, this.field_145789_f, this);
+                        this.field_145790_g.func_149670_a(this.world, this.field_145791_d, this.field_145792_e, this.field_145789_f, this);
                     }
                 }
             }
@@ -383,7 +383,7 @@ public class EntityArrow extends Entity implements IProjectile
             {
                 for (i = 0; i < 4; ++i)
                 {
-                    this.field_70170_p.func_72869_a("crit", this.field_70165_t + this.field_70159_w * (double)i / 4.0D, this.field_70163_u + this.field_70181_x * (double)i / 4.0D, this.field_70161_v + this.field_70179_y * (double)i / 4.0D, -this.field_70159_w, -this.field_70181_x + 0.2D, -this.field_70179_y);
+                    this.world.func_72869_a("crit", this.field_70165_t + this.field_70159_w * (double)i / 4.0D, this.field_70163_u + this.field_70181_x * (double)i / 4.0D, this.field_70161_v + this.field_70179_y * (double)i / 4.0D, -this.field_70159_w, -this.field_70181_x + 0.2D, -this.field_70179_y);
                 }
             }
 
@@ -423,7 +423,7 @@ public class EntityArrow extends Entity implements IProjectile
                 for (int l = 0; l < 4; ++l)
                 {
                     f4 = 0.25F;
-                    this.field_70170_p.func_72869_a("bubble", this.field_70165_t - this.field_70159_w * (double)f4, this.field_70163_u - this.field_70181_x * (double)f4, this.field_70161_v - this.field_70179_y * (double)f4, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+                    this.world.func_72869_a("bubble", this.field_70165_t - this.field_70159_w * (double)f4, this.field_70163_u - this.field_70181_x * (double)f4, this.field_70161_v - this.field_70179_y * (double)f4, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                 }
 
                 f3 = 0.8F;
@@ -485,7 +485,7 @@ public class EntityArrow extends Entity implements IProjectile
 
     public void func_70100_b_(EntityPlayer p_70100_1_)
     {
-        if (!this.field_70170_p.field_72995_K && this.field_70254_i && this.field_70249_b <= 0)
+        if (!this.world.field_72995_K && this.field_70254_i && this.field_70249_b <= 0)
         {
             boolean flag = this.field_70251_a == 1 || this.field_70251_a == 2 && p_70100_1_.field_71075_bZ.field_75098_d;
 

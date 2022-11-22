@@ -56,8 +56,8 @@ public class EntityLightningBolt extends EntityWeatherEffect
 
         if (this.field_70262_b == 2)
         {
-            this.field_70170_p.func_72908_a(this.field_70165_t, this.field_70163_u, this.field_70161_v, "ambient.weather.thunder", 10000.0F, 0.8F + this.field_70146_Z.nextFloat() * 0.2F);
-            this.field_70170_p.func_72908_a(this.field_70165_t, this.field_70163_u, this.field_70161_v, "random.explode", 2.0F, 0.5F + this.field_70146_Z.nextFloat() * 0.2F);
+            this.world.func_72908_a(this.field_70165_t, this.field_70163_u, this.field_70161_v, "ambient.weather.thunder", 10000.0F, 0.8F + this.field_70146_Z.nextFloat() * 0.2F);
+            this.world.func_72908_a(this.field_70165_t, this.field_70163_u, this.field_70161_v, "random.explode", 2.0F, 0.5F + this.field_70146_Z.nextFloat() * 0.2F);
         }
 
         --this.field_70262_b;
@@ -74,15 +74,15 @@ public class EntityLightningBolt extends EntityWeatherEffect
                 this.field_70262_b = 1;
                 this.field_70264_a = this.field_70146_Z.nextLong();
 
-                if (!this.field_70170_p.field_72995_K && this.field_70170_p.func_82736_K().getBooleanValue("doFireTick") && this.field_70170_p.func_72873_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 10))
+                if (!this.world.field_72995_K && this.world.func_82736_K().getBooleanValue("doFireTick") && this.world.func_72873_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 10))
                 {
                     int i = MathHelper.func_76128_c(this.field_70165_t);
                     int j = MathHelper.func_76128_c(this.field_70163_u);
                     int k = MathHelper.func_76128_c(this.field_70161_v);
 
-                    if (this.field_70170_p.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && Blocks.FIRE.func_149742_c(this.field_70170_p, i, j, k))
+                    if (this.world.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && Blocks.FIRE.func_149742_c(this.world, i, j, k))
                     {
-                        this.field_70170_p.func_147449_b(i, j, k, Blocks.FIRE);
+                        this.world.func_147449_b(i, j, k, Blocks.FIRE);
                     }
                 }
             }
@@ -90,14 +90,14 @@ public class EntityLightningBolt extends EntityWeatherEffect
 
         if (this.field_70262_b >= 0)
         {
-            if (this.field_70170_p.field_72995_K)
+            if (this.world.field_72995_K)
             {
-                this.field_70170_p.field_73016_r = 2;
+                this.world.field_73016_r = 2;
             }
             else
             {
                 double d0 = 3.0D;
-                List list = this.field_70170_p.func_72839_b(this, AxisAlignedBB.func_72330_a(this.field_70165_t - d0, this.field_70163_u - d0, this.field_70161_v - d0, this.field_70165_t + d0, this.field_70163_u + 6.0D + d0, this.field_70161_v + d0));
+                List list = this.world.func_72839_b(this, AxisAlignedBB.func_72330_a(this.field_70165_t - d0, this.field_70163_u - d0, this.field_70161_v - d0, this.field_70165_t + d0, this.field_70163_u + 6.0D + d0, this.field_70161_v + d0));
 
                 for (int l = 0; l < list.size(); ++l)
                 {

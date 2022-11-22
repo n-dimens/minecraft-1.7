@@ -32,14 +32,14 @@ public class EntityLargeFireball extends EntityFireball
 
     protected void func_70227_a(MovingObjectPosition p_70227_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (p_70227_1_.field_72308_g != null)
             {
                 p_70227_1_.field_72308_g.func_70097_a(DamageSource.func_76362_a(this, this.field_70235_a), 6.0F);
             }
 
-            this.field_70170_p.func_72885_a((Entity)null, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)this.field_92057_e, true, this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"));
+            this.world.func_72885_a((Entity)null, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)this.field_92057_e, true, this.world.func_82736_K().getBooleanValue("mobGriefing"));
             this.func_70106_y();
         }
     }

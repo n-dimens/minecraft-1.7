@@ -90,7 +90,7 @@ public class EntityXPOrb extends Entity
         this.field_70166_s = this.field_70161_v;
         this.field_70181_x -= 0.029999999329447746D;
 
-        if (this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() == Material.field_151587_i)
+        if (this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() == Material.field_151587_i)
         {
             this.field_70181_x = 0.20000000298023224D;
             this.field_70159_w = (double)((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F);
@@ -105,7 +105,7 @@ public class EntityXPOrb extends Entity
         {
             if (this.field_80001_f == null || this.field_80001_f.func_70068_e(this) > d0 * d0)
             {
-                this.field_80001_f = this.field_70170_p.func_72890_a(this, d0);
+                this.field_80001_f = this.world.func_72890_a(this, d0);
             }
 
             this.field_80002_g = this.field_70533_a;
@@ -133,7 +133,7 @@ public class EntityXPOrb extends Entity
 
         if (this.field_70122_E)
         {
-            f = this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.98F;
+            f = this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.98F;
         }
 
         this.field_70159_w *= (double)f;
@@ -156,7 +156,7 @@ public class EntityXPOrb extends Entity
 
     public boolean func_70072_I()
     {
-        return this.field_70170_p.func_72918_a(this.field_70121_D, Material.field_151586_h, this);
+        return this.world.func_72918_a(this.field_70121_D, Material.field_151586_h, this);
     }
 
     protected void func_70081_e(int p_70081_1_)
@@ -200,12 +200,12 @@ public class EntityXPOrb extends Entity
 
     public void func_70100_b_(EntityPlayer p_70100_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (this.field_70532_c == 0 && p_70100_1_.field_71090_bL == 0)
             {
                 p_70100_1_.field_71090_bL = 2;
-                this.field_70170_p.func_72956_a(p_70100_1_, "random.orb", 0.1F, 0.5F * ((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.7F + 1.8F));
+                this.world.func_72956_a(p_70100_1_, "random.orb", 0.1F, 0.5F * ((this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.7F + 1.8F));
                 p_70100_1_.func_71001_a(this, 1);
                 p_70100_1_.func_71023_q(this.field_70530_e);
                 this.func_70106_y();

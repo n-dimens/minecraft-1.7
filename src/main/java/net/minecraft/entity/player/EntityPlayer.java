@@ -169,7 +169,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
     {
         if (this.field_71074_e != null)
         {
-            this.field_71074_e.func_77974_b(this.field_70170_p, this, this.field_71072_f);
+            this.field_71074_e.func_77974_b(this.world, this, this.field_71072_f);
         }
 
         this.func_71041_bz();
@@ -180,7 +180,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         this.field_71074_e = null;
         this.field_71072_f = 0;
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_70019_c(false);
         }
@@ -204,7 +204,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                     this.func_71010_c(itemstack, 5);
                 }
 
-                if (--this.field_71072_f == 0 && !this.field_70170_p.field_72995_K)
+                if (--this.field_71072_f == 0 && !this.world.field_72995_K)
                 {
                     this.func_71036_o();
                 }
@@ -229,13 +229,13 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                 this.field_71076_b = 100;
             }
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 if (!this.func_71065_l())
                 {
                     this.func_70999_a(true, true, false);
                 }
-                else if (this.field_70170_p.func_72935_r())
+                else if (this.world.func_72935_r())
                 {
                     this.func_70999_a(false, true, true);
                 }
@@ -253,7 +253,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
         super.func_70071_h_();
 
-        if (!this.field_70170_p.field_72995_K && this.field_71070_bA != null && !this.field_71070_bA.func_75145_c(this))
+        if (!this.world.field_72995_K && this.field_71070_bA != null && !this.field_71070_bA.func_75145_c(this))
         {
             this.func_71053_j();
             this.field_71070_bA = this.field_71069_bz;
@@ -311,7 +311,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             this.field_71073_d = null;
         }
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.field_71100_bB.func_75118_a(this);
             this.func_71064_a(StatList.PLAY_ONE_MINUTE, 1);
@@ -340,14 +340,14 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     public void func_85030_a(String p_85030_1_, float p_85030_2_, float p_85030_3_)
     {
-        this.field_70170_p.func_85173_a(this, p_85030_1_, p_85030_2_, p_85030_3_);
+        this.world.func_85173_a(this, p_85030_1_, p_85030_2_, p_85030_3_);
     }
 
     protected void func_71010_c(ItemStack p_71010_1_, int p_71010_2_)
     {
         if (p_71010_1_.func_77975_n() == EnumAction.drink)
         {
-            this.func_85030_a("random.drink", 0.5F, this.field_70170_p.field_73012_v.nextFloat() * 0.1F + 0.9F);
+            this.func_85030_a("random.drink", 0.5F, this.world.field_73012_v.nextFloat() * 0.1F + 0.9F);
         }
 
         if (p_71010_1_.func_77975_n() == EnumAction.eat)
@@ -368,7 +368,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                     s = s + "_" + p_71010_1_.func_77960_j();
                 }
 
-                this.field_70170_p.func_72869_a(s, vec31.field_72450_a, vec31.field_72448_b, vec31.field_72449_c, vec3.field_72450_a, vec3.field_72448_b + 0.05D, vec3.field_72449_c);
+                this.world.func_72869_a(s, vec31.field_72450_a, vec31.field_72448_b, vec31.field_72449_c, vec3.field_72450_a, vec3.field_72448_b + 0.05D, vec3.field_72449_c);
             }
 
             this.func_85030_a("random.eat", 0.5F + 0.5F * (float)this.field_70146_Z.nextInt(2), (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F);
@@ -381,7 +381,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         {
             this.func_71010_c(this.field_71074_e, 16);
             int i = this.field_71074_e.field_77994_a;
-            ItemStack itemstack = this.field_71074_e.func_77950_b(this.field_70170_p, this);
+            ItemStack itemstack = this.field_71074_e.func_77950_b(this.world, this);
 
             if (itemstack != this.field_71074_e || itemstack != null && itemstack.field_77994_a != i)
             {
@@ -424,7 +424,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
     {
         if (this.field_70154_o != null && p_70078_1_ == null)
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_110145_l(this.field_70154_o);
             }
@@ -444,7 +444,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     public void func_70098_U()
     {
-        if (!this.field_70170_p.field_72995_K && this.func_70093_af())
+        if (!this.world.field_72995_K && this.func_70093_af())
         {
             this.func_70078_a((Entity)null);
             this.func_70095_a(false);
@@ -493,7 +493,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             --this.field_71101_bC;
         }
 
-        if (this.field_70170_p.field_73013_u == EnumDifficulty.PEACEFUL && this.func_110143_aJ() < this.func_110138_aP() && this.field_70170_p.func_82736_K().getBooleanValue("naturalRegeneration") && this.field_70173_aa % 20 * 12 == 0)
+        if (this.world.field_73013_u == EnumDifficulty.PEACEFUL && this.func_110143_aJ() < this.func_110138_aP() && this.world.func_82736_K().getBooleanValue("naturalRegeneration") && this.field_70173_aa % 20 * 12 == 0)
         {
             this.func_70691_i(1.0F);
         }
@@ -503,7 +503,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         super.func_70636_d();
         IAttributeInstance iattributeinstance = this.func_110148_a(SharedMonsterAttributes.field_111263_d);
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             iattributeinstance.func_111128_a((double)this.field_71075_bZ.func_75094_b());
         }
@@ -550,7 +550,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
                 axisalignedbb = this.field_70121_D.func_72314_b(1.0D, 0.5D, 1.0D);
             }
 
-            List list = this.field_70170_p.func_72839_b(this, axisalignedbb);
+            List list = this.world.func_72839_b(this, axisalignedbb);
 
             if (list != null)
             {
@@ -600,7 +600,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             this.func_146097_a(new ItemStack(Items.APPLE, 1), true, false);
         }
 
-        if (!this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
+        if (!this.world.func_82736_K().getBooleanValue("keepInventory"))
         {
             this.field_71071_by.func_70436_m();
         }
@@ -676,7 +676,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         }
         else
         {
-            EntityItem entityitem = new EntityItem(this.field_70170_p, this.field_70165_t, this.field_70163_u - 0.30000001192092896D + (double)this.func_70047_e(), this.field_70161_v, p_146097_1_);
+            EntityItem entityitem = new EntityItem(this.world, this.field_70165_t, this.field_70163_u - 0.30000001192092896D + (double)this.func_70047_e(), this.field_70161_v, p_146097_1_);
             entityitem.field_145804_b = 40;
 
             if (p_146097_3_)
@@ -717,7 +717,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     public void func_71012_a(EntityItem p_71012_1_)
     {
-        this.field_70170_p.func_72838_d(p_71012_1_);
+        this.world.func_72838_d(p_71012_1_);
     }
 
     public float func_146096_a(Block p_146096_1_, boolean p_146096_2_)
@@ -877,24 +877,24 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             }
             else
             {
-                if (this.func_70608_bn() && !this.field_70170_p.field_72995_K)
+                if (this.func_70608_bn() && !this.world.field_72995_K)
                 {
                     this.func_70999_a(true, true, false);
                 }
 
                 if (p_70097_1_.func_76350_n())
                 {
-                    if (this.field_70170_p.field_73013_u == EnumDifficulty.PEACEFUL)
+                    if (this.world.field_73013_u == EnumDifficulty.PEACEFUL)
                     {
                         p_70097_2_ = 0.0F;
                     }
 
-                    if (this.field_70170_p.field_73013_u == EnumDifficulty.EASY)
+                    if (this.world.field_73013_u == EnumDifficulty.EASY)
                     {
                         p_70097_2_ = p_70097_2_ / 2.0F + 1.0F;
                     }
 
-                    if (this.field_70170_p.field_73013_u == EnumDifficulty.HARD)
+                    if (this.world.field_73013_u == EnumDifficulty.HARD)
                     {
                         p_70097_2_ = p_70097_2_ * 3.0F / 2.0F;
                     }
@@ -1206,19 +1206,19 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     public EntityPlayer.EnumStatus func_71018_a(int p_71018_1_, int p_71018_2_, int p_71018_3_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (this.func_70608_bn() || !this.func_70089_S())
             {
                 return EntityPlayer.EnumStatus.OTHER_PROBLEM;
             }
 
-            if (!this.field_70170_p.field_73011_w.func_76569_d())
+            if (!this.world.field_73011_w.func_76569_d())
             {
                 return EntityPlayer.EnumStatus.NOT_POSSIBLE_HERE;
             }
 
-            if (this.field_70170_p.func_72935_r())
+            if (this.world.func_72935_r())
             {
                 return EntityPlayer.EnumStatus.NOT_POSSIBLE_NOW;
             }
@@ -1230,7 +1230,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
             double d0 = 8.0D;
             double d1 = 5.0D;
-            List list = this.field_70170_p.func_72872_a(EntityMob.class, AxisAlignedBB.func_72330_a((double)p_71018_1_ - d0, (double)p_71018_2_ - d1, (double)p_71018_3_ - d0, (double)p_71018_1_ + d0, (double)p_71018_2_ + d1, (double)p_71018_3_ + d0));
+            List list = this.world.func_72872_a(EntityMob.class, AxisAlignedBB.func_72330_a((double)p_71018_1_ - d0, (double)p_71018_2_ - d1, (double)p_71018_3_ - d0, (double)p_71018_1_ + d0, (double)p_71018_2_ + d1, (double)p_71018_3_ + d0));
 
             if (!list.isEmpty())
             {
@@ -1246,9 +1246,9 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         this.func_70105_a(0.2F, 0.2F);
         this.field_70129_M = 0.2F;
 
-        if (this.field_70170_p.func_72899_e(p_71018_1_, p_71018_2_, p_71018_3_))
+        if (this.world.func_72899_e(p_71018_1_, p_71018_2_, p_71018_3_))
         {
-            int i1 = this.field_70170_p.func_72805_g(p_71018_1_, p_71018_2_, p_71018_3_);
+            int i1 = this.world.func_72805_g(p_71018_1_, p_71018_2_, p_71018_3_);
             int l = BlockBed.func_149895_l(i1);
             float f1 = 0.5F;
             float f = 0.5F;
@@ -1281,9 +1281,9 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         this.field_71081_bT = new ChunkCoordinates(p_71018_1_, p_71018_2_, p_71018_3_);
         this.field_70159_w = this.field_70179_y = this.field_70181_x = 0.0D;
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
-            this.field_70170_p.func_72854_c();
+            this.world.func_72854_c();
         }
 
         return EntityPlayer.EnumStatus.OK;
@@ -1317,10 +1317,10 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         ChunkCoordinates chunkcoordinates = this.field_71081_bT;
         ChunkCoordinates chunkcoordinates1 = this.field_71081_bT;
 
-        if (chunkcoordinates != null && this.field_70170_p.func_147439_a(chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c) == Blocks.BED)
+        if (chunkcoordinates != null && this.world.func_147439_a(chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c) == Blocks.BED)
         {
-            BlockBed.func_149979_a(this.field_70170_p, chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c, false);
-            chunkcoordinates1 = BlockBed.func_149977_a(this.field_70170_p, chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c, 0);
+            BlockBed.func_149979_a(this.world, chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c, false);
+            chunkcoordinates1 = BlockBed.func_149977_a(this.world, chunkcoordinates.field_71574_a, chunkcoordinates.field_71572_b, chunkcoordinates.field_71573_c, 0);
 
             if (chunkcoordinates1 == null)
             {
@@ -1332,9 +1332,9 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
         this.field_71083_bS = false;
 
-        if (!this.field_70170_p.field_72995_K && p_70999_2_)
+        if (!this.world.field_72995_K && p_70999_2_)
         {
-            this.field_70170_p.func_72854_c();
+            this.world.func_72854_c();
         }
 
         if (p_70999_1_)
@@ -1354,7 +1354,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     private boolean func_71065_l()
     {
-        return this.field_70170_p.func_147439_a(this.field_71081_bT.field_71574_a, this.field_71081_bT.field_71572_b, this.field_71081_bT.field_71573_c) == Blocks.BED;
+        return this.world.func_147439_a(this.field_71081_bT.field_71574_a, this.field_71081_bT.field_71572_b, this.field_71081_bT.field_71573_c) == Blocks.BED;
     }
 
     public static ChunkCoordinates func_71056_a(World p_71056_0_, ChunkCoordinates p_71056_1_, boolean p_71056_2_)
@@ -1385,7 +1385,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
     {
         if (this.field_71081_bT != null)
         {
-            int i = this.field_70170_p.func_72805_g(this.field_71081_bT.field_71574_a, this.field_71081_bT.field_71572_b, this.field_71081_bT.field_71573_c);
+            int i = this.world.func_72805_g(this.field_71081_bT.field_71574_a, this.field_71081_bT.field_71572_b, this.field_71081_bT.field_71573_c);
             int j = BlockBed.func_149895_l(i);
 
             switch (j)
@@ -1736,7 +1736,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         if (p_82242_1_ > 0 && this.field_71068_ca % 5 == 0 && (float)this.field_82249_h < (float)this.field_70173_aa - 100.0F)
         {
             float f = this.field_71068_ca > 30 ? 1.0F : (float)this.field_71068_ca / 30.0F;
-            this.field_70170_p.func_72956_a(this, "random.levelup", f * 0.75F, 1.0F);
+            this.world.func_72956_a(this, "random.levelup", f * 0.75F, 1.0F);
             this.field_82249_h = this.field_70173_aa;
         }
     }
@@ -1750,7 +1750,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
     {
         if (!this.field_71075_bZ.field_75102_a)
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.field_71100_bB.func_75113_a(p_71020_1_);
             }
@@ -1779,7 +1779,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             this.field_71074_e = p_71008_1_;
             this.field_71072_f = p_71008_2_;
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_70019_c(true);
             }
@@ -1794,7 +1794,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
         }
         else
         {
-            Block block = this.field_70170_p.func_147439_a(p_82246_1_, p_82246_2_, p_82246_3_);
+            Block block = this.world.func_147439_a(p_82246_1_, p_82246_2_, p_82246_3_);
 
             if (block.func_149688_o() != Material.field_151579_a)
             {
@@ -1825,7 +1825,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     protected int func_70693_a(EntityPlayer p_70693_1_)
     {
-        if (this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
+        if (this.world.func_82736_K().getBooleanValue("keepInventory"))
         {
             return 0;
         }
@@ -1860,7 +1860,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
             this.func_85040_s(p_71049_1_.func_71037_bA());
             this.field_82152_aq = p_71049_1_.field_82152_aq;
         }
-        else if (this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
+        else if (this.world.func_82736_K().getBooleanValue("keepInventory"))
         {
             this.field_71071_by.func_70455_b(p_71049_1_.field_71071_by);
             this.field_71068_ca = p_71049_1_.field_71068_ca;
@@ -1888,7 +1888,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     public World func_130014_f_()
     {
-        return this.field_70170_p;
+        return this.world;
     }
 
     public InventoryEnderChest func_71005_bN()
@@ -1943,7 +1943,7 @@ public abstract class EntityPlayer extends EntityLivingBase implements ICommandS
 
     public Scoreboard func_96123_co()
     {
-        return this.field_70170_p.func_96441_U();
+        return this.world.func_96441_U();
     }
 
     public Team func_96124_cp()

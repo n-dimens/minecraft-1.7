@@ -29,7 +29,7 @@ public class EntityMinecartEmpty extends EntityMinecart
         }
         else
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 p_130002_1_.func_70078_a(this);
             }

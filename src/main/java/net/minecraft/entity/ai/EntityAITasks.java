@@ -12,14 +12,14 @@ public class EntityAITasks
     private static final Logger field_151506_a = LogManager.getLogger();
     public List field_75782_a = new ArrayList();
     private List field_75780_b = new ArrayList();
-    private final Profiler field_75781_c;
+    private final Profiler profiler;
     private int field_75778_d;
     private int field_75779_e = 3;
     private static final String __OBFID = "CL_00001588";
 
-    public EntityAITasks(Profiler p_i1628_1_)
+    public EntityAITasks(Profiler profiler)
     {
-        this.field_75781_c = p_i1628_1_;
+        this.profiler = profiler;
     }
 
     public void func_75776_a(int p_75776_1_, EntityAIBase p_75776_2_)
@@ -98,19 +98,19 @@ public class EntityAITasks
             }
         }
 
-        this.field_75781_c.func_76320_a("goalStart");
+        this.profiler.startMeasure("goalStart");
         iterator = arraylist.iterator();
 
         while (iterator.hasNext())
         {
             entityaitaskentry = (EntityAITasks.EntityAITaskEntry)iterator.next();
-            this.field_75781_c.func_76320_a(entityaitaskentry.field_75733_a.getClass().getSimpleName());
+            this.profiler.startMeasure(entityaitaskentry.field_75733_a.getClass().getSimpleName());
             entityaitaskentry.field_75733_a.func_75249_e();
-            this.field_75781_c.func_76319_b();
+            this.profiler.endMeasure();
         }
 
-        this.field_75781_c.func_76319_b();
-        this.field_75781_c.func_76320_a("goalTick");
+        this.profiler.endMeasure();
+        this.profiler.startMeasure("goalTick");
         iterator = this.field_75780_b.iterator();
 
         while (iterator.hasNext())
@@ -119,20 +119,20 @@ public class EntityAITasks
             entityaitaskentry.field_75733_a.func_75246_d();
         }
 
-        this.field_75781_c.func_76319_b();
+        this.profiler.endMeasure();
     }
 
     private boolean func_75773_a(EntityAITasks.EntityAITaskEntry p_75773_1_)
     {
-        this.field_75781_c.func_76320_a("canContinue");
+        this.profiler.startMeasure("canContinue");
         boolean flag = p_75773_1_.field_75733_a.func_75253_b();
-        this.field_75781_c.func_76319_b();
+        this.profiler.endMeasure();
         return flag;
     }
 
     private boolean func_75775_b(EntityAITasks.EntityAITaskEntry p_75775_1_)
     {
-        this.field_75781_c.func_76320_a("canUse");
+        this.profiler.startMeasure("canUse");
         Iterator iterator = this.field_75782_a.iterator();
 
         while (iterator.hasNext())
@@ -145,19 +145,19 @@ public class EntityAITasks
                 {
                     if (this.field_75780_b.contains(entityaitaskentry) && !this.func_75777_a(p_75775_1_, entityaitaskentry))
                     {
-                        this.field_75781_c.func_76319_b();
+                        this.profiler.endMeasure();
                         return false;
                     }
                 }
                 else if (this.field_75780_b.contains(entityaitaskentry) && !entityaitaskentry.field_75733_a.func_75252_g())
                 {
-                    this.field_75781_c.func_76319_b();
+                    this.profiler.endMeasure();
                     return false;
                 }
             }
         }
 
-        this.field_75781_c.func_76319_b();
+        this.profiler.endMeasure();
         return true;
     }
 

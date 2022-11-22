@@ -114,7 +114,7 @@ public class EntityFireworkSparkFX extends EntityFX
 
         if (this.field_92054_ax && this.field_70546_d < this.field_70547_e / 2 && (this.field_70546_d + this.field_70547_e) % 2 == 0)
         {
-            EntityFireworkSparkFX entityfireworksparkfx = new EntityFireworkSparkFX(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, 0.0D, 0.0D, 0.0D, this.field_92047_az);
+            EntityFireworkSparkFX entityfireworksparkfx = new EntityFireworkSparkFX(this.world, this.field_70165_t, this.field_70163_u, this.field_70161_v, 0.0D, 0.0D, 0.0D, this.field_92047_az);
             entityfireworksparkfx.func_70538_b(this.field_70552_h, this.field_70553_i, this.field_70551_j);
             entityfireworksparkfx.field_70546_d = entityfireworksparkfx.field_70547_e / 2;
 

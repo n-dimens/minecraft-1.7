@@ -39,16 +39,16 @@ public abstract class EntityLiving extends EntityLivingBase
 {
     public int field_70757_a;
     protected int field_70728_aV;
-    private EntityLookHelper field_70749_g;
-    private EntityMoveHelper field_70765_h;
-    private EntityJumpHelper field_70767_i;
-    private EntityBodyHelper field_70762_j;
-    private PathNavigate field_70699_by;
+    private final EntityLookHelper field_70749_g;
+    private final EntityMoveHelper field_70765_h;
+    private final EntityJumpHelper field_70767_i;
+    private final EntityBodyHelper field_70762_j;
+    private final PathNavigate field_70699_by;
     public final EntityAITasks field_70714_bg;
     public final EntityAITasks field_70715_bh;
     private EntityLivingBase field_70696_bz;
-    private EntitySenses field_70723_bA;
-    private ItemStack[] field_82182_bS = new ItemStack[5];
+    private final EntitySenses field_70723_bA;
+    private final ItemStack[] field_82182_bS = new ItemStack[5];
     protected float[] field_82174_bp = new float[5];
     private boolean field_82172_bs;
     private boolean field_82179_bU;
@@ -60,16 +60,16 @@ public abstract class EntityLiving extends EntityLivingBase
     private NBTTagCompound field_110170_bx;
     private static final String __OBFID = "CL_00001550";
 
-    public EntityLiving(World p_i1595_1_)
+    public EntityLiving(World world)
     {
-        super(p_i1595_1_);
-        this.field_70714_bg = new EntityAITasks(p_i1595_1_ != null && p_i1595_1_.field_72984_F != null ? p_i1595_1_.field_72984_F : null);
-        this.field_70715_bh = new EntityAITasks(p_i1595_1_ != null && p_i1595_1_.field_72984_F != null ? p_i1595_1_.field_72984_F : null);
+        super(world);
+        this.field_70714_bg = new EntityAITasks(world != null && world.profiler != null ? world.profiler : null);
+        this.field_70715_bh = new EntityAITasks(world != null && world.profiler != null ? world.profiler : null);
         this.field_70749_g = new EntityLookHelper(this);
         this.field_70765_h = new EntityMoveHelper(this);
         this.field_70767_i = new EntityJumpHelper(this);
         this.field_70762_j = new EntityBodyHelper(this);
-        this.field_70699_by = new PathNavigate(this, p_i1595_1_);
+        this.field_70699_by = new PathNavigate(this, world);
         this.field_70723_bA = new EntitySenses(this);
 
         for (int i = 0; i < this.field_82174_bp.length; ++i)
@@ -151,7 +151,7 @@ public abstract class EntityLiving extends EntityLivingBase
     public void func_70030_z()
     {
         super.func_70030_z();
-        this.field_70170_p.field_72984_F.func_76320_a("mobBaseTick");
+        this.world.profiler.startMeasure("mobBaseTick");
 
         if (this.func_70089_S() && this.field_70146_Z.nextInt(1000) < this.field_70757_a++)
         {
@@ -159,7 +159,7 @@ public abstract class EntityLiving extends EntityLivingBase
             this.func_70642_aH();
         }
 
-        this.field_70170_p.field_72984_F.func_76319_b();
+        this.world.profiler.endMeasure();
     }
 
     protected int func_70693_a(EntityPlayer p_70693_1_)
@@ -193,7 +193,7 @@ public abstract class EntityLiving extends EntityLivingBase
             double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
             double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
             double d3 = 10.0D;
-            this.field_70170_p.func_72869_a("explode", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N - d0 * d3, this.field_70163_u + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O) - d1 * d3, this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N - d2 * d3, d0, d1, d2);
+            this.world.func_72869_a("explode", this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N - d0 * d3, this.field_70163_u + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O) - d1 * d3, this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N - d2 * d3, d0, d1, d2);
         }
     }
 
@@ -201,7 +201,7 @@ public abstract class EntityLiving extends EntityLivingBase
     {
         super.func_70071_h_();
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_110159_bB();
         }
@@ -361,11 +361,11 @@ public abstract class EntityLiving extends EntityLivingBase
     public void func_70636_d()
     {
         super.func_70636_d();
-        this.field_70170_p.field_72984_F.func_76320_a("looting");
+        this.world.profiler.startMeasure("looting");
 
-        if (!this.field_70170_p.field_72995_K && this.func_98052_bS() && !this.field_70729_aU && this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
+        if (!this.world.field_72995_K && this.func_98052_bS() && !this.field_70729_aU && this.world.func_82736_K().getBooleanValue("mobGriefing"))
         {
-            List list = this.field_70170_p.func_72872_a(EntityItem.class, this.field_70121_D.func_72314_b(1.0D, 0.0D, 1.0D));
+            List list = this.world.func_72872_a(EntityItem.class, this.field_70121_D.func_72314_b(1.0D, 0.0D, 1.0D));
             Iterator iterator = list.iterator();
 
             while (iterator.hasNext())
@@ -442,7 +442,7 @@ public abstract class EntityLiving extends EntityLivingBase
 
                             if (itemstack.func_77973_b() == Items.DIAMOND && entityitem.func_145800_j() != null)
                             {
-                                EntityPlayer entityplayer = this.field_70170_p.func_72924_a(entityitem.func_145800_j());
+                                EntityPlayer entityplayer = this.world.func_72924_a(entityitem.func_145800_j());
 
                                 if (entityplayer != null)
                                 {
@@ -461,7 +461,7 @@ public abstract class EntityLiving extends EntityLivingBase
             }
         }
 
-        this.field_70170_p.field_72984_F.func_76319_b();
+        this.world.profiler.endMeasure();
     }
 
     protected boolean func_70650_aV()
@@ -482,7 +482,7 @@ public abstract class EntityLiving extends EntityLivingBase
         }
         else
         {
-            EntityPlayer entityplayer = this.field_70170_p.func_72890_a(this, -1.0D);
+            EntityPlayer entityplayer = this.world.func_72890_a(this, -1.0D);
 
             if (entityplayer != null)
             {
@@ -511,33 +511,33 @@ public abstract class EntityLiving extends EntityLivingBase
     protected void func_70619_bc()
     {
         ++this.field_70708_bq;
-        this.field_70170_p.field_72984_F.func_76320_a("checkDespawn");
+        this.world.profiler.startMeasure("checkDespawn");
         this.func_70623_bb();
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("sensing");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("sensing");
         this.field_70723_bA.func_75523_a();
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("targetSelector");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("targetSelector");
         this.field_70715_bh.func_75774_a();
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("goalSelector");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("goalSelector");
         this.field_70714_bg.func_75774_a();
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("navigation");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("navigation");
         this.field_70699_by.func_75501_e();
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("mob tick");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("mob tick");
         this.func_70629_bd();
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76320_a("controls");
-        this.field_70170_p.field_72984_F.func_76320_a("move");
+        this.world.profiler.endMeasure();
+        this.world.profiler.startMeasure("controls");
+        this.world.profiler.startMeasure("move");
         this.field_70765_h.func_75641_c();
-        this.field_70170_p.field_72984_F.func_76318_c("look");
+        this.world.profiler.startNewMeasure("look");
         this.field_70749_g.func_75649_a();
-        this.field_70170_p.field_72984_F.func_76318_c("jump");
+        this.world.profiler.startNewMeasure("jump");
         this.field_70767_i.func_75661_b();
-        this.field_70170_p.field_72984_F.func_76319_b();
-        this.field_70170_p.field_72984_F.func_76319_b();
+        this.world.profiler.endMeasure();
+        this.world.profiler.endMeasure();
     }
 
     protected void func_70626_be()
@@ -550,7 +550,7 @@ public abstract class EntityLiving extends EntityLivingBase
 
         if (this.field_70146_Z.nextFloat() < 0.02F)
         {
-            EntityPlayer entityplayer = this.field_70170_p.func_72890_a(this, (double)f);
+            EntityPlayer entityplayer = this.world.func_72890_a(this, (double)f);
 
             if (entityplayer != null)
             {
@@ -639,7 +639,7 @@ public abstract class EntityLiving extends EntityLivingBase
 
     public boolean func_70601_bi()
     {
-        return this.field_70170_p.func_72855_b(this.field_70121_D) && this.field_70170_p.func_72945_a(this, this.field_70121_D).isEmpty() && !this.field_70170_p.func_72953_d(this.field_70121_D);
+        return this.world.func_72855_b(this.field_70121_D) && this.world.func_72945_a(this, this.field_70121_D).isEmpty() && !this.world.func_72953_d(this.field_70121_D);
     }
 
     @SideOnly(Side.CLIENT)
@@ -662,7 +662,7 @@ public abstract class EntityLiving extends EntityLivingBase
         else
         {
             int i = (int)(this.func_110143_aJ() - this.func_110138_aP() * 0.33F);
-            i -= (3 - this.field_70170_p.field_73013_u.func_151525_a()) * 4;
+            i -= (3 - this.world.field_73013_u.func_151525_a()) * 4;
 
             if (i < 0)
             {
@@ -732,10 +732,10 @@ public abstract class EntityLiving extends EntityLivingBase
 
     protected void func_82164_bB()
     {
-        if (this.field_70146_Z.nextFloat() < 0.15F * this.field_70170_p.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v))
+        if (this.field_70146_Z.nextFloat() < 0.15F * this.world.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v))
         {
             int i = this.field_70146_Z.nextInt(2);
-            float f = this.field_70170_p.field_73013_u == EnumDifficulty.HARD ? 0.1F : 0.25F;
+            float f = this.world.field_73013_u == EnumDifficulty.HARD ? 0.1F : 0.25F;
 
             if (this.field_70146_Z.nextFloat() < 0.095F)
             {
@@ -896,7 +896,7 @@ public abstract class EntityLiving extends EntityLivingBase
 
     protected void func_82162_bC()
     {
-        float f = this.field_70170_p.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
+        float f = this.world.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
 
         if (this.func_70694_bm() != null && this.field_70146_Z.nextFloat() < 0.25F * f)
         {
@@ -1046,14 +1046,14 @@ public abstract class EntityLiving extends EntityLivingBase
             this.field_110169_bv = false;
             this.field_110168_bw = null;
 
-            if (!this.field_70170_p.field_72995_K && p_110160_2_)
+            if (!this.world.field_72995_K && p_110160_2_)
             {
                 this.func_145779_a(Items.LEAD, 1);
             }
 
-            if (!this.field_70170_p.field_72995_K && p_110160_1_ && this.field_70170_p instanceof WorldServer)
+            if (!this.world.field_72995_K && p_110160_1_ && this.world instanceof WorldServer)
             {
-                ((WorldServer)this.field_70170_p).func_73039_n().func_151247_a(this, new S1BPacketEntityAttach(1, this, (Entity)null));
+                ((WorldServer)this.world).func_73039_n().func_151247_a(this, new S1BPacketEntityAttach(1, this, (Entity)null));
             }
         }
     }
@@ -1078,9 +1078,9 @@ public abstract class EntityLiving extends EntityLivingBase
         this.field_110169_bv = true;
         this.field_110168_bw = p_110162_1_;
 
-        if (!this.field_70170_p.field_72995_K && p_110162_2_ && this.field_70170_p instanceof WorldServer)
+        if (!this.world.field_72995_K && p_110162_2_ && this.world instanceof WorldServer)
         {
-            ((WorldServer)this.field_70170_p).func_73039_n().func_151247_a(this, new S1BPacketEntityAttach(1, this, this.field_110168_bw));
+            ((WorldServer)this.world).func_73039_n().func_151247_a(this, new S1BPacketEntityAttach(1, this, this.field_110168_bw));
         }
     }
 
@@ -1091,7 +1091,7 @@ public abstract class EntityLiving extends EntityLivingBase
             if (this.field_110170_bx.func_150297_b("UUIDMost", 4) && this.field_110170_bx.func_150297_b("UUIDLeast", 4))
             {
                 UUID uuid = new UUID(this.field_110170_bx.func_74763_f("UUIDMost"), this.field_110170_bx.func_74763_f("UUIDLeast"));
-                List list = this.field_70170_p.func_72872_a(EntityLivingBase.class, this.field_70121_D.func_72314_b(10.0D, 10.0D, 10.0D));
+                List list = this.world.func_72872_a(EntityLivingBase.class, this.field_70121_D.func_72314_b(10.0D, 10.0D, 10.0D));
                 Iterator iterator = list.iterator();
 
                 while (iterator.hasNext())
@@ -1110,11 +1110,11 @@ public abstract class EntityLiving extends EntityLivingBase
                 int i = this.field_110170_bx.func_74762_e("X");
                 int j = this.field_110170_bx.func_74762_e("Y");
                 int k = this.field_110170_bx.func_74762_e("Z");
-                EntityLeashKnot entityleashknot = EntityLeashKnot.func_110130_b(this.field_70170_p, i, j, k);
+                EntityLeashKnot entityleashknot = EntityLeashKnot.func_110130_b(this.world, i, j, k);
 
                 if (entityleashknot == null)
                 {
-                    entityleashknot = EntityLeashKnot.func_110129_a(this.field_70170_p, i, j, k);
+                    entityleashknot = EntityLeashKnot.func_110129_a(this.world, i, j, k);
                 }
 
                 this.field_110168_bw = entityleashknot;

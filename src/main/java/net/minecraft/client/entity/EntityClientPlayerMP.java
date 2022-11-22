@@ -70,7 +70,7 @@ public class EntityClientPlayerMP extends EntityPlayerSP
 
     public void func_70071_h_()
     {
-        if (this.field_70170_p.func_72899_e(MathHelper.func_76128_c(this.field_70165_t), 0, MathHelper.func_76128_c(this.field_70161_v)))
+        if (this.world.func_72899_e(MathHelper.func_76128_c(this.field_70165_t), 0, MathHelper.func_76128_c(this.field_70161_v)))
         {
             super.func_70071_h_();
 

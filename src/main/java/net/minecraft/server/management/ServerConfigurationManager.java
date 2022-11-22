@@ -106,8 +106,8 @@ public abstract class ServerConfigurationManager
         String s = gameprofile1 == null ? gameprofile.getName() : gameprofile1.getName();
         playerprofilecache.func_152649_a(gameprofile);
         NBTTagCompound nbttagcompound = this.func_72380_a(p_72355_2_);
-        p_72355_2_.func_70029_a(this.field_72400_f.func_71218_a(p_72355_2_.field_71093_bK));
-        p_72355_2_.field_71134_c.func_73080_a((WorldServer)p_72355_2_.field_70170_p);
+        p_72355_2_.setWorld(this.field_72400_f.func_71218_a(p_72355_2_.field_71093_bK));
+        p_72355_2_.field_71134_c.func_73080_a((WorldServer)p_72355_2_.world);
         String s1 = "local";
 
         if (p_72355_1_.func_74430_c() != null)
@@ -425,7 +425,7 @@ public abstract class ServerConfigurationManager
             entityplayermp1.func_70107_b(entityplayermp1.field_70165_t, entityplayermp1.field_70163_u + 1.0D, entityplayermp1.field_70161_v);
         }
 
-        entityplayermp1.field_71135_a.func_147359_a(new S07PacketRespawn(entityplayermp1.field_71093_bK, entityplayermp1.field_70170_p.field_73013_u, entityplayermp1.field_70170_p.func_72912_H().func_76067_t(), entityplayermp1.field_71134_c.func_73081_b()));
+        entityplayermp1.field_71135_a.func_147359_a(new S07PacketRespawn(entityplayermp1.field_71093_bK, entityplayermp1.world.field_73013_u, entityplayermp1.world.func_72912_H().func_76067_t(), entityplayermp1.field_71134_c.func_73081_b()));
         chunkcoordinates1 = worldserver.func_72861_E();
         entityplayermp1.field_71135_a.func_147364_a(entityplayermp1.field_70165_t, entityplayermp1.field_70163_u, entityplayermp1.field_70161_v, entityplayermp1.field_70177_z, entityplayermp1.field_70125_A);
         entityplayermp1.field_71135_a.func_147359_a(new S05PacketSpawnPosition(chunkcoordinates1.field_71574_a, chunkcoordinates1.field_71572_b, chunkcoordinates1.field_71573_c));
@@ -445,7 +445,7 @@ public abstract class ServerConfigurationManager
         WorldServer worldserver = this.field_72400_f.func_71218_a(p_72356_1_.field_71093_bK);
         p_72356_1_.field_71093_bK = p_72356_2_;
         WorldServer worldserver1 = this.field_72400_f.func_71218_a(p_72356_1_.field_71093_bK);
-        p_72356_1_.field_71135_a.func_147359_a(new S07PacketRespawn(p_72356_1_.field_71093_bK, p_72356_1_.field_70170_p.field_73013_u, p_72356_1_.field_70170_p.func_72912_H().func_76067_t(), p_72356_1_.field_71134_c.func_73081_b()));
+        p_72356_1_.field_71135_a.func_147359_a(new S07PacketRespawn(p_72356_1_.field_71093_bK, p_72356_1_.world.field_73013_u, p_72356_1_.world.func_72912_H().func_76067_t(), p_72356_1_.field_71134_c.func_73081_b()));
         worldserver.func_72973_f(p_72356_1_);
         p_72356_1_.field_70128_L = false;
         this.func_82448_a(p_72356_1_, j, worldserver, worldserver1);
@@ -472,7 +472,7 @@ public abstract class ServerConfigurationManager
         double d4 = p_82448_1_.field_70163_u;
         double d5 = p_82448_1_.field_70161_v;
         float f = p_82448_1_.field_70177_z;
-        p_82448_3_.field_72984_F.func_76320_a("moving");
+        p_82448_3_.profiler.startMeasure("moving");
 
         if (p_82448_1_.field_71093_bK == -1)
         {
@@ -520,11 +520,11 @@ public abstract class ServerConfigurationManager
             }
         }
 
-        p_82448_3_.field_72984_F.func_76319_b();
+        p_82448_3_.profiler.endMeasure();
 
         if (p_82448_2_ != 1)
         {
-            p_82448_3_.field_72984_F.func_76320_a("placing");
+            p_82448_3_.profiler.startMeasure("placing");
             d0 = (double)MathHelper.func_76125_a((int)d0, -29999872, 29999872);
             d1 = (double)MathHelper.func_76125_a((int)d1, -29999872, 29999872);
 
@@ -536,10 +536,10 @@ public abstract class ServerConfigurationManager
                 p_82448_4_.func_72866_a(p_82448_1_, false);
             }
 
-            p_82448_3_.field_72984_F.func_76319_b();
+            p_82448_3_.profiler.endMeasure();
         }
 
-        p_82448_1_.func_70029_a(p_82448_4_);
+        p_82448_1_.setWorld(p_82448_4_);
     }
 
     public void func_72374_b()
@@ -703,7 +703,7 @@ public abstract class ServerConfigurationManager
             {
                 EntityPlayerMP entityplayermp = (EntityPlayerMP)this.field_72404_b.get(i2);
 
-                if ((p_82449_11_ == null || entityplayermp.field_70170_p == p_82449_11_) && (p_82449_9_ == null || flag1 != p_82449_9_.equalsIgnoreCase(entityplayermp.func_70005_c_())))
+                if ((p_82449_11_ == null || entityplayermp.world == p_82449_11_) && (p_82449_9_ == null || flag1 != p_82449_9_.equalsIgnoreCase(entityplayermp.func_70005_c_())))
                 {
                     if (p_82449_10_ != null)
                     {

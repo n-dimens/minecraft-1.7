@@ -49,12 +49,12 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
                     }
 
                     itemstack.field_77994_a -= j;
-                    EntityItem entityitem = new EntityItem(this.field_70170_p, this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, new ItemStack(itemstack.func_77973_b(), j, itemstack.func_77960_j()));
+                    EntityItem entityitem = new EntityItem(this.world, this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, new ItemStack(itemstack.func_77973_b(), j, itemstack.func_77960_j()));
                     float f3 = 0.05F;
                     entityitem.field_70159_w = (double)((float)this.field_70146_Z.nextGaussian() * f3);
                     entityitem.field_70181_x = (double)((float)this.field_70146_Z.nextGaussian() * f3 + 0.2F);
                     entityitem.field_70179_y = (double)((float)this.field_70146_Z.nextGaussian() * f3);
-                    this.field_70170_p.func_72838_d(entityitem);
+                    this.world.func_72838_d(entityitem);
                 }
             }
         }
@@ -175,7 +175,7 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
                         }
 
                         itemstack.field_77994_a -= j;
-                        EntityItem entityitem = new EntityItem(this.field_70170_p, this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, new ItemStack(itemstack.func_77973_b(), j, itemstack.func_77960_j()));
+                        EntityItem entityitem = new EntityItem(this.world, this.field_70165_t + (double)f, this.field_70163_u + (double)f1, this.field_70161_v + (double)f2, new ItemStack(itemstack.func_77973_b(), j, itemstack.func_77960_j()));
 
                         if (itemstack.func_77942_o())
                         {
@@ -186,7 +186,7 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
                         entityitem.field_70159_w = (double)((float)this.field_70146_Z.nextGaussian() * f3);
                         entityitem.field_70181_x = (double)((float)this.field_70146_Z.nextGaussian() * f3 + 0.2F);
                         entityitem.field_70179_y = (double)((float)this.field_70146_Z.nextGaussian() * f3);
-                        this.field_70170_p.func_72838_d(entityitem);
+                        this.world.func_72838_d(entityitem);
                     }
                 }
             }
@@ -234,7 +234,7 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
 
     public boolean func_130002_c(EntityPlayer p_130002_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             p_130002_1_.func_71007_a(this);
         }

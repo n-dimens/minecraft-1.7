@@ -387,17 +387,17 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
     public void func_71058_b(int p_71058_1_, int p_71058_2_, int p_71058_3_)
     {
-        this.field_71159_c.func_147108_a(new GuiCrafting(this.field_71071_by, this.field_70170_p, p_71058_1_, p_71058_2_, p_71058_3_));
+        this.field_71159_c.func_147108_a(new GuiCrafting(this.field_71071_by, this.world, p_71058_1_, p_71058_2_, p_71058_3_));
     }
 
     public void func_71002_c(int p_71002_1_, int p_71002_2_, int p_71002_3_, String p_71002_4_)
     {
-        this.field_71159_c.func_147108_a(new GuiEnchantment(this.field_71071_by, this.field_70170_p, p_71002_1_, p_71002_2_, p_71002_3_, p_71002_4_));
+        this.field_71159_c.func_147108_a(new GuiEnchantment(this.field_71071_by, this.world, p_71002_1_, p_71002_2_, p_71002_3_, p_71002_4_));
     }
 
     public void func_82244_d(int p_82244_1_, int p_82244_2_, int p_82244_3_)
     {
-        this.field_71159_c.func_147108_a(new GuiRepair(this.field_71071_by, this.field_70170_p, p_82244_1_, p_82244_2_, p_82244_3_));
+        this.field_71159_c.func_147108_a(new GuiRepair(this.field_71071_by, this.world, p_82244_1_, p_82244_2_, p_82244_3_));
     }
 
     public void func_146101_a(TileEntityFurnace p_146101_1_)
@@ -422,7 +422,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
     public void func_71030_a(IMerchant p_71030_1_, String p_71030_2_)
     {
-        this.field_71159_c.func_147108_a(new GuiMerchant(this.field_71071_by, p_71030_1_, this.field_70170_p, p_71030_2_));
+        this.field_71159_c.func_147108_a(new GuiMerchant(this.field_71071_by, p_71030_1_, this.world, p_71030_2_));
     }
 
     public void func_71009_b(Entity p_71009_1_)
@@ -476,7 +476,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
     private boolean func_71153_f(int p_71153_1_, int p_71153_2_, int p_71153_3_)
     {
-        return this.field_70170_p.func_147439_a(p_71153_1_, p_71153_2_, p_71153_3_).func_149721_r();
+        return this.world.func_147439_a(p_71153_1_, p_71153_2_, p_71153_3_).func_149721_r();
     }
 
     protected boolean func_145771_j(double p_145771_1_, double p_145771_3_, double p_145771_5_)
@@ -576,7 +576,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
 
     public void func_85030_a(String p_85030_1_, float p_85030_2_, float p_85030_3_)
     {
-        this.field_70170_p.func_72980_b(this.field_70165_t, this.field_70163_u - (double)this.field_70129_M, this.field_70161_v, p_85030_1_, p_85030_2_, p_85030_3_, false);
+        this.world.func_72980_b(this.field_70165_t, this.field_70163_u - (double)this.field_70129_M, this.field_70161_v, p_85030_1_, p_85030_2_, p_85030_3_, false);
     }
 
     public boolean func_70613_aW()

@@ -47,7 +47,7 @@ public class CommandDebug extends CommandBase
 
             if (p_71515_2_[0].equals("stop"))
             {
-                if (!MinecraftServer.func_71276_C().field_71304_b.field_76327_a)
+                if (!MinecraftServer.func_71276_C().profiler.enabled)
                 {
                     throw new CommandException("commands.debug.notStarted", new Object[0]);
                 }
@@ -57,7 +57,7 @@ public class CommandDebug extends CommandBase
                 long k = i - this.field_147206_b;
                 int l = j - this.field_147207_c;
                 this.func_147205_a(k, l);
-                MinecraftServer.func_71276_C().field_71304_b.field_76327_a = false;
+                MinecraftServer.func_71276_C().profiler.enabled = false;
                 func_152373_a(p_71515_1_, this, "commands.debug.stop", new Object[] {Float.valueOf((float)k / 1000.0F), Integer.valueOf(l)});
                 return;
             }
@@ -101,7 +101,7 @@ public class CommandDebug extends CommandBase
 
     private void func_147202_a(int p_147202_1_, String p_147202_2_, StringBuilder p_147202_3_)
     {
-        List list = MinecraftServer.func_71276_C().field_71304_b.func_76321_b(p_147202_2_);
+        List list = MinecraftServer.func_71276_C().profiler.func_76321_b(p_147202_2_);
 
         if (list != null && list.size() >= 3)
         {

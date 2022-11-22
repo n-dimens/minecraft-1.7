@@ -18,7 +18,7 @@ public class EntityAIBeg extends EntityAIBase
     public EntityAIBeg(EntityWolf p_i1617_1_, float p_i1617_2_)
     {
         this.field_75387_a = p_i1617_1_;
-        this.field_75386_c = p_i1617_1_.field_70170_p;
+        this.field_75386_c = p_i1617_1_.world;
         this.field_75383_d = p_i1617_2_;
         this.func_75248_a(2);
     }

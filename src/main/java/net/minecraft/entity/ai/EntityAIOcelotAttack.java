@@ -15,7 +15,7 @@ public class EntityAIOcelotAttack extends EntityAIBase
     public EntityAIOcelotAttack(EntityLiving p_i1641_1_)
     {
         this.field_75409_b = p_i1641_1_;
-        this.field_75411_a = p_i1641_1_.field_70170_p;
+        this.field_75411_a = p_i1641_1_.world;
         this.func_75248_a(3);
     }
 

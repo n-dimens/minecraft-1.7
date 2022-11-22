@@ -37,7 +37,7 @@ public class EntityBubbleFX extends EntityFX
         this.field_70181_x *= 0.8500000238418579D;
         this.field_70179_y *= 0.8500000238418579D;
 
-        if (this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() != Material.field_151586_h)
+        if (this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o() != Material.field_151586_h)
         {
             this.func_70106_y();
         }

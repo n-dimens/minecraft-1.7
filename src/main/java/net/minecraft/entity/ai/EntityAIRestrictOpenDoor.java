@@ -18,13 +18,13 @@ public class EntityAIRestrictOpenDoor extends EntityAIBase
 
     public boolean func_75250_a()
     {
-        if (this.field_75275_a.field_70170_p.func_72935_r())
+        if (this.field_75275_a.world.func_72935_r())
         {
             return false;
         }
         else
         {
-            Village village = this.field_75275_a.field_70170_p.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_75275_a.field_70165_t), MathHelper.func_76128_c(this.field_75275_a.field_70163_u), MathHelper.func_76128_c(this.field_75275_a.field_70161_v), 16);
+            Village village = this.field_75275_a.world.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_75275_a.field_70165_t), MathHelper.func_76128_c(this.field_75275_a.field_70163_u), MathHelper.func_76128_c(this.field_75275_a.field_70161_v), 16);
 
             if (village == null)
             {
@@ -40,7 +40,7 @@ public class EntityAIRestrictOpenDoor extends EntityAIBase
 
     public boolean func_75253_b()
     {
-        return this.field_75275_a.field_70170_p.func_72935_r() ? false : !this.field_75274_b.field_75476_g && this.field_75274_b.func_75467_a(MathHelper.func_76128_c(this.field_75275_a.field_70165_t), MathHelper.func_76128_c(this.field_75275_a.field_70161_v));
+        return this.field_75275_a.world.func_72935_r() ? false : !this.field_75274_b.field_75476_g && this.field_75274_b.func_75467_a(MathHelper.func_76128_c(this.field_75275_a.field_70165_t), MathHelper.func_76128_c(this.field_75275_a.field_70161_v));
     }
 
     public void func_75249_e()

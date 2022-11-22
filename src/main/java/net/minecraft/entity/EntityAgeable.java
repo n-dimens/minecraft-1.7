@@ -25,7 +25,7 @@ public abstract class EntityAgeable extends EntityCreature
 
         if (itemstack != null && itemstack.func_77973_b() == Items.SPAWN_EGG)
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 Class oclass = EntityList.func_90035_a(itemstack.func_77960_j());
 
@@ -37,7 +37,7 @@ public abstract class EntityAgeable extends EntityCreature
                     {
                         entityageable.func_70873_a(-24000);
                         entityageable.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, 0.0F, 0.0F);
-                        this.field_70170_p.func_72838_d(entityageable);
+                        this.world.func_72838_d(entityageable);
 
                         if (itemstack.func_82837_s())
                         {
@@ -111,7 +111,7 @@ public abstract class EntityAgeable extends EntityCreature
     {
         super.func_70636_d();
 
-        if (this.field_70170_p.field_72995_K)
+        if (this.world.field_72995_K)
         {
             this.func_98054_a(this.func_70631_g_());
         }

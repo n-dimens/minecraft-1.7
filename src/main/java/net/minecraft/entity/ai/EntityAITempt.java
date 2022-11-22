@@ -40,7 +40,7 @@ public class EntityAITempt extends EntityAIBase
         }
         else
         {
-            this.field_75289_h = this.field_75284_a.field_70170_p.func_72890_a(this.field_75284_a, 10.0D);
+            this.field_75289_h = this.field_75284_a.world.func_72890_a(this.field_75284_a, 10.0D);
 
             if (this.field_75289_h == null)
             {

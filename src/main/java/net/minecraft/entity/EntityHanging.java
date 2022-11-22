@@ -119,7 +119,7 @@ public abstract class EntityHanging extends Entity
         this.field_70167_r = this.field_70163_u;
         this.field_70166_s = this.field_70161_v;
 
-        if (this.field_70520_f++ == 100 && !this.field_70170_p.field_72995_K)
+        if (this.field_70520_f++ == 100 && !this.world.field_72995_K)
         {
             this.field_70520_f = 0;
 
@@ -133,7 +133,7 @@ public abstract class EntityHanging extends Entity
 
     public boolean func_70518_d()
     {
-        if (!this.field_70170_p.func_72945_a(this, this.field_70121_D).isEmpty())
+        if (!this.world.func_72945_a(this, this.field_70121_D).isEmpty())
         {
             return false;
         }
@@ -175,11 +175,11 @@ public abstract class EntityHanging extends Entity
 
                     if (this.field_82332_a != 2 && this.field_82332_a != 0)
                     {
-                        material = this.field_70170_p.func_147439_a(this.field_146063_b, l + k1, i1 + j1).func_149688_o();
+                        material = this.world.func_147439_a(this.field_146063_b, l + k1, i1 + j1).func_149688_o();
                     }
                     else
                     {
-                        material = this.field_70170_p.func_147439_a(k + j1, l + k1, this.field_146062_d).func_149688_o();
+                        material = this.world.func_147439_a(k + j1, l + k1, this.field_146062_d).func_149688_o();
                     }
 
                     if (!material.func_76220_a())
@@ -189,7 +189,7 @@ public abstract class EntityHanging extends Entity
                 }
             }
 
-            List list = this.field_70170_p.func_72839_b(this, this.field_70121_D);
+            List list = this.world.func_72839_b(this, this.field_70121_D);
             Iterator iterator = list.iterator();
             Entity entity;
 
@@ -220,7 +220,7 @@ public abstract class EntityHanging extends Entity
 
     public void func_145781_i(int p_145781_1_)
     {
-        this.field_70170_p.func_147450_X();
+        this.world.func_147450_X();
     }
 
     public boolean func_70097_a(DamageSource p_70097_1_, float p_70097_2_)
@@ -231,7 +231,7 @@ public abstract class EntityHanging extends Entity
         }
         else
         {
-            if (!this.field_70128_L && !this.field_70170_p.field_72995_K)
+            if (!this.field_70128_L && !this.world.field_72995_K)
             {
                 this.func_70106_y();
                 this.func_70018_K();
@@ -244,7 +244,7 @@ public abstract class EntityHanging extends Entity
 
     public void func_70091_d(double p_70091_1_, double p_70091_3_, double p_70091_5_)
     {
-        if (!this.field_70170_p.field_72995_K && !this.field_70128_L && p_70091_1_ * p_70091_1_ + p_70091_3_ * p_70091_3_ + p_70091_5_ * p_70091_5_ > 0.0D)
+        if (!this.world.field_72995_K && !this.field_70128_L && p_70091_1_ * p_70091_1_ + p_70091_3_ * p_70091_3_ + p_70091_5_ * p_70091_5_ > 0.0D)
         {
             this.func_70106_y();
             this.func_110128_b((Entity)null);
@@ -253,7 +253,7 @@ public abstract class EntityHanging extends Entity
 
     public void func_70024_g(double p_70024_1_, double p_70024_3_, double p_70024_5_)
     {
-        if (!this.field_70170_p.field_72995_K && !this.field_70128_L && p_70024_1_ * p_70024_1_ + p_70024_3_ * p_70024_3_ + p_70024_5_ * p_70024_5_ > 0.0D)
+        if (!this.world.field_72995_K && !this.field_70128_L && p_70024_1_ * p_70024_1_ + p_70024_3_ * p_70024_3_ + p_70024_5_ * p_70024_5_ > 0.0D)
         {
             this.func_70106_y();
             this.func_110128_b((Entity)null);

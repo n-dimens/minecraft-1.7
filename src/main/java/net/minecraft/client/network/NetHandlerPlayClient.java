@@ -232,7 +232,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
     public void func_147282_a(S01PacketJoinGame p_147282_1_)
     {
         this.field_147299_f.field_71442_b = new PlayerControllerMP(this.field_147299_f, this);
-        this.field_147300_g = new WorldClient(this, new WorldSettings(0L, p_147282_1_.func_149198_e(), false, p_147282_1_.func_149195_d(), p_147282_1_.func_149196_i()), p_147282_1_.func_149194_f(), p_147282_1_.func_149192_g(), this.field_147299_f.field_71424_I);
+        this.field_147300_g = new WorldClient(this, new WorldSettings(0L, p_147282_1_.func_149198_e(), false, p_147282_1_.func_149195_d(), p_147282_1_.func_149196_i()), p_147282_1_.func_149194_f(), p_147282_1_.func_149192_g(), this.field_147299_f.profiler);
         this.field_147300_g.field_72995_K = true;
         this.field_147299_f.func_71403_a(this.field_147300_g);
         this.field_147299_f.field_71439_g.field_71093_bK = p_147282_1_.func_149194_f();
@@ -855,7 +855,7 @@ public class NetHandlerPlayClient implements INetHandlerPlayClient
         {
             this.field_147309_h = false;
             Scoreboard scoreboard = this.field_147300_g.func_96441_U();
-            this.field_147300_g = new WorldClient(this, new WorldSettings(0L, p_147280_1_.func_149083_e(), false, this.field_147299_f.field_71441_e.func_72912_H().func_76093_s(), p_147280_1_.func_149080_f()), p_147280_1_.func_149082_c(), p_147280_1_.func_149081_d(), this.field_147299_f.field_71424_I);
+            this.field_147300_g = new WorldClient(this, new WorldSettings(0L, p_147280_1_.func_149083_e(), false, this.field_147299_f.field_71441_e.func_72912_H().func_76093_s(), p_147280_1_.func_149080_f()), p_147280_1_.func_149082_c(), p_147280_1_.func_149081_d(), this.field_147299_f.profiler);
             this.field_147300_g.func_96443_a(scoreboard);
             this.field_147300_g.field_72995_K = true;
             this.field_147299_f.func_71403_a(this.field_147300_g);

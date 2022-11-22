@@ -67,7 +67,7 @@ public class EntityAIRunAroundLikeCrazy extends EntityAIBase
                 if (j > 0 && this.field_111180_a.func_70681_au().nextInt(j) < i)
                 {
                     this.field_111180_a.func_110263_g((EntityPlayer)this.field_111180_a.field_70153_n);
-                    this.field_111180_a.field_70170_p.func_72960_a(this.field_111180_a, (byte)7);
+                    this.field_111180_a.world.func_72960_a(this.field_111180_a, (byte)7);
                     return;
                 }
 
@@ -77,7 +77,7 @@ public class EntityAIRunAroundLikeCrazy extends EntityAIBase
             this.field_111180_a.field_70153_n.func_70078_a((Entity)null);
             this.field_111180_a.field_70153_n = null;
             this.field_111180_a.func_110231_cz();
-            this.field_111180_a.field_70170_p.func_72960_a(this.field_111180_a, (byte)6);
+            this.field_111180_a.world.func_72960_a(this.field_111180_a, (byte)6);
         }
     }
 }

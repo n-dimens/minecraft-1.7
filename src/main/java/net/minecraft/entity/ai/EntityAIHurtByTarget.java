@@ -32,7 +32,7 @@ public class EntityAIHurtByTarget extends EntityAITarget
         if (this.field_75312_a)
         {
             double d0 = this.func_111175_f();
-            List list = this.field_75299_d.field_70170_p.func_72872_a(this.field_75299_d.getClass(), AxisAlignedBB.func_72330_a(this.field_75299_d.field_70165_t, this.field_75299_d.field_70163_u, this.field_75299_d.field_70161_v, this.field_75299_d.field_70165_t + 1.0D, this.field_75299_d.field_70163_u + 1.0D, this.field_75299_d.field_70161_v + 1.0D).func_72314_b(d0, 10.0D, d0));
+            List list = this.field_75299_d.world.func_72872_a(this.field_75299_d.getClass(), AxisAlignedBB.func_72330_a(this.field_75299_d.field_70165_t, this.field_75299_d.field_70163_u, this.field_75299_d.field_70161_v, this.field_75299_d.field_70165_t + 1.0D, this.field_75299_d.field_70163_u + 1.0D, this.field_75299_d.field_70161_v + 1.0D).func_72314_b(d0, 10.0D, d0));
             Iterator iterator = list.iterator();
 
             while (iterator.hasNext())

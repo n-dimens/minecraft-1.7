@@ -13,74 +13,80 @@ import org.apache.logging.log4j.Logger;
 
 public class Profiler
 {
-    private static final Logger field_151234_b = LogManager.getLogger();
-    private final List field_76325_b = new ArrayList();
-    private final List field_76326_c = new ArrayList();
-    public boolean field_76327_a;
-    private String field_76323_d = "";
-    private final Map field_76324_e = new HashMap();
+    private static final Logger LOG = LogManager.getLogger();
+    private final List<String> actionsStack = new ArrayList<>(); // стек измеряемых действий
+    private final List<Long> startTimeStack = new ArrayList<>(); // время старта измеряемых действий
+    public boolean enabled;
+    private String callStack = "";
+    private final Map<String, Long> callStackDurations = new HashMap<>();
     private static final String __OBFID = "CL_00001497";
 
-    public void func_76317_a()
+    public void reset()
     {
-        this.field_76324_e.clear();
-        this.field_76323_d = "";
-        this.field_76325_b.clear();
+        this.callStackDurations.clear();
+        this.callStack = "";
+        this.actionsStack.clear();
     }
 
-    public void func_76320_a(String p_76320_1_)
+    /**
+     * Начать отслеживать действие
+     */
+    public void startMeasure(String action)
     {
-        if (this.field_76327_a)
+        if (this.enabled)
         {
-            if (this.field_76323_d.length() > 0)
+            if (this.callStack.length() > 0)
             {
-                this.field_76323_d = this.field_76323_d + ".";
+                this.callStack = this.callStack + ".";
             }
 
-            this.field_76323_d = this.field_76323_d + p_76320_1_;
-            this.field_76325_b.add(this.field_76323_d);
-            this.field_76326_c.add(Long.valueOf(System.nanoTime()));
+            this.callStack = this.callStack + action;
+            this.actionsStack.add(this.callStack);
+            this.startTimeStack.add(System.nanoTime());
         }
     }
 
-    public void func_76319_b()
+    /**
+     * Измерить время выполнение последнего действия и удалить его из стека
+     */
+    public void endMeasure()
     {
-        if (this.field_76327_a)
+        if (this.enabled)
         {
-            long i = System.nanoTime();
-            long j = ((Long)this.field_76326_c.remove(this.field_76326_c.size() - 1)).longValue();
-            this.field_76325_b.remove(this.field_76325_b.size() - 1);
-            long k = i - j;
+            long endTime = System.nanoTime();
+            long startTime = this.startTimeStack.remove(this.startTimeStack.size() - 1);
+            this.actionsStack.remove(this.actionsStack.size() - 1);
+            long duration = endTime - startTime;
 
-            if (this.field_76324_e.containsKey(this.field_76323_d))
+            if (this.callStackDurations.containsKey(this.callStack))
             {
-                this.field_76324_e.put(this.field_76323_d, Long.valueOf(((Long)this.field_76324_e.get(this.field_76323_d)).longValue() + k));
+                this.callStackDurations.put(this.callStack, this.callStackDurations.get(this.callStack) + duration);
             }
             else
             {
-                this.field_76324_e.put(this.field_76323_d, Long.valueOf(k));
+                this.callStackDurations.put(this.callStack, duration);
             }
 
-            if (k > 100000000L)
+            if (duration > 100000000L)
             {
-                field_151234_b.warn("Something\'s taking too long! \'" + this.field_76323_d + "\' took aprox " + (double)k / 1000000.0D + " ms");
+                LOG.warn("Something's taking too long! '" + this.callStack + "' took aprox " + (double)duration / 1000000.0D + " ms");
             }
 
-            this.field_76323_d = !this.field_76325_b.isEmpty() ? (String)this.field_76325_b.get(this.field_76325_b.size() - 1) : "";
+            this.callStack = !this.actionsStack.isEmpty() ? (String)this.actionsStack.get(this.actionsStack.size() - 1) : "";
         }
     }
 
-    public List func_76321_b(String p_76321_1_)
+    public List<Profiler.Result> func_76321_b(String p_76321_1_)
     {
-        if (!this.field_76327_a)
+        if (!this.enabled)
         {
             return null;
         }
         else
         {
-            long i = this.field_76324_e.containsKey("root") ? ((Long)this.field_76324_e.get("root")).longValue() : 0L;
-            long j = this.field_76324_e.containsKey(p_76321_1_) ? ((Long)this.field_76324_e.get(p_76321_1_)).longValue() : -1L;
-            ArrayList arraylist = new ArrayList();
+            long i = this.callStackDurations.containsKey("root") ? this.callStackDurations.get("root") : 0L;
+            long j = this.callStackDurations.containsKey(p_76321_1_) ? this.callStackDurations.get(p_76321_1_) : -1L;
+            ArrayList<Profiler.Result> arraylist = new ArrayList<>();
 
             if (p_76321_1_.length() > 0)
             {
@@ -88,7 +94,7 @@ public class Profiler
             }
 
             long k = 0L;
-            Iterator iterator = this.field_76324_e.keySet().iterator();
+            Iterator iterator = this.callStackDurations.keySet().iterator();
 
             while (iterator.hasNext())
             {
@@ -96,7 +102,7 @@ public class Profiler
 
                 if (s1.length() > p_76321_1_.length() && s1.startsWith(p_76321_1_) && s1.indexOf(".", p_76321_1_.length() + 1) < 0)
                 {
-                    k += ((Long)this.field_76324_e.get(s1)).longValue();
+                    k += this.callStackDurations.get(s1);
                 }
             }
 
@@ -112,7 +118,7 @@ public class Profiler
                 i = k;
             }
 
-            Iterator iterator1 = this.field_76324_e.keySet().iterator();
+            Iterator iterator1 = this.callStackDurations.keySet().iterator();
             String s2;
 
             while (iterator1.hasNext())
@@ -121,7 +127,7 @@ public class Profiler
 
                 if (s2.length() > p_76321_1_.length() && s2.startsWith(p_76321_1_) && s2.indexOf(".", p_76321_1_.length() + 1) < 0)
                 {
-                    long l = ((Long)this.field_76324_e.get(s2)).longValue();
+                    long l = this.callStackDurations.get(s2);
                     double d0 = (double)l * 100.0D / (double)k;
                     double d1 = (double)l * 100.0D / (double)i;
                     String s3 = s2.substring(p_76321_1_.length());
@@ -129,12 +135,12 @@ public class Profiler
                 }
             }
 
-            iterator1 = this.field_76324_e.keySet().iterator();
+            iterator1 = this.callStackDurations.keySet().iterator();
 
             while (iterator1.hasNext())
             {
                 s2 = (String)iterator1.next();
-                this.field_76324_e.put(s2, Long.valueOf(((Long)this.field_76324_e.get(s2)).longValue() * 999L / 1000L));
+                this.callStackDurations.put(s2, this.callStackDurations.get(s2) * 999L / 1000L);
             }
 
             if ((float)k > f)
@@ -148,22 +154,25 @@ public class Profiler
         }
     }
 
-    public void func_76318_c(String p_76318_1_)
+    /**
+     * Завершает измерение действия и начинает измерение нового
+     */
+    public void startNewMeasure(String nextAction)
     {
-        this.func_76319_b();
-        this.func_76320_a(p_76318_1_);
+        this.endMeasure();
+        this.startMeasure(nextAction);
     }
 
-    public String func_76322_c()
+    public String getNextAction()
     {
-        return this.field_76325_b.size() == 0 ? "[UNKNOWN]" : (String)this.field_76325_b.get(this.field_76325_b.size() - 1);
+        return this.actionsStack.size() == 0 ? "[UNKNOWN]" : this.actionsStack.get(this.actionsStack.size() - 1);
     }
 
-    public static final class Result implements Comparable
+    public static final class Result implements Comparable<Profiler.Result>
         {
-            public double field_76332_a;
-            public double field_76330_b;
-            public String field_76331_c;
+            public final double field_76332_a;
+            public final double field_76330_b;
+            public final String field_76331_c;
             private static final String __OBFID = "CL_00001498";
 
             public Result(String p_i1554_1_, double p_i1554_2_, double p_i1554_4_)
@@ -173,20 +182,16 @@ public class Profiler
                 this.field_76330_b = p_i1554_4_;
             }
 
-            public int compareTo(Profiler.Result p_compareTo_1_)
+            @Override
+            public int compareTo(Profiler.Result profileResult)
             {
-                return p_compareTo_1_.field_76332_a < this.field_76332_a ? -1 : (p_compareTo_1_.field_76332_a > this.field_76332_a ? 1 : p_compareTo_1_.field_76331_c.compareTo(this.field_76331_c));
+                return profileResult.field_76332_a < this.field_76332_a ? -1 : (profileResult.field_76332_a > this.field_76332_a ? 1 : profileResult.field_76331_c.compareTo(this.field_76331_c));
             }
 
             @SideOnly(Side.CLIENT)
             public int func_76329_a()
             {
                 return (this.field_76331_c.hashCode() & 11184810) + 4473924;
-            }
-
-            public int compareTo(Object p_compareTo_1_)
-            {
-                return this.compareTo((Profiler.Result)p_compareTo_1_);
             }
         }
 }

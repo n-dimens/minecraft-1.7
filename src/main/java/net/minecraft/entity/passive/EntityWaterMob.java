@@ -21,7 +21,7 @@ public abstract class EntityWaterMob extends EntityCreature implements IAnimals
 
     public boolean func_70601_bi()
     {
-        return this.field_70170_p.func_72855_b(this.field_70121_D);
+        return this.world.func_72855_b(this.field_70121_D);
     }
 
     public int func_70627_aG()
@@ -36,7 +36,7 @@ public abstract class EntityWaterMob extends EntityCreature implements IAnimals
 
     protected int func_70693_a(EntityPlayer p_70693_1_)
     {
-        return 1 + this.field_70170_p.field_73012_v.nextInt(3);
+        return 1 + this.world.field_73012_v.nextInt(3);
     }
 
     public void func_70030_z()

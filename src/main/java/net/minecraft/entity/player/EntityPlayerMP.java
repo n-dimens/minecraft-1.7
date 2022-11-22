@@ -213,7 +213,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
         this.field_71070_bA.func_75142_b();
 
-        if (!this.field_70170_p.field_72995_K && !this.field_71070_bA.func_75145_c(this))
+        if (!this.world.field_72995_K && !this.field_71070_bA.func_75145_c(this))
         {
             this.func_71053_j();
             this.field_71070_bA = this.field_71069_bz;
@@ -248,14 +248,14 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
                 if (chunkcoordintpair != null)
                 {
-                    if (this.field_70170_p.func_72899_e(chunkcoordintpair.field_77276_a << 4, 0, chunkcoordintpair.field_77275_b << 4))
+                    if (this.world.func_72899_e(chunkcoordintpair.field_77276_a << 4, 0, chunkcoordintpair.field_77275_b << 4))
                     {
-                        chunk = this.field_70170_p.func_72964_e(chunkcoordintpair.field_77276_a, chunkcoordintpair.field_77275_b);
+                        chunk = this.world.func_72964_e(chunkcoordintpair.field_77276_a, chunkcoordintpair.field_77275_b);
 
                         if (chunk.func_150802_k())
                         {
                             arraylist.add(chunk);
-                            arraylist1.addAll(((WorldServer)this.field_70170_p).func_147486_a(chunkcoordintpair.field_77276_a * 16, 0, chunkcoordintpair.field_77275_b * 16, chunkcoordintpair.field_77276_a * 16 + 16, 256, chunkcoordintpair.field_77275_b * 16 + 16));
+                            arraylist1.addAll(((WorldServer)this.world).func_147486_a(chunkcoordintpair.field_77276_a * 16, 0, chunkcoordintpair.field_77275_b * 16, chunkcoordintpair.field_77276_a * 16 + 16, 256, chunkcoordintpair.field_77275_b * 16 + 16));
                             iterator1.remove();
                         }
                     }
@@ -300,7 +300,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
                 if (itemstack != null && itemstack.func_77973_b().func_77643_m_())
                 {
-                    Packet packet = ((ItemMapBase)itemstack.func_77973_b()).func_150911_c(itemstack, this.field_70170_p, this);
+                    Packet packet = ((ItemMapBase)itemstack.func_77973_b()).func_150911_c(itemstack, this.world, this);
 
                     if (packet != null)
                     {
@@ -352,7 +352,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
     protected void func_147098_j()
     {
-        BiomeGenBase biomegenbase = this.field_70170_p.func_72807_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70161_v));
+        BiomeGenBase biomegenbase = this.world.func_72807_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70161_v));
 
         if (biomegenbase != null)
         {
@@ -404,12 +404,12 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.field_71133_b.func_71203_ab().func_148539_a(this.func_110142_aN().func_151521_b());
 
-        if (!this.field_70170_p.func_82736_K().getBooleanValue("keepInventory"))
+        if (!this.world.func_82736_K().getBooleanValue("keepInventory"))
         {
             this.field_71071_by.func_70436_m();
         }
 
-        Collection collection = this.field_70170_p.func_96441_U().func_96520_a(IScoreObjectiveCriteria.field_96642_c);
+        Collection collection = this.world.func_96441_U().func_96520_a(IScoreObjectiveCriteria.field_96642_c);
         Iterator iterator = collection.iterator();
 
         while (iterator.hasNext())
@@ -489,7 +489,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
         if (this.field_71093_bK == 1 && p_71027_1_ == 1)
         {
             this.func_71029_a(AchievementList.THE_END_2);
-            this.field_70170_p.func_72900_e(this);
+            this.world.func_72900_e(this);
             this.field_71136_j = true;
             this.field_71135_a.func_147359_a(new S2BPacketChangeGameState(4, 0.0F));
         }
@@ -600,7 +600,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 1, "Crafting", 9, true));
-        this.field_71070_bA = new ContainerWorkbench(this.field_71071_by, this.field_70170_p, p_71058_1_, p_71058_2_, p_71058_3_);
+        this.field_71070_bA = new ContainerWorkbench(this.field_71071_by, this.world, p_71058_1_, p_71058_2_, p_71058_3_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -609,7 +609,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 4, p_71002_4_ == null ? "" : p_71002_4_, 9, p_71002_4_ != null));
-        this.field_71070_bA = new ContainerEnchantment(this.field_71071_by, this.field_70170_p, p_71002_1_, p_71002_2_, p_71002_3_);
+        this.field_71070_bA = new ContainerEnchantment(this.field_71071_by, this.world, p_71002_1_, p_71002_2_, p_71002_3_);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -618,7 +618,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     {
         this.func_71117_bO();
         this.field_71135_a.func_147359_a(new S2DPacketOpenWindow(this.field_71139_cq, 8, "Repairing", 9, true));
-        this.field_71070_bA = new ContainerRepair(this.field_71071_by, this.field_70170_p, p_82244_1_, p_82244_2_, p_82244_3_, this);
+        this.field_71070_bA = new ContainerRepair(this.field_71071_by, this.world, p_82244_1_, p_82244_2_, p_82244_3_, this);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
     }
@@ -694,7 +694,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
     public void func_71030_a(IMerchant p_71030_1_, String p_71030_2_)
     {
         this.func_71117_bO();
-        this.field_71070_bA = new ContainerMerchant(this.field_71071_by, p_71030_1_, this.field_70170_p);
+        this.field_71070_bA = new ContainerMerchant(this.field_71071_by, p_71030_1_, this.world);
         this.field_71070_bA.field_75152_c = this.field_71139_cq;
         this.field_71070_bA.func_75132_a(this);
         InventoryMerchant inventorymerchant = ((ContainerMerchant)this.field_71070_bA).func_75174_d();
@@ -913,7 +913,7 @@ public class EntityPlayerMP extends EntityPlayer implements ICrafting
 
     public WorldServer func_71121_q()
     {
-        return (WorldServer)this.field_70170_p;
+        return (WorldServer)this.world;
     }
 
     public void func_71033_a(WorldSettings.GameType p_71033_1_)

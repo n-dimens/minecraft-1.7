@@ -3,7 +3,7 @@ package net.minecraft.entity.passive;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import java.util.UUID;
-import net.minecraft.entity.Entity;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityOwnable;
 import net.minecraft.entity.ai.EntityAISit;
@@ -84,7 +84,7 @@ public abstract class EntityTameable extends EntityAnimal implements IEntityOwna
             double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
             double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
             double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-            this.field_70170_p.func_72869_a(s, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+            this.world.func_72869_a(s, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
         }
     }
 
@@ -158,7 +158,7 @@ public abstract class EntityTameable extends EntityAnimal implements IEntityOwna
         try
         {
             UUID uuid = UUID.fromString(this.func_152113_b());
-            return uuid == null ? null : this.field_70170_p.func_152378_a(uuid);
+            return uuid == null ? null : this.world.func_152378_a(uuid);
         }
         catch (IllegalArgumentException illegalargumentexception)
         {

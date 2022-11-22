@@ -43,7 +43,7 @@ public class EntityMinecartTNT extends EntityMinecart
         if (this.field_94106_a > 0)
         {
             --this.field_94106_a;
-            this.field_70170_p.func_72869_a("smoke", this.field_70165_t, this.field_70163_u + 0.5D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("smoke", this.field_70165_t, this.field_70163_u + 0.5D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
         }
         else if (this.field_94106_a == 0)
         {
@@ -79,7 +79,7 @@ public class EntityMinecartTNT extends EntityMinecart
 
     protected void func_94103_c(double p_94103_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             double d1 = Math.sqrt(p_94103_1_);
 
@@ -88,7 +88,7 @@ public class EntityMinecartTNT extends EntityMinecart
                 d1 = 5.0D;
             }
 
-            this.field_70170_p.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)(4.0D + this.field_70146_Z.nextDouble() * 1.5D * d1), true);
+            this.world.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, (float)(4.0D + this.field_70146_Z.nextDouble() * 1.5D * d1), true);
             this.func_70106_y();
         }
     }
@@ -129,10 +129,10 @@ public class EntityMinecartTNT extends EntityMinecart
     {
         this.field_94106_a = 80;
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
-            this.field_70170_p.func_72960_a(this, (byte)10);
-            this.field_70170_p.func_72956_a(this, "game.tnt.primed", 1.0F, 1.0F);
+            this.world.func_72960_a(this, (byte)10);
+            this.world.func_72956_a(this, "game.tnt.primed", 1.0F, 1.0F);
         }
     }
 

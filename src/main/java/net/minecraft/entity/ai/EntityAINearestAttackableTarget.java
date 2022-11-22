@@ -53,7 +53,7 @@ public class EntityAINearestAttackableTarget extends EntityAITarget
         else
         {
             double d0 = this.func_111175_f();
-            List list = this.field_75299_d.field_70170_p.func_82733_a(this.field_75307_b, this.field_75299_d.field_70121_D.func_72314_b(d0, 4.0D, d0), this.field_82643_g);
+            List list = this.field_75299_d.world.func_82733_a(this.field_75307_b, this.field_75299_d.field_70121_D.func_72314_b(d0, 4.0D, d0), this.field_82643_g);
             Collections.sort(list, this.field_75306_g);
 
             if (list.isEmpty())

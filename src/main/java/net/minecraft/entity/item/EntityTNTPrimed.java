@@ -70,21 +70,21 @@ public class EntityTNTPrimed extends Entity
         {
             this.func_70106_y();
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_70515_d();
             }
         }
         else
         {
-            this.field_70170_p.func_72869_a("smoke", this.field_70165_t, this.field_70163_u + 0.5D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("smoke", this.field_70165_t, this.field_70163_u + 0.5D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
         }
     }
 
     private void func_70515_d()
     {
         float f = 4.0F;
-        this.field_70170_p.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, f, true);
+        this.world.func_72876_a(this, this.field_70165_t, this.field_70163_u, this.field_70161_v, f, true);
     }
 
     protected void func_70014_b(NBTTagCompound p_70014_1_)

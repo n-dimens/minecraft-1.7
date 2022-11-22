@@ -43,7 +43,7 @@ public class EntityFootStepFX extends EntityFX
         float f9 = (float)(this.field_70165_t - field_70556_an);
         float f10 = (float)(this.field_70163_u - field_70554_ao);
         float f11 = (float)(this.field_70161_v - field_70555_ap);
-        float f12 = this.field_70170_p.func_72801_o(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v));
+        float f12 = this.world.func_72801_o(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v));
         this.field_70577_ar.func_110577_a(field_110126_a);
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);

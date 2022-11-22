@@ -77,7 +77,7 @@ public class EntityGhast extends EntityFlying implements IMob
 
     protected void func_70626_be()
     {
-        if (!this.field_70170_p.field_72995_K && this.field_70170_p.field_73013_u == EnumDifficulty.PEACEFUL)
+        if (!this.world.field_72995_K && this.world.field_73013_u == EnumDifficulty.PEACEFUL)
         {
             this.func_70106_y();
         }
@@ -122,7 +122,7 @@ public class EntityGhast extends EntityFlying implements IMob
 
         if (this.field_70792_g == null || this.field_70798_h-- <= 0)
         {
-            this.field_70792_g = this.field_70170_p.func_72856_b(this, 100.0D);
+            this.field_70792_g = this.world.func_72856_b(this, 100.0D);
 
             if (this.field_70792_g != null)
             {
@@ -143,22 +143,22 @@ public class EntityGhast extends EntityFlying implements IMob
             {
                 if (this.field_70791_f == 10)
                 {
-                    this.field_70170_p.func_72889_a((EntityPlayer)null, 1007, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
+                    this.world.func_72889_a((EntityPlayer)null, 1007, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
                 }
 
                 ++this.field_70791_f;
 
                 if (this.field_70791_f == 20)
                 {
-                    this.field_70170_p.func_72889_a((EntityPlayer)null, 1008, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
-                    EntityLargeFireball entitylargefireball = new EntityLargeFireball(this.field_70170_p, this, d5, d6, d7);
+                    this.world.func_72889_a((EntityPlayer)null, 1008, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
+                    EntityLargeFireball entitylargefireball = new EntityLargeFireball(this.world, this, d5, d6, d7);
                     entitylargefireball.field_92057_e = this.field_92014_j;
                     double d8 = 4.0D;
                     Vec3 vec3 = this.func_70676_i(1.0F);
                     entitylargefireball.field_70165_t = this.field_70165_t + vec3.field_72450_a * d8;
                     entitylargefireball.field_70163_u = this.field_70163_u + (double)(this.field_70131_O / 2.0F) + 0.5D;
                     entitylargefireball.field_70161_v = this.field_70161_v + vec3.field_72449_c * d8;
-                    this.field_70170_p.func_72838_d(entitylargefireball);
+                    this.world.func_72838_d(entitylargefireball);
                     this.field_70791_f = -40;
                 }
             }
@@ -177,7 +177,7 @@ public class EntityGhast extends EntityFlying implements IMob
             }
         }
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             byte b1 = this.field_70180_af.func_75683_a(16);
             byte b0 = (byte)(this.field_70791_f > 10 ? 1 : 0);
@@ -200,7 +200,7 @@ public class EntityGhast extends EntityFlying implements IMob
         {
             axisalignedbb.func_72317_d(d4, d5, d6);
 
-            if (!this.field_70170_p.func_72945_a(this, axisalignedbb).isEmpty())
+            if (!this.world.func_72945_a(this, axisalignedbb).isEmpty())
             {
                 return false;
             }
@@ -254,7 +254,7 @@ public class EntityGhast extends EntityFlying implements IMob
 
     public boolean func_70601_bi()
     {
-        return this.field_70146_Z.nextInt(20) == 0 && super.func_70601_bi() && this.field_70170_p.field_73013_u != EnumDifficulty.PEACEFUL;
+        return this.field_70146_Z.nextInt(20) == 0 && super.func_70601_bi() && this.world.field_73013_u != EnumDifficulty.PEACEFUL;
     }
 
     public int func_70641_bl()

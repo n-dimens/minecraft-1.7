@@ -44,7 +44,7 @@ public class EntityCrit2FX extends EntityFX
                 double d3 = this.field_70557_a.field_70165_t + d0 * (double)this.field_70557_a.field_70130_N / 4.0D;
                 double d4 = this.field_70557_a.field_70121_D.field_72338_b + (double)(this.field_70557_a.field_70131_O / 2.0F) + d1 * (double)this.field_70557_a.field_70131_O / 4.0D;
                 double d5 = this.field_70557_a.field_70161_v + d2 * (double)this.field_70557_a.field_70130_N / 4.0D;
-                this.field_70170_p.func_72869_a(this.field_70558_as, d3, d4, d5, d0, d1 + 0.2D, d2);
+                this.world.func_72869_a(this.field_70558_as, d3, d4, d5, d0, d1 + 0.2D, d2);
             }
         }
 

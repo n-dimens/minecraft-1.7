@@ -72,7 +72,7 @@ public class WorldManager implements IWorldAccess
         {
             EntityPlayerMP entityplayermp = (EntityPlayerMP)iterator.next();
 
-            if (entityplayermp != null && entityplayermp.field_70170_p == this.field_72782_b && entityplayermp.func_145782_y() != p_147587_1_)
+            if (entityplayermp != null && entityplayermp.world == this.field_72782_b && entityplayermp.func_145782_y() != p_147587_1_)
             {
                 double d0 = (double)p_147587_2_ - entityplayermp.field_70165_t;
                 double d1 = (double)p_147587_3_ - entityplayermp.field_70163_u;

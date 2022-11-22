@@ -95,7 +95,7 @@ public class EntityBoat extends Entity
         {
             return false;
         }
-        else if (!this.field_70170_p.field_72995_K && !this.field_70128_L)
+        else if (!this.world.field_72995_K && !this.field_70128_L)
         {
             this.func_70269_c(-this.func_70267_i());
             this.func_70265_b(10);
@@ -205,7 +205,7 @@ public class EntityBoat extends Entity
             double d3 = this.field_70121_D.field_72338_b + (this.field_70121_D.field_72337_e - this.field_70121_D.field_72338_b) * (double)(i + 1) / (double)b0 - 0.125D;
             AxisAlignedBB axisalignedbb = AxisAlignedBB.func_72330_a(this.field_70121_D.field_72340_a, d1, this.field_70121_D.field_72339_c, this.field_70121_D.field_72336_d, d3, this.field_70121_D.field_72334_f);
 
-            if (this.field_70170_p.func_72830_b(axisalignedbb, Material.field_151586_h))
+            if (this.world.func_72830_b(axisalignedbb, Material.field_151586_h))
             {
                 d0 += 1.0D / (double)b0;
             }
@@ -232,13 +232,13 @@ public class EntityBoat extends Entity
                 {
                     d8 = this.field_70165_t - d2 * d5 * 0.8D + d4 * d6;
                     d9 = this.field_70161_v - d4 * d5 * 0.8D - d2 * d6;
-                    this.field_70170_p.func_72869_a("splash", d8, this.field_70163_u - 0.125D, d9, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+                    this.world.func_72869_a("splash", d8, this.field_70163_u - 0.125D, d9, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                 }
                 else
                 {
                     d8 = this.field_70165_t + d2 + d4 * d5 * 0.7D;
                     d9 = this.field_70161_v + d4 - d2 * d5 * 0.7D;
-                    this.field_70170_p.func_72869_a("splash", d8, this.field_70163_u - 0.125D, d9, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+                    this.world.func_72869_a("splash", d8, this.field_70163_u - 0.125D, d9, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                 }
             }
         }
@@ -246,7 +246,7 @@ public class EntityBoat extends Entity
         double d11;
         double d12;
 
-        if (this.field_70170_p.field_72995_K && this.field_70279_a)
+        if (this.world.field_72995_K && this.field_70279_a)
         {
             if (this.field_70277_c > 0)
             {
@@ -343,16 +343,16 @@ public class EntityBoat extends Entity
                 for (int j1 = 0; j1 < 2; ++j1)
                 {
                     int k = MathHelper.func_76128_c(this.field_70163_u) + j1;
-                    Block block = this.field_70170_p.func_147439_a(i1, k, j);
+                    Block block = this.world.func_147439_a(i1, k, j);
 
                     if (block == Blocks.SNOW_LAYER)
                     {
-                        this.field_70170_p.func_147468_f(i1, k, j);
+                        this.world.func_147468_f(i1, k, j);
                         this.field_70123_F = false;
                     }
                     else if (block == Blocks.WATERLILY)
                     {
-                        this.field_70170_p.func_147480_a(i1, k, j, true);
+                        this.world.func_147480_a(i1, k, j, true);
                         this.field_70123_F = false;
                     }
                 }
@@ -369,7 +369,7 @@ public class EntityBoat extends Entity
 
             if (this.field_70123_F && d10 > 0.2D)
             {
-                if (!this.field_70170_p.field_72995_K && !this.field_70128_L)
+                if (!this.world.field_72995_K && !this.field_70128_L)
                 {
                     this.func_70106_y();
 
@@ -416,9 +416,9 @@ public class EntityBoat extends Entity
             this.field_70177_z = (float)((double)this.field_70177_z + d7);
             this.func_70101_b(this.field_70177_z, this.field_70125_A);
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
-                List list = this.field_70170_p.func_72839_b(this, this.field_70121_D.func_72314_b(0.20000000298023224D, 0.0D, 0.20000000298023224D));
+                List list = this.world.func_72839_b(this, this.field_70121_D.func_72314_b(0.20000000298023224D, 0.0D, 0.20000000298023224D));
 
                 if (list != null && !list.isEmpty())
                 {
@@ -469,7 +469,7 @@ public class EntityBoat extends Entity
         }
         else
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 p_130002_1_.func_70078_a(this);
             }
@@ -490,7 +490,7 @@ public class EntityBoat extends Entity
             {
                 this.func_70069_a(this.field_70143_R);
 
-                if (!this.field_70170_p.field_72995_K && !this.field_70128_L)
+                if (!this.world.field_72995_K && !this.field_70128_L)
                 {
                     this.func_70106_y();
                     int l;
@@ -509,7 +509,7 @@ public class EntityBoat extends Entity
                 this.field_70143_R = 0.0F;
             }
         }
-        else if (this.field_70170_p.func_147439_a(i, j - 1, k).func_149688_o() != Material.field_151586_h && p_70064_1_ < 0.0D)
+        else if (this.world.func_147439_a(i, j - 1, k).func_149688_o() != Material.field_151586_h && p_70064_1_ < 0.0D)
         {
             this.field_70143_R = (float)((double)this.field_70143_R - p_70064_1_);
         }

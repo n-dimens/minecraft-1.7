@@ -285,7 +285,7 @@ public class ItemMap extends ItemMapBase
     @SideOnly(Side.CLIENT)
     public void func_77624_a(ItemStack p_77624_1_, EntityPlayer p_77624_2_, List p_77624_3_, boolean p_77624_4_)
     {
-        MapData mapdata = this.func_77873_a(p_77624_1_, p_77624_2_.field_70170_p);
+        MapData mapdata = this.func_77873_a(p_77624_1_, p_77624_2_.world);
 
         if (p_77624_4_)
         {

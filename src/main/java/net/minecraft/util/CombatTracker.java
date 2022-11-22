@@ -33,7 +33,7 @@ public class CombatTracker
 
         if (this.field_94554_b.func_70617_f_())
         {
-            Block block = this.field_94554_b.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_94554_b.field_70165_t), MathHelper.func_76128_c(this.field_94554_b.field_70121_D.field_72338_b), MathHelper.func_76128_c(this.field_94554_b.field_70161_v));
+            Block block = this.field_94554_b.world.func_147439_a(MathHelper.func_76128_c(this.field_94554_b.field_70165_t), MathHelper.func_76128_c(this.field_94554_b.field_70121_D.field_72338_b), MathHelper.func_76128_c(this.field_94554_b.field_70161_v));
 
             if (block == Blocks.LADDER)
             {

@@ -137,14 +137,14 @@ public class WorldServer extends World
             this.func_73053_d();
         }
 
-        this.field_72984_F.func_76320_a("mobSpawner");
+        this.profiler.startMeasure("mobSpawner");
 
         if (this.func_82736_K().getBooleanValue("doMobSpawning"))
         {
             this.field_135059_Q.func_77192_a(this, this.field_72985_G, this.field_72992_H, this.field_72986_A.func_82573_f() % 400L == 0L);
         }
 
-        this.field_72984_F.func_76318_c("chunkSource");
+        this.profiler.startNewMeasure("chunkSource");
         this.field_73020_y.func_73156_b();
         int j = this.func_72967_a(1.0F);
 
@@ -160,18 +160,18 @@ public class WorldServer extends World
             this.field_72986_A.func_76068_b(this.field_72986_A.func_76073_f() + 1L);
         }
 
-        this.field_72984_F.func_76318_c("tickPending");
+        this.profiler.startNewMeasure("tickPending");
         this.func_72955_a(false);
-        this.field_72984_F.func_76318_c("tickBlocks");
+        this.profiler.startNewMeasure("tickBlocks");
         this.func_147456_g();
-        this.field_72984_F.func_76318_c("chunkMap");
+        this.profiler.startNewMeasure("chunkMap");
         this.field_73063_M.func_72693_b();
-        this.field_72984_F.func_76318_c("village");
+        this.profiler.startNewMeasure("village");
         this.field_72982_D.func_75544_a();
         this.field_72983_E.func_75528_a();
-        this.field_72984_F.func_76318_c("portalForcer");
+        this.profiler.startNewMeasure("portalForcer");
         this.field_85177_Q.func_85189_a(this.func_82737_E());
-        this.field_72984_F.func_76319_b();
+        this.profiler.endMeasure();
         this.func_147488_Z();
     }
 
@@ -290,12 +290,12 @@ public class WorldServer extends World
             ChunkCoordIntPair chunkcoordintpair = (ChunkCoordIntPair)iterator.next();
             int k = chunkcoordintpair.field_77276_a * 16;
             int l = chunkcoordintpair.field_77275_b * 16;
-            this.field_72984_F.func_76320_a("getChunk");
+            this.profiler.startMeasure("getChunk");
             Chunk chunk = this.func_72964_e(chunkcoordintpair.field_77276_a, chunkcoordintpair.field_77275_b);
             this.func_147467_a(k, l, chunk);
-            this.field_72984_F.func_76318_c("tickChunk");
+            this.profiler.startNewMeasure("tickChunk");
             chunk.func_150804_b(false);
-            this.field_72984_F.func_76318_c("thunder");
+            this.profiler.startNewMeasure("thunder");
             int i1;
             int j1;
             int k1;
@@ -315,7 +315,7 @@ public class WorldServer extends World
                 }
             }
 
-            this.field_72984_F.func_76318_c("iceandsnow");
+            this.profiler.startNewMeasure("iceandsnow");
 
             if (this.field_73012_v.nextInt(16) == 0)
             {
@@ -346,7 +346,7 @@ public class WorldServer extends World
                 }
             }
 
-            this.field_72984_F.func_76318_c("tickBlocks");
+            this.profiler.startNewMeasure("tickBlocks");
             ExtendedBlockStorage[] aextendedblockstorage = chunk.func_76587_i();
             j1 = aextendedblockstorage.length;
 
@@ -375,7 +375,7 @@ public class WorldServer extends World
                 }
             }
 
-            this.field_72984_F.func_76319_b();
+            this.profiler.endMeasure();
         }
     }
 
@@ -487,7 +487,7 @@ public class WorldServer extends World
                 i = 1000;
             }
 
-            this.field_72984_F.func_76320_a("cleaning");
+            this.profiler.startMeasure("cleaning");
             NextTickListEntry nextticklistentry;
 
             for (int j = 0; j < i; ++j)
@@ -504,8 +504,8 @@ public class WorldServer extends World
                 this.field_94579_S.add(nextticklistentry);
             }
 
-            this.field_72984_F.func_76319_b();
-            this.field_72984_F.func_76320_a("ticking");
+            this.profiler.endMeasure();
+            this.profiler.startMeasure("ticking");
             Iterator iterator = this.field_94579_S.iterator();
 
             while (iterator.hasNext())
@@ -550,7 +550,7 @@ public class WorldServer extends World
                 }
             }
 
-            this.field_72984_F.func_76319_b();
+            this.profiler.endMeasure();
             this.field_94579_S.clear();
             return !this.field_73065_O.isEmpty();
         }

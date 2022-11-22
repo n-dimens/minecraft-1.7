@@ -117,7 +117,7 @@ public class Potion
         }
         else if (this.field_76415_H == field_76443_y.field_76415_H && p_76394_1_ instanceof EntityPlayer)
         {
-            if (!p_76394_1_.field_70170_p.field_72995_K)
+            if (!p_76394_1_.world.field_72995_K)
             {
                 ((EntityPlayer)p_76394_1_).func_71024_bL().func_75122_a(p_76394_2_ + 1, 1.0F);
             }

@@ -353,13 +353,13 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         int i = MathHelper.func_76128_c(this.field_70165_t);
         int j = MathHelper.func_76128_c(this.field_70161_v);
-        this.field_70170_p.func_72807_a(i, j);
+        this.world.func_72807_a(i, j);
         return true;
     }
 
     public void func_110224_ci()
     {
-        if (!this.field_70170_p.field_72995_K && this.func_110261_ca())
+        if (!this.world.field_72995_K && this.func_110261_ca())
         {
             this.func_145779_a(Item.func_150898_a(Blocks.CHEST), 1);
             this.func_110207_m(false);
@@ -369,7 +369,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     private void func_110266_cB()
     {
         this.func_110249_cI();
-        this.field_70170_p.func_72956_a(this, "eating", 1.0F, 1.0F + (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F);
+        this.world.func_72956_a(this, "eating", 1.0F, 1.0F + (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F);
     }
 
     protected void func_70069_a(float p_70069_1_)
@@ -390,12 +390,12 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
                 this.field_70153_n.func_70097_a(DamageSource.field_76379_h, (float)i);
             }
 
-            Block block = this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u - 0.2D - (double)this.field_70126_B), MathHelper.func_76128_c(this.field_70161_v));
+            Block block = this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u - 0.2D - (double)this.field_70126_B), MathHelper.func_76128_c(this.field_70161_v));
 
             if (block.func_149688_o() != Material.field_151579_a)
             {
                 Block.SoundType soundtype = block.field_149762_H;
-                this.field_70170_p.func_72956_a(this, soundtype.func_150498_e(), soundtype.func_150497_c() * 0.5F, soundtype.func_150494_d() * 0.75F);
+                this.world.func_72956_a(this, soundtype.func_150498_e(), soundtype.func_150497_c() * 0.5F, soundtype.func_150494_d() * 0.75F);
             }
         }
     }
@@ -436,7 +436,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
 
     private void func_110232_cE()
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_110251_o(this.field_110296_bG.func_70301_a(0) != null);
 
@@ -481,7 +481,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         double d1 = Double.MAX_VALUE;
         Entity entity1 = null;
-        List list = this.field_70170_p.func_94576_a(p_110250_1_, p_110250_1_.field_70121_D.func_72321_a(p_110250_2_, p_110250_2_, p_110250_2_), field_110276_bu);
+        List list = this.world.func_94576_a(p_110250_1_, p_110250_1_.field_70121_D.func_72321_a(p_110250_2_, p_110250_2_, p_110250_2_), field_110276_bu);
         Iterator iterator = list.iterator();
 
         while (iterator.hasNext())
@@ -561,7 +561,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         Block.SoundType soundtype = p_145780_4_.field_149762_H;
 
-        if (this.field_70170_p.func_147439_a(p_145780_1_, p_145780_2_ + 1, p_145780_3_) == Blocks.SNOW_LAYER)
+        if (this.world.func_147439_a(p_145780_1_, p_145780_2_ + 1, p_145780_3_) == Blocks.SNOW_LAYER)
         {
             soundtype = Blocks.SNOW_LAYER.field_149762_H;
         }
@@ -693,7 +693,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
 
     public void func_110199_f(EntityPlayer p_110199_1_)
     {
-        if (!this.field_70170_p.field_72995_K && (this.field_70153_n == null || this.field_70153_n == p_110199_1_) && this.func_110248_bS())
+        if (!this.world.field_72995_K && (this.field_70153_n == null || this.field_70153_n == p_110199_1_) && this.func_110248_bS())
         {
             this.field_110296_bG.func_110133_a(this.func_70005_c_());
             p_110199_1_.func_110298_a(this, this.field_110296_bG);
@@ -903,7 +903,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
         this.func_110227_p(false);
         this.func_110219_q(false);
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             p_110237_1_.func_70078_a(this);
         }
@@ -950,7 +950,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         super.func_70645_a(p_70645_1_);
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.func_110244_cA();
         }
@@ -965,14 +965,14 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
 
         super.func_70636_d();
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (this.field_70146_Z.nextInt(900) == 0 && this.field_70725_aQ == 0)
             {
                 this.func_70691_i(1.0F);
             }
 
-            if (!this.func_110204_cc() && this.field_70153_n == null && this.field_70146_Z.nextInt(300) == 0 && this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) - 1, MathHelper.func_76128_c(this.field_70161_v)) == Blocks.GRASS)
+            if (!this.func_110204_cc() && this.field_70153_n == null && this.field_70146_Z.nextInt(300) == 0 && this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u) - 1, MathHelper.func_76128_c(this.field_70161_v)) == Blocks.GRASS)
             {
                 this.func_110227_p(true);
             }
@@ -989,7 +989,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
 
                 if (entityhorse != null && this.func_70068_e(entityhorse) > 4.0D)
                 {
-                    PathEntity pathentity = this.field_70170_p.func_72865_a(this, entityhorse, 16.0F, true, false, false, true);
+                    PathEntity pathentity = this.world.func_72865_a(this, entityhorse, 16.0F, true, false, false, true);
                     this.func_70778_a(pathentity);
                 }
             }
@@ -1000,7 +1000,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     {
         super.func_70071_h_();
 
-        if (this.field_70170_p.field_72995_K && this.field_70180_af.func_75684_a())
+        if (this.world.field_72995_K && this.field_70180_af.func_75684_a())
         {
             this.field_70180_af.func_111144_e();
             this.func_110230_cF();
@@ -1012,7 +1012,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
             this.func_110208_b(128, false);
         }
 
-        if (!this.field_70170_p.field_72995_K && this.field_110295_bF > 0 && ++this.field_110295_bF > 20)
+        if (!this.world.field_72995_K && this.field_110295_bF > 0 && ++this.field_110295_bF > 20)
         {
             this.field_110295_bF = 0;
             this.func_110219_q(false);
@@ -1101,7 +1101,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
 
     private void func_110249_cI()
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.field_110290_bE = 1;
             this.func_110208_b(128, true);
@@ -1135,7 +1135,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
 
     private void func_110220_cK()
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             this.field_110295_bF = 1;
             this.func_110219_q(true);
@@ -1161,7 +1161,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
 
     private void func_110240_a(Entity p_110240_1_, AnimalChest p_110240_2_)
     {
-        if (p_110240_2_ != null && !this.field_70170_p.field_72995_K)
+        if (p_110240_2_ != null && !this.world.field_72995_K)
         {
             for (int i = 0; i < p_110240_2_.func_70302_i_(); ++i)
             {
@@ -1232,7 +1232,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
             this.field_70138_W = 1.0F;
             this.field_70747_aH = this.func_70689_ay() * 0.1F;
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_70659_e((float)this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111126_e());
                 super.func_70612_e(p_70612_1_, p_70612_2_);
@@ -1409,7 +1409,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
     public EntityAgeable func_90011_a(EntityAgeable p_90011_1_)
     {
         EntityHorse entityhorse = (EntityHorse)p_90011_1_;
-        EntityHorse entityhorse1 = new EntityHorse(this.field_70170_p);
+        EntityHorse entityhorse1 = new EntityHorse(this.world);
         int i = this.func_110265_bP();
         int j = entityhorse.func_110265_bP();
         int k = 0;
@@ -1596,7 +1596,7 @@ public class EntityHorse extends EntityAnimal implements IInvBasic
             double d0 = this.field_70146_Z.nextGaussian() * 0.02D;
             double d1 = this.field_70146_Z.nextGaussian() * 0.02D;
             double d2 = this.field_70146_Z.nextGaussian() * 0.02D;
-            this.field_70170_p.func_72869_a(s, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
+            this.world.func_72869_a(s, this.field_70165_t + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, this.field_70163_u + 0.5D + (double)(this.field_70146_Z.nextFloat() * this.field_70131_O), this.field_70161_v + (double)(this.field_70146_Z.nextFloat() * this.field_70130_N * 2.0F) - (double)this.field_70130_N, d0, d1, d2);
         }
     }
 

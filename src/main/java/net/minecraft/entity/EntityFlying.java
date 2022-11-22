@@ -40,7 +40,7 @@ public abstract class EntityFlying extends EntityLiving
 
             if (this.field_70122_E)
             {
-                f2 = this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.91F;
+                f2 = this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.91F;
             }
 
             float f3 = 0.16277136F / (f2 * f2 * f2);
@@ -49,7 +49,7 @@ public abstract class EntityFlying extends EntityLiving
 
             if (this.field_70122_E)
             {
-                f2 = this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.91F;
+                f2 = this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70121_D.field_72338_b) - 1, MathHelper.func_76128_c(this.field_70161_v)).field_149765_K * 0.91F;
             }
 
             this.func_70091_d(this.field_70159_w, this.field_70181_x, this.field_70179_y);

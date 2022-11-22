@@ -30,7 +30,7 @@ public class FoodStats
 
     public void func_75118_a(EntityPlayer p_75118_1_)
     {
-        EnumDifficulty enumdifficulty = p_75118_1_.field_70170_p.field_73013_u;
+        EnumDifficulty enumdifficulty = p_75118_1_.world.field_73013_u;
         this.field_75124_e = this.field_75127_a;
 
         if (this.field_75126_c > 4.0F)
@@ -47,7 +47,7 @@ public class FoodStats
             }
         }
 
-        if (p_75118_1_.field_70170_p.func_82736_K().getBooleanValue("naturalRegeneration") && this.field_75127_a >= 18 && p_75118_1_.func_70996_bM())
+        if (p_75118_1_.world.func_82736_K().getBooleanValue("naturalRegeneration") && this.field_75127_a >= 18 && p_75118_1_.func_70996_bM())
         {
             ++this.field_75123_d;
 

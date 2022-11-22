@@ -47,11 +47,11 @@ public class EntityAIWatchClosest extends EntityAIBase
 
             if (this.field_75329_f == EntityPlayer.class)
             {
-                this.field_75334_a = this.field_75332_b.field_70170_p.func_72890_a(this.field_75332_b, (double)this.field_75333_c);
+                this.field_75334_a = this.field_75332_b.world.func_72890_a(this.field_75332_b, (double)this.field_75333_c);
             }
             else
             {
-                this.field_75334_a = this.field_75332_b.field_70170_p.func_72857_a(this.field_75329_f, this.field_75332_b.field_70121_D.func_72314_b((double)this.field_75333_c, 3.0D, (double)this.field_75333_c), this.field_75332_b);
+                this.field_75334_a = this.field_75332_b.world.func_72857_a(this.field_75329_f, this.field_75332_b.field_70121_D.func_72314_b((double)this.field_75333_c, 3.0D, (double)this.field_75333_c), this.field_75332_b);
             }
 
             return this.field_75334_a != null;

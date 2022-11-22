@@ -111,19 +111,19 @@ public class EntityFireworkRocket extends Entity
 
         if (this.field_92056_a == 0)
         {
-            this.field_70170_p.func_72956_a(this, "fireworks.launch", 3.0F, 1.0F);
+            this.world.func_72956_a(this, "fireworks.launch", 3.0F, 1.0F);
         }
 
         ++this.field_92056_a;
 
-        if (this.field_70170_p.field_72995_K && this.field_92056_a % 2 < 2)
+        if (this.world.field_72995_K && this.field_92056_a % 2 < 2)
         {
-            this.field_70170_p.func_72869_a("fireworksSpark", this.field_70165_t, this.field_70163_u - 0.3D, this.field_70161_v, this.field_70146_Z.nextGaussian() * 0.05D, -this.field_70181_x * 0.5D, this.field_70146_Z.nextGaussian() * 0.05D);
+            this.world.func_72869_a("fireworksSpark", this.field_70165_t, this.field_70163_u - 0.3D, this.field_70161_v, this.field_70146_Z.nextGaussian() * 0.05D, -this.field_70181_x * 0.5D, this.field_70146_Z.nextGaussian() * 0.05D);
         }
 
-        if (!this.field_70170_p.field_72995_K && this.field_92056_a > this.field_92055_b)
+        if (!this.world.field_72995_K && this.field_92056_a > this.field_92055_b)
         {
-            this.field_70170_p.func_72960_a(this, (byte)17);
+            this.world.func_72960_a(this, (byte)17);
             this.func_70106_y();
         }
     }
@@ -131,7 +131,7 @@ public class EntityFireworkRocket extends Entity
     @SideOnly(Side.CLIENT)
     public void func_70103_a(byte p_70103_1_)
     {
-        if (p_70103_1_ == 17 && this.field_70170_p.field_72995_K)
+        if (p_70103_1_ == 17 && this.world.field_72995_K)
         {
             ItemStack itemstack = this.field_70180_af.func_82710_f(8);
             NBTTagCompound nbttagcompound = null;
@@ -141,7 +141,7 @@ public class EntityFireworkRocket extends Entity
                 nbttagcompound = itemstack.func_77978_p().func_74775_l("Fireworks");
             }
 
-            this.field_70170_p.func_92088_a(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70159_w, this.field_70181_x, this.field_70179_y, nbttagcompound);
+            this.world.func_92088_a(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70159_w, this.field_70181_x, this.field_70179_y, nbttagcompound);
         }
 
         super.func_70103_a(p_70103_1_);

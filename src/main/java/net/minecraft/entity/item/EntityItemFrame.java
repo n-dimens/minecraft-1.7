@@ -43,7 +43,7 @@ public class EntityItemFrame extends EntityHanging
         }
         else if (this.func_82335_i() != null)
         {
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_146065_b(p_70097_1_.func_76346_g(), false);
                 this.func_82334_a((ItemStack)null);
@@ -114,7 +114,7 @@ public class EntityItemFrame extends EntityHanging
         {
             if (p_110131_1_.func_77973_b() == Items.FILLED_MAP)
             {
-                MapData mapdata = ((ItemMap)p_110131_1_.func_77973_b()).func_77873_a(p_110131_1_, this.field_70170_p);
+                MapData mapdata = ((ItemMap)p_110131_1_.func_77973_b()).func_77873_a(p_110131_1_, this.world);
                 mapdata.field_76203_h.remove("frame-" + this.func_145782_y());
             }
 
@@ -186,7 +186,7 @@ public class EntityItemFrame extends EntityHanging
         {
             ItemStack itemstack = p_130002_1_.func_70694_bm();
 
-            if (itemstack != null && !this.field_70170_p.field_72995_K)
+            if (itemstack != null && !this.world.field_72995_K)
             {
                 this.func_82334_a(itemstack);
 
@@ -196,7 +196,7 @@ public class EntityItemFrame extends EntityHanging
                 }
             }
         }
-        else if (!this.field_70170_p.field_72995_K)
+        else if (!this.world.field_72995_K)
         {
             this.func_82336_g(this.func_82333_j() + 1);
         }

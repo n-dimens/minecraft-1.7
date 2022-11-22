@@ -73,7 +73,7 @@ public class EntityLavaFX extends EntityFX
 
         if (this.field_70146_Z.nextFloat() > f)
         {
-            this.field_70170_p.func_72869_a("smoke", this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+            this.world.func_72869_a("smoke", this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70159_w, this.field_70181_x, this.field_70179_y);
         }
 
         this.field_70181_x -= 0.03D;

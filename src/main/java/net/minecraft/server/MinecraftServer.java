@@ -80,7 +80,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     private final File field_71308_o;
     private final List field_71322_p = new ArrayList();
     private final ICommandManager field_71321_q;
-    public final Profiler field_71304_b = new Profiler();
+    public final Profiler profiler = new Profiler();
     private final NetworkSystem field_147144_o;
     private final ServerStatusResponse field_147147_p = new ServerStatusResponse();
     private final Random field_147146_q = new Random();
@@ -225,16 +225,16 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
             {
                 if (this.func_71242_L())
                 {
-                    this.field_71305_c[j] = new DemoWorldServer(this, isavehandler, p_71247_2_, b0, this.field_71304_b);
+                    this.field_71305_c[j] = new DemoWorldServer(this, isavehandler, p_71247_2_, b0, this.profiler);
                 }
                 else
                 {
-                    this.field_71305_c[j] = new WorldServer(this, isavehandler, p_71247_2_, b0, worldsettings, this.field_71304_b);
+                    this.field_71305_c[j] = new WorldServer(this, isavehandler, p_71247_2_, b0, worldsettings, this.profiler);
                 }
             }
             else
             {
-                this.field_71305_c[j] = new WorldServerMulti(this, isavehandler, p_71247_2_, b0, worldsettings, this.field_71305_c[0], this.field_71304_b);
+                this.field_71305_c[j] = new WorldServerMulti(this, isavehandler, p_71247_2_, b0, worldsettings, this.field_71305_c[0], this.profiler);
             }
 
             this.field_71305_c[j].func_72954_a(new WorldManager(this, this.field_71305_c[j]));
@@ -534,11 +534,11 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
         if (this.field_71295_T)
         {
             this.field_71295_T = false;
-            this.field_71304_b.field_76327_a = true;
-            this.field_71304_b.func_76317_a();
+            this.profiler.enabled = true;
+            this.profiler.reset();
         }
 
-        this.field_71304_b.func_76320_a("root");
+        this.profiler.startMeasure("root");
         this.func_71190_q();
 
         if (i - this.field_147142_T >= 5000000000L)
@@ -559,16 +559,16 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
 
         if (this.field_71315_w % 900 == 0)
         {
-            this.field_71304_b.func_76320_a("save");
+            this.profiler.startMeasure("save");
             this.field_71318_t.func_72389_g();
             this.func_71267_a(true);
-            this.field_71304_b.func_76319_b();
+            this.profiler.endMeasure();
         }
 
-        this.field_71304_b.func_76320_a("tallying");
+        this.profiler.startMeasure("tallying");
         this.field_71311_j[this.field_71315_w % 100] = System.nanoTime() - i;
-        this.field_71304_b.func_76319_b();
-        this.field_71304_b.func_76320_a("snooper");
+        this.profiler.endMeasure();
+        this.profiler.startMeasure("snooper");
 
         if (!this.field_71307_n.func_76468_d() && this.field_71315_w > 100)
         {
@@ -580,13 +580,13 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
             this.field_71307_n.func_76471_b();
         }
 
-        this.field_71304_b.func_76319_b();
-        this.field_71304_b.func_76319_b();
+        this.profiler.endMeasure();
+        this.profiler.endMeasure();
     }
 
     public void func_71190_q()
     {
-        this.field_71304_b.func_76320_a("levels");
+        this.profiler.startMeasure("levels");
         int i;
 
         for (i = 0; i < this.field_71305_c.length; ++i)
@@ -596,18 +596,18 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
             if (i == 0 || this.func_71255_r())
             {
                 WorldServer worldserver = this.field_71305_c[i];
-                this.field_71304_b.func_76320_a(worldserver.func_72912_H().func_76065_j());
-                this.field_71304_b.func_76320_a("pools");
-                this.field_71304_b.func_76319_b();
+                this.profiler.startMeasure(worldserver.func_72912_H().func_76065_j());
+                this.profiler.startMeasure("pools");
+                this.profiler.endMeasure();
 
                 if (this.field_71315_w % 20 == 0)
                 {
-                    this.field_71304_b.func_76320_a("timeSync");
+                    this.profiler.startMeasure("timeSync");
                     this.field_71318_t.func_148537_a(new S03PacketTimeUpdate(worldserver.func_82737_E(), worldserver.func_72820_D(), worldserver.func_82736_K().getBooleanValue("doDaylightCycle")), worldserver.field_73011_w.field_76574_g);
-                    this.field_71304_b.func_76319_b();
+                    this.profiler.endMeasure();
                 }
 
-                this.field_71304_b.func_76320_a("tick");
+                this.profiler.startMeasure("tick");
                 CrashReport crashreport;
 
                 try
@@ -632,28 +632,28 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
                     throw new ReportedException(crashreport);
                 }
 
-                this.field_71304_b.func_76319_b();
-                this.field_71304_b.func_76320_a("tracker");
+                this.profiler.endMeasure();
+                this.profiler.startMeasure("tracker");
                 worldserver.func_73039_n().func_72788_a();
-                this.field_71304_b.func_76319_b();
-                this.field_71304_b.func_76319_b();
+                this.profiler.endMeasure();
+                this.profiler.endMeasure();
             }
 
             this.field_71312_k[i][this.field_71315_w % 100] = System.nanoTime() - j;
         }
 
-        this.field_71304_b.func_76318_c("connection");
+        this.profiler.startNewMeasure("connection");
         this.func_147137_ag().func_151269_c();
-        this.field_71304_b.func_76318_c("players");
+        this.profiler.startNewMeasure("players");
         this.field_71318_t.func_72374_b();
-        this.field_71304_b.func_76318_c("tickables");
+        this.profiler.startNewMeasure("tickables");
 
         for (i = 0; i < this.field_71322_p.size(); ++i)
         {
             ((IUpdatePlayerListBox)this.field_71322_p.get(i)).func_73660_a();
         }
 
-        this.field_71304_b.func_76319_b();
+        this.profiler.endMeasure();
     }
 
     public boolean func_71255_r()
@@ -725,7 +725,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
             private static final String __OBFID = "CL_00001419";
             public String call()
             {
-                return MinecraftServer.this.field_71304_b.field_76327_a ? MinecraftServer.this.field_71304_b.func_76322_c() : "N/A (disabled)";
+                return MinecraftServer.this.profiler.enabled ? MinecraftServer.this.profiler.getNextAction() : "N/A (disabled)";
             }
         });
 

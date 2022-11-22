@@ -96,7 +96,7 @@ public abstract class EntityAIDoorInteract extends EntityAIBase
 
     private BlockDoor func_151503_a(int p_151503_1_, int p_151503_2_, int p_151503_3_)
     {
-        Block block = this.field_75356_a.field_70170_p.func_147439_a(p_151503_1_, p_151503_2_, p_151503_3_);
+        Block block = this.field_75356_a.world.func_147439_a(p_151503_1_, p_151503_2_, p_151503_3_);
         return block != Blocks.WOODEN_DOOR ? null : (BlockDoor)block;
     }
 }

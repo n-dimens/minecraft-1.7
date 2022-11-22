@@ -17,11 +17,11 @@ public class EntityMinecartMobSpawner extends EntityMinecart
         private static final String __OBFID = "CL_00001679";
         public void func_98267_a(int p_98267_1_)
         {
-            EntityMinecartMobSpawner.this.field_70170_p.func_72960_a(EntityMinecartMobSpawner.this, (byte)p_98267_1_);
+            EntityMinecartMobSpawner.this.world.func_72960_a(EntityMinecartMobSpawner.this, (byte)p_98267_1_);
         }
         public World func_98271_a()
         {
-            return EntityMinecartMobSpawner.this.field_70170_p;
+            return EntityMinecartMobSpawner.this.world;
         }
         public int func_98275_b()
         {

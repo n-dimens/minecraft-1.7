@@ -72,7 +72,7 @@ public class EntityIronGolem extends EntityGolem
         if (--this.field_70858_e <= 0)
         {
             this.field_70858_e = 70 + this.field_70146_Z.nextInt(50);
-            this.field_70857_d = this.field_70170_p.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 32);
+            this.field_70857_d = this.world.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v), 32);
 
             if (this.field_70857_d == null)
             {
@@ -129,11 +129,11 @@ public class EntityIronGolem extends EntityGolem
             int i = MathHelper.func_76128_c(this.field_70165_t);
             int j = MathHelper.func_76128_c(this.field_70163_u - 0.20000000298023224D - (double)this.field_70129_M);
             int k = MathHelper.func_76128_c(this.field_70161_v);
-            Block block = this.field_70170_p.func_147439_a(i, j, k);
+            Block block = this.world.func_147439_a(i, j, k);
 
             if (block.func_149688_o() != Material.field_151579_a)
             {
-                this.field_70170_p.func_72869_a("blockcrack_" + Block.func_149682_b(block) + "_" + this.field_70170_p.func_72805_g(i, j, k), this.field_70165_t + ((double)this.field_70146_Z.nextFloat() - 0.5D) * (double)this.field_70130_N, this.field_70121_D.field_72338_b + 0.1D, this.field_70161_v + ((double)this.field_70146_Z.nextFloat() - 0.5D) * (double)this.field_70130_N, 4.0D * ((double)this.field_70146_Z.nextFloat() - 0.5D), 0.5D, ((double)this.field_70146_Z.nextFloat() - 0.5D) * 4.0D);
+                this.world.func_72869_a("blockcrack_" + Block.func_149682_b(block) + "_" + this.world.func_72805_g(i, j, k), this.field_70165_t + ((double)this.field_70146_Z.nextFloat() - 0.5D) * (double)this.field_70130_N, this.field_70121_D.field_72338_b + 0.1D, this.field_70161_v + ((double)this.field_70146_Z.nextFloat() - 0.5D) * (double)this.field_70130_N, 4.0D * ((double)this.field_70146_Z.nextFloat() - 0.5D), 0.5D, ((double)this.field_70146_Z.nextFloat() - 0.5D) * 4.0D);
             }
         }
     }
@@ -158,7 +158,7 @@ public class EntityIronGolem extends EntityGolem
     public boolean func_70652_k(Entity p_70652_1_)
     {
         this.field_70855_f = 10;
-        this.field_70170_p.func_72960_a(this, (byte)4);
+        this.world.func_72960_a(this, (byte)4);
         boolean flag = p_70652_1_.func_70097_a(DamageSource.func_76358_a(this), (float)(7 + this.field_70146_Z.nextInt(15)));
 
         if (flag)
@@ -202,7 +202,7 @@ public class EntityIronGolem extends EntityGolem
     public void func_70851_e(boolean p_70851_1_)
     {
         this.field_70856_g = p_70851_1_ ? 400 : 0;
-        this.field_70170_p.func_72960_a(this, (byte)11);
+        this.world.func_72960_a(this, (byte)11);
     }
 
     protected String func_70621_aR()

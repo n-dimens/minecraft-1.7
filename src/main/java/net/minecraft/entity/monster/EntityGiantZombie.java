@@ -24,6 +24,6 @@ public class EntityGiantZombie extends EntityMob
 
     public float func_70783_a(int p_70783_1_, int p_70783_2_, int p_70783_3_)
     {
-        return this.field_70170_p.func_72801_o(p_70783_1_, p_70783_2_, p_70783_3_) - 0.5F;
+        return this.world.func_72801_o(p_70783_1_, p_70783_2_, p_70783_3_) - 0.5F;
     }
 }

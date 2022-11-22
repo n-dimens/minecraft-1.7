@@ -31,7 +31,7 @@ public class EntityDiggingFX extends EntityFX
         }
         else
         {
-            int l = this.field_145784_a.func_149720_d(this.field_70170_p, p_70596_1_, p_70596_2_, p_70596_3_);
+            int l = this.field_145784_a.func_149720_d(this.world, p_70596_1_, p_70596_2_, p_70596_3_);
             this.field_70552_h *= (float)(l >> 16 & 255) / 255.0F;
             this.field_70553_i *= (float)(l >> 8 & 255) / 255.0F;
             this.field_70551_j *= (float)(l & 255) / 255.0F;

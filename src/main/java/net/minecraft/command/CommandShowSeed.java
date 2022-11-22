@@ -31,7 +31,7 @@ public class CommandShowSeed extends CommandBase
 
     public void func_71515_b(ICommandSender p_71515_1_, String[] p_71515_2_)
     {
-        Object object = p_71515_1_ instanceof EntityPlayer ? ((EntityPlayer)p_71515_1_).field_70170_p : MinecraftServer.func_71276_C().func_71218_a(0);
+        Object object = p_71515_1_ instanceof EntityPlayer ? ((EntityPlayer)p_71515_1_).world : MinecraftServer.func_71276_C().func_71218_a(0);
         p_71515_1_.func_145747_a(new ChatComponentTranslation("commands.seed.success", new Object[] {Long.valueOf(((World)object).func_72905_C())}));
     }
 }

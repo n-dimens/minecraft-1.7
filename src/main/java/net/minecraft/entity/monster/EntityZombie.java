@@ -147,7 +147,7 @@ public class EntityZombie extends EntityMob
     {
         this.func_70096_w().func_75692_b(12, Byte.valueOf((byte)(p_82227_1_ ? 1 : 0)));
 
-        if (this.field_70170_p != null && !this.field_70170_p.field_72995_K)
+        if (this.world != null && !this.world.field_72995_K)
         {
             IAttributeInstance iattributeinstance = this.func_110148_a(SharedMonsterAttributes.field_111263_d);
             iattributeinstance.func_111124_b(field_110188_br);
@@ -173,11 +173,11 @@ public class EntityZombie extends EntityMob
 
     public void func_70636_d()
     {
-        if (this.field_70170_p.func_72935_r() && !this.field_70170_p.field_72995_K && !this.func_70631_g_())
+        if (this.world.func_72935_r() && !this.world.field_72995_K && !this.func_70631_g_())
         {
             float f = this.func_70013_c(1.0F);
 
-            if (f > 0.5F && this.field_70146_Z.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.field_70170_p.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)))
+            if (f > 0.5F && this.field_70146_Z.nextFloat() * 30.0F < (f - 0.4F) * 2.0F && this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)))
             {
                 boolean flag = true;
                 ItemStack itemstack = this.func_71124_b(4);
@@ -233,12 +233,12 @@ public class EntityZombie extends EntityMob
                 entitylivingbase = (EntityLivingBase)p_70097_1_.func_76346_g();
             }
 
-            if (entitylivingbase != null && this.field_70170_p.field_73013_u == EnumDifficulty.HARD && (double)this.field_70146_Z.nextFloat() < this.func_110148_a(field_110186_bp).func_111126_e())
+            if (entitylivingbase != null && this.world.field_73013_u == EnumDifficulty.HARD && (double)this.field_70146_Z.nextFloat() < this.func_110148_a(field_110186_bp).func_111126_e())
             {
                 int i = MathHelper.func_76128_c(this.field_70165_t);
                 int j = MathHelper.func_76128_c(this.field_70163_u);
                 int k = MathHelper.func_76128_c(this.field_70161_v);
-                EntityZombie entityzombie = new EntityZombie(this.field_70170_p);
+                EntityZombie entityzombie = new EntityZombie(this.world);
 
                 for (int l = 0; l < 50; ++l)
                 {
@@ -246,13 +246,13 @@ public class EntityZombie extends EntityMob
                     int j1 = j + MathHelper.func_76136_a(this.field_70146_Z, 7, 40) * MathHelper.func_76136_a(this.field_70146_Z, -1, 1);
                     int k1 = k + MathHelper.func_76136_a(this.field_70146_Z, 7, 40) * MathHelper.func_76136_a(this.field_70146_Z, -1, 1);
 
-                    if (World.func_147466_a(this.field_70170_p, i1, j1 - 1, k1) && this.field_70170_p.func_72957_l(i1, j1, k1) < 10)
+                    if (World.func_147466_a(this.world, i1, j1 - 1, k1) && this.world.func_72957_l(i1, j1, k1) < 10)
                     {
                         entityzombie.func_70107_b((double)i1, (double)j1, (double)k1);
 
-                        if (this.field_70170_p.func_72855_b(entityzombie.field_70121_D) && this.field_70170_p.func_72945_a(entityzombie, entityzombie.field_70121_D).isEmpty() && !this.field_70170_p.func_72953_d(entityzombie.field_70121_D))
+                        if (this.world.func_72855_b(entityzombie.field_70121_D) && this.world.func_72945_a(entityzombie, entityzombie.field_70121_D).isEmpty() && !this.world.func_72953_d(entityzombie.field_70121_D))
                         {
-                            this.field_70170_p.func_72838_d(entityzombie);
+                            this.world.func_72838_d(entityzombie);
                             entityzombie.func_70624_b(entitylivingbase);
                             entityzombie.func_110161_a((IEntityLivingData)null);
                             this.func_110148_a(field_110186_bp).func_111121_a(new AttributeModifier("Zombie reinforcement caller charge", -0.05000000074505806D, 0));
@@ -269,7 +269,7 @@ public class EntityZombie extends EntityMob
 
     public void func_70071_h_()
     {
-        if (!this.field_70170_p.field_72995_K && this.func_82230_o())
+        if (!this.world.field_72995_K && this.func_82230_o())
         {
             int i = this.func_82233_q();
             this.field_82234_d -= i;
@@ -289,7 +289,7 @@ public class EntityZombie extends EntityMob
 
         if (flag)
         {
-            int i = this.field_70170_p.field_73013_u.func_151525_a();
+            int i = this.world.field_73013_u.func_151525_a();
 
             if (this.func_70694_bm() == null && this.func_70027_ad() && this.field_70146_Z.nextFloat() < (float)i * 0.3F)
             {
@@ -350,7 +350,7 @@ public class EntityZombie extends EntityMob
     {
         super.func_82164_bB();
 
-        if (this.field_70146_Z.nextFloat() < (this.field_70170_p.field_73013_u == EnumDifficulty.HARD ? 0.05F : 0.01F))
+        if (this.field_70146_Z.nextFloat() < (this.world.field_73013_u == EnumDifficulty.HARD ? 0.05F : 0.01F))
         {
             int i = this.field_70146_Z.nextInt(3);
 
@@ -409,16 +409,16 @@ public class EntityZombie extends EntityMob
     {
         super.func_70074_a(p_70074_1_);
 
-        if ((this.field_70170_p.field_73013_u == EnumDifficulty.NORMAL || this.field_70170_p.field_73013_u == EnumDifficulty.HARD) && p_70074_1_ instanceof EntityVillager)
+        if ((this.world.field_73013_u == EnumDifficulty.NORMAL || this.world.field_73013_u == EnumDifficulty.HARD) && p_70074_1_ instanceof EntityVillager)
         {
-            if (this.field_70170_p.field_73013_u != EnumDifficulty.HARD && this.field_70146_Z.nextBoolean())
+            if (this.world.field_73013_u != EnumDifficulty.HARD && this.field_70146_Z.nextBoolean())
             {
                 return;
             }
 
-            EntityZombie entityzombie = new EntityZombie(this.field_70170_p);
+            EntityZombie entityzombie = new EntityZombie(this.world);
             entityzombie.func_82149_j(p_70074_1_);
-            this.field_70170_p.func_72900_e(p_70074_1_);
+            this.world.func_72900_e(p_70074_1_);
             entityzombie.func_110161_a((IEntityLivingData)null);
             entityzombie.func_82229_g(true);
 
@@ -427,20 +427,20 @@ public class EntityZombie extends EntityMob
                 entityzombie.func_82227_f(true);
             }
 
-            this.field_70170_p.func_72838_d(entityzombie);
-            this.field_70170_p.func_72889_a((EntityPlayer)null, 1016, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
+            this.world.func_72838_d(entityzombie);
+            this.world.func_72889_a((EntityPlayer)null, 1016, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
         }
     }
 
     public IEntityLivingData func_110161_a(IEntityLivingData p_110161_1_)
     {
         Object p_110161_1_1 = super.func_110161_a(p_110161_1_);
-        float f = this.field_70170_p.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
+        float f = this.world.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
         this.func_98053_h(this.field_70146_Z.nextFloat() < 0.55F * f);
 
         if (p_110161_1_1 == null)
         {
-            p_110161_1_1 = new EntityZombie.GroupData(this.field_70170_p.field_73012_v.nextFloat() < 0.05F, this.field_70170_p.field_73012_v.nextFloat() < 0.05F, null);
+            p_110161_1_1 = new EntityZombie.GroupData(this.world.field_73012_v.nextFloat() < 0.05F, this.world.field_73012_v.nextFloat() < 0.05F, null);
         }
 
         if (p_110161_1_1 instanceof EntityZombie.GroupData)
@@ -456,9 +456,9 @@ public class EntityZombie extends EntityMob
             {
                 this.func_82227_f(true);
 
-                if ((double)this.field_70170_p.field_73012_v.nextFloat() < 0.05D)
+                if ((double)this.world.field_73012_v.nextFloat() < 0.05D)
                 {
-                    List list = this.field_70170_p.func_82733_a(EntityChicken.class, this.field_70121_D.func_72314_b(5.0D, 3.0D, 5.0D), IEntitySelector.field_152785_b);
+                    List list = this.world.func_82733_a(EntityChicken.class, this.field_70121_D.func_72314_b(5.0D, 3.0D, 5.0D), IEntitySelector.field_152785_b);
 
                     if (!list.isEmpty())
                     {
@@ -467,13 +467,13 @@ public class EntityZombie extends EntityMob
                         this.func_70078_a(entitychicken);
                     }
                 }
-                else if ((double)this.field_70170_p.field_73012_v.nextFloat() < 0.05D)
+                else if ((double)this.world.field_73012_v.nextFloat() < 0.05D)
                 {
-                    EntityChicken entitychicken1 = new EntityChicken(this.field_70170_p);
+                    EntityChicken entitychicken1 = new EntityChicken(this.world);
                     entitychicken1.func_70012_b(this.field_70165_t, this.field_70163_u, this.field_70161_v, this.field_70177_z, 0.0F);
                     entitychicken1.func_110161_a((IEntityLivingData)null);
                     entitychicken1.func_152117_i(true);
-                    this.field_70170_p.func_72838_d(entitychicken1);
+                    this.world.func_72838_d(entitychicken1);
                     this.func_70078_a(entitychicken1);
                 }
             }
@@ -485,7 +485,7 @@ public class EntityZombie extends EntityMob
 
         if (this.func_71124_b(4) == null)
         {
-            Calendar calendar = this.field_70170_p.func_83015_S();
+            Calendar calendar = this.world.func_83015_S();
 
             if (calendar.get(2) + 1 == 10 && calendar.get(5) == 31 && this.field_70146_Z.nextFloat() < 0.25F)
             {
@@ -495,7 +495,7 @@ public class EntityZombie extends EntityMob
         }
 
         this.func_110148_a(SharedMonsterAttributes.field_111266_c).func_111121_a(new AttributeModifier("Random spawn bonus", this.field_70146_Z.nextDouble() * 0.05000000074505806D, 0));
-        double d0 = this.field_70146_Z.nextDouble() * 1.5D * (double)this.field_70170_p.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
+        double d0 = this.field_70146_Z.nextDouble() * 1.5D * (double)this.world.func_147462_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
 
         if (d0 > 1.0D)
         {
@@ -528,7 +528,7 @@ public class EntityZombie extends EntityMob
                 p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
             }
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 this.func_82228_a(this.field_70146_Z.nextInt(2401) + 3600);
             }
@@ -546,8 +546,8 @@ public class EntityZombie extends EntityMob
         this.field_82234_d = p_82228_1_;
         this.func_70096_w().func_75692_b(14, Byte.valueOf((byte)1));
         this.func_82170_o(Potion.field_76437_t.field_76415_H);
-        this.func_70690_d(new PotionEffect(Potion.field_76420_g.field_76415_H, p_82228_1_, Math.min(this.field_70170_p.field_73013_u.func_151525_a() - 1, 0)));
-        this.field_70170_p.func_72960_a(this, (byte)16);
+        this.func_70690_d(new PotionEffect(Potion.field_76420_g.field_76415_H, p_82228_1_, Math.min(this.world.field_73013_u.func_151525_a() - 1, 0)));
+        this.world.func_72960_a(this, (byte)16);
     }
 
     @SideOnly(Side.CLIENT)
@@ -555,7 +555,7 @@ public class EntityZombie extends EntityMob
     {
         if (p_70103_1_ == 16)
         {
-            this.field_70170_p.func_72980_b(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "mob.zombie.remedy", 1.0F + this.field_70146_Z.nextFloat(), this.field_70146_Z.nextFloat() * 0.7F + 0.3F, false);
+            this.world.func_72980_b(this.field_70165_t + 0.5D, this.field_70163_u + 0.5D, this.field_70161_v + 0.5D, "mob.zombie.remedy", 1.0F + this.field_70146_Z.nextFloat(), this.field_70146_Z.nextFloat() * 0.7F + 0.3F, false);
         }
         else
         {
@@ -575,7 +575,7 @@ public class EntityZombie extends EntityMob
 
     protected void func_82232_p()
     {
-        EntityVillager entityvillager = new EntityVillager(this.field_70170_p);
+        EntityVillager entityvillager = new EntityVillager(this.world);
         entityvillager.func_82149_j(this);
         entityvillager.func_110161_a((IEntityLivingData)null);
         entityvillager.func_82187_q();
@@ -585,10 +585,10 @@ public class EntityZombie extends EntityMob
             entityvillager.func_70873_a(-24000);
         }
 
-        this.field_70170_p.func_72900_e(this);
-        this.field_70170_p.func_72838_d(entityvillager);
+        this.world.func_72900_e(this);
+        this.world.func_72838_d(entityvillager);
         entityvillager.func_70690_d(new PotionEffect(Potion.field_76431_k.field_76415_H, 200, 0));
-        this.field_70170_p.func_72889_a((EntityPlayer)null, 1017, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
+        this.world.func_72889_a((EntityPlayer)null, 1017, (int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v, 0);
     }
 
     protected int func_82233_q()
@@ -605,7 +605,7 @@ public class EntityZombie extends EntityMob
                 {
                     for (int i1 = (int)this.field_70161_v - 4; i1 < (int)this.field_70161_v + 4 && j < 14; ++i1)
                     {
-                        Block block = this.field_70170_p.func_147439_a(k, l, i1);
+                        Block block = this.world.func_147439_a(k, l, i1);
 
                         if (block == Blocks.IRON_BARS || block == Blocks.BED)
                         {

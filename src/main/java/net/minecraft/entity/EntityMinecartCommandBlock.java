@@ -40,7 +40,7 @@ public class EntityMinecartCommandBlock extends EntityMinecart
         }
         public World func_130014_f_()
         {
-            return EntityMinecartCommandBlock.this.field_70170_p;
+            return EntityMinecartCommandBlock.this.world;
         }
     };
     private int field_145823_b = 0;
@@ -96,14 +96,14 @@ public class EntityMinecartCommandBlock extends EntityMinecart
     {
         if (p_96095_4_ && this.field_70173_aa - this.field_145823_b >= 4)
         {
-            this.func_145822_e().func_145755_a(this.field_70170_p);
+            this.func_145822_e().func_145755_a(this.world);
             this.field_145823_b = this.field_70173_aa;
         }
     }
 
     public boolean func_130002_c(EntityPlayer p_130002_1_)
     {
-        if (this.field_70170_p.field_72995_K)
+        if (this.world.field_72995_K)
         {
             p_130002_1_.func_146095_a(this.func_145822_e());
         }

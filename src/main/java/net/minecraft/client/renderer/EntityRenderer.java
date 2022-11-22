@@ -931,14 +931,14 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
     public void func_78480_b(float p_78480_1_)
     {
-        this.field_78531_r.field_71424_I.func_76320_a("lightTex");
+        this.field_78531_r.profiler.startMeasure("lightTex");
 
         if (this.field_78536_aa)
         {
             this.func_78472_g(p_78480_1_);
         }
 
-        this.field_78531_r.field_71424_I.func_76319_b();
+        this.field_78531_r.profiler.endMeasure();
         boolean flag = Display.isActive();
 
         if (!flag && this.field_78531_r.gameSettings.field_82881_y && (!this.field_78531_r.gameSettings.field_85185_A || !Mouse.isButtonDown(1)))
@@ -953,7 +953,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             this.field_78508_Y = Minecraft.func_71386_F();
         }
 
-        this.field_78531_r.field_71424_I.func_76320_a("mouse");
+        this.field_78531_r.profiler.startMeasure("mouse");
 
         if (this.field_78531_r.field_71415_G && flag)
         {
@@ -985,7 +985,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             }
         }
 
-        this.field_78531_r.field_71424_I.func_76319_b();
+        this.field_78531_r.profiler.endMeasure();
 
         if (!this.field_78531_r.field_71454_w)
         {
@@ -999,7 +999,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
             if (this.field_78531_r.field_71441_e != null)
             {
-                this.field_78531_r.field_71424_I.func_76320_a("level");
+                this.field_78531_r.profiler.startMeasure("level");
 
                 if (this.field_78531_r.func_147107_h())
                 {
@@ -1025,7 +1025,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 }
 
                 this.field_78510_Z = System.nanoTime();
-                this.field_78531_r.field_71424_I.func_76318_c("gui");
+                this.field_78531_r.profiler.startNewMeasure("gui");
 
                 if (!this.field_78531_r.gameSettings.field_74319_N || this.field_78531_r.field_71462_r != null)
                 {
@@ -1033,7 +1033,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                     this.field_78531_r.field_71456_v.func_73830_a(p_78480_1_, this.field_78531_r.field_71462_r != null, k, l);
                 }
 
-                this.field_78531_r.field_71424_I.func_76319_b();
+                this.field_78531_r.profiler.endMeasure();
             }
             else
             {
@@ -1099,7 +1099,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
     public void func_78471_a(float p_78471_1_, long p_78471_2_)
     {
-        this.field_78531_r.field_71424_I.func_76320_a("lightTex");
+        this.field_78531_r.profiler.startMeasure("lightTex");
 
         if (this.field_78536_aa)
         {
@@ -1116,7 +1116,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             this.field_78531_r.field_71451_h = this.field_78531_r.field_71439_g;
         }
 
-        this.field_78531_r.field_71424_I.func_76318_c("pick");
+        this.field_78531_r.profiler.startNewMeasure("pick");
         this.func_78473_a(p_78471_1_);
         EntityLivingBase entitylivingbase = this.field_78531_r.field_71451_h;
         RenderGlobal renderglobal = this.field_78531_r.field_71438_f;
@@ -1124,7 +1124,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
         double d0 = entitylivingbase.field_70142_S + (entitylivingbase.field_70165_t - entitylivingbase.field_70142_S) * (double)p_78471_1_;
         double d1 = entitylivingbase.field_70137_T + (entitylivingbase.field_70163_u - entitylivingbase.field_70137_T) * (double)p_78471_1_;
         double d2 = entitylivingbase.field_70136_U + (entitylivingbase.field_70161_v - entitylivingbase.field_70136_U) * (double)p_78471_1_;
-        this.field_78531_r.field_71424_I.func_76318_c("center");
+        this.field_78531_r.profiler.startNewMeasure("center");
 
         for (int j = 0; j < 2; ++j)
         {
@@ -1142,21 +1142,21 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 }
             }
 
-            this.field_78531_r.field_71424_I.func_76318_c("clear");
+            this.field_78531_r.profiler.startNewMeasure("clear");
             GL11.glViewport(0, 0, this.field_78531_r.field_71443_c, this.field_78531_r.field_71440_d);
             this.func_78466_h(p_78471_1_);
             GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
             GL11.glEnable(GL11.GL_CULL_FACE);
-            this.field_78531_r.field_71424_I.func_76318_c("camera");
+            this.field_78531_r.profiler.startNewMeasure("camera");
             this.func_78479_a(p_78471_1_, j);
             ActiveRenderInfo.func_74583_a(this.field_78531_r.field_71439_g, this.field_78531_r.gameSettings.field_74320_O == 2);
-            this.field_78531_r.field_71424_I.func_76318_c("frustrum");
+            this.field_78531_r.profiler.startNewMeasure("frustrum");
             ClippingHelperImpl.func_78558_a();
 
             if (this.field_78531_r.gameSettings.field_151451_c >= 4)
             {
                 this.func_78468_a(-1, p_78471_1_);
-                this.field_78531_r.field_71424_I.func_76318_c("sky");
+                this.field_78531_r.profiler.startNewMeasure("sky");
                 renderglobal.func_72714_a(p_78471_1_);
             }
 
@@ -1168,14 +1168,14 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 GL11.glShadeModel(GL11.GL_SMOOTH);
             }
 
-            this.field_78531_r.field_71424_I.func_76318_c("culling");
+            this.field_78531_r.profiler.startNewMeasure("culling");
             Frustrum frustrum = new Frustrum();
             frustrum.func_78547_a(d0, d1, d2);
             this.field_78531_r.field_71438_f.func_72729_a(frustrum, p_78471_1_);
 
             if (j == 0)
             {
-                this.field_78531_r.field_71424_I.func_76318_c("updatechunks");
+                this.field_78531_r.profiler.startNewMeasure("updatechunks");
 
                 while (!this.field_78531_r.field_71438_f.func_72716_a(entitylivingbase, false) && p_78471_2_ != 0L)
                 {
@@ -1193,12 +1193,12 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 this.func_82829_a(renderglobal, p_78471_1_);
             }
 
-            this.field_78531_r.field_71424_I.func_76318_c("prepareterrain");
+            this.field_78531_r.profiler.startNewMeasure("prepareterrain");
             this.func_78468_a(0, p_78471_1_);
             GL11.glEnable(GL11.GL_FOG);
             this.field_78531_r.func_110434_K().func_110577_a(TextureMap.field_110575_b);
             RenderHelper.func_74518_a();
-            this.field_78531_r.field_71424_I.func_76318_c("terrain");
+            this.field_78531_r.profiler.startNewMeasure("terrain");
             GL11.glMatrixMode(GL11.GL_MODELVIEW);
             GL11.glPushMatrix();
             renderglobal.func_72719_a(entitylivingbase, 0, (double)p_78471_1_);
@@ -1212,7 +1212,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 GL11.glPopMatrix();
                 GL11.glPushMatrix();
                 RenderHelper.func_74519_b();
-                this.field_78531_r.field_71424_I.func_76318_c("entities");
+                this.field_78531_r.profiler.startNewMeasure("entities");
                 renderglobal.func_147589_a(entitylivingbase, frustrum, p_78471_1_);
                 RenderHelper.func_74518_a();
                 this.func_78483_a((double)p_78471_1_);
@@ -1224,7 +1224,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
                 {
                     entityplayer = (EntityPlayer)entitylivingbase;
                     GL11.glDisable(GL11.GL_ALPHA_TEST);
-                    this.field_78531_r.field_71424_I.func_76318_c("outline");
+                    this.field_78531_r.profiler.startNewMeasure("outline");
                     renderglobal.func_72731_b(entityplayer, this.field_78531_r.field_71476_x, 0, p_78471_1_);
                     GL11.glEnable(GL11.GL_ALPHA_TEST);
                 }
@@ -1237,12 +1237,12 @@ public class EntityRenderer implements IResourceManagerReloadListener
             {
                 entityplayer = (EntityPlayer)entitylivingbase;
                 GL11.glDisable(GL11.GL_ALPHA_TEST);
-                this.field_78531_r.field_71424_I.func_76318_c("outline");
+                this.field_78531_r.profiler.startNewMeasure("outline");
                 renderglobal.func_72731_b(entityplayer, this.field_78531_r.field_71476_x, 0, p_78471_1_);
                 GL11.glEnable(GL11.GL_ALPHA_TEST);
             }
 
-            this.field_78531_r.field_71424_I.func_76318_c("destroyProgress");
+            this.field_78531_r.profiler.startNewMeasure("destroyProgress");
             GL11.glEnable(GL11.GL_BLEND);
             OpenGlHelper.func_148821_a(770, 1, 1, 0);
             renderglobal.func_72717_a(Tessellator.field_78398_a, (EntityPlayer)entitylivingbase, p_78471_1_);
@@ -1251,18 +1251,18 @@ public class EntityRenderer implements IResourceManagerReloadListener
             if (this.field_78532_q == 0)
             {
                 this.func_78463_b((double)p_78471_1_);
-                this.field_78531_r.field_71424_I.func_76318_c("litParticles");
+                this.field_78531_r.profiler.startNewMeasure("litParticles");
                 effectrenderer.func_78872_b(entitylivingbase, p_78471_1_);
                 RenderHelper.func_74518_a();
                 this.func_78468_a(0, p_78471_1_);
-                this.field_78531_r.field_71424_I.func_76318_c("particles");
+                this.field_78531_r.profiler.startNewMeasure("particles");
                 effectrenderer.func_78874_a(entitylivingbase, p_78471_1_);
                 this.func_78483_a((double)p_78471_1_);
             }
 
             GL11.glDepthMask(false);
             GL11.glEnable(GL11.GL_CULL_FACE);
-            this.field_78531_r.field_71424_I.func_76318_c("weather");
+            this.field_78531_r.profiler.startNewMeasure("weather");
             this.func_78474_d(p_78471_1_);
             GL11.glDepthMask(true);
             GL11.glDisable(GL11.GL_BLEND);
@@ -1276,7 +1276,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
             if (this.field_78531_r.gameSettings.field_74347_j)
             {
-                this.field_78531_r.field_71424_I.func_76318_c("water");
+                this.field_78531_r.profiler.startNewMeasure("water");
 
                 if (this.field_78531_r.gameSettings.field_74348_k != 0)
                 {
@@ -1309,7 +1309,7 @@ public class EntityRenderer implements IResourceManagerReloadListener
             }
             else
             {
-                this.field_78531_r.field_71424_I.func_76318_c("water");
+                this.field_78531_r.profiler.startNewMeasure("water");
                 renderglobal.func_72719_a(entitylivingbase, 1, (double)p_78471_1_);
             }
 
@@ -1320,11 +1320,11 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
             if (entitylivingbase.field_70163_u >= 128.0D)
             {
-                this.field_78531_r.field_71424_I.func_76318_c("aboveClouds");
+                this.field_78531_r.profiler.startNewMeasure("aboveClouds");
                 this.func_82829_a(renderglobal, p_78471_1_);
             }
 
-            this.field_78531_r.field_71424_I.func_76318_c("hand");
+            this.field_78531_r.profiler.startNewMeasure("hand");
 
             if (this.field_78503_V == 1.0D)
             {
@@ -1334,20 +1334,20 @@ public class EntityRenderer implements IResourceManagerReloadListener
 
             if (!this.field_78531_r.gameSettings.field_74337_g)
             {
-                this.field_78531_r.field_71424_I.func_76319_b();
+                this.field_78531_r.profiler.endMeasure();
                 return;
             }
         }
 
         GL11.glColorMask(true, true, true, false);
-        this.field_78531_r.field_71424_I.func_76319_b();
+        this.field_78531_r.profiler.endMeasure();
     }
 
     private void func_82829_a(RenderGlobal p_82829_1_, float p_82829_2_)
     {
         if (this.field_78531_r.gameSettings.func_74309_c())
         {
-            this.field_78531_r.field_71424_I.func_76318_c("clouds");
+            this.field_78531_r.profiler.startNewMeasure("clouds");
             GL11.glPushMatrix();
             this.func_78468_a(0, p_82829_2_);
             GL11.glEnable(GL11.GL_FOG);

@@ -50,7 +50,7 @@ public class EntityAIAvoidEntity extends EntityAIBase
                 return false;
             }
 
-            this.field_75376_d = this.field_75380_a.field_70170_p.func_72890_a(this.field_75380_a, (double)this.field_75377_e);
+            this.field_75376_d = this.field_75380_a.world.func_72890_a(this.field_75380_a, (double)this.field_75377_e);
 
             if (this.field_75376_d == null)
             {
@@ -59,7 +59,7 @@ public class EntityAIAvoidEntity extends EntityAIBase
         }
         else
         {
-            List list = this.field_75380_a.field_70170_p.func_82733_a(this.field_75381_h, this.field_75380_a.field_70121_D.func_72314_b((double)this.field_75377_e, 3.0D, (double)this.field_75377_e), this.field_98218_a);
+            List list = this.field_75380_a.world.func_82733_a(this.field_75381_h, this.field_75380_a.field_70121_D.func_72314_b((double)this.field_75377_e, 3.0D, (double)this.field_75377_e), this.field_98218_a);
 
             if (list.isEmpty())
             {

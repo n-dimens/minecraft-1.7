@@ -54,11 +54,11 @@ public class EntityRainFX extends EntityFX
             this.field_70179_y *= 0.699999988079071D;
         }
 
-        Material material = this.field_70170_p.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o();
+        Material material = this.world.func_147439_a(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)).func_149688_o();
 
         if (material.func_76224_d() || material.func_76220_a())
         {
-            double d0 = (double)((float)(MathHelper.func_76128_c(this.field_70163_u) + 1) - BlockLiquid.func_149801_b(this.field_70170_p.func_72805_g(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v))));
+            double d0 = (double)((float)(MathHelper.func_76128_c(this.field_70163_u) + 1) - BlockLiquid.func_149801_b(this.world.func_72805_g(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v))));
 
             if (this.field_70163_u < d0)
             {

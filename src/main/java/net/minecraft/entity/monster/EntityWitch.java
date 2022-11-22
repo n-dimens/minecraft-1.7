@@ -94,7 +94,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
 
     public void func_70636_d()
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             if (this.func_82198_m())
             {
@@ -161,7 +161,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
 
             if (this.field_70146_Z.nextFloat() < 7.5E-4F)
             {
-                this.field_70170_p.func_72960_a(this, (byte)15);
+                this.world.func_72960_a(this, (byte)15);
             }
         }
 
@@ -175,7 +175,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
         {
             for (int i = 0; i < this.field_70146_Z.nextInt(35) + 10; ++i)
             {
-                this.field_70170_p.func_72869_a("witchMagic", this.field_70165_t + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, this.field_70121_D.field_72337_e + 0.5D + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, this.field_70161_v + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, 0.0D, 0.0D, 0.0D);
+                this.world.func_72869_a("witchMagic", this.field_70165_t + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, this.field_70121_D.field_72337_e + 0.5D + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, this.field_70161_v + this.field_70146_Z.nextGaussian() * 0.12999999523162842D, 0.0D, 0.0D, 0.0D);
             }
         }
         else
@@ -226,7 +226,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
     {
         if (!this.func_82198_m())
         {
-            EntityPotion entitypotion = new EntityPotion(this.field_70170_p, this, 32732);
+            EntityPotion entitypotion = new EntityPotion(this.world, this, 32732);
             entitypotion.field_70125_A -= -20.0F;
             double d0 = p_82196_1_.field_70165_t + p_82196_1_.field_70159_w - this.field_70165_t;
             double d1 = p_82196_1_.field_70163_u + (double)p_82196_1_.func_70047_e() - 1.100000023841858D - this.field_70163_u;
@@ -247,7 +247,7 @@ public class EntityWitch extends EntityMob implements IRangedAttackMob
             }
 
             entitypotion.func_70186_c(d0, d1 + (double)(f1 * 0.2F), d2, 0.75F, 8.0F);
-            this.field_70170_p.func_72838_d(entitypotion);
+            this.world.func_72838_d(entitypotion);
         }
     }
 }

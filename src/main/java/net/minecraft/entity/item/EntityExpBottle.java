@@ -41,16 +41,16 @@ public class EntityExpBottle extends EntityThrowable
 
     protected void func_70184_a(MovingObjectPosition p_70184_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
-            this.field_70170_p.func_72926_e(2002, (int)Math.round(this.field_70165_t), (int)Math.round(this.field_70163_u), (int)Math.round(this.field_70161_v), 0);
-            int i = 3 + this.field_70170_p.field_73012_v.nextInt(5) + this.field_70170_p.field_73012_v.nextInt(5);
+            this.world.func_72926_e(2002, (int)Math.round(this.field_70165_t), (int)Math.round(this.field_70163_u), (int)Math.round(this.field_70161_v), 0);
+            int i = 3 + this.world.field_73012_v.nextInt(5) + this.world.field_73012_v.nextInt(5);
 
             while (i > 0)
             {
                 int j = EntityXPOrb.func_70527_a(i);
                 i -= j;
-                this.field_70170_p.func_72838_d(new EntityXPOrb(this.field_70170_p, this.field_70165_t, this.field_70163_u, this.field_70161_v, j));
+                this.world.func_72838_d(new EntityXPOrb(this.world, this.field_70165_t, this.field_70163_u, this.field_70161_v, j));
             }
 
             this.func_70106_y();

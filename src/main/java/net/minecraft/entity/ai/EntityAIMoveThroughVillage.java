@@ -32,13 +32,13 @@ public class EntityAIMoveThroughVillage extends EntityAIBase
     {
         this.func_75414_f();
 
-        if (this.field_75417_e && this.field_75420_a.field_70170_p.func_72935_r())
+        if (this.field_75417_e && this.field_75420_a.world.func_72935_r())
         {
             return false;
         }
         else
         {
-            Village village = this.field_75420_a.field_70170_p.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_75420_a.field_70165_t), MathHelper.func_76128_c(this.field_75420_a.field_70163_u), MathHelper.func_76128_c(this.field_75420_a.field_70161_v), 0);
+            Village village = this.field_75420_a.world.field_72982_D.func_75550_a(MathHelper.func_76128_c(this.field_75420_a.field_70165_t), MathHelper.func_76128_c(this.field_75420_a.field_70163_u), MathHelper.func_76128_c(this.field_75420_a.field_70161_v), 0);
 
             if (village == null)
             {

@@ -81,7 +81,7 @@ public class ItemInWorldManager
             }
             else
             {
-                f = block.func_149737_a(this.field_73090_b, this.field_73090_b.field_70170_p, this.field_73098_k, this.field_73095_l, this.field_73096_m) * (float)(i + 1);
+                f = block.func_149737_a(this.field_73090_b, this.field_73090_b.world, this.field_73098_k, this.field_73095_l, this.field_73096_m) * (float)(i + 1);
                 j = (int)(f * 10.0F);
 
                 if (j != this.field_73094_o)
@@ -110,7 +110,7 @@ public class ItemInWorldManager
             else
             {
                 int k = this.field_73100_i - this.field_73089_e;
-                f = block1.func_149737_a(this.field_73090_b, this.field_73090_b.field_70170_p, this.field_73086_f, this.field_73087_g, this.field_73099_h) * (float)(k + 1);
+                f = block1.func_149737_a(this.field_73090_b, this.field_73090_b.world, this.field_73086_f, this.field_73087_g, this.field_73099_h) * (float)(k + 1);
                 j = (int)(f * 10.0F);
 
                 if (j != this.field_73094_o)
@@ -143,7 +143,7 @@ public class ItemInWorldManager
                 if (block.func_149688_o() != Material.field_151579_a)
                 {
                     block.func_149699_a(this.field_73092_a, p_73074_1_, p_73074_2_, p_73074_3_, this.field_73090_b);
-                    f = block.func_149737_a(this.field_73090_b, this.field_73090_b.field_70170_p, p_73074_1_, p_73074_2_, p_73074_3_);
+                    f = block.func_149737_a(this.field_73090_b, this.field_73090_b.world, p_73074_1_, p_73074_2_, p_73074_3_);
                 }
 
                 if (block.func_149688_o() != Material.field_151579_a && f >= 1.0F)
@@ -173,7 +173,7 @@ public class ItemInWorldManager
 
             if (block.func_149688_o() != Material.field_151579_a)
             {
-                float f = block.func_149737_a(this.field_73090_b, this.field_73090_b.field_70170_p, p_73082_1_, p_73082_2_, p_73082_3_) * (float)(l + 1);
+                float f = block.func_149737_a(this.field_73090_b, this.field_73090_b.world, p_73082_1_, p_73082_2_, p_73082_3_) * (float)(l + 1);
 
                 if (f >= 0.7F)
                 {

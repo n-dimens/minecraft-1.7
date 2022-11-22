@@ -78,7 +78,7 @@ public abstract class EntityFireball extends Entity
 
     public void func_70071_h_()
     {
-        if (!this.field_70170_p.field_72995_K && (this.field_70235_a != null && this.field_70235_a.field_70128_L || !this.field_70170_p.func_72899_e((int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v)))
+        if (!this.world.field_72995_K && (this.field_70235_a != null && this.field_70235_a.field_70128_L || !this.world.func_72899_e((int)this.field_70165_t, (int)this.field_70163_u, (int)this.field_70161_v)))
         {
             this.func_70106_y();
         }
@@ -89,7 +89,7 @@ public abstract class EntityFireball extends Entity
 
             if (this.field_70238_i)
             {
-                if (this.field_70170_p.func_147439_a(this.field_145795_e, this.field_145793_f, this.field_145794_g) == this.field_145796_h)
+                if (this.world.func_147439_a(this.field_145795_e, this.field_145793_f, this.field_145794_g) == this.field_145796_h)
                 {
                     ++this.field_70236_j;
 
@@ -115,7 +115,7 @@ public abstract class EntityFireball extends Entity
 
             Vec3 vec3 = Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v);
             Vec3 vec31 = Vec3.func_72443_a(this.field_70165_t + this.field_70159_w, this.field_70163_u + this.field_70181_x, this.field_70161_v + this.field_70179_y);
-            MovingObjectPosition movingobjectposition = this.field_70170_p.func_72933_a(vec3, vec31);
+            MovingObjectPosition movingobjectposition = this.world.func_72933_a(vec3, vec31);
             vec3 = Vec3.func_72443_a(this.field_70165_t, this.field_70163_u, this.field_70161_v);
             vec31 = Vec3.func_72443_a(this.field_70165_t + this.field_70159_w, this.field_70163_u + this.field_70181_x, this.field_70161_v + this.field_70179_y);
 
@@ -125,7 +125,7 @@ public abstract class EntityFireball extends Entity
             }
 
             Entity entity = null;
-            List list = this.field_70170_p.func_72839_b(this, this.field_70121_D.func_72321_a(this.field_70159_w, this.field_70181_x, this.field_70179_y).func_72314_b(1.0D, 1.0D, 1.0D));
+            List list = this.world.func_72839_b(this, this.field_70121_D.func_72321_a(this.field_70159_w, this.field_70181_x, this.field_70179_y).func_72314_b(1.0D, 1.0D, 1.0D));
             double d0 = 0.0D;
 
             for (int i = 0; i < list.size(); ++i)
@@ -196,7 +196,7 @@ public abstract class EntityFireball extends Entity
                 for (int j = 0; j < 4; ++j)
                 {
                     float f3 = 0.25F;
-                    this.field_70170_p.func_72869_a("bubble", this.field_70165_t - this.field_70159_w * (double)f3, this.field_70163_u - this.field_70181_x * (double)f3, this.field_70161_v - this.field_70179_y * (double)f3, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+                    this.world.func_72869_a("bubble", this.field_70165_t - this.field_70159_w * (double)f3, this.field_70163_u - this.field_70181_x * (double)f3, this.field_70161_v - this.field_70179_y * (double)f3, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                 }
 
                 f2 = 0.8F;
@@ -208,7 +208,7 @@ public abstract class EntityFireball extends Entity
             this.field_70159_w *= (double)f2;
             this.field_70181_x *= (double)f2;
             this.field_70179_y *= (double)f2;
-            this.field_70170_p.func_72869_a("smoke", this.field_70165_t, this.field_70163_u + 0.5D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("smoke", this.field_70165_t, this.field_70163_u + 0.5D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
             this.func_70107_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
         }
     }

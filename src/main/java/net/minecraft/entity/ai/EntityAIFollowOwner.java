@@ -22,7 +22,7 @@ public class EntityAIFollowOwner extends EntityAIBase
     public EntityAIFollowOwner(EntityTameable p_i1625_1_, double p_i1625_2_, float p_i1625_4_, float p_i1625_5_)
     {
         this.field_75338_d = p_i1625_1_;
-        this.field_75342_a = p_i1625_1_.field_70170_p;
+        this.field_75342_a = p_i1625_1_.world;
         this.field_75336_f = p_i1625_2_;
         this.field_75337_g = p_i1625_1_.func_70661_as();
         this.field_75341_c = p_i1625_4_;

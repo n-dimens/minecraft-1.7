@@ -26,7 +26,7 @@ public class EntityAIFollowParent extends EntityAIBase
         }
         else
         {
-            List list = this.field_75348_a.field_70170_p.func_72872_a(this.field_75348_a.getClass(), this.field_75348_a.field_70121_D.func_72314_b(8.0D, 4.0D, 8.0D));
+            List list = this.field_75348_a.world.func_72872_a(this.field_75348_a.getClass(), this.field_75348_a.field_70121_D.func_72314_b(8.0D, 4.0D, 8.0D));
             EntityAnimal entityanimal = null;
             double d0 = Double.MAX_VALUE;
             Iterator iterator = list.iterator();

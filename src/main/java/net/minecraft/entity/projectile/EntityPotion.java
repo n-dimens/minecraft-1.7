@@ -84,14 +84,14 @@ public class EntityPotion extends EntityThrowable
 
     protected void func_70184_a(MovingObjectPosition p_70184_1_)
     {
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             List list = Items.POTION.func_77832_l(this.field_70197_d);
 
             if (list != null && !list.isEmpty())
             {
                 AxisAlignedBB axisalignedbb = this.field_70121_D.func_72314_b(4.0D, 2.0D, 4.0D);
-                List list1 = this.field_70170_p.func_72872_a(EntityLivingBase.class, axisalignedbb);
+                List list1 = this.world.func_72872_a(EntityLivingBase.class, axisalignedbb);
 
                 if (list1 != null && !list1.isEmpty())
                 {
@@ -137,7 +137,7 @@ public class EntityPotion extends EntityThrowable
                 }
             }
 
-            this.field_70170_p.func_72926_e(2002, (int)Math.round(this.field_70165_t), (int)Math.round(this.field_70163_u), (int)Math.round(this.field_70161_v), this.func_70196_i());
+            this.world.func_72926_e(2002, (int)Math.round(this.field_70165_t), (int)Math.round(this.field_70163_u), (int)Math.round(this.field_70161_v), this.func_70196_i());
             this.func_70106_y();
         }
     }

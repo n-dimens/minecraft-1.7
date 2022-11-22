@@ -56,7 +56,7 @@ public class EntityMinecartFurnace extends EntityMinecart
 
         if (this.func_94108_c() && this.field_70146_Z.nextInt(4) == 0)
         {
-            this.field_70170_p.func_72869_a("largesmoke", this.field_70165_t, this.field_70163_u + 0.8D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
+            this.world.func_72869_a("largesmoke", this.field_70165_t, this.field_70163_u + 0.8D, this.field_70161_v, 0.0D, 0.0D, 0.0D);
         }
     }
 

@@ -59,7 +59,7 @@ public class EntitySnowman extends EntityGolem implements IRangedAttackMob
             this.func_70097_a(DamageSource.field_76369_e, 1.0F);
         }
 
-        if (this.field_70170_p.func_72807_a(i, k).func_150564_a(i, j, k) > 1.0F)
+        if (this.world.func_72807_a(i, k).func_150564_a(i, j, k) > 1.0F)
         {
             this.func_70097_a(DamageSource.field_76370_b, 1.0F);
         }
@@ -70,9 +70,9 @@ public class EntitySnowman extends EntityGolem implements IRangedAttackMob
             j = MathHelper.func_76128_c(this.field_70163_u);
             k = MathHelper.func_76128_c(this.field_70161_v + (double)((float)(l / 2 % 2 * 2 - 1) * 0.25F));
 
-            if (this.field_70170_p.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && this.field_70170_p.func_72807_a(i, k).func_150564_a(i, j, k) < 0.8F && Blocks.SNOW_LAYER.func_149742_c(this.field_70170_p, i, j, k))
+            if (this.world.func_147439_a(i, j, k).func_149688_o() == Material.field_151579_a && this.world.func_72807_a(i, k).func_150564_a(i, j, k) < 0.8F && Blocks.SNOW_LAYER.func_149742_c(this.world, i, j, k))
             {
-                this.field_70170_p.func_147449_b(i, j, k, Blocks.SNOW_LAYER);
+                this.world.func_147449_b(i, j, k, Blocks.SNOW_LAYER);
             }
         }
     }
@@ -94,13 +94,13 @@ public class EntitySnowman extends EntityGolem implements IRangedAttackMob
 
     public void func_82196_d(EntityLivingBase p_82196_1_, float p_82196_2_)
     {
-        EntitySnowball entitysnowball = new EntitySnowball(this.field_70170_p, this);
+        EntitySnowball entitysnowball = new EntitySnowball(this.world, this);
         double d0 = p_82196_1_.field_70165_t - this.field_70165_t;
         double d1 = p_82196_1_.field_70163_u + (double)p_82196_1_.func_70047_e() - 1.100000023841858D - entitysnowball.field_70163_u;
         double d2 = p_82196_1_.field_70161_v - this.field_70161_v;
         float f1 = MathHelper.func_76133_a(d0 * d0 + d2 * d2) * 0.2F;
         entitysnowball.func_70186_c(d0, d1 + (double)f1, d2, 1.6F, 12.0F);
         this.func_85030_a("random.bow", 1.0F, 1.0F / (this.func_70681_au().nextFloat() * 0.4F + 0.8F));
-        this.field_70170_p.func_72838_d(entitysnowball);
+        this.world.func_72838_d(entitysnowball);
     }
 }

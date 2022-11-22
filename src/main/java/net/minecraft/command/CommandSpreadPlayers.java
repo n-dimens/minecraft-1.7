@@ -92,7 +92,7 @@ public class CommandSpreadPlayers extends CommandBase
                 }
 
                 p_71515_1_.func_145747_a(new ChatComponentTranslation("commands.spreadplayers.spreading." + (flag ? "teams" : "players"), new Object[] {Integer.valueOf(arraylist.size()), Double.valueOf(d3), Double.valueOf(d0), Double.valueOf(d1), Double.valueOf(d2)}));
-                this.func_110669_a(p_71515_1_, arraylist, new CommandSpreadPlayers.Position(d0, d1), d2, d3, ((EntityLivingBase)arraylist.get(0)).field_70170_p, flag);
+                this.func_110669_a(p_71515_1_, arraylist, new CommandSpreadPlayers.Position(d0, d1), d2, d3, ((EntityLivingBase)arraylist.get(0)).world, flag);
                 return;
             }
         }

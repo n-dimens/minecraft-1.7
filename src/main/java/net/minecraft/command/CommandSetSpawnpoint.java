@@ -30,7 +30,7 @@ public class CommandSetSpawnpoint extends CommandBase
 
         if (p_71515_2_.length == 4)
         {
-            if (entityplayermp.field_70170_p != null)
+            if (entityplayermp.world != null)
             {
                 byte b0 = 1;
                 int i = 30000000;

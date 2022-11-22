@@ -42,7 +42,7 @@ public class EntitySilverfish extends EntityMob
     protected Entity func_70782_k()
     {
         double d0 = 8.0D;
-        return this.field_70170_p.func_72856_b(this, d0);
+        return this.world.func_72856_b(this, d0);
     }
 
     protected String func_70639_aQ()
@@ -106,7 +106,7 @@ public class EntitySilverfish extends EntityMob
     {
         super.func_70626_be();
 
-        if (!this.field_70170_p.field_72995_K)
+        if (!this.world.field_72995_K)
         {
             int i;
             int j;
@@ -130,20 +130,20 @@ public class EntitySilverfish extends EntityMob
                         {
                             for (int j1 = 0; !flag && j1 <= 10 && j1 >= -10; j1 = j1 <= 0 ? 1 - j1 : 0 - j1)
                             {
-                                if (this.field_70170_p.func_147439_a(i + i1, j + l, k + j1) == Blocks.MONSTER_EGG)
+                                if (this.world.func_147439_a(i + i1, j + l, k + j1) == Blocks.MONSTER_EGG)
                                 {
-                                    if (!this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
+                                    if (!this.world.func_82736_K().getBooleanValue("mobGriefing"))
                                     {
-                                        int k1 = this.field_70170_p.func_72805_g(i + i1, j + l, k + j1);
+                                        int k1 = this.world.func_72805_g(i + i1, j + l, k + j1);
                                         ImmutablePair immutablepair = BlockSilverfish.func_150197_b(k1);
-                                        this.field_70170_p.func_147465_d(i + i1, j + l, k + j1, (Block)immutablepair.getLeft(), ((Integer)immutablepair.getRight()).intValue(), 3);
+                                        this.world.func_147465_d(i + i1, j + l, k + j1, (Block)immutablepair.getLeft(), ((Integer)immutablepair.getRight()).intValue(), 3);
                                     }
                                     else
                                     {
-                                        this.field_70170_p.func_147480_a(i + i1, j + l, k + j1, false);
+                                        this.world.func_147480_a(i + i1, j + l, k + j1, false);
                                     }
 
-                                    Blocks.MONSTER_EGG.func_149664_b(this.field_70170_p, i + i1, j + l, k + j1, 0);
+                                    Blocks.MONSTER_EGG.func_149664_b(this.world, i + i1, j + l, k + j1, 0);
 
                                     if (this.field_70146_Z.nextBoolean())
                                     {
@@ -163,12 +163,12 @@ public class EntitySilverfish extends EntityMob
                 j = MathHelper.func_76128_c(this.field_70163_u + 0.5D);
                 k = MathHelper.func_76128_c(this.field_70161_v);
                 int l1 = this.field_70146_Z.nextInt(6);
-                Block block = this.field_70170_p.func_147439_a(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1]);
-                i1 = this.field_70170_p.func_72805_g(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1]);
+                Block block = this.world.func_147439_a(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1]);
+                i1 = this.world.func_72805_g(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1]);
 
                 if (BlockSilverfish.func_150196_a(block))
                 {
-                    this.field_70170_p.func_147465_d(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1], Blocks.MONSTER_EGG, BlockSilverfish.func_150195_a(block, i1), 3);
+                    this.world.func_147465_d(i + Facing.field_71586_b[l1], j + Facing.field_71587_c[l1], k + Facing.field_71585_d[l1], Blocks.MONSTER_EGG, BlockSilverfish.func_150195_a(block, i1), 3);
                     this.func_70656_aK();
                     this.func_70106_y();
                 }
@@ -186,7 +186,7 @@ public class EntitySilverfish extends EntityMob
 
     public float func_70783_a(int p_70783_1_, int p_70783_2_, int p_70783_3_)
     {
-        return this.field_70170_p.func_147439_a(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == Blocks.STONE ? 10.0F : super.func_70783_a(p_70783_1_, p_70783_2_, p_70783_3_);
+        return this.world.func_147439_a(p_70783_1_, p_70783_2_ - 1, p_70783_3_) == Blocks.STONE ? 10.0F : super.func_70783_a(p_70783_1_, p_70783_2_, p_70783_3_);
     }
 
     protected boolean func_70814_o()
@@ -198,7 +198,7 @@ public class EntitySilverfish extends EntityMob
     {
         if (super.func_70601_bi())
         {
-            EntityPlayer entityplayer = this.field_70170_p.func_72890_a(this, 5.0D);
+            EntityPlayer entityplayer = this.world.func_72890_a(this, 5.0D);
             return entityplayer == null;
         }
         else

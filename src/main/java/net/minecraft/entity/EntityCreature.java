@@ -39,7 +39,7 @@ public abstract class EntityCreature extends EntityLiving
 
     protected void func_70626_be()
     {
-        this.field_70170_p.field_72984_F.func_76320_a("ai");
+        this.world.profiler.startMeasure("ai");
 
         if (this.field_70788_c > 0 && --this.field_70788_c == 0)
         {
@@ -56,7 +56,7 @@ public abstract class EntityCreature extends EntityLiving
 
             if (this.field_70789_a != null)
             {
-                this.field_70786_d = this.field_70170_p.func_72865_a(this, this.field_70789_a, f4, true, false, false, true);
+                this.field_70786_d = this.world.func_72865_a(this, this.field_70789_a, f4, true, false, false, true);
             }
         }
         else if (this.field_70789_a.func_70089_S())
@@ -78,11 +78,11 @@ public abstract class EntityCreature extends EntityLiving
             this.field_70789_a = null;
         }
 
-        this.field_70170_p.field_72984_F.func_76319_b();
+        this.world.profiler.endMeasure();
 
         if (!this.field_70787_b && this.field_70789_a != null && (this.field_70786_d == null || this.field_70146_Z.nextInt(20) == 0))
         {
-            this.field_70786_d = this.field_70170_p.func_72865_a(this, this.field_70789_a, f4, true, false, false, true);
+            this.field_70786_d = this.world.func_72865_a(this, this.field_70789_a, f4, true, false, false, true);
         }
         else if (!this.field_70787_b && (this.field_70786_d == null && this.field_70146_Z.nextInt(180) == 0 || this.field_70146_Z.nextInt(120) == 0 || this.field_70788_c > 0) && this.field_70708_bq < 100)
         {
@@ -96,7 +96,7 @@ public abstract class EntityCreature extends EntityLiving
 
         if (this.field_70786_d != null && this.field_70146_Z.nextInt(100) != 0)
         {
-            this.field_70170_p.field_72984_F.func_76320_a("followpath");
+            this.world.profiler.startMeasure("followpath");
             Vec3 vec3 = this.field_70786_d.func_75878_a(this);
             double d0 = (double)(this.field_70130_N * 2.0F);
 
@@ -170,7 +170,7 @@ public abstract class EntityCreature extends EntityLiving
                 this.field_70703_bu = true;
             }
 
-            this.field_70170_p.field_72984_F.func_76319_b();
+            this.world.profiler.endMeasure();
         }
         else
         {
@@ -181,7 +181,7 @@ public abstract class EntityCreature extends EntityLiving
 
     protected void func_70779_j()
     {
-        this.field_70170_p.field_72984_F.func_76320_a("stroll");
+        this.world.profiler.startMeasure("stroll");
         boolean flag = false;
         int i = -1;
         int j = -1;
@@ -207,10 +207,10 @@ public abstract class EntityCreature extends EntityLiving
 
         if (flag)
         {
-            this.field_70786_d = this.field_70170_p.func_72844_a(this, i, j, k, 10.0F, true, false, false, true);
+            this.field_70786_d = this.world.func_72844_a(this, i, j, k, 10.0F, true, false, false, true);
         }
 
-        this.field_70170_p.field_72984_F.func_76319_b();
+        this.world.profiler.endMeasure();
     }
 
     protected void func_70785_a(Entity p_70785_1_, float p_70785_2_) {}
@@ -293,7 +293,7 @@ public abstract class EntityCreature extends EntityLiving
     {
         super.func_110159_bB();
 
-        if (this.func_110167_bD() && this.func_110166_bE() != null && this.func_110166_bE().field_70170_p == this.field_70170_p)
+        if (this.func_110167_bD() && this.func_110166_bE() != null && this.func_110166_bE().world == this.world)
         {
             Entity entity = this.func_110166_bE();
             this.func_110171_b((int)entity.field_70165_t, (int)entity.field_70163_u, (int)entity.field_70161_v, 5);

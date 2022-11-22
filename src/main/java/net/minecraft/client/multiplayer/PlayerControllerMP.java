@@ -164,7 +164,7 @@ public class PlayerControllerMP
                     block.func_149699_a(this.field_78776_a.field_71441_e, p_78743_1_, p_78743_2_, p_78743_3_, this.field_78776_a.field_71439_g);
                 }
 
-                if (flag && block.func_149737_a(this.field_78776_a.field_71439_g, this.field_78776_a.field_71439_g.field_70170_p, p_78743_1_, p_78743_2_, p_78743_3_) >= 1.0F)
+                if (flag && block.func_149737_a(this.field_78776_a.field_71439_g, this.field_78776_a.field_71439_g.world, p_78743_1_, p_78743_2_, p_78743_3_) >= 1.0F)
                 {
                     this.func_78751_a(p_78743_1_, p_78743_2_, p_78743_3_, p_78743_4_);
                 }
@@ -221,7 +221,7 @@ public class PlayerControllerMP
                     return;
                 }
 
-                this.field_78770_f += block.func_149737_a(this.field_78776_a.field_71439_g, this.field_78776_a.field_71439_g.field_70170_p, p_78759_1_, p_78759_2_, p_78759_3_);
+                this.field_78770_f += block.func_149737_a(this.field_78776_a.field_71439_g, this.field_78776_a.field_71439_g.world, p_78759_1_, p_78759_2_, p_78759_3_);
 
                 if (this.field_78780_h % 4.0F == 0.0F)
                 {

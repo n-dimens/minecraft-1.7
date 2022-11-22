@@ -18,7 +18,7 @@ public class EntityAILookAtVillager extends EntityAIBase
 
     public boolean func_75250_a()
     {
-        if (!this.field_75397_a.field_70170_p.func_72935_r())
+        if (!this.field_75397_a.world.func_72935_r())
         {
             return false;
         }
@@ -28,7 +28,7 @@ public class EntityAILookAtVillager extends EntityAIBase
         }
         else
         {
-            this.field_75395_b = (EntityVillager)this.field_75397_a.field_70170_p.func_72857_a(EntityVillager.class, this.field_75397_a.field_70121_D.func_72314_b(6.0D, 2.0D, 6.0D), this.field_75397_a);
+            this.field_75395_b = (EntityVillager)this.field_75397_a.world.func_72857_a(EntityVillager.class, this.field_75397_a.field_70121_D.func_72314_b(6.0D, 2.0D, 6.0D), this.field_75397_a);
             return this.field_75395_b != null;
         }
     }

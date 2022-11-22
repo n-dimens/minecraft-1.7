@@ -35,9 +35,9 @@ public class EntitySenses
         }
         else
         {
-            this.field_75526_a.field_70170_p.field_72984_F.func_76320_a("canSee");
+            this.field_75526_a.world.profiler.startMeasure("canSee");
             boolean flag = this.field_75526_a.func_70685_l(p_75522_1_);
-            this.field_75526_a.field_70170_p.field_72984_F.func_76319_b();
+            this.field_75526_a.world.profiler.endMeasure();
 
             if (flag)
             {

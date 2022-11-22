@@ -14,7 +14,7 @@ public class EntityAIRestrictSun extends EntityAIBase
 
     public boolean func_75250_a()
     {
-        return this.field_75273_a.field_70170_p.func_72935_r();
+        return this.field_75273_a.world.func_72935_r();
     }
 
     public void func_75249_e()

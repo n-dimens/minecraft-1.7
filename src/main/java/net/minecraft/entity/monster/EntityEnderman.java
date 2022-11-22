@@ -70,7 +70,7 @@ public class EntityEnderman extends EntityMob
 
     protected Entity func_70782_k()
     {
-        EntityPlayer entityplayer = this.field_70170_p.func_72856_b(this, 64.0D);
+        EntityPlayer entityplayer = this.world.func_72856_b(this, 64.0D);
 
         if (entityplayer != null)
         {
@@ -80,7 +80,7 @@ public class EntityEnderman extends EntityMob
 
                 if (this.field_70826_g == 0)
                 {
-                    this.field_70170_p.func_72908_a(entityplayer.field_70165_t, entityplayer.field_70163_u, entityplayer.field_70161_v, "mob.endermen.stare", 1.0F, 1.0F);
+                    this.world.func_72908_a(entityplayer.field_70165_t, entityplayer.field_70163_u, entityplayer.field_70161_v, "mob.endermen.stare", 1.0F, 1.0F);
                 }
 
                 if (this.field_70826_g++ == 5)
@@ -139,7 +139,7 @@ public class EntityEnderman extends EntityMob
         this.field_110194_bu = this.field_70789_a;
         int k;
 
-        if (!this.field_70170_p.field_72995_K && this.field_70170_p.func_82736_K().getBooleanValue("mobGriefing"))
+        if (!this.world.field_72995_K && this.world.func_82736_K().getBooleanValue("mobGriefing"))
         {
             int i;
             int j;
@@ -152,13 +152,13 @@ public class EntityEnderman extends EntityMob
                     k = MathHelper.func_76128_c(this.field_70165_t - 2.0D + this.field_70146_Z.nextDouble() * 4.0D);
                     i = MathHelper.func_76128_c(this.field_70163_u + this.field_70146_Z.nextDouble() * 3.0D);
                     j = MathHelper.func_76128_c(this.field_70161_v - 2.0D + this.field_70146_Z.nextDouble() * 4.0D);
-                    block = this.field_70170_p.func_147439_a(k, i, j);
+                    block = this.world.func_147439_a(k, i, j);
 
                     if (field_70827_d[Block.func_149682_b(block)])
                     {
                         this.func_146081_a(block);
-                        this.func_70817_b(this.field_70170_p.func_72805_g(k, i, j));
-                        this.field_70170_p.func_147449_b(k, i, j, Blocks.AIR);
+                        this.func_70817_b(this.world.func_72805_g(k, i, j));
+                        this.world.func_147449_b(k, i, j, Blocks.AIR);
                     }
                 }
             }
@@ -167,12 +167,12 @@ public class EntityEnderman extends EntityMob
                 k = MathHelper.func_76128_c(this.field_70165_t - 1.0D + this.field_70146_Z.nextDouble() * 2.0D);
                 i = MathHelper.func_76128_c(this.field_70163_u + this.field_70146_Z.nextDouble() * 2.0D);
                 j = MathHelper.func_76128_c(this.field_70161_v - 1.0D + this.field_70146_Z.nextDouble() * 2.0D);
-                block = this.field_70170_p.func_147439_a(k, i, j);
-                Block block1 = this.field_70170_p.func_147439_a(k, i - 1, j);
+                block = this.world.func_147439_a(k, i, j);
+                Block block1 = this.world.func_147439_a(k, i - 1, j);
 
                 if (block.func_149688_o() == Material.field_151579_a && block1.func_149688_o() != Material.field_151579_a && block1.func_149686_d())
                 {
-                    this.field_70170_p.func_147465_d(k, i, j, this.func_146080_bZ(), this.func_70824_q(), 3);
+                    this.world.func_147465_d(k, i, j, this.func_146080_bZ(), this.func_70824_q(), 3);
                     this.func_146081_a(Blocks.AIR);
                 }
             }
@@ -180,14 +180,14 @@ public class EntityEnderman extends EntityMob
 
         for (k = 0; k < 2; ++k)
         {
-            this.field_70170_p.func_72869_a("portal", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O - 0.25D, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, (this.field_70146_Z.nextDouble() - 0.5D) * 2.0D, -this.field_70146_Z.nextDouble(), (this.field_70146_Z.nextDouble() - 0.5D) * 2.0D);
+            this.world.func_72869_a("portal", this.field_70165_t + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, this.field_70163_u + this.field_70146_Z.nextDouble() * (double)this.field_70131_O - 0.25D, this.field_70161_v + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N, (this.field_70146_Z.nextDouble() - 0.5D) * 2.0D, -this.field_70146_Z.nextDouble(), (this.field_70146_Z.nextDouble() - 0.5D) * 2.0D);
         }
 
-        if (this.field_70170_p.func_72935_r() && !this.field_70170_p.field_72995_K)
+        if (this.world.func_72935_r() && !this.world.field_72995_K)
         {
             float f = this.func_70013_c(1.0F);
 
-            if (f > 0.5F && this.field_70170_p.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)) && this.field_70146_Z.nextFloat() * 30.0F < (f - 0.4F) * 2.0F)
+            if (f > 0.5F && this.world.func_72937_j(MathHelper.func_76128_c(this.field_70165_t), MathHelper.func_76128_c(this.field_70163_u), MathHelper.func_76128_c(this.field_70161_v)) && this.field_70146_Z.nextFloat() * 30.0F < (f - 0.4F) * 2.0F)
             {
                 this.field_70789_a = null;
                 this.func_70819_e(false);
@@ -216,7 +216,7 @@ public class EntityEnderman extends EntityMob
             this.func_70625_a(this.field_70789_a, 100.0F, 100.0F);
         }
 
-        if (!this.field_70170_p.field_72995_K && this.func_70089_S())
+        if (!this.world.field_72995_K && this.func_70089_S())
         {
             if (this.field_70789_a != null)
             {
@@ -276,13 +276,13 @@ public class EntityEnderman extends EntityMob
         int j = MathHelper.func_76128_c(this.field_70163_u);
         int k = MathHelper.func_76128_c(this.field_70161_v);
 
-        if (this.field_70170_p.func_72899_e(i, j, k))
+        if (this.world.func_72899_e(i, j, k))
         {
             boolean flag1 = false;
 
             while (!flag1 && j > 0)
             {
-                Block block = this.field_70170_p.func_147439_a(i, j - 1, k);
+                Block block = this.world.func_147439_a(i, j - 1, k);
 
                 if (block.func_149688_o().func_76230_c())
                 {
@@ -299,7 +299,7 @@ public class EntityEnderman extends EntityMob
             {
                 this.func_70107_b(this.field_70165_t, this.field_70163_u, this.field_70161_v);
 
-                if (this.field_70170_p.func_72945_a(this, this.field_70121_D).isEmpty() && !this.field_70170_p.func_72953_d(this.field_70121_D))
+                if (this.world.func_72945_a(this, this.field_70121_D).isEmpty() && !this.world.func_72953_d(this.field_70121_D))
                 {
                     flag = true;
                 }
@@ -324,10 +324,10 @@ public class EntityEnderman extends EntityMob
                 double d7 = d3 + (this.field_70165_t - d3) * d6 + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N * 2.0D;
                 double d8 = d4 + (this.field_70163_u - d4) * d6 + this.field_70146_Z.nextDouble() * (double)this.field_70131_O;
                 double d9 = d5 + (this.field_70161_v - d5) * d6 + (this.field_70146_Z.nextDouble() - 0.5D) * (double)this.field_70130_N * 2.0D;
-                this.field_70170_p.func_72869_a("portal", d7, d8, d9, (double)f, (double)f1, (double)f2);
+                this.world.func_72869_a("portal", d7, d8, d9, (double)f, (double)f1, (double)f2);
             }
 
-            this.field_70170_p.func_72908_a(d3, d4, d5, "mob.endermen.portal", 1.0F, 1.0F);
+            this.world.func_72908_a(d3, d4, d5, "mob.endermen.portal", 1.0F, 1.0F);
             this.func_85030_a("mob.endermen.portal", 1.0F, 1.0F);
             return true;
         }

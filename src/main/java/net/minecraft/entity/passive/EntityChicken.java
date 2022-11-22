@@ -90,7 +90,7 @@ public class EntityChicken extends EntityAnimal
 
         this.field_70886_e += this.field_70889_i * 2.0F;
 
-        if (!this.field_70170_p.field_72995_K && !this.func_70631_g_() && !this.func_152116_bZ() && --this.field_70887_j <= 0)
+        if (!this.world.field_72995_K && !this.func_70631_g_() && !this.func_152116_bZ() && --this.field_70887_j <= 0)
         {
             this.func_85030_a("mob.chicken.plop", 1.0F, (this.field_70146_Z.nextFloat() - this.field_70146_Z.nextFloat()) * 0.2F + 1.0F);
             this.func_145779_a(Items.EGG, 1);
@@ -146,7 +146,7 @@ public class EntityChicken extends EntityAnimal
 
     public EntityChicken func_90011_a(EntityAgeable p_90011_1_)
     {
-        return new EntityChicken(this.field_70170_p);
+        return new EntityChicken(this.world);
     }
 
     public boolean func_70877_b(ItemStack p_70877_1_)

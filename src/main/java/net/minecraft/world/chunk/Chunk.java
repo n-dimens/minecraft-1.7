@@ -298,7 +298,7 @@ public class Chunk
 
     private void func_150803_c(boolean p_150803_1_)
     {
-        this.field_76637_e.field_72984_F.func_76320_a("recheckGaps");
+        this.field_76637_e.profiler.startMeasure("recheckGaps");
 
         if (this.field_76637_e.func_72873_a(this.field_76635_g * 16 + 8, 0, this.field_76647_h * 16 + 8, 16))
         {
@@ -340,7 +340,7 @@ public class Chunk
 
                         if (p_150803_1_)
                         {
-                            this.field_76637_e.field_72984_F.func_76319_b();
+                            this.field_76637_e.profiler.endMeasure();
                             return;
                         }
                     }
@@ -350,7 +350,7 @@ public class Chunk
             this.field_76650_s = false;
         }
 
-        this.field_76637_e.field_72984_F.func_76319_b();
+        this.field_76637_e.profiler.endMeasure();
     }
 
     private void func_76599_g(int p_76599_1_, int p_76599_2_, int p_76599_3_)

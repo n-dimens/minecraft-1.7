@@ -28,7 +28,7 @@ public class TileEntityMobSpawnerRenderer extends TileEntitySpecialRenderer
 
         if (entity != null)
         {
-            entity.func_70029_a(p_147517_0_.func_98271_a());
+            entity.setWorld(p_147517_0_.func_98271_a());
             float f1 = 0.4375F;
             GL11.glTranslatef(0.0F, 0.4F, 0.0F);
             GL11.glRotatef((float)(p_147517_0_.field_98284_d + (p_147517_0_.field_98287_c - p_147517_0_.field_98284_d) * (double)p_147517_7_) * 10.0F, 0.0F, 1.0F, 0.0F);

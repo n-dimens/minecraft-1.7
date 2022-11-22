@@ -166,12 +166,12 @@ public class EntityWolf extends EntityTameable
     {
         super.func_70636_d();
 
-        if (!this.field_70170_p.field_72995_K && this.field_70925_g && !this.field_70928_h && !this.func_70781_l() && this.field_70122_E)
+        if (!this.world.field_72995_K && this.field_70925_g && !this.field_70928_h && !this.func_70781_l() && this.field_70122_E)
         {
             this.field_70928_h = true;
             this.field_70929_i = 0.0F;
             this.field_70927_j = 0.0F;
-            this.field_70170_p.func_72960_a(this, (byte)8);
+            this.world.func_72960_a(this, (byte)8);
         }
     }
 
@@ -228,7 +228,7 @@ public class EntityWolf extends EntityTameable
                 {
                     float f1 = (this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * this.field_70130_N * 0.5F;
                     float f2 = (this.field_70146_Z.nextFloat() * 2.0F - 1.0F) * this.field_70130_N * 0.5F;
-                    this.field_70170_p.func_72869_a("splash", this.field_70165_t + (double)f1, (double)(f + 0.8F), this.field_70161_v + (double)f2, this.field_70159_w, this.field_70181_x, this.field_70179_y);
+                    this.world.func_72869_a("splash", this.field_70165_t + (double)f1, (double)(f + 0.8F), this.field_70161_v + (double)f2, this.field_70159_w, this.field_70181_x, this.field_70179_y);
                 }
             }
         }
@@ -366,7 +366,7 @@ public class EntityWolf extends EntityTameable
                 }
             }
 
-            if (this.func_152114_e(p_70085_1_) && !this.field_70170_p.field_72995_K && !this.func_70877_b(itemstack))
+            if (this.func_152114_e(p_70085_1_) && !this.world.field_72995_K && !this.func_70877_b(itemstack))
             {
                 this.field_70911_d.func_75270_a(!this.func_70906_o());
                 this.field_70703_bu = false;
@@ -387,7 +387,7 @@ public class EntityWolf extends EntityTameable
                 p_70085_1_.field_71071_by.func_70299_a(p_70085_1_.field_71071_by.field_70461_c, (ItemStack)null);
             }
 
-            if (!this.field_70170_p.field_72995_K)
+            if (!this.world.field_72995_K)
             {
                 if (this.field_70146_Z.nextInt(3) == 0)
                 {
@@ -398,12 +398,12 @@ public class EntityWolf extends EntityTameable
                     this.func_70606_j(20.0F);
                     this.func_152115_b(p_70085_1_.func_110124_au().toString());
                     this.func_70908_e(true);
-                    this.field_70170_p.func_72960_a(this, (byte)7);
+                    this.world.func_72960_a(this, (byte)7);
                 }
                 else
                 {
                     this.func_70908_e(false);
-                    this.field_70170_p.func_72960_a(this, (byte)6);
+                    this.world.func_72960_a(this, (byte)6);
                 }
             }
 
@@ -475,7 +475,7 @@ public class EntityWolf extends EntityTameable
 
     public EntityWolf func_90011_a(EntityAgeable p_90011_1_)
     {
-        EntityWolf entitywolf = new EntityWolf(this.field_70170_p);
+        EntityWolf entitywolf = new EntityWolf(this.world);
         String s = this.func_152113_b();
 
         if (s != null && s.trim().length() > 0)
