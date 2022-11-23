@@ -1,5 +1,6 @@
 package net.minecraft.item.crafting;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -13,14 +14,14 @@ import net.minecraft.item.ItemStack;
 
 public class FurnaceRecipes
 {
-    private static final FurnaceRecipes field_77606_a = new FurnaceRecipes();
-    private final Map<ItemStack, ItemStack> field_77604_b = new HashMap<>();
+    private static final FurnaceRecipes INSTANCE = new FurnaceRecipes();
+    private final Map<ItemStack, ItemStack> recipes = new HashMap<>();
     private final Map<ItemStack, Float> field_77605_c = new HashMap<>();
     private static final String __OBFID = "CL_00000085";
 
-    public static FurnaceRecipes func_77602_a()
+    public static FurnaceRecipes getInstance()
     {
-        return field_77606_a;
+        return INSTANCE;
     }
 
     private FurnaceRecipes()
@@ -41,19 +42,7 @@ public class FurnaceRecipes
         this.addRecipe(Blocks.EMERALD_ORE, new ItemStack(Items.EMERALD), 1.0F);
         this.addRecipe(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0.35F);
         this.addRecipe(Blocks.NETHERRACK, new ItemStack(Items.NETHERBRICK), 0.1F);
-        ItemFishFood.FishType[] afishtype = ItemFishFood.FishType.values();
-        int i = afishtype.length;
-
-        for (int j = 0; j < i; ++j)
-        {
-            ItemFishFood.FishType fishtype = afishtype[j];
-
-            if (fishtype.func_150973_i())
-            {
-                this.addRecipe(new ItemStack(Items.FISH, 1, fishtype.func_150976_a()), new ItemStack(Items.COOKED_FISHED, 1, fishtype.func_150976_a()), 0.35F);
-            }
-        }
-
+        this.addFishCookingRecipes();
         this.addRecipe(Blocks.COAL_ORE, new ItemStack(Items.COAL), 0.1F);
         this.addRecipe(Blocks.REDSTONE_ORE, new ItemStack(Items.REDSTONE), 0.7F);
         this.addRecipe(Blocks.LAPIS_ORE, new ItemStack(Items.DYE, 1, 4), 0.2F);
@@ -72,13 +61,13 @@ public class FurnaceRecipes
 
     public void addRecipe(ItemStack inputItem, ItemStack outputItem, float p_151394_3_)
     {
-        this.field_77604_b.put(inputItem, outputItem);
+        this.recipes.put(inputItem, outputItem);
         this.field_77605_c.put(outputItem, p_151394_3_);
     }
 
     public ItemStack func_151395_a(ItemStack p_151395_1_)
     {
-        Iterator iterator = this.field_77604_b.entrySet().iterator();
+        Iterator iterator = this.recipes.entrySet().iterator();
         Entry entry;
 
         do
@@ -100,9 +89,9 @@ public class FurnaceRecipes
         return p_151397_2_.getBaseItem() == p_151397_1_.getBaseItem() && (p_151397_2_.func_77960_j() == 32767 || p_151397_2_.func_77960_j() == p_151397_1_.func_77960_j());
     }
 
-    public Map<ItemStack, ItemStack> func_77599_b()
+    public Map<ItemStack, ItemStack> getRecipes()
     {
-        return this.field_77604_b;
+        return Collections.unmodifiableMap(this.recipes);
     }
 
     public float func_151398_b(ItemStack p_151398_1_)
@@ -122,5 +111,13 @@ public class FurnaceRecipes
         while (!this.func_151397_a(p_151398_1_, (ItemStack)entry.getKey()));
 
         return ((Float)entry.getValue()).floatValue();
+    }
+
+    private void addFishCookingRecipes() {
+        for (ItemFishFood.FishType fishType : ItemFishFood.FishType.values()) {
+            if (fishType.func_150973_i()) {
+                this.addRecipe(new ItemStack(Items.FISH, 1, fishType.func_150976_a()), new ItemStack(Items.COOKED_FISHED, 1, fishType.func_150976_a()), 0.35F);
+            }
+        }
     }
 }

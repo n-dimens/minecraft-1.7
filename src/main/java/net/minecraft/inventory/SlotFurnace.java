@@ -54,7 +54,7 @@ public class SlotFurnace extends Slot
         if (!this.field_75229_a.world.field_72995_K)
         {
             int i = this.field_75228_b;
-            float f = FurnaceRecipes.func_77602_a().func_151398_b(p_75208_1_);
+            float f = FurnaceRecipes.getInstance().func_151398_b(p_75208_1_);
             int j;
 
             if (f == 0.0F)

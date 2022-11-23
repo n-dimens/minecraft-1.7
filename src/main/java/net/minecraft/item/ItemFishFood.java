@@ -96,7 +96,7 @@ public class ItemFishFood extends ItemFood
     public String func_77667_c(ItemStack p_77667_1_)
     {
         ItemFishFood.FishType fishtype = ItemFishFood.FishType.func_150978_a(p_77667_1_);
-        return this.func_77658_a() + "." + fishtype.func_150972_b() + "." + (this.field_150907_b && fishtype.func_150973_i() ? "cooked" : "raw");
+        return this.func_77658_a() + "." + fishtype.getId() + "." + (this.field_150907_b && fishtype.func_150973_i() ? "cooked" : "raw");
     }
 
     public static enum FishType
@@ -107,7 +107,7 @@ public class ItemFishFood extends ItemFood
         PUFFERFISH(3, "pufferfish", 1, 0.1F);
         private static final Map field_150983_e = Maps.newHashMap();
         private final int field_150980_f;
-        private final String field_150981_g;
+        private final String id;
         @SideOnly(Side.CLIENT)
         private IIcon field_150993_h;
         @SideOnly(Side.CLIENT)
@@ -116,14 +116,14 @@ public class ItemFishFood extends ItemFood
         private final float field_150992_k;
         private final int field_150989_l;
         private final float field_150990_m;
-        private boolean field_150987_n = false;
+        private boolean field_150987_n = false; // isCooked or isCookingSupport ?
 
         private static final String __OBFID = "CL_00000033";
 
-        private FishType(int p_i45336_3_, String p_i45336_4_, int p_i45336_5_, float p_i45336_6_, int p_i45336_7_, float p_i45336_8_)
+        private FishType(int p_i45336_3_, String id, int p_i45336_5_, float p_i45336_6_, int p_i45336_7_, float p_i45336_8_)
         {
             this.field_150980_f = p_i45336_3_;
-            this.field_150981_g = p_i45336_4_;
+            this.id = id;
             this.field_150991_j = p_i45336_5_;
             this.field_150992_k = p_i45336_6_;
             this.field_150989_l = p_i45336_7_;
@@ -134,7 +134,7 @@ public class ItemFishFood extends ItemFood
         private FishType(int p_i45337_3_, String p_i45337_4_, int p_i45337_5_, float p_i45337_6_)
         {
             this.field_150980_f = p_i45337_3_;
-            this.field_150981_g = p_i45337_4_;
+            this.id = p_i45337_4_;
             this.field_150991_j = p_i45337_5_;
             this.field_150992_k = p_i45337_6_;
             this.field_150989_l = 0;
@@ -147,9 +147,9 @@ public class ItemFishFood extends ItemFood
             return this.field_150980_f;
         }
 
-        public String func_150972_b()
+        public String getId()
         {
-            return this.field_150981_g;
+            return this.id;
         }
 
         public int func_150975_c()
@@ -175,11 +175,11 @@ public class ItemFishFood extends ItemFood
         @SideOnly(Side.CLIENT)
         public void func_150968_a(IIconRegister p_150968_1_)
         {
-            this.field_150993_h = p_150968_1_.func_94245_a("fish_" + this.field_150981_g + "_raw");
+            this.field_150993_h = p_150968_1_.func_94245_a("fish_" + this.id + "_raw");
 
             if (this.field_150987_n)
             {
-                this.field_150994_i = p_150968_1_.func_94245_a("fish_" + this.field_150981_g + "_cooked");
+                this.field_150994_i = p_150968_1_.func_94245_a("fish_" + this.id + "_cooked");
             }
         }
 

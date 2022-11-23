@@ -72,7 +72,7 @@ public final class StatList
             }
         }
 
-        for (ItemStack itemStack : FurnaceRecipes.func_77602_a().func_77599_b().values()) {
+        for (ItemStack itemStack : FurnaceRecipes.getInstance().getRecipes().values()) {
             craftingItems.add(itemStack.getBaseItem());
         }
 

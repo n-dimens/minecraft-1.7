@@ -263,7 +263,7 @@ public class TileEntityFurnace extends TileEntity implements ISidedInventory
         }
         else
         {
-            ItemStack itemstack = FurnaceRecipes.func_77602_a().func_151395_a(this.field_145957_n[0]);
+            ItemStack itemstack = FurnaceRecipes.getInstance().func_151395_a(this.field_145957_n[0]);
             return itemstack == null ? false : (this.field_145957_n[2] == null ? true : (!this.field_145957_n[2].func_77969_a(itemstack) ? false : (this.field_145957_n[2].count < this.func_70297_j_() && this.field_145957_n[2].count < this.field_145957_n[2].func_77976_d() ? true : this.field_145957_n[2].count < itemstack.func_77976_d())));
         }
     }
@@ -272,7 +272,7 @@ public class TileEntityFurnace extends TileEntity implements ISidedInventory
     {
         if (this.func_145948_k())
         {
-            ItemStack itemstack = FurnaceRecipes.func_77602_a().func_151395_a(this.field_145957_n[0]);
+            ItemStack itemstack = FurnaceRecipes.getInstance().func_151395_a(this.field_145957_n[0]);
 
             if (this.field_145957_n[2] == null)
             {

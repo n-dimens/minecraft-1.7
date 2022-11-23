@@ -120,7 +120,7 @@ public class ContainerFurnace extends Container
             }
             else if (p_82846_2_ != 1 && p_82846_2_ != 0)
             {
-                if (FurnaceRecipes.func_77602_a().func_151395_a(itemstack1) != null)
+                if (FurnaceRecipes.getInstance().func_151395_a(itemstack1) != null)
                 {
                     if (!this.func_75135_a(itemstack1, 0, 1, false))
                     {
