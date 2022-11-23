@@ -19,7 +19,7 @@ public class ShapelessRecipes implements IRecipe
         this.field_77579_b = p_i1918_2_;
     }
 
-    public ItemStack func_77571_b()
+    public ItemStack getOutputItem()
     {
         return this.field_77580_a;
     }

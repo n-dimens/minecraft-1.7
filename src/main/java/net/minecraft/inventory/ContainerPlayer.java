@@ -76,7 +76,7 @@ public class ContainerPlayer extends Container
 
     public void func_75130_a(IInventory p_75130_1_)
     {
-        this.field_75179_f.putItem(0, CraftingManager.func_77594_a().func_82787_a(this.field_75181_e, this.field_82862_h.world));
+        this.field_75179_f.putItem(0, CraftingManager.getInstance().func_82787_a(this.field_75181_e, this.field_82862_h.world));
     }
 
     public void func_75134_a(EntityPlayer p_75134_1_)

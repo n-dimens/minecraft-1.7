@@ -140,7 +140,7 @@ public class RecipesArmorDyes implements IRecipe
         return 10;
     }
 
-    public ItemStack func_77571_b()
+    public ItemStack getOutputItem()
     {
         return null;
     }

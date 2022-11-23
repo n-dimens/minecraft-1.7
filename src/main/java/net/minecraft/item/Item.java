@@ -62,9 +62,9 @@ public class Item
     protected String iconId;
     private static final String __OBFID = "CL_00000041";
 
-    public static int func_150891_b(Item p_150891_0_)
+    public static int func_150891_b(Item item)
     {
-        return p_150891_0_ == null ? 0 : REGISTRY.func_148757_b(p_150891_0_);
+        return item == null ? 0 : REGISTRY.func_148757_b(item);
     }
 
     public static Item func_150899_d(int p_150899_0_)

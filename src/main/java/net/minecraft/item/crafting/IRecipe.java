@@ -12,5 +12,5 @@ public interface IRecipe
 
     int func_77570_a();
 
-    ItemStack func_77571_b();
+    ItemStack getOutputItem();
 }

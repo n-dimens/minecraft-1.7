@@ -8,16 +8,16 @@ public class RecipesFood
 {
     private static final String __OBFID = "CL_00000084";
 
-    public void func_77608_a(CraftingManager p_77608_1_)
+    public void addRecipes(CraftingManager craftingManager)
     {
-        p_77608_1_.func_77596_b(new ItemStack(Items.MUSHROOM_STEW), new Object[] {Blocks.BROWN_MUSHROOM, Blocks.RED_MUSHROOM, Items.BOWL});
-        p_77608_1_.func_92103_a(new ItemStack(Items.COOKIE, 8), new Object[] {"#X#", 'X', new ItemStack(Items.DYE, 1, 3), '#', Items.WHEAT});
-        p_77608_1_.func_92103_a(new ItemStack(Blocks.MELON_BLOCK), new Object[] {"MMM", "MMM", "MMM", 'M', Items.MELON});
-        p_77608_1_.func_92103_a(new ItemStack(Items.MELON_SEEDS), new Object[] {"M", 'M', Items.MELON});
-        p_77608_1_.func_92103_a(new ItemStack(Items.PUMPKIN_SEEDS, 4), new Object[] {"M", 'M', Blocks.PUMPKIN});
-        p_77608_1_.func_77596_b(new ItemStack(Items.PUMPKIN_PIE), new Object[] {Blocks.PUMPKIN, Items.SUGAR, Items.EGG});
-        p_77608_1_.func_77596_b(new ItemStack(Items.FERMENTED_SPIDER_EYE), new Object[] {Items.SPIDER_EYE, Blocks.BROWN_MUSHROOM, Items.SUGAR});
-        p_77608_1_.func_77596_b(new ItemStack(Items.BLAZE_POWDER, 2), new Object[] {Items.BLAZE_ROD});
-        p_77608_1_.func_77596_b(new ItemStack(Items.MAGMA_CREAM), new Object[] {Items.BLAZE_POWDER, Items.SLIME_BALL});
+        craftingManager.addShapelessRecipe(new ItemStack(Items.MUSHROOM_STEW), Blocks.BROWN_MUSHROOM, Blocks.RED_MUSHROOM, Items.BOWL);
+        craftingManager.addRecipe(new ItemStack(Items.COOKIE, 8), "#X#", 'X', new ItemStack(Items.DYE, 1, 3), '#', Items.WHEAT);
+        craftingManager.addRecipe(new ItemStack(Blocks.MELON_BLOCK), "MMM", "MMM", "MMM", 'M', Items.MELON);
+        craftingManager.addRecipe(new ItemStack(Items.MELON_SEEDS), "M", 'M', Items.MELON);
+        craftingManager.addRecipe(new ItemStack(Items.PUMPKIN_SEEDS, 4), "M", 'M', Blocks.PUMPKIN);
+        craftingManager.addShapelessRecipe(new ItemStack(Items.PUMPKIN_PIE), Blocks.PUMPKIN, Items.SUGAR, Items.EGG);
+        craftingManager.addShapelessRecipe(new ItemStack(Items.FERMENTED_SPIDER_EYE), Items.SPIDER_EYE, Blocks.BROWN_MUSHROOM, Items.SUGAR);
+        craftingManager.addShapelessRecipe(new ItemStack(Items.BLAZE_POWDER, 2), Items.BLAZE_ROD);
+        craftingManager.addShapelessRecipe(new ItemStack(Items.MAGMA_CREAM), Items.BLAZE_POWDER, Items.SLIME_BALL);
     }
 }

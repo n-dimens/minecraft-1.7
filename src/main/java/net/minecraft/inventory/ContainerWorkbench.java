@@ -53,7 +53,7 @@ public class ContainerWorkbench extends Container
 
     public void func_75130_a(IInventory p_75130_1_)
     {
-        this.field_75160_f.putItem(0, CraftingManager.func_77594_a().func_82787_a(this.field_75162_e, this.field_75161_g));
+        this.field_75160_f.putItem(0, CraftingManager.getInstance().func_82787_a(this.field_75162_e, this.field_75161_g));
     }
 
     public void func_75134_a(EntityPlayer p_75134_1_)

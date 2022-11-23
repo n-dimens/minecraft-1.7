@@ -14,8 +14,8 @@ import net.minecraft.item.ItemStack;
 public class FurnaceRecipes
 {
     private static final FurnaceRecipes field_77606_a = new FurnaceRecipes();
-    private Map field_77604_b = new HashMap();
-    private Map field_77605_c = new HashMap();
+    private final Map<ItemStack, ItemStack> field_77604_b = new HashMap<>();
+    private final Map<ItemStack, Float> field_77605_c = new HashMap<>();
     private static final String __OBFID = "CL_00000085";
 
     public static FurnaceRecipes func_77602_a()
@@ -25,22 +25,22 @@ public class FurnaceRecipes
 
     private FurnaceRecipes()
     {
-        this.func_151393_a(Blocks.IRON_ORE, new ItemStack(Items.IRON_INGOT), 0.7F);
-        this.func_151393_a(Blocks.GOLD_ORE, new ItemStack(Items.GOLD_INGOT), 1.0F);
-        this.func_151393_a(Blocks.DIAMOND_ORE, new ItemStack(Items.DIAMOND), 1.0F);
-        this.func_151393_a(Blocks.SAND, new ItemStack(Blocks.GLASS), 0.1F);
-        this.func_151396_a(Items.PORKCHOP, new ItemStack(Items.COOKED_PORKCHOP), 0.35F);
-        this.func_151396_a(Items.BEEF, new ItemStack(Items.COOKED_BEEF), 0.35F);
-        this.func_151396_a(Items.CHICKEN, new ItemStack(Items.COOKED_CHICKEN), 0.35F);
-        this.func_151393_a(Blocks.COBBLESTONE, new ItemStack(Blocks.STONE), 0.1F);
-        this.func_151396_a(Items.CLAY_BALL, new ItemStack(Items.BRICK), 0.3F);
-        this.func_151393_a(Blocks.CLAY, new ItemStack(Blocks.HARDENED_CLAY), 0.35F);
-        this.func_151393_a(Blocks.CACTUS, new ItemStack(Items.DYE, 1, 2), 0.2F);
-        this.func_151393_a(Blocks.LOG, new ItemStack(Items.COAL, 1, 1), 0.15F);
-        this.func_151393_a(Blocks.LOG_2, new ItemStack(Items.COAL, 1, 1), 0.15F);
-        this.func_151393_a(Blocks.EMERALD_ORE, new ItemStack(Items.EMERALD), 1.0F);
-        this.func_151396_a(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0.35F);
-        this.func_151393_a(Blocks.NETHERRACK, new ItemStack(Items.NETHERBRICK), 0.1F);
+        this.addRecipe(Blocks.IRON_ORE, new ItemStack(Items.IRON_INGOT), 0.7F);
+        this.addRecipe(Blocks.GOLD_ORE, new ItemStack(Items.GOLD_INGOT), 1.0F);
+        this.addRecipe(Blocks.DIAMOND_ORE, new ItemStack(Items.DIAMOND), 1.0F);
+        this.addRecipe(Blocks.SAND, new ItemStack(Blocks.GLASS), 0.1F);
+        this.addRecipe(Items.PORKCHOP, new ItemStack(Items.COOKED_PORKCHOP), 0.35F);
+        this.addRecipe(Items.BEEF, new ItemStack(Items.COOKED_BEEF), 0.35F);
+        this.addRecipe(Items.CHICKEN, new ItemStack(Items.COOKED_CHICKEN), 0.35F);
+        this.addRecipe(Blocks.COBBLESTONE, new ItemStack(Blocks.STONE), 0.1F);
+        this.addRecipe(Items.CLAY_BALL, new ItemStack(Items.BRICK), 0.3F);
+        this.addRecipe(Blocks.CLAY, new ItemStack(Blocks.HARDENED_CLAY), 0.35F);
+        this.addRecipe(Blocks.CACTUS, new ItemStack(Items.DYE, 1, 2), 0.2F);
+        this.addRecipe(Blocks.LOG, new ItemStack(Items.COAL, 1, 1), 0.15F);
+        this.addRecipe(Blocks.LOG_2, new ItemStack(Items.COAL, 1, 1), 0.15F);
+        this.addRecipe(Blocks.EMERALD_ORE, new ItemStack(Items.EMERALD), 1.0F);
+        this.addRecipe(Items.POTATO, new ItemStack(Items.BAKED_POTATO), 0.35F);
+        this.addRecipe(Blocks.NETHERRACK, new ItemStack(Items.NETHERBRICK), 0.1F);
         ItemFishFood.FishType[] afishtype = ItemFishFood.FishType.values();
         int i = afishtype.length;
 
@@ -50,30 +50,30 @@ public class FurnaceRecipes
 
             if (fishtype.func_150973_i())
             {
-                this.func_151394_a(new ItemStack(Items.FISH, 1, fishtype.func_150976_a()), new ItemStack(Items.COOKED_FISHED, 1, fishtype.func_150976_a()), 0.35F);
+                this.addRecipe(new ItemStack(Items.FISH, 1, fishtype.func_150976_a()), new ItemStack(Items.COOKED_FISHED, 1, fishtype.func_150976_a()), 0.35F);
             }
         }
 
-        this.func_151393_a(Blocks.COAL_ORE, new ItemStack(Items.COAL), 0.1F);
-        this.func_151393_a(Blocks.REDSTONE_ORE, new ItemStack(Items.REDSTONE), 0.7F);
-        this.func_151393_a(Blocks.LAPIS_ORE, new ItemStack(Items.DYE, 1, 4), 0.2F);
-        this.func_151393_a(Blocks.QUARTZ_ORE, new ItemStack(Items.QUARTZ), 0.2F);
+        this.addRecipe(Blocks.COAL_ORE, new ItemStack(Items.COAL), 0.1F);
+        this.addRecipe(Blocks.REDSTONE_ORE, new ItemStack(Items.REDSTONE), 0.7F);
+        this.addRecipe(Blocks.LAPIS_ORE, new ItemStack(Items.DYE, 1, 4), 0.2F);
+        this.addRecipe(Blocks.QUARTZ_ORE, new ItemStack(Items.QUARTZ), 0.2F);
     }
 
-    public void func_151393_a(Block p_151393_1_, ItemStack p_151393_2_, float p_151393_3_)
+    public void addRecipe(Block inputBlock, ItemStack outputItem, float p_151393_3_)
     {
-        this.func_151396_a(Item.func_150898_a(p_151393_1_), p_151393_2_, p_151393_3_);
+        this.addRecipe(Item.func_150898_a(inputBlock), outputItem, p_151393_3_);
     }
 
-    public void func_151396_a(Item p_151396_1_, ItemStack p_151396_2_, float p_151396_3_)
+    public void addRecipe(Item inputItem, ItemStack outputItem, float p_151396_3_)
     {
-        this.func_151394_a(new ItemStack(p_151396_1_, 1, 32767), p_151396_2_, p_151396_3_);
+        this.addRecipe(new ItemStack(inputItem, 1, 32767), outputItem, p_151396_3_);
     }
 
-    public void func_151394_a(ItemStack p_151394_1_, ItemStack p_151394_2_, float p_151394_3_)
+    public void addRecipe(ItemStack inputItem, ItemStack outputItem, float p_151394_3_)
     {
-        this.field_77604_b.put(p_151394_1_, p_151394_2_);
-        this.field_77605_c.put(p_151394_2_, Float.valueOf(p_151394_3_));
+        this.field_77604_b.put(inputItem, outputItem);
+        this.field_77605_c.put(outputItem, p_151394_3_);
     }
 
     public ItemStack func_151395_a(ItemStack p_151395_1_)
@@ -100,7 +100,7 @@ public class FurnaceRecipes
         return p_151397_2_.getBaseItem() == p_151397_1_.getBaseItem() && (p_151397_2_.func_77960_j() == 32767 || p_151397_2_.func_77960_j() == p_151397_1_.func_77960_j());
     }
 
-    public Map func_77599_b()
+    public Map<ItemStack, ItemStack> func_77599_b()
     {
         return this.field_77604_b;
     }

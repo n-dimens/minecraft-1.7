@@ -100,7 +100,7 @@ public class RecipeBookCloning implements IRecipe
         return 9;
     }
 
-    public ItemStack func_77571_b()
+    public ItemStack getOutputItem()
     {
         return null;
     }

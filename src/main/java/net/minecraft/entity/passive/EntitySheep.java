@@ -280,7 +280,7 @@ public class EntitySheep extends EntityAnimal
         int j = this.func_90013_b(p_90014_2_);
         this.field_90016_e.func_70301_a(0).func_77964_b(i);
         this.field_90016_e.func_70301_a(1).func_77964_b(j);
-        ItemStack itemstack = CraftingManager.func_77594_a().func_82787_a(this.field_90016_e, sheep.world);
+        ItemStack itemstack = CraftingManager.getInstance().func_82787_a(this.field_90016_e, sheep.world);
         int k;
 
         if (itemstack != null && itemstack.getBaseItem() == Items.DYE)

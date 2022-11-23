@@ -240,7 +240,7 @@ public class RecipeFireworks implements IRecipe
         return 10;
     }
 
-    public ItemStack func_77571_b()
+    public ItemStack getOutputItem()
     {
         return this.field_92102_a;
     }

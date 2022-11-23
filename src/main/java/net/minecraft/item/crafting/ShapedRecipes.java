@@ -22,7 +22,7 @@ public class ShapedRecipes implements IRecipe
         this.field_77575_e = p_i1917_4_;
     }
 
-    public ItemStack func_77571_b()
+    public ItemStack getOutputItem()
     {
         return this.field_77575_e;
     }
@@ -97,7 +97,7 @@ public class ShapedRecipes implements IRecipe
 
     public ItemStack func_77572_b(InventoryCrafting p_77572_1_)
     {
-        ItemStack itemstack = this.func_77571_b().func_77946_l();
+        ItemStack itemstack = this.getOutputItem().func_77946_l();
 
         if (this.field_92101_f)
         {

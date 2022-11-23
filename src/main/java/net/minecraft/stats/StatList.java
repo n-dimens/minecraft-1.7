@@ -65,37 +65,21 @@ public final class StatList
 
     private static void func_75918_d()
     {
-        HashSet hashset = new HashSet();
-        Iterator iterator = CraftingManager.func_77594_a().func_77592_b().iterator();
-
-        while (iterator.hasNext())
-        {
-            IRecipe irecipe = (IRecipe)iterator.next();
-
-            if (irecipe.func_77571_b() != null)
-            {
-                hashset.add(irecipe.func_77571_b().getBaseItem());
+        HashSet<Item> craftingItems = new HashSet<>();
+        for (IRecipe recipe : CraftingManager.getInstance().getRecipes()) {
+            if (recipe.getOutputItem() != null) {
+                craftingItems.add(recipe.getOutputItem().getBaseItem());
             }
         }
 
-        iterator = FurnaceRecipes.func_77602_a().func_77599_b().values().iterator();
-
-        while (iterator.hasNext())
-        {
-            ItemStack itemstack = (ItemStack)iterator.next();
-            hashset.add(itemstack.getBaseItem());
+        for (ItemStack itemStack : FurnaceRecipes.func_77602_a().func_77599_b().values()) {
+            craftingItems.add(itemStack.getBaseItem());
         }
 
-        iterator = hashset.iterator();
-
-        while (iterator.hasNext())
-        {
-            Item item = (Item)iterator.next();
-
-            if (item != null)
-            {
+        for (Item item : craftingItems) {
+            if (item != null) {
                 int i = Item.func_150891_b(item);
-                field_75928_D[i] = (new StatCrafting("stat.craftItem." + i, new ChatComponentTranslation("stat.craftItem", new Object[] {(new ItemStack(item)).func_151000_E()}), item)).add();
+                field_75928_D[i] = (new StatCrafting("stat.craftItem." + i, new ChatComponentTranslation("stat.craftItem", (new ItemStack(item)).func_151000_E()), item)).add();
             }
         }
 
