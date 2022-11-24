@@ -40,7 +40,7 @@ public class MinecraftServerGui extends JComponent
     private DedicatedServer field_120021_b;
     private static final String __OBFID = "CL_00001789";
 
-    public static void func_120016_a(final DedicatedServer p_120016_0_)
+    public static void func_120016_a(final DedicatedServer server)
     {
         try
         {
@@ -51,7 +51,7 @@ public class MinecraftServerGui extends JComponent
             ;
         }
 
-        MinecraftServerGui minecraftservergui = new MinecraftServerGui(p_120016_0_);
+        MinecraftServerGui minecraftservergui = new MinecraftServerGui(server);
         JFrame jframe = new JFrame("Minecraft server");
         jframe.add(minecraftservergui);
         jframe.pack();
@@ -62,9 +62,9 @@ public class MinecraftServerGui extends JComponent
             private static final String __OBFID = "CL_00001791";
             public void windowClosing(WindowEvent p_windowClosing_1_)
             {
-                p_120016_0_.func_71263_m();
+                server.func_71263_m();
 
-                while (!p_120016_0_.func_71241_aa())
+                while (!server.func_71241_aa())
                 {
                     try
                     {

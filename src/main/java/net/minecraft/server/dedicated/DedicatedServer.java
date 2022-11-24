@@ -22,10 +22,8 @@ import net.minecraft.network.rcon.RConThreadMain;
 import net.minecraft.network.rcon.RConThreadQuery;
 import net.minecraft.profiler.PlayerUsageSnooper;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.ServerEula;
 import net.minecraft.server.gui.MinecraftServerGui;
 import net.minecraft.server.management.PreYggdrasilConverter;
-import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.CryptManager;
 import net.minecraft.util.MathHelper;
@@ -44,10 +42,9 @@ public class DedicatedServer extends MinecraftServer implements IServer
     private RConThreadQuery field_71342_m;
     private RConThreadMain field_71339_n;
     private PropertyManager field_71340_o;
-    private ServerEula field_154332_n;
     private boolean field_71338_p;
     private WorldSettings.GameType field_71337_q;
-    private boolean field_71335_s;
+    private boolean withGui;
     private static final String __OBFID = "CL_00001784";
 
     public DedicatedServer(File p_i1508_1_)
@@ -114,15 +111,6 @@ public class DedicatedServer extends MinecraftServer implements IServer
 
         field_155771_h.info("Loading properties");
         this.field_71340_o = new PropertyManager(new File("server.properties"));
-        this.field_154332_n = new ServerEula(new File("eula.txt"));
-
-        if (!this.field_154332_n.func_154346_a())
-        {
-            field_155771_h.info("You need to agree to the EULA in order to run the server. Go to eula.txt for more info.");
-            this.field_154332_n.func_154348_b();
-            return false;
-        }
-        else
         {
             if (this.func_71264_H())
             {
@@ -130,13 +118,13 @@ public class DedicatedServer extends MinecraftServer implements IServer
             }
             else
             {
-                this.func_71229_d(this.field_71340_o.func_73670_a("online-mode", true));
+                this.func_71229_d(this.field_71340_o.func_73670_a("online-mode", false));
                 this.func_71189_e(this.field_71340_o.func_73671_a("server-ip", ""));
             }
 
             this.func_71251_e(this.field_71340_o.func_73670_a("spawn-animals", true));
             this.func_71257_f(this.field_71340_o.func_73670_a("spawn-npcs", true));
-            this.func_71188_g(this.field_71340_o.func_73670_a("pvp", true));
+            this.func_71188_g(this.field_71340_o.func_73670_a("pvp", false));
             this.func_71245_h(this.field_71340_o.func_73670_a("allow-flight", false));
             this.func_155759_m(this.field_71340_o.func_73671_a("resource-pack", ""));
             this.func_71205_p(this.field_71340_o.func_73671_a("motd", "A Minecraft Server"));
@@ -409,12 +397,12 @@ public class DedicatedServer extends MinecraftServer implements IServer
     public void func_120011_ar()
     {
         MinecraftServerGui.func_120016_a(this);
-        this.field_71335_s = true;
+        this.withGui = true;
     }
 
     public boolean func_71279_ae()
     {
-        return this.field_71335_s;
+        return this.withGui;
     }
 
     public String func_71206_a(WorldSettings.GameType p_71206_1_, boolean p_71206_2_)

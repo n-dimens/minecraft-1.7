@@ -122,7 +122,7 @@ public class DedicatedPlayerList extends ServerConfigurationManager
         }
         catch (IOException ioexception)
         {
-            field_164439_d.warn("Failed to load user banlist: ", ioexception);
+            field_164439_d.warn("Failed to load user banlist: " + ioexception.getMessage());
         }
     }
 

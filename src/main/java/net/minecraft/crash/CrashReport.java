@@ -296,9 +296,9 @@ public class CrashReport
         return this.field_85061_c;
     }
 
-    public CrashReportCategory func_85058_a(String p_85058_1_)
+    public CrashReportCategory func_85058_a(String event)
     {
-        return this.func_85057_a(p_85058_1_, 1);
+        return this.func_85057_a(event, 1);
     }
 
     public CrashReportCategory func_85057_a(String p_85057_1_, int p_85057_2_)

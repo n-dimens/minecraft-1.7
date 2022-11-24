@@ -1,11 +1,13 @@
-<project name="minecraft" default="compile">
+<project name="minecraft" default="build">
     <property file="project.properties"/>
     <property name="src" location="src/main"/>
     <property name="src.java" location="${src}/java"/>
     <property name="lib" location="lib"/>
     <property name="target" location="target"/>
-    <property name="target.jar" location="${target}/1.7.10.jar"/>
     <property name="classes" location="${target}/classes"/>
+    <property name="target.client.jar" location="${target}/1.7.10.jar"/>
+    <property name="server.jar" value="server-1.7.10.jar"/>
+    <property name="server.dist" location="${target}/dist/server"/>
 
     <path id="java.library.path">
         <fileset dir="${lib}/natives">
@@ -13,40 +15,70 @@
         </fileset>
     </path>
 
-    <path id="project.class.path">
-        <pathelement location="${classes}"/>
+    <path id="lib.runtime">
         <fileset dir="${lib}">
             <include name="**/*.jar"/>
         </fileset>
+    </path>
+
+    <path id="project.class.path">
+        <pathelement location="${classes}"/>
+        <path refid="lib.runtime"/>
         <pathelement path="${java.class.path}"/>
     </path>
 
+    <pathconvert targetos="unix" pathsep=" " property="lib.runtime.jars" refid="lib.runtime">
+        <map from="${basedir}/lib/" to=""/>
+    </pathconvert>
+
     <target name="init">
-        <!-- Create the time stamp -->
         <tstamp/>
-        <!-- Create the build directory structure used by compile -->
         <mkdir dir="${target}"/>
         <mkdir dir="${classes}"/>
+        <mkdir dir="${server.dist}"/>
     </target>
 
     <target name="compile" description="compile the source" depends="init">
-        <javac destdir="${classes}" srcdir="${src.java}" includeantruntime="true" encoding="utf-8">
+        <javac destdir="${classes}" srcdir="${src.java}"
+               debug="true"
+               debuglevel="lines,source"
+               includeantruntime="true"
+               encoding="utf-8">
             <!--            <classpath refid="dev.class.path" />-->
             <classpath refid="project.class.path"/>
         </javac>
     </target>
 
     <target name="client" depends="compile">
-        <jar destfile="${target.jar}">
-            <fileset dir="${classes}" />
+        <jar destfile="${target.client.jar}">
+            <fileset dir="${classes}"/>
             <fileset dir="${src}/resources"/>
         </jar>
     </target>
 
-    <target name="clean">
-        <delete dir="${classes}"/>
-        <delete file="${target.jar}"/>
+    <target name="server" depends="compile">
+        <jar destfile="${target}/${server.jar}">
+            <fileset dir="${classes}"/>
+            <fileset dir="${src}/resources"/>
+            <manifest>
+                <attribute name="Main-Class" value="net.minecraft.server.MinecraftServer"/>
+                <attribute name="Class-Path" value="${lib.runtime.jars}"/>
+            </manifest>
+        </jar>
+        <copy file="${target}/${server.jar}" todir="${server.dist}"/>
+        <copy todir="${server.dist}">
+            <path refid="lib.runtime"/>
+<!--            <fileset refid="lib.runtime" />-->
+        </copy>
     </target>
 
-    <target name="rebuild" depends="clean, compile, client" />
+    <target name="clean">
+        <delete dir="${classes}"/>
+        <delete file="${target.client.jar}"/>
+        <delete file="${target}/${server.jar}"/>
+        <delete file="${server.dist}"/>
+    </target>
+
+    <target name="build" depends="compile, client, server"/>
+    <target name="rebuild" depends="clean, build"/>
 </project>

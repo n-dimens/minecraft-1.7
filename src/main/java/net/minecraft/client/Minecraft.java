@@ -280,7 +280,7 @@ public class Minecraft implements IPlayerUsage
         this.field_71431_Q = p_i1103_4_;
         this.field_147129_ai = func_147122_X();
         ImageIO.setUseCache(false);
-        Bootstrap.func_151354_b();
+        Bootstrap.initialize();
     }
 
     private static boolean func_147122_X()

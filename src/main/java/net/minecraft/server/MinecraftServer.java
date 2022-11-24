@@ -72,18 +72,18 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class MinecraftServer implements ICommandSender, Runnable, IPlayerUsage
 {
-    private static final Logger field_147145_h = LogManager.getLogger();
-    public static final File field_152367_a = new File("usercache.json");
+    private static final Logger LOG = LogManager.getLogger();
+    public static final File USER_CACHE_FILE = new File("usercache.json");
     private static MinecraftServer field_71309_l;
     private final ISaveFormat field_71310_m;
     private final PlayerUsageSnooper field_71307_n = new PlayerUsageSnooper("server", this, func_130071_aq());
     private final File field_71308_o;
     private final List field_71322_p = new ArrayList();
-    private final ICommandManager field_71321_q;
+    private final ICommandManager commandManager;
     public final Profiler profiler = new Profiler();
     private final NetworkSystem field_147144_o;
     private final ServerStatusResponse field_147147_p = new ServerStatusResponse();
-    private final Random field_147146_q = new Random();
+    private final Random randomizer = new Random();
     @SideOnly(Side.SERVER)
     private String field_71320_r;
     private int field_71319_s = -1;
@@ -119,25 +119,140 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     private String field_71298_S;
     private boolean field_71295_T;
     private boolean field_104057_T;
-    private final YggdrasilAuthenticationService field_152364_T;
+    private final YggdrasilAuthenticationService authService;
     private final MinecraftSessionService field_147143_S;
     private long field_147142_T = 0L;
-    private final GameProfileRepository field_152365_W;
+    private final GameProfileRepository gameProfileRepository;
     private final PlayerProfileCache field_152366_X;
     private static final String __OBFID = "CL_00001462";
 
+    @SideOnly(Side.SERVER)
+    public static void main(String[] args)
+    {
+        Bootstrap.initialize();
+
+        try
+        {
+            final boolean withGui = false;
+            String s = null;
+            String s1 = ".";
+            String s2 = null;
+            boolean flag1 = false;
+            boolean flag2 = false;
+            int i = -1;
+
+            for (int j = 0; j < args.length; ++j)
+            {
+                String arg = args[j];
+                String nextArg = j == args.length - 1 ? null : args[j + 1];
+                boolean flag3 = false;
+
+                if (!arg.equals("nogui") && !arg.equals("--nogui"))
+                {
+                    if (arg.equals("--port") && nextArg != null)
+                    {
+                        flag3 = true;
+
+                        try
+                        {
+                            i = Integer.parseInt(nextArg);
+                        }
+                        catch (NumberFormatException numberformatexception)
+                        {
+                            ;
+                        }
+                    }
+                    else if (arg.equals("--singleplayer") && nextArg != null)
+                    {
+                        flag3 = true;
+                        s = nextArg;
+                    }
+                    else if (arg.equals("--universe") && nextArg != null)
+                    {
+                        flag3 = true;
+                        s1 = nextArg;
+                    }
+                    else if (arg.equals("--world") && nextArg != null)
+                    {
+                        flag3 = true;
+                        s2 = nextArg;
+                    }
+                    else if (arg.equals("--demo"))
+                    {
+                        flag1 = true;
+                    }
+                    else if (arg.equals("--bonusChest"))
+                    {
+                        flag2 = true;
+                    }
+                }
+
+                if (flag3)
+                {
+                    ++j;
+                }
+            }
+
+            final DedicatedServer dedicatedServer = new DedicatedServer(new File(s1));
+
+            if (s != null)
+            {
+                dedicatedServer.func_71224_l(s);
+            }
+
+            if (s2 != null)
+            {
+                dedicatedServer.func_71261_m(s2);
+            }
+
+            if (i >= 0)
+            {
+                dedicatedServer.func_71208_b(i);
+            }
+
+            if (flag1)
+            {
+                dedicatedServer.func_71204_b(true);
+            }
+
+            if (flag2)
+            {
+                dedicatedServer.func_71194_c(true);
+            }
+
+            if (withGui && !GraphicsEnvironment.isHeadless())
+            {
+                dedicatedServer.func_120011_ar();
+            }
+
+            dedicatedServer.func_71256_s();
+            Runtime.getRuntime().addShutdownHook(new Thread("Server Shutdown Thread")
+            {
+                private static final String __OBFID = "CL_00001806";
+                public void run()
+                {
+                    dedicatedServer.func_71260_j();
+                }
+            });
+        }
+        catch (Exception exception)
+        {
+            LOG.fatal("Failed to start the minecraft server", exception);
+        }
+    }
+
     public MinecraftServer(File p_i45281_1_, Proxy p_i45281_2_)
     {
-        this.field_152366_X = new PlayerProfileCache(this, field_152367_a);
+        this.field_152366_X = new PlayerProfileCache(this, USER_CACHE_FILE);
         field_71309_l = this;
         this.field_110456_c = p_i45281_2_;
         this.field_71308_o = p_i45281_1_;
         this.field_147144_o = new NetworkSystem(this);
-        this.field_71321_q = new ServerCommandManager();
+        this.commandManager = new ServerCommandManager();
         this.field_71310_m = new AnvilSaveConverter(p_i45281_1_);
-        this.field_152364_T = new YggdrasilAuthenticationService(p_i45281_2_, UUID.randomUUID().toString());
-        this.field_147143_S = this.field_152364_T.createMinecraftSessionService();
-        this.field_152365_W = this.field_152364_T.createProfileRepository();
+        this.authService = new YggdrasilAuthenticationService(p_i45281_2_, UUID.randomUUID().toString());
+        this.field_147143_S = this.authService.createMinecraftSessionService();
+        this.gameProfileRepository = this.authService.createProfileRepository();
     }
 
     protected abstract boolean func_71197_b() throws IOException;
@@ -146,7 +261,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     {
         if (this.func_71254_M().func_75801_b(p_71237_1_))
         {
-            field_147145_h.info("Converting map!");
+            LOG.info("Converting map!");
             this.func_71192_d("menu.convertingLevel");
             this.func_71254_M().func_75805_a(p_71237_1_, new IProgressUpdate()
             {
@@ -158,7 +273,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
                     if (System.currentTimeMillis() - this.field_96245_b >= 1000L)
                     {
                         this.field_96245_b = System.currentTimeMillis();
-                        MinecraftServer.field_147145_h.info("Converting... " + p_73718_1_ + "%");
+                        MinecraftServer.LOG.info("Converting... " + p_73718_1_ + "%");
                     }
                 }
                 @SideOnly(Side.CLIENT)
@@ -260,7 +375,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
         int i = 0;
         this.func_71192_d("menu.generatingTerrain");
         byte b0 = 0;
-        field_147145_h.info("Preparing start region for level " + b0);
+        LOG.info("Preparing start region for level " + b0);
         WorldServer worldserver = this.field_71305_c[b0];
         ChunkCoordinates chunkcoordinates = worldserver.func_72861_E();
         long j = func_130071_aq();
@@ -301,7 +416,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     {
         this.field_71302_d = p_71216_1_;
         this.field_71303_e = p_71216_2_;
-        field_147145_h.info(p_71216_1_ + ": " + p_71216_2_ + "%");
+        LOG.info(p_71216_1_ + ": " + p_71216_2_ + "%");
     }
 
     protected void func_71243_i()
@@ -325,7 +440,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
                 {
                     if (!p_71267_1_)
                     {
-                        field_147145_h.info("Saving chunks for level \'" + worldserver.func_72912_H().func_76065_j() + "\'/" + worldserver.field_73011_w.func_80007_l());
+                        LOG.info("Saving chunks for level \'" + worldserver.func_72912_H().func_76065_j() + "\'/" + worldserver.field_73011_w.func_80007_l());
                     }
 
                     try
@@ -334,7 +449,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
                     }
                     catch (MinecraftException minecraftexception)
                     {
-                        field_147145_h.warn(minecraftexception.getMessage());
+                        LOG.warn(minecraftexception.getMessage());
                     }
                 }
             }
@@ -345,7 +460,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     {
         if (!this.field_71290_O)
         {
-            field_147145_h.info("Stopping server");
+            LOG.info("Stopping server");
 
             if (this.func_147137_ag() != null)
             {
@@ -354,14 +469,14 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
 
             if (this.field_71318_t != null)
             {
-                field_147145_h.info("Saving players");
+                LOG.info("Saving players");
                 this.field_71318_t.func_72389_g();
                 this.field_71318_t.func_72392_r();
             }
 
             if (this.field_71305_c != null)
             {
-                field_147145_h.info("Saving worlds");
+                LOG.info("Saving worlds");
                 this.func_71267_a(false);
 
                 for (int i = 0; i < this.field_71305_c.length; ++i)
@@ -407,14 +522,14 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
 
                     if (k > 2000L && i - this.field_71299_R >= 15000L)
                     {
-                        field_147145_h.warn("Can\'t keep up! Did the system time change, or is the server overloaded? Running {}ms behind, skipping {} tick(s)", new Object[] {Long.valueOf(k), Long.valueOf(k / 50L)});
+                        LOG.warn("Can\'t keep up! Did the system time change, or is the server overloaded? Running {}ms behind, skipping {} tick(s)", new Object[] {Long.valueOf(k), Long.valueOf(k / 50L)});
                         k = 2000L;
                         this.field_71299_R = i;
                     }
 
                     if (k < 0L)
                     {
-                        field_147145_h.warn("Time ran backwards! Did the system time change?");
+                        LOG.warn("Time ran backwards! Did the system time change?");
                         k = 0L;
                     }
 
@@ -446,7 +561,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
         }
         catch (Throwable throwable1)
         {
-            field_147145_h.error("Encountered an unexpected exception", throwable1);
+            LOG.error("Encountered an unexpected exception", throwable1);
             CrashReport crashreport = null;
 
             if (throwable1 instanceof ReportedException)
@@ -462,11 +577,11 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
 
             if (crashreport.func_147149_a(file1))
             {
-                field_147145_h.error("This crash report has been saved to: " + file1.getAbsolutePath());
+                LOG.error("This crash report has been saved to: " + file1.getAbsolutePath());
             }
             else
             {
-                field_147145_h.error("We were unable to save this crash report to disk.");
+                LOG.error("We were unable to save this crash report to disk.");
             }
 
             this.func_71228_a(crashreport);
@@ -480,7 +595,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
             }
             catch (Throwable throwable)
             {
-                field_147145_h.error("Exception stopping the server", throwable);
+                LOG.error("Exception stopping the server", throwable);
             }
             finally
             {
@@ -508,7 +623,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
             }
             catch (Exception exception)
             {
-                field_147145_h.error("Couldn\'t load server icon", exception);
+                LOG.error("Couldn\'t load server icon", exception);
             }
             finally
             {
@@ -546,7 +661,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
             this.field_147142_T = i;
             this.field_147147_p.func_151319_a(new ServerStatusResponse.PlayerCountData(this.func_71275_y(), this.func_71233_x()));
             GameProfile[] agameprofile = new GameProfile[Math.min(this.func_71233_x(), 12)];
-            int j = MathHelper.func_76136_a(this.field_147146_q, 0, this.func_71233_x() - agameprofile.length);
+            int j = MathHelper.func_76136_a(this.randomizer, 0, this.func_71233_x() - agameprofile.length);
 
             for (int k = 0; k < agameprofile.length; ++k)
             {
@@ -680,7 +795,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
 
     public void func_71236_h(String p_71236_1_)
     {
-        field_147145_h.warn(p_71236_1_);
+        LOG.warn(p_71236_1_);
     }
 
     public WorldServer func_71218_a(int p_71218_1_)
@@ -770,7 +885,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
         {
             p_71248_2_ = p_71248_2_.substring(1);
             boolean flag = !p_71248_2_.contains(" ");
-            List list = this.field_71321_q.func_71558_b(p_71248_1_, p_71248_2_);
+            List list = this.commandManager.func_71558_b(p_71248_1_, p_71248_2_);
 
             if (list != null)
             {
@@ -826,7 +941,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
 
     public void func_145747_a(IChatComponent p_145747_1_)
     {
-        field_147145_h.info(p_145747_1_.func_150260_c());
+        LOG.info(p_145747_1_.func_150260_c());
     }
 
     public boolean func_70003_b(int p_70003_1_, String p_70003_2_)
@@ -836,7 +951,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
 
     public ICommandManager func_71187_D()
     {
-        return this.field_71321_q;
+        return this.commandManager;
     }
 
     public KeyPair func_71250_E()
@@ -1197,7 +1312,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
 
     public GameProfileRepository func_152359_aw()
     {
-        return this.field_152365_W;
+        return this.gameProfileRepository;
     }
 
     public PlayerProfileCache func_152358_ax()
@@ -1234,128 +1349,9 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     }
 
     @SideOnly(Side.SERVER)
-    public static void main(String[] p_main_0_)
-    {
-        Bootstrap.func_151354_b();
-
-        try
-        {
-            boolean flag = true;
-            String s = null;
-            String s1 = ".";
-            String s2 = null;
-            boolean flag1 = false;
-            boolean flag2 = false;
-            int i = -1;
-
-            for (int j = 0; j < p_main_0_.length; ++j)
-            {
-                String s3 = p_main_0_[j];
-                String s4 = j == p_main_0_.length - 1 ? null : p_main_0_[j + 1];
-                boolean flag3 = false;
-
-                if (!s3.equals("nogui") && !s3.equals("--nogui"))
-                {
-                    if (s3.equals("--port") && s4 != null)
-                    {
-                        flag3 = true;
-
-                        try
-                        {
-                            i = Integer.parseInt(s4);
-                        }
-                        catch (NumberFormatException numberformatexception)
-                        {
-                            ;
-                        }
-                    }
-                    else if (s3.equals("--singleplayer") && s4 != null)
-                    {
-                        flag3 = true;
-                        s = s4;
-                    }
-                    else if (s3.equals("--universe") && s4 != null)
-                    {
-                        flag3 = true;
-                        s1 = s4;
-                    }
-                    else if (s3.equals("--world") && s4 != null)
-                    {
-                        flag3 = true;
-                        s2 = s4;
-                    }
-                    else if (s3.equals("--demo"))
-                    {
-                        flag1 = true;
-                    }
-                    else if (s3.equals("--bonusChest"))
-                    {
-                        flag2 = true;
-                    }
-                }
-                else
-                {
-                    flag = false;
-                }
-
-                if (flag3)
-                {
-                    ++j;
-                }
-            }
-
-            final DedicatedServer dedicatedserver = new DedicatedServer(new File(s1));
-
-            if (s != null)
-            {
-                dedicatedserver.func_71224_l(s);
-            }
-
-            if (s2 != null)
-            {
-                dedicatedserver.func_71261_m(s2);
-            }
-
-            if (i >= 0)
-            {
-                dedicatedserver.func_71208_b(i);
-            }
-
-            if (flag1)
-            {
-                dedicatedserver.func_71204_b(true);
-            }
-
-            if (flag2)
-            {
-                dedicatedserver.func_71194_c(true);
-            }
-
-            if (flag && !GraphicsEnvironment.isHeadless())
-            {
-                dedicatedserver.func_120011_ar();
-            }
-
-            dedicatedserver.func_71256_s();
-            Runtime.getRuntime().addShutdownHook(new Thread("Server Shutdown Thread")
-            {
-                private static final String __OBFID = "CL_00001806";
-                public void run()
-                {
-                    dedicatedserver.func_71260_j();
-                }
-            });
-        }
-        catch (Exception exception)
-        {
-            field_147145_h.fatal("Failed to start the minecraft server", exception);
-        }
-    }
-
-    @SideOnly(Side.SERVER)
     public void func_71244_g(String p_71244_1_)
     {
-        field_147145_h.info(p_71244_1_);
+        LOG.info(p_71244_1_);
     }
 
     @SideOnly(Side.SERVER)
@@ -1386,7 +1382,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     public String func_71252_i(String p_71252_1_)
     {
         RConConsoleSource.field_70010_a.func_70007_b();
-        this.field_71321_q.func_71556_a(RConConsoleSource.field_70010_a, p_71252_1_);
+        this.commandManager.func_71556_a(RConConsoleSource.field_70010_a, p_71252_1_);
         return RConConsoleSource.field_70010_a.func_70008_c();
     }
 
@@ -1399,7 +1395,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     @SideOnly(Side.SERVER)
     public void func_71201_j(String p_71201_1_)
     {
-        field_147145_h.error(p_71201_1_);
+        LOG.error(p_71201_1_);
     }
 
     @SideOnly(Side.SERVER)
@@ -1407,7 +1403,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     {
         if (this.func_71239_B())
         {
-            field_147145_h.info(p_71198_1_);
+            LOG.info(p_71198_1_);
         }
     }
 

@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class Packet
 {
-    private static final Logger field_148841_a = LogManager.getLogger();
+    private static final Logger LOG = LogManager.getLogger();
     private static final String __OBFID = "CL_00001272";
 
     public static Packet func_148839_a(BiMap p_148839_0_, int p_148839_1_)
@@ -20,7 +20,7 @@ public abstract class Packet
         }
         catch (Exception exception)
         {
-            field_148841_a.error("Couldn\'t create packet " + p_148839_1_, exception);
+            LOG.error("Couldn\'t create packet " + p_148839_1_, exception);
             return null;
         }
     }

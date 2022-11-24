@@ -36,7 +36,7 @@ import net.minecraft.world.World;
 
 public class Bootstrap
 {
-    private static boolean field_151355_a = false;
+    private static boolean isInitialized = false;
     private static final String __OBFID = "CL_00001397";
 
     static void func_151353_a()
@@ -389,11 +389,9 @@ public class Bootstrap
         });
     }
 
-    public static void func_151354_b()
-    {
-        if (!field_151355_a)
-        {
-            field_151355_a = true;
+    public static void initialize() {
+        if (!isInitialized) {
+            isInitialized = true;
             Block.func_149671_p();
             BlockFire.func_149843_e();
             Item.fillRegistry();
